@@ -13,6 +13,7 @@ import com.super_bits.modulosSB.webPaginas.JSFBeans.declarados.Paginas.PgAcessos
 import com.super_bits.modulosSB.webPaginas.JSFBeans.declarados.Paginas.PgCadastroUsuarios;
 
 import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfFabricaMenu;
+import com.super_bits.modulosSB.webPaginas.JSFBeans.declarados.Paginas.PgProjetoSBVisaoGeral;
 import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.PgTestesCampo;
 import java.util.Map;
 import javax.faces.bean.ApplicationScoped;
@@ -38,6 +39,9 @@ public class SiteMap extends MB_SiteMapa {
     private PgAcessos congrolePermissao;
     @Inject
     private PgTestesCampo testesCampo;
+
+    @Inject
+    private PgProjetoSBVisaoGeral teste;
 
     @Inject
     private Pg_paginaInicial paginainicial;
