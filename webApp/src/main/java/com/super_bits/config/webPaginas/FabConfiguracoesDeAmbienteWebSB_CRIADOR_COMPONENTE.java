@@ -9,6 +9,7 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.config.ConfigPersis
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.MODULOS.demonstracao_acesso_restrito.FabAcaoAcessoRestritoExemplo;
 import com.super_bits.configSBFW.acessos.ConfigAcessos;
 import com.super_bits.modulos.SBAcessosModel.controller.FabAcaoSeguranca;
+import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
 import com.super_bits.modulosSB.Persistencia.ConfigGeral.ItfConfigSBPersistencia;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.ConfigCoreCustomizavel;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.ControleDeSessaoPadrao;
@@ -50,7 +51,11 @@ public enum FabConfiguracoesDeAmbienteWebSB_CRIADOR_COMPONENTE {
         cfg.setCentralMEnsagens(CentralDeMensagensJSFAPP.class);
         cfg.setClasseErro(ErroSBCoreDeveloperSopMessagem.class);
         cfg.setControleDeSessao(ControleDeSessaoPadrao.class);
-        cfg.setFabricaDeAcoes(new Class[]{FabAcaoSeguranca.class, FabAcaoAcessoRestritoExemplo.class});
+        cfg.setFabricaDeAcoes(new Class[]{
+            FabAcaoSeguranca.class,
+            FabAcaoAcessoRestritoExemplo.class,
+            FabAcaoProjetoSB.class
+        });
         cfg.setClasseConfigPermissao(ConfigAcessos.class);
 
         switch (this) {

@@ -9,6 +9,7 @@ import com.google.common.collect.Lists;
 import com.super_bits.FabAcoesHomeCriadorComponente;
 import com.super_bits.configSBFW.acessos.ConfigAcessos;
 import com.super_bits.configSBFW.acessos.UtilSB_CRIADOR_COMPONENTEGlobalVar;
+import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
 import com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.ItfConfiguracaoCoreCustomizavel;
 import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabricaAcoes;
@@ -34,7 +35,7 @@ public class ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE extends ConfiguradorCor
     public void defineFabricasDeACao(ItfConfiguracaoCoreCustomizavel pConfig) {
         pConfig.setClasseConfigPermissao(ConfigAcessos.class);
         List<Class<? extends ItfFabricaAcoes>> lista = Lists.newArrayList(UtilSB_CRIADOR_COMPONENTEGlobalVar.pAcoesDoSistema());
-        Class<? extends ItfFabricaAcoes> acoes[] = new Class[lista.size() + 2];
+        Class<? extends ItfFabricaAcoes> acoes[] = new Class[lista.size() + 3];
         int i = 0;
         for (Class fab : lista) {
             acoes[i] = fab;
@@ -43,6 +44,8 @@ public class ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE extends ConfiguradorCor
         acoes[i] = FabAcoesHomeCriadorComponente.class;
         i++;
         acoes[i] = FabAcaoDemonstracaoSB.class;
+        i++;
+        acoes[i] = FabAcaoProjetoSB.class;
         pConfig.setFabricaDeAcoes(acoes);
     }
 

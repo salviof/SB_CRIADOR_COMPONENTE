@@ -24,8 +24,7 @@ and open the template in the editor.
                 <h:form>
 
                     <SBComp:input registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgTestesCampo.campoSelecionado.caminhoSemNomeClasse)}"
-
-                                  layoyt="#{layoutsComponenteSB.layoutCampo.resumido}"
+                                  layout="#{layoutsComponenteSB.layoutCampo.resumido}"
                                   />
                     <p:commandButton update="@form" value="Validar"/>
                 </h:form>
@@ -38,7 +37,7 @@ and open the template in the editor.
 
                     <SBComp:input registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgTestesCampo.campoSelecionado.caminhoSemNomeClasse)}"
 
-                                  layoyt="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
                                   />
                     <p:commandButton update="@form" value="Validar"/>
 
@@ -52,7 +51,7 @@ and open the template in the editor.
 
                     <SBComp:input  id="superior"
                                    registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgTestesCampo.campoSelecionado.caminhoSemNomeClasse)}"
-                                   layoyt="#{layoutsComponenteSB.layoutCampo.superior}"
+                                   layout="#{layoutsComponenteSB.layoutCampo.superior}"
                                    />
                     <p:commandButton update="@form" value="Validar"/>
 
