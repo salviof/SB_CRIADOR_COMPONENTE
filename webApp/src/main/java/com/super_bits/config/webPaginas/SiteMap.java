@@ -6,6 +6,7 @@
 package com.super_bits.config.webPaginas;
 
 import com.super_bits.SB_CRIADOR_COMPONENTE.paginas.Pg_paginaInicial;
+import com.super_bits.SB_CRIADOR_COMPONENTE.paginas.mapaComponentes.PgMapaComponentes;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.FabMenuExemplo;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.ItfB_Pagina;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_SiteMapa;
@@ -34,12 +35,7 @@ import javax.inject.Inject;
 public class SiteMap extends MB_SiteMapa {
 
     @Inject
-    private PgCadastroUsuarios usuarios;
-    @Inject
-    private PgAcessos congrolePermissao;
-
-    @Inject
-    private PgProjetoSBVisaoGeral teste;
+    private PgMapaComponentes gerenciarMapaCompoentes;
 
     @Override
     public Class<? extends ItfFabricaMenu> getFabricaMenu() {

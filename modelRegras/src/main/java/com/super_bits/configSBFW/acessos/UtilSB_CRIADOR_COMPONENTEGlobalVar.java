@@ -5,6 +5,7 @@
  */
 package com.super_bits.configSBFW.acessos;
 
+import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.FabAcaoLabComponentes;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.MODULOS.demonstracao_acesso_restrito.FabAcaoAcessoRestritoExemplo;
 import com.super_bits.modulos.SBAcessosModel.controller.FabAcaoSeguranca;
 import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabricaAcoes;
@@ -16,7 +17,7 @@ import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabricaAcoes;
 public abstract class UtilSB_CRIADOR_COMPONENTEGlobalVar {
 
     public static Class<? extends ItfFabricaAcoes>[] pAcoesDoSistema() {
-        return new Class[]{FabAcaoSeguranca.class, FabAcaoAcessoRestritoExemplo.class};
+        return new Class[]{FabAcaoLabComponentes.class};
     }
 
 }
