@@ -25,10 +25,12 @@ public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
 
     @InfoTipoAcaoGestaoEntidade(nomeAcao = "", descricao = "", precisaPermissao = false)
     LAB_COMPONENTES_MB_GERENCIAR,
-    @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false)
+    @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false, campos = {"nome", "descricao"})
     LAB_COMPONENTES_FRM_LISTAR,
     @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false)
     LAB_COMPONENTES_FRM_VISUALIZAR,
+    @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false)
+    LAB_COMPONENTES_FRM_EDITAR,
     @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false)
     LAB_COMPONENTES_FRM_FAMILIA_SELECIONADA_VISUALIZAR,
     @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false)

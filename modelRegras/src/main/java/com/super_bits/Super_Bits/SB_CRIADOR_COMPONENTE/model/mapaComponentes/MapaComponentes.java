@@ -5,6 +5,7 @@
  */
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes;
 
+import com.google.common.collect.Lists;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComponenteVisualSB;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FamiliaComponente;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfFabTipoComponenteVisual;
@@ -63,6 +64,30 @@ public abstract class MapaComponentes {
     public static List<ComponenteVisualSB> getComponentesFamilia(FamiliaComponente familia) {
 
         return mapaComponentes.get(familia);
+
+    }
+
+    public static List<ComponenteVisualSB> getTodosComponentes() {
+
+        List<ComponenteVisualSB> listaComponentes = new ArrayList<>();
+
+        for (FamiliaComponente familiaAtual : mapaComponentes.keySet()) {
+
+            listaComponentes.addAll(getComponentesFamilia(familiaAtual));
+
+        }
+
+        return listaComponentes;
+
+    }
+
+    public static Map<FamiliaComponente, List<ComponenteVisualSB>> getMapaComponentes() {
+        return mapaComponentes;
+    }
+
+    public static List<FamiliaComponente> getTodasFamiliasComponentes() {
+
+        return Lists.newArrayList(mapaComponentes.keySet());
 
     }
 

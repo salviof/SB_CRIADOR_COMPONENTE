@@ -5,11 +5,14 @@
  */
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes;
 
+import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp.TesteSB_CRIADOR_COMPONENTE;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComponenteVisualSB;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FamiliaComponente;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfFabFamiliaComponenteVisual;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfFabTipoComponenteVisual;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,7 +20,7 @@ import static org.junit.Assert.*;
  *
  * @author desenvolvedor
  */
-public class MapaComponentesTest {
+public class MapaComponentesTest extends TesteSB_CRIADOR_COMPONENTE {
 
     @Test
     public void testeMapaComponetesPorFamilia() {
@@ -111,6 +114,54 @@ public class MapaComponentesTest {
                     + "Nome do Componente: " + componente.getNome() + "\n"
                     + "Familia do Componente: " + componente.getFamilia().getNomeFAmilia() + "\n"
                     + "------------------------------------------------------------------------" + "\n");
+
+        }
+
+    }
+
+    @Test
+    public void testaListaDeComponentes() {
+
+        try {
+
+            MapaComponentes.mapaComponentesCriarMapa();
+
+            List<ComponenteVisualSB> listaComponentes = new ArrayList<>();
+
+            listaComponentes = MapaComponentes.getTodosComponentes();
+
+            assertNotNull("A lista de Componetes não foi definida!", listaComponentes);
+
+            System.out.println("\n" + "Lista de Componentes criada com Sucesso! " + "\n"
+                    + listaComponentes.size() + " Componentes na Lista" + "\n");
+
+        } catch (Throwable t) {
+
+            lancarErroJUnit(t);
+
+        }
+
+    }
+
+    @Test
+    public void testaListaDeFamiliasDeComponentes() {
+
+        try {
+
+            MapaComponentes.mapaComponentesCriarMapa();
+
+            List<FamiliaComponente> listaFamiliaComponentes = new ArrayList<>();
+
+            listaFamiliaComponentes = MapaComponentes.getTodasFamiliasComponentes();
+
+            assertNotNull("\n" + "A lista de Familias de Componetes não foi definida!", listaFamiliaComponentes);
+
+            System.out.println("Lista de Familia de Componentes criada com Sucesso! " + "\n"
+                    + listaFamiliaComponentes.size() + " Familias na Lista" + "\n");
+
+        } catch (Throwable t) {
+
+            lancarErroJUnit(t);
 
         }
 

@@ -4,31 +4,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-    <ui:composition template="#{layoutsPaginas.formularioListarGenerico.xhtmlVinculado}" >
-        <ui:define name="conteudo" >
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="#{layoutsPaginas.formularioAcaoAtual.xhtmlVinculado}" >
+
+        <ui:define name="conteudoCard" >
+
+            <h:form class="Fleft">
+                <p:inputText value="#{pgMapaComponentes.parametroPesquisa}" />
+                <p:commandButton action="#{pgMapaComponentes.filtrarPorParametro()}" update="#{pgUtil.makeCaminhoCompletoID(pgMapaComponentes.idAreaExbicaoAcaoSelecionada)}" value="Pesquisar" />
+            </h:form>
+
+            <h:form class="Fright">
+
+                <SBComp:seletorItem
+                    lista="#{pgMapaComponentes.listaFamiliasComponentes}"
+                    itemSelecionado="#{pgMapaComponentes.familiaSelecionada}"
+                    idOnChange="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}"
+                    />
+
+            </h:form>
+
             <h:form>
+
                 <SBComp:listaMobile
-                    acaoDeListagem="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoListarRegistros}"
-                    itemSelecionado="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
-                    itens="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadesListadas}"
-                    metodo="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(item)}"
-                    opcoes="#{paginaAtual.infoPagina.comoPaginaEntidade.acoesRegistros}"
+                    acaoDeListagem="#{pgMapaComponentes.acaoListar}"
+                    itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
+                    itens="#{pgMapaComponentes.listaComponentes}"
+                    metodo="#{pgMapaComponentes.executarAcao(item)}"
+                    opcoes="#{pgMapaComponentes.acaoEditar}"
                     rendered="#{paginaAtual.sessao.tipoView.umMobile}"
                     />
+
                 <SBComp:listaDesktop
-                    acaoDeListagem="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoListarRegistros}"
-                    itemSelecionado="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
-                    itens="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadesListadas}"
-                    metodo="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(item)}"
-                    opcoes="#{paginaAtual.infoPagina.comoPaginaEntidade.acoesRegistros}"
+                    acaoDeListagem="#{pgMapaComponentes.acaoListar}"
+                    itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
+                    itens="#{pgMapaComponentes.listaComponentes}"
+                    metodo="#{pgMapaComponentes.executarAcao(item)}"
+                    opcoes="#{pgMapaComponentes.acaoEditar}"
                     rendered="#{!paginaAtual.sessao.tipoView.umMobile}"
                     />
+
             </h:form>
+
         </ui:define>
 
-
     </ui:composition>
+
 </html>
 
 

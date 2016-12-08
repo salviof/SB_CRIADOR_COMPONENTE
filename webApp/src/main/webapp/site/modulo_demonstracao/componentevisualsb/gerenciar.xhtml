@@ -8,7 +8,14 @@
     <ui:composition template="#{layoutsPaginas.modeloGeral.xhtmlVinculado}">
 
         <ui:define name="divConteudo">
+
             <sb:botaoFake acao="#{null}"  layout="#{null}"/>
+
+            <h:panelGroup id="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}">
+
+                <ui:include src="#{pgMapaComponentes.xhtmlAcaoAtual}"/>
+
+            </h:panelGroup>
 
         </ui:define>
     </ui:composition>

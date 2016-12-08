@@ -16,6 +16,7 @@ import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FamiliaCo
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_PaginaConversation;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
@@ -36,8 +37,33 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private final AcaoDoSistema acaoGerenciar = FabAcaoLabComponentes.LAB_COMPONENTES_MB_GERENCIAR.getAcaoDoSistema();
     private final AcaoDoSistema acaoListar = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LISTAR.getAcaoDoSistema();
     private final AcaoDoSistema acaoVisualizar = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_VISUALIZAR.getAcaoDoSistema();
+    private final AcaoDoSistema acaoEditar = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_EDITAR.getAcaoDoSistema();
     private final AcaoDoSistema acaoSelecionarFamilia = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_FAMILIA_SELECIONADA_VISUALIZAR.getAcaoDoSistema();
     private final AcaoDoSistema acaoSelecionarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_COMPONENTE_SELECIONADO_VISUALIZAR.getAcaoDoSistema();
+    private String parametroPesquisa;
+
+    @PostConstruct
+    public void init() {
+
+        MapaComponentes.mapaComponentesCriarMapa();
+
+        acaoSelecionada = acaoListar;
+
+        xhtmlAcaoAtual = acaoSelecionada.getComoFormularioEntidade().getXhtml();
+
+        listaComponentes = MapaComponentes.getTodosComponentes();
+
+        listaFamiliasComponentes = MapaComponentes.getTodasFamiliasComponentes();
+
+        parametroPesquisa = "";
+
+    }
+
+    public void executarAcao(ComponenteVisualSB pComponente) {
+
+        executarAcaoSelecionada();
+
+    }
 
     @Override
     public void executarAcaoSelecionada() {
@@ -52,6 +78,30 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
             } else {
                 SBCore.enviarMensagemUsuario("A Familia dos Componentes a serem visualizados está nula e por isso não é possivel buscar por Componentes!", FabMensagens.ALERTA);
+            }
+
+        }
+
+    }
+
+    public void filtrarPorFamilia() {
+
+        listaComponentes.clear();
+
+        listaComponentes = MapaComponentes.getComponentesFamilia(familiaSelecionada);
+
+    }
+
+    public void filtrarPorParametro() {
+
+        listaComponentes.clear();
+
+        for (ComponenteVisualSB componentePesquisado : MapaComponentes.getTodosComponentes()) {
+
+            if (componentePesquisado.getNome().toLowerCase().contains(parametroPesquisa.toLowerCase())) {
+
+                listaComponentes.add(componentePesquisado);
+
             }
 
         }
@@ -92,6 +142,27 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
     public AcaoDoSistema getAcaoSelecionarComponente() {
         return acaoSelecionarComponente;
+    }
+
+    public AcaoDoSistema getAcaoEditar() {
+        return acaoEditar;
+    }
+
+    public void setFamiliaSelecionada(FamiliaComponente pFamilia) {
+        familiaSelecionada = pFamilia;
+        filtrarPorFamilia();
+    }
+
+    public String getParametroPesquisa() {
+        return parametroPesquisa;
+    }
+
+    public void setComponenteSelecionado(ComponenteVisualSB componenteSelecionado) {
+        this.componenteSelecionado = componenteSelecionado;
+    }
+
+    public void setParametroPesquisa(String parametroPesquisa) {
+        this.parametroPesquisa = parametroPesquisa;
     }
 
 }
