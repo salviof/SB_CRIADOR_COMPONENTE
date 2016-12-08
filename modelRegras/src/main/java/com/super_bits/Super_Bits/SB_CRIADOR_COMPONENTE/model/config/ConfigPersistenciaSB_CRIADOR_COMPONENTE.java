@@ -5,7 +5,6 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.config;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.FabDadosIniciaisCriadorComponente;
-import com.super_bits.modulos.SBAcessosModel.controller.FabAcaoSeguranca;
 import com.super_bits.modulosSB.Persistencia.ConfigGeral.ItfConfigSBPersistencia;
 import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabrica;
 
