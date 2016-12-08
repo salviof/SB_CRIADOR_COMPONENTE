@@ -5,12 +5,14 @@
  */
 package com.super_bits.SB_CRIADOR_COMPONENTE.paginas.mapaComponentes;
 
-import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.MapaComponentes;
+import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.BeanExemplo;
 import com.super_bits.TestesWP_CRIADOR_COMPONENTES;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.Campo;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabCampos;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComponenteVisualSB;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual;
-import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FamiliaComponente;
-import java.util.ArrayList;
+import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualInputs;
 import java.util.List;
 import org.junit.Test;
 
@@ -37,10 +39,6 @@ public class PgMapaComponentesTest extends TestesWP_CRIADOR_COMPONENTES {
             //
             assertNotNull("A lista de Componentes não foi preenchida!", mapaComponentesTeste.getListaComponentes());
 
-            // DESCOBRE QUANTOS COMPONENTES TEM NA LISTA
-            //
-            int totalComponentes = mapaComponentesTeste.getListaComponentes().size();
-
             // APÓS A PAGINA INICIAR A LISTA DEVE ESTAR PREENCHIDA
             //
             assertNotNull("A lista de Familias de Componentes não foi preenchida!", mapaComponentesTeste.getListaFamiliasComponentes());
@@ -48,6 +46,14 @@ public class PgMapaComponentesTest extends TestesWP_CRIADOR_COMPONENTES {
             // DESCOBRE QUANTAS FAMILIAS TEM NA LISTA
             //
             int totalFamiliasComponentes = mapaComponentesTeste.getListaFamiliasComponentes().size();
+
+            // APÓS PAGINA INICIAR A LISTA DEVE ESTAR PREENCHIDA
+            //
+            assertNotNull("A lista de Campo não foi preenchida!", mapaComponentesTeste.getListaCamposDisponiveis());
+
+            // RELATORIO DA AÇÃO
+            //
+            exibirRelatorioListaDeCampos(mapaComponentesTeste, mapaComponentesTeste.getListaCamposDisponiveis());
 
             // A AÇÃO INICIAL DEVE SER AÇÃO LISTAR
             //
@@ -74,10 +80,6 @@ public class PgMapaComponentesTest extends TestesWP_CRIADOR_COMPONENTES {
             //
             mapaComponentesTeste.filtrarPorParametro();
 
-            // DESCOBRE QUANTOS COMPONENTES TEM NA LISTA
-            //
-            totalComponentes = mapaComponentesTeste.getListaComponentes().size();
-
             // RELATORIO DA AÇÃO
             //
             exibirRelatorioListaDeComponentes(mapaComponentesTeste, mapaComponentesTeste.getListaComponentes());
@@ -90,17 +92,27 @@ public class PgMapaComponentesTest extends TestesWP_CRIADOR_COMPONENTES {
             //
             mapaComponentesTeste.filtrarPorFamilia();
 
-            // DESCOBRE QUANTOS COMPONENTES TEM NA LISTA
-            //
-            totalComponentes = mapaComponentesTeste.getListaComponentes().size();
-
             // RELATORIO DA AÇÃO
             //
             exibirRelatorioListaDeComponentes(mapaComponentesTeste, mapaComponentesTeste.getListaComponentes());
 
-            ComponenteVisualSB componenteTeste = new ComponenteVisualSB();
+            // SELECIONA UM COMPONENTE
+            //
+            mapaComponentesTeste.setComponenteSelecionado(FabCompVisualInputs.CEP.getComponente());
 
-            String nomeRecuperado = (String) componenteTeste.getCampoByNomeOuAnotacao("nome").getValor();
+            // SELECIONA UMA CAMPO A SER EDITADO
+            //
+            mapaComponentesTeste.setCampoSelecionado(FabCampos.LCCEP.getRegistro());
+
+            // BUSCA E RETORNA O CAMPO SELECIONADO
+            //
+            ItfCampoInstanciado campoTeste = mapaComponentesTeste.getCampoInstanciado();
+
+            //
+            //
+            assertEquals("\nO Campo instanciado não é o solicitado! " + "\n"
+                    + "Campo Instanciado: " + campoTeste.getTipoCampo() + "\n"
+                    + " Campo Solicitado: " + mapaComponentesTeste.getCampoSelecionado().getTipoCampo() + "\n", FabCampos.LCCEP, campoTeste.getTipoCampo());
 
         } catch (Throwable t) {
 
@@ -119,6 +131,21 @@ public class PgMapaComponentesTest extends TestesWP_CRIADOR_COMPONENTES {
         for (ComponenteVisualSB componenteAtual : pPaginaARelatar.getListaComponentes()) {
 
             System.out.println("\n" + "Componente: " + componenteAtual.getNome() + "|" + " Familia: " + componenteAtual.getFamilia().getNomeFAmilia() + "\n");
+
+        }
+
+    }
+
+    public void exibirRelatorioListaDeCampos(PgMapaComponentes pPaginaARelatar, List<Campo> pListaCampos) {
+
+        int pTotalCampos = pListaCampos.size();
+
+        System.out.println("\n" + "Lista de Componentes criada com Sucesso! " + "\n"
+                + pTotalCampos + " Componentes na Lista" + "\n");
+
+        for (Campo campoAtual : pPaginaARelatar.getListaCamposDisponiveis()) {
+
+            System.out.println("\n" + "Campo: " + campoAtual.getNome() + "|" + " Tipo: " + campoAtual.getTipoCampo() + "\n");
 
         }
 
