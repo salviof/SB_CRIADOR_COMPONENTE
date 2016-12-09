@@ -14,7 +14,7 @@ import com.super_bits.modulosSB.webPaginas.JSFBeans.declarados.Paginas.PgCadastr
 
 import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfFabricaMenu;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.declarados.Paginas.PgProjetoSBVisaoGeral;
-import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.PgTestesCampo;
+
 import java.util.Map;
 import javax.faces.bean.ApplicationScoped;
 import javax.inject.Inject;
@@ -37,23 +37,9 @@ public class SiteMap extends MB_SiteMapa {
     private PgCadastroUsuarios usuarios;
     @Inject
     private PgAcessos congrolePermissao;
-    @Inject
-    private PgTestesCampo testesCampo;
 
     @Inject
     private PgProjetoSBVisaoGeral teste;
-
-    @Inject
-    private Pg_paginaInicial paginainicial;
-
-    /// Injete aqui todas as Paginas que extendem o objeto MB_pagina
-    @Override
-    protected Map<String, ItfB_Pagina> buildPaginas() {
-        Map<String, ItfB_Pagina> paginasSimples = buildSystemPages();
-
-        return paginasSimples;
-
-    }
 
     @Override
     public Class<? extends ItfFabricaMenu> getFabricaMenu() {
