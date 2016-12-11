@@ -30,6 +30,7 @@
                     <span id="menuline3" class="Animated05"></span>
 
                 </a>
+
             </h:panelGroup>
 
 
@@ -54,6 +55,7 @@
 
                             </c:forEach>
                         </ul>
+
                     </li>
 
 
@@ -61,8 +63,14 @@
 
 
                 <li>
-                    <a class="menulink Animated05"><i class="icon-settings"></i>  Minha Conta </a>
+                    <a class="menulink Animated05"><i class="fa fa-address-card" ></i>  Minha Conta </a>
                     <ul style="margin-left:-145px;">
+
+                        <li>
+
+                            <a class="menulink Animated05"><i></i>  Olá: #{paginaAtual.controleDeSessao.sessaoAtual.usuario.nome} <br/> Grupo: #{paginaAtual.controleDeSessao.sessaoAtual.usuario.grupo} </a>
+
+                        </li>
                         <li><a href="#"><i class="fa fa-envelope Fs18 Fleft MarRight10"></i> <span class="FontAdamantiumBold"> Enviar Mensagem </span></a></li>
                         <li><a href="#"><i class="icon-attachment Fs18 Fleft MarRight10"></i> <span class="FontAdamantiumBold">  Perfil e senha </span></a></li>
 
@@ -76,11 +84,17 @@
                                 </h:form>
                             </span></li>
 
+
+
                     </ul>
+
                 </li>
 
+
             </ul>
+
         </div>
+
         <!-- TOPBAR END -->
 
     </cc:implementation>

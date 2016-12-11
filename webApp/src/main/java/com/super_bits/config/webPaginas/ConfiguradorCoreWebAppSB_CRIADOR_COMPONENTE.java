@@ -7,6 +7,7 @@ package com.super_bits.config.webPaginas;
 
 import com.google.common.collect.Lists;
 import com.super_bits.FabAcoesHomeCriadorComponente;
+import com.super_bits.Super_Bits.SB_AdminTools.regras_de_negocio_e_controller.admin_developer.FabAcaoAdminDeveloper;
 import com.super_bits.configSBFW.acessos.ConfigAcessos;
 import com.super_bits.configSBFW.acessos.UtilSB_CRIADOR_COMPONENTEGlobalVar;
 import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
@@ -34,19 +35,14 @@ public class ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE extends ConfiguradorCor
     @Override
     public void defineFabricasDeACao(ItfConfiguracaoCoreCustomizavel pConfig) {
         pConfig.setClasseConfigPermissao(ConfigAcessos.class);
-        List<Class<? extends ItfFabricaAcoes>> lista = Lists.newArrayList(UtilSB_CRIADOR_COMPONENTEGlobalVar.pAcoesDoSistema());
-        Class<? extends ItfFabricaAcoes> acoes[] = new Class[lista.size() + 3];
-        int i = 0;
-        for (Class fab : lista) {
-            acoes[i] = fab;
-            i++;
-        }
-        acoes[i] = FabAcoesHomeCriadorComponente.class;
-        i++;
-        acoes[i] = FabAcaoDemonstracaoSB.class;
-        i++;
-        acoes[i] = FabAcaoProjetoSB.class;
-        pConfig.setFabricaDeAcoes(acoes);
+        List<Class<? extends ItfFabricaAcoes>> listaWebApp = Lists.newArrayList(UtilSB_CRIADOR_COMPONENTEGlobalVar.pAcoesDoSistema());
+
+        listaWebApp.add(FabAcoesHomeCriadorComponente.class);
+        listaWebApp.add(FabAcaoDemonstracaoSB.class);
+        listaWebApp.add(FabAcaoProjetoSB.class);
+        listaWebApp.add(FabAcaoAdminDeveloper.class);
+
+        pConfig.setFabricaDeAcoes(listaWebApp.toArray(new Class[listaWebApp.size()]));
     }
 
 }

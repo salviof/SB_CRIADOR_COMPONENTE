@@ -7,7 +7,6 @@ package com.super_bits.configSBFW.acessos;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.usuariosExemplo.FabGrupoUsuario;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.FabMenuExemplo;
-import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.MODULOS.demonstracao_acesso_restrito.ModuloAcessoRestritoExemplo;
 import com.super_bits.modulos.SBAcessosModel.ConfigPermissoesAcessoModelAbstrato;
 import com.super_bits.modulos.SBAcessosModel.controller.ModuloSeguranca;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfGrupoUsuario;
@@ -29,7 +28,7 @@ import com.super_bits.modulosSB.SBCore.modulos.view.menu.MenusDaSessao;
 public class ConfigAcessos extends ConfigPermissoesAcessoModelAbstrato {
 
     private static Class[] getClasses() {
-        Class[] classes = {ModuloAcessoRestritoExemplo.class, ModuloSeguranca.class};
+        Class[] classes = {ModuloSeguranca.class};
         return classes;
     }
 

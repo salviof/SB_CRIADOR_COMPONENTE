@@ -6,7 +6,7 @@
 package com.super_bits.config.webPaginas;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.config.ConfigPersistenciaSB_CRIADOR_COMPONENTE;
-import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.MODULOS.demonstracao_acesso_restrito.FabAcaoAcessoRestritoExemplo;
+
 import com.super_bits.configSBFW.acessos.ConfigAcessos;
 import com.super_bits.modulos.SBAcessosModel.controller.FabAcaoSeguranca;
 import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
@@ -53,7 +53,6 @@ public enum FabConfiguracoesDeAmbienteWebSB_CRIADOR_COMPONENTE {
         cfg.setControleDeSessao(ControleDeSessaoPadrao.class);
         cfg.setFabricaDeAcoes(new Class[]{
             FabAcaoSeguranca.class,
-            FabAcaoAcessoRestritoExemplo.class,
             FabAcaoProjetoSB.class
         });
         cfg.setClasseConfigPermissao(ConfigAcessos.class);
