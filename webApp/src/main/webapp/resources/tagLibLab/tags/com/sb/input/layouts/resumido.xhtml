@@ -3,11 +3,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
+
     <p:panelGrid columns="1"  >
+
         <p:watermark value="#{label}" for="#{pgUtil.getNomeIdComponenteInput(component)}" />
+
         <ui:insert name="input" />
+
         <p:tooltip  value="#{label}" for="#{pgUtil.getNomeIdComponenteInput(component)}"  />
+
         <p:message for="#{pgUtil.getNomeIdComponenteInput(component)}"  />
+
     </p:panelGrid>
+
 </html>
 

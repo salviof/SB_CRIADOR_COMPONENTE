@@ -3,22 +3,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:SBFormulario="http://xmlns.jcp.org/jsf/composite/SBComp/formulario"
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <!-- template conteúdo com formulario-->
     <ui:composition template="#{layoutsPaginas.formularioAcaoAtual.xhtmlVinculado}" >
-        <ui:define name="conteudo">
-            <SBFormulario:camposDaAcao
-                registro="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
-                acao="#{paginaAtual.infoPagina.acaoSelecionada}"
-                tipoVisualizacaoLabel="#{layoutsComponenteSB.layoutCampo.superior}"
-                />
+
+        <ui:define name="conteudoCard">
+
+            <h:form class="Fright">
+
+                <SBComp:seletorItem
+
+                    lista="#{pgMapaComponentes.listaCamposDisponiveis}"
+                    itemSelecionado="#{pgMapaComponentes.campoSelecionado}"
+                    idOnChange="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}"
+
+                    />
+
+                Campo: #{pgMapaComponentes.campoSelecionado.label} // <br/>
+                CampoSelecionado?: #{pgMapaComponentes.temCampoSelecionado} // <br/>
+                Componente: #{pgMapaComponentes.componenteSelecionado} // <br/>
+
+                <p:panel rendered="#{pgMapaComponentes.temCampoSelecionado}" style="border-style: none">
+
+                    <SBComp:input
+
+                        registro="#{pgMapaComponentes.campoInstanciado}"
+
+                        />
+
+                </p:panel>
+
+            </h:form>
+
         </ui:define>
-        <ui:define name="botoesDeAcao">
-            <SBComp:botaoDeAcao_Pagina_Entidade
-                registro="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
-                acao="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoSalvarAlteracoes}"
-                />
-        </ui:define>
+
+
     </ui:composition>
 
 </html>

@@ -51,69 +51,70 @@
     </cc:interface>
     <!-- IMPLEMENTATION -->
     <cc:implementation>
-        <h:panelGroup>
+        <h:panelGroup class="Container100">
+
+            <div class="table-responsive">
+                <p:dataTable sortMode="multiple"
+                             value="#{cc.attrs.itens}"
+                             var="item"
+                             emptyMessage="Nenhum #{cc.attrs.acaoDeListagem.nomeDominio} Encontrado"
+                             paginator="true"
+                             class="table"
+                             >
+
+                    <f:facet name="header">
+                        #{cc.attrs.titulo}
+                    </f:facet>
 
 
-            <p:dataTable sortMode="multiple"
-                         value="#{cc.attrs.itens}"
-                         var="item"
-                         emptyMessage="Nenhum #{cc.attrs.acaoDeListagem.nomeDominio} Encontrado"
-                         paginator="true"
 
-                         >
+                    <c:forEach
 
-                <f:facet name="header">
-                    #{cc.attrs.titulo}
-                </f:facet>
+                        items= "#{cc.attrs.acaoDeListagem.campos}"
+                        var="coluna"
+
+                        >
 
 
+                        <p:column styleClass="CampoListaDesktop">
+                            <f:facet name="header">
 
-                <c:forEach
+                                <h:outputText value= "#{coluna.labelDoCampo}" />
 
-                    items= "#{cc.attrs.acaoDeListagem.campos}"
-                    var="coluna"
+                            </f:facet>
 
-                    >
-
-
-                    <p:column>
-                        <f:facet name="header">
-
-                            <h:outputText value= "#{coluna.labelDoCampo}" />
-
-                        </f:facet>
-
-                        <SBComp:input
-                            registro="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse)}"
-                            desabilitarEdicao="true"
-                            layout="#{layoutsComponenteSB.layoutCampo.semLabel}"
+                            <SBComp:input
+                                registro="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse)}"
+                                desabilitarEdicao="true"
+                                layout="#{layoutsComponenteSB.layoutCampo.semLabel}"
 
 
-                            />
+                                />
+
+                        </p:column>
+
+                    </c:forEach>
+
+
+
+                    <p:column headerText="Ações">
+
+                        <center>     <SBComp:seletorDeAcoes
+
+                                metodo="#{cc.attrs.metodo}"
+                                opcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+                                opcoes="#{cc.attrs.opcoes}"
+                                visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.icone}"
+
+                                /> </center>
 
                     </p:column>
 
-                </c:forEach>
 
 
+                </p:dataTable>
 
-                <p:column headerText="Ações" width="180">
-
-                    <center>     <SBComp:seletorDeAcoes
-
-                            metodo="#{cc.attrs.metodo}"
-                            opcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
-                            opcoes="#{cc.attrs.opcoes}"
-                            visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.icone}"
-
-                            /> </center>
-
-                </p:column>
-
-
-
-            </p:dataTable>
-
+            </div>
 
         </h:panelGroup>
 

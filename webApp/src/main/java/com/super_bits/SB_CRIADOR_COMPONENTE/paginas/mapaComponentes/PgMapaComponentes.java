@@ -20,6 +20,7 @@ import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamili
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FamiliaComponente;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_PaginaConversation;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
@@ -46,10 +47,10 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private final AcaoDoSistema acaoSelecionarFamilia = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_FAMILIA_SELECIONADA_VISUALIZAR.getAcaoDoSistema();
     private final AcaoDoSistema acaoSelecionarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_COMPONENTE_SELECIONADO_VISUALIZAR.getAcaoDoSistema();
     private String parametroPesquisa;
-
     private BeanExemplo beanExemplo;
     private Campo campoSelecionado;
-    private List<Campo> camposDisponiveis;
+    private List<Campo> listaCamposDisponiveis;
+    private List<AcaoDoSistema> listaTeste;
 
     @PostConstruct
     public void init() {
@@ -64,8 +65,18 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
         listaFamiliasComponentes = MapaComponentes.getTodasFamiliasComponentes();
 
+        getTodosCamposSistema();
+
         parametroPesquisa = "";
         beanExemplo = new BeanExemplo();
+
+        preencheListaTeste();
+    }
+
+    public void preencheListaTeste() {
+        for (int i = 0; i < 6; i++) {
+            listaTeste.add(acaoEditar);
+        }
     }
 
     public ItfCampoInstanciado getCampoInstanciado() {
@@ -89,7 +100,33 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         return beanExemplo.getCampoInstanciadoByAnotacao(campoSelecionado.getTipoCampo());
     }
 
+    private void getTodosCamposSistema() {
+
+        listaCamposDisponiveis = new ArrayList<>();
+
+        for (FabCampos enumCampo : FabCampos.class.getEnumConstants()) {
+
+            Campo campoAtual = enumCampo.getRegistro();
+
+            listaCamposDisponiveis.add(campoAtual);
+
+        }
+
+    }
+
+    public boolean isTemCampoSelecionado() {
+
+        return campoSelecionado != null;
+
+    }
+
     public void executarAcao(ComponenteVisualSB pComponente) {
+
+        if (pComponente != null) {
+
+            componenteSelecionado = pComponente;
+
+        }
 
         executarAcaoSelecionada();
 
@@ -197,6 +234,22 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
     public void setParametroPesquisa(String parametroPesquisa) {
         this.parametroPesquisa = parametroPesquisa;
+    }
+
+    public Campo getCampoSelecionado() {
+        return campoSelecionado;
+    }
+
+    public List<Campo> getListaCamposDisponiveis() {
+        return listaCamposDisponiveis;
+    }
+
+    public void setCampoSelecionado(Campo campoSelecionado) {
+        this.campoSelecionado = campoSelecionado;
+    }
+
+    public List<AcaoDoSistema> getListaTeste() {
+        return listaTeste;
     }
 
 }
