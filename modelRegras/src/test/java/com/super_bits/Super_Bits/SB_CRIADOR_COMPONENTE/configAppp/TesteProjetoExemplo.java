@@ -9,7 +9,6 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.config.ConfigPersis
 import com.super_bits.modulosSB.Persistencia.ConfigGeral.SBPersistencia;
 import com.super_bits.modulosSB.Persistencia.ERROS.TesteJunitSBPersistencia;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-
 import org.junit.Test;
 
 /**

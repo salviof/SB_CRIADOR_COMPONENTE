@@ -7,8 +7,6 @@ package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp;
 
 import com.super_bits.configSBFW.acessos.ConfigAcessos;
 import com.super_bits.configSBFW.acessos.UtilSB_CRIADOR_COMPONENTEGlobalVar;
-import com.super_bits.modulos.SBAcessosModel.controller.FabAcaoComunicacaoPadrao;
-import com.super_bits.modulos.SBAcessosModel.controller.FabAcaoSeguranca;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.ConfiguradorCoreDeProjetoJarAbstrato;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.ItfConfiguracaoCoreCustomizavel;
 

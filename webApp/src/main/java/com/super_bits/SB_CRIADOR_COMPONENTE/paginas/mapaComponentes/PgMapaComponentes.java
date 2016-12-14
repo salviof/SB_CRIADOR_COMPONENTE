@@ -5,13 +5,19 @@
  */
 package com.super_bits.SB_CRIADOR_COMPONENTE.paginas.mapaComponentes;
 
+import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.BeanExemplo;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.FabAcaoLabComponentes;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.InfoAcaoLabComponentes;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.MapaComponentes;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.Mensagens.FabMensagens;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.Campo;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CampoNaoImplementado;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabCampos;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComponenteVisualSB;
+import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FamiliaComponente;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_PaginaConversation;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
@@ -42,6 +48,10 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private final AcaoDoSistema acaoSelecionarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_COMPONENTE_SELECIONADO_VISUALIZAR.getAcaoDoSistema();
     private String parametroPesquisa;
 
+    private BeanExemplo beanExemplo;
+    private Campo campoSelecionado;
+    private List<Campo> camposDisponiveis;
+
     @PostConstruct
     public void init() {
 
@@ -56,7 +66,28 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         listaFamiliasComponentes = MapaComponentes.getTodasFamiliasComponentes();
 
         parametroPesquisa = "";
+        beanExemplo = new BeanExemplo();
+    }
 
+    public ItfCampoInstanciado getCampoInstanciado() {
+
+        // se não tiver nenhym componente selecionado, retorna Campo não implementado
+        if (componenteSelecionado == null) {
+
+            return new CampoNaoImplementado();
+        }
+        // se o componente não for um componente do tipo input, retorna componente não implementado
+        if (!componenteSelecionado.getFamilia().equals(FabFamiliaCompVisual.INPUT)) {
+            return new CampoNaoImplementado();
+        }
+        //de acordo com ocomponente selecionado retorna um campo instanciado do
+
+        // Campos
+        if (campoSelecionado == null) {
+            return new CampoNaoImplementado();
+        }
+
+        return beanExemplo.getCampoInstanciadoByAnotacao(campoSelecionado.getTipoCampo());
     }
 
     public void executarAcao(ComponenteVisualSB pComponente) {
@@ -90,6 +121,10 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
         listaComponentes = MapaComponentes.getComponentesFamilia(familiaSelecionada);
 
+    }
+
+    public BeanExemplo getBeanExemplo() {
+        return beanExemplo;
     }
 
     public void filtrarPorParametro() {
