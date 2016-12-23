@@ -30,7 +30,6 @@
         <ui:define name="conteudoDireita">
             <h:form>
 
-
                 <SBComp:botaoDeAcao_Pagina_Entidade
                     acao="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoListarRegistros}"
                     tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
@@ -64,13 +63,8 @@
 
                 <p:tabView orientation="left">
                     <c:forEach items="#{pgPermissoes.modulos}" var="modulo" varStatus="rec">
-
-
-
-                        <p:tab title="#{modulo.nome}">
-
+                       <p:tab title="#{modulo.nome}">
                             <h:panelGroup class="Fleft" >
-
                                 <i class="fa fa-cube Fs40 Fleft Orange MarRight10"></i>
                                 Módulo #{modulo.nome} - Marque os acessos para o grupo #{pgPermissoes.grupoSelecionado.nome}
                             </h:panelGroup>
