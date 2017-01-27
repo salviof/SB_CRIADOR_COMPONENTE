@@ -35,8 +35,6 @@ arqSairSePastaNaoExistir $CAMINHO_WP_SEM_TAGLIB/src "Os arquivos não foram copi
 
 
 
-
-rm  /home/superBits/projetos/Super_Bits/source/SuperBits_FrameWork/SB_FRAMEWORK/SBWebPaginasSemTagLib/src/main/resources/META-INF/resources/tagLib -rf
 alerta "Removendo pasta versão antiga"
 if arqComandoExiste xmlstarlet ;
 then 
@@ -47,8 +45,14 @@ else
 alerta ".."
 fi
 
+alerta "Removendo Taglib OFICIAL"
+rm   $CAMINHO_WP_SEM_TAGLIB/src/main/resources/META-INF/resources/tagLib -rf
+rm   $CAMINHO_WP_SEM_TAGLIB/src/main/resources/META-INF/sb.taglib.xml -f
+arqSairSePastaExistir $CAMINHO_WP_SEM_TAGLIB/src/main/resources/META-INF/resources/tagLib "O diretorio taglib não foi excluido"
+arqSairSeArquivoExistir $CAMINHO_WP_SEM_TAGLIB/src/main/resources/META-INF/sb.taglib.xml "O arquivo sb.taglib não foi excluido"
+
+
 alerta "Alterando nome do projeto POM"
 xmlstarlet ed -N p=http://maven.apache.org/POM/4.0.0 -u "/p:project/p:artifactId" -v "SBWebPaginasSemTagLib" -u "/p:project/p:name" -v "WP Super-Bits Sem TagLib"   $CAMINHO_WP_REFERENCIA/pom.xml > $CAMINHO_WP_SEM_TAGLIB/pom.xml
 cd $CAMINHO_WP_SEM_TAGLIB
-mvn clean install -DskipTests=true
-
+mvn -DskipTests=true clean install

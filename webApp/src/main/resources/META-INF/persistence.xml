@@ -23,7 +23,6 @@
         <class>com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoSecundaria</class>
         <class>com.super_bits.modulos.SBAcessosModel.model.ModuloAcaoSistema</class>
         <class>com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.informacao.ConteudoGenerico</class>
-        <class>com.super_bits.modulos.SBAcessosModel.model.ConfiguracaoDePermissao</class>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
             <!--         <property name="hibernate.hbm2ddl.auto" value="update" /> -->

@@ -20,6 +20,7 @@ public class TesteConformidade extends RelatorioTesteWebPaginas {
 
     @Test
     public void testar() {
+
         exibirRelatorioCompleto();
     }
 
