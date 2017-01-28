@@ -32,7 +32,11 @@ public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
     @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false)
     LAB_COMPONENTES_FRM_FAMILIA_SELECIONADA_VISUALIZAR,
     @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false)
-    LAB_COMPONENTES_FRM_COMPONENTE_SELECIONADO_VISUALIZAR;
+    LAB_COMPONENTES_FRM_COMPONENTE_SELECIONADO_VISUALIZAR,
+    LAB_COMPONENTES_FRM_LAB_VER,
+    LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA,
+    LAB_COMPONENTES_FRM_LAB_ONCHANGE,
+    LAB_COMPONENTES_FRM_LAB_VALIDACAO;
 
     @Override
     public AcaoDoSistema getRegistro() {

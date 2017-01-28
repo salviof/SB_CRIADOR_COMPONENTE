@@ -2,7 +2,6 @@
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
 
-
     <welcome-file-list>
         <welcome-file>/site/home.xhtml</welcome-file>
     </welcome-file-list>
@@ -29,7 +28,6 @@
         <param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
         <param-value>0</param-value>
     </context-param>
-
 
     <context-param>
         <param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
@@ -64,22 +62,6 @@
 
 
 
-
-    <error-page>
-        <exception-type>java.lang.Throwable</exception-type>
-        <location>/resources/SBComp/SBSystemPages/erroGenerico.xhtml</location>
-    </error-page>
-
-    <error-page>
-        <exception-type>com.sun.faces.application.view.FaceletViewHandlingStrategy.handleRenderException</exception-type>
-        <location>/resources/SBComp/SBSystemPages/erroGenerico.xhtml</location>
-    </error-page>
-
-
-    <error-page>
-        <error-code>404</error-code>
-        <location>/site/home.xhtml</location>
-    </error-page>
 
 
     <servlet>
@@ -117,6 +99,23 @@
 
 
 
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/resources/SBComp/SBSystemPages/erroGenerico.xhtml</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>com.sun.faces.application.view.FaceletViewHandlingStrategy.handleRenderException</exception-type>
+        <location>/resources/SBComp/SBSystemPages/erroGenerico.xhtml</location>
+    </error-page>
+
+
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/site/home.xhtml</location>
+    </error-page>
+
 
     <error-page>
         <exception-type>javax.faces.application.ViewExpiredException</exception-type>
@@ -143,10 +142,6 @@
     <listener>
         <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
     </listener>
-    <listener>
-        <listener-class>org.apache.commons.fileupload.servlet.FileCleanerCleanup</listener-class>
-    </listener>
-
 
 
 

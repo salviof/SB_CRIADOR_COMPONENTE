@@ -4,6 +4,7 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:SBFormulario="http://xmlns.jcp.org/jsf/composite/SBComp/formulario"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:sb="http://superbitsframework/ui"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <!-- template conteúdo com formulario-->
@@ -13,29 +14,77 @@
 
             <h:form class="Fright">
 
-                <SBComp:seletorItem
+                <SBComp:botaoDeAcao_Pagina
+                    acao="#{pgMapaComponentes.acaoListar}"
+                    tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"/>
+                <p:fieldset legend="Bean Associado ao Componente "   >
+                    <p:panelGrid columns="2">
+                        <p:outputLabel value="Selevione o Tipo de campo para:
+                                       # {pgMapaComponentes.campoInstanciado\}" />
+                        <SBComp:seletorItem
+                            rendered="#{pgMapaComponentes.componenteSelecionadoDoTipoIntput}"
+                            lista="#{pgMapaComponentes.listaCamposDisponiveis}"
+                            itemSelecionado="#{pgMapaComponentes.campoSelecionado}"
+                            idOnChange="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}"
 
-                    lista="#{pgMapaComponentes.listaCamposDisponiveis}"
-                    itemSelecionado="#{pgMapaComponentes.campoSelecionado}"
-                    idOnChange="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}"
+                            />
+
+                    </p:panelGrid>
+
+                </p:fieldset>
+
+            </h:form>
+
+
+            <p:fieldset legend="Informações do Componente">
+                <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado.nome}"/>
+                <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado.caminhoPastaXHTMLJSF}"/>
+                <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado.idHTMLObjetoPrincipal}"/>
+                <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado.xhtmlJSF}"/>
+                <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado}"/>
+                <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado}"/>
+            </p:fieldset>
+
+            <p:panel rendered="#{pgMapaComponentes.temCampoSelecionado}" style="border-style: none">
+
+                <SBComp:input
+
+                    registro="#{pgMapaComponentes.campoInstanciado}"
 
                     />
 
-                Campo: #{pgMapaComponentes.campoSelecionado.label} // <br/>
-                CampoSelecionado?: #{pgMapaComponentes.temCampoSelecionado} // <br/>
-                Componente: #{pgMapaComponentes.componenteSelecionado} // <br/>
+            </p:panel>
+            <p:fieldset legend="Laboratorio" rendered="#{pgMapaComponentes.temCampoSelecionado}">
+                <h:form >
+                    <p:commandButton update="@form" value="Atualizar Form"/>
+                    <p:commandButton value="Atualizar IdAreaExibição" update=" #{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}" />
+                    <SBComp:input registro="#{pgMapaComponentes.campoInstanciado}"
+                                  idAtualizarOnChange="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}"
+                                  metodoOnChange="#{pgUtil.mensagemAlerta('adsdasd')}"
+                                  />
 
-                <p:panel rendered="#{pgMapaComponentes.temCampoSelecionado}" style="border-style: none">
+                    <p:splitButton/>
 
-                    <SBComp:input
-
+                    <sb:inputSB
                         registro="#{pgMapaComponentes.campoInstanciado}"
+                        desabilitarEdicao="#{false}"
+                        layoutCampo="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                        possuiIDOnChange="true"
+                        possuiMetodoOnChange="true"
+
+                        label="#{pgMapaComponentes.campoInstanciado.label}"
+                        opcoes="#{pgMapaComponentes.campoInstanciado.listaDeOpcoes}"
+                        idAtualizarOnChange="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}"
+                        metodoOnChange="#{pgMapaComponentes.metodoTeste()}"
+
 
                         />
 
-                </p:panel>
+                </h:form>
 
-            </h:form>
+            </p:fieldset>
+
+
 
         </ui:define>
 

@@ -51,70 +51,69 @@
     </cc:interface>
     <!-- IMPLEMENTATION -->
     <cc:implementation>
-        <h:panelGroup class="Container100">
-
-            <div class="table-responsive">
-                <p:dataTable sortMode="multiple"
-                             value="#{cc.attrs.itens}"
-                             var="item"
-                             emptyMessage="Nenhum #{cc.attrs.acaoDeListagem.nomeDominio} Encontrado"
-                             paginator="true"
-                             class="table"
-                             >
-
-                    <f:facet name="header">
-                        #{cc.attrs.titulo}
-                    </f:facet>
+        <h:panelGroup>
 
 
+            <p:dataTable sortMode="multiple"
+                         value="#{cc.attrs.itens}"
+                         var="item"
+                         emptyMessage="Nenhum #{cc.attrs.acaoDeListagem.nomeDominio} Encontrado"
+                         paginator="true"
 
-                    <c:forEach
+                         >
 
-                        items= "#{cc.attrs.acaoDeListagem.campos}"
-                        var="coluna"
-
-                        >
-
-
-                        <p:column styleClass="CampoListaDesktop">
-                            <f:facet name="header">
-
-                                <h:outputText value= "#{coluna.labelDoCampo}" />
-
-                            </f:facet>
-
-                            <SBComp:input
-                                registro="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse)}"
-                                desabilitarEdicao="true"
-                                layout="#{layoutsComponenteSB.layoutCampo.semLabel}"
-
-
-                                />
-
-                        </p:column>
-
-                    </c:forEach>
+                <f:facet name="header">
+                    #{cc.attrs.titulo}
+                </f:facet>
 
 
 
-                    <p:column headerText="Ações">
+                <c:forEach
 
-                        <center>     <SBComp:seletorDeAcoes
+                    items= "#{cc.attrs.acaoDeListagem.campos}"
+                    var="coluna"
 
-                                metodo="#{cc.attrs.metodo}"
-                                opcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
-                                opcoes="#{cc.attrs.opcoes}"
-                                visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.icone}"
+                    >
 
-                                /> </center>
+
+                    <p:column filterMatchMode="contains"  filterBy="#{item}.#{coluna.caminhoSemNomeClasse}">
+                        <f:facet name="header">
+
+                            <h:outputText value= "#{coluna.label}" />
+
+                        </f:facet>
+
+                        <SBComp:input
+                            registro="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse)}"
+                            desabilitarEdicao="true"
+                            layout="#{layoutsComponenteSB.layoutCampo.semLabel}"
+
+
+                            />
 
                     </p:column>
 
+                </c:forEach>
 
 
-                </p:dataTable>
 
-            </div>
+                <p:column headerText="Ações" width="180">
+
+                    <center>     <SBComp:seletorDeAcoes
+
+                            metodo="#{cc.attrs.metodo}"
+                            opcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+                            opcoes="#{cc.attrs.opcoes}"
+                            visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.icone}"
+
+                            /> </center>
+
+                </p:column>
+
+
+
+            </p:dataTable>
+
 
         </h:panelGroup>
 

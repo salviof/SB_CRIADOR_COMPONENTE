@@ -24,7 +24,6 @@
 .inputCampo{
     width:   100%!important;
     border : none!important;
-    width : 100%!important; margin: 0px!important; padding:0px!important
 
 }
 
@@ -119,23 +118,5 @@
 
     display: none;
 }
-
-/* O ESTILO ABAIXO RETIRAR A BORDA EM VOLTA DOS CAMPOS DA TABELA DO PRIMEFACES E É APLICADO EM TODO TD FILHO DE UM TR QUE É FILHO DE UM TBODY QUE É FILHO DE UMA TABLE*/
-table > tbody > tr > td{
-
-
-
-}
-
-.ui-datatable table tbody td{
-    padding: 0px 0px !important;
-    border-style: none!important;
-}
-
-.ui-datatable table tbody td center{
-    padding: 0px 0px !important;
-    border-style: none!important;
-}
-
 
 

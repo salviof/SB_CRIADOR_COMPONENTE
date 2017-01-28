@@ -52,6 +52,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private Campo campoSelecionado;
     private List<Campo> listaCamposDisponiveis;
     private List<AcaoDoSistema> listaTeste;
+    private List<AcaoDoSistema> acoesLaboratorio;
 
     @PostConstruct
     public void init() {
@@ -72,6 +73,21 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         beanExemplo = new BeanExemplo();
 
         preencheListaTeste();
+    }
+
+    public void metodoTeste() {
+        SBCore.enviarAvisoAoUsuario("teste");
+    }
+
+    public boolean isComponenteSelecionadoDoTipoIntput() {
+        if (componenteSelecionado == null) {
+            return false;
+        }
+        return componenteSelecionado.getFamilia().equals(FabFamiliaCompVisual.INPUT);
+    }
+
+    public void carregarLaboratorio() {
+        //acoesLaboratorio = FabAcaoAdminDeveloper.DEV_OBJ_PROJETO_MB_LAB;
     }
 
     public void preencheListaTeste() {
@@ -238,6 +254,19 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     }
 
     public Campo getCampoSelecionado() {
+        if (campoSelecionado == null) {
+            for (Campo cp : getListaCamposDisponiveis()) {
+
+                if (componenteSelecionado != null) {
+                    if (cp.getTipoCampo().
+                            getTipo_input_prime()
+                            .equals(componenteSelecionado.getFabricaDoComponente())) {
+                        campoSelecionado = cp;
+                        break;
+                    }
+                }
+            }
+        }
         return campoSelecionado;
     }
 

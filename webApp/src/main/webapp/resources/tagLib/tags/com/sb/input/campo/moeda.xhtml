@@ -5,18 +5,19 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
+
         <ui:define name="input">
 
             <p:inputNumber
                 disabled="#{desabilitarEdicao}"
-                class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
+                symbol="R$"
+                class="campoResponsivo #{componente.classeCSS} TexAlCenter"
                 required="#{obrigatorio}"
                 value="#{valor}"
                 validatorMessage="O valor informado no campo #{label} não é valido! "
                 requiredMessage="O campo #{label} não foi informado! "
-
-
                 >
 
 
@@ -37,8 +38,13 @@
 
             </p:inputNumber>
 
-
         </ui:define>
+
     </ui:decorate>
+
 </html>
+
+
+
+
 

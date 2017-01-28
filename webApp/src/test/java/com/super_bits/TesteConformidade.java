@@ -22,6 +22,7 @@ public class TesteConformidade extends RelatorioTesteWebPaginas {
     public void testar() {
 
         exibirRelatorioCompleto();
+        criarMapaDeAcoesEscopoAplicacao();
     }
 
     @Override

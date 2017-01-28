@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:sb="http://superbitsframework/ui"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
     <ui:composition template="#{layoutsPaginas.modeloGeralAnonimo.xhtmlVinculado}">
         <ui:define name="head"  >
             <style>
@@ -15,8 +16,12 @@
         </ui:define>
         <ui:define name="divConteudo">
 
-            [
-            <sb:botaoFake acao="#{null}"  layout="#{null}"/>]
+            <SBComp:linkDeAcao acao="#{acoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR.LAB_COMPONENTES_MB_GERENCIAR}"
+                               tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}" />
+
+
+            #{acoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR.LAB_COMPONENTES_MB_GERENCIAR}
+            #{pg_paginaInicial.idAreaExbicaoAcaoSelecionada}
 
             <h:panelGroup id="#{pg_paginaInicial.idAreaExbicaoAcaoSelecionada}" >
                 <ui:include src="#{pg_paginaInicial.xhtmlAcaoAtual}" />

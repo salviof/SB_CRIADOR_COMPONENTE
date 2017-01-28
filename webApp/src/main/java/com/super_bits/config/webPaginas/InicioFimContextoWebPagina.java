@@ -23,6 +23,7 @@ public class InicioFimContextoWebPagina implements ItfInicioFimAppWP {
         SBPersistencia.configuraJPA(FabConfiguracoesDeAmbienteWebSB_CRIADOR_COMPONENTE.HOMOLOGACAO.getConfiguracaoPersistencia());
         SBWebPaginas.configurar(FabConfiguracoesDeAmbienteWebSB_CRIADOR_COMPONENTE.HOMOLOGACAO.getConfiguracaoWebPaginas());
         new SiteMap();
+
     }
 
     @Override

@@ -7,29 +7,23 @@
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
-
         <ui:define name="input">
 
-            <p:inputNumber
+            <p:inputText
+                class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
 
                 disabled="#{desabilitarEdicao}"
-                symbol="R$"
-                class="campoResponsivo #{componente.classeCSS} TexAlCenter"
-
-
                 required="#{obrigatorio}"
                 value="#{valor}"
                 validatorMessage="O valor informado no campo #{label} não é valido! "
                 requiredMessage="O campo #{label} não foi informado! "
-
                 >
-
 
                 <c:if test="#{possuiMetodoOnChange}">
                     <p:ajax rendered="#{possuiMetodoOnChange}"
                             global="true"
                             event="valueChange"
-                            listener="#{metodoOnChange}"/>
+                            listener="#{prMetodo}"/>
                 </c:if>
 
                 <c:if test="#{possuiIDOnChange}" >
@@ -40,15 +34,7 @@
                         listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
                 </c:if>
 
-            </p:inputNumber>
-
+            </p:inputText>
         </ui:define>
-
     </ui:decorate>
-
 </html>
-
-
-
-
-
