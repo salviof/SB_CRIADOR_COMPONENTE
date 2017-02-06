@@ -9,6 +9,7 @@ import com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Lo
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoClasse;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.ValorAceito;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.Campo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabCampos;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.FabTipoBeanSBGenerico;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemContatoCorporativo;
@@ -40,6 +41,9 @@ public class BeanExemplo
     @InfoCampo(tipo = FabCampos.EMAIL, label = "Email")
     @NotNull
     private String email = "emailteste@teste.com";
+
+    @InfoCampo(fabricaDeOpcoes = FabCampos.class, tipo = FabCampos.OBJETO_DE_UMA_LISTA)
+    private List<Campo> seletorOpcao;
 
     @InfoCampo(tipo = FabCampos.TELEFONE_FIXO_NACIONAL, label = "Telefone")
     @NotNull
@@ -452,6 +456,22 @@ public class BeanExemplo
 
     public void setBeanFilho(BeanExemplo beanFilho) {
         this.beanFilho = beanFilho;
+    }
+
+    public List<Campo> getSeletorOpcao() {
+        return seletorOpcao;
+    }
+
+    public void setSeletorOpcao(List<Campo> seletorOpcao) {
+        this.seletorOpcao = seletorOpcao;
+    }
+
+    public String getCpTeste() {
+        return cpTeste;
+    }
+
+    public void setCpTeste(String cpTeste) {
+        this.cpTeste = cpTeste;
     }
 
 }

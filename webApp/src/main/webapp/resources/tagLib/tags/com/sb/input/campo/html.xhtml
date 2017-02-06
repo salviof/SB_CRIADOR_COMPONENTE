@@ -21,20 +21,7 @@
                 >
 
 
-                <c:if test="#{possuiMetodoOnChange}">
-                    <p:ajax rendered="#{possuiMetodoOnChange}"
-                            global="true"
-                            event="valueChange"
-                            listener="#{prMetodo}"/>
-                </c:if>
 
-                <c:if test="#{possuiIDOnChange}" >
-                    <p:ajax
-                        rendered="#{possuiIDOnChange}"
-                        global="true"
-                        event="valueChange"
-                        listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
-                </c:if>
 
             </pe:ckEditor>
         </ui:define>

@@ -24,7 +24,7 @@
                 <c:if test="#{possuiMetodoOnChange}">
                     <p:ajax rendered="#{possuiMetodoOnChange}"
                             global="true"
-                            event="valueChange"
+                            event="dateSelect"
                             listener="#{prMetodo}"/>
                 </c:if>
 
@@ -32,7 +32,7 @@
                     <p:ajax
                         rendered="#{possuiIDOnChange}"
                         global="true"
-                        event="valueChange"
+                        event="dateSelect"
                         listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
                 </c:if>
 

@@ -27,7 +27,7 @@
                             lista="#{pgMapaComponentes.listaCamposDisponiveis}"
                             itemSelecionado="#{pgMapaComponentes.campoSelecionado}"
                             idOnChange="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}"
-
+                            metodoOnChange="#{pgUtil.atualizaTelaPorID(pgMapaComponentes.idAreaExbicaoAcaoSelecionada)}"
                             />
 
                     </p:panelGrid>
@@ -46,7 +46,11 @@
                 <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado}"/>
             </p:fieldset>
 
+            <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoByNomeOuAnotacao('seletorOpcao')}"/>
+
             <p:panel rendered="#{pgMapaComponentes.temCampoSelecionado}" style="border-style: none">
+
+
 
                 <SBComp:input
 
@@ -65,23 +69,7 @@
 
 
                         <p:splitButton/>
-                        <ui:fragment >
-                            <sb:inputSB
-                                id="asddfasdf"
-                                registro="#{pgMapaComponentes.campoInstanciado}"
-                                desabilitarEdicao="#{false}"
-                                layoutCampo="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                possuiIDOnChange="true"
-                                possuiMetodoOnChange="true"
 
-                                label="#{pgMapaComponentes.campoInstanciado.label}"
-                                opcoes="#{pgMapaComponentes.campoInstanciado.listaDeOpcoes}"
-                                idAtualizarOnChange="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}"
-                                metodoOnChange="#{pgMapaComponentes.metodoTeste()}"
-
-
-                                />
-                        </ui:fragment>
 
                     </h:form>
 

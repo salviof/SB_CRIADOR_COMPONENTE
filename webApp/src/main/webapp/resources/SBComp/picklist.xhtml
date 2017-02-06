@@ -37,7 +37,9 @@
                     converter="conversorGenerico"
                     style="margin-left: 0.5%"
 
-                    />
+                    >
+                    <p:ajax event="transfer" listener="#{cc.attrs.pickList.atualizaListaOrigem()}" update="@form" />
+                </p:pickList>
                 <div class="EmptyBox10"/>
 
             </p:panel>
