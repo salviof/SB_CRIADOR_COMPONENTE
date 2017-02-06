@@ -31,11 +31,11 @@ CREATE TABLE `AcaoDoSistema` (
   `iconeAcao` varchar(255) DEFAULT NULL,
   `idDescritivoJira` varchar(255) DEFAULT NULL,
   `nomeAcao` varchar(255) DEFAULT NULL,
-  `nomeDominio` varchar(255) DEFAULT NULL,
   `nomeUnico` varchar(255) DEFAULT NULL,
   `precisaPermissao` bit(1) NOT NULL,
   `tipoAcao` varchar(255) DEFAULT NULL,
   `tipoAcaoGenerica` varchar(255) DEFAULT NULL,
+  `nomeDominio` varchar(255) DEFAULT NULL,
   `idMetodo` int(11) DEFAULT NULL,
   `xhtml` varchar(255) DEFAULT NULL,
   `temVisualizar` bit(1) DEFAULT NULL,
@@ -504,4 +504,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-01-27  7:33:44
+-- Dump completed on 2017-01-28  1:05:23

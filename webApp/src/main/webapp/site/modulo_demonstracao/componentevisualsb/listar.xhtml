@@ -5,7 +5,8 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <ui:composition template="#{layoutsPaginas.formularioAcaoAtual.xhtmlVinculado}" >
 
@@ -25,6 +26,8 @@
                     />
 
             </h:form>
+
+
 
             <h:form>
 
@@ -47,7 +50,7 @@
                     />
 
             </h:form>
-
+            <ui:debug hotkey="v" />
         </ui:define>
 
     </ui:composition>

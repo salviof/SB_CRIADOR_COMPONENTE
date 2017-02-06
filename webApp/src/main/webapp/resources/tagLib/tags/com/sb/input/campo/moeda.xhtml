@@ -13,6 +13,9 @@
             <p:inputNumber
                 disabled="#{desabilitarEdicao}"
                 symbol="R$"
+                decimalSeparator=","
+                thousandSeparator="."
+
                 class="campoResponsivo #{componente.classeCSS} TexAlCenter"
                 required="#{obrigatorio}"
                 value="#{valor}"
@@ -25,7 +28,7 @@
                     <p:ajax rendered="#{possuiMetodoOnChange}"
                             global="true"
                             event="valueChange"
-                            listener="#{metodoOnChange}"/>
+                            listener="#{prMetodo}"/>
                 </c:if>
 
                 <c:if test="#{possuiIDOnChange}" >

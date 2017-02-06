@@ -95,7 +95,6 @@
         </attribute>
     </tag>
 
-
     <tag>
         <tag-name>inputSB</tag-name>
         <source>resources/tagLib/tags/com/sb/inputSB.xhtml</source>
@@ -169,10 +168,14 @@
         </attribute>
 
         <attribute>
+            <description> <![CDATA[ Informando um metodo quando alterar, o método será executado,
+                este metodo pode ser utilizado em conjunto com o idAtualizarOnChange,
+                para atualizar uma área específica no fim do método, ou vc pode chamar
+                o paginaUtil dentro do managedBean para atualizar]]>
+            </description>
             <name>metodoOnChange</name>
-            <description><![CDATA[Metodo para]]></description>
             <required>false</required>
-            <type>javax.el.MethodExpression</type>
+            <type>java.lang.String</type>
         </attribute>
 
         <attribute>
@@ -616,7 +619,98 @@
     </tag>
 
 
+    <tag>
+        <tag-name>inputSBQuantidade</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/quantidade.xhtml</source>
+    </tag>
 
+
+    <tag>
+        <tag-name>inputSBCep</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/cep.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBData</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/data.xhtml</source>
+    </tag>
+
+    <tag>
+        <tag-name>inputSBDataHora</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/dataHora.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBTextDEscritivo</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/descritivo.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBEntidadeSimples</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/entidadeSimples.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBHtml</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/html.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBTextMascara</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/inputMascara.xhtml</source>
+        <attribute>
+            <description>
+             <![CDATA[     O layout do campo, que podem ser: resumido,esquerda,superior,e automatico]]>
+            </description>
+            <name>layout</name>
+            <required>false</required>
+            <type>com.super_bits.view.fabricasCompVisual.ItfComponenteVisualSB</type>
+        </attribute>
+    </tag>
+    <tag>
+        <tag-name>inputSBSimples</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/inputMascara.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBMinMax</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/inputSimples.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBMoeda</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/moeda.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBSenha</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/senha.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBVerdadeiroFalso</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/veradeiroOuFalso.xhtml</source>
+    </tag>
+
+    <tag>
+        <tag-name>inputSBSelAutoCompletar</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/seletorItem/autoCompletar.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBCarroussel</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/seletorItem/carrousel.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBCombo</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/seletorItem/combo.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBComboComImagens</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/seletorItem/comboComImagens.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBGrade</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/seletorItem/grade.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBmenuBotoes</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/seletorItem/menuBotoes.xhtml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBradio</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/seletorItem/radio.xhtml</source>
+    </tag>
 
 
 

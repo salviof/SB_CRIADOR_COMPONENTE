@@ -6,10 +6,13 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
+
+
         <ui:define name="input">
+
             <p:calendar
                 class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
-
+                locale="pt_BR"
                 required="#{obrigatorio}"
                 value="#{valor}"
                 validatorMessage="O valor informado no campo #{label} não é valido! "
@@ -22,7 +25,7 @@
                     <p:ajax rendered="#{possuiMetodoOnChange}"
                             global="true"
                             event="valueChange"
-                            listener="#{metodoOnChange}"/>
+                            listener="#{prMetodo}"/>
                 </c:if>
 
                 <c:if test="#{possuiIDOnChange}" >

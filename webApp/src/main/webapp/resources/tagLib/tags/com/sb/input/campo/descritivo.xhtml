@@ -7,6 +7,7 @@
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
+
             <p:inputTextarea
                 class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
 
@@ -22,7 +23,7 @@
                     <p:ajax rendered="#{possuiMetodoOnChange}"
                             global="true"
                             event="valueChange"
-                            listener="#{metodoOnChange}"/>
+                            listener="#{prMetodo}"/>
                 </c:if>
 
                 <c:if test="#{possuiIDOnChange}" >

@@ -15,6 +15,7 @@ public class TesteConformidadeModel extends TesteSB_CRIADOR_COMPONENTE {
 
     @Test
     public void teste() {
+
         try {
             System.out.println("Testes básico");
 

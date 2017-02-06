@@ -6,11 +6,9 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
 import com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Localizacao;
-
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoClasse;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.ValorAceito;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CampoInstanciadoGenerico;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabCampos;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.FabTipoBeanSBGenerico;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemContatoCorporativo;
@@ -46,6 +44,9 @@ public class BeanExemplo
     @InfoCampo(tipo = FabCampos.TELEFONE_FIXO_NACIONAL, label = "Telefone")
     @NotNull
     private String telefone = "313017-7334";
+
+    @InfoCampo(tipo = FabCampos.DATA)
+    private Date data;
 
     @InfoCampo(tipo = FabCampos.TELEFONE_CELULAR, label = "Celular")
     @NotNull
@@ -193,6 +194,14 @@ public class BeanExemplo
     @Override
     public int getId() {
         return id;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
     }
 
     @Override

@@ -6,7 +6,8 @@
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
       xmlns:sb="http://superbitsframework/ui"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <!-- template conteúdo com formulario-->
     <ui:composition template="#{layoutsPaginas.formularioAcaoAtual.xhtmlVinculado}" >
 
@@ -54,37 +55,39 @@
                     />
 
             </p:panel>
-            <p:fieldset legend="Laboratorio" rendered="#{pgMapaComponentes.temCampoSelecionado}">
-                <h:form >
-                    <p:commandButton update="@form" value="Atualizar Form"/>
-                    <p:commandButton value="Atualizar IdAreaExibição" update=" #{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}" />
-                    <SBComp:input registro="#{pgMapaComponentes.campoInstanciado}"
-                                  idAtualizarOnChange="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}"
-                                  metodoOnChange="#{pgUtil.mensagemAlerta('adsdasd')}"
-                                  />
+            <c:if test="true">
+                <p:fieldset legend="Laboratorio" rendered="#{pgMapaComponentes.temCampoSelecionado}">
+                    <h:form >
 
-                    <p:splitButton/>
-
-                    <sb:inputSB
-                        registro="#{pgMapaComponentes.campoInstanciado}"
-                        desabilitarEdicao="#{false}"
-                        layoutCampo="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                        possuiIDOnChange="true"
-                        possuiMetodoOnChange="true"
-
-                        label="#{pgMapaComponentes.campoInstanciado.label}"
-                        opcoes="#{pgMapaComponentes.campoInstanciado.listaDeOpcoes}"
-                        idAtualizarOnChange="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}"
-                        metodoOnChange="#{pgMapaComponentes.metodoTeste()}"
+                        Campo Instanciad=#{pgMapaComponentes.campoInstanciado}
+                        <p:commandButton update="@form" value="Atualizar Form"/>
+                        <p:commandButton value="Atualizar IdAreaExibição" update=" #{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}" />
 
 
-                        />
+                        <p:splitButton/>
+                        <ui:fragment >
+                            <sb:inputSB
+                                id="asddfasdf"
+                                registro="#{pgMapaComponentes.campoInstanciado}"
+                                desabilitarEdicao="#{false}"
+                                layoutCampo="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                possuiIDOnChange="true"
+                                possuiMetodoOnChange="true"
 
-                </h:form>
+                                label="#{pgMapaComponentes.campoInstanciado.label}"
+                                opcoes="#{pgMapaComponentes.campoInstanciado.listaDeOpcoes}"
+                                idAtualizarOnChange="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}"
+                                metodoOnChange="#{pgMapaComponentes.metodoTeste()}"
 
-            </p:fieldset>
 
+                                />
+                        </ui:fragment>
 
+                    </h:form>
+
+                </p:fieldset>
+
+            </c:if>
 
         </ui:define>
 

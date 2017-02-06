@@ -38,4 +38,24 @@ public class AcoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR {
 		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoLabComponentes.LAB_COMPONENTES_FRM_COMPONENTE_SELECIONADO_VISUALIZAR");
 	}
+
+	public ItfAcaoFormularioEntidade getLAB_COMPONENTES_FRM_LAB_VER() {
+		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
+				.getAcaoDoSistemaByNomeUnico("FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_VER");
+	}
+
+	public ItfAcaoFormularioEntidade getLAB_COMPONENTES_FRM_LAB_FICHA_TECNICA() {
+		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
+				.getAcaoDoSistemaByNomeUnico("FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA");
+	}
+
+	public ItfAcaoFormularioEntidade getLAB_COMPONENTES_FRM_LAB_ONCHANGE() {
+		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
+				.getAcaoDoSistemaByNomeUnico("FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_ONCHANGE");
+	}
+
+	public ItfAcaoFormularioEntidade getLAB_COMPONENTES_FRM_LAB_VALIDACAO() {
+		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
+				.getAcaoDoSistemaByNomeUnico("FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_VALIDACAO");
+	}
 }

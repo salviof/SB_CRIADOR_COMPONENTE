@@ -22,7 +22,7 @@
                     <p:ajax rendered="#{possuiMetodoOnChange}"
                             global="true"
                             event="valueChange"
-                            listener="#{metodoOnChange}"/>
+                            listener="#{prMetodo}"/>
                 </c:if>
 
                 <c:if test="#{possuiIDOnChange}" >
@@ -33,7 +33,7 @@
                         listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
                 </c:if>
 
-            </p:colorPicker>>
+            </p:colorPicker>
 
         </ui:define>
     </ui:decorate>

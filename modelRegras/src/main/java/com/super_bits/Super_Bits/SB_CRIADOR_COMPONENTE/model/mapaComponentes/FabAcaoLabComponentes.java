@@ -12,6 +12,7 @@ import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcess
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabricaAcoes;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.icones.FabIconeFontAwesome;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComponenteVisualSB;
 
 /**
@@ -31,11 +32,15 @@ public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
     LAB_COMPONENTES_FRM_EDITAR,
     @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false)
     LAB_COMPONENTES_FRM_FAMILIA_SELECIONADA_VISUALIZAR,
-    @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false)
+    @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR)
     LAB_COMPONENTES_FRM_COMPONENTE_SELECIONADO_VISUALIZAR,
+    @InfoTipoAcaoFormulario(nomeAcao = "Ver Componente", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR)
     LAB_COMPONENTES_FRM_LAB_VER,
+    @InfoTipoAcaoFormulario(nomeAcao = "Ver Ficha Técnica", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
     LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA,
+    @InfoTipoAcaoFormulario(nomeAcao = "Testar OnChange", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
     LAB_COMPONENTES_FRM_LAB_ONCHANGE,
+    @InfoTipoAcaoFormulario(nomeAcao = "Testar Validacao", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
     LAB_COMPONENTES_FRM_LAB_VALIDACAO;
 
     @Override

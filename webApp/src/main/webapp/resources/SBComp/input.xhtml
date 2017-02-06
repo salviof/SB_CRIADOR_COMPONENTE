@@ -58,8 +58,13 @@
 
             </c:catch>
             <c:if test = "${catchException != null}">
-                <p>The exception is : ${catchException} <br />
+                É POSSÍVEL QUE ESTE ERRO POSSA SER CONTORNADO CHAMANDO O nameSpace sb:input Direto
+                Ou que este componente esteja em desenvolvimento
+
+                <p>Erro reindeizando componente: ${catchException} <br />
                     There is an exception: ${catchException.message}</p>
+                <br/>
+                #{cc.attrs.registro.tipoCampoSTR}
             </c:if>
 
         </h:panelGroup>
