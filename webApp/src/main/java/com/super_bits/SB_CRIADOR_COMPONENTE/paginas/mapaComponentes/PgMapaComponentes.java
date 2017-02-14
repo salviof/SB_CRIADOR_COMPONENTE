@@ -113,6 +113,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         if (campoSelecionado == null) {
             return new CampoNaoImplementado();
         }
+
         ItfCampoInstanciado campoEncontrado = beanExemplo.getCampoInstanciadoByAnotacao(campoSelecionado.getTipoCampo());
         return campoEncontrado;
     }
