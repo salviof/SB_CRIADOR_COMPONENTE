@@ -43,7 +43,7 @@ public class BeanExemplo
     private String email = "emailteste@teste.com";
 
     @InfoCampo(fabricaDeOpcoes = FabCampos.class, tipo = FabCampos.OBJETO_DE_UMA_LISTA)
-    private List<Campo> seletorOpcao;
+    private Campo seletorOpcao;
 
     @InfoCampo(tipo = FabCampos.TELEFONE_FIXO_NACIONAL, label = "Telefone")
     @NotNull
@@ -458,11 +458,11 @@ public class BeanExemplo
         this.beanFilho = beanFilho;
     }
 
-    public List<Campo> getSeletorOpcao() {
+    public Campo getSeletorOpcao() {
         return seletorOpcao;
     }
 
-    public void setSeletorOpcao(List<Campo> seletorOpcao) {
+    public void setSeletorOpcao(Campo seletorOpcao) {
         this.seletorOpcao = seletorOpcao;
     }
 

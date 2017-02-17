@@ -2,87 +2,31 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:SBFormulario="http://xmlns.jcp.org/jsf/composite/SBComp/formulario"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
-      xmlns:sb="http://superbitsframework/ui"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:p="http://primefaces.org/ui">
     <!-- template conteúdo com formulario-->
     <ui:composition template="#{layoutsPaginas.formularioAcaoAtual.xhtmlVinculado}" >
 
         <ui:define name="conteudoCard">
-
-            <h:form class="Fright">
-
-                <SBComp:botaoDeAcao_Pagina
-                    acao="#{pgMapaComponentes.acaoListar}"
-                    tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"/>
-                <p:fieldset legend="Bean Associado ao Componente "   >
-                    <p:panelGrid columns="2">
-                        <p:outputLabel value="Selevione o Tipo de campo para:
-                                       # {pgMapaComponentes.campoInstanciado\}" />
-                        <SBComp:seletorItem
-                            rendered="#{pgMapaComponentes.componenteSelecionadoDoTipoIntput}"
-                            lista="#{pgMapaComponentes.listaCamposDisponiveis}"
-                            itemSelecionado="#{pgMapaComponentes.campoSelecionado}"
-                            idOnChange="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}"
-                            metodoOnChange="#{pgUtil.atualizaTelaPorID(pgMapaComponentes.idAreaExbicaoAcaoSelecionada)}"
-                            />
-
-                    </p:panelGrid>
-
-                </p:fieldset>
-
+            <h:form>
+                <p:commandButton value="Atualizar" update="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}" />
             </h:form>
 
+            <div class="Container20 " style="   position: relative;  ">
+                <h2 class="textoCentralizadoContainer"> Selecione Um Componente </h2>
+                <p:graphicImage name="img/arrasteESolte.svg"   library="SBComp" />
+            </div>
 
-            <p:fieldset legend="Informações do Componente">
-                <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado.nome}"/>
-                <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado.caminhoPastaXHTMLJSF}"/>
-                <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado.idHTMLObjetoPrincipal}"/>
-                <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado.xhtmlJSF}"/>
-                <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado}"/>
-                <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado}"/>
-            </p:fieldset>
-
-            <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoByNomeOuAnotacao('seletorOpcao')}"/>
-
-            <p:panel rendered="#{pgMapaComponentes.temCampoSelecionado}" style="border-style: none">
+            <div class="Container10 " style="    position: relative;  ">
+                <p:graphicImage name="img/mais.svg.png"  width="100px" library="SBComp" />
+            </div>
 
 
-
-                <SBComp:input
-
-                    registro="#{pgMapaComponentes.campoInstanciado}"
-
-                    />
-
-            </p:panel>
-            <c:if test="true">
-                <p:fieldset legend="Laboratorio" rendered="#{pgMapaComponentes.temCampoSelecionado}">
-                    <h:form >
-
-                        Campo Instanciad=#{pgMapaComponentes.campoInstanciado}
-                        <p:commandButton update="@form" value="Atualizar Form"/>
-                        <p:commandButton value="Atualizar IdAreaExibição" update=" #{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}" />
-
-
-                        <p:splitButton/>
-
-
-                        <SBComp:input
-
-                            registro="#{pgMapaComponentes.campoInstanciado}"
-                            metodoOnChange="#{pgUtil.enviaMensagem('teste')}"
-                            />
-
-
-                    </h:form>
-
-                </p:fieldset>
-
-            </c:if>
+            <div class="Container20 " style="    position: relative;">
+                <h2 class="textoCentralizadoContainer"> Selecione Uma Informação </h2>
+                <p:graphicImage name="img/arrasteESolte.svg"   library="SBComp" />
+            </div>
 
         </ui:define>
 

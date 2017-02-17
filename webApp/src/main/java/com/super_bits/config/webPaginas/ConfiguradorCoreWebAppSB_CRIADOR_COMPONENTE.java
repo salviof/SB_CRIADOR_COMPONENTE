@@ -8,7 +8,6 @@ package com.super_bits.config.webPaginas;
 import com.google.common.collect.Lists;
 import com.super_bits.FabAcoesHomeCriadorComponente;
 import com.super_bits.Super_Bits.SB_AdminTools.regras_de_negocio_e_controller.admin_developer.FabAcaoAdminDeveloper;
-import com.super_bits.configSBFW.acessos.ConfigAcessos;
 import com.super_bits.configSBFW.acessos.UtilSB_CRIADOR_COMPONENTEGlobalVar;
 import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
 import com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB;
@@ -25,16 +24,20 @@ import javax.servlet.ServletContext;
 public class ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE extends ConfiguradorCoreDeProjetoWebWarAbstrato {
 
     public ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE(ServletContext contexto) {
+
         super(contexto);
+        setIgnorarConfiguracaoPermissoes(true);
     }
 
     public ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE() {
         super(true);
+        setIgnorarConfiguracaoPermissoes(true);
     }
 
     @Override
     public void defineFabricasDeACao(ItfConfiguracaoCoreCustomizavel pConfig) {
-        pConfig.setClasseConfigPermissao(ConfigAcessos.class);
+
+        setIgnorarConfiguracaoPermissoes(true);
         List<Class<? extends ItfFabricaAcoes>> listaWebApp = Lists.newArrayList(UtilSB_CRIADOR_COMPONENTEGlobalVar.pAcoesDoSistema());
 
         listaWebApp.add(FabAcoesHomeCriadorComponente.class);
