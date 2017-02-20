@@ -5,7 +5,6 @@
                 version="2.0">
     <namespace>http://superbitsframework/ui</namespace>
 
-
     <tag>
         <tag-name>botaoAcao</tag-name>
         <source>resources/tagLib/tags/com/sb/botaoAcao.xhtml</source>
@@ -678,6 +677,12 @@
         <tag-name>inputSBSenha</tag-name>
         <source>resources/tagLib/tags/com/sb/input/campo/senha.xhtml</source>
     </tag>
+
+    <tag>
+        <tag-name>inputSBEmail</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/senha.xhtml</source>
+    </tag>
+
     <tag>
         <tag-name>inputSBVerdadeiroFalso</tag-name>
         <source>resources/tagLib/tags/com/sb/input/campo/veradeiroOuFalso.xhtml</source>

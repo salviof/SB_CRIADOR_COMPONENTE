@@ -14,6 +14,7 @@ import com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoD
 import com.super_bits.modulosSB.SBCore.ConfigGeral.ItfConfiguracaoCoreCustomizavel;
 import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabricaAcoes;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.ConfiguradorCoreDeProjetoWebWarAbstrato;
+import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.FabAcaoPaginasDoSistema;
 import java.util.List;
 import javax.servlet.ServletContext;
 
@@ -44,6 +45,7 @@ public class ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE extends ConfiguradorCor
         listaWebApp.add(FabAcaoDemonstracaoSB.class);
         listaWebApp.add(FabAcaoProjetoSB.class);
         listaWebApp.add(FabAcaoAdminDeveloper.class);
+        listaWebApp.add(FabAcaoPaginasDoSistema.class);
 
         pConfig.setFabricaDeAcoes(listaWebApp.toArray(new Class[listaWebApp.size()]));
     }

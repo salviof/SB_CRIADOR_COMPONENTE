@@ -20,6 +20,7 @@
                 value="#{valor}"
                 validatorMessage="O valor informado no campo #{label} não é valido! "
                 requiredMessage="O campo #{label} não foi informado! "
+                converterMessage="Impossível converter o valor de #{label} em um tipo válido "
                 >
                 <c:if test="#{registro.temValidacaoRegex}">
                     <f:validateRegex pattern="#{regex}"/>

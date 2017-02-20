@@ -8,27 +8,66 @@
     <!-- template conteúdo com formulario-->
     <ui:composition template="#{layoutsPaginas.formularioAcaoAtual.xhtmlVinculado}" >
 
+
+
+
         <ui:define name="conteudoCard">
-            <h:form>
-                <p:commandButton value="Atualizar" update="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}" />
-            </h:form>
-
-            <div class="Container20 " style="   position: relative;  ">
-                <h2 class="textoCentralizadoContainer"> Selecione Um Componente </h2>
-                <p:graphicImage name="img/arrasteESolte.svg"   library="SBComp" />
-            </div>
-
-            <div class="Container10 " style="    position: relative;  ">
-                <p:graphicImage name="img/mais.svg.png"  width="100px" library="SBComp" />
-            </div>
 
 
-            <div class="Container20 " style="    position: relative;">
-                <h2 class="textoCentralizadoContainer"> Selecione Uma Informação </h2>
-                <p:graphicImage name="img/arrasteESolte.svg"   library="SBComp" />
-            </div>
+
+            <p:dataGrid var="bean" id="camposDisponiveis" columns="6" value="#{pgMapaComponentes.beansDisponiveis}" >
+
+                <p:fieldset legend="#{bean}" id="drag#{bean}">
+                    #{pgMapaComponentes.getLabelPorCaminho(bean)}
+                    <p:draggable for="@parent" revert="true" scope="campos"  />
+                </p:fieldset>
+            </p:dataGrid>
+
+
+
+
+
+
+
+
+            <p:outputPanel id="areaDropComponente" styleClass="Container20 areaArrastavel"
+                           style="height: 300px; position: relative; ">
+                <h2 class=""> Selecione Um Componente </h2>
+
+            </p:outputPanel>
+
+
+            <p:outputPanel id="areaMais" styleClass="Container20" style=";position: relative; ">
+
+
+                <p:graphicImage  name="img/mais.svg.png"  width="100%" library="SBComp" />
+
+            </p:outputPanel>
+
+
+
+            <p:outputPanel styleClass="areaArrastavel Container20" id="areaDropCampo"
+                           style="height: 300px;
+
+                           ">
+
+                <h2 style=" display: inline-block;
+                    vertical-align: middle;
+                    line-height: normal;" > Selecione Uma Informação </h2>
+
+            </p:outputPanel>
+
+
+            <p:droppable for="areaDropCampo"   scope="campos" onDrop="dropaCampo"
+                         tolerance="touch">
+
+            </p:droppable>
+
+
 
         </ui:define>
+
+
 
 
     </ui:composition>

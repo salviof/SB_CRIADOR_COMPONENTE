@@ -5,11 +5,11 @@
  */
 package com.super_bits;
 
-import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.config.ConfigPersistenciaSB_CRIADOR_COMPONENTE;
+import com.super_bits.config.webPaginas.ConfigWPSB_CRIADOR_COMPONENTE;
 import com.super_bits.config.webPaginas.ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE;
-import com.super_bits.modulosSB.Persistencia.ConfigGeral.SBPersistencia;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.testesFW.TesteJunit;
+import com.super_bits.modulosSB.webPaginas.ConfigGeral.SBWebPaginas;
 
 /**
  *
@@ -20,7 +20,8 @@ public class TestesWP_CRIADOR_COMPONENTES extends TesteJunit {
     @Override
     protected void configAmbienteDesevolvimento() {
         SBCore.configurar(new ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE(), SBCore.ESTADO_APP.DESENVOLVIMENTO);
-        SBPersistencia.configuraJPA(new ConfigPersistenciaSB_CRIADOR_COMPONENTE());
+        SBWebPaginas.configurar(new ConfigWPSB_CRIADOR_COMPONENTE());
+        //  SBPersistencia.configuraJPA(new ConfigPersistenciaSB_CRIADOR_COMPONENTE());
     }
 
 }

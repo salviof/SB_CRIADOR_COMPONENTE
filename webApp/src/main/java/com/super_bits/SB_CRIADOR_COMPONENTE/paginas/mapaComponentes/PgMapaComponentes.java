@@ -11,18 +11,24 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.Inf
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.MapaComponentes;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.ItfParametroTela;
 import com.super_bits.modulosSB.SBCore.modulos.Mensagens.FabMensagens;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.Campo;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CampoNaoImplementado;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabCampos;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoInstanciado;
+import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaCampo;
+import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaDeEntidade;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.UtilSBCoreReflexaoObjetoSuperBits;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComponenteVisualSB;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FamiliaComponente;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_PaginaConversation;
+import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.ParametroURL;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
+import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.beans.InfoMB_Bean;
+import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.beans.InfoParametroURL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
@@ -37,6 +43,9 @@ import javax.inject.Named;
 @ViewScoped
 public class PgMapaComponentes extends MB_PaginaConversation {
 
+    private final static String ESTRUTURA_DE_ENTIDADE_DESCRICAO = "Estrutura de Objeto";
+    private final static String ESTRUTURA_DE_CAMPO_DESCRICAO = "Estrutura de Campo";
+
     private ComponenteVisualSB componenteSelecionado;
     private List<ComponenteVisualSB> listaComponentes;
     private FamiliaComponente familiaSelecionada;
@@ -47,12 +56,39 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private final AcaoDoSistema acaoEditar = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_EDITAR.getAcaoDoSistema();
     private final AcaoDoSistema acaoSelecionarFamilia = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_FAMILIA_SELECIONADA_VISUALIZAR.getAcaoDoSistema();
     private final AcaoDoSistema acaoSelecionarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_COMPONENTE_SELECIONADO_VISUALIZAR.getAcaoDoSistema();
+
+    private final AcaoDoSistema acaoLabVisualizarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_VER.getAcaoDoSistema();
+    private final AcaoDoSistema acaoLabOnChangeComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_ONCHANGE.getAcaoDoSistema();
+    private final AcaoDoSistema acaoLabValidarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA.getAcaoDoSistema();
     private String parametroPesquisa;
+
+    private String tipoEstruturaSelecionada;
+    private boolean umTipoEstruturaDeObjeto;
+
+    /**
+     * Teste
+     */
+    @InfoMB_Bean(descricao = "Indica se a estrutra é do tipo Atributo")
+    private boolean umTipoEstruturaAtributo;
     private BeanExemplo beanExemplo;
-    private Campo campoSelecionado;
-    private List<Campo> listaCamposDisponiveis;
-    private List<AcaoDoSistema> listaTeste;
+
+    private String caminhoBeanSelecionado;
+    private List<String> beansDisponiveis;
+
+    private Map<String, String> labelByCaminho;
+
     private List<AcaoDoSistema> acoesLaboratorio;
+    @InfoParametroURL(nome = "componente", tipoParametro = ItfParametroTela.TIPO_URL.ENTIDADE, tipoEntidade = ComponenteVisualSB.class)
+    private ParametroURL prComponenteSelecionado;
+    @InfoParametroURL(nome = "conteudo", tipoParametro = ItfParametroTela.TIPO_URL.TEXTO)
+    private ParametroURL prCaminhoBeanSelecionado;
+
+    private EstruturaCampo estruturaCampoSelecionado;
+    private EstruturaDeEntidade estruturaObjetoSelecionado;
+
+    public void dropaCampo() {
+        paginaUtil.enviaMensagem("Dropou!!!");
+    }
 
     @PostConstruct
     public void init() {
@@ -67,16 +103,67 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
         listaFamiliasComponentes = MapaComponentes.getTodasFamiliasComponentes();
 
-        getTodosCamposSistema();
-
         parametroPesquisa = "";
         beanExemplo = new BeanExemplo();
 
-        preencheListaTeste();
+        beansDisponiveis = new ArrayList<>();
+        beansDisponiveis.add(BeanExemplo.class.getSimpleName());
+        labelByCaminho = new HashMap<>();
+        labelByCaminho.put(BeanExemplo.class.getSimpleName(), UtilSBCoreReflexaoObjetoSuperBits.getNomeObjeto(BeanExemplo.class));
+        estruturaObjetoSelecionado = MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class);
+
+        for (EstruturaCampo cp : MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class).getCampos()) {
+            String caminhoCampo = BeanExemplo.class.getSimpleName() + "." + cp.getNomeDeclarado();
+            beansDisponiveis.add(caminhoCampo);
+            labelByCaminho.put(caminhoCampo, cp.getLabel());
+        }
+
     }
 
-    public void metodoTeste() {
-        SBCore.enviarAvisoAoUsuario("teste");
+    /**
+     *
+     * @return O label pelo caminho do campo
+     */
+    public String getLabelPorCaminho(String pCamiho) {
+        return labelByCaminho.get(pCamiho);
+    }
+
+    public String getCaminhoBeanSelecionado() {
+        return caminhoBeanSelecionado;
+    }
+
+    public void setCaminhoBeanSelecionado(String pCaminhoBeanSelecionado) {
+        try {
+            if (!pCaminhoBeanSelecionado.contains(".")) {
+                tipoEstruturaSelecionada = ESTRUTURA_DE_ENTIDADE_DESCRICAO;
+                umTipoEstruturaAtributo = false;
+                umTipoEstruturaDeObjeto = true;
+                estruturaCampoSelecionado = null;
+                estruturaObjetoSelecionado = MapaObjetosProjetoAtual.getEstruturaObjeto(pCaminhoBeanSelecionado);
+
+            } else {
+                tipoEstruturaSelecionada = ESTRUTURA_DE_CAMPO_DESCRICAO;
+                String nomeObjeto = pCaminhoBeanSelecionado.split("\\.")[0];
+                String nomeCampo = pCaminhoBeanSelecionado.split("\\.")[1];
+                estruturaObjetoSelecionado = MapaObjetosProjetoAtual.getEstruturaObjeto(nomeObjeto);
+                estruturaCampoSelecionado = estruturaObjetoSelecionado.getCampoByNomeDeclarado(nomeCampo);
+                umTipoEstruturaAtributo = true;
+                umTipoEstruturaDeObjeto = false;
+            }
+            this.caminhoBeanSelecionado = pCaminhoBeanSelecionado;
+        } catch (Throwable t) {
+            SBCore.enviarMensagemUsuario("Campo não Encontrado", FabMensagens.ERRO);
+        }
+
+    }
+
+    private List<AcaoDoSistema> getAcoesDisponiveisDoComponente() {
+        List<AcaoDoSistema> acoes = new ArrayList<>();
+
+        acoes.add(acaoLabOnChangeComponente);
+        acoes.add(acaoLabValidarComponente);
+        acoes.add(acaoLabVisualizarComponente);
+        return acoes;
     }
 
     public boolean isComponenteSelecionadoDoTipoIntput() {
@@ -88,54 +175,6 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
     public void carregarLaboratorio() {
         //acoesLaboratorio = FabAcaoAdminDeveloper.DEV_OBJ_PROJETO_MB_LAB;
-    }
-
-    public void preencheListaTeste() {
-        for (int i = 0; i < 6; i++) {
-            listaTeste.add(acaoEditar);
-        }
-    }
-
-    public ItfCampoInstanciado getCampoInstanciado() {
-
-        // se não tiver nenhym componente selecionado, retorna Campo não implementado
-        if (componenteSelecionado == null) {
-
-            return new CampoNaoImplementado();
-        }
-        // se o componente não for um componente do tipo input, retorna componente não implementado
-        if (!componenteSelecionado.getFamilia().equals(FabFamiliaCompVisual.INPUT)) {
-            return new CampoNaoImplementado();
-        }
-        //de acordo com ocomponente selecionado retorna um campo instanciado do
-
-        // Campos
-        if (campoSelecionado == null) {
-            return new CampoNaoImplementado();
-        }
-
-        ItfCampoInstanciado campoEncontrado = beanExemplo.getCampoInstanciadoByAnotacao(campoSelecionado.getTipoCampo());
-        return campoEncontrado;
-    }
-
-    private void getTodosCamposSistema() {
-
-        listaCamposDisponiveis = new ArrayList<>();
-
-        for (FabCampos enumCampo : FabCampos.class.getEnumConstants()) {
-
-            Campo campoAtual = enumCampo.getRegistro();
-
-            listaCamposDisponiveis.add(campoAtual);
-
-        }
-
-    }
-
-    public boolean isTemCampoSelecionado() {
-
-        return campoSelecionado != null;
-
     }
 
     public void executarAcao(ComponenteVisualSB pComponente) {
@@ -254,33 +293,53 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         this.parametroPesquisa = parametroPesquisa;
     }
 
-    public Campo getCampoSelecionado() {
-        if (campoSelecionado == null) {
-            for (Campo cp : getListaCamposDisponiveis()) {
-
-                if (componenteSelecionado != null) {
-                    if (cp.getTipoCampo().
-                            getTipo_input_prime()
-                            .equals(componenteSelecionado.getFabricaDoComponente())) {
-                        campoSelecionado = cp;
-                        break;
-                    }
-                }
-            }
-        }
-        return campoSelecionado;
+    public AcaoDoSistema getAcaoLabVisualizarComponente() {
+        return acaoLabVisualizarComponente;
     }
 
-    public List<Campo> getListaCamposDisponiveis() {
-        return listaCamposDisponiveis;
+    public AcaoDoSistema getAcaoLabOnChangeComponente() {
+        return acaoLabOnChangeComponente;
     }
 
-    public void setCampoSelecionado(Campo campoSelecionado) {
-        this.campoSelecionado = campoSelecionado;
+    public AcaoDoSistema getAcaoLabValidarComponente() {
+        return acaoLabValidarComponente;
     }
 
-    public List<AcaoDoSistema> getListaTeste() {
-        return listaTeste;
+    /**
+     *
+     * @return Texto com o nome do tipo de Bean Selecionado
+     */
+    public String getTipoEstruturaSelecionada() {
+        return tipoEstruturaSelecionada;
+    }
+
+    /**
+     *
+     * Indica que o Atributo é do tipo Objeto (quando verdadeiro)
+     *
+     * @return Verdadeiro se o tipo de estrutura é do tipo Objeto
+     */
+    public boolean isUmTipoEstruturaDeObjeto() {
+        return umTipoEstruturaDeObjeto;
+    }
+
+    /**
+     *
+     * Indica que o Atributo é do tipo Atributo do Objeto (quando verdadeiro)
+     *
+     *
+     * @return Verdadeiro se o tipo de estrutura é do tipo Atributo do Objeto
+     */
+    public boolean isUmTipoEstruturaAtributo() {
+        return umTipoEstruturaAtributo;
+    }
+
+    public List<String> getBeansDisponiveis() {
+        return beansDisponiveis;
+    }
+
+    public List<AcaoDoSistema> getAcoesLaboratorio() {
+        return acoesLaboratorio;
     }
 
 }

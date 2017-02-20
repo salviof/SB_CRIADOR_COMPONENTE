@@ -36,6 +36,8 @@ public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
     LAB_COMPONENTES_FRM_COMPONENTE_SELECIONADO_VISUALIZAR,
     @InfoTipoAcaoFormulario(nomeAcao = "Ver Componente", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR)
     LAB_COMPONENTES_FRM_LAB_VER,
+    @InfoTipoAcaoFormulario(nomeAcao = "Editar Mascaras Personalizadas", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR)
+    LAB_COMPONENTES_FRM_LAB_MASKARAS_PERSONALIZADAS,
     @InfoTipoAcaoFormulario(nomeAcao = "Ver Ficha Técnica", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
     LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA,
     @InfoTipoAcaoFormulario(nomeAcao = "Testar OnChange", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
