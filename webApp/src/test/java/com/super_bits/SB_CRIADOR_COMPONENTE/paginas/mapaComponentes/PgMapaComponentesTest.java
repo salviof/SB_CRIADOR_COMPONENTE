@@ -46,6 +46,9 @@ public class PgMapaComponentesTest extends TestesWP_CRIADOR_COMPONENTES {
             //
             mapaComponentesTeste.init();
 
+            mapaComponentesTeste.setComponenteSelecionado(mapaComponentesTeste.getListaComponentes().get(10));
+            System.out.println(mapaComponentesTeste.getCaminhoBeanSelecionado());
+
             // Selecionando um campo para exibição:
             mapaComponentesTeste.setCaminhoBeanSelecionado(mapaComponentesTeste.getBeansDisponiveis().get(0));
 

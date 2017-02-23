@@ -4,7 +4,9 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <!-- template conteúdo com formulario-->
     <ui:composition template="#{layoutsPaginas.formularioAcaoAtual.xhtmlVinculado}" >
 
@@ -14,56 +16,122 @@
         <ui:define name="conteudoCard">
 
 
+            <c:forEach  items="#{pgMapaComponentes.beansDisponiveis}" var="informacao" >
 
-            <p:dataGrid var="bean" id="camposDisponiveis" columns="6" value="#{pgMapaComponentes.beansDisponiveis}" >
+                <p:outputPanel styleClass="Container10"   >
+                    <p:panel >
+                        <f:passThroughAttribute name="valordropado" value="#{informacao}" />
+                        <p:draggable for="@parent" revert="true" scope="campos"  />
+                        <p:outputLabel value="#{pgMapaComponentes.getLabelPorCaminho(informacao)}"/>
 
-                <p:fieldset legend="#{bean}" id="drag#{bean}">
-                    #{pgMapaComponentes.getLabelPorCaminho(bean)}
-                    <p:draggable for="@parent" revert="true" scope="campos"  />
-                </p:fieldset>
-            </p:dataGrid>
+                    </p:panel>
+
+                </p:outputPanel>
+
+            </c:forEach>
+            <div class="SeparatorFull" />
 
 
 
+            <p:separator/>
+            <p:outputPanel id="areaDropComponente"
+                           styleClass="Container40 areaArrastavel"
+                           style="height: 400px;
+                           padding-left: 10px;
+                           padding-right: 10px;"
+                           >
+
+                <p:outputLabel value="Arraste"  rendered="#{!pgMapaComponentes.umComponenteSelecionado}" />
+                <p:panel header="Componente Selecionado"  rendered="#{pgMapaComponentes.umComponenteSelecionado}">
+                    <p:panelGrid columns="2" >
+                        <p:outputLabel value="Nome Componente" />
+                        <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado.nome}" />
+                        <p:outputLabel value="Família Componente" />
+                        <p:outputLabel value="#{pgMapaComponentes.familiaSelecionada.nome}" />
+                        <p:outputLabel value="XHTML Componente" />
+                        <p:outputLabel value="#{pgMapaComponentes.recursoXHTML}" />
+                    </p:panelGrid>
+                    <h:form >
+                        <p:commandButton actionListener="#{pgMapaComponentes.limparComponenteSelecionado()}"
+                                         update="#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('areaDropComponente')} #{pgUtil.gerarCaminhoCompletoIDParaJavaScript('areaMais')}"
+                                         value="Limpar"
+                                         />
+                    </h:form>
 
 
-
-
-
-            <p:outputPanel id="areaDropComponente" styleClass="Container20 areaArrastavel"
-                           style="height: 300px; position: relative; ">
-                <h2 class=""> Selecione Um Componente </h2>
+                </p:panel>
 
             </p:outputPanel>
 
 
-            <p:outputPanel id="areaMais" styleClass="Container20" style=";position: relative; ">
+            <p:outputPanel id="areaMais" styleClass="Container10" style="position: relative; ">
 
 
                 <p:graphicImage  name="img/mais.svg.png"  width="100%" library="SBComp" />
+                <p:commandButton value="VerComponente"
+                                 actionListener="#{pgMapaComponentes.irParaPaginaComponenteSelecionado()}"
+                                 rendered="#{pgUtil.isTudoVerdadeiro(pgMapaComponentes.umaInformacaoSelecionada,pgMapaComponentes.umComponenteSelecionado)}" />
 
             </p:outputPanel>
 
 
 
-            <p:outputPanel styleClass="areaArrastavel Container20" id="areaDropCampo"
-                           style="height: 300px;
+            <p:outputPanel styleClass="Container40 areaArrastavel" id="areaDropCampo"
+                           style="height: 400px;
+                           padding-left: 10px;
+                           padding-right: 10px;
+                           "
 
-                           ">
+                           >
 
-                <h2 style=" display: inline-block;
-                    vertical-align: middle;
-                    line-height: normal;" > Selecione Uma Informação </h2>
+                <p:outputLabel  rendered="#{!pgMapaComponentes.umaInformacaoSelecionada}"
+                                style="display: inline-block;  vertical-align: middle;
+                                line-height: normal;
+
+                                " value="Selecione Uma Informação"/>
+                <p:panel header="Informações Selecionadas"
+                         rendered="#{pgMapaComponentes.umaInformacaoSelecionada}">
+                    <p:panelGrid columns="2">
+                        <p:outputLabel value="Tipo Informação" />
+                        <p:outputLabel value="#{pgMapaComponentes.tipoEstruturaSelecionada}" />
+                        <p:outputLabel value="Nome Campo" rendered="#{pgMapaComponentes.umTipoEstruturaAtributo}" />
+                        <p:outputLabel value="#{pgMapaComponentes.estruturaCampoSelecionado.nome}"  rendered="#{pgMapaComponentes.umTipoEstruturaAtributo}"/>
+                        <p:outputLabel value="Mascara" rendered="#{pgMapaComponentes.umTipoEstruturaAtributo}" />
+                        <p:outputLabel value="#{pgMapaComponentes.estruturaCampoSelecionado.mascara}"  rendered="#{pgMapaComponentes.umTipoEstruturaAtributo}"/>
+
+                    </p:panelGrid>
+                </p:panel>
+
 
             </p:outputPanel>
 
+
+
+            <div class="SeparatorFull" />
+
+            <c:forEach  items="#{pgMapaComponentes.listaComponentes}" var="comp" >
+
+                <p:outputPanel styleClass="Container10"   >
+                    <p:panel >
+                        <f:passThroughAttribute name="valordropado" value="#{comp}" />
+                        <p:draggable for="@parent" revert="true" scope="componentes"  />
+                        <p:outputLabel value="#{comp.nome}"/>
+
+                    </p:panel>
+
+                </p:outputPanel>
+
+            </c:forEach>
 
             <p:droppable for="areaDropCampo"   scope="campos" onDrop="dropaCampo"
                          tolerance="touch">
 
             </p:droppable>
 
+            <p:droppable for="areaDropComponente"   scope="componentes" onDrop="dropaComponente"
+                         tolerance="touch">
 
+            </p:droppable>
 
         </ui:define>
 

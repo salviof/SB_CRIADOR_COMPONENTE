@@ -4,9 +4,6 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:pe="http://primefaces.org/ui/extensions"
-
-      xmlns:sb="http://superbitsframework/ui"
-
       xmlns:p="http://primefaces.org/ui">
     <ui:composition template="#{layoutsPaginas.modeloGeral.xhtmlVinculado}">
 
@@ -14,10 +11,19 @@
             <script type="text/javascript">
                 function dropaCampo(event, ui) {
                     var droppedCampo = ui.draggable;
-                    alert('teste');
+                    document.getElementById("#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('campoDropado')}").value = droppedCampo.context.getAttribute('valordropado');
                     droppedCampo.fadeOut('slow');
                     dropaCampoServerSide();
                 }
+
+                function dropaComponente(event, ui) {
+                    var droppedCampo = ui.draggable;
+                    document.getElementById("#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('componenteDropado')}").value = droppedCampo.context.getAttribute('valordropado');
+                    droppedCampo.fadeOut('slow');
+                    dropaCampoServerSide();
+                }
+
+
             </script>
         </ui:define>
 
@@ -25,6 +31,12 @@
 
             <h:form>
                 <p:remoteCommand actionListener="#{pgMapaComponentes.dropaCampo()}" name="dropaCampoServerSide" />
+                <h:inputHidden id="campoDropado"  />
+            </h:form>
+
+            <h:form>
+                <p:remoteCommand actionListener="#{pgMapaComponentes.dropaComponente()}" name="dropaComponenteServerSide" />
+                <h:inputHidden id="componenteDropado"  />
             </h:form>
 
             <h:form>

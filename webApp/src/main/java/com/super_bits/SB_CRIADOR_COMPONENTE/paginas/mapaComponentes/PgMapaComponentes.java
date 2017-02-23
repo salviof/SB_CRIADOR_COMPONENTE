@@ -30,6 +30,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.PostConstruct;
+import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
@@ -87,17 +88,62 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private EstruturaDeEntidade estruturaObjetoSelecionado;
 
     public void dropaCampo() {
-        paginaUtil.enviaMensagem("Dropou!!!");
+        FacesContext context = FacesContext.getCurrentInstance();
+        Map map = context.getExternalContext().getRequestParameterMap();
+
+        String atributoEnviado = (String) map.get(paginaUtil.gerarCaminhoCompletoIDParaJavaScript("campoDropado"));
+        setCaminhoBeanSelecionado(atributoEnviado);
+        paginaUtil.enviaMensagem("Dropou!!!" + atributoEnviado);
+        atualizarIdAreaExibicaoAcaoSelecionada();
+        paginaUtil.atualizaTelaPorID("areaDropCampo");
+        paginaUtil.atualizaTelaPorID("areaMais");
+    }
+
+    public void dropaComponente() {
+        FacesContext context = FacesContext.getCurrentInstance();
+        Map map = context.getExternalContext().getRequestParameterMap();
+
+        String atributoEnviado = (String) map.get(paginaUtil.gerarCaminhoCompletoIDParaJavaScript("componenteDropado"));
+        setCaminhoBeanSelecionado(atributoEnviado);
+        paginaUtil.enviaMensagem("Dropou!!!" + atributoEnviado);
+        atualizarIdAreaExibicaoAcaoSelecionada();
+        paginaUtil.atualizaTelaPorID("areaDropCampo");
+        paginaUtil.atualizaTelaPorID("areaMais");
+    }
+
+    public void irParaPaginaComponenteSelecionado() {
+
+    }
+
+    public boolean isUmaInformacaoSelecionada() {
+        return caminhoBeanSelecionado != null;
+    }
+
+    public boolean isUmComponenteSelecionado() {
+        return componenteSelecionado != null;
+    }
+
+    public void limparCampoSelecionado() {
+        caminhoBeanSelecionado = null;
+    }
+
+    public void limparComponenteSelecionado() {
+        componenteSelecionado = null;
     }
 
     @PostConstruct
     public void init() {
 
         MapaComponentes.mapaComponentesCriarMapa();
+        MapaObjetosProjetoAtual.adcionarObjeto(BeanExemplo.class);
 
-        acaoSelecionada = acaoListar;
-
-        xhtmlAcaoAtual = acaoSelecionada.getComoFormularioEntidade().getXhtml();
+        if (!isParametrosDeUrlPreenchido()) {
+            acaoSelecionada = acaoListar;
+            xhtmlAcaoAtual = acaoListar.getComoFormularioEntidade().getXhtml();
+        } else {
+            componenteSelecionado = (ComponenteVisualSB) prComponenteSelecionado.getValor();
+            setCaminhoBeanSelecionado(prCaminhoBeanSelecionado.getValor().toString());
+        }
 
         listaComponentes = MapaComponentes.getTodosComponentes();
 
@@ -145,6 +191,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
                 tipoEstruturaSelecionada = ESTRUTURA_DE_CAMPO_DESCRICAO;
                 String nomeObjeto = pCaminhoBeanSelecionado.split("\\.")[0];
                 String nomeCampo = pCaminhoBeanSelecionado.split("\\.")[1];
+                System.out.println("NomeObjeto[" + nomeObjeto + "]");
                 estruturaObjetoSelecionado = MapaObjetosProjetoAtual.getEstruturaObjeto(nomeObjeto);
                 estruturaCampoSelecionado = estruturaObjetoSelecionado.getCampoByNomeDeclarado(nomeCampo);
                 umTipoEstruturaAtributo = true;
@@ -286,7 +333,32 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     }
 
     public void setComponenteSelecionado(ComponenteVisualSB componenteSelecionado) {
+
+        if (this.caminhoBeanSelecionado == null) {
+            String beanPadrao = getCampoPadraoComponente();
+            if (beanPadrao != null) {
+                setCaminhoBeanSelecionado(beanPadrao);
+            }
+        }
         this.componenteSelecionado = componenteSelecionado;
+
+    }
+
+    public String getCampoPadraoComponente() {
+
+        for (String cp : beansDisponiveis) {
+
+            if (componenteSelecionado != null) {
+                if (beanExemplo.getCampoByNomeOuAnotacao(cp)
+                        .getTipoCampo().
+                        getTipo_input_prime()
+                        .equals(componenteSelecionado.getFabricaDoComponente())) {
+                    return cp;
+
+                }
+            }
+        }
+        return null;
     }
 
     public void setParametroPesquisa(String parametroPesquisa) {
@@ -340,6 +412,14 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
     public List<AcaoDoSistema> getAcoesLaboratorio() {
         return acoesLaboratorio;
+    }
+
+    public EstruturaCampo getEstruturaCampoSelecionado() {
+        return estruturaCampoSelecionado;
+    }
+
+    public EstruturaDeEntidade getEstruturaObjetoSelecionado() {
+        return estruturaObjetoSelecionado;
     }
 
 }
