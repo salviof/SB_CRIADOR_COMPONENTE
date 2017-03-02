@@ -20,9 +20,8 @@ public class MembroColetivoJava extends UsuarioSB {
 
     @Id
     private int id;
-    @InfoCampo(tipo =)
+    // @InfoCampo(tipo =)
     private String nome;
     private int patente;
-    private Localizacao ;
 
 }
