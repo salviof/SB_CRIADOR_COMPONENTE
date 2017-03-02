@@ -17,10 +17,10 @@
                 }
 
                 function dropaComponente(event, ui) {
-                    var droppedCampo = ui.draggable;
-                    document.getElementById("#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('componenteDropado')}").value = droppedCampo.context.getAttribute('valordropado');
-                    droppedCampo.fadeOut('slow');
-                    dropaCampoServerSide();
+                    var droppedComponente = ui.draggable;
+                    document.getElementById("#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('componenteDropado')}").value = droppedComponente.context.getAttribute('valordropado');
+                    droppedComponente.fadeOut('slow');
+                    dropaComponenteServerSide();
                 }
 
 
@@ -28,7 +28,6 @@
         </ui:define>
 
         <ui:define name="divConteudo">
-
             <h:form>
                 <p:remoteCommand actionListener="#{pgMapaComponentes.dropaCampo()}" name="dropaCampoServerSide" />
                 <h:inputHidden id="campoDropado"  />

@@ -13,8 +13,10 @@ import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.ItfParametroTela;
 import com.super_bits.modulosSB.SBCore.modulos.Mensagens.FabMensagens;
+import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.FabErro;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaCampo;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaDeEntidade;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.UtilSBCoreReflexaoObjetoSuperBits;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComponenteVisualSB;
@@ -39,7 +41,7 @@ import javax.inject.Named;
  * @author desenvolvedor
  */
 @InfoAcaoLabComponentes(acao = FabAcaoLabComponentes.LAB_COMPONENTES_MB_GERENCIAR)
-@InfoPagina(nomeCurto = "LC", tags = {"LabComp", "Laboratório Componentes SB"})
+@InfoPagina(nomeCurto = "LabComp", tags = {"Laboratório Componentes SB"})
 @Named
 @ViewScoped
 public class PgMapaComponentes extends MB_PaginaConversation {
@@ -74,13 +76,15 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private BeanExemplo beanExemplo;
 
     private String caminhoBeanSelecionado;
+    private String caminhoComponente;
+
     private List<String> beansDisponiveis;
 
     private Map<String, String> labelByCaminho;
 
     private List<AcaoDoSistema> acoesLaboratorio;
-    @InfoParametroURL(nome = "componente", tipoParametro = ItfParametroTela.TIPO_URL.ENTIDADE, tipoEntidade = ComponenteVisualSB.class)
-    private ParametroURL prComponenteSelecionado;
+    @InfoParametroURL(nome = "componente", tipoParametro = ItfParametroTela.TIPO_URL.TEXTO)
+    private ParametroURL prCaminhoComponente;
     @InfoParametroURL(nome = "conteudo", tipoParametro = ItfParametroTela.TIPO_URL.TEXTO)
     private ParametroURL prCaminhoBeanSelecionado;
 
@@ -95,23 +99,45 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         setCaminhoBeanSelecionado(atributoEnviado);
         paginaUtil.enviaMensagem("Dropou!!!" + atributoEnviado);
         atualizarIdAreaExibicaoAcaoSelecionada();
-        paginaUtil.atualizaTelaPorID("areaDropCampo");
-        paginaUtil.atualizaTelaPorID("areaMais");
+
     }
 
     public void dropaComponente() {
         FacesContext context = FacesContext.getCurrentInstance();
         Map map = context.getExternalContext().getRequestParameterMap();
-
         String atributoEnviado = (String) map.get(paginaUtil.gerarCaminhoCompletoIDParaJavaScript("componenteDropado"));
-        setCaminhoBeanSelecionado(atributoEnviado);
         paginaUtil.enviaMensagem("Dropou!!!" + atributoEnviado);
-        atualizarIdAreaExibicaoAcaoSelecionada();
-        paginaUtil.atualizaTelaPorID("areaDropCampo");
+        setCaminhoComponente(atributoEnviado);
         paginaUtil.atualizaTelaPorID("areaMais");
+        paginaUtil.atualizaTelaPorID("areaDropComponente");
+        if (prCaminhoBeanSelecionado.getValor() != null) {
+            setCaminhoBeanSelecionado((String) prCaminhoBeanSelecionado.getValor());
+        }
+        if (prCaminhoComponente.getValor() != null) {
+            setCaminhoComponente((String) prCaminhoComponente.getValor());
+        }
+
+    }
+
+    public String getCaminhoComponente() {
+        return caminhoComponente;
+    }
+
+    public void setCaminhoComponente(String caminhoComponente) {
+        try {
+
+            setComponenteSelecionado((ComponenteVisualSB) SBCore.getObjetoEstatico(caminhoComponente));
+            this.caminhoComponente = caminhoComponente;
+        } catch (Throwable t) {
+            SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Caminho do componente não foi encontrado :" + caminhoComponente, t);
+        }
     }
 
     public void irParaPaginaComponenteSelecionado() {
+        prCaminhoBeanSelecionado.setValor(caminhoBeanSelecionado);
+        prCaminhoComponente.setValor(componenteSelecionado.getCaminhoFabrica());
+
+        paginaUtil.irParaURL(getUrlAtual());
 
     }
 
@@ -141,7 +167,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
             acaoSelecionada = acaoListar;
             xhtmlAcaoAtual = acaoListar.getComoFormularioEntidade().getXhtml();
         } else {
-            componenteSelecionado = (ComponenteVisualSB) prComponenteSelecionado.getValor();
+
             setCaminhoBeanSelecionado(prCaminhoBeanSelecionado.getValor().toString());
         }
 
@@ -157,6 +183,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         labelByCaminho = new HashMap<>();
         labelByCaminho.put(BeanExemplo.class.getSimpleName(), UtilSBCoreReflexaoObjetoSuperBits.getNomeObjeto(BeanExemplo.class));
         estruturaObjetoSelecionado = MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class);
+        acoesLaboratorio = new ArrayList<>();
 
         for (EstruturaCampo cp : MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class).getCampos()) {
             String caminhoCampo = BeanExemplo.class.getSimpleName() + "." + cp.getNomeDeclarado();
@@ -204,15 +231,6 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
     }
 
-    private List<AcaoDoSistema> getAcoesDisponiveisDoComponente() {
-        List<AcaoDoSistema> acoes = new ArrayList<>();
-
-        acoes.add(acaoLabOnChangeComponente);
-        acoes.add(acaoLabValidarComponente);
-        acoes.add(acaoLabVisualizarComponente);
-        return acoes;
-    }
-
     public boolean isComponenteSelecionadoDoTipoIntput() {
         if (componenteSelecionado == null) {
             return false;
@@ -228,7 +246,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
         if (pComponente != null) {
 
-            componenteSelecionado = pComponente;
+            setComponenteSelecionado(pComponente);
 
         }
 
@@ -333,14 +351,13 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     }
 
     public void setComponenteSelecionado(ComponenteVisualSB componenteSelecionado) {
-
+        this.componenteSelecionado = componenteSelecionado;
         if (this.caminhoBeanSelecionado == null) {
             String beanPadrao = getCampoPadraoComponente();
             if (beanPadrao != null) {
                 setCaminhoBeanSelecionado(beanPadrao);
             }
         }
-        this.componenteSelecionado = componenteSelecionado;
 
     }
 
@@ -348,13 +365,17 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
         for (String cp : beansDisponiveis) {
 
-            if (componenteSelecionado != null) {
-                if (beanExemplo.getCampoByNomeOuAnotacao(cp)
-                        .getTipoCampo().
-                        getTipo_input_prime()
-                        .equals(componenteSelecionado.getFabricaDoComponente())) {
-                    return cp;
+            if (componenteSelecionado != null && cp.contains(".")) {
+                String nomeCampo = cp.split("\\.")[1];
+                ItfCampoInstanciado campo = beanExemplo.getCampoByNomeOuAnotacao(nomeCampo);
+                if (campo != null) {
+                    if (campo
+                            .getTipoCampo().
+                            getTipo_input_prime()
+                            .equals(componenteSelecionado.getFabricaDoComponente())) {
+                        return cp;
 
+                    }
                 }
             }
         }
@@ -411,6 +432,39 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     }
 
     public List<AcaoDoSistema> getAcoesLaboratorio() {
+
+        acoesLaboratorio.clear();
+
+        if (componenteSelecionado != null) {
+
+            switch (componenteSelecionado.getFamilia()) {
+                case SELETOR_ITEM:
+                case INPUT:
+                    acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_VER.getAcaoDoSistema());
+                    acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA.getAcaoDoSistema());
+                    acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_VALIDACAO.getAcaoDoSistema());
+                    acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_ONCHANGE.getAcaoDoSistema());
+                    break;
+                case LAYOUT_INPUT:
+                    break;
+                case MENU:
+                    break;
+
+                case ITEM_BEAN_SIMPLES:
+                    break;
+                case ITENS_BEAN_SIMPLES:
+                    break;
+                case COMPONENTE_SISTEMA:
+                    break;
+                case BOTAO_DE_ACAO:
+                    break;
+                default:
+                    throw new AssertionError(componenteSelecionado.getFamilia().name());
+
+            }
+
+        }
+
         return acoesLaboratorio;
     }
 

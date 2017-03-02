@@ -34,6 +34,8 @@
 
 
             <p:separator/>
+
+
             <p:outputPanel id="areaDropComponente"
                            styleClass="Container40 areaArrastavel"
                            style="height: 400px;
@@ -47,9 +49,9 @@
                         <p:outputLabel value="Nome Componente" />
                         <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado.nome}" />
                         <p:outputLabel value="Família Componente" />
-                        <p:outputLabel value="#{pgMapaComponentes.familiaSelecionada.nome}" />
+                        <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado.familia.nomeFAmilia}" />
                         <p:outputLabel value="XHTML Componente" />
-                        <p:outputLabel value="#{pgMapaComponentes.recursoXHTML}" />
+                        <p:outputLabel value="#{pgMapaComponentes.componenteSelecionado.xhtmlJsfCaminhoRelativo}" />
                     </p:panelGrid>
                     <h:form >
                         <p:commandButton actionListener="#{pgMapaComponentes.limparComponenteSelecionado()}"
@@ -60,7 +62,11 @@
 
 
                 </p:panel>
-
+                <p:droppable for="areaDropComponente"
+                             scope="componentesSCP"
+                             onDrop="dropaComponente"
+                             tolerance="touch">
+                </p:droppable>
             </p:outputPanel>
 
 
@@ -68,10 +74,21 @@
 
 
                 <p:graphicImage  name="img/mais.svg.png"  width="100%" library="SBComp" />
-                <p:commandButton value="VerComponente"
-                                 actionListener="#{pgMapaComponentes.irParaPaginaComponenteSelecionado()}"
-                                 rendered="#{pgUtil.isTudoVerdadeiro(pgMapaComponentes.umaInformacaoSelecionada,pgMapaComponentes.umComponenteSelecionado)}" />
+                <h:form>
 
+
+
+                    <SBComp:seletorDeAcoes
+                        rendered="#{pgUtil.isTudoVerdadeiro(pgMapaComponentes.umaInformacaoSelecionada,pgMapaComponentes.umComponenteSelecionado)}"
+
+                        metodo="#{pgMapaComponentes.irParaPaginaComponenteSelecionado()}"
+
+                        opcaoSelecionada="#{pgMapaComponentes.acaoSelecionada}"
+                        opcoes="#{pgMapaComponentes.acoesLaboratorio}"
+
+                        visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
+                        />
+                </h:form>
             </p:outputPanel>
 
 
@@ -113,8 +130,8 @@
 
                 <p:outputPanel styleClass="Container10"   >
                     <p:panel >
-                        <f:passThroughAttribute name="valordropado" value="#{comp}" />
-                        <p:draggable for="@parent" revert="true" scope="componentes"  />
+                        <f:passThroughAttribute name="valordropado" value="#{comp.caminhoFabrica}" />
+                        <p:draggable for="@parent" revert="true" scope="componentesSCP"  />
                         <p:outputLabel value="#{comp.nome}"/>
 
                     </p:panel>
@@ -123,15 +140,13 @@
 
             </c:forEach>
 
-            <p:droppable for="areaDropCampo"   scope="campos" onDrop="dropaCampo"
+            <p:droppable for="areaDropCampo"
+                         scope="campos"
+                         onDrop="dropaCampo"
                          tolerance="touch">
-
             </p:droppable>
 
-            <p:droppable for="areaDropComponente"   scope="componentes" onDrop="dropaComponente"
-                         tolerance="touch">
 
-            </p:droppable>
 
         </ui:define>
 
