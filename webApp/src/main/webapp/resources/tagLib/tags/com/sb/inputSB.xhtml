@@ -3,99 +3,37 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:sb="http://superbitsframework/ui">
+      xmlns:sb="http://superbitsframework/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:p="http://primefaces.org/ui">
 
     <ui:fragment >
 
         <sb:parametroMetodo nome="prMetodo" valor="#{metodoOnChange}" rendered="#{possuiMetodoOnChange}" />
 
         <ui:param name="xhtmlINPUT" value="#{registro.getComponenteDiferenciado(layoutCampoEspecial).xhtmlJsfCaminhoRelativo}" />
+        #{registro.label}
+        [#{registro.getComponenteDiferenciado(layoutCampoEspecial).xhtmlJsfCaminhoRelativo}]
+
+        <h:form >
 
 
-
-        <ui:param name="layout" value="#{layoutCampo}"/>
-        <ui:param name="registro" value="#{registro}" />
-        <ui:param name="componente" value="#{registro.getComponenteDiferenciado(layoutCampoEspecial)}"  />
-        <ui:param name="prefixoID" value="#{registro.prefixoUnicoParaIDHtml}"  />
-        <ui:param name="valor" value="#{registro.valor}"/>
-        <ui:param name="obrigatorio" value="#{registro.obrigatorio}"/>
-        <ui:param name="nomeItem" value="#{registro.label}"/>
-        <ui:param rendered="#{registro.umValorComLista}" name="lista" value="#{registro.listaDeOpcoes}"/>
-        <ui:param name="regex" value="#{registro.validacaoRegex}" rendered="#{registro.temValidacaoRegex}"/>
-        <ui:param name="valorMaximo" value="#{registro.valorMaximo}" rendered="#{registro.temValidacaoMaximo}"/>
-        <ui:param name="valorMinimo" value="#{registro.valorMinimo}" rendered="#{registro.temValidacaoMinimo}"/>
-        <ui:param name="mascara" value="#{registro.mascaraJqueryMode}" rendered="#{registro.temMascara}"/>
-
-        <ui:fragment rendered="#{registro.getComponenteDiferenciado(layoutCampoEspecial).xhtmlJsfCaminhoRelativo==compSBCompVisualInputs.texto_Com_FOrmatacao.xhtmlJsfCaminhoRelativo}">
-            <sb:inputSBTextMascara />
-
-
-        </ui:fragment>
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.texto_multiplas_Linhas.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBTextDEscritivo />
-
-        </ui:fragment>
-
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.moeda.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBMoeda />
-        </ui:fragment>
-
-
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.HTML.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBHtml />
-        </ui:fragment>
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.cep.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBCep />
-        </ui:fragment>
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.data.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBData />
-        </ui:fragment>
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.data_Hora.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBDataHora />
-        </ui:fragment>
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.senha.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBSenha />
-        </ui:fragment>
-
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.quantidade.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBQuantidade />
-        </ui:fragment>
-
-
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.valor_com_minimo_e_Maximo.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBMinMax />
-        </ui:fragment>
-
-
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.email.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBEmail />
-        </ui:fragment>
-
-
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualSeletorItem.combo.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBCombo />
-        </ui:fragment>
-
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualSeletorItem.auto_Complete.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBSelAutoCompletar />
-        </ui:fragment>
-
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualSeletorItem.carrousel.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBCarroussel />
-        </ui:fragment>
-
-
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualSeletorItem.grade.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBGrade />
-        </ui:fragment>
-
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualSeletorItem.menu_em_Botoes.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBmenuBotoes />
-        </ui:fragment>
-
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualSeletorItem.radio.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBradio />
-        </ui:fragment>
+        </h:form>
+        <ui:include  src="#{registro.getComponenteDiferenciado(layoutCampoEspecial).xhtmlJsfCaminhoRelativo}" >
+            <ui:param name="layout" value="#{layoutCampo}"/>
+            <ui:param name="registro" value="#{registro}" />
+            <ui:param name="componente" value="#{registro.getComponenteDiferenciado(layoutCampoEspecial)}"  />
+            <ui:param name="prefixoID" value="#{registro.prefixoUnicoParaIDHtml}"  />
+            <ui:param name="valor" value="#{registro.valor}"/>
+            <ui:param name="obrigatorio" value="#{registro.obrigatorio}"/>
+            <ui:param name="nomeItem" value="#{registro.label}"/>
+            <ui:param rendered="#{registro.umValorComLista}" name="lista" value="#{registro.listaDeOpcoes}"/>
+            <ui:param name="regex" value="#{registro.validacaoRegex}" rendered="#{registro.temValidacaoRegex}"/>
+            <ui:param name="valorMaximo" value="#{registro.valorMaximo}" rendered="#{registro.temValidacaoMaximo}"/>
+            <ui:param name="valorMinimo" value="#{registro.valorMinimo}" rendered="#{registro.temValidacaoMinimo}"/>
+            <ui:param name="mascara" value="#{registro.mascaraJqueryMode}" rendered="#{registro.temMascara}"/>
+        </ui:include>
 
 
 

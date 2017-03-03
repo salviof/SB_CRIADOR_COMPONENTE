@@ -717,6 +717,39 @@
         <source>resources/tagLib/tags/com/sb/input/seletorItem/radio.xhtml</source>
     </tag>
 
+    <tag>
+        <tag-name>inputSBArquivoDeEntidade</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/arquivoDeEntidade.xhtml</source>
+    </tag>
+
+
+    <tag>
+        <tag-name>inputSBImagemMedDeEntidade</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/arquivoDeEntidade.xhtml</source>
+    </tag>
+
+    <tag>
+        <tag-name>inputSBImagemPequenaDeDeEntidade</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/imagemDeEntidadePequeno.xhml</source>
+    </tag>
+
+    <tag>
+        <tag-name>inputImagemMediaDeEntidade</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/imagemDeEntidadeMedio.xhml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBImagemGrandeDeEntidade</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/imagemDeEntidadeGrande.xhml</source>
+    </tag>
+
+    <tag>
+        <tag-name>inputSBEndereco</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/endereco.xhtml</source>
+    </tag>
+
+
+
+
 
 
 

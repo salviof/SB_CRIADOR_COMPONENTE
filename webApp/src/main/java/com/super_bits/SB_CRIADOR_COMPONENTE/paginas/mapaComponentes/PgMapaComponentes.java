@@ -16,6 +16,8 @@ import com.super_bits.modulosSB.SBCore.modulos.Mensagens.FabMensagens;
 import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.FabErro;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaCampo;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaDeEntidade;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.UtilSBCoreReflexaoCampos;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CampoNaoImplementado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.UtilSBCoreReflexaoObjetoSuperBits;
@@ -60,9 +62,9 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private final AcaoDoSistema acaoSelecionarFamilia = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_FAMILIA_SELECIONADA_VISUALIZAR.getAcaoDoSistema();
     private final AcaoDoSistema acaoSelecionarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_COMPONENTE_SELECIONADO_VISUALIZAR.getAcaoDoSistema();
 
-    private final AcaoDoSistema acaoLabVisualizarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_VER.getAcaoDoSistema();
-    private final AcaoDoSistema acaoLabOnChangeComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_ONCHANGE.getAcaoDoSistema();
-    private final AcaoDoSistema acaoLabValidarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA.getAcaoDoSistema();
+    private final AcaoDoSistema acaoLabVisualizarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VER.getAcaoDoSistema();
+    private final AcaoDoSistema acaoLabOnChangeComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_ONCHANGE.getAcaoDoSistema();
+    private final AcaoDoSistema acaoLabValidarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA_INPUT.getAcaoDoSistema();
     private String parametroPesquisa;
 
     private String tipoEstruturaSelecionada;
@@ -440,10 +442,10 @@ public class PgMapaComponentes extends MB_PaginaConversation {
             switch (componenteSelecionado.getFamilia()) {
                 case SELETOR_ITEM:
                 case INPUT:
-                    acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_VER.getAcaoDoSistema());
-                    acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA.getAcaoDoSistema());
-                    acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_VALIDACAO.getAcaoDoSistema());
-                    acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_ONCHANGE.getAcaoDoSistema());
+                    acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VER.getAcaoDoSistema());
+                    acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA_INPUT.getAcaoDoSistema());
+                    acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VALIDACAO.getAcaoDoSistema());
+                    acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_ONCHANGE.getAcaoDoSistema());
                     break;
                 case LAYOUT_INPUT:
                     break;
@@ -474,6 +476,14 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
     public EstruturaDeEntidade getEstruturaObjetoSelecionado() {
         return estruturaObjetoSelecionado;
+    }
+
+    public ItfCampoInstanciado getCampoInstanciado() {
+
+        if (caminhoBeanSelecionado != null) {
+            return beanExemplo.getCampoByNomeOuAnotacao(UtilSBCoreReflexaoCampos.getCampoSemNomeClasse(caminhoBeanSelecionado));
+        }
+        return new CampoNaoImplementado();
     }
 
 }
