@@ -120,11 +120,11 @@ public class BeanExemplo
     private Date dataAlteracao;
 
     @InfoCampo(tipo = FabCampos.AAA_NOME, label = "Apelido")
-    private String apelido;
+    private String apelido = "Bean Simples";
 
     @NotNull
     @InfoCampo(tipo = FabCampos.AAA_NOME_LONGO, label = "Nome")
-    private String nome;
+    private String nome = "Nome Completo do Bean Simples";
 
     @InfoCampo(tipo = FabCampos.LCComplemeto, label = "Complemento")
     @NotNull
@@ -141,6 +141,10 @@ public class BeanExemplo
     @InfoCampo(tipo = FabCampos.ARQUIVO_DE_ENTIDADE, label = "Arquivo")
     @NotNull
     private String arquivo;
+
+    @InfoCampo(tipo = FabCampos.ARQUIVO_DE_ENTIDADE, label = "Arquivo de Categoria")
+    @NotNull
+    private String arquivoDeCategoria;
 
     @InfoCampo(tipo = FabCampos.LC_LOCALIZACAO, label = "Localização")
     @NotNull
@@ -472,6 +476,14 @@ public class BeanExemplo
 
     public void setCpTeste(String cpTeste) {
         this.cpTeste = cpTeste;
+    }
+
+    public String getArquivoDeCategoria() {
+        return arquivoDeCategoria;
+    }
+
+    public void setArquivoDeCategoria(String arquivoDeCategoria) {
+        this.arquivoDeCategoria = arquivoDeCategoria;
     }
 
 }
