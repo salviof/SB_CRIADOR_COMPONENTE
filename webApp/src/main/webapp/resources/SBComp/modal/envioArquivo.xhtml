@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+
+    <h:head>
+
+        <script>
+            function enviarArquivo(slugEntidade, idNomeArquivo) {
+                //      document.getElementById["form:botoes"].style.display = 'none';
+                PF('enviarArquivo').show();
+            }
+        </script>
+    </h:head>
+
+    <h:body>
+        <h:form>
+            <p:remoteCommand actionListener="#{pgModalSBJSF.fecharPaginaMatandoViewScoped()}"
+                             name="fecharModal"
+                             autoRun="false"
+                             />
+            <p:commandButton value="Teste Fechar" update="@form" oncomplete="fecharModal();" />
+        </h:form>
+
+
+        <h:form>
+            <i id="customheader" class="fa fa-fw fa-car" style="display:none"></i>
+            <i id="opcaoTeste" >[#{requestScope.parametroTEste}]</i>
+            <p:commandButton value="Atualizar"
+                             update="@form"
+
+                             />
+            <br/>
+            [ChaveAcesso=[#{pgModalSBJSF.chaveAcesso}]]
+
+            #{pgModalSBJSF.paginaVinculada.acaoVinculada.nomeAcao}
+
+            <p:fileUpload
+
+                fileUploadListener="#{pgCentralArquivos.enviarArquivoDeEntidadeSelecionada}"
+                auto="true"
+                />
+
+        </h:form>
+
+    </h:body>
+
+</html>

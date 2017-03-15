@@ -20,6 +20,7 @@
         </locale-config>
     </application>
 
+ 
 
     <application>
         <action-listener>
@@ -33,6 +34,7 @@
         </view-handler>
     </application>
 
+
     <application>
         <el-resolver>
             org.primefaces.application.exceptionhandler.PrimeExceptionHandlerELResolver
@@ -45,6 +47,10 @@
     </factory>
 
 
+
+
+
+
     <lifecycle>
         <phase-listener>org.primefaces.component.lifecycle.LifecyclePhaseListener</phase-listener>
     </lifecycle>
@@ -55,6 +61,9 @@
         <component-type>org.primefaces.component.AdamantiumMenu</component-type>
         <component-class>org.primefaces.adamantium.component.menu.AdamantiumMenu</component-class>
     </component>
+
+
+
 
     <render-kit>
         <renderer>

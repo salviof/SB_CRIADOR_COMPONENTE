@@ -7,7 +7,7 @@
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
-
+            NUM CASAS DECIMAIS: #{registro.numeroDeCasasDecimais}
             <p:inputNumber
                 disabled="#{desabilitarEdicao}"
                 class="campoResponsivo #{componente.classeCSS} TexAlCenter"
@@ -15,6 +15,7 @@
                 value="#{valor}"
                 decimalPlaces="#{registro.numeroDeCasasDecimais}"
                 thousandSeparator="."
+                decimalSeparator=","
                 validatorMessage="O valor informado no campo #{label} não é valido! "
                 requiredMessage="O campo #{label} não foi informado! "
                 >

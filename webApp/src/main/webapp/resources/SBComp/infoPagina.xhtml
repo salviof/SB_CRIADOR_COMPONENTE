@@ -18,10 +18,10 @@
     <cc:implementation>
 
 
-
-        <p:commandButton  icon="fa fa-bug"  onclick="PF('frmAdmin').show();" />
-        <p:commandButton  icon="fa fa-gamepad"  onclick="PF('frmMenu').show();" />
-
+        <h:form>
+            <p:commandButton  icon="fa fa-bug"  onclick="PF('frmAdmin').show();" />
+            <p:commandButton  icon="fa fa-gamepad"  onclick="PF('frmMenu').show();" />
+        </h:form>
 
 
 
@@ -55,22 +55,31 @@
                   height="500px">
             <h:outputText value="Mensagem: #{pfExceptionHandler.message}" /> <br/>
             <h:outputText value="StackTrace: " /> <h:outputText value="#{pfExceptionHandler.formattedStackTrace}" escape="false" /> <br />
-
-            <p:button onclick="document.location.href = document.location.href;"
-                      value="Tentar novamente"
-                      rendered="#{pfExceptionHandler.type == 'javax.faces.application.ViewExpiredException'}" />
+            <h:form>
+                <p:button onclick="document.location.href = document.location.href;"
+                          value="Tentar novamente"
+                          rendered="#{pfExceptionHandler.type == 'javax.faces.application.ViewExpiredException'}" />
+            </h:form>
         </p:dialog>
 
 
         <p:dialog widgetVar="frmMenu" modal="true"  closable="true" height="500px" dynamic="true" >
 
+            <h:form >
+                <p:commandButton value="Atualizar IdAreaExibicaoSelecionada"  update="#{pgUtil.atualizaTelaPorID(paginaAtual.infoPagina.idAreaExbicaoAcaoSelecionada)}"/>
 
-            <SBComp:seletorDeAcoes metodo="#{paginaAtual.infoPagina.executarAcaoSelecionada()}"
-                                   opcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
-                                   opcoes="#{pgLabProjetoAtual.tiposLabObjeto}"
-                                   update="#{pgLabProjetoAtual.idAreaExbicaoAcaoSelecionada}"
-                                   />
 
+                <p:commandButton value="Atualizar Enviar Mensagem"  actionListener="#{pgUtil.enviaMensagem('teste')}"/>
+                <p:commandButton value="asdasd"  actionListener="#{pgUtil.setBeanTodosSelecionados(beanTodosSelecionados)}"/>
+            </h:form>
+
+            <h:form>
+                <SBComp:seletorDeAcoes metodo="#{paginaAtual.infoPagina.executarAcaoSelecionada()}"
+                                       opcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+                                       opcoes="#{pgLabProjetoAtual.tiposLabObjeto}"
+                                       update="#{pgLabProjetoAtual.idAreaExbicaoAcaoSelecionada}"
+                                       />
+            </h:form>
         </p:dialog>
 
         <p:dialog widgetVar="frmAdmin" modal="true"  closable="true" height="300px"  dynamic="true" >

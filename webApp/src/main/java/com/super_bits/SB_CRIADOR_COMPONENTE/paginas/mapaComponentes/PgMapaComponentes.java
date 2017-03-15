@@ -29,14 +29,17 @@ import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.ParametroURL;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.beans.InfoMB_Bean;
 import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.beans.InfoParametroURL;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
+import org.primefaces.context.RequestContext;
 
 /**
  *
@@ -92,6 +95,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
     private EstruturaCampo estruturaCampoSelecionado;
     private EstruturaDeEntidade estruturaObjetoSelecionado;
+    private DialogoWeb dialogoDoMomento;
 
     public void dropaCampo() {
         FacesContext context = FacesContext.getCurrentInstance();
@@ -186,6 +190,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         labelByCaminho.put(BeanExemplo.class.getSimpleName(), UtilSBCoreReflexaoObjetoSuperBits.getNomeObjeto(BeanExemplo.class));
         estruturaObjetoSelecionado = MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class);
         acoesLaboratorio = new ArrayList<>();
+        dialogoDoMomento = new DialogoWeb();
 
         for (EstruturaCampo cp : MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class).getCampos()) {
             String caminhoCampo = BeanExemplo.class.getSimpleName() + "." + cp.getNomeDeclarado();
@@ -253,6 +258,15 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         }
 
         executarAcaoSelecionada();
+
+        executaMetodoCaso("", metodo());
+    }
+
+    public Method metodo() {
+        return null;
+    }
+
+    public void executaMetodoCaso(String pPergunta, Method pMetodo) {
 
     }
 
@@ -481,9 +495,44 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     public ItfCampoInstanciado getCampoInstanciado() {
 
         if (caminhoBeanSelecionado != null) {
-            return beanExemplo.getCampoByNomeOuAnotacao(UtilSBCoreReflexaoCampos.getCampoSemNomeClasse(caminhoBeanSelecionado));
+            String nomeCampo = UtilSBCoreReflexaoCampos.getCampoSemNomeClasse(caminhoBeanSelecionado);
+            if (nomeCampo != null) {
+                return beanExemplo.getCampoByNomeOuAnotacao(UtilSBCoreReflexaoCampos.getCampoSemNomeClasse(caminhoBeanSelecionado));
+            }
         }
         return new CampoNaoImplementado();
+    }
+
+    public void testeDialogo(String arquivo) {
+        Map<String, Object> options = new HashMap<String, Object>();
+        options.put("modal", true);
+        options.put("width", 640);
+        options.put("height", 340);
+        options.put("contentWidth", "100%");
+        options.put("contentHeight", "100%");
+        options.put("headerElement", "customheader");
+
+        RequestContext.getCurrentInstance().openDialog(arquivo, options, null);
+    }
+
+    public void testeDestruicao() {
+        for (String beanDestruct : FacesContext.getCurrentInstance().getViewRoot().getViewMap().keySet()) {
+            System.out.println("[" + beanDestruct + "-->");
+            System.out.println(FacesContext.getCurrentInstance().getViewRoot().getViewMap().get(beanDestruct).toString() + "]");
+        }
+
+        FacesContext.getCurrentInstance().getViewRoot().clearInitialState();
+
+    }
+
+    public String testeCarregarOutraViewPorCima() {
+        return "/site/home.xhtml";
+    }
+
+    @Override
+    @PreDestroy
+    public void fecharPagina() {
+        super.fecharPagina(); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
