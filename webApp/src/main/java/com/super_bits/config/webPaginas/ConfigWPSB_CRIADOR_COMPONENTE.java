@@ -8,7 +8,7 @@ package com.super_bits.config.webPaginas;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.ItfConfigWebPagina;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.TIPO_ESTRUTURA_LOCAL_XHTML_PADRAO;
-import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.ParametroURL;
+import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.siteMap.parametrosURL.ParametroURL;
 import java.util.ArrayList;
 import java.util.List;
 

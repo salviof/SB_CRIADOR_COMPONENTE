@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:sb="http://superbitsframework/ui">
+<html
+    xmlns:sb="http://superbitsframework/ui"
+    xmlns="http://www.w3.org/1999/xhtml"
+
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    >
 
     <ui:fragment >
 
@@ -26,31 +29,42 @@
         <ui:param name="valorMinimo" value="#{registro.valorMinimo}" rendered="#{registro.temValidacaoMinimo}"/>
         <ui:param name="mascara" value="#{registro.mascaraJqueryMode}" rendered="#{registro.temMascara}"/>
 
+        <br/>
+        XHTML===
+        --#{xhtmlINPUT}--
+        [#{registro.componenteVisualPadrao}[
 
+        [[[[[[[[[[calculado#{registro.getComponenteDiferenciado(layoutCampoEspecial).xhtmlJsfCaminhoRelativo}]]]]]]]]]]
 
         <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualInputs.texto_Com_FOrmatacao.xhtmlJsfCaminhoRelativo}">
             <sb:inputSBTextMascara />
         </ui:fragment>
+
         <ui:fragment
             rendered="#{compSBCompVisualInputs.texto_multiplas_Linhas.isXhtmlJSFCaminhoRelativoIgualA(xhtmlINPUT)}">
             <sb:inputSBTextDEscritivo />
-
         </ui:fragment>
 
         <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.moeda.xhtmlJsfCaminhoRelativo}"  >
             <sb:inputSBMoeda />
         </ui:fragment>
 
+        <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualInputs.texto_Sem_Formatacao.xhtmlJsfCaminhoRelativo}">
+            <sb:inputSBSimples />
+        </ui:fragment>
 
         <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.HTML.xhtmlJsfCaminhoRelativo}"  >
             <sb:inputSBHtml />
         </ui:fragment>
+
         <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.cep.xhtmlJsfCaminhoRelativo}"  >
             <sb:inputSBCep />
         </ui:fragment>
+
         <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.data.xhtmlJsfCaminhoRelativo}"  >
             <sb:inputSBData />
         </ui:fragment>
+
         <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.data_Hora.xhtmlJsfCaminhoRelativo}"  >
             <sb:inputSBDataHora />
         </ui:fragment>
@@ -72,10 +86,6 @@
             <sb:inputSBEmail />
         </ui:fragment>
 
-
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualSeletorItem.combo.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBCombo />
-        </ui:fragment>
 
         <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualSeletorItem.auto_Complete.xhtmlJsfCaminhoRelativo}"  >
             <sb:inputSBSelAutoCompletar />
@@ -99,14 +109,27 @@
         </ui:fragment>
 
 
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualSeletorItem.radio.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBradio />
-        </ui:fragment>
+
 
 
         <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualInputs.arquivo_de_Entidade.xhtmlJsfCaminhoRelativo}">
             <sb:inputSBArquivoDeEntidade />
         </ui:fragment>
+
+
+        <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualInputs.bairro.xhtmlJsfCaminhoRelativo}">
+            <sb:inputSBBairro />
+        </ui:fragment>
+
+
+
+        <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualInputs.endereco.xhtmlJsfCaminhoRelativo}">
+            <sb:inputSBEndereco />
+        </ui:fragment>
+
+
+
+
 
 
     </ui:fragment>

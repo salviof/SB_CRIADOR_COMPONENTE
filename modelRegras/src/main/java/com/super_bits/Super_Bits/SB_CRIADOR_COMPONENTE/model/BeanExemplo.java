@@ -5,6 +5,7 @@
  */
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
+import com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Bairro;
 import com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Localizacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoClasse;
@@ -151,6 +152,9 @@ public class BeanExemplo
     private Localizacao localizacao;
     @NotNull
     private BeanExemplo beanFilho;
+
+    @InfoCampo(tipo = FabCampos.LCBairro)
+    private Bairro bairro;
 
     @InfoCampo(tipo = FabCampos.OBJETO_DE_UMA_LISTA, valoresAceitos = {
         @ValorAceito(valor = "Teste"),
@@ -484,6 +488,14 @@ public class BeanExemplo
 
     public void setArquivoDeCategoria(String arquivoDeCategoria) {
         this.arquivoDeCategoria = arquivoDeCategoria;
+    }
+
+    public Bairro getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(Bairro bairro) {
+        this.bairro = bairro;
     }
 
 }

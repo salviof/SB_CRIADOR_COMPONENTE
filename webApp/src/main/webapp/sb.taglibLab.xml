@@ -4,6 +4,7 @@
                 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facelettaglibrary_2_0.xsd"
                 version="2.0">
     <namespace>http://superbitsframework/ui</namespace>
+
     <tag>
         <tag-name>botaoAcao</tag-name>
         <source>/resources/tagLib/tags/com/sb/botaoAcao.xhtml</source>
@@ -662,11 +663,11 @@
     </tag>
     <tag>
         <tag-name>inputSBSimples</tag-name>
-        <source>resources/tagLib/tags/com/sb/input/campo/inputMascara.xhtml</source>
+        <source>resources/tagLib/tags/com/sb/input/campo/inputSimples.xhtml</source>
     </tag>
     <tag>
         <tag-name>inputSBMinMax</tag-name>
-        <source>resources/tagLib/tags/com/sb/input/campo/inputSimples.xhtml</source>
+        <source>resources/tagLib/tags/com/sb/input/campo/minimoEMaximo.xhtml</source>
     </tag>
     <tag>
         <tag-name>inputSBMoeda</tag-name>
@@ -679,7 +680,7 @@
 
     <tag>
         <tag-name>inputSBEmail</tag-name>
-        <source>resources/tagLib/tags/com/sb/input/campo/senha.xhtml</source>
+        <source>resources/tagLib/tags/com/sb/input/campo/email.xhtml</source>
     </tag>
 
     <tag>
@@ -747,9 +748,27 @@
     </tag>
 
 
+    <tag>
+        <tag-name>inputSBBairro</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/bairro.xhtml</source>
+
+    </tag>
+
+    <tag>
+        <tag-name>inputSBestadoUF</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/estado.xhtml</source>
+    </tag>
 
 
+    <tag>
+        <tag-name>inputSBCidade</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/cidade.xhtml</source>
+    </tag>
 
+    <tag>
+        <tag-name>inputSBNacao</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/nacao.xhtml</source>
+    </tag>
 
 
 </facelet-taglib>
