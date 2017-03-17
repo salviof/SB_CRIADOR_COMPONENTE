@@ -104,18 +104,21 @@ public class PgMapaComponentes extends MB_PaginaConversation {
             return new CampoNaoImplementado();
         }
         // se o componente não for um componente do tipo input, retorna componente não implementado
-        if (!componenteSelecionado.getFamilia().equals(FabFamiliaCompVisual.INPUT)) {
+        if (!componenteSelecionado.getFamilia().getNomeFAmilia().equals(FabFamiliaCompVisual.INPUT.getNomeFAmilia())) {
             return new CampoNaoImplementado();
         }
         //de acordo com ocomponente selecionado retorna um campo instanciado do
 
         // Campos
         if (campoSelecionado == null) {
+
             return new CampoNaoImplementado();
+
         }
 
         ItfCampoInstanciado campoEncontrado = beanExemplo.getCampoInstanciadoByAnotacao(campoSelecionado.getTipoCampo());
         return campoEncontrado;
+
     }
 
     private void getTodosCamposSistema() {

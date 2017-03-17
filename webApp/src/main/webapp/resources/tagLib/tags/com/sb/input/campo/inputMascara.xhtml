@@ -20,6 +20,8 @@
                 value="#{valor}"
                 validatorMessage="O valor informado no campo #{label} não é valido! "
                 requiredMessage="O campo #{label} não foi informado! "
+                autoClear="false"
+
                 >
                 <c:if test="#{registro.temValidacaoRegex}">
                     <f:validateRegex pattern="#{regex}"/>
