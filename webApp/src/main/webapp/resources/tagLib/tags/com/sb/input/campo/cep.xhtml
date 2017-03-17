@@ -49,8 +49,8 @@
                             partialSubmit="true"
                             process="@this"
                             listener="#{pgUtil.preencherEndereco(registro.valor, campoLocalizacaoCEP)}"
-                            update="#{pgUtil.makeCaminhoCompletoID('endereco')}" />
 
+                            update="#{pgUtil.gerarCaminhoCompletoID(('endereco')) }" />
 
                 </c:if>
 

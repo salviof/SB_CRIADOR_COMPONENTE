@@ -5,10 +5,9 @@
                 version="2.0">
     <namespace>http://superbitsframework/ui</namespace>
 
-
     <tag>
         <tag-name>botaoAcao</tag-name>
-        <source>resources/tagLib/tags/com/sb/botaoAcao.xhtml</source>
+        <source>/resources/tagLib/tags/com/sb/botaoAcao.xhtml</source>
         <attribute>
             <name>acao</name>
             <description>
@@ -664,11 +663,11 @@
     </tag>
     <tag>
         <tag-name>inputSBSimples</tag-name>
-        <source>resources/tagLib/tags/com/sb/input/campo/inputMascara.xhtml</source>
+        <source>resources/tagLib/tags/com/sb/input/campo/inputSimples.xhtml</source>
     </tag>
     <tag>
         <tag-name>inputSBMinMax</tag-name>
-        <source>resources/tagLib/tags/com/sb/input/campo/inputSimples.xhtml</source>
+        <source>resources/tagLib/tags/com/sb/input/campo/minimoEMaximo.xhtml</source>
     </tag>
     <tag>
         <tag-name>inputSBMoeda</tag-name>
@@ -678,6 +677,12 @@
         <tag-name>inputSBSenha</tag-name>
         <source>resources/tagLib/tags/com/sb/input/campo/senha.xhtml</source>
     </tag>
+
+    <tag>
+        <tag-name>inputSBEmail</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/email.xhtml</source>
+    </tag>
+
     <tag>
         <tag-name>inputSBVerdadeiroFalso</tag-name>
         <source>resources/tagLib/tags/com/sb/input/campo/veradeiroOuFalso.xhtml</source>
@@ -712,7 +717,58 @@
         <source>resources/tagLib/tags/com/sb/input/seletorItem/radio.xhtml</source>
     </tag>
 
+    <tag>
+        <tag-name>inputSBArquivoDeEntidade</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/arquivoDeEntidade.xhtml</source>
+    </tag>
 
+
+    <tag>
+        <tag-name>inputSBImagemMedDeEntidade</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/arquivoDeEntidade.xhtml</source>
+    </tag>
+
+    <tag>
+        <tag-name>inputSBImagemPequenaDeDeEntidade</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/imagemDeEntidadePequeno.xhml</source>
+    </tag>
+
+    <tag>
+        <tag-name>inputImagemMediaDeEntidade</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/imagemDeEntidadeMedio.xhml</source>
+    </tag>
+    <tag>
+        <tag-name>inputSBImagemGrandeDeEntidade</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/imagemDeEntidadeGrande.xhml</source>
+    </tag>
+
+    <tag>
+        <tag-name>inputSBEndereco</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/endereco.xhtml</source>
+    </tag>
+
+
+    <tag>
+        <tag-name>inputSBBairro</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/bairro.xhtml</source>
+
+    </tag>
+
+    <tag>
+        <tag-name>inputSBestadoUF</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/estado.xhtml</source>
+    </tag>
+
+
+    <tag>
+        <tag-name>inputSBCidade</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/cidade.xhtml</source>
+    </tag>
+
+    <tag>
+        <tag-name>inputSBNacao</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/nacao.xhtml</source>
+    </tag>
 
 
 </facelet-taglib>

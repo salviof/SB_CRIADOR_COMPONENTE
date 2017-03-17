@@ -34,14 +34,27 @@ public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
     LAB_COMPONENTES_FRM_FAMILIA_SELECIONADA_VISUALIZAR,
     @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR)
     LAB_COMPONENTES_FRM_COMPONENTE_SELECIONADO_VISUALIZAR,
-    @InfoTipoAcaoFormulario(nomeAcao = "Ver Componente", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR)
-    LAB_COMPONENTES_FRM_LAB_VER,
-    @InfoTipoAcaoFormulario(nomeAcao = "Ver Ficha Técnica", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
-    LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA,
-    @InfoTipoAcaoFormulario(nomeAcao = "Testar OnChange", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
-    LAB_COMPONENTES_FRM_LAB_ONCHANGE,
+    @InfoTipoAcaoFormulario(nomeAcao = "Ver Componente", descricao = "",
+            precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR,
+            xhtmlDaAcao = "formVERInput.xhtml"
+    )
+    LAB_COMPONENTES_FRM_LAB_INPUT_VER,
+    @InfoTipoAcaoFormulario(nomeAcao = "Editar Mascaras Personalizadas", descricao = "",
+            precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR,
+            xhtmlDaAcao = "formLabMascarasInput.xhtml"
+    )
+    LAB_COMPONENTES_FRM_LAB_INPUT_MASKARAS_PERSONALIZADAS,
+    @InfoTipoAcaoFormulario(nomeAcao = "Ver Ficha Técnica", descricao = "", precisaPermissao = false,
+            iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR,
+            xhtmlDaAcao = "formFichaTecnicaInput.xhtml"
+    )
+    LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA_INPUT,
+    @InfoTipoAcaoFormulario(nomeAcao = "Testar OnChange", descricao = "",
+            xhtmlDaAcao = "formONCHANGEInput.xhtml",
+            precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
+    LAB_COMPONENTES_FRM_LAB_INPUT_ONCHANGE,
     @InfoTipoAcaoFormulario(nomeAcao = "Testar Validacao", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
-    LAB_COMPONENTES_FRM_LAB_VALIDACAO;
+    LAB_COMPONENTES_FRM_LAB_INPUT_VALIDACAO;
 
     @Override
     public AcaoDoSistema getRegistro() {

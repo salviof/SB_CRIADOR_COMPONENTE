@@ -23,6 +23,7 @@ public class TesteConformidade extends RelatorioTesteWebPaginas {
 
         exibirRelatorioCompleto();
         criarMapaDeAcoesEscopoAplicacao();
+        System.out.println(SBCore.isIgnorarPermissoes());
     }
 
     @Override

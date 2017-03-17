@@ -7,8 +7,8 @@ package com.super_bits.config.webPaginas;
 
 import com.super_bits.FabAcoesHomeCriadorComponente;
 import com.super_bits.InfoAcaoHomeCriacaoComponente;
-import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.MB_PaginaConversation;
-import com.super_bits.modulosSB.webPaginas.JSFBeans.SB.siteMap.anotacoes.InfoPagina;
+import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.MB_PaginaConversation;
+import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.reflexao.anotacoes.InfoPagina;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 

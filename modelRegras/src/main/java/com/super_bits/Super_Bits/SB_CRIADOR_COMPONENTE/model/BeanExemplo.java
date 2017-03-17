@@ -5,6 +5,7 @@
  */
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
+import com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Bairro;
 import com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Localizacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoClasse;
@@ -43,7 +44,7 @@ public class BeanExemplo
     private String email = "emailteste@teste.com";
 
     @InfoCampo(fabricaDeOpcoes = FabCampos.class, tipo = FabCampos.OBJETO_DE_UMA_LISTA)
-    private List<Campo> seletorOpcao;
+    private Campo seletorOpcao;
 
     @InfoCampo(tipo = FabCampos.TELEFONE_FIXO_NACIONAL, label = "Telefone")
     @NotNull
@@ -120,11 +121,11 @@ public class BeanExemplo
     private Date dataAlteracao;
 
     @InfoCampo(tipo = FabCampos.AAA_NOME, label = "Apelido")
-    private String apelido;
+    private String apelido = "Bean Simples";
 
     @NotNull
     @InfoCampo(tipo = FabCampos.AAA_NOME_LONGO, label = "Nome")
-    private String nome;
+    private String nome = "Nome Completo do Bean Simples";
 
     @InfoCampo(tipo = FabCampos.LCComplemeto, label = "Complemento")
     @NotNull
@@ -142,11 +143,18 @@ public class BeanExemplo
     @NotNull
     private String arquivo;
 
+    @InfoCampo(tipo = FabCampos.ARQUIVO_DE_ENTIDADE, label = "Arquivo de Categoria")
+    @NotNull
+    private String arquivoDeCategoria;
+
     @InfoCampo(tipo = FabCampos.LC_LOCALIZACAO, label = "Localização")
     @NotNull
     private Localizacao localizacao;
     @NotNull
     private BeanExemplo beanFilho;
+
+    @InfoCampo(tipo = FabCampos.LCBairro)
+    private Bairro bairro;
 
     @InfoCampo(tipo = FabCampos.OBJETO_DE_UMA_LISTA, valoresAceitos = {
         @ValorAceito(valor = "Teste"),
@@ -458,11 +466,11 @@ public class BeanExemplo
         this.beanFilho = beanFilho;
     }
 
-    public List<Campo> getSeletorOpcao() {
+    public Campo getSeletorOpcao() {
         return seletorOpcao;
     }
 
-    public void setSeletorOpcao(List<Campo> seletorOpcao) {
+    public void setSeletorOpcao(Campo seletorOpcao) {
         this.seletorOpcao = seletorOpcao;
     }
 
@@ -472,6 +480,22 @@ public class BeanExemplo
 
     public void setCpTeste(String cpTeste) {
         this.cpTeste = cpTeste;
+    }
+
+    public String getArquivoDeCategoria() {
+        return arquivoDeCategoria;
+    }
+
+    public void setArquivoDeCategoria(String arquivoDeCategoria) {
+        this.arquivoDeCategoria = arquivoDeCategoria;
+    }
+
+    public Bairro getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(Bairro bairro) {
+        this.bairro = bairro;
     }
 
 }

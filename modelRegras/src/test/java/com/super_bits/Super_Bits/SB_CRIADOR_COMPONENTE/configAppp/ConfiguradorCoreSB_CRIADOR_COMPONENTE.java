@@ -46,6 +46,7 @@ public class ConfiguradorCoreSB_CRIADOR_COMPONENTE extends ConfiguradorCoreDePro
      */
     @Override
     public void defineFabricasDeACao(ItfConfiguracaoCoreCustomizavel pConfig) {
+
         pConfig.setClasseConfigPermissao(ConfigAcessos.class);
         pConfig.setFabricaDeAcoes(UtilSB_CRIADOR_COMPONENTEGlobalVar.pAcoesDoSistema());
     }
