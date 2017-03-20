@@ -15,7 +15,6 @@
 
 
 
-
             <p:fieldset legend="Opções" >
 
                 <h:form>
@@ -41,44 +40,34 @@
                 </h:form>
 
             </p:fieldset>
-            Caminho Selecionado: #{pgMapaComponentes.caminhoBeanSelecionado}
-            Você está visualizando o campo [#{pgMapaComponentes.campoInstanciado.label}] do Objeto #{pgMapaComponentes.beanExemplo.nomeDoObjeto}
 
-            #{pgMapaComponentes.campoInstanciado.getComponenteDiferenciado(layoutCampoEspecial).xhtmlJsfCaminhoRelativo}
 
+            <p:separator  />
             <c:catch var ="catchException">
 
 
 
 
                 <h:form >
-                    #{sessaoAtualSBWP.identificado}
-                    #{view.viewMap};
-
-                    ---#{pgMapaComponentes.campoInstanciado.nome}---
-                    <p:commandButton value="Teste"  actionListener="#{pgUtil.exibirModalEnvioArquivo()}"
-
-                                     />
 
 
-                    <h:inputHidden value="#{pgMapaComponentes.campoInstanciado.valor}" />
+
+
+
 
                     <sb:inputSB
                         registro="#{pgMapaComponentes.campoInstanciado}"
                         desabilitarEdicao="false"
                         layoutCampo="#{layoutsComponenteSB.layoutCampo.superior}"
                         possuiIDOnChange="false"
-                        possuiMetodoOnChange="true"
+                        possuiMetodoOnChange="false"
 
                         layoutCampoEspecial="#{pgMapaComponentes.componenteSelecionado}"
                         label="#{pgMapaComponentes.campoInstanciado.label}"
                         opcoes="#{pgMapaComponentes.campoInstanciado.listaDeOpcoes}"
                         />
 
-                    <p:commandButton value="validar"
-                                     update="#{pgUtil.gerarCaminhoCompletoID(pgMapaComponentes.idAreaExbicaoAcaoSelecionada)}"
 
-                                     />
 
                 </h:form>
 

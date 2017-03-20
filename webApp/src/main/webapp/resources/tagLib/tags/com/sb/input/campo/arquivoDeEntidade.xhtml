@@ -16,10 +16,29 @@
 
 
 
-            <p:inputText />
-            <p:inplace label="Alterar #{registro.label}" >
-                <p:commandButton value="Arquivo não selecionado" rendered="#{registro.vazio}" />
-            </p:inplace>
+            <p:inputText  style=" visibility: hidden;"/>
+
+            <h:panelGroup rendered="#{pgMapaComponentes.campoInstanciado.vazio}" >
+                <p:commandButton value="Enviar #{label}"
+                                 actionListener="#{pgUtil.exibirModalEnvioArquivo()}"
+                                 >
+                    <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}"
+                                                 value="#{registro}" />
+                </p:commandButton>
+            </h:panelGroup>
+
+
+            <h:panelGroup rendered="#{!pgMapaComponentes.campoInstanciado.vazio}" >
+
+                <p:commandButton value="alterar"
+                                 actionListener="#{pgUtil.exibirModalEnvioArquivo()}"
+                                 >
+                    <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}" value="" />
+                </p:commandButton>
+
+            </h:panelGroup>
+
+
 
 
 
