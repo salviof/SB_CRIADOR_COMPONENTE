@@ -31,9 +31,11 @@
             <h:panelGroup rendered="#{!pgMapaComponentes.campoInstanciado.vazio}" >
 
                 <p:commandButton value="alterar"
-                                 actionListener="#{pgUtil.exibirModalEnvioArquivo()}"
+                                 action="#{pgUtil.exibirModalEnvioArquivo()}"
+                                 process="@this"
                                  >
-                    <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}" value="" />
+                    <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}"
+                                                 value="#{registro}" />
                 </p:commandButton>
 
             </h:panelGroup>
