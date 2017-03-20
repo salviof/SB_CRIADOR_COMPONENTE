@@ -9,23 +9,20 @@
 
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
-            InputMaskara
-            <p:inputMask
 
+            <p:inputMask
                 mask="#{mascara}"
                 class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
-
                 disabled="#{desabilitarEdicao}"
                 required="#{obrigatorio}"
                 value="#{valor}"
                 validatorMessage="O valor informado no campo #{label} não é valido! "
                 requiredMessage="O campo #{label} não foi informado! "
-<<<<<<< HEAD
                 autoClear="false"
 
-=======
+
                 converterMessage="Impossível converter o valor de #{label} em um tipo válido "
->>>>>>> ab6269ef18e5762d04c24555a95078b2c898d371
+
                 >
                 <c:if test="#{registro.temValidacaoRegex}">
                     <f:validateRegex pattern="#{regex}"/>

@@ -145,26 +145,6 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
         paginaUtil.irParaURL(getUrlAtual());
 
-<<<<<<< HEAD
-            return new CampoNaoImplementado();
-        }
-        // se o componente não for um componente do tipo input, retorna componente não implementado
-        if (!componenteSelecionado.getFamilia().getNomeFAmilia().equals(FabFamiliaCompVisual.INPUT.getNomeFAmilia())) {
-            return new CampoNaoImplementado();
-        }
-        //de acordo com ocomponente selecionado retorna um campo instanciado do
-
-        // Campos
-        if (campoSelecionado == null) {
-
-            return new CampoNaoImplementado();
-
-        }
-
-        ItfCampoInstanciado campoEncontrado = beanExemplo.getCampoInstanciadoByAnotacao(campoSelecionado.getTipoCampo());
-        return campoEncontrado;
-
-=======
     }
 
     public boolean isUmaInformacaoSelecionada() {
@@ -177,7 +157,6 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
     public void limparCampoSelecionado() {
         caminhoBeanSelecionado = null;
->>>>>>> ab6269ef18e5762d04c24555a95078b2c898d371
     }
 
     public void limparComponenteSelecionado() {
