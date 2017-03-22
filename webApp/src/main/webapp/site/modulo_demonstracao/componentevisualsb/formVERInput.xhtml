@@ -43,47 +43,50 @@
 
 
             <p:separator  />
-            <c:catch var ="catchException">
+
+
+            <p:fieldset legend="Visualização">
+                <p:panelGrid columns="2" >
+                    <p:panel header="Informações">
+                        <p:panelGrid columns="2">
+                            <p:outputLabel value="TipoCampo"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.tipoCampoSTR}"/>
+                            <p:outputLabel value="XHTML apresentação:"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.getComponenteDiferenciado(null).xhtmlJsfCaminhoRelativo}"/>
+                        </p:panelGrid>
+
+                    </p:panel>
+
+
+                    <h:panelGroup>
+                        <c:catch var ="catchException">
+                            <h:form >
+                                <sb:inputSB
+                                    registro="#{pgMapaComponentes.campoInstanciado}"
+                                    desabilitarEdicao="false"
+                                    layoutCampo="#{layoutsComponenteSB.layoutCampo.superior}"
+                                    possuiIDOnChange="false"
+                                    possuiMetodoOnChange="false"
+
+                                    layoutCampoEspecial="#{pgMapaComponentes.componenteSelecionado}"
+                                    label="#{pgMapaComponentes.campoInstanciado.label}"
+                                    opcoes="#{pgMapaComponentes.campoInstanciado.listaDeOpcoes}"
+                                    />
+                            </h:form>
 
 
 
+                        </c:catch>
+                        <c:if test = "${catchException != null}">
+                            É POSSÍVEL QUE ESTE ERRO POSSA SER CONTORNADO CHAMANDO O nameSpace sb:input Direto
+                            Ou que este componente esteja em desenvolvimento
 
-                <h:form >
-
-
-
-
-
-
-                    <sb:inputSB
-                        registro="#{pgMapaComponentes.campoInstanciado}"
-                        desabilitarEdicao="false"
-                        layoutCampo="#{layoutsComponenteSB.layoutCampo.superior}"
-                        possuiIDOnChange="false"
-                        possuiMetodoOnChange="false"
-
-                        layoutCampoEspecial="#{pgMapaComponentes.componenteSelecionado}"
-                        label="#{pgMapaComponentes.campoInstanciado.label}"
-                        opcoes="#{pgMapaComponentes.campoInstanciado.listaDeOpcoes}"
-                        />
-
-
-
-                </h:form>
-
-
-
-            </c:catch>
-            <c:if test = "${catchException != null}">
-                É POSSÍVEL QUE ESTE ERRO POSSA SER CONTORNADO CHAMANDO O nameSpace sb:input Direto
-                Ou que este componente esteja em desenvolvimento
-
-                <p>Erro reindeizando componente: ${catchException} <br />
-                    There is an exception: ${catchException.message}</p>
-                <br/>
-                #{pgMapaComponentes.campoInstanciado.tipoCampoSTR}
-            </c:if>
-
+                            <p>Erro reindeizando componente: ${catchException} <br />
+                                There is an exception: ${catchException.message}</p>
+                            <br/>
+                            #{pgMapaComponentes.campoInstanciado.tipoCampoSTR}
+                        </c:if>
+                    </h:panelGroup>
+                </p:panelGrid>
+            </p:fieldset>
 
 
         </ui:define>

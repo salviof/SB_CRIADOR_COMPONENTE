@@ -13,37 +13,39 @@
 
             <h:outputText
 
-                class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
-
+                class="campoResponsivo  TexAlCenter #{componente.classeCSS}"
+                id="outputPorcentagem"
                 value="#{valor}"
 
-                >
+                />
 
 
-                <c:if test="#{possuiMetodoOnChange}">
-                    <p:ajax rendered="#{possuiMetodoOnChange}"
-                            global="true"
-                            event="valueChange"
-                            listener="#{prMetodo}"/>
-                </c:if>
 
-                <c:if test="#{possuiIDOnChange}" >
-                    <p:ajax
-                        rendered="#{possuiIDOnChange}"
+
+            <p:inputText id="cpvalorHiden" value="#{registro.valor}" style=" visibility: hidden;" >
+                <p:ajax rendered="#{possuiMetodoOnChange}"
                         global="true"
                         event="valueChange"
-                        listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
-                </c:if>
+                        listener="#{prMetodo}"/>
 
-            </h:outputText>
-
-            <h:inputHidden id="cpvalorHiden" value="#{registro.valor}" />
+                <p:ajax
+                    rendered="#{possuiIDOnChange}"
+                    global="true"
+                    event="valueChange"
+                    listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
+            </p:inputText>
 
             <p:slider disabled="#{desabilitarEdicao}"
+                      maxValue="#{registro.valorMaximo}"
+                      minValue="#{registro.valorMinimo}"
 
-                      for="cpvalorHiden" display="#{prefixoID}#{componente.idHTMLObjetoPrincipal}"
-                      style="width: 200px" displayTemplate=" {value}%" />
+                      for="cpvalorHiden" display="@parent:@child(1):outputPorcentagem"
+                      style="width: 200px" displayTemplate=" {value}%">
 
+
+
+
+            </p:slider>
 
 
         </ui:define>

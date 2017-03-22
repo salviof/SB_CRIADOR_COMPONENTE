@@ -28,12 +28,12 @@
                       default="#{cc.attrs.id}" />
 
         <cc:attribute name="visualizacaoBotao"
-                      default="#{tipos.tipoVisualBotao.padrao}"
+                      default="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
                       shortDescription="Tipo de exibição do botão caso o visual do seletor de ações esteja no formato de botões "
                       />
 
         <cc:attribute name="visualSeletorAcoes"
-                      default="#{tipos.tipoVisualBotao.padrao}" />
+                      default="#{layoutsComponenteSB.layoutBotoes.iconeENome}" />
 
         <cc:attribute name="update"
                       default="#{null}" />
@@ -45,7 +45,7 @@
         <ui:repeat value="#{cc.attrs.opcoes}" var="opc" varStatus="rec">
             <c:choose >
 
-                <c:when test="#{cc.attrs.visualizacaoBotao==tipos.tipoVisualBotao.apenasIcone}">
+                <c:when test="#{cc.attrs.visualizacaoBotao==layoutsComponenteSB.layoutBotoes.icone}">
 
                     <p:commandButton  onmousedown="esconderTooltips();"
                                       id="btIcon#{cc.id}"
@@ -64,7 +64,7 @@
                 </c:when>
 
 
-                <c:when test="#{cc.attrs.visualizacaoBotao==tipos.tipoVisualBotao.botaoGigante}">
+                <c:when test="#{cc.attrs.visualizacaoBotao==layoutsComponenteSB.layoutBotoes.gigante}">
 
 
 

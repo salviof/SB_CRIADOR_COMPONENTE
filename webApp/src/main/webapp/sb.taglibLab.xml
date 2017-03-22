@@ -7,7 +7,7 @@
 
     <tag>
         <tag-name>botaoAcao</tag-name>
-        <source>/resources/tagLib/tags/com/sb/botaoAcao.xhtml</source>
+        <source>resources/tagLib/tags/com/sb/botaoAcao.xhtml</source>
         <attribute>
             <name>acao</name>
             <description>
