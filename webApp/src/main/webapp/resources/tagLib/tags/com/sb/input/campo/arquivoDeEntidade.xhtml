@@ -21,6 +21,8 @@
                 <p:commandButton value="Enviar #{label}"
                                  actionListener="#{pgUtil.exibirModalEnvioArquivo()}"
                                  >
+                    <p:ajax event="dialogReturn"  update="@namingcontainer" />
+
                     <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}"
                                                  value="#{registro}" />
                 </p:commandButton>
@@ -29,16 +31,18 @@
 
             <h:panelGroup rendered="#{!pgMapaComponentes.campoInstanciado.vazio}" >
 
-                <p:commandButton value="alterar"
+                <p:commandButton value="Atualizar #{registro.valor}"
                                  action="#{pgUtil.exibirModalEnvioArquivo()}"
                                  process="@this"
+
                                  >
+                    <p:ajax event="dialogReturn"  update="@namingcontainer" />
                     <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}"
                                                  value="#{registro}" />
                 </p:commandButton>
 
-            </h:panelGroup>
 
+            </h:panelGroup>
 
 
 
