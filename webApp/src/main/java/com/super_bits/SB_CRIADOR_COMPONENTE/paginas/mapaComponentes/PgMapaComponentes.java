@@ -11,7 +11,7 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.Inf
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.MapaComponentes;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.ItfParametroTela;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.TIPO_PARTE_URL;
 import com.super_bits.modulosSB.SBCore.modulos.Mensagens.FabMensagens;
 import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.FabErro;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaCampo;
@@ -88,9 +88,9 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private Map<String, String> labelByCaminho;
 
     private List<AcaoDoSistema> acoesLaboratorio;
-    @InfoParametroURL(nome = "componente", tipoParametro = ItfParametroTela.TIPO_URL.TEXTO)
+    @InfoParametroURL(nome = "componente", tipoParametro = TIPO_PARTE_URL.TEXTO)
     private ParametroURL prCaminhoComponente;
-    @InfoParametroURL(nome = "conteudo", tipoParametro = ItfParametroTela.TIPO_URL.TEXTO)
+    @InfoParametroURL(nome = "conteudo", tipoParametro = TIPO_PARTE_URL.TEXTO)
     private ParametroURL prCaminhoBeanSelecionado;
 
     private EstruturaCampo estruturaCampoSelecionado;

@@ -25,6 +25,7 @@ public class InicioFimContextoWebPagina implements ItfInicioFimAppWP {
         //SBPersistencia.configuraJPA(FabConfiguracoesDeAmbienteWebSB_CRIADOR_COMPONENTE.HOMOLOGACAO.getConfiguracaoPersistencia());
         SBWebPaginas.configurar(FabConfiguracoesDeAmbienteWebSB_CRIADOR_COMPONENTE.HOMOLOGACAO.getConfiguracaoWebPaginas());
         UtilSB_CRIADOR_COMPONENTEGlobalVar.adicionarObjetosEstaticosProjeto();
+        SBCore.getCentralDeArquivos().setCentralDePermissao(new CentralPermissaoArquivoSBComponente());
         new SiteMap();
 
     }

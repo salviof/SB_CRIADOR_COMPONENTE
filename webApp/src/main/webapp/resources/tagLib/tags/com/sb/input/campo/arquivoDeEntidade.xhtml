@@ -10,14 +10,16 @@
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
 
 
-
         <ui:define name="input">
 
 
 
             <p:inputText  style=" visibility: hidden;"/>
 
-            <h:panelGroup rendered="#{pgMapaComponentes.campoInstanciado.vazio}" >
+            <h:panelGroup rendered="#{pgMapaComponentes.campoInstanciado.vazio}"  >
+                <h:panelGroup rendered="#{pgMapaComponentes.campoInstanciado.umCampoArquivoEntidade}" >
+                    #{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.linkAbrirArquivo}
+                </h:panelGroup>
                 <p:commandButton value="Enviar #{label}"
                                  actionListener="#{pgUtil.exibirModalEnvioArquivo()}"
                                  >
@@ -26,20 +28,50 @@
                     <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}"
                                                  value="#{registro}" />
                 </p:commandButton>
+
             </h:panelGroup>
 
 
             <h:panelGroup rendered="#{!pgMapaComponentes.campoInstanciado.vazio}" >
 
-                <p:commandButton value="Atualizar #{registro.valor}"
-                                 action="#{pgUtil.exibirModalEnvioArquivo()}"
-                                 process="@this"
+                <h:column rendered="#{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.usuarioLogadoTemPermissaoBaixarArquivo}" >
+                    #{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.linkBaixarArquivo}
+                    <p:commandButton value="Baixar"
+                                     onclick="javaScript:window.open('#{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.linkBaixarArquivo}', '_blank');"
+                                     icon="#{iconeIconeFontAwesome.REG_BAIXAR.tagHtml}"
+                                     />
+                    <p:commandButton value="Abrir"
+                                     onclick="javaScript:window.open('#{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.li}', '_blank');"
+                                     icon="#{iconeIconeFontAwesome.REG_BAIXAR.tagHtml}"
+                                     />
+                </h:column>
 
-                                 >
-                    <p:ajax event="dialogReturn"  update="@namingcontainer" />
-                    <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}"
-                                                 value="#{registro}" />
-                </p:commandButton>
+
+                <table style="width:100%">
+                    <h:column rendered="#{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.usuarioLogadoTemAlterarArquivo}" >
+
+                        <p:commandButton value="Atualizar #{registro.valor}"
+                                         action="#{pgUtil.exibirModalEnvioArquivo()}"
+                                         process="@this"
+                                         >
+                            <p:ajax event="dialogReturn"  update="@namingcontainer" />
+                            <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}"
+                                                         value="#{registro}" />
+
+                        </p:commandButton>
+
+                    </h:column>
+
+
+                    <h:column rendered="#{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.usuarioLogadoTemPermissaoBaixarArquivo}" >
+
+                        <p:commandButton value="Excluir"
+                                         />
+                    </h:column>
+
+                </table>
+
+
 
 
             </h:panelGroup>

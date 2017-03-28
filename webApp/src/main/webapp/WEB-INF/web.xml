@@ -8,7 +8,6 @@
 
 
 
-
     <welcome-file-list>
         <welcome-file>/site/home.xhtml</welcome-file>
     </welcome-file-list>
@@ -92,7 +91,6 @@
         <servlet-name>Super_BitsWebPaginas</servlet-name>
         <servlet-class>com.super_bits.modulosSB.webPaginas.controller.servletes.WebPaginasServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
-
     </servlet>
     <servlet-mapping>
         <servlet-name>Super_BitsWebPaginas</servlet-name>
@@ -102,6 +100,17 @@
         <servlet-name>Super_BitsWebPaginas</servlet-name>
         <url-pattern>*.html</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>slvGestorDeArquivos</servlet-name>
+        <servlet-class>com.super_bits.modulosSB.webPaginas.controller.servletes.servletArquivoDeEntidade.ServletArquivosDeEntidade</servlet-class>
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>slvGestorDeArquivos</servlet-name>
+        <url-pattern>/arquivos/*</url-pattern>
+    </servlet-mapping>
+
     <listener>
         <listener-class>com.super_bits.modulosSB.webPaginas.controller.listenners.ContextoWebPaginas</listener-class>
     </listener>
