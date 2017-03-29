@@ -7,7 +7,6 @@
     </context-param>
 
 
-
     <welcome-file-list>
         <welcome-file>/site/home.xhtml</welcome-file>
     </welcome-file-list>
@@ -31,11 +30,11 @@
     <!-- Time in seconds that facelets should be checked for changes since last request. A value of -1 disables refresh checking. -->
     <context-param>
         <param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
-        <param-value>1</param-value>
+        <param-value>0</param-value>
     </context-param>
     <context-param>
         <param-name>facelets.REFRESH_PERIOD</param-name>
-        <param-value>1</param-value>
+        <param-value>0</param-value>
     </context-param>
 
 

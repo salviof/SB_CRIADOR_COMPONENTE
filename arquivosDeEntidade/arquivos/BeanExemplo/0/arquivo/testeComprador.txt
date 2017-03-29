@@ -1,0 +1,155 @@
+@InfoTipoAcaoGestaoEntidade(nomeAcao = " Gerenciar Camapanha ", descricao = " Descrição não documentada " , icone = " fa fa-gears "  
+ , xhtmlDaAcao = " /site/comprador/campanha/gerenciar.xhtml ", precisaPermissao = false, codigoJira = " null" ) 
+CAMPANHA_MB_GERENCIAR,
+
+
+@InfoTipoAcaoFormulario(nomeAcao = " Listar Campanhas ",descricao = " Editar um Campanha do sistema " , icone = " fa fa-align-justify "  
+ , xhtmlDaAcao = " /site/comprador/campanha/listar.xhtml ",precisaPermissao = true , codigoJira = " null " ) 
+CAMPANHA_FRM_LISTAR_PAGINA_INICIAL,
+
+
+@InfoTipoAcaoFormulario(nomeAcao = " Visualizar Campanha ",descricao = " Visualizar um Campanha do sistema " , icone = " fa fa-eye "  
+ , xhtmlDaAcao = " /site/fornecedor/comprador_campanha_editar.xhtml ",precisaPermissao = true , codigoJira = " null " ) 
+CAMPANHA_FRM_VISUALIZAR,
+
+
+@InfoTipoAcaoGestaoEntidade(nomeAcao = " Gerenciar Pedido ", descricao = " Gerencia os pedidos de comprador " , icone = " fa fa-pencil-square-o "  
+ , xhtmlDaAcao = " /site/comprador/pedido/gerenciar.xhtml ", precisaPermissao = true, codigoJira = " null" ) 
+PEDIDO_MB_GERENCIAR,
+
+
+@InfoTipoAcaoFormulario(nomeAcao = " Visualizar Fornecedor ",descricao = " Visualizar um Pedido do sistema " , icone = " fa fa-eye "  
+ , xhtmlDaAcao = " /site/comprador/pedido/editar.xhtml ",precisaPermissao = true , codigoJira = " null " ) 
+PEDIDO_FRM_VISUALIZAR_FORNECEDOR,
+
+
+@InfoTipoAcaoController(nomeAcao = " Salvar Pedido ", descricao = " Cadastrar um pedido de comprador " , icone = " fa fa-cart-arrow-down " 
+ , precisaPermissao = true , codigoJira = " null" ) 
+PEDIDO_CTR_SALVAR_NOVO,
+
+
+@InfoTipoAcaoFormulario(nomeAcao = " Listar Pedido ",descricao = " Editar um Pedido do sistema " , icone = " fa fa-align-justify "  
+ , xhtmlDaAcao = " /site/comprador/pedido/listar.xhtml ",precisaPermissao = true , codigoJira = " null " ) 
+PEDIDO_FRM_LISTAR,
+
+
+@InfoTipoAcaoController(nomeAcao = " Gerar Pagamento ", descricao = " Gera um pedido de pagamento de comprador " , icone = " fa fa-credit-card " 
+ , precisaPermissao = true , codigoJira = " null" ) 
+PEDIDO_PAGAMENTO_CTR_PAGAR,
+
+
+@InfoTipoAcaoController(nomeAcao = " Realizar Pagamento do Pedido ", descricao = " Salva um pedido de pagamento " , icone = " fa fa-save " 
+ , precisaPermissao = true , codigoJira = " null" ) 
+PEDIDO_PAGAMENTO_CTR_SALVAR_NOVO,
+
+
+@InfoTipoAcaoFormulario(nomeAcao = " Visualizar Pedido ",descricao = " Visualizar um Pedido do sistema " , icone = " fa fa-eye "  
+ , xhtmlDaAcao = " /site/comprador/pedido/editar.xhtml ",precisaPermissao = true , codigoJira = " null " ) 
+PEDIDO_FRM_VISUALIZAR,
+
+
+@InfoTipoAcaoController(nomeAcao = " Imprimir Pedido ", descricao = " Imprime o pedido de um comprador " , icone = " fa fa-print " 
+ , precisaPermissao = true , codigoJira = " null" ) 
+PEDIDO_CTR_IMPRIMIR,
+
+
+@InfoTipoAcaoFormulario(nomeAcao = " Criar pedido ",descricao = " Cria um novo Pedido no sistema " , icone = " fa fa-save "  
+ , xhtmlDaAcao = " /site/comprador/pedido/editar.xhtml ",precisaPermissao = true , codigoJira = " null " ) 
+PEDIDO_FRM_NOVO,
+
+
+@InfoTipoAcaoGestaoEntidade(nomeAcao = " Gerenciar Dados ", descricao = " Descrição não documentada " , icone = " fa fa-key "  
+ , xhtmlDaAcao = " /site/comprador/comprador/gerenciar.xhtml ", precisaPermissao = true, codigoJira = " null" ) 
+DADOS_MB_GERENCIAR,
+
+
+@InfoTipoAcaoFormulario(nomeAcao = " Visualizar Dados ",descricao = " Visualizar um Comprador do sistema " , icone = " fa fa-eye "  
+ , xhtmlDaAcao = " /site/comprador/comprador/editar.xhtml ",precisaPermissao = true , codigoJira = " null " ) 
+DADOS_FRM_VISUALIZAR,
+
+
+@InfoTipoAcaoGestaoEntidade(nomeAcao = " Gerenciar Filial ", descricao = " Gerencia as filiais de um comprador " , icone = " fa fa-institution "  
+ , xhtmlDaAcao = " /site/comprador/gerenciarFiliaisComprador.xhtml ", precisaPermissao = true, codigoJira = " null" ) 
+FILIAL_MB_GERENCIAR,
+
+
+@InfoTipoAcaoFormulario(nomeAcao = " Listar Filial ",descricao = " Editar um Filial Comprador do sistema " , icone = " fa fa-align-justify "  
+ , xhtmlDaAcao = " /site/comprador/listarFiliaisComprador.xhtml ",precisaPermissao = true , codigoJira = " null " ) 
+FILIAL_FRM_LISTAR,
+
+
+@InfoTipoAcaoFormulario(nomeAcao = " Cadastrar Filial ",descricao = " Cria um novo Filial Comprador no sistema " , icone = " fa fa-plus "  
+ , xhtmlDaAcao = " /site/comprador/editarFiliaisComprador.xhtml ",precisaPermissao = true , codigoJira = " null " ) 
+FILIAL_FRM_NOVO,
+
+
+@InfoTipoAcaoController(nomeAcao = " Cadastrar Filial ", descricao = " Salva uma filial de comprador " , icone = " fa fa-save " 
+ , precisaPermissao = true , codigoJira = " null" ) 
+FILIAL_CTR_SALVAR_MERGE,
+
+
+@InfoTipoAcaoFormulario(nomeAcao = " Alterar Filial ",descricao = " Editar um Filial Comprador do sistema " , icone = " fa fa-edit "  
+ , xhtmlDaAcao = " /site/comprador/editarFiliaisComprador.xhtml ",precisaPermissao = true , codigoJira = " null " ) 
+FILIAL_FRM_EDITAR,
+
+
+@InfoTipoAcaoFormulario(nomeAcao = " Visualizar Filial ",descricao = " Visualizar um Filial Comprador do sistema " , icone = " fa fa-eye "  
+ , xhtmlDaAcao = " /site/comprador/editarFiliaisComprador.xhtml ",precisaPermissao = true , codigoJira = " null " ) 
+FILIAL_FRM_VISUALIZAR,
+
+
+@InfoTipoAcaoController(nomeAcao = " Alterar Status ", descricao = " Altera status de uma filial de comprador " , icone = " fa fa-retweet " 
+ , precisaPermissao = false , codigoJira = " null" ) 
+FILIAL_CTR_ALTERAR_STATUS,
+
+
+@InfoTipoAcaoGestaoEntidade(nomeAcao = " Gerenciar Sugestao de Campanha ", descricao = " Gerencia as sugestões de campanhas " , icone = " fa fa-lightbulb-o "  
+ , xhtmlDaAcao = " /site/comprador/sugestaodecampanha/gerenciar.xhtml ", precisaPermissao = true, codigoJira = " null" ) 
+SUGESTAO_CAMPANHA_MB_GERENCIAR,
+
+
+@InfoTipoAcaoFormulario(nomeAcao = " Listar Sugestoes de Campanha ",descricao = " Editar um Sugestão de campanha do sistema " , icone = " fa fa-align-justify "  
+ , xhtmlDaAcao = " /site/comprador/sugestaodecampanha/listar.xhtml ",precisaPermissao = true , codigoJira = " null " ) 
+SUGESTAO_CAMPANHA_FRM_LISTAR,
+
+
+@InfoTipoAcaoFormulario(nomeAcao = " Sugerir Campanha ",descricao = " Cria um novo Sugestão de campanha no sistema " , icone = " fa fa-plus "  
+ , xhtmlDaAcao = " /site/comprador/sugestaodecampanha/editar.xhtml ",precisaPermissao = true , codigoJira = " null " ) 
+SUGESTAO_CAMPANHA_FRM_NOVO,
+
+
+@InfoTipoAcaoController(nomeAcao = " Enviar Sugestao ", descricao = " Salva sugestão de campanha " , icone = " fa fa-save " 
+ , precisaPermissao = true , codigoJira = " null" ) 
+SUGESTAO_CAMPANHA_CTR_SALVAR_MERGE,
+
+
+@InfoTipoAcaoController(nomeAcao = " Avaliar Sugestao Positivo ", descricao = " Avalia positivamente uma sugestão de campanha " , icone = " fa fa-thumbs-o-up " 
+ , precisaPermissao = true , codigoJira = " null" ) 
+SUGESTAO_CAMPANHA_CTR_AVALIAR_POSITIVO,
+
+
+@InfoTipoAcaoController(nomeAcao = " Avaliar Sugestao Negativo ", descricao = " Avalia negativamente uma sugestão de campanha " , icone = " fa fa-thumbs-o-down " 
+ , precisaPermissao = true , codigoJira = " null" ) 
+SUGESTAO_CAMPANHA_CTR_AVALIAR_NEGATIVO,
+
+
+@InfoTipoAcaoGestaoEntidade(nomeAcao = " Gerenciar Pre-Negociacao ", descricao = " Descrição não documentada " , icone = " fa fa-briefcase "  
+ , xhtmlDaAcao = " /site/comprador/prenegociacao/gerenciar.xhtml ", precisaPermissao = true, codigoJira = " null" ) 
+PRE_NEGOCIACAO_MB_GERENCIAR,
+
+
+@InfoTipoAcaoFormulario(nomeAcao = " Listar Pre-Negociacao ",descricao = " Editar um Pré negociação do sistema " , icone = " fa fa-align-justify "  
+ , xhtmlDaAcao = " /site/comprador/prenegociacao/listar.xhtml ",precisaPermissao = true , codigoJira = " null " ) 
+PRE_NEGOCIACAO_FRM_LISTAR,
+
+
+@InfoTipoAcaoController(nomeAcao = " Cadastrar Pre-Negociacao ", descricao = " Cadastra uma pré negociação de comprador " , icone = " fa fa-plus " 
+ , precisaPermissao = true , codigoJira = " null" ) 
+PRE_NEGOCIACAO_CTR_SALVAR_MERGE,
+
+
+@InfoTipoAcaoFormulario(nomeAcao = " Enviar Pre Negociacao ",descricao = " Cria um novo Pré negociação no sistema " , icone = " fa fa-save "  
+ , xhtmlDaAcao = " /site/comprador/prenegociacao/editar.xhtml ",precisaPermissao = true , codigoJira = " null " ) 
+PRE_NEGOCIACAO_FRM_NOVO,
+
+

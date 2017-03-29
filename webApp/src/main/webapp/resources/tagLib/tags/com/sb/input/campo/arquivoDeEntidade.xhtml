@@ -16,10 +16,9 @@
 
             <p:inputText  style=" visibility: hidden;"/>
 
+            <p:commandButton update="@form" value="Atualizar" />
             <h:panelGroup rendered="#{pgMapaComponentes.campoInstanciado.vazio}"  >
-                <h:panelGroup rendered="#{pgMapaComponentes.campoInstanciado.umCampoArquivoEntidade}" >
-                    #{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.linkAbrirArquivo}
-                </h:panelGroup>
+
                 <p:commandButton value="Enviar #{label}"
                                  actionListener="#{pgUtil.exibirModalEnvioArquivo()}"
                                  >
@@ -33,15 +32,18 @@
 
 
             <h:panelGroup rendered="#{!pgMapaComponentes.campoInstanciado.vazio}" >
+                <h:panelGroup rendered="#{pgMapaComponentes.campoInstanciado.umCampoArquivoEntidade}" >
+                    #{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.linkBaixarArquivo}
+                </h:panelGroup>
 
                 <h:column rendered="#{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.usuarioLogadoTemPermissaoBaixarArquivo}" >
-                    #{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.linkBaixarArquivo}
+
                     <p:commandButton value="Baixar"
                                      onclick="javaScript:window.open('#{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.linkBaixarArquivo}', '_blank');"
                                      icon="#{iconeIconeFontAwesome.REG_BAIXAR.tagHtml}"
                                      />
                     <p:commandButton value="Abrir"
-                                     onclick="javaScript:window.open('#{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.li}', '_blank');"
+                                     onclick="javaScript:window.open('#{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.linkAbrirArquivo}', '_blank');"
                                      icon="#{iconeIconeFontAwesome.REG_BAIXAR.tagHtml}"
                                      />
                 </h:column>
