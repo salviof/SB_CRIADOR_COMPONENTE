@@ -142,8 +142,8 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     public void irParaPaginaComponenteSelecionado() {
         prCaminhoBeanSelecionado.setValor(caminhoBeanSelecionado);
         prCaminhoComponente.setValor(componenteSelecionado.getCaminhoFabrica());
-
-        paginaUtil.irParaURL(getUrlAtual());
+        String url = getUrlAtual();
+        paginaUtil.irParaURL(url);
 
     }
 
