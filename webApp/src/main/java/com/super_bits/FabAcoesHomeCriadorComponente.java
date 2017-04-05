@@ -7,7 +7,6 @@ package com.super_bits;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.informacao.ConteudoGenerico;
 import com.super_bits.modulos.SBAcessosModel.controller.FabModulosSistemaSB;
-
 import com.super_bits.modulos.SBAcessosModel.controller.InfoModulosSistemaSB;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel;
@@ -32,11 +31,6 @@ public enum FabAcoesHomeCriadorComponente implements ItfFabricaAcoes {
     @Override
     public AcaoDoSistema getRegistro() {
         return (AcaoDoSistema) UtilFabricaDeAcoesAcessosModel.getNovaAcao(this);
-    }
-
-    @Override
-    public AcaoDoSistema getAcaoDoSistema() {
-        return getRegistro();
     }
 
     @Override

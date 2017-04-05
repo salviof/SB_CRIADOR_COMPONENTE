@@ -64,13 +64,6 @@ public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
     }
 
     @Override
-    public AcaoDoSistema getAcaoDoSistema() {
-
-        return getRegistro();
-
-    }
-
-    @Override
     public Class getEntidadeDominio() {
 
         return ComponenteVisualSB.class;

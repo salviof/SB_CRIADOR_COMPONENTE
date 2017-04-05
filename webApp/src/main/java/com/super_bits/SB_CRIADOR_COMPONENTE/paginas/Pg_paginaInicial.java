@@ -35,8 +35,8 @@ public class Pg_paginaInicial extends MB_PaginaConversation {
 
     @PostConstruct
     public void inicio() {
-        acaoSelecionada = FabAcoesHomeCriadorComponente.PAGINA_HOME_FRM_LOGIN.getAcaoDoSistema();
-        xhtmlAcaoAtual = FabAcoesHomeCriadorComponente.PAGINA_HOME_FRM_LOGIN.getAcaoDoSistema().getComoFormulario().getXhtml();
+        acaoSelecionada = FabAcoesHomeCriadorComponente.PAGINA_HOME_FRM_LOGIN.getRegistro();
+        xhtmlAcaoAtual = FabAcoesHomeCriadorComponente.PAGINA_HOME_FRM_LOGIN.getRegistro().getComoFormulario().getXhtml();
     }
 
     public String getBeanExemplo() {
