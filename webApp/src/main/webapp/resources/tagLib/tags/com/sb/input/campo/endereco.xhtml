@@ -20,6 +20,7 @@
                         </p:inplace>
 
 
+
                         <p:inplace  label=",#{registro.campoLocalizacao.unidadeFederativa.sigla}" rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.estadoNulo}"
                                     editor="true">
                             <p:autoComplete  value="teste" required="true" label="text" />
@@ -33,14 +34,44 @@
                             <p:inputText value="teste" required="true" label="text" />
                         </p:inplace>
 
+                        <p:commandLink
+
+                            actionListener="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.limparBairro()}"
+                            update="coletorEndereco"
+                            rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.bairroNulo}"
+                            >
+
+                            <i class="fa fa-remove"></i>
+
+                        </p:commandLink>
+
+                        <p:commandLink
+
+                            actionListener="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.limparCidade()}"
+                            update="coletorEndereco"
+                            rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.cidadeNula}"
+                            >
+
+                            <i class="fa fa-remove"></i>
+
+                        </p:commandLink>
+
+                        <p:commandLink
+
+                            actionListener="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.limparEstado()}"
+                            update="coletorEndereco"
+                            rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.estadoNulo}"
+
+                            >
+
+                            <i class="fa fa-remove"></i>
+
+                        </p:commandLink>
+
 
                     </h:panelGroup>
+
                 </h:panelGrid>
-
-
-
-
-
 
                 <h:panelGrid columns="2" columnClasses="campoResponsivo,tamanho20px"
                              rendered="#{registro.campoLocalizacao.coletarEstadoAgora}"
@@ -100,9 +131,40 @@
 
 
                 <h:panelGrid columns="2" columnClasses="campoResponsivo,tamanho20px"
+                             rendered="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.coletarBairroAgora}"
+                             id="bairro"
+                             >
+                    <p:autoComplete converter="conversorGenerico"
+                                    completeMethod="#{registro.campoLocalizacao.metodoAutoCompleteBairro}"
+                                    var="bairro"
+                                    value="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.bairro}"
+                                    forceSelection="true"
+                                    itemValue="#{bairro}"
+                                    itemLabel="#{bairro.nome}"
+                                    placeholder="Localize o Bairro"
+
+
+                                    styleClass="campoResponsivo"
+
+                                    id="cpBairro"
+                                    >
+                        <p:ajax
+                            event="itemSelect"
+
+                            update="coletorEndereco"
+                            />
+                    </p:autoComplete>
+                    <p:focus for="cpBairro" />
+                    <SBComp:opcoesDeEndereco campo="#{registro}" />
+                </h:panelGrid>
+
+
+
+                <h:panelGrid columns="2" columnClasses="campoResponsivo,tamanho20px"
                              rendered="#{registro.campoLocalizacao.coletarCepAgora}"
                              id="cep"
                              >
+
                     <p:inputMask mask="99999-999"
                                  value="#{registro.campoLocalizacao.cep}"
                                  id="cpCep"
@@ -113,6 +175,7 @@
                             partialSubmit="cpEstado"
                             update="coletorEndereco"
                             />
+
                     </p:inputMask>
 
                     <SBComp:opcoesDeEndereco campo="#{registro}" />
@@ -123,7 +186,7 @@
                              id="logradouro"
                              >
                     <p:inputText
-                        value="#{registro.campoLocalizacao.logradouroDescricao}"
+                        value="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.logradouroDescricao}"
                         id="cpLogradouro"
                         styleClass="campoResponsivo"
                         placeholder="Logradouro"

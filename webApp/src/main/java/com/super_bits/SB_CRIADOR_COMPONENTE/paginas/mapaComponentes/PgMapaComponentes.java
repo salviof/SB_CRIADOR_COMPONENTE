@@ -70,8 +70,6 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private final AcaoDoSistema acaoLabOnChangeComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_ONCHANGE.getRegistro();
     private final AcaoDoSistema acaoLabValidarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA_INPUT.getRegistro();
 
-    private final AcaoController acaoModalComunicacao = (AcaoController) FabAcaoLabComponentes.LAB_COMPONENTES_CTR_TESTE_COMUNICACAO.getRegistro();
-    private final AcaoController acaoModalJustificativa = (AcaoController) FabAcaoLabComponentes.LAB_COMPONENTES_CTR_TESTE_JUSTIFICATIVA.getRegistro();
     private String parametroPesquisa;
 
     private String tipoEstruturaSelecionada;
@@ -536,14 +534,6 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     @PreDestroy
     public void fecharPagina() {
         super.fecharPagina(); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public AcaoController getAcaoModalComunicacao() {
-        return acaoModalComunicacao;
-    }
-
-    public AcaoController getAcaoModalJustificativa() {
-        return acaoModalJustificativa;
     }
 
 }
