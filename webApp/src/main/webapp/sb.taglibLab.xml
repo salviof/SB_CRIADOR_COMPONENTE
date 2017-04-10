@@ -184,6 +184,19 @@
             <type>java.lang.Boolean</type>
         </attribute>
 
+        <attribute>
+
+            <description>
+                 <![CDATA[ Informando um id para atualizar, quando acontecer
+                uma alteração, acontecerá um ajax com os novos valores dos beans, na area selecionada,
+                Formidável não ?]]>
+            </description>
+            <name>arqComponenteVisual</name>
+            <required>false</required>
+            <type>java.lang.String</type>
+            <required>false</required>
+        </attribute>
+
     </tag>
 
     <tag>

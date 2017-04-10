@@ -9,8 +9,10 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_contr
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.InfoModuloSB_CRIADOR_COMPONENTE;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoController;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
+import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabricaAcoes;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.icones.FabIconeFontAwesome;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComponenteVisualSB;
@@ -54,7 +56,11 @@ public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
             precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
     LAB_COMPONENTES_FRM_LAB_INPUT_ONCHANGE,
     @InfoTipoAcaoFormulario(nomeAcao = "Testar Validacao", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
-    LAB_COMPONENTES_FRM_LAB_INPUT_VALIDACAO;
+    LAB_COMPONENTES_FRM_LAB_INPUT_VALIDACAO,
+    @InfoTipoAcaoController(campoJustificativa = "seletorOpcao")
+    LAB_COMPONENTES_CTR_TESTE_JUSTIFICATIVA,
+    @InfoTipoAcaoController(fraseComunicação = "", comunicacao = FabTipoComunicacao.PERGUNTAR_SIM_OU_NAO)
+    LAB_COMPONENTES_CTR_TESTE_COMUNICACAO;
 
     @Override
     public AcaoDoSistema getRegistro() {

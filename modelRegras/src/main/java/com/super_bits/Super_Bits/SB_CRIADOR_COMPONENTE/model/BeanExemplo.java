@@ -6,12 +6,12 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
 import com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Bairro;
-import com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Localizacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoClasse;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.ValorAceito;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.Campo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabCampos;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemLocalizacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.FabTipoBeanSBGenerico;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemContatoCorporativo;
 import java.util.ArrayList;
@@ -34,6 +34,40 @@ import javax.validation.constraints.NotNull;
 @InfoClasse(tags = {"Objeto Exemplo"}, plural = "Beans de Exmplo")
 public class BeanExemplo
         extends ItemContatoCorporativo {
+
+    public BeanExemplo() {
+        this(true);
+
+    }
+
+    /**
+     *
+     * @param pCriarLista
+     */
+    public BeanExemplo(boolean pCriarLista) {
+        super();
+
+        if (!pCriarLista) {
+            listasExemplo = null;
+        } else {
+            BeanExemplo exemplo1 = new BeanExemplo(false);
+            exemplo1.setNome("Bean Lista 1");
+            exemplo1.setId(1);
+            exemplo1.setEmail("teste@teste.com");
+
+            BeanExemplo exemplo2 = new BeanExemplo(false);
+            exemplo2.setNome("Bean Lista 1");
+            exemplo2.setId(1);
+            exemplo2.setEmail("teste@teste.com");
+            listasExemplo = new ArrayList<>();
+            beanFilho = new BeanExemplo(false);
+            listasExemplo.add(exemplo1);
+
+            apelido = "testeeeeeeee";
+
+        }
+
+    }
 
     @InfoCampo(tipo = FabCampos.ID, label = "ID")
     @NotNull
@@ -149,7 +183,7 @@ public class BeanExemplo
 
     @InfoCampo(tipo = FabCampos.LC_LOCALIZACAO, label = "Localização")
     @NotNull
-    private Localizacao localizacao;
+    private ItemLocalizacao localizacao;
     @NotNull
     private BeanExemplo beanFilho;
 
@@ -169,39 +203,6 @@ public class BeanExemplo
     private BeanExemplo benSelecionadoListaPorCampo;
 
     private List<BeanExemplo> listasExemplo;
-
-    public BeanExemplo() {
-        this(true);
-
-    }
-
-    /**
-     *
-     * @param pCriarLista
-     */
-    public BeanExemplo(boolean pCriarLista) {
-        super();
-        if (!pCriarLista) {
-            listasExemplo = null;
-        } else {
-            BeanExemplo exemplo1 = new BeanExemplo(false);
-            exemplo1.setNome("Bean Lista 1");
-            exemplo1.setId(1);
-            exemplo1.setEmail("teste@teste.com");
-
-            BeanExemplo exemplo2 = new BeanExemplo(false);
-            exemplo2.setNome("Bean Lista 1");
-            exemplo2.setId(1);
-            exemplo2.setEmail("teste@teste.com");
-            listasExemplo = new ArrayList<>();
-            beanFilho = new BeanExemplo(false);
-            listasExemplo.add(exemplo1);
-
-            apelido = "testeeeeeeee";
-
-        }
-
-    }
 
     @Override
     public int getId() {
@@ -418,11 +419,11 @@ public class BeanExemplo
         this.arquivo = arquivo;
     }
 
-    public Localizacao getLocalizacao() {
+    public ItemLocalizacao getLocalizacao() {
         return localizacao;
     }
 
-    public void setLocalizacao(Localizacao localizacao) {
+    public void setLocalizacao(ItemLocalizacao localizacao) {
         this.localizacao = localizacao;
     }
 
