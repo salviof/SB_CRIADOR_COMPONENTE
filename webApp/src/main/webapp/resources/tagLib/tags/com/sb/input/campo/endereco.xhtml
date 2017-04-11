@@ -12,66 +12,60 @@
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
             <h:panelGroup id="coletorEndereco"  rendered="#{registro.umCampoCampoLocalizacao}">
-                <h:panelGrid columns="1" style="width: 100%;" id="detalhesLocal">
+                <span>
                     <h:panelGroup >
 
-                        <p:inplace  label="cep #{registro.campoLocalizacao.cep}" rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.coletarCepAgora}" editor="true">
-                            <p:inputText value="teste" required="true" label="text" />
-                        </p:inplace>
+
+                        <h:panelGroup rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.estadoNulo}">
+                            #{pgMapaComponentes.campoInstanciado.campoLocalizacao.unidadeFederativa.nome}
+
+                            <p:commandLink
+
+                                actionListener="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.limparEstado()}"
+                                update="coletorEndereco"
+                                rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.estadoNulo}"
+
+                                >
+
+                                <i class="fa fa-remove"></i>
+
+                            </p:commandLink>
+
+                        </h:panelGroup>
+
+                        <h:panelGrid rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.cidadeNula}">
+                            #{pgMapaComponentes.campoInstanciado.campoLocalizacao.cidade.nome}
+                            <p:commandLink
+
+                                actionListener="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.limparCidade()}"
+                                update="coletorEndereco"
+                                rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.cidadeNula}"
+                                >
+
+                                <i class="fa fa-remove"></i>
+
+                            </p:commandLink>
+                        </h:panelGrid>
 
 
+                        <h:panelGroup rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.bairroNulo}">
+                            #{pgMapaComponentes.campoInstanciado.campoLocalizacao.bairro.nome}
+                            <p:commandLink
 
-                        <p:inplace  label=",#{registro.campoLocalizacao.unidadeFederativa.sigla}" rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.estadoNulo}"
-                                    editor="true">
-                            <p:autoComplete  value="teste" required="true" label="text" />
-                        </p:inplace>
+                                actionListener="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.limparBairro()}"
+                                update="coletorEndereco"
+                                rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.bairroNulo}"
+                                >
 
-                        <p:inplace label=",Belo Horizonte" rendered="#{!registro.campoLocalizacao.cidadeNula}" editor="true">
-                            <p:inputText value="teste" required="true" label="text" />
-                        </p:inplace>
+                                <i class="fa fa-remove"></i>
 
-                        <p:inplace  label=",Centro" rendered="#{!registro.campoLocalizacao.bairroNulo}" editor="true">
-                            <p:inputText value="teste" required="true" label="text" />
-                        </p:inplace>
-
-                        <p:commandLink
-
-                            actionListener="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.limparBairro()}"
-                            update="coletorEndereco"
-                            rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.bairroNulo}"
-                            >
-
-                            <i class="fa fa-remove"></i>
-
-                        </p:commandLink>
-
-                        <p:commandLink
-
-                            actionListener="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.limparCidade()}"
-                            update="coletorEndereco"
-                            rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.cidadeNula}"
-                            >
-
-                            <i class="fa fa-remove"></i>
-
-                        </p:commandLink>
-
-                        <p:commandLink
-
-                            actionListener="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.limparEstado()}"
-                            update="coletorEndereco"
-                            rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.estadoNulo}"
-
-                            >
-
-                            <i class="fa fa-remove"></i>
-
-                        </p:commandLink>
-
+                            </p:commandLink>
+                        </h:panelGroup>
 
                     </h:panelGroup>
+                </span>
 
-                </h:panelGrid>
+
 
                 <h:panelGrid columns="2" columnClasses="campoResponsivo,tamanho20px"
                              rendered="#{registro.campoLocalizacao.coletarEstadoAgora}"

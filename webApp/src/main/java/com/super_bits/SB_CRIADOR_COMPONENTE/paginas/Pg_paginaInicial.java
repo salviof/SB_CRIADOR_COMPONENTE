@@ -7,6 +7,7 @@ package com.super_bits.SB_CRIADOR_COMPONENTE.paginas;
 
 import com.super_bits.FabAcoesHomeCriadorComponente;
 import com.super_bits.InfoAcaoHomeCriacaoComponente;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.MB_PaginaConversation;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.reflexao.anotacoes.InfoPagina;
 import javax.annotation.PostConstruct;
@@ -45,6 +46,16 @@ public class Pg_paginaInicial extends MB_PaginaConversation {
 
     public void setBeanExemplo(String beanExemplo) {
         this.beanExemplo = beanExemplo;
+    }
+
+    @Override
+    public ItfBeanSimples getBeanSelecionado() {
+        return null;
+    }
+
+    @Override
+    public void setBeanSelecionado(ItfBeanSimples pBeanSimples) {
+
     }
 
 }

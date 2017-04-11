@@ -9,7 +9,7 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.BeanExemplo;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.FabAcaoLabComponentes;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.InfoAcaoLabComponentes;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.MapaComponentes;
-import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoController;
+import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDeEntidadeController;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.TIPO_PARTE_URL;
@@ -22,6 +22,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CampoNao
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.UtilSBCoreReflexaoObjetoSuperBits;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComponenteVisualSB;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FamiliaComponente;
@@ -69,6 +70,9 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private final AcaoDoSistema acaoLabVisualizarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VER.getRegistro();
     private final AcaoDoSistema acaoLabOnChangeComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_ONCHANGE.getRegistro();
     private final AcaoDoSistema acaoLabValidarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA_INPUT.getRegistro();
+
+    private final AcaoDeEntidadeController acaoTesteModalComunicacao = (AcaoDeEntidadeController) FabAcaoLabComponentes.LAB_COMPONENTES_CTR_TESTE_COMUNICACAO.getRegistro();
+    private final AcaoDeEntidadeController acaoTesteModalJustificativa = (AcaoDeEntidadeController) FabAcaoLabComponentes.LAB_COMPONENTES_CTR_TESTE_COMUNICACAO.getRegistro();
 
     private String parametroPesquisa;
 
@@ -144,8 +148,8 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     public void irParaPaginaComponenteSelecionado() {
         prCaminhoBeanSelecionado.setValor(caminhoBeanSelecionado);
         prCaminhoComponente.setValor(componenteSelecionado.getCaminhoFabrica());
-        String url = getUrlAtual();
-        paginaUtil.irParaURL(url);
+
+        paginaUtil.irParaURL(getUrlAtual());
 
     }
 
@@ -522,6 +526,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
             System.out.println("[" + beanDestruct + "-->");
             System.out.println(FacesContext.getCurrentInstance().getViewRoot().getViewMap().get(beanDestruct).toString() + "]");
         }
+
         FacesContext.getCurrentInstance().getViewRoot().clearInitialState();
 
     }
@@ -534,6 +539,24 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     @PreDestroy
     public void fecharPagina() {
         super.fecharPagina(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ItfBeanSimples getBeanSelecionado() {
+        return beanExemplo;
+    }
+
+    @Override
+    public void setBeanSelecionado(ItfBeanSimples pBeanSimples) {
+
+    }
+
+    public AcaoDeEntidadeController getAcaoTesteModalComunicacao() {
+        return acaoTesteModalComunicacao;
+    }
+
+    public AcaoDeEntidadeController getAcaoTesteModalJustificativa() {
+        return acaoTesteModalJustificativa;
     }
 
 }
