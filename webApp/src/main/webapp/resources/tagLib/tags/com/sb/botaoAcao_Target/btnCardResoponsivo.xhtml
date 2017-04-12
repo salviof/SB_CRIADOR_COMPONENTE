@@ -18,7 +18,7 @@
             <span> {origem.nome} </span>
             <f:setPropertyActionListener target="#{destino}"
                                          value="#{origem}"  />
-
+            <p:ajax event="dialogReturn" listener="#{paginaAtual.infoPagina.metodoRespostaModal}"/>
 
         </div>
     </p:commandLink>

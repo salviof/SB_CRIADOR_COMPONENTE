@@ -13,7 +13,9 @@
                      >
         <f:setPropertyActionListener target="#{paginaAtual.infoPagina.acaoSelecionada}"
                                      value="#{acao}"  />
-
+        <p:ajax event="dialogReturn" listener="#{paginaAtual.infoPagina.metodoRespostaModal}"
+                rendered="#{acao.acaoTemModal}"
+                />
     </p:commandButton>
 </html>
 

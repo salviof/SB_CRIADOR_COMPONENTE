@@ -293,6 +293,39 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
         }
 
+        if (isAcaoSelecionadaIgualA(FabAcaoLabComponentes.LAB_COMPONENTES_CTR_TESTE_COMUNICACAO)) {
+            switch (getRespostaAcaoAtual()) {
+
+                case NAO:
+                    SBCore.enviarAvisoAoUsuario("Envio não em teste comunicação");
+                    break;
+                case SIM:
+                    SBCore.enviarAvisoAoUsuario("Envio Sim em teste comunicação");
+                    break;
+                case FECHAR:
+                    break;
+                default:
+                    throw new AssertionError(getRespostaAcaoAtual().name());
+
+            }
+        }
+
+        if (isAcaoSelecionadaIgualA(FabAcaoLabComponentes.LAB_COMPONENTES_CTR_TESTE_JUSTIFICATIVA)) {
+            switch (getRespostaAcaoAtual()) {
+                case NAO:
+                    SBCore.enviarAvisoAoUsuario("Envio não em teste comunicação Justificativa");
+                    break;
+                case SIM:
+                    SBCore.enviarAvisoAoUsuario("Envio Sim em teste comunicação Justificativa");
+                    break;
+                case FECHAR:
+                    break;
+                default:
+                    throw new AssertionError(getRespostaAcaoAtual().name());
+
+            }
+        }
+
     }
 
     public void filtrarPorFamilia() {

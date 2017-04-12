@@ -4,22 +4,19 @@
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-
+    TESTE
     <p:commandButton onmousedown="esconderTooltips();"
                      styleClass="btnIconeENome botao"
                      icon="#{acao.iconeAcao}"
-                     action="#{paginaAtual.infoPagina.executarAcaoSelecionada()}"
+
                      update="#{pgUtil.makeCaminhoCompletoID(idUpdate)}"
                      value="#{label}"
                      oncomplete="#{javaScriptOncomplete}"
-
+                     actionListener="#{paginaAtual.infoPagina.executarAcaoSelecionada()}"
                      >
         <f:setPropertyActionListener target="#{paginaAtual.infoPagina.acaoSelecionada}"
                                      value="#{acao}"  />
-
-        <p:ajax event="dialogReturn" listener="#{paginaAtual.infoPagina.metodoRespostaModal}"
-                rendered="#{acao.acaoTemModal}"
-                />
+        <p:ajax event="dialogReturn" listener="#{paginaAtual.infoPagina.metodoRespostaModal}" />
     </p:commandButton>
 </html>
 

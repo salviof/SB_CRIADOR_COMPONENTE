@@ -3,7 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
 
 
     <h:head>
@@ -18,8 +20,18 @@
             Data Criação:   #{pgModalSBJSF.paginaVinculada.nomeCurto}
 
             Pagina Comunicação
-            Deseja #{pgModalSBJSF.paginaVinculada.acaoSelecionada.nomeAcao}?
+            <br/>
 
+            #{pgModalSBJSF.comunicacaoDoModal.mensagem}
+
+            <ui:repeat value="#{pgModalSBJSF.comunicacaoDoModal.repostas}" var="resp" >
+                <SBComp:botaoRespostaModal
+                    resposta="#{resp}"
+
+                    />
+
+
+            </ui:repeat>
 
         </h:form>
 

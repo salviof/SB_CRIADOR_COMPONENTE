@@ -60,6 +60,57 @@
     </tag>
 
     <tag>
+        <tag-name>botaoAcaoModal</tag-name>
+        <source>resources/tagLib/tags/com/sb/botaoAcaoModal.xhtml</source>
+        <attribute>
+            <name>acao</name>
+            <description>
+               <![CDATA[ Ação vinculada ao botão]]> </description>
+            <required>true</required>
+            <type>com.super_bits.Controller.Interfaces.acoes</type>
+        </attribute>
+
+        <attribute>
+            <name>layout</name>
+            <description><![CDATA[O componente utilizado para exibição]]></description>
+            <required>true</required>
+            <type>com.super_bits.view.fabricasCompVisual.ItfComponenteVisualSB</type>
+        </attribute>
+
+
+        <attribute>
+            <name>javaScriptOncomplete</name>
+            <description>
+              <![CDATA[  JavaScript que deve ser executado ao final do Ajax]]>
+            </description>
+            <type>java.lang.String</type>
+            <required>true</required>
+            <type>com.super_bits.Controller.Interfaces.acoes.ItfAcaoDoSistema</type>
+        </attribute>
+        <attribute>
+            <name>idUpdate</name>
+            <description>
+              <![CDATA[ Id do componente que deve ser atualizado (Nao precisa ser o caminho completo)
+                O Sistema utilizará o pgUtil.makeCaminhoCompletoID(idUpdate) ]]>
+            </description>
+            <type>java.lang.String</type>
+            <required>true</required>
+        </attribute>
+
+        <attribute>
+            <description>
+            <![CDATA[informa  o Label do input (nome do campo de entrada)]]>
+            </description>
+            <name>label</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+
+    </tag>
+
+
+
+    <tag>
         <tag-name>camposDoGrupo</tag-name>
         <source>resources/tagLib/tags/com/sb/camposDoGrupo.xhtml</source>
         <attribute>

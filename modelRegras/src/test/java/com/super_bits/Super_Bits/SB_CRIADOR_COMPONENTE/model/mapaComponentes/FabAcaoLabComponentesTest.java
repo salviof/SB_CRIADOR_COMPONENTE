@@ -22,7 +22,8 @@ public class FabAcaoLabComponentesTest extends TesteSB_CRIADOR_COMPONENTE {
     public void testValues() {
         try {
 
-            AcaoDeEntidadeController testeComunicacao = (AcaoDeEntidadeController) FabAcaoLabComponentes.LAB_COMPONENTES_CTR_TESTE_COMUNICACAO.getRegistro();
+            AcaoDeEntidadeController testeComunicacao
+                    = (AcaoDeEntidadeController) FabAcaoLabComponentes.LAB_COMPONENTES_CTR_TESTE_COMUNICACAO.getRegistro();
             testeComunicacao.isPrecisaComunicacao();
             testeComunicacao.isPrecisaJustificativa();
             testeComunicacao.isTemXHTMLModalVinculado();

@@ -6,9 +6,8 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <p:commandButton onmousedown="esconderTooltips();"
-                     styleClass="btnIconeENome botao"
-                     icon="#{acao.iconeAcao}"
-                     action="#{paginaAtual.infoPagina.executarAcaoSelecionada()}"
+
+                     action="#{prMetodo}"
                      update="#{pgUtil.makeCaminhoCompletoID(idUpdate)}"
                      value="#{label}"
                      oncomplete="#{javaScriptOncomplete}"
@@ -16,10 +15,7 @@
                      >
         <f:setPropertyActionListener target="#{paginaAtual.infoPagina.acaoSelecionada}"
                                      value="#{acao}"  />
-
-        <p:ajax event="dialogReturn" listener="#{paginaAtual.infoPagina.metodoRespostaModal}"
-                rendered="#{acao.acaoTemModal}"
-                />
+        <p:ajax event="dialogReturn" listener="#{paginaAtual.infoPagina.metodoRespostaModal}" update="#{pgUtil.makeCaminhoCompletoID(idUpdate)}" />
     </p:commandButton>
 </html>
 

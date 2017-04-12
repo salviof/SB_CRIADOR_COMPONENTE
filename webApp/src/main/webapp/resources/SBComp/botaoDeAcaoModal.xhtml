@@ -30,9 +30,6 @@
                       default="#{null}"
                       shortDescription="Cor do botão caso ele deva ser exibido por em uma cor especifica"
                       />
-        <cc:attribute name="trasformarAcaoEmLink" default="#{cc.attrs.acao.umaAcaoGestaoDominio}"    />
-
-
 
 
         <cc:attribute name="label"
@@ -46,66 +43,18 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
-        <c:if test="#{!cc.attrs.trasformarAcaoEmLink}">
+
+        MODAL
+        <sb:botaoAcaoModal
+            acao="#{cc.attrs.acao}"
+            javaScriptOncomplete="#{cc.attrs.javaScriptOncomplete}"
+            idUpdate="#{cc.attrs.update}"
+            layout="#{cc.attrs.tipoVisualizacao}"
+            label="#{cc.attrs.label}"
+
+            />
 
 
-            <c:if test="#{pgUtil.isAtributoPreenchidoComExpressao(cc, 'metodo')}">
-                <c:if test="#{!pgUtil.isAtributoPreenchidoComExpressao(cc,'armazenamentoAcaoExecutada')}" >
-
-                    <sb:botaoAcao
-
-
-                        acao="#{cc.attrs.acao}"
-                        metodo="#{cc.attrs.metodo}"
-                        javaScriptOncomplete="#{cc.attrs.javaScriptOncomplete}"
-                        idUpdate="#{cc.attrs.update}"
-                        layout="#{cc.attrs.tipoVisualizacao}"
-                        label="#{cc.attrs.label}"
-
-                        />
-
-
-
-                </c:if>
-
-                <c:if test="#{pgUtil.isAtributoPreenchidoComExpressao(cc,'armazenamentoAcaoExecutada')}">
-
-                    <sb:botaoAcaoAcaoTarget
-                        acao="#{cc.attrs.acao}"
-                        metodo="#{cc.attrs.metodo}"
-                        origem="#{cc.attrs.acao}"
-                        destino="#{cc.attrs.armazenamentoAcaoExecutada}"
-                        javaScriptOncomplete="#{cc.attrs.javaScriptOncomplete}"
-                        idUpdate="#{cc.attrs.update}"
-                        layout="#{cc.attrs.tipoVisualizacao}"
-                        label="#{cc.attrs.label}"
-                        />
-                </c:if>
-
-
-
-
-                <c:if test="#{!pgUtil.isAtributoPreenchidoComExpressao(cc,'metodo')}">
-
-                    <sb:botaoFake
-                        acao="#{cc.attrs.acao}"
-                        label="#{cc.attrs.label}"
-                        layout="#{cc.attrs.tipoVisualizacao}"
-                        />
-                </c:if>
-
-
-            </c:if>
-        </c:if>
-
-        <c:if test="#{cc.attrs.trasformarAcaoEmLink}">
-
-            <sb:botaoLink
-                acao="#{cc.attrs.acao}"
-                label="#{cc.attrs.label}"
-                layout="#{cc.attrs.tipoVisualizacao}" />
-
-        </c:if>
 
 
     </cc:implementation>

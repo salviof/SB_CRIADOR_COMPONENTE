@@ -13,6 +13,7 @@
                      >
         <f:setPropertyActionListener target="#{destino}"
                                      value="#{origem}"  />
+        <p:ajax event="dialogReturn" listener="#{paginaAtual.infoPagina.metodoRespostaModal}"/>
     </p:commandButton>
 </html>
 
