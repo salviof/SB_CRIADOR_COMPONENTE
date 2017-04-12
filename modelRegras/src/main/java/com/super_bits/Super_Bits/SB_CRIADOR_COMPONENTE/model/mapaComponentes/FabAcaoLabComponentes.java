@@ -57,7 +57,7 @@ public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
     LAB_COMPONENTES_FRM_LAB_INPUT_ONCHANGE,
     @InfoTipoAcaoFormulario(nomeAcao = "Testar Validacao", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
     LAB_COMPONENTES_FRM_LAB_INPUT_VALIDACAO,
-    @InfoTipoAcaoController(campoJustificativa = "seletorOpcao")
+    @InfoTipoAcaoController(campoJustificativa = "seletorOpcao", comunicacao = FabTipoComunicacao.PERGUNTAR_SIM_OU_NAO)
     LAB_COMPONENTES_CTR_TESTE_JUSTIFICATIVA,
     @InfoTipoAcaoController(fraseComunicação = "", comunicacao = FabTipoComunicacao.PERGUNTAR_SIM_OU_NAO)
     LAB_COMPONENTES_CTR_TESTE_COMUNICACAO;

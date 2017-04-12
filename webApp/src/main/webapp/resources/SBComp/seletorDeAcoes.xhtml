@@ -59,6 +59,10 @@
                         <c:if test="#{cc.attrs.update!=null}">
                             <f:ajax execute="@form"/>
                         </c:if>
+                        <p:ajax event="dialogReturn" listener="#{paginaAtual.infoPagina.metodoRespostaModal}"
+                                rendered="#{opc.acaoTemModal}"
+                                />
+
                     </p:commandButton>
                     <p:tooltip for="btIcon#{cc.id}" value="#{opc.nomeAcao}" trackMouse="true" />
                 </c:when>
@@ -82,7 +86,9 @@
                             </div>
                         </div>
                         <f:setPropertyActionListener target="#{cc.attrs.opcaoSelecionada}" value="#{opc}"/>
-
+                        <p:ajax event="dialogReturn" listener="#{paginaAtual.infoPagina.metodoRespostaModal}"
+                                rendered="#{opc.acaoTemModal}"
+                                />
                         <c:if test="#{cc.attrs.update!=null}">
                             <f:ajax execute="#{cc.attrs.update}"/>
                         </c:if>
@@ -104,6 +110,9 @@
                         <f:setPropertyActionListener
                             target="#{cc.attrs.opcaoSelecionada}"
                             value="#{opc}"/>
+                        <p:ajax event="dialogReturn" listener="#{paginaAtual.infoPagina.metodoRespostaModal}"
+                                rendered="#{opc.acaoTemModal}"
+                                />
 
                     </p:commandButton>
 

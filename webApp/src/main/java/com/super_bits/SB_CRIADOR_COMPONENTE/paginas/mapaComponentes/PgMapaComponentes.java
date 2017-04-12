@@ -72,7 +72,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private final AcaoDoSistema acaoLabValidarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA_INPUT.getRegistro();
 
     private final AcaoDeEntidadeController acaoTesteModalComunicacao = (AcaoDeEntidadeController) FabAcaoLabComponentes.LAB_COMPONENTES_CTR_TESTE_COMUNICACAO.getRegistro();
-    private final AcaoDeEntidadeController acaoTesteModalJustificativa = (AcaoDeEntidadeController) FabAcaoLabComponentes.LAB_COMPONENTES_CTR_TESTE_COMUNICACAO.getRegistro();
+    private final AcaoDeEntidadeController acaoTesteModalJustificativa = (AcaoDeEntidadeController) FabAcaoLabComponentes.LAB_COMPONENTES_CTR_TESTE_JUSTIFICATIVA.getRegistro();
 
     private String parametroPesquisa;
 
@@ -316,7 +316,9 @@ public class PgMapaComponentes extends MB_PaginaConversation {
                     SBCore.enviarAvisoAoUsuario("Envio não em teste comunicação Justificativa");
                     break;
                 case SIM:
-                    SBCore.enviarAvisoAoUsuario("Envio Sim em teste comunicação Justificativa");
+                    SBCore.enviarAvisoAoUsuario("Envio Sim em teste comunicação Justificativa, "
+                            + "Cp:" + beanExemplo.getSeletorOpcao().getNome());
+                    SBCore.enviarMensagemUsuario(beanExemplo.getSeletorOpcao().getNome(), FabMensagens.ALERTA);
                     break;
                 case FECHAR:
                     break;
