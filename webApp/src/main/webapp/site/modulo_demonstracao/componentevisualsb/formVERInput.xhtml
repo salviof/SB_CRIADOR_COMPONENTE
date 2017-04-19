@@ -13,7 +13,6 @@
         <ui:define name="conteudo">
 
 
-
             <p:fieldset legend="Opções" >
 
                 <h:form>
@@ -23,12 +22,10 @@
                                                />
                     <p:commandButton value="Atualizar"
                                      update="#{pgUtil.gerarCaminhoCompletoID(pgMapaComponentes.idAreaExbicaoAcaoSelecionada)}"
-
                                      />
 
                     <p:commandButton value="CarregaView"
                                      action="#{pgMapaComponentes.testeCarregarOutraViewPorCima()}"
-
                                      />
 
                     <a href="http://localhost:8080/SB_CRIADOR_COMPONENTE/"> teste </a>
@@ -78,7 +75,7 @@
                                     opcoes="#{pgMapaComponentes.campoInstanciado.listaDeOpcoes}"
                                     />
 
-
+                                <p:commandButton value="Teste" update="@form" />
                             </h:form>
 
 

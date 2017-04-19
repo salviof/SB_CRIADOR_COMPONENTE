@@ -20,6 +20,8 @@
 
                 <p:commandButton value="Enviar #{label}"
                                  actionListener="#{pgUtil.exibirModalEnvioArquivo()}"
+                                 partialSubmit="true"
+                                 process="@this"
                                  >
                     <p:ajax event="dialogReturn"  update="@namingcontainer" />
 

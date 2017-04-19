@@ -16,13 +16,13 @@
 
                 <h:panelGrid columns="3"   >
 
-                    <h:panelGroup rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.estadoNulo}">
-                        #{pgMapaComponentes.campoInstanciado.campoLocalizacao.unidadeFederativa.nome}
+                    <h:panelGroup rendered="#{!registro.campoLocalizacao.estadoNulo}">
+                        #{registro.campoLocalizacao.unidadeFederativa.nome}
                         <p:commandLink
 
-                            actionListener="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.limparEstado()}"
+                            actionListener="#{registro.campoLocalizacao.limparEstado()}"
                             update="coletorEndereco"
-                            rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.estadoNulo}"
+                            rendered="#{!registro.campoLocalizacao.estadoNulo}"
 
                             >
 
@@ -32,12 +32,12 @@
 
                     </h:panelGroup>
 
-                    <h:panelGroup rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.cidadeNula}" style="width: 200px;">
+                    <h:panelGroup rendered="#{!registro.campoLocalizacao.cidadeNula}" style="width: 200px;">
 
-                        #{pgMapaComponentes.campoInstanciado.campoLocalizacao.cidade.nome}<p:commandLink
-                            actionListener="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.limparCidade()}"
+                        #{registro.campoLocalizacao.cidade.nome}<p:commandLink
+                            actionListener="#{registro.campoLocalizacao.limparCidade()}"
                             update="coletorEndereco"
-                            rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.cidadeNula}"
+                            rendered="#{!registro.campoLocalizacao.cidadeNula}"
                             >
 
                             <i class="fa fa-remove"></i>
@@ -47,13 +47,13 @@
                     </h:panelGroup>
 
 
-                    <h:panelGroup rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.bairroNulo}">
-                        #{pgMapaComponentes.campoInstanciado.campoLocalizacao.bairro.nome}
+                    <h:panelGroup rendered="#{!registro.campoLocalizacao.bairroNulo}">
+                        #{registro.campoLocalizacao.bairro.nome}
                         <p:commandLink
 
-                            actionListener="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.limparBairro()}"
+                            actionListener="#{registro.campoLocalizacao.limparBairro()}"
                             update="coletorEndereco"
-                            rendered="#{!pgMapaComponentes.campoInstanciado.campoLocalizacao.bairroNulo}"
+                            rendered="#{!registro.campoLocalizacao.bairroNulo}"
                             >
 
                             <i class="fa fa-remove"></i>
@@ -101,7 +101,7 @@
                     <p:autoComplete converter="conversorGenerico"
                                     completeMethod="#{registro.campoLocalizacao.metodoAutoCompleteCidade}"
                                     var="cidade"
-                                    value="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.cidade}"
+                                    value="#{registro.campoLocalizacao.cidade}"
                                     forceSelection="true"
                                     itemValue="#{cidade}"
                                     itemLabel="#{cidade.nome}"
@@ -123,13 +123,13 @@
 
 
                 <h:panelGrid columns="2" columnClasses="campoResponsivo,tamanho20px"
-                             rendered="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.coletarBairroAgora}"
+                             rendered="#{registro.campoLocalizacao.coletarBairroAgora}"
                              id="bairro"
                              >
                     <p:autoComplete converter="conversorGenerico"
                                     completeMethod="#{registro.campoLocalizacao.metodoAutoCompleteBairro}"
                                     var="bairro"
-                                    value="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.bairro}"
+                                    value="#{registro.campoLocalizacao.bairro}"
                                     forceSelection="true"
                                     itemValue="#{bairro}"
                                     itemLabel="#{bairro.nome}"
@@ -175,7 +175,7 @@
                              id="logradouro"
                              >
                     <p:inputText
-                        value="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.logradouroDescricao}"
+                        value="#{registro.campoLocalizacao.logradouroDescricao}"
                         id="cpLogradouro"
                         styleClass="campoResponsivo"
                         placeholder="Logradouro"

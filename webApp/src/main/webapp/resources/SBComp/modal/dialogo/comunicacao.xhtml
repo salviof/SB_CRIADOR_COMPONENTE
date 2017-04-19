@@ -9,20 +9,12 @@
 
 
     <h:head>
-
+        <title> #{pgModalSBJSF.comunicacaoDoModal.mensagem} </title>
 
     </h:head>
 
     <h:body>
         <h:form>
-
-
-
-
-            Pagina Comunicação
-
-
-            #{pgModalSBJSF.comunicacaoDoModal.mensagem}
 
             <ui:repeat value="#{pgModalSBJSF.comunicacaoDoModal.repostas}" var="resp" >
                 <SBComp:botaoRespostaModal
