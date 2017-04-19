@@ -147,6 +147,7 @@
     <tag>
         <tag-name>inputSB</tag-name>
         <source>resources/tagLib/tags/com/sb/inputSB.xhtml</source>
+    
         <attribute>
             <description> <![CDATA[ Campo Instanciado (Obtido por item.getcampoNyNameOuAnotacao('nomeDoCampo')]]></description>
             <name>registro</name>
@@ -179,6 +180,15 @@
             </description>
             <name>label</name>
             <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+
+        <attribute>
+            <description>
+            <![CDATA[informa  o Label do input (nome do campo de entrada)]]>
+            </description>
+            <name>xhtmlVisualizacao</name>
+            <required>false</required>
             <type>java.lang.String</type>
         </attribute>
 
@@ -390,7 +400,31 @@
         </attribute>
     </tag>
 
+    <tag>
+        <tag-name>componenteAdaptador</tag-name>
+        <handler-class>org.super_bits.tags.componenteAdaptador.ExibicaoComponentePropriedades</handler-class>
+        <attribute>
+            <name>componente</name>
+            <required>true</required>
+            <type>com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoInstanciado</type>
+        </attribute>
+        <attribute>
+            <name>variavelXhtml</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>teste1</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <name>teste2</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
 
+    </tag>
 
 
     <tag>

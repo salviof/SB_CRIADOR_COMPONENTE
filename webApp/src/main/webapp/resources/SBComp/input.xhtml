@@ -5,9 +5,10 @@
       xmlns:sb="http://superbitsframework/ui"
 
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <!-- INTERFACE -->
-    <cc:interface>
+    <cc:interface componentType="inputGenerico">
 
         <cc:attribute name="registro"
                       required="true"
@@ -62,7 +63,7 @@
                     opcoes="#{cc.attrs.registro.listaDeOpcoes}"
                     idAtualizarOnChange="#{cc.attrs.idAtualizarOnChange}"
                     metodoOnChange="#{cc.attrs.metodoOnChange}"
-
+                    xhtmlVisualizacao="#{cc.attrs.xhtmlInclude}"
                     />
 
             </c:catch>

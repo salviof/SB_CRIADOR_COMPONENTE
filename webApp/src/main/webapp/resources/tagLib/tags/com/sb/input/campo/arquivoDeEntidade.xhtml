@@ -16,7 +16,7 @@
             <p:inputText  style=" visibility: hidden;"/>
 
 
-            <h:panelGroup rendered="#{pgMapaComponentes.campoInstanciado.vazio}"  >
+            <h:panelGroup rendered="#{registro.vazio}"  >
 
                 <p:commandButton value="Enviar #{label}"
                                  actionListener="#{pgUtil.exibirModalEnvioArquivo()}"
@@ -30,28 +30,28 @@
             </h:panelGroup>
 
 
-            <h:panelGroup rendered="#{!pgMapaComponentes.campoInstanciado.vazio}" >
-                <h:panelGroup rendered="#{pgMapaComponentes.campoInstanciado.umCampoArquivoEntidade}" >
+            <h:panelGroup rendered="#{!registro.vazio}" >
+                <h:panelGroup rendered="#{registro.umCampoArquivoEntidade}" >
                     #{registro.valor}
                 </h:panelGroup>
                 <br/>
 
                 <table style="width:100%">
 
-                    <h:column rendered="#{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.usuarioLogadoTemPermissaoBaixarArquivo}" >
+                    <h:column rendered="#{registro.campoArquivoDeIntidade.usuarioLogadoTemPermissaoBaixarArquivo}" >
 
                         <p:commandButton value="Baixar"
-                                         onclick="javaScript:window.open('#{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.linkBaixarArquivo}', '_blank');"
+                                         onclick="javaScript:window.open('#{registro.campoArquivoDeIntidade.linkBaixarArquivo}', '_blank');"
                                          icon="#{iconeIconeFontAwesome.REG_BAIXAR.tagHtml}"
                                          />
                         <p:commandButton value="Abrir"
-                                         onclick="javaScript:window.open('#{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.linkAbrirArquivo}', '_blank');"
+                                         onclick="javaScript:window.open('#{registro.campoArquivoDeIntidade.linkAbrirArquivo}', '_blank');"
                                          icon="#{iconeIconeFontAwesome.REG_VISUALIZAR.tagHtml}"
                                          />
                     </h:column>
 
 
-                    <h:column rendered="#{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.usuarioLogadoTemAlterarArquivo}" >
+                    <h:column rendered="#{registro.campoArquivoDeIntidade.usuarioLogadoTemAlterarArquivo}" >
 
                         <p:commandButton value="Atualizar"
                                          action="#{pgUtil.exibirModalEnvioArquivo()}"
@@ -67,7 +67,7 @@
                     </h:column>
 
 
-                    <h:column rendered="#{pgMapaComponentes.campoInstanciado.infoCampoArquivoDeIntidade.usuarioLogadoTemPermissaoBaixarArquivo}" >
+                    <h:column rendered="#{registro.campoArquivoDeIntidade.usuarioLogadoTemPermissaoBaixarArquivo}" >
 
                         <p:commandButton value="Excluir"
                                          icon="#{iconeIconeFontAwesome.REG_ANTERIOR.tagHtml}"

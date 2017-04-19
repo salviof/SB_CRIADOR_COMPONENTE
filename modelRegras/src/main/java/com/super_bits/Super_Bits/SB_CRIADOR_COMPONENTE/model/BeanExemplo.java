@@ -5,13 +5,15 @@
  */
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
-import com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Bairro;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoClasse;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.ValorAceito;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.Campo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabCampos;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemBairro;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemCidade;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemLocalizacao;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemUnidadeFederativa;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.FabTipoBeanSBGenerico;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemContatoCorporativo;
 import java.util.ArrayList;
@@ -188,7 +190,7 @@ public class BeanExemplo
     private BeanExemplo beanFilho;
 
     @InfoCampo(tipo = FabCampos.LCBairro)
-    private Bairro bairro;
+    private ItemBairro bairro;
 
     @InfoCampo(tipo = FabCampos.OBJETO_DE_UMA_LISTA, valoresAceitos = {
         @ValorAceito(valor = "Teste"),
@@ -201,6 +203,10 @@ public class BeanExemplo
 
     @InfoCampo(tipo = FabCampos.OBJETO_DE_UMA_LISTA, caminhoParaLista = "filiaisFornecedor")
     private BeanExemplo benSelecionadoListaPorCampo;
+
+    private ItemUnidadeFederativa unidadeFederativa;
+
+    private ItemCidade cidade;
 
     private List<BeanExemplo> listasExemplo;
 
@@ -491,11 +497,11 @@ public class BeanExemplo
         this.arquivoDeCategoria = arquivoDeCategoria;
     }
 
-    public Bairro getBairro() {
+    public ItemBairro getBairro() {
         return bairro;
     }
 
-    public void setBairro(Bairro bairro) {
+    public void setBairro(ItemBairro bairro) {
         this.bairro = bairro;
     }
 
