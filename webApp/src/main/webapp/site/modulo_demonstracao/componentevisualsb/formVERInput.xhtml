@@ -31,7 +31,8 @@
                     <a href="http://localhost:8080/SB_CRIADOR_COMPONENTE/"> teste </a>
 
                     <p:commandButton value="DestruirBean" actionListener="#{pgMapaComponentes.testeDestruicao()}" />
-                    <p:commandLink actionListener="#{paginaAtual.controleDeSessao.efetuarLogOut()}" update="@form" oncomplete="javascript:location.reload();">
+                    <p:commandLink actionListener="#{paginaAtual.controleDeSessao.efetuarLogOut()}"
+                                   update="@form" oncomplete="javascript:location.reload();">
                         <p class="menu-logado">  Sair </p> </p:commandLink>
                 </h:form>
 
@@ -76,6 +77,9 @@
                                     />
 
                                 <p:commandButton value="Teste" update="@form" />
+
+
+
                             </h:form>
 
 

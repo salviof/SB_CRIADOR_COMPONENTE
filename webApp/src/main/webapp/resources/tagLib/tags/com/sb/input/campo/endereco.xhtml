@@ -154,11 +154,12 @@
                              id="cep"
                              >
 
-                    <p:inputMask mask="99999-999"
-                                 value="#{registro.campoLocalizacao.cep}"
-                                 id="cpCep"
-                                 placeholder="Digite O CEP"
-                                 >
+                    <p:inputMask
+                        mask="99999-999"
+                        value="#{registro.campoLocalizacao.cep}"
+                        id="cpCep"
+                        placeholder="Digite O CEP"
+                        >
                         <p:ajax
                             event="valueChange"
                             partialSubmit="cpEstado"

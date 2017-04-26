@@ -15,68 +15,70 @@
 
             <p:inputText  style=" visibility: hidden;"/>
 
+            <h:panelGroup id="inputArquivoEntidade" >
 
-            <h:panelGroup rendered="#{registro.vazio}"  >
+                <h:panelGroup  rendered="#{registro.vazio}"  >
 
-                <p:commandButton value="Enviar #{label}"
-                                 actionListener="#{pgUtil.exibirModalEnvioArquivo()}"
-                                 partialSubmit="true"
-                                 process="@this"
-                                 >
-                    <p:ajax event="dialogReturn"  update="@namingcontainer" />
+                    <p:commandButton value="Enviar #{label}"
+                                     actionListener="#{pgUtil.exibirModalEnvioArquivo()}"
+                                     partialSubmit="true"
+                                     process="@this"
+                                     >
+                        <p:ajax event="dialogReturn"  update="inputArquivoEntidade"/>
 
-                    <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}"
-                                                 value="#{registro}" />
-                </p:commandButton>
+                        <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}"
+                                                     value="#{registro}" />
+                    </p:commandButton>
 
-            </h:panelGroup>
-
-
-            <h:panelGroup rendered="#{!registro.vazio}" >
-                <h:panelGroup rendered="#{registro.umCampoArquivoEntidade}" >
-                    #{registro.valor}
                 </h:panelGroup>
-                <br/>
-
-                <table style="width:100%">
-
-                    <h:column rendered="#{registro.campoArquivoDeIntidade.usuarioLogadoTemPermissaoBaixarArquivo}" >
-
-                        <p:commandButton value="Baixar"
-                                         onclick="javaScript:window.open('#{registro.campoArquivoDeIntidade.linkBaixarArquivo}', '_blank');"
-                                         icon="#{iconeIconeFontAwesome.REG_BAIXAR.tagHtml}"
-                                         />
-                        <p:commandButton value="Abrir"
-                                         onclick="javaScript:window.open('#{registro.campoArquivoDeIntidade.linkAbrirArquivo}', '_blank');"
-                                         icon="#{iconeIconeFontAwesome.REG_VISUALIZAR.tagHtml}"
-                                         />
-                    </h:column>
 
 
-                    <h:column rendered="#{registro.campoArquivoDeIntidade.usuarioLogadoTemAlterarArquivo}" >
+                <h:panelGroup rendered="#{!registro.vazio}" >
+                    <h:panelGroup rendered="#{registro.umCampoArquivoEntidade}" >
+                        #{registro.valor}
+                    </h:panelGroup>
+                    <br/>
 
-                        <p:commandButton value="Atualizar"
-                                         action="#{pgUtil.exibirModalEnvioArquivo()}"
+                    <table style="width:100%">
 
-                                         icon="#{iconeIconeFontAwesome.REG_ATUALIZAR.tagHtml}"
-                                         >
-                            <p:ajax event="dialogReturn"  update="@namingcontainer" />
-                            <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}"
-                                                         value="#{registro}" />
+                        <h:column rendered="#{registro.campoArquivoDeIntidade.usuarioLogadoTemPermissaoBaixarArquivo}" >
 
-                        </p:commandButton>
+                            <p:commandButton value="Baixar"
+                                             onclick="javaScript:window.open('#{registro.campoArquivoDeIntidade.linkBaixarArquivo}', '_blank');"
+                                             icon="#{iconeIconeFontAwesome.REG_BAIXAR.tagHtml}"
+                                             />
+                            <p:commandButton value="Abrir"
+                                             onclick="javaScript:window.open('#{registro.campoArquivoDeIntidade.linkAbrirArquivo}', '_blank');"
+                                             icon="#{iconeIconeFontAwesome.REG_VISUALIZAR.tagHtml}"
+                                             />
+                        </h:column>
 
-                    </h:column>
+
+                        <h:column rendered="#{registro.campoArquivoDeIntidade.usuarioLogadoTemAlterarArquivo}" >
+
+                            <p:commandButton value="Atualizar"
+                                             action="#{pgUtil.exibirModalEnvioArquivo()}"
+
+                                             icon="#{iconeIconeFontAwesome.REG_ATUALIZAR.tagHtml}"
+                                             >
+                                <p:ajax event="dialogReturn"  update="@namingcontainer" />
+                                <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}"
+                                                             value="#{registro}" />
+
+                            </p:commandButton>
+
+                        </h:column>
 
 
-                    <h:column rendered="#{registro.campoArquivoDeIntidade.usuarioLogadoTemPermissaoBaixarArquivo}" >
+                        <h:column rendered="#{registro.campoArquivoDeIntidade.usuarioLogadoTemPermissaoBaixarArquivo}" >
 
-                        <p:commandButton value="Excluir"
-                                         icon="#{iconeIconeFontAwesome.REG_ANTERIOR.tagHtml}"
-                                         />
-                    </h:column>
+                            <p:commandButton value="Excluir"
+                                             icon="#{iconeIconeFontAwesome.REG_ANTERIOR.tagHtml}"
+                                             />
+                        </h:column>
 
-                </table>
+                    </table>
+                </h:panelGroup>
             </h:panelGroup>
 
         </ui:define>
