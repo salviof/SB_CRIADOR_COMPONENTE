@@ -5,6 +5,7 @@
  */
 package com.super_bits.config.webPaginas;
 
+import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.ManipulaArquivo.interfaces.ItfCentralPermissaoArquivo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoArquivoEntidadeInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
@@ -41,6 +42,21 @@ public class CentralPermissaoArquivoSBComponente implements ItfCentralPermissaoA
     @Override
     public boolean isUsuarioPodeCriar(ItfUsuario pUsuario, ItfCampoArquivoEntidadeInstanciado pArquivo) {
         return true;
+    }
+
+    @Override
+    public boolean isUsuarioLogadoPodeAlterar(ItfCampoArquivoEntidadeInstanciado pArquivo) {
+        return isUsuarioPodeAlterar(SBCore.getUsuarioLogado(), pArquivo);
+    }
+
+    @Override
+    public boolean isUsuarioLogadoPodeBaixar(ItfCampoArquivoEntidadeInstanciado pArquivo) {
+        return isUsuarioPodeBaixar(SBCore.getUsuarioLogado(), pArquivo);
+    }
+
+    @Override
+    public boolean isUsuarioLogadoPodeCriar(ItfCampoArquivoEntidadeInstanciado pArquivo) {
+        return isUsuarioPodeCriar(SBCore.getUsuarioLogado(), pArquivo);
     }
 
 }
