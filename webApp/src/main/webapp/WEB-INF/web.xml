@@ -10,7 +10,7 @@
     </welcome-file-list>
 
 
-    
+
 
 
 
@@ -113,6 +113,19 @@
         <servlet-name>slvGestorDeArquivos</servlet-name>
         <url-pattern>/arquivos/*</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>slvGestorDeArquivosDeSessao</servlet-name>
+        <servlet-class>com.super_bits.modulosSB.webPaginas.controller.servletes.servletArquivoDeSessao.ServletArquivoDeSessao</servlet-class>
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>slvGestorDeArquivosDeSessao</servlet-name>
+        <url-pattern>/arquivosDeSessao/*</url-pattern>
+    </servlet-mapping>
+
+
 
     <listener>
         <listener-class>com.super_bits.modulosSB.webPaginas.controller.listenners.ContextoWebPaginas</listener-class>
