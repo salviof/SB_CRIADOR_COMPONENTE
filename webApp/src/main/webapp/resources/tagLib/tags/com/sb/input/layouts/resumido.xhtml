@@ -3,10 +3,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
-    <p:panelGrid columns="1"  >
-
+    <p:panelGrid columns="1" class="inputCampo" >
+        <p:watermark value="#{label}" for="#{pgUtil.getNomeIdComponenteInput(component)}" />
         <ui:insert name="input" />
-
+        <p:message for="#{pgUtil.getNomeIdComponenteInput(component)}"   />
+        <p:tooltip  rendered="#{registro.temDescricao}"
+                    for="#{pgUtil.getNomeIdComponenteInput(component)}"
+                    value="Info: #{registro.descricao}"
+                    />
     </p:panelGrid>
 </html>
 

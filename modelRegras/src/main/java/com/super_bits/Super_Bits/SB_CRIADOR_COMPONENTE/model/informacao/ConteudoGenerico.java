@@ -7,7 +7,7 @@ package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.informacao;
 
 import com.super_bits.modulosSB.Persistencia.registro.persistidos.EntidadeSimples;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoClasse;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabCampos;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -19,7 +19,7 @@ import javax.persistence.Id;
  * @author desenvolvedor
  */
 @Entity
-@InfoClasse(tags = {"Conteúdo"}, plural = "Informações genericas")
+@InfoObjetoSB(tags = {"Conteúdo"}, plural = "Informações genericas")
 public class ConteudoGenerico extends EntidadeSimples {
 
     @Id

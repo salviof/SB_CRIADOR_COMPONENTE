@@ -12,6 +12,7 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.Map
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDeEntidadeController;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreReflexaoObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.TIPO_PARTE_URL;
 import com.super_bits.modulosSB.SBCore.modulos.Mensagens.FabMensagens;
 import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.FabErro;
@@ -21,7 +22,6 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.UtilSBCoreRefl
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CampoNaoImplementado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.UtilSBCoreReflexaoObjetoSuperBits;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComponenteVisualSB;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual;
@@ -193,7 +193,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         beansDisponiveis = new ArrayList<>();
         beansDisponiveis.add(BeanExemplo.class.getSimpleName());
         labelByCaminho = new HashMap<>();
-        labelByCaminho.put(BeanExemplo.class.getSimpleName(), UtilSBCoreReflexaoObjetoSuperBits.getNomeObjeto(BeanExemplo.class));
+        labelByCaminho.put(BeanExemplo.class.getSimpleName(), UtilSBCoreReflexaoObjeto.getNomeObjeto(BeanExemplo.class));
         estruturaObjetoSelecionado = MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class);
         acoesLaboratorio = new ArrayList<>();
         dialogoDoMomento = new DialogoWeb();

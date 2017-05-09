@@ -6,7 +6,7 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoClasse;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.ValorAceito;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.Campo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabCampos;
@@ -33,7 +33,7 @@ import javax.validation.constraints.NotNull;
  * @version 1.0
  *
  */
-@InfoClasse(tags = {"Objeto Exemplo"}, plural = "Beans de Exmplo")
+@InfoObjetoSB(tags = {"Objeto Exemplo"}, plural = "Beans de Exmplo")
 public class BeanExemplo
         extends ItemContatoCorporativo {
 
@@ -81,6 +81,9 @@ public class BeanExemplo
 
     @InfoCampo(fabricaDeOpcoes = FabCampos.class, tipo = FabCampos.OBJETO_DE_UMA_LISTA)
     private Campo seletorOpcao;
+
+    @InfoCampo(tipo = FabCampos.AAA_DESCRITIVO, label = "Descritivo memo")
+    private String descritivo;
 
     @InfoCampo(tipo = FabCampos.TELEFONE_FIXO_NACIONAL, label = "Telefone")
     @NotNull

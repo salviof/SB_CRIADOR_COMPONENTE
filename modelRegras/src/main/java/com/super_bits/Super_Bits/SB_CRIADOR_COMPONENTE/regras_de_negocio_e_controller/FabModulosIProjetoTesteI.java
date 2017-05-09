@@ -8,6 +8,7 @@ package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_cont
 import com.super_bits.modulos.SBAcessosModel.model.ModuloAcaoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.ItfModuloAcaoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.modulo.ItfFabricaModulo;
+import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfFabricaMenu;
 
 /**
  *
@@ -47,5 +48,10 @@ public enum FabModulosIProjetoTesteI implements ItfFabricaModulo {
     @Override
     public Object getRegistro() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ItfFabricaMenu getMenuPadrao() {
+        return FabMenuExemplo.MENU_INICIAL;
     }
 }
