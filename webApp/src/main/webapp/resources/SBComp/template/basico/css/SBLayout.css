@@ -20,6 +20,13 @@ ajustesCard{
 ajustesDivGeral{
 
 }
+/* Colocando modal de dialogo por cima de tudo*/
+.ui-dialog{
+    z-index: 20000!important;
+}
+.ui-growl{
+    z-index: 20000!important;
+}
 
 
 .linha-separacao{
