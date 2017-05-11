@@ -210,7 +210,7 @@ public class BeanExemplo
     private ItemUnidadeFederativa unidadeFederativa;
 
     private ItemCidade cidade;
-
+    @InfoCampo(tipo = FabCampos.LISTA_OBJETOS, fabricaDeOpcoes = FabListBeanExemplos.class)
     private List<BeanExemplo> listasExemplo;
 
     @Override

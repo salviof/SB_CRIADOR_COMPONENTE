@@ -11,6 +11,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampo
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfBairro;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfCidade;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfUnidadeFederativa;
+import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfComponenteVisualSB;
 import java.util.List;
 import org.junit.Test;
 
@@ -31,7 +32,16 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
         try {
             System.out.println("getId");
             BeanExemplo beanExemplo = new BeanExemplo();
+
+            ItfCampoInstanciado campo = beanExemplo.getCampoByNomeOuAnotacao("listasExemplo");
+
+            ItfComponenteVisualSB cp = campo.getComponenteVisualPadrao();
+
+            System.out.println("Tipo de campo=" + cp.getNomeComponente());
+            System.out.println("Tipo de campo=" + cp.getXhtmlJSF());
+
             ItfCampoInstanciado campoInstanciado = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("localizacao");
+            campoInstanciado.getCampoArquivoDeIntidade()
 
             ItfCampoLocalizacaoInstanciado cpLocalizacao = campoInstanciado.getCampoLocalizacao();
 
