@@ -7,8 +7,8 @@ package com.super_bits.config.webPaginas;
 
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.ManipulaArquivo.interfaces.ItfCentralPermissaoArquivo;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoArquivoEntidadeInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstArquivoEntidade;
 
 /**
  *
@@ -26,13 +26,13 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basic
 public class CentralPermissaoArquivoSBComponente implements ItfCentralPermissaoArquivo {
 
     @Override
-    public boolean isUsuarioPodeAlterar(ItfUsuario pUsuario, ItfCampoArquivoEntidadeInstanciado pArquivo) {
+    public boolean isUsuarioPodeAlterar(ItfUsuario pUsuario, ItfCampoInstArquivoEntidade pArquivo) {
         return ((String) pArquivo.getCampoInstanciado().getValor()).contains(".txt");
 
     }
 
     @Override
-    public boolean isUsuarioPodeBaixar(ItfUsuario pUsuario, ItfCampoArquivoEntidadeInstanciado pArquivo) {
+    public boolean isUsuarioPodeBaixar(ItfUsuario pUsuario, ItfCampoInstArquivoEntidade pArquivo) {
         if (((String) pArquivo.getCampoInstanciado().getValor()).contains(".pdf")) {
             return false;
         }
@@ -40,22 +40,22 @@ public class CentralPermissaoArquivoSBComponente implements ItfCentralPermissaoA
     }
 
     @Override
-    public boolean isUsuarioPodeCriar(ItfUsuario pUsuario, ItfCampoArquivoEntidadeInstanciado pArquivo) {
+    public boolean isUsuarioPodeCriar(ItfUsuario pUsuario, ItfCampoInstArquivoEntidade pArquivo) {
         return true;
     }
 
     @Override
-    public boolean isUsuarioLogadoPodeAlterar(ItfCampoArquivoEntidadeInstanciado pArquivo) {
+    public boolean isUsuarioLogadoPodeAlterar(ItfCampoInstArquivoEntidade pArquivo) {
         return isUsuarioPodeAlterar(SBCore.getUsuarioLogado(), pArquivo);
     }
 
     @Override
-    public boolean isUsuarioLogadoPodeBaixar(ItfCampoArquivoEntidadeInstanciado pArquivo) {
+    public boolean isUsuarioLogadoPodeBaixar(ItfCampoInstArquivoEntidade pArquivo) {
         return isUsuarioPodeBaixar(SBCore.getUsuarioLogado(), pArquivo);
     }
 
     @Override
-    public boolean isUsuarioLogadoPodeCriar(ItfCampoArquivoEntidadeInstanciado pArquivo) {
+    public boolean isUsuarioLogadoPodeCriar(ItfCampoInstArquivoEntidade pArquivo) {
         return isUsuarioPodeCriar(SBCore.getUsuarioLogado(), pArquivo);
     }
 

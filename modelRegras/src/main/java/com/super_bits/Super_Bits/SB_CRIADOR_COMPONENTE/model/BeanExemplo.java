@@ -12,7 +12,6 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.Campo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabCampos;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemBairro;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemCidade;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemLocalizacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemUnidadeFederativa;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.FabTipoBeanSBGenerico;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemContatoCorporativo;

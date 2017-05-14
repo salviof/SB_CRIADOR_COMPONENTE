@@ -6,8 +6,8 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp.TesteSB_CRIADOR_COMPONENTE;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoInstanciado;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoLocalizacaoInstanciado;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoLocalizacaoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfBairro;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfCidade;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfUnidadeFederativa;
@@ -41,7 +41,7 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
             System.out.println("Tipo de campo=" + cp.getXhtmlJSF());
 
             ItfCampoInstanciado campoInstanciado = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("localizacao");
-            campoInstanciado.getCampoArquivoDeIntidade()
+            campoInstanciado.getCampoSeltorItens();
 
             ItfCampoLocalizacaoInstanciado cpLocalizacao = campoInstanciado.getCampoLocalizacao();
 
