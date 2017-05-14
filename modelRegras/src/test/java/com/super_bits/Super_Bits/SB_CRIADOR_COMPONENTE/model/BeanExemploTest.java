@@ -6,12 +6,14 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp.TesteSB_CRIADOR_COMPONENTE;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstSeletorItens;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoLocalizacaoInstanciado;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimplesSomenteLeitura;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfBairro;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfCidade;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfUnidadeFederativa;
-import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfComponenteVisualSB;
+import java.util.Iterator;
 import java.util.List;
 import org.junit.Test;
 
@@ -34,12 +36,20 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
             BeanExemplo beanExemplo = new BeanExemplo();
 
             ItfCampoInstanciado campo = beanExemplo.getCampoByNomeOuAnotacao("listasExemplo");
+            ItfCampoInstSeletorItens campoSeletorInstanciado = campo.getCampoSeltorItens();
 
-            ItfComponenteVisualSB cp = campo.getComponenteVisualPadrao();
+            System.out.println("Antes de filtrar Retornou ->" + campoSeletorInstanciado.getSeletor().getOrigem().size() + " registros,:" + campoSeletorInstanciado.getSeletor().getOrigem());
 
-            System.out.println("Tipo de campo=" + cp.getNomeComponente());
-            System.out.println("Tipo de campo=" + cp.getXhtmlJSF());
+            campoSeletorInstanciado.filtrarPorAutoComplet("6");
+            System.out.println("Retornou ->" + campoSeletorInstanciado.getSeletor().getOrigem().size() + " registros,:" + campoSeletorInstanciado.getSeletor().getOrigem());
 
+            for (Iterator it = campoSeletorInstanciado.getSeletor().getOrigem().iterator(); it.hasNext();) {
+                ItfBeanSimplesSomenteLeitura simples = (ItfBeanSimplesSomenteLeitura) it.next();
+                System.out.println("->>>>>" + simples.getNome());
+            }
+
+            //System.out.println("Tipo de campo=" + cp.getNomeComponente());
+            //System.out.println("Tipo de campo=" + cp.getXhtmlJSF());
             ItfCampoInstanciado campoInstanciado = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("localizacao");
             campoInstanciado.getCampoSeltorItens();
 

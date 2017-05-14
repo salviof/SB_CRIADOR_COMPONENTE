@@ -1,9 +1,9 @@
 package org.coletivoJava.superBitsFW.webPaginas.config;
 
-import javax.inject.Named;
-import javax.enterprise.context.ApplicationScoped;
 import com.super_bits.modulosSB.SBCore.UtilGeral.MapaAcoesSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormularioEntidade;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
 
 @Named
 @ApplicationScoped
