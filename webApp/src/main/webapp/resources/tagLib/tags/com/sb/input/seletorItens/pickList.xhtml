@@ -17,7 +17,7 @@
 
                 <p:pickList
 
-                    value="#{pgMapaComponentes.campoInstanciado.campoSeltorItens.campoSeletorItens.dualListPrime}"
+                    value="#{registro.campoSeltorItens.campoSeletorItens.dualListPrime}"
                     var="item"
                     itemValue="#{item}"
                     itemLabel="#{item.nome}"
@@ -27,9 +27,9 @@
 
 
                     >
-                    <p:ajax event="transfer" listener="#{pgMapaComponentes.campoInstanciado.campoSeltorItens.atualizarListaCompleta()}" update="@form" />
-                    <f:facet name="sourceCaption">#{pgMapaComponentes.campoInstanciado.campoSeltorItens.campoSeletorItens.nomeOrigem}</f:facet>
-                    <f:facet name="targetCaption">#{pgMapaComponentes.campoInstanciado.label}</f:facet>
+                    <p:ajax event="transfer" listener="#{registro.campoSeltorItens.atualizarListaCompleta()}" update="@form" />
+                    <f:facet name="sourceCaption">#{registro.campoSeltorItens.campoSeletorItens.nomeOrigem}</f:facet>
+                    <f:facet name="targetCaption">#{registro.label}</f:facet>
                 </p:pickList>
                 <div class="EmptyBox10"/>
 

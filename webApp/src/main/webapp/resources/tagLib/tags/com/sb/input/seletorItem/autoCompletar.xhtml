@@ -12,14 +12,15 @@
         <ui:define name="input">
             <p:autoComplete
 
-                completeMethod="#{pgMapaComponentes.campoInstanciado.campoSeltorItem.filtrarPorAutoComplet}"
+                completeMethod="#{registro.campoSeltorItem.filtrarPorAutoComplet}"
                 converter="conversorGenerico"
                 itemLabel="#{item.nome}"
                 itemValue="#{item}"
                 forceSelection="true"
-
+                emptyMessage="Nada Selecionado"
+                placeholder="Pesquise por um #{label}"
                 var="item"
-                value="#{pgMapaComponentes.campoInstanciado.valor}"
+                value="#{registro.campoInstanciado.valor}"
                 minQueryLength="4"
                 queryDelay="300"
 
