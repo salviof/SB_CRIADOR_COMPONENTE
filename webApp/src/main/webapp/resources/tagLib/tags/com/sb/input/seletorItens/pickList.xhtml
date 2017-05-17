@@ -4,54 +4,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:decorate   template="#{layout.xhtmlJsfCaminhoRelativo}">
 
 
         <ui:define name="input">
 
-            <p:selectOneMenu rendered="#{!desabilitarEdicao}"
-                             class=" seletorResponsivo  TexAlCenter #{componenteVisual.classeCSS}"
-                             disabled="#{desabilitarEdicao}"
-                             required="#{obrigatorio}"
-                             value="#{valor}"
-                             validatorMessage="O valor informado no campo #{label} não é valido!"
-                             requiredMessage="O campo #{label} não foi informado!"
-                             autoWidth="true"
-                             styleClass="seletorResponsivo #{componente.classeCSS}"
-                             converter="conversorGenerico"
-                             var="it"
-                             converterMessage="Erro ao converter objeto" >
 
-                <f:selectItem
-                    itemLabel=" não Selecionado"  />
 
-                <f:selectItems
-                    value="#{opcoes}"
+
+            <p:panel class="Container100 Responsive100">
+
+                <p:pickList
+
+                    value="#{pgMapaComponentes.campoInstanciado.campoSeltorItens.campoSeletorItens.dualListPrime}"
                     var="item"
+                    itemValue="#{item}"
                     itemLabel="#{item.nome}"
-                    itemValue="#{item}" />
-                <c:if test="#{possuiMetodoOnChange}">
-                    <p:ajax rendered="#{possuiMetodoOnChange}"
-                            global="true"
-                            event="valueChange"
-                            listener="#{prMetodo}"/>
-                </c:if>
+                    responsive="true"
+                    converter="conversorGenerico"
+                    style="margin-left: 0.5%"
 
-                <c:if test="#{possuiIDOnChange}" >
-                    <p:ajax
-                        rendered="#{possuiIDOnChange}"
-                        global="true"
-                        event="valueChange"
-                        listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
-                </c:if>
-                <p:column>
-                    #{it.nome}
-                </p:column>
 
-            </p:selectOneMenu>
-            <p:inputText value="#{valor}" rendered="#{desabilitarEdicao}"  disabled="true"/>
+                    >
+                    <p:ajax event="transfer" listener="#{pgMapaComponentes.campoInstanciado.campoSeltorItens.atualizarListaCompleta()}" update="@form" />
+                    <f:facet name="sourceCaption">#{pgMapaComponentes.campoInstanciado.campoSeltorItens.campoSeletorItens.nomeOrigem}</f:facet>
+                    <f:facet name="targetCaption">#{pgMapaComponentes.campoInstanciado.label}</f:facet>
+                </p:pickList>
+                <div class="EmptyBox10"/>
+
+            </p:panel>
+
+
 
         </ui:define>
     </ui:decorate>

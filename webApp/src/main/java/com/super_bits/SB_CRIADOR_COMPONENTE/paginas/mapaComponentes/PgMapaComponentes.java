@@ -489,39 +489,43 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     }
 
     public List<AcaoDoSistema> getAcoesLaboratorio() {
+        try {
+            acoesLaboratorio.clear();
 
-        acoesLaboratorio.clear();
+            if (componenteSelecionado != null) {
 
-        if (componenteSelecionado != null) {
+                switch (componenteSelecionado.getFamilia()) {
+                    case SELETOR_ITEM:
+                    case INPUT:
+                    case SELETOR_ITENS:
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VER.getRegistro());
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA_INPUT.getRegistro());
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VALIDACAO.getRegistro());
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_ONCHANGE.getRegistro());
+                        break;
+                    case LAYOUT_INPUT:
+                        break;
+                    case MENU:
+                        break;
 
-            switch (componenteSelecionado.getFamilia()) {
-                case SELETOR_ITEM:
-                case INPUT:
-                    acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VER.getRegistro());
-                    acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA_INPUT.getRegistro());
-                    acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VALIDACAO.getRegistro());
-                    acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_ONCHANGE.getRegistro());
-                    break;
-                case LAYOUT_INPUT:
-                    break;
-                case MENU:
-                    break;
+                    case ITEM_BEAN_SIMPLES:
+                        break;
+                    case ITENS_BEAN_SIMPLES:
+                        break;
+                    case COMPONENTE_SISTEMA:
+                        break;
+                    case BOTAO_DE_ACAO:
+                        break;
 
-                case ITEM_BEAN_SIMPLES:
-                    break;
-                case ITENS_BEAN_SIMPLES:
-                    break;
-                case COMPONENTE_SISTEMA:
-                    break;
-                case BOTAO_DE_ACAO:
-                    break;
-                default:
-                    throw new AssertionError(componenteSelecionado.getFamilia().name());
+                    default:
+                        throw new AssertionError(componenteSelecionado.getFamilia().name());
+
+                }
 
             }
-
+        } catch (Throwable t) {
+            SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro otendo ações específicas de laboratorio do componente", t);
         }
-
         return acoesLaboratorio;
     }
 

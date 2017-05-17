@@ -147,7 +147,7 @@
     <tag>
         <tag-name>inputSB</tag-name>
         <source>resources/tagLib/tags/com/sb/inputSB.xhtml</source>
-    
+
         <attribute>
             <description> <![CDATA[ Campo Instanciado (Obtido por item.getcampoNyNameOuAnotacao('nomeDoCampo')]]></description>
             <name>registro</name>
@@ -406,7 +406,7 @@
         <attribute>
             <name>componente</name>
             <required>true</required>
-            <type>com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoInstanciado</type>
+            <type>com.super_bits.modulosSB.webPaginas.JSFBeans.SBBeanModel.input.ItfCampoInput</type>
         </attribute>
         <attribute>
             <name>variavelXhtml</name>
@@ -865,6 +865,13 @@
     <tag>
         <tag-name>inputSBNacao</tag-name>
         <source>resources/tagLib/tags/com/sb/input/campo/nacao.xhtml</source>
+    </tag>
+
+
+
+    <tag>
+        <tag-name>inputSBPickList</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/seletorItens/pickList.xhtml</source>
     </tag>
 
 
