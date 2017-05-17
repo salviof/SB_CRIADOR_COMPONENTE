@@ -10,8 +10,21 @@
 
 
         <ui:define name="input">
+            <p:autoComplete
 
-            <p:inputText value="Autocomplete Não implementado"/>
+                completeMethod="#{pgMapaComponentes.campoInstanciado.campoSeltorItem.filtrarPorAutoComplet}"
+                converter="conversorGenerico"
+                itemLabel="#{item.nome}"
+                itemValue="#{item}"
+                forceSelection="true"
+
+                var="item"
+                value="#{pgMapaComponentes.campoInstanciado.valor}"
+                minQueryLength="4"
+                queryDelay="300"
+
+                />
+
         </ui:define>
     </ui:decorate>
 </html>

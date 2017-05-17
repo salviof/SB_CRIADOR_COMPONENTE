@@ -5,7 +5,6 @@
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:sb="http://superbitsframework/ui"
       >
 
@@ -56,6 +55,7 @@
                         <p:panelGrid columns="2">
                             <p:outputLabel value="TipoCampo"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.tipoCampoSTR}"/>
                             <p:outputLabel value="XHTML apresentação:"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.getComponenteDiferenciado(null).xhtmlJsfCaminhoRelativo}"/>
+                            <p:outputLabel value="XHTML apresentação:"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.getComponenteDiferenciado(layoutsComponenteSB.layoutSeletorItem.autocomplete).xhtmlJsfCaminhoRelativo}"/>
                         </p:panelGrid>
 
                     </p:panel>
@@ -63,8 +63,15 @@
                     <h:panelGroup  >
 
                         <c:catch var ="catchException">
-                            <h:form  >
 
+                            <h:form  >
+                                <p:commandButton value="Atualizar" update="@form"/>
+                                #{pgMapaComponentes.campoInstanciado.valor}
+                                <SBComp:seletorItem itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
+                                                    lista="#{pgMapaComponentes.listaComponentesEspeciaisDisponiveis}"
+                                                    />
+
+                                <p:separator/>
                                 <sb:inputSB
                                     registro="#{pgMapaComponentes.campoInstanciado}"
                                     desabilitarEdicao="false"

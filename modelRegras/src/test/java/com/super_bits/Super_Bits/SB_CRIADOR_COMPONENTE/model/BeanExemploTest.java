@@ -35,8 +35,8 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
             System.out.println("getId");
             BeanExemplo beanExemplo = new BeanExemplo();
 
-            ItfCampoInstanciado campo = beanExemplo.getCampoByNomeOuAnotacao("listasExemplo");
-            ItfCampoInstSeletorItens campoSeletorInstanciado = campo.getCampoSeltorItens();
+            ItfCampoInstanciado campoSelecaoItensInstanc = beanExemplo.getCampoByNomeOuAnotacao("listasExemplo");
+            ItfCampoInstSeletorItens campoSeletorInstanciado = campoSelecaoItensInstanc.getCampoSeltorItens();
 
             System.out.println("Antes de filtrar Retornou ->" + campoSeletorInstanciado.getSeletor().getOrigem().size() + " registros,:" + campoSeletorInstanciado.getSeletor().getOrigem());
 
@@ -47,6 +47,12 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
                 ItfBeanSimplesSomenteLeitura simples = (ItfBeanSimplesSomenteLeitura) it.next();
                 System.out.println("->>>>>" + simples.getNome());
             }
+            ItfCampoInstanciado campoSelecao = beanExemplo.getCampoByNomeOuAnotacao("beanSelecionadoDaListaFabrica");
+
+            System.out.println("Lista Por fabrica=" + campoSelecao.getCampoSeltorItem().getSeletor().getOrigem().size() + "-" + campoSelecao.getCampoSeltorItem().getSeletor().getOrigem());
+
+            campoSelecao.getCampoSeltorItem().filtrarPorAutoComplet("Contato");
+            System.out.println("Lista Por fabrica=" + campoSelecao.getCampoSeltorItem().getSeletor().getOrigem().size() + "-" + campoSelecao.getCampoSeltorItem().getSeletor().getOrigem());
 
             //System.out.println("Tipo de campo=" + cp.getNomeComponente());
             //System.out.println("Tipo de campo=" + cp.getXhtmlJSF());

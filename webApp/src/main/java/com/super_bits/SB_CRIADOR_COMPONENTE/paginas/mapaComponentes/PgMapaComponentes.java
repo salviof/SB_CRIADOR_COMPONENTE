@@ -103,6 +103,8 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private EstruturaDeEntidade estruturaObjetoSelecionado;
     private DialogoWeb dialogoDoMomento;
 
+    private List<ComponenteVisualSB> listaComponentesEspeciaisDisponiveis;
+
     public void dropaCampo() {
         FacesContext context = FacesContext.getCurrentInstance();
         Map map = context.getExternalContext().getRequestParameterMap();
@@ -186,7 +188,6 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         listaComponentes = MapaComponentes.getTodosComponentes();
 
         listaFamiliasComponentes = MapaComponentes.getTodasFamiliasComponentes();
-
         parametroPesquisa = "";
         beanExemplo = new BeanExemplo();
 
@@ -203,6 +204,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
             beansDisponiveis.add(caminhoCampo);
             labelByCaminho.put(caminhoCampo, cp.getLabel());
         }
+        listaComponentesEspeciaisDisponiveis = MapaComponentes.getComponentesFamilia(getCampoInstanciado().getComponenteVisualPadrao().getFamilia().getRegistro());
 
     }
 
@@ -596,6 +598,10 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
     public AcaoDeEntidadeController getAcaoTesteModalJustificativa() {
         return acaoTesteModalJustificativa;
+    }
+
+    public List<ComponenteVisualSB> getListaComponentesEspeciaisDisponiveis() {
+        return listaComponentesEspeciaisDisponiveis;
     }
 
 }
