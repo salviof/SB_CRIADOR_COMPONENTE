@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <ui:composition template="#{layoutsPaginas.formularioAcaoAtual.xhtmlVinculado}" >
+
+        <ui:define name="conteudoCard" >
+
+            <h:form class="Fleft">
+                <p:inputText value="#{pgMapaComponentes.parametroPesquisa}" />
+                <p:commandButton action="#{pgMapaComponentes.filtrarPorParametro()}" update="#{pgUtil.makeCaminhoCompletoID(pgMapaComponentes.idAreaExbicaoAcaoSelecionada)}" value="Pesquisar" />
+            </h:form>
+
+            <h:form class="Fright">
+
+                <SBComp:seletorItem
+                    lista="#{pgMapaComponentes.listaFamiliasComponentes}"
+                    itemSelecionado="#{pgMapaComponentes.familiaSelecionada}"
+                    idOnChange="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}"
+                    />
+
+            </h:form>
+
+
+
+            <h:form>
+
+                <SBComp:listaMobile
+                    acaoDeListagem="#{pgMapaComponentes.acaoListar}"
+                    itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
+                    itens="#{pgMapaComponentes.listaComponentes}"
+                    metodo="#{pgMapaComponentes.executarAcao(item)}"
+                    opcoes="#{pgMapaComponentes.acaoEditar}"
+                    rendered="#{paginaAtual.sessao.tipoView.umMobile}"
+                    />
+
+                <SBComp:listaDesktop
+                    acaoDeListagem="#{pgMapaComponentes.acaoListar}"
+                    itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
+                    itens="#{pgMapaComponentes.listaComponentes}"
+                    metodo="#{pgMapaComponentes.executarAcao(item)}"
+                    opcoes="#{pgMapaComponentes.acaoEditar}"
+                    rendered="#{!paginaAtual.sessao.tipoView.umMobile}"
+                    />
+
+            </h:form>
+            <ui:debug hotkey="v" />
+        </ui:define>
+
+    </ui:composition>
+
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -868,6 +868,11 @@
     </tag>
 
 
+    <tag>
+        <tag-name>ligadoDesligado</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/verdadeiroOuFalso.xhtml</source>
+    </tag>
+
 
     <tag>
         <tag-name>inputSBPickList</tag-name>

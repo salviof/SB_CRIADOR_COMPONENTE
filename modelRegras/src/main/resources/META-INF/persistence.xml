@@ -11,6 +11,12 @@
         <class>com.super_bits.modulos.SBAcessosModel.model.GrupoUsuarioSB</class>
         <class>com.super_bits.modulos.SBAcessosModel.model.Negado_Usuarios</class>
         <class>com.super_bits.modulos.SBAcessosModel.model.Negado_Grupos</class>
+        <class>com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.LocalizacaoPostavel</class>
+        <class>com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Bairro</class>
+        <class>com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Cidade</class>
+        <class>com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.UnidadeFederativa</class>
+        <class>com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Localidade</class>
+        <class>com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Localizacao</class>
         <class>com.super_bits.modulos.SBAcessosModel.model.Permitido_Usuarios</class>
         <class>com.super_bits.modulos.SBAcessosModel.model.Permitido_Grupos</class>
         <class>com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema</class>

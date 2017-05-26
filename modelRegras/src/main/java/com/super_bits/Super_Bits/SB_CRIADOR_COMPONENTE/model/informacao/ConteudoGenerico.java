@@ -8,7 +8,7 @@ package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.informacao;
 import com.super_bits.modulosSB.Persistencia.registro.persistidos.EntidadeSimples;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoSB;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabCampos;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -24,11 +24,11 @@ public class ConteudoGenerico extends EntidadeSimples {
 
     @Id
     private int id;
-    @InfoCampo(tipo = FabCampos.AAA_NOME)
+    @InfoCampo(tipo = FabTipoAtributoObjeto.AAA_NOME)
     private String nome;
-    @InfoCampo(tipo = FabCampos.AAA_NOME_LONGO)
+    @InfoCampo(tipo = FabTipoAtributoObjeto.AAA_NOME_LONGO)
     private String nomeLongo;
-    @InfoCampo(tipo = FabCampos.AAA_DESCRITIVO)
+    @InfoCampo(tipo = FabTipoAtributoObjeto.AAA_DESCRITIVO)
     private String descricao;
 
     @Override

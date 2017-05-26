@@ -4,6 +4,8 @@
         <param-name>facelets.LIBRARIES</param-name>
         <param-value>/sb.taglibLab.xml</param-value>
     </context-param>
+
+
     <welcome-file-list>
         <welcome-file>/site/home.xhtml</welcome-file>
     </welcome-file-list>

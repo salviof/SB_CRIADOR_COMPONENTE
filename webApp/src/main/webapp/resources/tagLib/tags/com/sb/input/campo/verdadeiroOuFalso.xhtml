@@ -7,11 +7,13 @@
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
+
             <p:selectBooleanButton
 
                 class="campoResponsivo  TexAlCenter #{componente.classeCSS}"
                 offLabel="Não" onLabel="Sim"
-                value="#{registro.valor}" disabled="true">
+
+                value="#{registro.valor}" disabled="#{desabilitarEdicao}">
 
 
                 <c:if test="#{possuiMetodoOnChange}">

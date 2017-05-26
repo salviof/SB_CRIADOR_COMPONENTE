@@ -8,8 +8,8 @@ package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.ValorAceito;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.Campo;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabCampos;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.TipoAtributoObjetoSB;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemBairro;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemCidade;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemLocalizacao;
@@ -71,56 +71,56 @@ public class BeanExemplo
 
     }
 
-    @InfoCampo(tipo = FabCampos.ID, label = "ID")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.ID, label = "ID")
     @NotNull
     private int id;
 
-    @InfoCampo(tipo = FabCampos.EMAIL, label = "Email")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.EMAIL, label = "Email")
     @NotNull
     private String email = "emailteste@teste.com";
 
-    @InfoCampo(fabricaDeOpcoes = FabCampos.class, tipo = FabCampos.OBJETO_DE_UMA_LISTA)
-    private Campo seletorOpcao;
+    @InfoCampo(fabricaDeOpcoes = FabTipoAtributoObjeto.class, tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA)
+    private TipoAtributoObjetoSB seletorOpcao;
 
-    @InfoCampo(tipo = FabCampos.AAA_DESCRITIVO, label = "Descritivo memo")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.AAA_DESCRITIVO, label = "Descritivo memo")
     private String descritivo;
 
-    @InfoCampo(tipo = FabCampos.TELEFONE_FIXO_NACIONAL, label = "Telefone")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.TELEFONE_FIXO_NACIONAL, label = "Telefone")
     @NotNull
     private String telefone = "313017-7334";
 
-    @InfoCampo(tipo = FabCampos.DATA)
+    @InfoCampo(tipo = FabTipoAtributoObjeto.DATA)
     private Date data;
 
-    @InfoCampo(tipo = FabCampos.TELEFONE_CELULAR, label = "Celular")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.TELEFONE_CELULAR, label = "Celular")
     @NotNull
     private String celular;
 
-    @InfoCampo(tipo = FabCampos.TELEFONE_FIXO_INTERNACIONAL, label = "Tel Internacional")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.TELEFONE_FIXO_INTERNACIONAL, label = "Tel Internacional")
     @NotNull
     private String telInternacional;
 
-    @InfoCampo(tipo = FabCampos.CPF, label = "CPF")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.CPF, label = "CPF")
     @NotNull
     private String cpf;
 
-    @InfoCampo(tipo = FabCampos.CNPJ, label = "CNPJ")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.CNPJ, label = "CNPJ")
     @NotNull
     private String cnpj;
 
-    @InfoCampo(tipo = FabCampos.INSCRICAO_ESTADUAL, label = "Teste")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.INSCRICAO_ESTADUAL, label = "Teste")
     @NotNull
     private String cpTeste;
 
-    @InfoCampo(tipo = FabCampos.INSCRICAO_ESTADUAL, label = "Inscestadual")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.INSCRICAO_ESTADUAL, label = "Inscestadual")
     @NotNull
     private String inscricaoEstadual;
 
-    @InfoCampo(tipo = FabCampos.INSCRIACAO_MUNICIPAL, label = "Insc. Municipal")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.INSCRIACAO_MUNICIPAL, label = "Insc. Municipal")
     @NotNull
     private String inscricaoMunicipal;
 
-    @InfoCampo(tipo = FabCampos.COR, label = "Cor")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.COR, label = "Cor")
     @NotNull
     private String cor;
 
@@ -128,90 +128,93 @@ public class BeanExemplo
     @NotNull
     private String mascaraEspecial;
 
-    @InfoCampo(tipo = FabCampos.HTML, label = "Html")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.HTML, label = "Html")
     @NotNull
     private String html;
 
-    @InfoCampo(tipo = FabCampos.SITE, obrigatorio = true, label = "Site")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.SITE, obrigatorio = true, label = "Site")
     @NotNull
     private String site;
 
-    @InfoCampo(tipo = FabCampos.URL, label = "Url")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.URL, label = "Url")
     private String url;
 
-    @InfoCampo(tipo = FabCampos.SENHA, label = "Senha")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.SENHA, label = "Senha")
     @NotNull
     private String senha;
 
     @NotNull
-    @InfoCampo(tipo = FabCampos.QUANTIDADE, label = "Quantidade")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.QUANTIDADE, label = "Quantidade")
     private int quantidade;
 
     @NotNull
-    @InfoCampo(tipo = FabCampos.PERCENTUAL, label = "Percentual")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.PERCENTUAL, label = "Percentual")
     private int porcentagem;
 
     @NotNull
-    @InfoCampo(tipo = FabCampos.MOEDA_REAL, label = "Dinheiro")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.MOEDA_REAL, label = "Dinheiro")
     private Double dinheiro;
 
     @NotNull
-    @InfoCampo(tipo = FabCampos.REG_DATAALTERACAO, label = "Data Alteração")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.REG_DATAALTERACAO, label = "Data Alteração")
     private Date dataAlteracao;
 
-    @InfoCampo(tipo = FabCampos.AAA_NOME, label = "Apelido")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.AAA_NOME, label = "Apelido")
     private String apelido = "Bean Simples";
 
     @NotNull
-    @InfoCampo(tipo = FabCampos.AAA_NOME_LONGO, label = "Nome")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.AAA_NOME_LONGO, label = "Nome")
     private String nome = "Nome Completo do Bean Simples";
 
-    @InfoCampo(tipo = FabCampos.LCComplemeto, label = "Complemento")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LCComplemeto, label = "Complemento")
     @NotNull
     private String complemento;
 
-    @InfoCampo(tipo = FabCampos.LCCEP, obrigatorio = true, label = "CEP")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LCCEP, obrigatorio = true, label = "CEP")
     @NotNull
     private String cep;
 
-    @InfoCampo(tipo = FabCampos.DATAHORA, label = "Data Hora")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.DATAHORA, label = "Data Hora")
     @NotNull
     private String dataHora;
 
-    @InfoCampo(tipo = FabCampos.ARQUIVO_DE_ENTIDADE, label = "Arquivo")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.ARQUIVO_DE_ENTIDADE, label = "Arquivo")
     @NotNull
     private String arquivo;
 
-    @InfoCampo(tipo = FabCampos.ARQUIVO_DE_ENTIDADE, label = "Arquivo de Categoria")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.ARQUIVO_DE_ENTIDADE, label = "Arquivo de Categoria")
     @NotNull
     private String arquivoDeCategoria;
 
-    @InfoCampo(tipo = FabCampos.LC_LOCALIZACAO, label = "Localização")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LC_LOCALIZACAO, label = "Localização")
     @NotNull
     private ItemLocalizacao localizacao;
     @NotNull
     private BeanExemplo beanFilho;
 
-    @InfoCampo(tipo = FabCampos.LCBairro)
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LCBairro)
     private ItemBairro bairro;
 
-    @InfoCampo(tipo = FabCampos.OBJETO_DE_UMA_LISTA, valoresAceitos = {
+    @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, valoresAceitos = {
         @ValorAceito(valor = "Teste"),
         @ValorAceito(valor = "Teste2")}
     )
     private BeanExemplo beanSelecionadoDaListaDescritiva;
 
-    @InfoCampo(tipo = FabCampos.OBJETO_DE_UMA_LISTA, fabricaDeOpcoes = FabTipoBeanSBGenerico.class)
+    @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, fabricaDeOpcoes = FabTipoBeanSBGenerico.class)
     private BeanExemplo beanSelecionadoDaListaFabrica;
 
-    @InfoCampo(tipo = FabCampos.OBJETO_DE_UMA_LISTA, caminhoParaLista = "filiaisFornecedor")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, caminhoParaLista = "filiaisFornecedor")
     private BeanExemplo benSelecionadoListaPorCampo;
 
     private ItemUnidadeFederativa unidadeFederativa;
 
     private ItemCidade cidade;
-    @InfoCampo(tipo = FabCampos.LISTA_OBJETOS, fabricaDeOpcoes = FabListBeanExemplos.class)
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LISTA_OBJETOS, fabricaDeOpcoes = FabListBeanExemplos.class)
     private List<BeanExemplo> listasExemplo;
+
+    @InfoCampo(tipo = FabTipoAtributoObjeto.VERDADEIRO_FALSO)
+    private boolean verdadeiroOuFalso;
 
     @Override
     public int getId() {
@@ -476,11 +479,11 @@ public class BeanExemplo
         this.beanFilho = beanFilho;
     }
 
-    public Campo getSeletorOpcao() {
+    public TipoAtributoObjetoSB getSeletorOpcao() {
         return seletorOpcao;
     }
 
-    public void setSeletorOpcao(Campo seletorOpcao) {
+    public void setSeletorOpcao(TipoAtributoObjetoSB seletorOpcao) {
         this.seletorOpcao = seletorOpcao;
     }
 
@@ -506,6 +509,14 @@ public class BeanExemplo
 
     public void setBairro(ItemBairro bairro) {
         this.bairro = bairro;
+    }
+
+    public boolean isVerdadeiroOuFalso() {
+        return verdadeiroOuFalso;
+    }
+
+    public void setVerdadeiroOuFalso(boolean verdadeiroOuFalso) {
+        this.verdadeiroOuFalso = verdadeiroOuFalso;
     }
 
 }
