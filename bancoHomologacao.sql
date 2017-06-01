@@ -37,6 +37,7 @@ CREATE TABLE `AcaoDoSistema` (
   `tipoAcao` varchar(255) DEFAULT NULL,
   `tipoAcaoGenerica` varchar(255) DEFAULT NULL,
   `nomeDominio` varchar(255) DEFAULT NULL,
+  `estadoFormulario` int(11) DEFAULT NULL,
   `xhtml` varchar(255) DEFAULT NULL,
   `acaoTemModal` bit(1) DEFAULT NULL,
   `campoJustificativa` varchar(255) DEFAULT NULL,
@@ -685,4 +686,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-21 15:04:39
+-- Dump completed on 2017-05-30  5:35:05

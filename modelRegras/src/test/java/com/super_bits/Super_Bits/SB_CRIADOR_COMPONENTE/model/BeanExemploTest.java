@@ -9,6 +9,7 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp.TesteSB_CRIADO
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstSeletorItens;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoLocalizacaoInstanciado;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimplesSomenteLeitura;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfBairro;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfCidade;
@@ -34,6 +35,16 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
         try {
             System.out.println("getId");
             BeanExemplo beanExemplo = new BeanExemplo();
+
+            ItfCampoInstanciado campoCNPJ = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("cnpj");
+            System.out.println(campoCNPJ.getMascara());
+
+            ItfCampoInstanciado campoSeletor = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("beanSelecionadoDaListaFabrica");
+
+            System.out.println("Opções listadas=" + campoSeletor.getListaDeOpcoes().size());
+            for (ItfBeanSimples opcao : campoSeletor.getListaDeOpcoes()) {
+                System.out.println(opcao.getNome());
+            }
 
             ItfCampoInstanciado campoSelecaoItensInstanc = beanExemplo.getCampoByNomeOuAnotacao("listasExemplo");
             ItfCampoInstSeletorItens campoSeletorInstanciado = campoSelecaoItensInstanc.getCampoSeltorItens();

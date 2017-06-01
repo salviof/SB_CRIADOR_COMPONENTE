@@ -9,7 +9,7 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.BeanExemplo;
 import com.super_bits.TestesWP_CRIADOR_COMPONENTES;
 import com.super_bits.config.webPaginas.SiteMap;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaCampo;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.Campo;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.AtributoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComponenteVisualSB;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual;
@@ -38,6 +38,7 @@ public class PgMapaComponentesTest extends TestesWP_CRIADOR_COMPONENTES {
                 System.out.println(cp.getNomeDeclarado());
                 System.out.println(cp.getNomeDoObjeto());
             }
+
             // INSTANCIA A PAGINA A SER USADA
             //
             PgMapaComponentes mapaComponentesTeste = new PgMapaComponentes();
@@ -155,7 +156,7 @@ public class PgMapaComponentesTest extends TestesWP_CRIADOR_COMPONENTES {
 
     }
 
-    public void exibirRelatorioListaDeCampos(PgMapaComponentes pPaginaARelatar, List<Campo> pListaCampos) {
+    public void exibirRelatorioListaDeCampos(PgMapaComponentes pPaginaARelatar, List<AtributoObjetoSB> pListaCampos) {
 
         int pTotalCampos = pListaCampos.size();
 

@@ -18,7 +18,7 @@ import com.super_bits.modulosSB.SBCore.modulos.Mensagens.FabMensagens;
 import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.FabErro;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaCampo;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaDeEntidade;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.UtilSBCoreReflexaoCampos;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.UtilSBCoreReflexaoCaminhoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.CampoNaoImplementado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
@@ -429,7 +429,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
                 ItfCampoInstanciado campo = beanExemplo.getCampoByNomeOuAnotacao(nomeCampo);
                 if (campo != null) {
                     if (campo
-                            .getTipoCampo().
+                            .getFabricaTipoAtributo().
                             getTipo_input_prime()
                             .equals(componenteSelecionado.getFabricaDoComponente())) {
                         return cp;
@@ -542,9 +542,9 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     public ItfCampoInstanciado getCampoInstanciado() {
 
         if (caminhoBeanSelecionado != null) {
-            String nomeCampo = UtilSBCoreReflexaoCampos.getCampoSemNomeClasse(caminhoBeanSelecionado);
+            String nomeCampo = UtilSBCoreReflexaoCaminhoCampo.getCampoSemNomeClasse(caminhoBeanSelecionado);
             if (nomeCampo != null) {
-                return beanExemplo.getCampoByNomeOuAnotacao(UtilSBCoreReflexaoCampos.getCampoSemNomeClasse(caminhoBeanSelecionado));
+                return beanExemplo.getCampoByNomeOuAnotacao(UtilSBCoreReflexaoCaminhoCampo.getCampoSemNomeClasse(caminhoBeanSelecionado));
             }
         }
         return new CampoNaoImplementado();
