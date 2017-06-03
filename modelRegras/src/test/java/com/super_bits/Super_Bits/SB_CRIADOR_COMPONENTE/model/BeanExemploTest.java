@@ -45,6 +45,10 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
             for (ItfBeanSimples opcao : campoSeletor.getListaDeOpcoes()) {
                 System.out.println(opcao.getNome());
             }
+            campoSeletor.setValor(FabListBeanExemplos.EXEMPLO1.getRegistro());
+
+            ItfCampoInstanciado mascaraDoCampoSelecionado = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("beanSelecionadoDaListaFabrica.cnpj");
+            System.out.println(mascaraDoCampoSelecionado.getMascara());
 
             ItfCampoInstanciado campoSelecaoItensInstanc = beanExemplo.getCampoByNomeOuAnotacao("listasExemplo");
             ItfCampoInstSeletorItens campoSeletorInstanciado = campoSelecaoItensInstanc.getCampoSeltorItens();
