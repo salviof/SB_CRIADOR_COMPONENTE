@@ -4,14 +4,50 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:sb="http://superbitsframework/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-    <sb:parametroMetodo nome="prMetodo" valor="#{metodoOnChange}" />
-    <ui:include
-        src="#{layoutCampo.xhtmlJsfCaminhoRelativo}" >
-        <ui:param name="layout" value="#{layoutsComponenteSB.layoutCampo.semLabel}"/>
-        <ui:param name="componente" value="#{layoutCampo}"  />
+    <ui:fragment >
+
+        <sb:parametroMetodo nome="prMetodo" valor="#{metodoOnChange}" rendered="#{possuiMetodoOnChange}" />
+
+        <ui:param name="xhtmlINPUT" value="#{layoutComponente}" />
+        <ui:param name="layout" value="#{layoutCampo}"/>
+
+        <ui:param name="componente" value="#{layoutComponente}"  />
+
         <ui:param name="valor" value="#{itemSelecionado}"/>
         <ui:param name="obrigatorio" value="#{obrigatorio}"/>
-
+        <ui:param name="nomeItem" value="#{registro.label}"/>
         <ui:param rendered="#{registro.umValorComLista}" name="lista" value="#{registro.listaDeOpcoes}"/>
-    </ui:include>
+
+        <ui:param name="atualizarFormOnChange" value="#{atualizarFormOnChange}"/>
+        <ui:param name="lista" value="#{opcoes}"/>
+
+        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualSeletorItem.combo}"  >
+
+            <sb:inputSBCombo />
+        </ui:fragment>
+
+
+        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualSeletorItem.auto_Complete}"  >
+            <sb:inputSBSelAutoCompletar />
+        </ui:fragment>
+
+        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualSeletorItem.carrousel.xhtmlJsfCaminhoRelativo}"  >
+            <sb:inputSBCarroussel />
+        </ui:fragment>
+
+
+        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualSeletorItem.grade.xhtmlJsfCaminhoRelativo}"  >
+            <sb:inputSBGrade />
+        </ui:fragment>
+
+        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualSeletorItem.menu_em_Botoes.xhtmlJsfCaminhoRelativo}"  >
+            <sb:inputSBmenuBotoes />
+        </ui:fragment>
+
+        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualSeletorItem.radio.xhtmlJsfCaminhoRelativo}"  >
+            <sb:inputSBradio  />
+        </ui:fragment>
+    </ui:fragment>
+
+
 </html>

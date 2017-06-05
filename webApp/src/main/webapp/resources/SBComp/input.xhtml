@@ -21,6 +21,8 @@
 
                       />
 
+        <cc:attribute name="atualizarFormOnChange" type="java.lang.Boolean" default="#{false}" />
+
         <cc:attribute name="metodoOnChange" required="false"   type="javax.el.MethodExpression"
                       shortDescription="Médodo que deve ser executado ao alterar um valor"
 
@@ -62,6 +64,7 @@
                     opcoes="#{cc.attrs.registro.listaDeOpcoes}"
                     idAtualizarOnChange="#{cc.attrs.idAtualizarOnChange}"
                     metodoOnChange="#{cc.attrs.metodoOnChange}"
+                    atualizarFormOnChange="#{cc.attrs.atualizarFormOnChange}"
                     xhtmlVisualizacao="#{cc.attrs.xhtmlInclude}"
                     />
 

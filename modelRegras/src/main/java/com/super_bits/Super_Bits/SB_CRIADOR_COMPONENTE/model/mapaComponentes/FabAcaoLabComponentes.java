@@ -33,9 +33,9 @@ public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
     @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false)
     LAB_COMPONENTES_FRM_EDITAR,
     @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false)
-    LAB_COMPONENTES_FRM_FAMILIA_SELECIONADA_VISUALIZAR,
+    LAB_COMPONENTES_FRM_VISUALIZAR_FAMILIA_SELECIONADA,
     @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR)
-    LAB_COMPONENTES_FRM_COMPONENTE_SELECIONADO_VISUALIZAR,
+    LAB_COMPONENTES_FRM_VISUALIZAR_COMPONENTE_SELECIONADO,
     @InfoTipoAcaoFormulario(nomeAcao = "Ver Componente", descricao = "",
             precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR,
             xhtmlDaAcao = "formVERInput.xhtml"

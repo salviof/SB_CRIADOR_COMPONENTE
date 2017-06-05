@@ -209,6 +209,14 @@
         </attribute>
 
 
+
+        <attribute>
+            <description> <![CDATA[ Se true desativiva a edição]]></description>
+            <name>atualizarFormOnChange</name>
+            <required>true</required>
+            <type>java.lang.Boolean</type>
+        </attribute>
+
         <attribute>
             <description>
                  <![CDATA[ Informando um id para atualizar, quando acontecer
@@ -241,6 +249,13 @@
         <attribute>
             <description> <![CDATA[ Se true desativiva a edição]]></description>
             <name>possuiMetodoOnChange</name>
+            <required>true</required>
+            <type>java.lang.Boolean</type>
+        </attribute>
+
+        <attribute>
+            <description> <![CDATA[ Se true desativiva a edição]]></description>
+            <name>obrigatorio</name>
             <required>true</required>
             <type>java.lang.Boolean</type>
         </attribute>
@@ -283,7 +298,7 @@
         <source>resources/tagLib/tags/com/sb/seletorItem.xhtml</source>
         <attribute>
             <description> <![CDATA[ O componente utilizado para exibição]]></description>
-            <name>componente</name>
+            <name>layoutComponente</name>
             <required>true</required>
             <type>com.super_bits.view.fabricasCompVisual.ItfComponenteVisualSB</type>
         </attribute>
@@ -339,13 +354,27 @@
 
         <attribute>
             <description> <![CDATA[ O item que será exibido no componente]]></description>
+            <name>atualizarFormOnChange</name>
+            <required>true</required>
+            <type>java.lang.Boolean</type>
+        </attribute>
+
+        <attribute>
+            <description> <![CDATA[ O item que será exibido no componente]]></description>
             <name>metodoOnChange</name>
             <required>false</required>
             <type>javax.el.MethodExpression</type>
         </attribute>
 
 
-
+        <attribute>
+            <description>
+            <![CDATA[informa  o Label do input (nome do campo de entrada)]]>
+            </description>
+            <name>label</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+        </attribute>
 
 
 
@@ -879,6 +908,12 @@
         <tag-name>inputSBPickList</tag-name>
         <source>resources/tagLib/tags/com/sb/input/seletorItens/pickList.xhtml</source>
     </tag>
+
+    <tag>
+        <tag-name>inputSBCor</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/campo/cor.xhtml</source>
+    </tag>
+
 
 
 </facelet-taglib>
