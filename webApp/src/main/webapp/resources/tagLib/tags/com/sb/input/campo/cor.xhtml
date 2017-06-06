@@ -14,15 +14,17 @@
 
                 required="#{obrigatorio}"
                 value="#{valor}"
+
                 validatorMessage="O valor informado no campo #{label} não é valido! "
                 requiredMessage="O campo #{label} não foi informado! "
+
                 >
 
 
                 <c:if test="#{possuiMetodoOnChange}">
                     <p:ajax rendered="#{possuiMetodoOnChange}"
                             global="true"
-                            event="valueChange"
+                            event="blur"
                             listener="#{prMetodo}"/>
                 </c:if>
 
@@ -30,7 +32,7 @@
                     <p:ajax
                         rendered="#{possuiIDOnChange}"
                         global="true"
-                        event="valueChange"
+                        event="blur"
                         listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
                 </c:if>
 
