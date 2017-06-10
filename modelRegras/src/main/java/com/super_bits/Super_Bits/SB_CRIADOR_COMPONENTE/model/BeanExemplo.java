@@ -5,15 +5,20 @@
  */
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
+import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaCampo;
+import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaDeEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.ValorAceito;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.TipoAtributoObjetoSB;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoReflexao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.GrupoCampos;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.TipoAtributoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemBairro;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemCidade;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemLocalizacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemUnidadeFederativa;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.FabTipoBeanSBGenerico;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemContatoCorporativo;
 import java.util.ArrayList;
@@ -39,6 +44,11 @@ public class BeanExemplo
 
     public BeanExemplo() {
         this(true);
+        grupoCampo = new GrupoCampos("Grupo de Campos teste");
+        EstruturaDeEntidade est = MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class);
+        for (EstruturaCampo strutura : est.getCampos()) {
+            grupoCampo.adicionarCampo(new CaminhoCampoReflexao(strutura.getNomeDeclarado(), BeanExemplo.class));
+        }
 
     }
 
@@ -215,6 +225,8 @@ public class BeanExemplo
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.VERDADEIRO_FALSO)
     private boolean verdadeiroOuFalso;
+    @InfoCampo(tipo = FabTipoAtributoObjeto.GRUPO_CAMPO)
+    private GrupoCampos grupoCampo;
 
     @Override
     public int getId() {
@@ -517,6 +529,14 @@ public class BeanExemplo
 
     public void setVerdadeiroOuFalso(boolean verdadeiroOuFalso) {
         this.verdadeiroOuFalso = verdadeiroOuFalso;
+    }
+
+    public GrupoCampos getGrupoCampo() {
+        return grupoCampo;
+    }
+
+    public void setGrupoCampo(GrupoCampos grupoCampo) {
+        this.grupoCampo = grupoCampo;
     }
 
 }

@@ -518,6 +518,13 @@ public class PgMapaComponentes extends MB_PaginaConversation {
                         break;
                     case BOTAO_DE_ACAO:
                         break;
+                    case GRUPO_DE_CAMPOS:
+                        break;
+                    case GRUPOS_DE_CAMPOS:
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_VISUALIZAR.getRegistro());
+                        break;
+                    case FORMULARIO_DE_ACAO:
+                        break;
 
                     default:
                         throw new AssertionError(componenteSelecionado.getFamilia().name());

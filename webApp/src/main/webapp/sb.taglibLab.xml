@@ -15,7 +15,6 @@
             <required>true</required>
             <type>com.super_bits.Controller.Interfaces.acoes</type>
         </attribute>
-
         <attribute>
             <name>layout</name>
             <description><![CDATA[O componente utilizado para exibição]]></description>

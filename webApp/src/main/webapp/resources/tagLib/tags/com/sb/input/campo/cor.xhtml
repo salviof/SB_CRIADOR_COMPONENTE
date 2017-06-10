@@ -22,18 +22,11 @@
 
 
                 <c:if test="#{possuiMetodoOnChange}">
-                    <p:ajax rendered="#{possuiMetodoOnChange}"
-                            global="true"
-                            event="blur"
-                            listener="#{prMetodo}"/>
+                    [#possuiMetodoOnChange para cor em desenvolvimento]
                 </c:if>
 
                 <c:if test="#{possuiIDOnChange}" >
-                    <p:ajax
-                        rendered="#{possuiIDOnChange}"
-                        global="true"
-                        event="blur"
-                        listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
+                    [#possuiIdOnChange para cor em desenvolvimento]
                 </c:if>
 
             </p:colorPicker>

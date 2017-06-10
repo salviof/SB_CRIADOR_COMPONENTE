@@ -24,17 +24,19 @@ import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.Component
 @InfoModuloSB_CRIADOR_COMPONENTE(modulo = FabModulosIProjetoTesteI.DEMONSTRACAO_BASICA)
 public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
 
-    @InfoTipoAcaoGestaoEntidade(nomeAcao = "", descricao = "", precisaPermissao = false)
+    @InfoTipoAcaoGestaoEntidade(precisaPermissao = false)
     LAB_COMPONENTES_MB_GERENCIAR,
-    @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false, campos = {"nome", "descricao", "familia"})
+    @InfoTipoAcaoFormulario(precisaPermissao = false, campos = {"nome", "descricao", "familia"})
     LAB_COMPONENTES_FRM_LISTAR,
-    @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false)
+    @InfoTipoAcaoFormulario(precisaPermissao = false)
     LAB_COMPONENTES_FRM_VISUALIZAR,
-    @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false)
+    @InfoTipoAcaoFormulario(precisaPermissao = false)
+    LAB_COMPONENTES_FRM_VISUALIZAR_GRUPO_DE_CAMPOS,
+    @InfoTipoAcaoFormulario(precisaPermissao = false)
     LAB_COMPONENTES_FRM_EDITAR,
-    @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false)
+    @InfoTipoAcaoFormulario(precisaPermissao = false)
     LAB_COMPONENTES_FRM_VISUALIZAR_FAMILIA_SELECIONADA,
-    @InfoTipoAcaoFormulario(nomeAcao = "", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR)
+    @InfoTipoAcaoFormulario(precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR)
     LAB_COMPONENTES_FRM_VISUALIZAR_COMPONENTE_SELECIONADO,
     @InfoTipoAcaoFormulario(nomeAcao = "Ver Componente", descricao = "",
             precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR,

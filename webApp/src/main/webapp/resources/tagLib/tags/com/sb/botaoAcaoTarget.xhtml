@@ -9,7 +9,7 @@
     <c:if test="#{layout!=null}">
         <sb:parametroMetodo nome="prMetodo" valor="#{metodo}" />
         <ui:include
-            src="botaoAcao_Target/#{layout.nomeArquivoXHTMLJSF}.xhtml"
+            src="botaoAcao_Target/#{layout.nomeArquivoXHTMLJSF}"
             />
     </c:if>
     <c:if test="#{layout==null}">
