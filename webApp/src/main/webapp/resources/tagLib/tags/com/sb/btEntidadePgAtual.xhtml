@@ -9,7 +9,7 @@
     <c:if test="#{layout!=null}">
         <sb:parametroMetodo nome="prMetodo" valor="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(registro)}" />
         <ui:include
-            src="botaoAcao_PgEntidade/#{layout.nomeArquivoXHTMLJSF}.xhtml"
+            src="botaoAcao_PgEntidade/#{layout.nomeArquivoXHTMLJSF}"
             />
     </c:if>
     <c:if test="#{layout==null}">
