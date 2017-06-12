@@ -5,6 +5,10 @@
  */
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
+import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.FabAcaoLabComponentes;
+import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
+import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.FabErro;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaCampo;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaDeEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
@@ -44,12 +48,21 @@ public class BeanExemplo
 
     public BeanExemplo() {
         this(true);
-        grupoCampo = new GrupoCampos("Grupo de Campos teste");
+        grupoCampoCompleto = new GrupoCampos("Grupo de Campos teste");
         EstruturaDeEntidade est = MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class);
         for (EstruturaCampo strutura : est.getCampos()) {
-            grupoCampo.adicionarCampo(new CaminhoCampoReflexao(strutura.getNomeDeclarado(), BeanExemplo.class));
+            grupoCampoCompleto.adicionarCampo(new CaminhoCampoReflexao(strutura.getNomeDeclarado(), BeanExemplo.class));
         }
+        grupoCampoSimples = new GrupoCampos("Grupo campo Simples");
+        try {
+            grupoCampoSimples.adicionarCampo(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("nome")));
+            grupoCampoSimples.adicionarCampo(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("celular")));
+            grupoCampoSimples.adicionarCampo(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("beanSelecionadoDaListaFabrica")));
 
+        } catch (Throwable t) {
+            SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro criando " + BeanExemplo.class.getSimpleName(), t);
+        }
+        acaoGrupoTeste = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO.getRegistro().getComoFormulario();
     }
 
     /**
@@ -226,7 +239,11 @@ public class BeanExemplo
     @InfoCampo(tipo = FabTipoAtributoObjeto.VERDADEIRO_FALSO)
     private boolean verdadeiroOuFalso;
     @InfoCampo(tipo = FabTipoAtributoObjeto.GRUPO_CAMPO)
-    private GrupoCampos grupoCampo;
+    private GrupoCampos grupoCampoCompleto;
+    @InfoCampo(tipo = FabTipoAtributoObjeto.GRUPO_CAMPO)
+    private GrupoCampos grupoCampoSimples;
+    @InfoCampo(tipo = FabTipoAtributoObjeto.FORMULARIO_DE_ACAO)
+    private ItfAcaoFormulario acaoGrupoTeste;
 
     @Override
     public int getId() {
@@ -531,12 +548,52 @@ public class BeanExemplo
         this.verdadeiroOuFalso = verdadeiroOuFalso;
     }
 
-    public GrupoCampos getGrupoCampo() {
-        return grupoCampo;
+    public GrupoCampos getGrupoCampoCompleto() {
+        return grupoCampoCompleto;
     }
 
-    public void setGrupoCampo(GrupoCampos grupoCampo) {
-        this.grupoCampo = grupoCampo;
+    public void setGrupoCampoCompleto(GrupoCampos grupoCampoCompleto) {
+        this.grupoCampoCompleto = grupoCampoCompleto;
+    }
+
+    public String getDescritivo() {
+        return descritivo;
+    }
+
+    public void setDescritivo(String descritivo) {
+        this.descritivo = descritivo;
+    }
+
+    public ItemUnidadeFederativa getUnidadeFederativa() {
+        return unidadeFederativa;
+    }
+
+    public void setUnidadeFederativa(ItemUnidadeFederativa unidadeFederativa) {
+        this.unidadeFederativa = unidadeFederativa;
+    }
+
+    public ItemCidade getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(ItemCidade cidade) {
+        this.cidade = cidade;
+    }
+
+    public GrupoCampos getGrupoCampoSimples() {
+        return grupoCampoSimples;
+    }
+
+    public void setGrupoCampoSimples(GrupoCampos grupoCampoSimples) {
+        this.grupoCampoSimples = grupoCampoSimples;
+    }
+
+    public ItfAcaoFormulario getAcaoGrupoTeste() {
+        return acaoGrupoTeste;
+    }
+
+    public void setAcaoGrupoTeste(ItfAcaoFormulario acaoGrupoTeste) {
+        this.acaoGrupoTeste = acaoGrupoTeste;
     }
 
 }

@@ -519,11 +519,17 @@ public class PgMapaComponentes extends MB_PaginaConversation {
                     case BOTAO_DE_ACAO:
                         break;
                     case GRUPO_DE_CAMPOS:
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPO_CAMPO_VISUALIZAR.getRegistro());
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPO_CAMPO_TESTAR_ON_CHANGE_GPR.getRegistro());
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPO_CAMPO_TESTAR_ON_CHANGE_FORM.getRegistro());
                         break;
                     case GRUPOS_DE_CAMPOS:
-                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_VISUALIZAR.getRegistro());
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_CAMPO_TESTAR_ONCHANGE_FRM.getRegistro());
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_CAMPO_TESTAR_ONCHANGE_GPR.getRegistro());
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_CAMPO_TESTAR_ONCHANGE_FRM.getRegistro());
                         break;
                     case FORMULARIO_DE_ACAO:
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FORMULARIO_VER.getRegistro());
                         break;
 
                     default:

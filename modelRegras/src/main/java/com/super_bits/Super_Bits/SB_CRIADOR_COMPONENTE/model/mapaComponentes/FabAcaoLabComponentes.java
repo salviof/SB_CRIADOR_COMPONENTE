@@ -5,11 +5,13 @@
  */
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes;
 
+import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.BeanExemplo;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.FabModulosIProjetoTesteI;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.InfoModuloSB_CRIADOR_COMPONENTE;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoController;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormCamposAtualizaForm;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
@@ -38,7 +40,7 @@ public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
     LAB_COMPONENTES_FRM_VISUALIZAR_FAMILIA_SELECIONADA,
     @InfoTipoAcaoFormulario(precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR)
     LAB_COMPONENTES_FRM_VISUALIZAR_COMPONENTE_SELECIONADO,
-    @InfoTipoAcaoFormulario(nomeAcao = "Ver Componente", descricao = "",
+    @InfoTipoAcaoFormulario(nomeAcao = "Ver Input", descricao = "",
             precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR,
             xhtmlDaAcao = "formVERInput.xhtml"
     )
@@ -53,12 +55,34 @@ public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
             xhtmlDaAcao = "formFichaTecnicaInput.xhtml"
     )
     LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA_INPUT,
-    @InfoTipoAcaoFormulario(nomeAcao = "Testar OnChange", descricao = "",
+    @InfoTipoAcaoFormulario(nomeAcao = "Testar Input OnChange", descricao = "",
             xhtmlDaAcao = "formONCHANGEInput.xhtml",
             precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
     LAB_COMPONENTES_FRM_LAB_INPUT_ONCHANGE,
     @InfoTipoAcaoFormulario(nomeAcao = "Testar Validacao", descricao = "", precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
     LAB_COMPONENTES_FRM_LAB_INPUT_VALIDACAO,
+    @InfoTipoAcaoFormulario(nomeAcao = "Visualizar Grupo", iconeFonteAnsowame = FabIconeFontAwesome.REG_AGRUPAR_REGISTROS)
+    LAB_COMPONENTES_FRM_LAB_GRUPO_CAMPO_VISUALIZAR,
+    @InfoTipoAcaoFormulario(nomeAcao = "Testar Grupo OnchangeGrupo", iconeFonteAnsowame = FabIconeFontAwesome.REG_AGRUPAR_REGISTROS)
+    LAB_COMPONENTES_FRM_LAB_GRUPO_CAMPO_TESTAR_ON_CHANGE_GPR,
+    @InfoTipoAcaoFormulario(nomeAcao = "Testar Grupo Onchange @Form", iconeFonteAnsowame = FabIconeFontAwesome.REG_AGRUPAR_REGISTROS)
+    LAB_COMPONENTES_FRM_LAB_GRUPO_CAMPO_TESTAR_ON_CHANGE_FORM,
+    @InfoTipoAcaoFormulario(nomeAcao = "visualizar Grupos", iconeFonteAnsowame = FabIconeFontAwesome.REG_AGRUPAR_REGISTROS)
+    LAB_COMPONENTES_FRM_LAB_GRUPOS_CAMPO_VISUALIZAR,
+    @InfoTipoAcaoFormulario(nomeAcao = "Testar Grupos Onchange Grupo", iconeFonteAnsowame = FabIconeFontAwesome.REG_AGRUPAR_REGISTROS)
+    LAB_COMPONENTES_FRM_LAB_GRUPOS_CAMPO_TESTAR_ONCHANGE_GPR,
+    @InfoTipoAcaoFormulario(nomeAcao = "Testar Grupos Onchange @Form", iconeFonteAnsowame = FabIconeFontAwesome.REG_AGRUPAR_REGISTROS)
+    LAB_COMPONENTES_FRM_LAB_GRUPOS_CAMPO_TESTAR_ONCHANGE_FRM,
+    @InfoTipoAcaoFormulario(iconeFonteAnsowame = FabIconeFontAwesome.REG_EDITAR,
+            campos = {"[separador: Dados Basicos]", "id", "email", "descritivo",
+                "[separador: Telefones]", "telefone", "celular", "telInternacional",
+                "[separador: Mascaras Identificadoras]", "inscricaoEstadual", "inscricaoEstadual", "inscricaoEstadual", "inscricaoEstadual"},
+            entidade = BeanExemplo.class
+    )
+    @InfoTipoAcaoFormCamposAtualizaForm()
+    LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO,
+    @InfoTipoAcaoFormulario(nomeAcao = "Ver ação de formulário", iconeFonteAnsowame = FabIconeFontAwesome.REG_AGRUPAR_REGISTROS)
+    LAB_COMPONENTES_FRM_LAB_FORMULARIO_VER,
     @InfoTipoAcaoController(campoJustificativa = "seletorOpcao", comunicacao = FabTipoComunicacao.PERGUNTAR_SIM_OU_NAO)
     LAB_COMPONENTES_CTR_TESTE_JUSTIFICATIVA,
     @InfoTipoAcaoController(fraseComunicação = "", comunicacao = FabTipoComunicacao.PERGUNTAR_SIM_OU_NAO)
