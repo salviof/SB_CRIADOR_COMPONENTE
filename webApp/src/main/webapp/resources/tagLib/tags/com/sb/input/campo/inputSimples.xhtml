@@ -10,11 +10,14 @@
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
 
+
+
+            #{idAtualizarOnChange}
             <p:inputText
                 class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
 
                 disabled="#{desabilitarEdicao}"
-                required="#{obrigatorio}"
+                required="false"
                 value="#{valor}"
                 validatorMessage="O valor informado no campo #{label} não é valido! "
                 requiredMessage="O campo #{label} não foi informado! "
@@ -24,13 +27,28 @@
                 >
 
 
+                <c:if test="#{atualizarGrupoOnChange}" >
+                    <p:ajax
+                        rendered="#{atualizarGrupoOnChange}"
 
-                <c:if test="#{possuiMetodoOnChange}">
+                        event="valueChange"
+                        update="#{pgUtil.getNomeIdPainelDoComponente(component)}"/>
+                </c:if>
+
+                <c:if test="#{atualizarFormOnChange}" >
+                    <p:ajax
+                        rendered="#{atualizarFormOnChange}"
+                        event="valueChange"
+                        update="@form"/>
+                </c:if>
+
+                <c:if test="#{possuiMetodoOnChange}" >
                     <p:ajax rendered="#{possuiMetodoOnChange}"
                             global="true"
                             event="valueChange"
                             listener="#{prMetodo}"/>
                 </c:if>
+
 
                 <c:if test="#{possuiIDOnChange}" >
                     <p:ajax
@@ -38,8 +56,8 @@
                         global="true"
                         event="valueChange"
                         listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
-                </c:if>
 
+                </c:if>
             </p:inputText>
         </ui:define>
     </ui:decorate>

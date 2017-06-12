@@ -82,6 +82,7 @@
                                     layoutCampoEspecial="#{pgMapaComponentes.componenteSelecionado}"
                                     label="#{pgMapaComponentes.campoInstanciado.label}"
                                     opcoes="#{pgMapaComponentes.campoInstanciado.listaDeOpcoes}"
+                                    atualizarFormOnChange="false"
                                     obrigatorio="#{pgMapaComponentes.campoInstanciado.obrigatorio}"
                                     />
 
@@ -90,9 +91,6 @@
 
 
                             </h:form>
-
-
-
 
                         </c:catch>
                         <c:if test = "${catchException != null}">

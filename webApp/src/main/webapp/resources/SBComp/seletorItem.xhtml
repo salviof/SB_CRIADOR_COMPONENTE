@@ -19,7 +19,7 @@
         <cc:attribute name="statusAjax" type="java.lang.Boolean" default="#{null}" />
 
 
-        <cc:attribute name="idOnChange" type="java.lang.String" default="#{null}" />
+        <cc:attribute name="idOnChange" type="java.lang.String" />
         <cc:attribute name="layoutCampo" default="#{layoutsComponenteSB.layoutCampo.superior}" />
         <cc:attribute name="metodoOnChange" type="javax.el.MethodExpression"/>
         <cc:attribute name="mostraSomenteImagem" type="java.lang.Boolean" default="#{false}" />
@@ -45,7 +45,7 @@
             metodoOnChange="#{cc.attrs.metodoOnChange}"
             possuiIDOnChange="#{pgUtil.isAtributoPreenchidoComExpressao(cc, 'idOnChange')}"
             layoutComponente="#{cc.attrs.tipoVisualizacao}"
-            obrigatorio="#{cc.attrs.obrigatorio}"
+
             label="#{cc.attrs.label}"
             atualizarFormOnChange="#{cc.attrs.atualizarFormOnChange}"
             />

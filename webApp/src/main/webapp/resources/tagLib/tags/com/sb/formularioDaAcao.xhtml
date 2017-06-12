@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:sb="http://superbitsframework/ui"
+      >
+
+
+    <br/>
+    <ui:fragment >
+        <ui:param name="xhtmlINPUT" value="#{compSBCompVisualFormularioDeAcao.getComponentePadrao(layout).xhtmlJSF}" />
+        <ui:param name="entidade" value="#{entidade}"/>
+        <ui:include src="/#{xhtmlINPUT}" />
+
+    </ui:fragment>
+
+
+
+</html>
+
+
+
+
+
+
+
