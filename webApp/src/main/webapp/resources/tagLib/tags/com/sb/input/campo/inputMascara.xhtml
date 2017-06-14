@@ -30,13 +30,28 @@
 
 
 
+                <c:if test="#{atualizarGrupoOnChange}" >
+                    <p:ajax
+                        rendered="#{atualizarGrupoOnChange}"
 
-                <c:if test="#{possuiMetodoOnChange}">
+                        event="valueChange"
+                        update="#{pgUtil.getNomeIdPainelDoComponente(component)}"/>
+                </c:if>
+
+                <c:if test="#{atualizarFormOnChange}" >
+                    <p:ajax
+                        rendered="#{atualizarFormOnChange}"
+                        event="valueChange"
+                        update="@form"/>
+                </c:if>
+
+                <c:if test="#{possuiMetodoOnChange}" >
                     <p:ajax rendered="#{possuiMetodoOnChange}"
                             global="true"
                             event="valueChange"
                             listener="#{prMetodo}"/>
                 </c:if>
+
 
                 <c:if test="#{possuiIDOnChange}" >
                     <p:ajax
@@ -44,6 +59,7 @@
                         global="true"
                         event="valueChange"
                         listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
+
                 </c:if>
 
             </p:inputMask>

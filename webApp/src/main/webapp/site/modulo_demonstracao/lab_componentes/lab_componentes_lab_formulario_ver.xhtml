@@ -2,18 +2,76 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:sb="http://superbitsframework/ui"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <ui:composition template="#{layoutsPaginas.conteudoEmBranco.xhtmlVinculado}" >
         <ui:define name="conteudo">
+
             <h:form>
-
-
-
-
-
+                <SBComp:seletorItem lista="#{pgMapaComponentes.listaComponentesEspeciaisDisponiveis}"
+                                    idOnChange="formulario"/>
             </h:form>
+            <h:form>
+                <SBComp:seletorItem lista="#{pgMapaComponentes.listasformularioExemplo}"
+                                    itemSelecionado="#{pgMapaComponentes.beanExemplo.acaoGrupoTeste}"
+                                    idOnChange="formulario"
+                                    metodoOnChange="#{pgUtil.mensagemAlerta('teste')}"
+                                    />
+
+            </h:form >
+            <h:form id="formulario">
+
+
+                <br/>
+                <p:fieldset legend="Detalhes formulario #{pgMapaComponentes.beanExemplo.acaoGrupoTeste.nomeAcao}" >
+
+
+                    <c:forEach items="#{pgMapaComponentes.beanExemplo.acaoGrupoTeste.gruposDeCampos}" var="gpr" >
+                        <p:panelGrid columns="2" >
+                            <p:outputLabel value="#{gpr.nomeGrupo}" />
+
+                            <h:panelGroup >
+
+                                <p:panelGrid columns="6">
+                                    <c:forEach  items="#{gpr.campos}" var="campo">
+                                        <p:outputLabel value="#{campo.label}" />
+                                        <p:outputLabel value="Id Atualizacao? #{campo.labelAlternativo}" />
+                                        <p:outputLabel value="Atualizar Form ao Alterar? #{campo.atualizarFormAoAlterar}" />
+                                        <p:outputLabel value="Atualizar Grupo ao  Alterar? #{campo.atualizarGrupoAoAlterar}" />
+                                        <p:outputLabel value="Atualizar ID ao  Alterar? #{campo.atualizarIdSelecionadoAoAlterar}" />
+                                        <p:outputLabel value="Id Atualizacao? #{campo.atualizarIdSelecionadoAoAlterar}" />
+                                    </c:forEach>
+                                </p:panelGrid>
+
+                            </h:panelGroup>
+
+                        </p:panelGrid>
+
+                    </c:forEach>
+
+
+                </p:fieldset>
+
+                <p:separator/>
+
+                <sb:formularioDaAcao entidade="#{pgMapaComponentes.beanExemplo}"
+                                     acao="#{pgMapaComponentes.beanExemplo.acaoGrupoTeste}"
+                                     layout="#{pgMapaComponentes.beanExemplo.acaoGrupoTeste.componenteFormularioPadrao}"
+
+                                     />
+            </h:form>
+
+
+            <p:panel header="Id atualizacao teste" id="id_atualizacao_teste">
+                #{pgMapaComponentes.beanExemplo.campoVinculado1}
+
+            </p:panel>
+
+
         </ui:define>
     </ui:composition>
 </html>

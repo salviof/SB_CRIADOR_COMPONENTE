@@ -14,6 +14,7 @@ import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreReflexaoObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.TIPO_PARTE_URL;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Mensagens.FabMensagens;
 import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.FabErro;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaCampo;
@@ -104,6 +105,8 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private DialogoWeb dialogoDoMomento;
 
     private List<ComponenteVisualSB> listaComponentesEspeciaisDisponiveis;
+
+    private List<ItfAcaoFormulario> listasformularioExemplo;
 
     public void dropaCampo() {
         FacesContext context = FacesContext.getCurrentInstance();
@@ -205,6 +208,11 @@ public class PgMapaComponentes extends MB_PaginaConversation {
             labelByCaminho.put(caminhoCampo, cp.getLabel());
         }
         listaComponentesEspeciaisDisponiveis = MapaComponentes.getComponentesFamilia(getCampoInstanciado().getComponenteVisualPadrao().getFamilia().getRegistro());
+        listasformularioExemplo = new ArrayList<>();
+        listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_FORM.getRegistro().getComoFormulario());
+        listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_GRUPO_DO_CAMPO.getRegistro().getComoFormulario());
+        listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_ID.getRegistro().getComoFormulario());
+        listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_CAMPO.getRegistro().getComoFormulario());
 
     }
 
@@ -615,6 +623,17 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
     public List<ComponenteVisualSB> getListaComponentesEspeciaisDisponiveis() {
         return listaComponentesEspeciaisDisponiveis;
+    }
+
+    public List<ItfAcaoFormulario> getListasformularioExemplo() {
+        return listasformularioExemplo;
+    }
+
+    public boolean isAcaoFormularioExibicaoSelecionada() {
+        if (getBeanExemplo() == null) {
+            return false;
+        }
+        return getBeanExemplo().getAcaoGrupoTeste() != null;
     }
 
 }

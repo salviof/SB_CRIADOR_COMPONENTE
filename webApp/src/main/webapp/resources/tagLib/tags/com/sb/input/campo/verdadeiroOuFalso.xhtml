@@ -16,17 +16,24 @@
                 value="#{registro.valor}" disabled="#{desabilitarEdicao}">
 
 
-                <c:if test="#{possuiMetodoOnChange}">
-                    <p:ajax rendered="#{possuiMetodoOnChange}"
-                            global="true"
-                            event="valueChange"
-                            listener="#{prMetodo}"/>
+                <c:if test="#{atualizarGrupoOnChange}" >
+                    <p:ajax
+                        rendered="#{atualizarGrupoOnChange}"
+
+                        event="valueChange"
+                        update="#{pgUtil.getNomeIdPainelDoComponente(component)}"/>
                 </c:if>
 
-                <c:if test="#{atualizarFormOnChange}">
-                    <p:ajax rendered="#{atualizarFormOnChange}"
+                <c:if test="#{atualizarFormOnChange}" >
+                    <p:ajax
+                        rendered="#{atualizarFormOnChange}"
+                        event="valueChange"
+                        update="@form"/>
+                </c:if>
+
+                <c:if test="#{possuiMetodoOnChange}" >
+                    <p:ajax rendered="#{possuiMetodoOnChange}"
                             global="true"
-                            update="@form"
                             event="valueChange"
                             listener="#{prMetodo}"/>
                 </c:if>
@@ -38,6 +45,7 @@
                         global="true"
                         event="valueChange"
                         listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
+
                 </c:if>
 
             </p:selectBooleanButton>

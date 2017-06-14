@@ -3,7 +3,6 @@
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facelettaglibrary_2_0.xsd"
                 version="2.0">
-
     <namespace>http://superbitsframework/ui</namespace>
     <tag>
         <tag-name>botaoAcao</tag-name>
@@ -143,6 +142,84 @@
             <type>com.super_bits.view.fabricasCompVisual.ItfComponenteVisualSB</type>
         </attribute>
     </tag>
+    <tag>
+        <tag-name>camposDosGrupos</tag-name>
+        <source>resources/tagLib/tags/com/sb/camposDosGrupos.xhtml</source>
+        <attribute>
+            <description> <![CDATA[ Entidade referente]]></description>
+            <name>entidade</name>
+            <required>true</required>
+            <type>com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples</type>
+        </attribute>
+
+        <attribute>
+            <description> <![CDATA[ Entidade referente]]></description>
+            <name>grupos</name>
+            <required>true</required>
+            <type>java.util.List</type>
+        </attribute>
+
+        <attribute>
+            <description> <![CDATA[ Se true desativiva a edição]]></description>
+            <name>desabilitarEdicao</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+        </attribute>
+
+        <attribute>
+            <description>
+             <![CDATA[     O layout do campo, que podem ser: resumido,esquerda,superior,e automatico]]>
+            </description>
+            <name>layoutCampo</name>
+            <required>false</required>
+            <type>com.super_bits.view.fabricasCompVisual.ItfComponenteVisualSB</type>
+        </attribute>
+    </tag>
+
+
+
+    <tag>
+        <tag-name>formularioDaAcao</tag-name>
+        <source>resources/tagLib/tags/com/sb/formularioDaAcao.xhtml</source>
+        <attribute>
+            <description> <![CDATA[ Entidade referente]]></description>
+            <name>entidade</name>
+            <required>true</required>
+            <type>com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples</type>
+        </attribute>
+        <attribute>
+            <description> <![CDATA[ Entidade referente]]></description>
+            <name>acao</name>
+            <required>true</required>
+            <type>com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario</type>
+        </attribute>
+
+        <attribute>
+            <name>layout</name>
+            <description><![CDATA[O componente utilizado para exibição]]></description>
+            <required>true</required>
+            <type>com.super_bits.view.fabricasCompVisual.ItfComponenteVisualSB</type>
+        </attribute>
+
+
+        <attribute>
+            <description> <![CDATA[ Se true desativiva a edição]]></description>
+            <name>desabilitarEdicao</name>
+            <required>false</required>
+            <type>java.lang.Boolean</type>
+        </attribute>
+
+        <attribute>
+            <description>
+             <![CDATA[     O layout do campo, que podem ser: resumido,esquerda,superior,e automatico]]>
+            </description>
+            <name>layoutCampo</name>
+            <required>false</required>
+            <type>com.super_bits.view.fabricasCompVisual.ItfComponenteVisualSB</type>
+        </attribute>
+    </tag>
+
+
 
     <tag>
         <tag-name>inputSB</tag-name>
@@ -203,6 +280,14 @@
         <attribute>
             <description> <![CDATA[ Se true desativiva a edição]]></description>
             <name>possuiIDOnChange</name>
+            <required>true</required>
+            <type>java.lang.Boolean</type>
+        </attribute>
+
+
+        <attribute>
+            <description> <![CDATA[ Se true desativiva a edição]]></description>
+            <name>atualizarGrupoOnChange</name>
             <required>true</required>
             <type>java.lang.Boolean</type>
         </attribute>
@@ -907,12 +992,9 @@
         <tag-name>inputSBPickList</tag-name>
         <source>resources/tagLib/tags/com/sb/input/seletorItens/pickList.xhtml</source>
     </tag>
-
     <tag>
         <tag-name>inputSBCor</tag-name>
         <source>resources/tagLib/tags/com/sb/input/campo/cor.xhtml</source>
     </tag>
-
-
 
 </facelet-taglib>

@@ -14,6 +14,7 @@ import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaDeEn
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.ValorAceito;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoExibicaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoReflexao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.GrupoCampos;
@@ -28,6 +29,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemContatoCorpo
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -51,18 +53,18 @@ public class BeanExemplo
         grupoCampoCompleto = new GrupoCampos("Grupo de Campos teste");
         EstruturaDeEntidade est = MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class);
         for (EstruturaCampo strutura : est.getCampos()) {
-            grupoCampoCompleto.adicionarCampo(new CaminhoCampoReflexao(strutura.getNomeDeclarado(), BeanExemplo.class));
+            grupoCampoCompleto.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(strutura.getNomeDeclarado(), BeanExemplo.class)));
         }
         grupoCampoSimples = new GrupoCampos("Grupo campo Simples");
         try {
-            grupoCampoSimples.adicionarCampo(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("nome")));
-            grupoCampoSimples.adicionarCampo(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("celular")));
-            grupoCampoSimples.adicionarCampo(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("beanSelecionadoDaListaFabrica")));
+            grupoCampoSimples.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("nome"))));
+            grupoCampoSimples.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("celular"))));
+            grupoCampoSimples.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("beanSelecionadoDaListaFabrica"))));
 
         } catch (Throwable t) {
             SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro criando " + BeanExemplo.class.getSimpleName(), t);
         }
-        acaoGrupoTeste = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO.getRegistro().getComoFormulario();
+        acaoGrupoTeste = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_FORM.getRegistro().getComoFormulario();
     }
 
     /**
@@ -219,7 +221,8 @@ public class BeanExemplo
     private ItemBairro bairro;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, valoresAceitos = {
-        @ValorAceito(valor = "Teste"),
+        @ValorAceito(valor = "Teste")
+        ,
         @ValorAceito(valor = "Teste2")}
     )
     private BeanExemplo beanSelecionadoDaListaDescritiva;
@@ -244,6 +247,29 @@ public class BeanExemplo
     private GrupoCampos grupoCampoSimples;
     @InfoCampo(tipo = FabTipoAtributoObjeto.FORMULARIO_DE_ACAO)
     private ItfAcaoFormulario acaoGrupoTeste;
+    @InfoCampo(label = "Campo Vinculado 1", tipo = FabTipoAtributoObjeto.TEXTO_SIMPLES)
+    private String campoVinculado1;
+
+    @InfoCampo(label = "Campo Vinculado 2", tipo = FabTipoAtributoObjeto.TEXTO_SIMPLES)
+    private String campoVinculado2;
+
+    @InfoCampo(label = "Campo Vinculado 3", tipo = FabTipoAtributoObjeto.TEXTO_SIMPLES)
+    private String campoVinculado3;
+
+    @Transient
+    private int qtdCampoVinculado1gets;
+    @Transient
+    private int qtdCampoVinculado1sets;
+
+    @Transient
+    private int qtdCampoVinculado2gets;
+    @Transient
+    private int qtdCampoVinculado2sets;
+
+    @Transient
+    private int qtdCampoVinculado3gets;
+    @Transient
+    private int qtdCampoVinculado3sets;
 
     @Override
     public int getId() {
@@ -556,10 +582,12 @@ public class BeanExemplo
         this.grupoCampoCompleto = grupoCampoCompleto;
     }
 
+    @Override
     public String getDescritivo() {
         return descritivo;
     }
 
+    @Override
     public void setDescritivo(String descritivo) {
         this.descritivo = descritivo;
     }
@@ -594,6 +622,48 @@ public class BeanExemplo
 
     public void setAcaoGrupoTeste(ItfAcaoFormulario acaoGrupoTeste) {
         this.acaoGrupoTeste = acaoGrupoTeste;
+    }
+
+    public String getCampoVinculado1() {
+        qtdCampoVinculado1gets++;
+        return campoVinculado1 + getRelatCampoVinculado1();
+    }
+
+    public void setCampoVinculado1(String campoVinculado1) {
+        qtdCampoVinculado1sets++;
+        this.campoVinculado1 = campoVinculado1;
+    }
+
+    public String getCampoVinculado2() {
+        qtdCampoVinculado2gets++;
+        return campoVinculado2 + getRelatCampoVinculado2();
+    }
+
+    public void setCampoVinculado2(String campoVinculado2) {
+        qtdCampoVinculado2sets++;
+        this.campoVinculado2 = campoVinculado2;
+    }
+
+    public String getCampoVinculado3() {
+        qtdCampoVinculado3gets++;
+        return campoVinculado3 + getRelatCampoVinculado3();
+    }
+
+    public void setCampoVinculado3(String pCampoVinculado3) {
+        qtdCampoVinculado3sets++;
+        this.campoVinculado3 = pCampoVinculado3;
+    }
+
+    public final String getRelatCampoVinculado1() {
+        return "[" + qtdCampoVinculado1gets + " gets, e " + qtdCampoVinculado1sets + " sets foram realizados" + "]";
+    }
+
+    public final String getRelatCampoVinculado2() {
+        return "[" + qtdCampoVinculado2gets + " gets, e " + qtdCampoVinculado2sets + " sets foram realizados" + "]";
+    }
+
+    public final String getRelatCampoVinculado3() {
+        return "[" + qtdCampoVinculado3gets + " gets, e " + qtdCampoVinculado3sets + " sets foram realizados" + "]";
     }
 
 }
