@@ -9,9 +9,14 @@
 
     <br/>
     <ui:fragment >
-        <ui:param name="xhtmlINPUT" value="#{compSBCompVisualFormularioDeAcao.getComponentePadrao(layout).xhtmlJSF}" />
+        <ui:param name="xhtmlINPUT" value="#{compSBCompVisualFormularioDeAcao.getComponentePadrao(layout).xhtmlJsfCaminhoRelativo}" />
         <ui:param name="entidade" value="#{entidade}"/>
-        <ui:include src="/#{xhtmlINPUT}" />
+        <ui:param name="grupos" value="#{acao.gruposDeCampos}"/>
+        <sb:camposDosGrupos
+            grupos="#{grupos}"
+
+            entidade="#{entidade}"
+            />
 
     </ui:fragment>
 
