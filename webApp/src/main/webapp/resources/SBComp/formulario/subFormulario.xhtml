@@ -79,7 +79,10 @@
                     </ui:repeat>
 
                     <div class="Container10 Responsive">
-                        <p:commandLink onclick="modificarIntputEclicar('#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('botaoRemoverSubform')}', '#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('indiceSubformulario') }', '#{infoRec.index}')"
+                        <p:commandLink onclick="modificarIntputEclicar(
+                                        '#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('botaoRemoverSubform')}',
+                                        '#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('indiceSubformulario') }',
+                                        '#{infoRec.index}')"
                                        update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
                                        >
 
