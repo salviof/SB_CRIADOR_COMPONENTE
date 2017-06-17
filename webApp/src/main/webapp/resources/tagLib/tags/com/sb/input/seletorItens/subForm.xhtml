@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:decorate   template="#{layout.xhtmlJsfCaminhoRelativo}">
+
+
+        <ui:define name="input">
+
+
+
+
+            <p:panel class="Container100 Responsive100">
+
+                <p:pickList
+
+                    value="#{registro.campoSeltorItens.campoSeletorItens.dualListPrime}"
+                    var="item"
+                    itemValue="#{item}"
+                    itemLabel="#{item.nome}"
+                    responsive="true"
+                    converter="conversorGenerico"
+                    style="margin-left: 0.5%"
+
+
+                    >
+                    <p:ajax event="transfer" listener="#{registro.campoSeltorItens.atualizarListaCompleta()}" update="@form" />
+                    <f:facet name="sourceCaption">#{registro.campoSeltorItens.campoSeletorItens.nomeOrigem}</f:facet>
+                    <f:facet name="targetCaption">#{registro.label}</f:facet>
+                </p:pickList>
+                <div class="EmptyBox10"/>
+
+            </p:panel>
+
+
+
+        </ui:define>
+    </ui:decorate>
+</html>
+
+
