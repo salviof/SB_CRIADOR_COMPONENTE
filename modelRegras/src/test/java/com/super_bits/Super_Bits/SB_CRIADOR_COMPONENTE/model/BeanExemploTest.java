@@ -6,6 +6,7 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp.TesteSB_CRIADOR_COMPONENTE;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoExibicaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstSeletorItens;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoLocalizacaoInstanciado;
@@ -35,6 +36,22 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
         try {
             System.out.println("getId");
             BeanExemplo beanExemplo = new BeanExemplo();
+
+            ItfCampoInstanciado campoSeletorItensTesteSubform = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("listasExemplo");
+            System.out.println(campoSeletorItensTesteSubform.getValor());
+            System.out.println("" + campoSeletorItensTesteSubform.isUmValorMultiploComLista());
+            List<ItfBeanSimples> listaSubFormTeste = (List<ItfBeanSimples>) campoSeletorItensTesteSubform.getValor();
+            System.out.println(campoSeletorItensTesteSubform.getGrupoSubCamposExibicao());
+
+            for (ItfBeanSimples valorSublista : listaSubFormTeste) {
+                for (CaminhoCampoExibicaoFormulario caminho : campoSeletorItensTesteSubform.getGrupoSubCamposExibicao().getCampos()) {
+                    System.out.println(caminho.getCaminhoSemNomeClasse());
+                    System.out.println(valorSublista.getCampoByNomeOuAnotacao(caminho.getCaminhoSemNomeClasse()).getLabel());
+                }
+
+            }
+            ItfCampoInstSeletorItens seletorItens = campoSeletorItensTesteSubform.getCampoSeltorItens();
+            seletorItens.getCampoSeletorItens().getOrigem();
 
             ItfCampoInstanciado campoCNPJ = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("cnpj");
             System.out.println(campoCNPJ.getMascara());

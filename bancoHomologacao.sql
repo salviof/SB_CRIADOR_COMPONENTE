@@ -1,8 +1,8 @@
--- MySQL dump 10.14  Distrib 5.5.50-MariaDB, for Linux (x86_64)
+-- MySQL dump 10.16  Distrib 10.1.21-MariaDB, for Linux (x86_64)
 --
--- Host: localhost    Database: SB_CRIADOR_COMPONENTEModelRegras
+-- Host: localhost    Database: localhost
 -- ------------------------------------------------------
--- Server version	5.5.50-MariaDB
+-- Server version	10.1.21-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -242,8 +242,8 @@ CREATE TABLE `Ips` (
   KEY `FKg91qw90kdtcwkq94o48c8sfah` (`tipo_id`),
   KEY `FK332ut8y08mn06rtgbpyqei73p` (`usuarioAlteracao_id`),
   KEY `FK92k8tn1tlblje3ees74kebihi` (`usuarioInsercao_id`),
-  CONSTRAINT `FK92k8tn1tlblje3ees74kebihi` FOREIGN KEY (`usuarioInsercao_id`) REFERENCES `UsuarioSB` (`id`),
   CONSTRAINT `FK332ut8y08mn06rtgbpyqei73p` FOREIGN KEY (`usuarioAlteracao_id`) REFERENCES `UsuarioSB` (`id`),
+  CONSTRAINT `FK92k8tn1tlblje3ees74kebihi` FOREIGN KEY (`usuarioInsercao_id`) REFERENCES `UsuarioSB` (`id`),
   CONSTRAINT `FKg91qw90kdtcwkq94o48c8sfah` FOREIGN KEY (`tipo_id`) REFERENCES `TipoIp` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -440,8 +440,8 @@ CREATE TABLE `Permitido_Grupos` (
   PRIMARY KEY (`id`),
   KEY `FKonpllqmu9mxhrobrxvvdvqgw3` (`acesso_id`),
   KEY `FKqy7db3uujsot9o8hi9tr16ifw` (`grupo_id`),
-  CONSTRAINT `FKqy7db3uujsot9o8hi9tr16ifw` FOREIGN KEY (`grupo_id`) REFERENCES `GrupoUsuarioSB` (`id`),
-  CONSTRAINT `FKonpllqmu9mxhrobrxvvdvqgw3` FOREIGN KEY (`acesso_id`) REFERENCES `PermissaoSB` (`id`)
+  CONSTRAINT `FKonpllqmu9mxhrobrxvvdvqgw3` FOREIGN KEY (`acesso_id`) REFERENCES `PermissaoSB` (`id`),
+  CONSTRAINT `FKqy7db3uujsot9o8hi9tr16ifw` FOREIGN KEY (`grupo_id`) REFERENCES `GrupoUsuarioSB` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -468,8 +468,8 @@ CREATE TABLE `Permitido_Usuarios` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK9j92iu9201tx0dm010v5fq4wo` (`usuario_id`,`acesso_id`),
   KEY `FKeb1qf23eyq6brt5o1sbbka3oq` (`acesso_id`),
-  CONSTRAINT `FKkk1bvscvwf4sxlf15t8pk4e10` FOREIGN KEY (`usuario_id`) REFERENCES `UsuarioSB` (`id`),
-  CONSTRAINT `FKeb1qf23eyq6brt5o1sbbka3oq` FOREIGN KEY (`acesso_id`) REFERENCES `PermissaoSB` (`id`)
+  CONSTRAINT `FKeb1qf23eyq6brt5o1sbbka3oq` FOREIGN KEY (`acesso_id`) REFERENCES `PermissaoSB` (`id`),
+  CONSTRAINT `FKkk1bvscvwf4sxlf15t8pk4e10` FOREIGN KEY (`usuario_id`) REFERENCES `UsuarioSB` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -542,8 +542,8 @@ CREATE TABLE `UnidadeFederativa_Cidade` (
   `cidades_id` int(11) NOT NULL,
   UNIQUE KEY `UK_75jpqvcgk4mtl3ti7gyrpx6ao` (`cidades_id`),
   KEY `FKnljxw1cb29570ahd5ufhucvm3` (`UnidadeFederativa_id`),
-  CONSTRAINT `FKnljxw1cb29570ahd5ufhucvm3` FOREIGN KEY (`UnidadeFederativa_id`) REFERENCES `UnidadeFederativa` (`id`),
-  CONSTRAINT `FK17n56pa7clew2jc67jtutk9xl` FOREIGN KEY (`cidades_id`) REFERENCES `Cidade` (`id`)
+  CONSTRAINT `FK17n56pa7clew2jc67jtutk9xl` FOREIGN KEY (`cidades_id`) REFERENCES `Cidade` (`id`),
+  CONSTRAINT `FKnljxw1cb29570ahd5ufhucvm3` FOREIGN KEY (`UnidadeFederativa_id`) REFERENCES `UnidadeFederativa` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -587,9 +587,9 @@ CREATE TABLE `UsuarioSB` (
   KEY `FKddt81m657meu8v89qakv0792x` (`localizacao_id`),
   KEY `FKa0hk7be13ip4xg104xlxghvba` (`usuarioAlteracao_id`),
   KEY `FKg5805u50psplpao25esj3i4om` (`usuarioInsercao_id`),
-  CONSTRAINT `FKg5805u50psplpao25esj3i4om` FOREIGN KEY (`usuarioInsercao_id`) REFERENCES `UsuarioSB` (`id`),
   CONSTRAINT `FKa0hk7be13ip4xg104xlxghvba` FOREIGN KEY (`usuarioAlteracao_id`) REFERENCES `UsuarioSB` (`id`),
   CONSTRAINT `FKddt81m657meu8v89qakv0792x` FOREIGN KEY (`localizacao_id`) REFERENCES `Localizacao` (`id`),
+  CONSTRAINT `FKg5805u50psplpao25esj3i4om` FOREIGN KEY (`usuarioInsercao_id`) REFERENCES `UsuarioSB` (`id`),
   CONSTRAINT `FKpu9xpcabqjpw3jjdb6mu4w3a9` FOREIGN KEY (`grupo_id`) REFERENCES `GrupoUsuarioSB` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -637,8 +637,8 @@ CREATE TABLE `modulos_grupo` (
   `modulo_id` int(11) NOT NULL,
   UNIQUE KEY `UKngph303pxo2b2mrtpfkoacmwq` (`grupo_id`,`modulo_id`),
   KEY `FK1616eg4vq1ubds5aof20ci82b` (`modulo_id`),
-  CONSTRAINT `FKf5g7yb014obr43smkvslw1hmu` FOREIGN KEY (`grupo_id`) REFERENCES `GrupoUsuarioSB` (`id`),
-  CONSTRAINT `FK1616eg4vq1ubds5aof20ci82b` FOREIGN KEY (`modulo_id`) REFERENCES `ModuloAcaoSistema` (`id`)
+  CONSTRAINT `FK1616eg4vq1ubds5aof20ci82b` FOREIGN KEY (`modulo_id`) REFERENCES `ModuloAcaoSistema` (`id`),
+  CONSTRAINT `FKf5g7yb014obr43smkvslw1hmu` FOREIGN KEY (`grupo_id`) REFERENCES `GrupoUsuarioSB` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -686,4 +686,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-30  5:35:05
+-- Dump completed on 2017-06-17 23:31:59

@@ -17,8 +17,6 @@
     </context-param>
 
 
-
-
     <context-param>
         <param-name>com.sun.faces.serializeServerState</param-name>
         <param-value>false</param-value>

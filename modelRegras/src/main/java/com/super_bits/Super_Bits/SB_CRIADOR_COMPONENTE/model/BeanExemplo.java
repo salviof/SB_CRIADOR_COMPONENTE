@@ -83,12 +83,13 @@ public class BeanExemplo
             exemplo1.setEmail("teste@teste.com");
 
             BeanExemplo exemplo2 = new BeanExemplo(false);
-            exemplo2.setNome("Bean Lista 1");
-            exemplo2.setId(1);
-            exemplo2.setEmail("teste@teste.com");
+            exemplo2.setNome("Bean Lista 2");
+            exemplo2.setId(2);
+            exemplo2.setEmail("teste2@teste.com");
             listasExemplo = new ArrayList<>();
             beanFilho = new BeanExemplo(false);
             listasExemplo.add(exemplo1);
+            listasExemplo.add(exemplo2);
 
             apelido = "testeeeeeeee";
 

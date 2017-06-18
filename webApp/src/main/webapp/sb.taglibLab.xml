@@ -20,7 +20,6 @@
             <required>true</required>
             <type>com.super_bits.view.fabricasCompVisual.ItfComponenteVisualSB</type>
         </attribute>
-
         <attribute>
             <name>metodo</name>
             <description><![CDATA[Metodo para]]></description>
@@ -987,6 +986,12 @@
         <source>resources/tagLib/tags/com/sb/input/campo/verdadeiroOuFalso.xhtml</source>
     </tag>
 
+
+
+    <tag>
+        <tag-name>inputSBSubForm</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/seletorItens/subForm.xhtml</source>
+    </tag>
 
     <tag>
         <tag-name>inputSBPickList</tag-name>

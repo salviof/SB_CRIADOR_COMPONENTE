@@ -58,6 +58,10 @@ public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
             xhtmlDaAcao = "formFichaTecnicaInput.xhtml"
     )
     LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA_INPUT,
+    @InfoTipoAcaoFormulario(nomeAcao = "Testar SubFormulario", descricao = "",
+            xhtmlDaAcao = "formSubFormulario.xhtml",
+            precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
+    LAB_COMPONENTES_FRM_LAB_INPUT_LISTA_SUB_FORMULARIO,
     @InfoTipoAcaoFormulario(nomeAcao = "Testar Input OnChange", descricao = "",
             xhtmlDaAcao = "formONCHANGEInput.xhtml",
             precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
