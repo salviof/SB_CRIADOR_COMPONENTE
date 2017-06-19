@@ -4,10 +4,13 @@
       xmlns:cc="http://java.sun.com/jsf/composite"
 
       xmlns:SBFormulario="http://xmlns.jcp.org/jsf/composite/SBComp/formulario"
-
+      xmlns:sb="http://superbitsframework/ui"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
     <!-- INTERFACE -->
     <cc:interface>
@@ -30,20 +33,68 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
-        <p:commandButton value="Adicionar" />
-        <c:forEach items="#{cc.attrs.registro.valor}" var="itemDaLista" varStatus="infoRec" >
 
-            <br/>
-            <c:forEach items="#{pgMapaComponentes.campoInstanciado.campoSeltorItens.grupoCampoExibicao.campos}" var="cpItem">
-                <div class="Container25 Responsive">
-                    <SBComp:input registro="#{itemDaLista.getCampoByNomeOuAnotacao(cpItem.caminhoSemNomeClasse)}"  layout="#{layoutsComponenteSB.layoutCampo.superior}"/>
-                </div>
-            </c:forEach>
+
+
+        <h:form id="formularioSubForm">
+            <p:commandButton
+                id="botaoRemoverSubform"
+                action="#{cc.attrs.registro.campoSeltorItens.campoSeletorItens.removerItemSelecionadoPeloIndice()}"
+                value="Teste q "
+                />
+            <p:inputText  id="indiceSubformulario"  />
+            <SBComp:botaoDeAcao metodo="#{pgMapaComponentes.campoInstanciado.campoSeltorItens.adicionarItem()}" acao="#{pgMapaComponentes.campoInstanciado.campoSeltorItens.acaoAdicionarItem}"
+                                update="subForm"
+                                tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
+                                />
+        </h:form>
+
+
+
+        <p:commandButton onmousedown="esconderTooltips();"
+                         styleClass="btnIconeENome botao"
+                         icon="#{cc.attrs.registro.campoSeltorItens.acaoRemoverItem.iconeAcao}"
+                         actionListener="#{pgUtil.removerItem(cc.attrs.registro.valor, cc.attrs.registro.valor[1])}"
+                         update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
+
+                         >
+
+
+        </p:commandButton>
+
+
+        <h:panelGroup id="subForm">
+            #{cc.attrs.registro.valor}
+            <h:form>
+                <ui:repeat value="#{cc.attrs.registro.valor}" var="itemDaLista" varStatus="infoRec" >
+
+                    <br/>
+                    <ui:repeat value="#{pgMapaComponentes.campoInstanciado.campoSeltorItens.grupoCampoExibicao.campos}" var="cpItem">
+                        <div class="Container25 Responsive">
+                            <SBComp:input registro="#{itemDaLista.getCampoByNomeOuAnotacao(cpItem.caminhoSemNomeClasse)}"  layout="#{layoutsComponenteSB.layoutCampo.superior}"
+                                          idAtualizarOnChange="@this"
+                                          />
+                        </div>
+
+                    </ui:repeat>
+
+                    <div class="Container10 Responsive">
+                        <p:commandLink onclick="modificarIntputEclicar('#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('botaoRemoverSubform')}', '#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('indiceSubformulario') }', '#{infoRec.index}')"
+                                       update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
+                                       >
+
+                            Teste #{infoRec.index}
+                        </p:commandLink>
+
+                    </div>
+                    <div class="EmptyBox100"/>
+
+
+                </ui:repeat>
+                <p:commandButton value="teste" update="@form"/>
+            </h:form>
             <div class="EmptyBox100"/>
-
-
-        </c:forEach>
-        <div class="EmptyBox100"/>
+        </h:panelGroup>
 
 
     </cc:implementation>
