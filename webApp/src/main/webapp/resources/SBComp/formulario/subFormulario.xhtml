@@ -29,73 +29,85 @@
                       type="com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfComponenteVisualSB"
                       default="#{layoutsComponenteSB.layoutCampo.superior}"
                       />
+        <cc:attribute name="Ação Salvar Alteracoes" />
     </cc:interface>
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
 
+        <h:form>
 
-
-        <h:form id="formularioSubForm">
             <p:commandButton
                 id="botaoRemoverSubform"
                 action="#{cc.attrs.registro.campoSeltorItens.campoSeletorItens.removerItemSelecionadoPeloIndice()}"
-                value="Teste q "
-                />
-            <p:inputText  id="indiceSubformulario"  />
-            <SBComp:botaoDeAcao metodo="#{pgMapaComponentes.campoInstanciado.campoSeltorItens.adicionarItem()}" acao="#{pgMapaComponentes.campoInstanciado.campoSeltorItens.acaoAdicionarItem}"
-                                update="subForm"
-                                tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
-                                />
-        </h:form>
+                >
+
+            </p:commandButton>
+            <p:inputText  id="indiceSubformulario"   />
 
 
 
-        <p:commandButton onmousedown="esconderTooltips();"
-                         styleClass="btnIconeENome botao"
-                         icon="#{cc.attrs.registro.campoSeltorItens.acaoRemoverItem.iconeAcao}"
-                         actionListener="#{pgUtil.removerItem(cc.attrs.registro.valor, cc.attrs.registro.valor[1])}"
-                         update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
-
-                         >
+            <h:panelGroup id="subForm" styleClass="Container100 Responsive">
 
 
-        </p:commandButton>
+                <div class=" Container25 Responsive Fright" style="float:right!important;">
 
 
-        <h:panelGroup id="subForm">
-            #{cc.attrs.registro.valor}
-            <h:form>
-                <ui:repeat value="#{cc.attrs.registro.valor}" var="itemDaLista" varStatus="infoRec" >
+
+
+
+                    <p:commandButton
+
+                        actionListener="#{cc.attrs.registro.campoSeltorItens.adicionarItem()}"
+                        update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
+
+                        value="#{cc.attrs.registro.campoSeltorItens.acaoAdicionarItem.nomeAcao}"
+                        />
+
+
+
+
+                </div>
+
+                #{cc.attrs.registro.valor}
+
+
+                <c:forEach items="#{cc.attrs.registro.valor}" var="itemDaLista" varStatus="infoRec" >
 
                     <br/>
-                    <ui:repeat value="#{pgMapaComponentes.campoInstanciado.campoSeltorItens.grupoCampoExibicao.campos}" var="cpItem">
+                    <c:forEach items="#{cc.attrs.registro.campoSeltorItens.grupoCampoExibicao.campos}" var="cpItem">
                         <div class="Container25 Responsive">
                             <SBComp:input registro="#{itemDaLista.getCampoByNomeOuAnotacao(cpItem.caminhoSemNomeClasse)}"  layout="#{layoutsComponenteSB.layoutCampo.superior}"
                                           idAtualizarOnChange="@this"
                                           />
                         </div>
 
-                    </ui:repeat>
+                    </c:forEach>
 
                     <div class="Container10 Responsive">
-                        <p:commandLink onclick="modificarIntputEclicar('#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('botaoRemoverSubform')}', '#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('indiceSubformulario') }', '#{infoRec.index}')"
-                                       update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
-                                       >
 
-                            Teste #{infoRec.index}
+
+
+                        <p:commandLink
+
+                            onclick="modificarIntputEclicar('#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('botaoRemoverSubform')}', '#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('indiceSubformulario')}', '#{infoRec.index}')"
+                            update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
+                            >
+
+                            <i class="fa fa-minus Fs30" aria-hidden="true"></i>
+
                         </p:commandLink>
 
                     </div>
                     <div class="EmptyBox100"/>
 
 
-                </ui:repeat>
-                <p:commandButton value="teste" update="@form"/>
-            </h:form>
-            <div class="EmptyBox100"/>
-        </h:panelGroup>
+                </c:forEach>
 
+
+
+            </h:panelGroup>
+        </h:form>
 
     </cc:implementation>
 
