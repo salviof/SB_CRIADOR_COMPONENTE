@@ -40,22 +40,24 @@
             <p:commandButton
                 id="botaoRemoverSubform"
                 action="#{cc.attrs.registro.campoSeltorItens.campoSeletorItens.removerItemSelecionadoPeloIndice()}"
-                >
-
-            </p:commandButton>
-            <p:inputText  id="indiceSubformulario"   />
-
+                update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
+                styleClass="invisivel"
+                />
 
 
-            <h:panelGroup id="subForm" styleClass="Container100 Responsive">
+            <p:inputText  id="indiceSubformulario"  styleClass="invisivel"  />
+
+        </h:form>
+
+        <h:panelGroup id="subForm" styleClass="Container100 Responsive">
 
 
-                <div class=" Container25 Responsive Fright" style="float:right!important;">
+            <div class=" Container25 Responsive Fright" style="float:right!important;">
 
 
 
 
-
+                <h:form>
                     <p:commandButton
 
                         actionListener="#{cc.attrs.registro.campoSeltorItens.adicionarItem()}"
@@ -63,44 +65,38 @@
 
                         value="#{cc.attrs.registro.campoSeltorItens.acaoAdicionarItem.nomeAcao}"
                         />
+                </h:form>
 
 
 
 
-                </div>
-
-                #{cc.attrs.registro.valor}
+            </div>
 
 
-                <c:forEach items="#{cc.attrs.registro.valor}" var="itemDaLista" varStatus="infoRec" >
 
-                    <br/>
+
+            <c:forEach items="#{cc.attrs.registro.valor}" var="itemDaLista" varStatus="infoRec" >
+
+                <br/>
+                <h:form>
                     <c:forEach items="#{cc.attrs.registro.campoSeltorItens.grupoCampoExibicao.campos}" var="cpItem">
                         <div class="Container25 Responsive">
                             <SBComp:input registro="#{itemDaLista.getCampoByNomeOuAnotacao(cpItem.caminhoSemNomeClasse)}"  layout="#{layoutsComponenteSB.layoutCampo.superior}"
                                           idAtualizarOnChange="@this"
+
                                           />
                         </div>
 
                     </c:forEach>
 
                     <div class="Container10 Responsive">
-<<<<<<< HEAD
-=======
-                        <p:commandLink onclick="modificarIntputEclicar(
-                                        '#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('botaoRemoverSubform')}',
-                                        '#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('indiceSubformulario') }',
-                                        '#{infoRec.index}')"
-                                       update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
-                                       >
->>>>>>> 3f1fab48476e3a414102acfb594653e7f8d9b893
 
 
 
                         <p:commandLink
 
                             onclick="modificarIntputEclicar('#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('botaoRemoverSubform')}', '#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('indiceSubformulario')}', '#{infoRec.index}')"
-                            update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
+
                             >
 
                             <i class="fa fa-minus Fs30" aria-hidden="true"></i>
@@ -108,15 +104,16 @@
                         </p:commandLink>
 
                     </div>
-                    <div class="EmptyBox100"/>
+                </h:form>
+                <div class="EmptyBox100"/>
 
 
-                </c:forEach>
+            </c:forEach>
 
 
 
-            </h:panelGroup>
-        </h:form>
+        </h:panelGroup>
+
 
     </cc:implementation>
 
