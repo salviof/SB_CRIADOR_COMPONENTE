@@ -29,6 +29,8 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemContatoCorpo
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
@@ -250,6 +252,10 @@ public class BeanExemplo
     private ItfAcaoFormulario acaoGrupoTeste;
     @InfoCampo(label = "Campo Vinculado 1", tipo = FabTipoAtributoObjeto.TEXTO_SIMPLES)
     private String campoVinculado1;
+
+    @InfoCampo()
+    @Enumerated(EnumType.STRING)
+    private FabTipoAtributoObjeto objetoFabrica = FabTipoAtributoObjeto.CPF;
 
     @InfoCampo(label = "Campo Vinculado 2", tipo = FabTipoAtributoObjeto.TEXTO_SIMPLES)
     private String campoVinculado2;
@@ -623,6 +629,14 @@ public class BeanExemplo
 
     public void setAcaoGrupoTeste(ItfAcaoFormulario acaoGrupoTeste) {
         this.acaoGrupoTeste = acaoGrupoTeste;
+    }
+
+    public FabTipoAtributoObjeto getObjetoFabrica() {
+        return objetoFabrica;
+    }
+
+    public void setObjetoFabrica(FabTipoAtributoObjeto objetoFabrica) {
+        this.objetoFabrica = objetoFabrica;
     }
 
     public String getCampoVinculado1() {

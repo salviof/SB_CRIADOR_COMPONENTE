@@ -7,6 +7,8 @@ package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp.TesteSB_CRIADOR_COMPONENTE;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoExibicaoFormulario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.CampoInstanciadoEnumFabricaObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstSeletorItens;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoLocalizacaoInstanciado;
@@ -36,6 +38,17 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
         try {
             System.out.println("getId");
             BeanExemplo beanExemplo = new BeanExemplo();
+
+            ItfCampoInstanciado campoInstanciadoObjetoFabrica = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("objetoFabrica");
+            System.out.println(campoInstanciadoObjetoFabrica.getTipoCampoSTR());
+            System.out.println(beanExemplo.getObjetoFabrica());
+            System.out.println(beanExemplo.getObjetoFabrica().name());
+            System.out.println(beanExemplo.getObjetoFabrica().toString());
+            System.out.println(campoInstanciadoObjetoFabrica.getValor());
+            CampoInstanciadoEnumFabricaObjeto campoEnum = campoInstanciadoObjetoFabrica.getCampoEnumFabricaObjeto();
+            campoEnum.setStringSelecionada(FabTipoAtributoObjeto.COR.toString());
+
+            System.out.println(campoEnum.getListaOpcoesString());
 
             ItfCampoInstanciado campoSeletorItensTesteSubform = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("listasExemplo");
             System.out.println(campoSeletorItensTesteSubform.getValor());
