@@ -544,10 +544,12 @@ public class PgMapaComponentes extends MB_PaginaConversation {
                     case FORMULARIO_DE_ACAO:
                         acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FORMULARIO_VER.getRegistro());
                         break;
+                    case ENUM_SELETOR:
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VER.getRegistro());
+                        break;
 
                     default:
                         throw new AssertionError(componenteSelecionado.getFamilia().name());
-
                 }
 
             }

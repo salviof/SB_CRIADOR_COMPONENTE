@@ -129,9 +129,15 @@
         </ui:fragment>
 
 
-        <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualSeletorItens.listaSubForm.xhtmlJsfCaminhoRelativo}" >
-            <sb:inputSBSubForm  />
+        <ui:fragment rendered="#{xhtmlINPUT==compSBcompVisualEnums.enum_AtutoComplete.xhtmlJsfCaminhoRelativo}" >
+            <sb:inputSBEnumAutoComplete />
         </ui:fragment>
+
+
+        <ui:fragment rendered="#{xhtmlINPUT==compSBcompVisualEnums.enum_Grade.xhtmlJsfCaminhoRelativo}" >
+            <sb:inputSBEnumGrade  />
+        </ui:fragment>
+
 
     </ui:fragment>
 

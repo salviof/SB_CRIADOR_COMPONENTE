@@ -1002,4 +1002,15 @@
         <source>resources/tagLib/tags/com/sb/input/campo/cor.xhtml</source>
     </tag>
 
+
+    <tag>
+        <tag-name>inputSBEnumGrade</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/enumEstatico/enumGrade.xhtml</source>
+    </tag>
+
+    <tag>
+        <tag-name>inputSBEnumAutoComplete</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/enumEstatico/enumAutoComplete.xhtml</source>
+    </tag>
+
 </facelet-taglib>
