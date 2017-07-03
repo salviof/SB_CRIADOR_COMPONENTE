@@ -53,6 +53,7 @@ public class BeanExemplo
     public BeanExemplo() {
         this(true);
         grupoCampoCompleto = new GrupoCampos("Grupo de Campos teste");
+
         EstruturaDeEntidade est = MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class);
         for (EstruturaCampo strutura : est.getCampos()) {
             grupoCampoCompleto.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(strutura.getNomeDeclarado(), BeanExemplo.class)));

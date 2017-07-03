@@ -414,6 +414,14 @@
             <type>java.util.Collection</type>
         </attribute>
 
+
+        <attribute>
+            <description> <![CDATA[ ]]></description>
+            <name>mostrarOpcoesAcancadas</name>
+            <required>true</required>
+            <type>java.lang.Boolean</type>
+        </attribute>
+
         <attribute>
             <description> <![CDATA[ ]]></description>
             <name>possuiIDOnChange</name>

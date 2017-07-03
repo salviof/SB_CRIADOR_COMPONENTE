@@ -9,7 +9,7 @@ import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.
 @ApplicationScoped
 public class AcoesSB_Admin_Tools_Manutencao {
 
-	public ItfAcaoFormularioEntidade getDEV_PROJETO_ADMIN_MB() {
+	public ItfAcaoFormularioEntidade getDev_projeto_admin_mb() {
 		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoAdminDeveloper.DEV_PROJETO_ADMIN_MB");
 	}

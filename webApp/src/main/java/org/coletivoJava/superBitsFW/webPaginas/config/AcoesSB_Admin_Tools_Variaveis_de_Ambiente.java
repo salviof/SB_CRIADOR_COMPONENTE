@@ -9,17 +9,17 @@ import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.
 @ApplicationScoped
 public class AcoesSB_Admin_Tools_Variaveis_de_Ambiente {
 
-	public ItfAcaoFormularioEntidade getFERRAMENTAS_CONFIG_MB() {
+	public ItfAcaoFormularioEntidade getFerramentas_config_mb() {
 		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoAdminDeveloper.FERRAMENTAS_CONFIG_MB");
 	}
 
-	public ItfAcaoFormularioEntidade getFERRAMENTAS_CONFIG_FRM_SBPROJETO() {
+	public ItfAcaoFormularioEntidade getFerramentas_config_frm_sbprojeto() {
 		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoAdminDeveloper.FERRAMENTAS_CONFIG_FRM_SBPROJETO");
 	}
 
-	public ItfAcaoFormularioEntidade getFERRAMENTAS_CONFIG_FRM_CONFIGURACOES_GERAIS() {
+	public ItfAcaoFormularioEntidade getFerramentas_config_frm_configuracoes_gerais() {
 		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoAdminDeveloper.FERRAMENTAS_CONFIG_FRM_CONFIGURACOES_GERAIS");
 	}

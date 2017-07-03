@@ -282,4 +282,9 @@ public class ModeloFormularioGenerico implements ItfModeloFormularioSBFW {
         modelo.adicionarItemNaLista(pNomeCampo);
     }
 
+    @Override
+    public String getNomeDoObjetoPlural() {
+        return modelo.getNomeDoObjetoPlural();
+    }
+
 }

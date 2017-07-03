@@ -7,11 +7,11 @@ import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.
 
 @Named
 @ApplicationScoped
-public class AcoesPaginas_do_Sistema_PAGINA_MB_LOGIN {
+public class AcoesPaginas_do_Sistema_PAGINA_MB_PESQUISA_AVANCADA {
 
-	public ItfAcaoFormularioEntidade getPagina_mb_login() {
+	public ItfAcaoFormularioEntidade getPagina_mb_pesquisa_avancada() {
 		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
-				.getAcaoDoSistemaByNomeUnico("FabAcaoPaginasDoSistema.PAGINA_MB_LOGIN");
+				.getAcaoDoSistemaByNomeUnico("FabAcaoPaginasDoSistema.PAGINA_MB_PESQUISA_AVANCADA");
 	}
 
 	public ItfAcaoFormularioEntidade getPagina_mb_home() {
@@ -29,13 +29,13 @@ public class AcoesPaginas_do_Sistema_PAGINA_MB_LOGIN {
 				.getAcaoDoSistemaByNomeUnico("FabAcaoPaginasDoSistema.PAGINA_MB_VIEW_EXPIROU");
 	}
 
+	public ItfAcaoFormularioEntidade getPagina_mb_login() {
+		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
+				.getAcaoDoSistemaByNomeUnico("FabAcaoPaginasDoSistema.PAGINA_MB_LOGIN");
+	}
+
 	public ItfAcaoFormularioEntidade getPagina_mb_erro_critico() {
 		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoPaginasDoSistema.PAGINA_MB_ERRO_CRITICO");
-	}
-
-	public ItfAcaoFormularioEntidade getPagina_mb_pesquisa_avancada() {
-		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
-				.getAcaoDoSistemaByNomeUnico("FabAcaoPaginasDoSistema.PAGINA_MB_PESQUISA_AVANCADA");
 	}
 }
