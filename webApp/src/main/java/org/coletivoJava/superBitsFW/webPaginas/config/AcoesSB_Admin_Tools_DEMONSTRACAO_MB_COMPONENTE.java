@@ -9,17 +9,17 @@ import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.
 @ApplicationScoped
 public class AcoesSB_Admin_Tools_DEMONSTRACAO_MB_COMPONENTE {
 
-	public ItfAcaoFormularioEntidade getDEMONSTRACAO_MB_COMPONENTE() {
+	public ItfAcaoFormularioEntidade getDemonstracao_mb_componente() {
 		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoDemonstracaoSB.DEMONSTRACAO_MB_COMPONENTE");
 	}
 
-	public ItfAcaoFormularioEntidade getDEMONSTRACAO_MB_RECURSOS() {
+	public ItfAcaoFormularioEntidade getDemonstracao_mb_recursos() {
 		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoDemonstracaoSB.DEMONSTRACAO_MB_RECURSOS");
 	}
 
-	public ItfAcaoFormularioEntidade getDEMONSTRACAO_MB_VALIDACAO() {
+	public ItfAcaoFormularioEntidade getDemonstracao_mb_validacao() {
 		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoDemonstracaoSB.DEMONSTRACAO_MB_VALIDACAO");
 	}

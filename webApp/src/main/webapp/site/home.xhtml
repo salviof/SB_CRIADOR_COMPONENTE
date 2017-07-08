@@ -17,18 +17,13 @@
         </ui:define>
         <ui:define name="divConteudo">
 
-            <SBComp:linkDeAcao acao="#{acoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR.LAB_COMPONENTES_MB_GERENCIAR.acaoDeGestaoEntidade}"
+            <SBComp:linkDeAcao acao="#{acoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR.lab_componentes_mb_gerenciar}"
                                tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
 
 
                                />
 
 
-            #{infoWebApp.getAcaoComLink(acoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR.LAB_COMPONENTES_MB_GERENCIAR).urlDeAcesso}
-
-
-            #{acoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR.LAB_COMPONENTES_MB_GERENCIAR}
-            #{pg_paginaInicial.idAreaExbicaoAcaoSelecionada}
 
             <h:panelGroup id="#{pg_paginaInicial.idAreaExbicaoAcaoSelecionada}" >
                 <ui:include src="#{pg_paginaInicial.xhtmlAcaoAtual}" />

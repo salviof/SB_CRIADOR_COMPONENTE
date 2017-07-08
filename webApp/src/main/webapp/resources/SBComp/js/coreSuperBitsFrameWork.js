@@ -72,3 +72,9 @@ function baixarArquivo(fileURL, fileName) {
     }
 }
 
+function modificarIntputEclicar(idBotao, idInputEnvio, valor) {
+    document.getElementById(idInputEnvio).value = valor;
+    document.getElementById(idBotao).click();
+
+}
+

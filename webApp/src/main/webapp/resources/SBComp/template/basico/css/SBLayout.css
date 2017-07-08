@@ -27,7 +27,9 @@ ajustesDivGeral{
 .ui-growl{
     z-index: 20000!important;
 }
-
+.invisivel{
+    visibility: hidden;
+}
 
 .linha-separacao{
 
@@ -106,9 +108,7 @@ ajustesDivGeral{
 }
 
 
-.seletorResponsivo{
-    width:   80%!important;
-}
+
 
 .tabelaFormulario{
     width:   100%!important;

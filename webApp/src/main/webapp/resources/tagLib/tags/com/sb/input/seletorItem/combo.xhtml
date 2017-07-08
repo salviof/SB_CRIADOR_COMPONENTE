@@ -5,52 +5,76 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
     <ui:decorate   template="#{layout.xhtmlJsfCaminhoRelativo}">
 
 
         <ui:define name="input">
+            <h:panelGrid columns="2" style="width: 100%" columnClasses="colunaResponsiva,tamanhoIconePequeno" >
+                <p:selectOneMenu rendered="#{!desabilitarEdicao}"
+                                 class=" seletorResponsivo colunaResponsiva  TexAlCenter #{componenteVisual.classeCSS}"
+                                 disabled="#{desabilitarEdicao}"
+                                 required="#{obrigatorio}"
+                                 value="#{valor}"
+                                 validatorMessage="O valor informado no campo #{label} não é valido!"
+                                 requiredMessage="O campo #{label} não foi informado!"
+                                 autoWidth="true"
+                                 styleClass="seletorResponsivo #{componente.classeCSS}"
+                                 converter="conversorGenerico"
+                                 var="it"
+                                 converterMessage="Erro ao converter objeto" >
 
-            <p:selectOneMenu rendered="#{!desabilitarEdicao}"
-                             class=" seletorResponsivo  TexAlCenter #{componenteVisual.classeCSS}"
-                             disabled="#{desabilitarEdicao}"
-                             required="#{obrigatorio}"
-                             value="#{valor}"
-                             validatorMessage="O valor informado no campo #{label} não é valido!"
-                             requiredMessage="O campo #{label} não foi informado!"
-                             autoWidth="true"
-                             styleClass="seletorResponsivo #{componente.classeCSS}"
-                             converter="conversorGenerico"
-                             var="it"
-                             converterMessage="Erro ao converter objeto" >
+                    <f:selectItem
+                        itemLabel=" não Selecionado"  />
 
-                <f:selectItem
-                    itemLabel=" não Selecionado"  />
+                    <f:selectItems
+                        value="#{lista}"
+                        var="item"
+                        itemLabel="#{item.nome}"
+                        itemValue="#{item}" />
+                    <c:if test="#{possuiMetodoOnChange}">
+                        <p:ajax rendered="#{possuiMetodoOnChange}"
+                                global="true"
+                                event="valueChange"
+                                listener="#{prMetodo}"/>
+                    </c:if>
 
-                <f:selectItems
-                    value="#{lista}"
-                    var="item"
-                    itemLabel="#{item.nome}"
-                    itemValue="#{item}" />
-                <c:if test="#{possuiMetodoOnChange}">
-                    <p:ajax rendered="#{possuiMetodoOnChange}"
+                    <c:if test="#{possuiIDOnChange}" >
+                        <p:ajax
+                            rendered="#{possuiIDOnChange}"
                             global="true"
                             event="valueChange"
-                            listener="#{prMetodo}"/>
-                </c:if>
+                            listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
+                    </c:if>
+                    <p:column>
+                        #{it.nome}
+                    </p:column>
 
-                <c:if test="#{possuiIDOnChange}" >
-                    <p:ajax
-                        rendered="#{possuiIDOnChange}"
-                        global="true"
-                        event="valueChange"
-                        listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
-                </c:if>
-                <p:column>
-                    #{it.nome}
-                </p:column>
+                </p:selectOneMenu>
 
-            </p:selectOneMenu>
+                <p:commandButton rendered="#{!desabilitarEdicao and lista.size()>5}" icon="#{acoesPaginas_do_Sistema_PAGINA_MB_PESQUISA_AVANCADA.pagina_mb_pesquisa_avancada.icone}"
+
+                                 actionListener="#{pgUtil.exibirModalImportacaoPesquisaAvancada()}"
+                                 partialSubmit="true"
+                                 process="@this"
+                                 >
+                    <p:ajax event="dialogReturn"  update="#{pgUtil.getNomeIdComponenteInput(component)}"/>
+                    <c:if test="#{possuiIDOnChange}" >
+                        <p:ajax
+                            rendered="#{possuiIDOnChange}"
+                            global="true"
+                            event="dialogReturn"
+                            listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
+                    </c:if>
+                    <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}"
+                                                 value="#{registro}" />
+
+                </p:commandButton>
+            </h:panelGrid>
+
+
             <p:inputText value="#{valor}" rendered="#{desabilitarEdicao}"  disabled="true"/>
 
         </ui:define>

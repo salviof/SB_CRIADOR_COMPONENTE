@@ -277,4 +277,14 @@ public class ModeloFormularioGenerico implements ItfModeloFormularioSBFW {
         return modelo.getCamposInstanciados();
     }
 
+    @Override
+    public void adicionarSubItem(String pNomeCampo) {
+        modelo.adicionarItemNaLista(pNomeCampo);
+    }
+
+    @Override
+    public String getNomeDoObjetoPlural() {
+        return modelo.getNomeDoObjetoPlural();
+    }
+
 }

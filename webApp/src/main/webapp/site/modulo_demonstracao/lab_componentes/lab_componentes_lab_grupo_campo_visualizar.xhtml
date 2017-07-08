@@ -5,18 +5,19 @@
       xmlns:SBFormulario="http://xmlns.jcp.org/jsf/composite/SBComp/formulario"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:sb="http://superbitsframework/ui"
       xmlns:p="http://primefaces.org/ui">
 
     <ui:composition template="#{layoutsPaginas.conteudoEmBranco.xhtmlVinculado}" >
         <ui:define name="conteudo">
             <h:form>
-
-
-                <SBFormulario:camposDoGrupo
-                    registro="#{pgMapaComponentes.beanExemplo}"
-                    grupoCampos="#{pgMapaComponentes.campoInstanciado.valor}"
-                    somenteLeitura="false"
-                    />
+                
+                <sb:camposDoGrupo entidade="#{pgMapaComponentes.beanExemplo}" 
+                                  grupo="#{pgMapaComponentes.campoInstanciado.valor}"
+                                  desabilitarEdicao="false"
+                                  />
+                 
+                
 
 
 

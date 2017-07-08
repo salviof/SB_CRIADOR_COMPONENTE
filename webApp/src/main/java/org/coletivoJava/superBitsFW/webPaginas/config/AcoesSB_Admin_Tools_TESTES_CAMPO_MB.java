@@ -9,7 +9,7 @@ import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.
 @ApplicationScoped
 public class AcoesSB_Admin_Tools_TESTES_CAMPO_MB {
 
-	public ItfAcaoFormularioEntidade getTESTES_CAMPO_MB() {
+	public ItfAcaoFormularioEntidade getTestes_campo_mb() {
 		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoDemonstracaoSB.TESTES_CAMPO_MB");
 	}

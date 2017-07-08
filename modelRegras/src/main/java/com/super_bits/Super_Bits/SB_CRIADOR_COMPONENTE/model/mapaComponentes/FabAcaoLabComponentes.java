@@ -11,7 +11,10 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_contr
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoController;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormCamposAtualizaCampoEspecifico;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormCamposAtualizaComponentePeloId;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormCamposAtualizaForm;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormCamposAtualizaGrupoDoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
@@ -55,6 +58,10 @@ public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
             xhtmlDaAcao = "formFichaTecnicaInput.xhtml"
     )
     LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA_INPUT,
+    @InfoTipoAcaoFormulario(nomeAcao = "Testar SubFormulario", descricao = "",
+            xhtmlDaAcao = "formSubFormulario.xhtml",
+            precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
+    LAB_COMPONENTES_FRM_LAB_INPUT_LISTA_SUB_FORMULARIO,
     @InfoTipoAcaoFormulario(nomeAcao = "Testar Input OnChange", descricao = "",
             xhtmlDaAcao = "formONCHANGEInput.xhtml",
             precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VALIDAR)
@@ -73,14 +80,47 @@ public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
     LAB_COMPONENTES_FRM_LAB_GRUPOS_CAMPO_TESTAR_ONCHANGE_GPR,
     @InfoTipoAcaoFormulario(nomeAcao = "Testar Grupos Onchange @Form", iconeFonteAnsowame = FabIconeFontAwesome.REG_AGRUPAR_REGISTROS)
     LAB_COMPONENTES_FRM_LAB_GRUPOS_CAMPO_TESTAR_ONCHANGE_FRM,
-    @InfoTipoAcaoFormulario(iconeFonteAnsowame = FabIconeFontAwesome.REG_EDITAR,
-            campos = {"[separador: Dados Basicos]", "id", "email", "descritivo",
-                "[separador: Telefones]", "telefone", "celular", "telInternacional",
+    @InfoTipoAcaoFormulario(
+            nomeAcao = "Exempplo Atualizacao Form",
+            iconeFonteAnsowame = FabIconeFontAwesome.REG_EDITAR,
+            campos = {"[separador: Dados Basicos]", "id", "email", "descritivo", "campoVinculado3",
+                "[separador: Grupo com Atualizacao]", "campoVinculado1", "campoVinculado2",
                 "[separador: Mascaras Identificadoras]", "inscricaoEstadual", "inscricaoEstadual", "inscricaoEstadual", "inscricaoEstadual"},
             entidade = BeanExemplo.class
     )
-    @InfoTipoAcaoFormCamposAtualizaForm()
-    LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO,
+    @InfoTipoAcaoFormCamposAtualizaForm(campos = {"campoVinculado1", "campoVinculado2"})
+    LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_FORM,
+    @InfoTipoAcaoFormulario(
+            nomeAcao = "Exempplo Atualização Grupo Camnpo",
+            iconeFonteAnsowame = FabIconeFontAwesome.REG_EDITAR,
+            campos = {"[separador: Dados Basicos]", "id", "email", "descritivo", "campoVinculado3",
+                "[separador: Grupo com Atualizacao]", "campoVinculado1", "campoVinculado2",
+                "[separador: Mascaras Identificadoras]", "inscricaoEstadual", "inscricaoEstadual", "inscricaoEstadual", "inscricaoEstadual"},
+            entidade = BeanExemplo.class
+    )
+    @InfoTipoAcaoFormCamposAtualizaGrupoDoCampo(campos = {"campoVinculado1", "campoVinculado2"})
+    LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_GRUPO_DO_CAMPO,
+    @InfoTipoAcaoFormulario(
+            nomeAcao = "Exempplo Id especidico id_atualizacao_teste",
+            iconeFonteAnsowame = FabIconeFontAwesome.REG_EDITAR,
+            campos = {"[separador: Dados Basicos]", "id", "email", "descritivo", "campoVinculado3",
+                "[separador: Grupo com Atualizacao]", "campoVinculado1", "campoVinculado2",
+                "[separador: Mascaras Identificadoras]", "inscricaoEstadual", "inscricaoEstadual", "inscricaoEstadual", "inscricaoEstadual"},
+            entidade = BeanExemplo.class
+    )
+    @InfoTipoAcaoFormCamposAtualizaComponentePeloId(nomeID = "id_atualizacao_teste", campos = {"campoVinculado1", "campoVinculado2"})
+    LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_ID,
+    @InfoTipoAcaoFormulario(
+            nomeAcao = "Exempplo Campo especifico",
+            iconeFonteAnsowame = FabIconeFontAwesome.REG_EDITAR,
+            campos = {"[separador: Dados Basicos]", "id", "email", "descritivo", "campoVinculado1",
+                "[separador: Grupo com Atualizacao]", "campoVinculado2",
+                "[separador: Mascaras Identificadoras]", "inscricaoEstadual", "inscricaoEstadual", "inscricaoEstadual", "inscricaoEstadual"},
+            entidade = BeanExemplo.class
+    )
+    @InfoTipoAcaoFormCamposAtualizaCampoEspecifico(campoAtualizarAposAlterar = "campoVinculado1", campos = {"campoVinculado2"})
+
+    LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_CAMPO,
     @InfoTipoAcaoFormulario(nomeAcao = "Ver ação de formulário", iconeFonteAnsowame = FabIconeFontAwesome.REG_AGRUPAR_REGISTROS)
     LAB_COMPONENTES_FRM_LAB_FORMULARIO_VER,
     @InfoTipoAcaoController(campoJustificativa = "seletorOpcao", comunicacao = FabTipoComunicacao.PERGUNTAR_SIM_OU_NAO)

@@ -2,15 +2,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html
-
     xmlns="http://www.w3.org/1999/xhtml"
-
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
     xmlns:sb="http://superbitsframework/ui"
     xmlns:h="http://xmlns.jcp.org/jsf/html">
-
     <ui:fragment >
-
 
         <sb:parametroMetodo nome="prMetodo" valor="#{metodoOnChange}" rendered="#{possuiMetodoOnChange}" />
 
@@ -106,20 +102,13 @@
             <sb:inputSBradio  />
         </ui:fragment>
 
-
-
-
-
         <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualInputs.arquivo_de_Entidade.xhtmlJsfCaminhoRelativo}">
             <sb:inputSBArquivoDeEntidade  />
         </ui:fragment>
 
-
         <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualInputs.bairro.xhtmlJsfCaminhoRelativo}">
             <sb:inputSBBairro />
         </ui:fragment>
-
-
 
         <h:panelGroup rendered="#{registro.umCampoCampoLocalizacao}">
             <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.endereco.xhtmlJsfCaminhoRelativo}">
@@ -130,6 +119,7 @@
         <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualSeletorItens.pickList.xhtmlJsfCaminhoRelativo}">
             <sb:inputSBPickList  />
         </ui:fragment>
+
         <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualInputs.ligado_ou_Desligado.xhtmlJsfCaminhoRelativo}">
             <sb:ligadoDesligado  />
         </ui:fragment>
@@ -137,6 +127,17 @@
         <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualInputs.cor.xhtmlJsfCaminhoRelativo}">
             <sb:inputSBCor  />
         </ui:fragment>
+
+
+        <ui:fragment rendered="#{xhtmlINPUT==compSBcompVisualEnums.enum_AtutoComplete.xhtmlJsfCaminhoRelativo}" >
+            <sb:inputSBEnumAutoComplete />
+        </ui:fragment>
+
+
+        <ui:fragment rendered="#{xhtmlINPUT==compSBcompVisualEnums.enum_Grade.xhtmlJsfCaminhoRelativo}" >
+            <sb:inputSBEnumGrade  />
+        </ui:fragment>
+
 
     </ui:fragment>
 

@@ -14,6 +14,7 @@ import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreReflexaoObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.TIPO_PARTE_URL;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Mensagens.FabMensagens;
 import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.FabErro;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaCampo;
@@ -68,7 +69,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private final AcaoDoSistema acaoSelecionarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_VISUALIZAR_COMPONENTE_SELECIONADO.getRegistro();
 
     private final AcaoDoSistema acaoLabVisualizarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VER.getRegistro();
-    private final AcaoDoSistema acaoLabOnChangeComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_ONCHANGE.getRegistro();
+    private final AcaoDoSistema acaoLabOnChangeComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_LISTA_SUB_FORMULARIO.getRegistro();
     private final AcaoDoSistema acaoLabValidarComponente = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA_INPUT.getRegistro();
 
     private final AcaoDeEntidadeController acaoTesteModalComunicacao = (AcaoDeEntidadeController) FabAcaoLabComponentes.LAB_COMPONENTES_CTR_TESTE_COMUNICACAO.getRegistro();
@@ -104,6 +105,8 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private DialogoWeb dialogoDoMomento;
 
     private List<ComponenteVisualSB> listaComponentesEspeciaisDisponiveis;
+
+    private List<ItfAcaoFormulario> listasformularioExemplo;
 
     public void dropaCampo() {
         FacesContext context = FacesContext.getCurrentInstance();
@@ -205,6 +208,11 @@ public class PgMapaComponentes extends MB_PaginaConversation {
             labelByCaminho.put(caminhoCampo, cp.getLabel());
         }
         listaComponentesEspeciaisDisponiveis = MapaComponentes.getComponentesFamilia(getCampoInstanciado().getComponenteVisualPadrao().getFamilia().getRegistro());
+        listasformularioExemplo = new ArrayList<>();
+        listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_FORM.getRegistro().getComoFormulario());
+        listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_GRUPO_DO_CAMPO.getRegistro().getComoFormulario());
+        listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_ID.getRegistro().getComoFormulario());
+        listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_CAMPO.getRegistro().getComoFormulario());
 
     }
 
@@ -499,11 +507,16 @@ public class PgMapaComponentes extends MB_PaginaConversation {
                 switch (componenteSelecionado.getFamilia()) {
                     case SELETOR_ITEM:
                     case INPUT:
-                    case SELETOR_ITENS:
-                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VER.getRegistro());
+
                         acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FICHA_TECNICA_INPUT.getRegistro());
                         acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VALIDACAO.getRegistro());
-                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_ONCHANGE.getRegistro());
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VER.getRegistro());
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_MASKARAS_PERSONALIZADAS.getRegistro());
+
+                        break;
+                    case SELETOR_ITENS:
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VER.getRegistro());
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_LISTA_SUB_FORMULARIO.getRegistro());
                         break;
                     case LAYOUT_INPUT:
                         break;
@@ -531,10 +544,12 @@ public class PgMapaComponentes extends MB_PaginaConversation {
                     case FORMULARIO_DE_ACAO:
                         acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FORMULARIO_VER.getRegistro());
                         break;
+                    case ENUM_SELETOR:
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VER.getRegistro());
+                        break;
 
                     default:
                         throw new AssertionError(componenteSelecionado.getFamilia().name());
-
                 }
 
             }
@@ -615,6 +630,17 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
     public List<ComponenteVisualSB> getListaComponentesEspeciaisDisponiveis() {
         return listaComponentesEspeciaisDisponiveis;
+    }
+
+    public List<ItfAcaoFormulario> getListasformularioExemplo() {
+        return listasformularioExemplo;
+    }
+
+    public boolean isAcaoFormularioExibicaoSelecionada() {
+        if (getBeanExemplo() == null) {
+            return false;
+        }
+        return getBeanExemplo().getAcaoGrupoTeste() != null;
     }
 
 }

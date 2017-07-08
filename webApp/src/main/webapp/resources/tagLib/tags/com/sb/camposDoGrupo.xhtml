@@ -3,33 +3,43 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:sb="http://superbitsframework/ui"
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:p="http://primefaces.org/ui">
 
+    <p:fieldset legend="#{grupo.nomeGrupo}"  >
 
-    <ui:repeat value="#{grupo.campos}" var="camp"  varStatus="recnum"  >
-        <div class="Container33 Responsive" style="position: relative">
-            .
-            #{entidade.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).getComponenteDiferenciado(layoutCampoEspecial).xhtmlJsfCaminhoRelativo}
-            <ui:include
-                src="#{entidade.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).getComponenteDiferenciado(layoutCampoEspecial).xhtmlJsfCaminhoRelativo}" >
-                <ui:param name="layout" value="#{layoutCampo}"/>
-                <ui:param name="registro" value="#{registro}" />
-                <ui:param name="componente" value="#{registro.getComponenteDiferenciado(layoutCampoEspecial)}"  />
-                <ui:param name="prefixoID" value="#{registro.prefixoUnicoParaIDHtml}"  />
-                <ui:param name="valor" value="#{entidade.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).valor}"/>
-                <ui:param name="obrigatorio" value="#{entidade.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).obrigatorio}"/>
-                <ui:param name="nomeItem" value="#{entidade.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).label}"/>
-                <ui:param rendered="#{entidade.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).umValorComLista}" name="lista" value="#{entidade.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).listaDeOpcoes}"/>
-                <ui:param name="regex" value="#{entidade.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).validacaoRegex}" rendered="#{entidade.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).temValidacaoRegex}"/>
-                <ui:param name="valorMaximo" value="#{entidade.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).valorMaximo}" rendered="#{entidade.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).temValidacaoMaximo}"/>
-                <ui:param name="valorMinimo" value="#{entidade.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).valorMinimo}" rendered="#{entidade.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).temValidacaoMinimo}"/>
-                <ui:param name="mascara" value="#{entidade.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).mascaraJqueryMode}" rendered="#{entidade.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).temMascara}"/>
-            </ui:include>
+        <c:forEach items="#{grupo.campos}" var="campoDoGrupo" >
 
+            <div class="Container33 Responsive" style="position: relative">
 
+                <c:catch var ="erroCampo">
+                    <sb:inputSB
+                        atualizarFormOnChange="#{campoDoGrupo.atualizarFormAoAlterar}"
+                        atualizarGrupoOnChange="#{campoDoGrupo.atualizarGrupoAoAlterar}"
+                        label="#{campoDoGrupo.labelAlternativo}"
+                        obrigatorio="#{false}"
+                        possuiIDOnChange="false"
+                        possuiMetodoOnChange="false"
+                        registro="#{entidade.getCampoInstanciadoByNomeOuAnotacao(campoDoGrupo.caminhoSemNomeClasse)}"
+                        layoutCampo="#{layoutsComponenteSB.layoutCampo.superior}"
+                        />
+                </c:catch>
+                <c:if test = "${catchException != null}">
+                    É POSSÍVEL QUE ESTE ERRO POSSA SER CONTORNADO CHAMANDO O nameSpace sb:input Direto
+                    Ou que este componente esteja em desenvolvimento
 
-        </div>
-    </ui:repeat>
+                    <p>Erro reindeizando componente: ${catchException} <br />
+                        There is an exception: ${catchException.message}</p>
+                    <br/>
+
+                </c:if>
+            </div>
+
+        </c:forEach>
+        <p:outputLabel value="Entidade nula enviada!" rendered="#{entidade}==null"  />
+    </p:fieldset>
 </html>
 
 

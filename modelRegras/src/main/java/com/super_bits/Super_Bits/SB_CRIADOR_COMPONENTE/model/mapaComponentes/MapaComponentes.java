@@ -21,6 +21,7 @@ import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.component
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualSeletorItem;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualSeletorItens;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualSistema;
+import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabcompVisualEnums;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -48,6 +49,7 @@ public abstract class MapaComponentes {
         adicionarComponentes(FabCompVisualGrupoCampo.class);
         adicionarComponentes(FabCompVisualGruposCampo.class);
         adicionarComponentes(FabCompVisualFormularioDeAcao.class);
+        adicionarComponentes(FabcompVisualEnums.class);
 
     }
 
