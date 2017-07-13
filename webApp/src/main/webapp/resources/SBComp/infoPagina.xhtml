@@ -17,6 +17,11 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
+        <h:form>
+            <p:hotkey bind="shift+r" actionListener="#{pgUtil.exibirModalRequisito()}"/>
+            <p:hotkey bind="shift+i"  actionListener="#{pgUtil.exibirModalInfopagina()}"/>
+        </h:form>
+
         <h:panelGroup rendered="#{infoWebApp.emModoDesenvolvimentoHomologacao}" >
             <h:form>
                 <p:commandButton  icon="fa fa-bug"  actionListener="#{pgUtil.exibirModalInfopagina()}"/>

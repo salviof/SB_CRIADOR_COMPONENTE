@@ -3,7 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:sb="http://superbitsframework/ui"
+
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
       xmlns:p="http://primefaces.org/ui">
@@ -29,8 +29,11 @@
                 <ui:include src="#{pg_paginaInicial.xhtmlAcaoAtual}" />
             </h:panelGroup>
 
+
+
             <h:form>
-                <p:commandButton  icon="fa fa-bug"  actionListener="#{pgUtil.exibirModalInfopagina()}"/>
+                <SBComp:infoPagina />
+
             </h:form>
 
         </ui:define>

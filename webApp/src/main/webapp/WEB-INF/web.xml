@@ -12,8 +12,6 @@
     </context-param>
 
 
-
-
     <context-param>
         <param-name>com.sun.faces.numberOfViewsInSession</param-name>
         <param-value>5</param-value>
