@@ -3,8 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:cc="http://java.sun.com/jsf/composite"
       xmlns:sb="http://superbitsframework/ui"
-
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <!-- INTERFACE -->
     <cc:interface>
 
@@ -29,10 +30,13 @@
                       name="visualizacaoEspecial"
                       type="com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfComponenteVisualSB"
                       />
+
         <cc:attribute name="metodoAdicionar"
+                      method-signature="void action()"
                       />
 
         <cc:attribute name="metodoReduzir"
+                      method-signature="void action()"
                       />
 
         <cc:attribute name="metodoAtualizacao"
@@ -43,25 +47,27 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
-        oi : #{pgUtil.isAtributoPreenchidoComExpressao(cc,'idAtualizarOnChange')}<BR/>
+        <h:panelGroup class="Container100 Responsive100">
 
-        <p:commandButton
+            <p:panel class="Container20 Responsive100" style="border: none">
 
-            icon="fa fa-minus"
-            style="float: left"
-            action="#{cc.attrs.metodoReduzir}"
-            update="#{cc.attrs.metodoAtualizacao}"
 
-            >
 
-            <p:commandButton
+                <p:commandButton
 
-                icon="fa fa-plus"
-                style="float: right"
-                action="#{cc.attrs.metodoAdicionar}"
-                update="#{cc.attrs.metodoAtualizacao}"
+                    icon="fa fa-minus"
+                    style="float: left"
+                    action="#{cc.attrs.metodoReduzir}"
+                    update="#{pgUtil.makeCaminhoCompletoID(cc.attrs.idAtualizarOnChange)}"
+                    rendered="#{!cc.attrs.desabilitarEdicao}"
 
-                >
+                    />
+
+
+
+            </p:panel>
+
+            <p:panel class="Container50 Responsive100">
 
                 <sb:inputSB
 
@@ -74,14 +80,41 @@
                     label="#{cc.attrs.label}:"
                     opcoes="#{cc.attrs.registro.listaDeOpcoes}"
                     idAtualizarOnChange="#{cc.attrs.idAtualizarOnChange}"
+                    metodoOnChange="#{cc.attrs.metodoExecutarAoAlterarValor}"
+                    atualizarFormOnChange="false"
+                    atualizarGrupoOnChange="false"
+                    obrigatorio="false"
 
+                    >
+
+
+                </sb:inputSB>
+
+            </p:panel>
+
+
+
+            <p:panel class="Container20 Responsive100" style="border: none">
+
+
+
+                <p:commandButton
+
+                    icon="fa fa-plus"
+                    style="float: right"
+                    action="#{cc.attrs.metodoAdicionar}"
+                    update="#{pgUtil.makeCaminhoCompletoID(cc.attrs.idAtualizarOnChange)}"
+                    rendered="#{!cc.attrs.desabilitarEdicao}"
 
                     />
-            </p:commandButton>
-        </p:commandButton>
 
+
+
+            </p:panel>
+
+        </h:panelGroup>
 
 
     </cc:implementation>
 
-</html> 
+</html>

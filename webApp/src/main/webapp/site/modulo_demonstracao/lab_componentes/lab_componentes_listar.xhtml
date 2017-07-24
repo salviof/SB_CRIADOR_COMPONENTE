@@ -27,20 +27,22 @@
 
             </h:form>
 
+            <p:separator/>
 
+            <h:form class="Container100">
 
-            <h:form>
-
-                <SBComp:listaMobile
+                <SBComp:listaComOpcoesMobile
                     acaoDeListagem="#{pgMapaComponentes.acaoListar}"
                     itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
                     itens="#{pgMapaComponentes.listaComponentes}"
                     metodo="#{pgMapaComponentes.executarAcao(item)}"
                     opcoes="#{pgMapaComponentes.acaoEditar}"
                     rendered="#{paginaAtual.sessao.tipoView.umMobile}"
+
                     />
 
-                <SBComp:listaDesktop
+                <SBComp:listaComOpcoesDesktop
+                    titulo="Componentes Super Bits"
                     acaoDeListagem="#{pgMapaComponentes.acaoListar}"
                     itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
                     itens="#{pgMapaComponentes.listaComponentes}"

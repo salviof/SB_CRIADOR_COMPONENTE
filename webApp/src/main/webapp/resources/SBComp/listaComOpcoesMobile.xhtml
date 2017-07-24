@@ -59,9 +59,11 @@
                 value="#{cc.attrs.itens}"
                 layout="grid"
                 columns="3"
+
                 emptyMessage="Nenhum #{cc.attrs.acaoDeListagem.nomeDominio} encontrado"
-                paginatorTemplate="{Pagina Atual}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                rowsPerPageTemplate="6,9,12,15">
+                paginatorTemplate=" {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                rowsPerPageTemplate="6,9,12,15"
+                >
 
 
 
@@ -72,37 +74,26 @@
                 <p:panel>
 
                     <ui:repeat value="#{cc.attrs.acaoDeListagem.campos}"
-                               var="campo"
+                               var="campo">
 
-                               >
-
-                        <h:panelGrid columns="2" style="width:100%">
-
-
-
-                            <h:outputText value="#{item.getCampoByNomeOuAnotacao(campo.caminhoSemNomeClasse).label}" />
-
-                            <SBComp:input
-                                registro="#{item.getCampoByNomeOuAnotacao(campo.caminhoSemNomeClasse)}"
-                                desabilitarEdicao="true"
-                                layout="#{layoutsComponenteSB.layoutCampo.semLabel}"
+                        <SBComp:input
+                            registro="#{item.getCampoByNomeOuAnotacao(campo.caminhoSemNomeClasse)}"
+                            desabilitarEdicao="true"
+                            layout="#{layoutsComponenteSB.layoutCampo.semLabel}"
 
 
-                                />
-
-
-                        </h:panelGrid>
+                            />
 
                     </ui:repeat>
 
-                    <center>     <SBComp:seletorDeAcoes
-
+                    <center>
+                        <SBComp:seletorDeAcoes
                             metodo="#{cc.attrs.metodo}"
                             opcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
                             opcoes="#{cc.attrs.opcoes}"
                             visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.icone}"
-
-                            /> </center>
+                            />
+                    </center>
 
 
                 </p:panel>

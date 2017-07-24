@@ -34,7 +34,6 @@
     <cc:implementation>
 
         <sb:inputSB
-
             registro="#{cc.attrs.registro}"
             desabilitarEdicao="#{cc.attrs.desabilitarEdicao}"
             layoutCampo="#{cc.attrs.layout}"
@@ -44,7 +43,9 @@
             label="#{cc.attrs.label}:"
             opcoes="#{cc.attrs.registro.listaDeOpcoes}"
             idAtualizarOnChange="#{cc.attrs.idAtualizarOnChange}"
-
+            atualizarFormOnChange="false"
+            atualizarGrupoOnChange="false"
+            obrigatorio="false"
 
             />
 
