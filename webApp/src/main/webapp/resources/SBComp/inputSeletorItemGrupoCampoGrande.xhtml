@@ -10,7 +10,6 @@
       xmlns:sb="http://superbitsframework/ui">
     <!-- INTERFACE -->
     <cc:interface>
-
         <cc:attribute name="campoInstanciado"
                       required="true"
                       type="com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado"
@@ -21,13 +20,8 @@
         <cc:attribute name="campos"  />
         <cc:attribute name="titulo"  default="Pesquisa de  #{cc.attrs.campoInstanciado.label}"/>
         <cc:attribute
-
             name="metodo"
-
             />
-
-
-
     </cc:interface>
     <!-- IMPLEMENTATION -->
     <cc:implementation>
@@ -44,14 +38,12 @@
 
                 <f:facet name="header">
                     <p:inputText  placeholder="#{cc.attrs.titulo}"/>
-
                 </f:facet>
 
                 <p:columns var="coluna" value="#{cc.attrs.campos}"
                            sortBy="#{item[coluna.caminhoSemNomeClasse]}"
                            filterBy="#{item[coluna.caminhoSemNomeClasse]}"
                            filterMatchMode="contains"
-
                            >
 
                     <f:facet name="header">

@@ -24,8 +24,19 @@
                       shortDescription="Bean onde a ação selecionada será armazenada"
                       />
 
-        <cc:attribute name="pid"
-                      default="#{cc.attrs.id}" />
+        <cc:attribute name="itemSelecionado"
+                      required="true"
+                      type="com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoDoSistema"
+                      shortDescription="Bean onde a ação selecionada será armazenada"
+                      />
+
+        <cc:attribute name="destinoItemSelecionado"
+                      required="true"
+                      type="com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoDoSistema"
+                      shortDescription="Bean onde a ação selecionada será armazenada"
+                      />
+
+
 
         <cc:attribute name="visualizacaoBotao"
                       default="#{layoutsComponenteSB.layoutBotoes.iconeENome}"

@@ -14,6 +14,7 @@ import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreReflexaoObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.TIPO_PARTE_URL;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Mensagens.FabMensagens;
 import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.FabErro;
@@ -641,6 +642,11 @@ public class PgMapaComponentes extends MB_PaginaConversation {
             return false;
         }
         return getBeanExemplo().getAcaoGrupoTeste() != null;
+    }
+
+    @Override
+    public void setAcaoSelecionada(ItfAcaoDoSistema acaoSelecionada) {
+        super.setAcaoSelecionada(acaoSelecionada);
     }
 
 }

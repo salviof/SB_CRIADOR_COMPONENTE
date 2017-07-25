@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cc="http://java.sun.com/jsf/composite"
+
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
+    <!-- INTERFACE -->
+    <cc:interface
+        displayName="Lista os registro da pagina atual utilizando a ação enviada como referencia"
+
+        >
+
+        <cc:attribute
+            type="com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario"
+            name="acaoListagem"
+            required="true"
+            />
+    </cc:interface>
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+
+
+        <SBComp:listaComOpcoesMobile
+            campos="#{cc.attrs.acaoListagem.campos}"
+            mensagemSemRegistro="Nenhum #{cc.attrs.acaoListagem.nomeDominio} foi encontrado"
+            armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+            itemSelecionado="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
+            itens="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadesListadas}"
+            metodo="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(item)}"
+            opcoes="#{paginaAtual.infoPagina.comoPaginaEntidade.acoesRegistros}"
+            rendered="#{!paginaAtual.sessao.tipoView.umMobile}"
+            titulo="Listagem de #{cc.attrs.acaoListagem.nomeDominio}"
+            />
+
+        <SBComp:listaComOpcoesDesktop
+            campos="#{cc.attrs.acaoListagem.campos}"
+            mensagemSemRegistro="Nenhum #{cc.attrs.acaoListagem.nomeDominio} foi encontrado"
+            armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+            itemSelecionado="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
+            itens="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadesListadas}"
+            metodo="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(item)}"
+            opcoes="#{paginaAtual.infoPagina.comoPaginaEntidade.acoesRegistros}"
+            rendered="#{!paginaAtual.sessao.tipoView.umMobile}"
+            titulo="Listagem de #{cc.attrs.acaoListagem.nomeDominio}"
+
+            />
+
+
+
+
+    </cc:implementation>
+
+</html>

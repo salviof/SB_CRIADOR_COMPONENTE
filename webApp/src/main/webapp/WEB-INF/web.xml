@@ -5,15 +5,10 @@
     <welcome-file-list>
         <welcome-file>/site/home.xhtml</welcome-file>
     </welcome-file-list>
-
-
-
     <context-param>
-
         <param-name>facelets.LIBRARIES</param-name>
         <param-value>/sb.taglibLab.xml</param-value>
     </context-param>
-
     <context-param>
         <param-name>com.sun.faces.numberOfViewsInSession</param-name>
         <param-value>5</param-value>
@@ -22,11 +17,11 @@
         <param-name>com.sun.faces.serializeServerState</param-name>
         <param-value>false</param-value>
     </context-param>
+
     <context-param>
         <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
         <param-value>server</param-value>
     </context-param>
-
     <context-param>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Production</param-value>
@@ -225,11 +220,10 @@
         <extension>svg#latoregular</extension>
         <mime-type>image/svg+xml</mime-type>
     </mime-mapping>
+
     <mime-mapping>
         <extension>svg#fontawesomeregular</extension>
         <mime-type>image/svg+xml</mime-type>
     </mime-mapping>
-
-
 
 </web-app>

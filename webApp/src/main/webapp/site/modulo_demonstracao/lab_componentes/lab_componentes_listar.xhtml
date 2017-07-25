@@ -29,29 +29,25 @@
 
             <p:separator/>
 
-            <h:form class="Container100">
 
-                <SBComp:listaComOpcoesMobile
-                    acaoDeListagem="#{pgMapaComponentes.acaoListar}"
-                    itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
-                    itens="#{pgMapaComponentes.listaComponentes}"
-                    metodo="#{pgMapaComponentes.executarAcao(item)}"
-                    opcoes="#{pgMapaComponentes.acaoEditar}"
-                    rendered="#{paginaAtual.sessao.tipoView.umMobile}"
 
-                    />
+            <SBComp:listaComOpcoesResponsiva
+                campos="#{pgMapaComponentes.acaoListar.comoFormulario.campos}"
+                titulo="Formidaveis componentes:"
+                itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
+                itens="#{pgMapaComponentes.listaComponentes}"
+                metodo="#{pgMapaComponentes.executarAcao(item)}"
+                armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+                opcoes="#{pgMapaComponentes.acaoEditar}"
 
-                <SBComp:listaComOpcoesDesktop
-                    titulo="Componentes Super Bits"
-                    acaoDeListagem="#{pgMapaComponentes.acaoListar}"
-                    itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
-                    itens="#{pgMapaComponentes.listaComponentes}"
-                    metodo="#{pgMapaComponentes.executarAcao(item)}"
-                    opcoes="#{pgMapaComponentes.acaoEditar}"
-                    rendered="#{!paginaAtual.sessao.tipoView.umMobile}"
-                    />
 
-            </h:form>
+                mensagemSemRegistro="Nenhum componente encontrado com este nome"
+
+
+                />
+
+
+
             <ui:debug hotkey="v" />
         </ui:define>
 

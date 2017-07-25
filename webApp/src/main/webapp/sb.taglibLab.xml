@@ -21,6 +21,7 @@
             <type>com.super_bits.view.fabricasCompVisual.ItfComponenteVisualSB</type>
         </attribute>
         <attribute>
+            
             <name>metodo</name>
             <description><![CDATA[Metodo para]]></description>
             <required>true</required>

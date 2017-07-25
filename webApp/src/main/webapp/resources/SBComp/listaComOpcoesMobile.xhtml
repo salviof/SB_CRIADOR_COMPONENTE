@@ -12,41 +12,39 @@
     <cc:interface>
 
         <cc:attribute
-
-            type="com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario"
-            name="acaoDeListagem"
-            required="true"
-
-            />
-        <cc:attribute
-
             type="com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples"
             name="itemSelecionado"
             required="true"
-
             />
+        <cc:attribute name="campos"
+                      required="true"
+                      type="java.util.List"
+                      shortDescription="Listagem dos campos que serão exibidos: List->CaminhoCampoReflexao"
+                      />
 
         <cc:attribute
-
             type="java.util.List"
             name="itens"
             required="true"
-
             />
 
         <cc:attribute
-
             method-signature="void listener()"
             name="metodo"
-            required="true"
+            required="true"    />
 
-            />
+        <cc:attribute name="armazenamentoAcaoSelecionada"
+                      default="#{paginaAtual.infoPagina.acaoSelecionada}" />
 
-        <cc:attribute name="opcoes" required="true"  />
+        <cc:attribute name="opcoes"
+                      required="true"  />
 
-        <cc:attribute name="titulo"  default="Listagem de #{cc.attrs.acaoDeListagem.nomeDominio}"/>
+        <cc:attribute name="mensagemSemRegistro"/>
 
-
+        <cc:attribute name="titulo"
+                      required="true"
+                      shortDescription="Titulo da Listagem"
+                      />
 
     </cc:interface>
     <!-- IMPLEMENTATION -->
@@ -60,7 +58,7 @@
                 layout="grid"
                 columns="3"
 
-                emptyMessage="Nenhum #{cc.attrs.acaoDeListagem.nomeDominio} encontrado"
+                emptyMessage="#{cc.attrs.mensagemSemRegistro}"
                 paginatorTemplate=" {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                 rowsPerPageTemplate="6,9,12,15"
                 >
@@ -73,7 +71,7 @@
 
                 <p:panel>
 
-                    <ui:repeat value="#{cc.attrs.acaoDeListagem.campos}"
+                    <ui:repeat value="#{cc.attrs.campos}"
                                var="campo">
 
                         <SBComp:input
@@ -89,7 +87,7 @@
                     <center>
                         <SBComp:seletorDeAcoes
                             metodo="#{cc.attrs.metodo}"
-                            opcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+                            opcaoSelecionada="#{cc.attrs.armazenamentoAcaoSelecionada}"
                             opcoes="#{cc.attrs.opcoes}"
                             visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.icone}"
                             />

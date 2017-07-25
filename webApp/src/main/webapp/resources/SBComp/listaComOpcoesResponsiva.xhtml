@@ -5,22 +5,19 @@
 
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
     <!-- INTERFACE -->
-    <cc:interface>
+    <cc:interface   shortDescription="Exibe uma lista de registro com opções de seleção a partir de uma acao de listagem"
+                    >
 
         <cc:attribute
-
-            type="com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario"
-            name="acaoDeListagem"
-            required="true"
-
-            />
-        <cc:attribute
-
             type="com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples"
             name="itemSelecionado"
             required="true"
-
             />
+        <cc:attribute name="campos"
+                      required="true"
+                      type="java.util.List"
+                      shortDescription="Listagem dos campos que serão exibidos: List->CaminhoCampoReflexao"
+                      />
 
         <cc:attribute
             type="java.util.List"
@@ -29,17 +26,25 @@
             />
 
         <cc:attribute
-
             method-signature="void listener()"
             name="metodo"
-            required="true"
+            required="true"    />
+        <cc:attribute name="armazenamentoAcaoSelecionada"
+                      required="true"
 
-            />
+                      type="com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoDoSistema"
+                      shortDescription="Bean onde a ação selecionada será armazenada"
+                      />
 
-        <cc:attribute name="opcoes" required="true"  />
+        <cc:attribute name="opcoes"
+                      required="true"  />
 
-        <cc:attribute name="titulo"  default="Listagem de  #{cc.attrs.acaoDeListagem.nomeDominio}"/>
+        <cc:attribute name="mensagemSemRegistro"/>
 
+        <cc:attribute name="titulo"
+                      required="true"
+                      shortDescription="Título da Listagem"
+                      />
 
 
     </cc:interface>
@@ -48,22 +53,24 @@
 
 
         <SBComp:listaComOpcoesMobile
-            acaoDeListagem="#{cc.attrs.acaoDeListagem}"
+            campos="#{cc.attrs.campos}"
             itemSelecionado="#{cc.attrs.itemSelecionado}"
             itens="#{cc.attrs.itens}"
             metodo="#{cc.attrs.metodo}"
             opcoes="#{cc.attrs.opcoes}"
+            titulo="#{cc.attrs.titulo}"
             rendered="#{paginaAtual.sessao.tipoView.umMobile}"
             />
 
         <SBComp:listaComOpcoesDesktop
-            acaoDeListagem="#{cc.attrs.acaoDeListagem}"
+            campos="#{cc.attrs.campos}"
             itemSelecionado="#{cc.attrs.itemSelecionado}"
             itens="#{cc.attrs.itens}"
             metodo="#{cc.attrs.metodo}"
             opcoes="#{cc.attrs.opcoes}"
+            armazenamentoAcaoSelecionada="#{cc.attrs.armazenamentoAcaoSelecionada}"
+            titulo="#{cc.attrs.titulo}"
             rendered="#{!paginaAtual.sessao.tipoView.umMobile}"
-
             />
 
 
