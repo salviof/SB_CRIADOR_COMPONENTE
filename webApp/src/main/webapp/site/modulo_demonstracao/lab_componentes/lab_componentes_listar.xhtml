@@ -29,22 +29,19 @@
 
             <p:separator/>
 
+            <div class="Container100">
 
-
-            <SBComp:listaComOpcoesResponsiva
-                campos="#{pgMapaComponentes.acaoListar.comoFormulario.campos}"
-                titulo="Formidaveis componentes:"
-                itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
-                itens="#{pgMapaComponentes.listaComponentes}"
-                metodo="#{pgMapaComponentes.executarAcao(item)}"
-                armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
-                opcoes="#{pgMapaComponentes.acaoEditar}"
-
-
-                mensagemSemRegistro="Nenhum componente encontrado com este nome"
-
-
-                />
+                <SBComp:listaComOpcoesResponsiva
+                    campos="#{pgMapaComponentes.acaoListar.comoFormulario.campos}"
+                    titulo="Formidaveis componentes:"
+                    itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
+                    itens="#{pgMapaComponentes.listaComponentes}"
+                    metodo="#{pgMapaComponentes.executarAcao(item)}"
+                    armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+                    opcoes="#{pgMapaComponentes.acaoEditar}"
+                    mensagemSemRegistro="Nenhum componente encontrado com este nome"
+                    />
+            </div>
 
 
 
