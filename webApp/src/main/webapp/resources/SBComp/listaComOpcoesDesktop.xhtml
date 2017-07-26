@@ -67,6 +67,7 @@
                          >
 
                 <f:facet name="header" >
+
                     <div  class="container">
                         <div class="row" >
                             <div class="col-md-4 col-md-offset-4 " style="margin-top: 10px; " >
@@ -75,15 +76,15 @@
                             <div class="col-md-4" style="" >
                                 <div class="input-group margin-bottom-sm " style="margin-top: 5px; margin-bottom: 5px;">
 
-                                    <span class="pull-right">
-                                        <p:inputText
-                                            id="globalFilter"
-                                            onkeyup="PF('#{pgUtil.gerarNomeSlug(cc.attrs.titulo)}').filter()"
-                                            style="width:280px; height: 35px;"
-                                            placeholder="Pesquise aqui:"
+                                    <p:inputText
+                                        id="globalFilter"
+                                        onkeyup="PF('#{pgUtil.gerarNomeSlug(cc.attrs.titulo)}').filter()"
+                                        style="width:280px; height: 35px;"
+                                        placeholder="Pesquise aqui:"
 
-                                            />
-                                    </span>
+                                        />
+
+
                                 </div>
                             </div>
                         </div>
