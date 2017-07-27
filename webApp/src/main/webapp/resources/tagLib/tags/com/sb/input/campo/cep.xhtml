@@ -38,6 +38,15 @@
 
                 </c:if>
 
+
+                <p:ajax
+                    event="valueChange"
+                    partialSubmit="cpEstado"
+                    update="#{pgUtil.getNomeIdPainelDoComponente(component)}"
+                    />
+
+                #{registro.campoLocalizacao.cep}
+
                 <c:if test="#{registro.temValidacaoMinimo}">
 
                     <f:validateLength minimum="#{registro.valorMinimo}" />
@@ -53,6 +62,7 @@
                             update="#{pgUtil.gerarCaminhoCompletoID(('endereco')) }" />
 
                 </c:if>
+
 
             </p:inputMask>
 

@@ -18,7 +18,7 @@
 
 
                     <h:panelGroup rendered="#{!registro.campoLocalizacao.estadoNulo}">
-                        #{registro.campoLocalizacao.unidadeFederativa.nome}
+                        #{registro.campoLocalizacao.cep}
                         <p:commandLink
 
                             actionListener="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.limparCep()}"
@@ -161,7 +161,7 @@
                             />
                     </p:autoComplete>
                     <p:focus for="cpBairro" />
-                    <SBComp:opcoesDeEndereco campo="#{registro}" />
+                    <SBComp:opcoesDeEndereco campo="#{registro}" rendered="false" />
                 </h:panelGrid>
 
 
