@@ -14,7 +14,24 @@
             <h:panelGroup id="coletorEndereco"  rendered="#{registro.umCampoCampoLocalizacao}">
 
 
-                <h:panelGrid columns="3"   >
+                <h:panelGrid columns="4"   >
+
+
+                    <h:panelGroup rendered="#{!registro.campoLocalizacao.estadoNulo}">
+                        #{registro.campoLocalizacao.unidadeFederativa.nome}
+                        <p:commandLink
+
+                            actionListener="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.limparCep()}"
+                            update="coletorEndereco"
+                            rendered="#{!registro.campoLocalizacao.estadoNulo and !desabilitarEdicao}"
+
+                            >
+
+                            <i class="fa fa-remove"></i>
+
+                        </p:commandLink>
+
+                    </h:panelGroup>
 
                     <h:panelGroup rendered="#{!registro.campoLocalizacao.estadoNulo}">
                         #{registro.campoLocalizacao.unidadeFederativa.nome}
@@ -22,7 +39,7 @@
 
                             actionListener="#{registro.campoLocalizacao.limparEstado()}"
                             update="coletorEndereco"
-                            rendered="#{!registro.campoLocalizacao.estadoNulo}"
+                            rendered="#{!registro.campoLocalizacao.estadoNulo  and !desabilitarEdicao}"
 
                             >
 
@@ -37,7 +54,7 @@
                         #{registro.campoLocalizacao.cidade.nome}<p:commandLink
                             actionListener="#{registro.campoLocalizacao.limparCidade()}"
                             update="coletorEndereco"
-                            rendered="#{!registro.campoLocalizacao.cidadeNula}"
+                            rendered="#{!registro.campoLocalizacao.cidadeNula and !desabilitarEdicao }"
                             >
 
                             <i class="fa fa-remove"></i>
@@ -53,7 +70,7 @@
 
                             actionListener="#{registro.campoLocalizacao.limparBairro()}"
                             update="coletorEndereco"
-                            rendered="#{!registro.campoLocalizacao.bairroNulo}"
+                            rendered="#{!registro.campoLocalizacao.bairroNulo and !desabilitarEdicao}"
                             >
 
                             <i class="fa fa-remove"></i>

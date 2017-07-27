@@ -1,17 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:cc="http://java.sun.com/jsf/composite"
-
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+                xmlns:cc="http://xmlns.jcp.org/jsf/composite">
     <cc:interface>
         <!-- INTERFACE -->
         <cc:attribute
-
             type="com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario"
             name="acaoDeListagem"
             required="true"
-
             />
 
 
@@ -28,7 +24,7 @@
             itens="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadesListadas}"
             metodo="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(item)}"
             opcoes="#{paginaAtual.infoPagina.comoPaginaEntidade.acoesRegistros}"
-            rendered="#{!paginaAtual.sessao.tipoView.umMobile}"
+            rendered="#{paginaAtual.sessao.tipoView.umMobile}"
             titulo="Listagem de #{paginaAtual.infoPagina.comoPaginaEntidade.acaoListarRegistros.nomeDominio}"
             />
 
@@ -50,4 +46,4 @@
 
     </cc:implementation>
 
-</html>
+</ui:composition>

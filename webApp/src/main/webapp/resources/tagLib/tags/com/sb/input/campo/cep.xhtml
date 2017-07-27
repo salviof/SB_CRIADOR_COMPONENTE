@@ -48,7 +48,7 @@
                     <p:ajax event="valueChange"
                             partialSubmit="true"
                             process="@this"
-                            listener="#{pgUtil.preencherEndereco(registro.valor, campoLocalizacaoCEP)}"
+                            listener="#{pgUtil.preencherEndereco(registro.valor)}"
 
                             update="#{pgUtil.gerarCaminhoCompletoID(('endereco')) }" />
 
