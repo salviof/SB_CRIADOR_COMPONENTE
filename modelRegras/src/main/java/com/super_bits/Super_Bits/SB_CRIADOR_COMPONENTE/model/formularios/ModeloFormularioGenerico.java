@@ -11,6 +11,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.Info
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoReflexao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.LocalizacaoInputAssistente;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.validacaoRegistro.CampoInvalido;
 import com.super_bits.modulosSB.SBCore.modulos.view.modeloFormulario.ItfModeloFormularioSBFW;
@@ -285,6 +286,21 @@ public class ModeloFormularioGenerico implements ItfModeloFormularioSBFW {
     @Override
     public String getNomeDoObjetoPlural() {
         return modelo.getNomeDoObjetoPlural();
+    }
+
+    @Override
+    public ItfCampoInstanciado getCampoInstanciadoByNomeOuAnotacao(String pNome) {
+        return modelo.getCampoInstanciadoByNomeOuAnotacao(pNome);
+    }
+
+    @Override
+    public LocalizacaoInputAssistente getAssistenteLocalizacao(String pCaminhoCampo) {
+        return modelo.getAssistenteLocalizacao(pCaminhoCampo);
+    }
+
+    @Override
+    public void adicionarAssitenteLocalizacao(LocalizacaoInputAssistente pLocalizacao) {
+        modelo.adicionarAssitenteLocalizacao(pLocalizacao);
     }
 
 }
