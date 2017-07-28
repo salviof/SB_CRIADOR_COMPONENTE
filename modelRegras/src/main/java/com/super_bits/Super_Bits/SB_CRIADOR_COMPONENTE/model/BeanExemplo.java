@@ -6,6 +6,7 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.FabAcaoLabComponentes;
+import com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Localizacao;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.FabErro;
@@ -26,6 +27,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemUnidad
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.FabTipoBeanSBGenerico;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemContatoCorporativo;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemEndereco;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -93,7 +95,8 @@ public class BeanExemplo
             beanFilho = new BeanExemplo(false);
             listasExemplo.add(exemplo1);
             listasExemplo.add(exemplo2);
-
+            setLocalizacao(new ItemLocalizacao());
+            getLocalizacao().prepararNovoObjeto();
             apelido = "testeeeeeeee";
 
         }
