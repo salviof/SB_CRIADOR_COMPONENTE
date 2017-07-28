@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="#{layoutsPaginas.conteudoEmBranco.xhtmlVinculado}" >
+        <ui:define name="conteudo">
+
+
+
+
+
+            <p:fieldset legend="Visualizacao de #{pgMapaComponentes.campoInstanciado.label}"  >
+                <p:tabView dynamic="true" cache="true">
+                    <p:tab title="Informações">
+                        <h:form  >
+                            <p:panelGrid columns="2" >
+                                <p:outputLabel value="TipoCampo"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.tipoCampoSTR}"/>
+                                <p:outputLabel value="XHTML apresentação:"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.getComponenteDiferenciado(pgMapaComponentes.componenteSelecionado).xhtmlJsfCaminhoRelativo}"/>
+                                <p:outputLabel value="XHTML Padrão"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.componenteVisualPadrao.xhtmlJSF}"/>
+                                <p:outputLabel value="Valor"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.valor}" />
+                                <p:outputLabel value="cidade"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.cidade}" />
+                                <p:outputLabel value="estado"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.unidadeFederativa}" />
+                            </p:panelGrid>
+                            <p:commandButton value="Atualizar" update="#{pgUtil.makeCaminhoCompletoID('visualizacao')}"/>
+
+
+                        </h:form>
+
+
+                    </p:tab>
+
+                    <p:tab  title="Estado">
+                        <SBComp:input registro="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.local.bairro.cidade.getCampoByNomeOuAnotacao('unidadeFederativa')}"
+                                      layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                      />
+                    </p:tab>
+
+                    <p:tab  title="Cidade">
+
+                    </p:tab>
+                    <p:tab  title="Bairro">
+
+                    </p:tab>
+
+                </p:tabView>
+
+                <h:form id="visualizacao">
+                    <SBComp:input registro="#{pgMapaComponentes.campoInstanciado}"
+                                  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                  />
+
+                </h:form>
+            </p:fieldset>
+        </ui:define>
+    </ui:composition>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -548,6 +548,10 @@ public class PgMapaComponentes extends MB_PaginaConversation {
                     case ENUM_SELETOR:
                         acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VER.getRegistro());
                         break;
+                    case ENDERECO:
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_CAMPO_ENDERECO_BEAN_ENDERECAVEL_VISUALIZAR.getRegistro());
+                        acoesLaboratorio.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_CAMPO_ENDERECO_VISUALIZAR.getRegistro());
+                        break;
 
                     default:
                         throw new AssertionError(componenteSelecionado.getFamilia().name());

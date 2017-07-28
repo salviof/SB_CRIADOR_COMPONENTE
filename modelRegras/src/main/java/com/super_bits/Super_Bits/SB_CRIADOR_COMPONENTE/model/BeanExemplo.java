@@ -225,8 +225,7 @@ public class BeanExemplo
     private ItemBairro bairro;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, valoresAceitos = {
-        @ValorAceito(valor = "Teste")
-        ,
+        @ValorAceito(valor = "Teste"),
         @ValorAceito(valor = "Teste2")}
     )
     private BeanExemplo beanSelecionadoDaListaDescritiva;
@@ -238,7 +237,7 @@ public class BeanExemplo
     private BeanExemplo benSelecionadoListaPorCampo;
 
     private ItemUnidadeFederativa unidadeFederativa;
-
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LCCidade)
     private ItemCidade cidade;
     @InfoCampo(tipo = FabTipoAtributoObjeto.LISTA_OBJETOS, fabricaDeOpcoes = FabListBeanExemplos.class)
     private List<BeanExemplo> listasExemplo;

@@ -22,7 +22,9 @@
 
 
 
-            <p:inputText id="cpvalorHiden" value="#{registro.valor}" style=" visibility: hidden;" >
+            <p:inputText id="cpvalorHiden"
+                         value="#{registro.valor}"
+                         style=" visibility: hidden;" >
                 <p:ajax rendered="#{possuiMetodoOnChange}"
                         global="true"
                         event="valueChange"
@@ -35,12 +37,14 @@
                     listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
             </p:inputText>
 
-            <p:slider disabled="#{desabilitarEdicao}"
-                      maxValue="#{registro.valorMaximo}"
-                      minValue="#{registro.valorMinimo}"
+            <p:slider
 
-                      for="cpvalorHiden" display="@parent:@child(1):outputPorcentagem"
-                      style="width: 200px" displayTemplate=" {value}%">
+                disabled="#{desabilitarEdicao}"
+                maxValue="#{registro.valorMaximo}"
+                minValue="#{registro.valorMinimo}"
+
+                for="cpvalorHiden" display="outputPorcentagem"
+                style="width: 200px" displayTemplate=" {value} %">
 
 
 

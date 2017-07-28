@@ -17,9 +17,9 @@
 
 
             <p:inputMask     class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
-
+                             validator="validadorCEP"
                              required="#{obrigatorio}"
-                             value="#{valor}"
+                             value="#{registro.campoLocalizacao.cep}"
                              validatorMessage="O valor informado no campo #{label} não é valido! "
                              requiredMessage="O campo #{label} não foi informado! "
                              mask="#{registro.mascaraJqueryMode}"
@@ -44,8 +44,6 @@
                     partialSubmit="cpEstado"
                     update="#{pgUtil.getNomeIdPainelDoComponente(component)}"
                     />
-
-                #{registro.campoLocalizacao.cep}
 
                 <c:if test="#{registro.temValidacaoMinimo}">
 
