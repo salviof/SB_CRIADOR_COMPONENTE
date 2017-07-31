@@ -23,6 +23,9 @@
 
                 converterMessage="Impossível converter o valor de #{label} em um tipo válido "
                 >
+
+                <p:clientValidator/>
+
                 <c:if test="#{registro.temValidacaoRegex}">
                     <f:validateRegex pattern="#{regex}"/>
                 </c:if>

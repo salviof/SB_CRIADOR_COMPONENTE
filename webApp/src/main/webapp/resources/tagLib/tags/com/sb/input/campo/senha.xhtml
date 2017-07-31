@@ -17,7 +17,7 @@
                          disabled="#{desabilitarEdicao}"
                          validatorMessage="O valor informado no campo #{label} não é valido! A senha precisa conter 6 caractéres"
                          promptLabel="Digite uma senha segura"
-                         inline="true"
+
                          weakLabel="Você pode melhorar esta senha"
                          goodLabel="Esta senha é uma boa senha,nós podemos aceita-la, porém você pode melhora-la adcionando numeros, caracteres especiais e letras"
                          strongLabel="Parabéns, esta senha é muito difícil de ser quebrada"
@@ -25,6 +25,8 @@
                          requiredMessage="O campo #{label} não foi informado! "
                          >
                 <f:passThroughAttribute name="autocomplete" value="off" />
+
+                <p:clientValidator/>
 
                 <c:if test="#{possuiMetodoOnChange}">
                     <p:ajax rendered="#{possuiMetodoOnChange}"

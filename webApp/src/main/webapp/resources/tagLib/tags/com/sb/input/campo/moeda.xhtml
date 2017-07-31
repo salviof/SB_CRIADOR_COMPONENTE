@@ -23,6 +23,7 @@
                 requiredMessage="O campo #{label} não foi informado! "
                 >
 
+                <p:clientValidator/>
 
                 <c:if test="#{possuiMetodoOnChange}">
                     <p:ajax rendered="#{possuiMetodoOnChange}"
