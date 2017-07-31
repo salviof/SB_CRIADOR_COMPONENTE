@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
+        <ui:define name="input">
+
+            <p:autoComplete converter="conversorGenerico"
+                            completeMethod="#{registro.campoLocalizacao.metodoAutoCompleteEstado}"
+                            var="estado"
+                            value="#{registro.campoLocalizacao.unidadeFederativa}"
+                            forceSelection="true"
+                            itemValue="#{estado}"
+                            itemLabel="#{estado.sigla}"
+                            placeholder="Localize o Estado"
+
+
+                            styleClass="campoResponsivo"
+
+                            id="cpEstadoAvancado"
+                            >
+                <p:ajax
+                    event="itemSelect"
+                    partialSubmit="true"
+                    partialSubmitFilter="cpEstadoAvancado"
+                    update="#{pgUtil.getNomeIdPainelDoComponente(component)}"
+
+                    />
+            </p:autoComplete>
+
+
+        </ui:define>
+    </ui:decorate>
+</html>

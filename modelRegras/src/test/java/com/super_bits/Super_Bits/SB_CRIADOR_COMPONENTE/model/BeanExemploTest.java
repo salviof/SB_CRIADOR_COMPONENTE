@@ -6,6 +6,8 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp.TesteSB_CRIADOR_COMPONENTE;
+import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import com.super_bits.modulosSB.SBCore.modulos.Mensagens.FabMensagens;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoExibicaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.CampoInstanciadoEnumFabricaObjeto;
@@ -38,6 +40,10 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
         try {
             System.out.println("getId");
             BeanExemplo beanExemplo = new BeanExemplo();
+
+            ItfCampoInstanciado campoInstanciadoCep = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("cep");
+            SBCore.getCentralDeMensagens().enviarMsgAlertaAoDesenvolvedor(campoInstanciadoCep.getComponenteVisualPadrao().getXhtmlJSF());
+            SBCore.getCentralDeMensagens().enviarMsgAlertaAoDesenvolvedor(campoInstanciadoCep.getComponenteDiferenciado(null).getXhtmlJSF());
 
             ItfCampoInstanciado campoInstanciadoObjetoFabrica = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("objetoFabrica");
             System.out.println(campoInstanciadoObjetoFabrica.getTipoCampoSTR());

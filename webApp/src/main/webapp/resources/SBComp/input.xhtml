@@ -3,11 +3,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:cc="http://java.sun.com/jsf/composite"
       xmlns:sb="http://superbitsframework/ui"
-
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <!-- INTERFACE -->
-    <cc:interface componentType="inputGenerico">
+    <cc:interface componentType="inputGenerico"
+                  shortDescription="Exibe um atributo para edição ou visualizção do usuário"
+                  >
 
         <cc:attribute name="registro"
                       required="true"
@@ -65,8 +66,10 @@
                     idAtualizarOnChange="#{cc.attrs.idAtualizarOnChange}"
                     metodoOnChange="#{cc.attrs.metodoOnChange}"
                     atualizarFormOnChange="#{cc.attrs.atualizarFormOnChange}"
-                    xhtmlVisualizacao="#{cc.attrs.xhtmlInclude}"
+                    xhtmlVisualizacao="#{cc.attrs.layout.xhtmlJSF}"
                     obrigatorio="#{cc.attrs.registro.obrigatorio}"
+                    atualizarGrupoOnChange="false"
+
                     />
 
             </c:catch>

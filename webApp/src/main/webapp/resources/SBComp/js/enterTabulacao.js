@@ -12,7 +12,7 @@ $(document).keydown(function (e) {
             focusable;
 
     // Array of Indexable/Tab-able items
-    focusable = form.find('input,a,select,button,textarea,div[contenteditable=true]').filter(':visible');
+    focusable = form.find('input,a,select,textarea,div[contenteditable=true]').filter(':visible');
 
     function enterKey() {
         if (e.which === 13 && !self.is('textarea,div[contenteditable=true]')) { // [Enter] key
@@ -31,8 +31,8 @@ $(document).keydown(function (e) {
     }
     // We need to capture the [Shift] key and check the [Enter] key either way.
     if (e.shiftKey) {
-        enterKey()
+        enterKey();
     } else {
-        enterKey()
+        enterKey();
     }
 });

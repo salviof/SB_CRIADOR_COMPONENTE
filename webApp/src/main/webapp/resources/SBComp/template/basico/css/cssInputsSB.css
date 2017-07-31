@@ -29,15 +29,11 @@
 }
 
 .panelGridEsquerda{
-
     border: none;
-
 }
 
 .panelGridSuperior{
-
     border: none;
-
 }
 
 
@@ -46,7 +42,6 @@
 }
 .colunaResponsiva{
     width: auto;
-
 }
 
 .campoMascara{
@@ -96,22 +91,11 @@
 }
 
 .seletorResponsivo{
-    width:   80%!important;
+    width:   100%!important;
 }
 
 .tabelaFormulario{
     width:   100%!important;
-}
-
-.Container20.Responsive
-{
-    padding: 2%;
-}
-
-
-.Container30.Responsive
-{
-    padding: 1%;
 }
 
 
@@ -120,4 +104,19 @@
     display: none;
 }
 
+.Coluna20{
+    width: 20%;
+}
+.Coluna80{
+    width: 80%;
+}
 
+.Coluna10{
+    width: 10%;
+}
+.Coluna90{
+    width: 90%;
+}
+.IconePequeno{
+    width: 10px;
+}

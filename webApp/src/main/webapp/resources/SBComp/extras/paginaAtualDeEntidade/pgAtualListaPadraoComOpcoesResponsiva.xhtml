@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+                xmlns:cc="http://xmlns.jcp.org/jsf/composite">
+    <!-- INTERFACE -->
+    <cc:interface
+        displayName="Lista os registro da pagina atual utilizando a ação enviada como referencia"
+
+        >
+
+
+    </cc:interface>
+    <!-- IMPLEMENTATION -->
+    <cc:implementation>
+
+
+        <SBComp:listaComOpcoesMobile
+            campos="#{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.campos}"
+            mensagemSemRegistro="Nenhum #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.nomeDominio} foi encontrado"
+            armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+            itemSelecionado="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
+            itens="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadesListadas}"
+            metodo="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(item)}"
+            opcoes="#{paginaAtual.infoPagina.comoPaginaEntidade.acoesRegistros}"
+            rendered="#{!paginaAtual.sessao.tipoView.umMobile}"
+            titulo="Listagem de #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.nomeDominio}"
+            />
+
+        <SBComp:listaComOpcoesDesktop
+            campos="#{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.campos}"
+            mensagemSemRegistro="Nenhum #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.nomeDominio} foi encontrado"
+            armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+            itemSelecionado="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
+            itens="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadesListadas}"
+            metodo="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(item)}"
+            opcoes="#{paginaAtual.infoPagina.comoPaginaEntidade.acoesRegistros}"
+            rendered="#{!paginaAtual.sessao.tipoView.umMobile}"
+            titulo="Listagem de #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.nomeDominio}"
+
+            />
+
+
+
+
+    </cc:implementation>
+
+</ui:composition>

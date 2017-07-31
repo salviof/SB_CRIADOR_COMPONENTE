@@ -53,6 +53,7 @@ public class BeanExemplo
     public BeanExemplo() {
         this(true);
         grupoCampoCompleto = new GrupoCampos("Grupo de Campos teste");
+
         EstruturaDeEntidade est = MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class);
         for (EstruturaCampo strutura : est.getCampos()) {
             grupoCampoCompleto.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(strutura.getNomeDeclarado(), BeanExemplo.class)));
@@ -224,8 +225,7 @@ public class BeanExemplo
     private ItemBairro bairro;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, valoresAceitos = {
-        @ValorAceito(valor = "Teste")
-        ,
+        @ValorAceito(valor = "Teste"),
         @ValorAceito(valor = "Teste2")}
     )
     private BeanExemplo beanSelecionadoDaListaDescritiva;
@@ -237,7 +237,7 @@ public class BeanExemplo
     private BeanExemplo benSelecionadoListaPorCampo;
 
     private ItemUnidadeFederativa unidadeFederativa;
-
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LCCidade)
     private ItemCidade cidade;
     @InfoCampo(tipo = FabTipoAtributoObjeto.LISTA_OBJETOS, fabricaDeOpcoes = FabListBeanExemplos.class)
     private List<BeanExemplo> listasExemplo;

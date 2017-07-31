@@ -11,6 +11,7 @@ import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FamiliaCo
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfFabTipoComponenteVisual;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVIsualInputsLayout;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualBotaoAcao;
+import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualEndereco;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualFormularioDeAcao;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualGrupoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualGruposCampo;
@@ -50,6 +51,7 @@ public abstract class MapaComponentes {
         adicionarComponentes(FabCompVisualGruposCampo.class);
         adicionarComponentes(FabCompVisualFormularioDeAcao.class);
         adicionarComponentes(FabcompVisualEnums.class);
+        adicionarComponentes(FabCompVisualEndereco.class);
 
     }
 

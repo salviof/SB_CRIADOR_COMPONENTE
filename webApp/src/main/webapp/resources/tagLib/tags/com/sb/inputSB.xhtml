@@ -24,12 +24,11 @@
         <ui:param name="valorMinimo" value="#{registro.valorMinimo}" rendered="#{registro.temValidacaoMinimo}"/>
         <ui:param name="mascara" value="#{registro.mascaraJqueryMode}" rendered="#{registro.temMascara}"/>
         <ui:param name="atualizarFormOnChange" value="#{atualizarFormOnChange}"/>
-        <br/>
+
 
         <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualInputs.texto_Com_FOrmatacao.xhtmlJsfCaminhoRelativo}">
             <sb:inputSBTextMascara />
         </ui:fragment>
-
         <ui:fragment
             rendered="#{compSBCompVisualInputs.texto_multiplas_Linhas.isXhtmlJSFCaminhoRelativoIgualA(xhtmlINPUT)}">
             <sb:inputSBTextDEscritivo />
@@ -47,9 +46,6 @@
             <sb:inputSBHtml />
         </ui:fragment>
 
-        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.cep.xhtmlJsfCaminhoRelativo}"  >
-            <sb:inputSBCep />
-        </ui:fragment>
 
         <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.data.xhtmlJsfCaminhoRelativo}"  >
             <sb:inputSBData />
@@ -106,12 +102,10 @@
             <sb:inputSBArquivoDeEntidade  />
         </ui:fragment>
 
-        <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualInputs.bairro.xhtmlJsfCaminhoRelativo}">
-            <sb:inputSBBairro />
-        </ui:fragment>
+
 
         <h:panelGroup rendered="#{registro.umCampoCampoLocalizacao}">
-            <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.endereco.xhtmlJsfCaminhoRelativo}">
+            <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualEndereco.endereco.xhtmlJsfCaminhoRelativo}">
                 <sb:inputSBEndereco />
             </ui:fragment>
         </h:panelGroup>
@@ -132,17 +126,28 @@
         <ui:fragment rendered="#{xhtmlINPUT==compSBcompVisualEnums.enum_AtutoComplete.xhtmlJsfCaminhoRelativo}" >
             <sb:inputSBEnumAutoComplete />
         </ui:fragment>
-
-
         <ui:fragment rendered="#{xhtmlINPUT==compSBcompVisualEnums.enum_Grade.xhtmlJsfCaminhoRelativo}" >
             <sb:inputSBEnumGrade  />
         </ui:fragment>
 
 
+        <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualEndereco.bairro.xhtmlJsfCaminhoRelativo}">
+            <sb:inputSBBairro />
+        </ui:fragment>
+
+        <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualEndereco.cidade.xhtmlJsfCaminhoRelativo}">
+            <sb:inputSBCidade />
+        </ui:fragment>
+
+        <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualEndereco.unidade_federativa_Estado.xhtmlJsfCaminhoRelativo}">
+            <sb:inputSBestadoUF />
+        </ui:fragment>
+        <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualEndereco.cep.xhtmlJsfCaminhoRelativo}"  >
+            <sb:inputSBCep />
+        </ui:fragment>
+
+
     </ui:fragment>
-
-
-
 
 
 </html>
