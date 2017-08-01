@@ -198,7 +198,7 @@ public class BeanExemplo
     @InfoCampo(tipo = FabTipoAtributoObjeto.AAA_NOME_LONGO, label = "Nome")
     private String nome = "Nome Completo do Bean Simples";
 
-    @InfoCampo(tipo = FabTipoAtributoObjeto.LCComplemeto, label = "Complemento")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LC_COMPLEMENTO, label = "Complemento")
     @NotNull
     private String complemento;
 
@@ -224,7 +224,7 @@ public class BeanExemplo
     @NotNull
     private BeanExemplo beanFilho;
 
-    @InfoCampo(tipo = FabTipoAtributoObjeto.LCBairro)
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LC_BAIRRO)
     private ItemBairro bairro;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, valoresAceitos = {
@@ -240,7 +240,7 @@ public class BeanExemplo
     private BeanExemplo benSelecionadoListaPorCampo;
 
     private ItemUnidadeFederativa unidadeFederativa;
-    @InfoCampo(tipo = FabTipoAtributoObjeto.LCCidade)
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LC_CIDADE)
     private ItemCidade cidade;
     @InfoCampo(tipo = FabTipoAtributoObjeto.LISTA_OBJETOS, fabricaDeOpcoes = FabListBeanExemplos.class)
     private List<BeanExemplo> listasExemplo;
