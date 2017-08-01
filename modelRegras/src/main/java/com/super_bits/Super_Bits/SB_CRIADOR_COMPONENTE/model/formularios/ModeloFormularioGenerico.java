@@ -12,6 +12,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoC
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.LocalizacaoInputAssistente;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.TipoOrganizacaoDadosEndereco;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.validacaoRegistro.CampoInvalido;
 import com.super_bits.modulosSB.SBCore.modulos.view.modeloFormulario.ItfModeloFormularioSBFW;
@@ -294,13 +295,13 @@ public class ModeloFormularioGenerico implements ItfModeloFormularioSBFW {
     }
 
     @Override
-    public LocalizacaoInputAssistente getAssistenteLocalizacao(String pCaminhoCampo) {
-        return modelo.getAssistenteLocalizacao(pCaminhoCampo);
+    public void adicionarAssitenteLocalizacao(LocalizacaoInputAssistente pLocalizacao) {
+        modelo.adicionarAssitenteLocalizacao(pLocalizacao);
     }
 
     @Override
-    public void adicionarAssitenteLocalizacao(LocalizacaoInputAssistente pLocalizacao) {
-        modelo.adicionarAssitenteLocalizacao(pLocalizacao);
+    public LocalizacaoInputAssistente getAssistenteLocalizacao(ItfCampoInstanciado pCampoInst, TipoOrganizacaoDadosEndereco pTipo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
