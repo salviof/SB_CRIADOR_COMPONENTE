@@ -56,7 +56,11 @@ public class BeanExemplo
 
         EstruturaDeEntidade est = MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class);
         for (EstruturaCampo strutura : est.getCampos()) {
-            grupoCampoCompleto.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(strutura.getNomeDeclarado(), BeanExemplo.class)));
+            try {
+                grupoCampoCompleto.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(strutura.getNomeDeclarado(), BeanExemplo.class)));
+            } catch (Throwable t) {
+                SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro adicionando campo extra em ambiente teste", t);
+            }
         }
         grupoCampoSimples = new GrupoCampos("Grupo campo Simples");
         try {
@@ -228,8 +232,7 @@ public class BeanExemplo
     private ItemBairro bairro;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, valoresAceitos = {
-        @ValorAceito(valor = "Teste")
-        ,
+        @ValorAceito(valor = "Teste"),
         @ValorAceito(valor = "Teste2")}
     )
     private BeanExemplo beanSelecionadoDaListaDescritiva;
