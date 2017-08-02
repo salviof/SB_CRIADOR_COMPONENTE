@@ -21,12 +21,12 @@
             <type>com.super_bits.view.fabricasCompVisual.ItfComponenteVisualSB</type>
         </attribute>
         <attribute>
+
             <name>metodo</name>
             <description><![CDATA[Metodo para]]></description>
             <required>true</required>
             <type>javax.el.MethodExpression</type>
         </attribute>
-
         <attribute>
             <name>javaScriptOncomplete</name>
             <description>
@@ -844,7 +844,7 @@
 
     <tag>
         <tag-name>inputSBCep</tag-name>
-        <source>resources/tagLib/tags/com/sb/input/campo/cep.xhtml</source>
+        <source>resources/tagLib/tags/com/sb/input/endereco/cep.xhtml</source>
     </tag>
     <tag>
         <tag-name>inputSBData</tag-name>
@@ -968,24 +968,24 @@
 
     <tag>
         <tag-name>inputSBBairro</tag-name>
-        <source>resources/tagLib/tags/com/sb/input/campo/bairro.xhtml</source>
+        <source>resources/tagLib/tags/com/sb/input/endereco/bairro.xhtml</source>
 
     </tag>
 
     <tag>
         <tag-name>inputSBestadoUF</tag-name>
-        <source>resources/tagLib/tags/com/sb/input/campo/estado.xhtml</source>
+        <source>resources/tagLib/tags/com/sb/input/endereco/estado.xhtml</source>
     </tag>
 
 
     <tag>
         <tag-name>inputSBCidade</tag-name>
-        <source>resources/tagLib/tags/com/sb/input/campo/cidade.xhtml</source>
+        <source>resources/tagLib/tags/com/sb/input/endereco/cidade.xhtml</source>
     </tag>
 
     <tag>
         <tag-name>inputSBNacao</tag-name>
-        <source>resources/tagLib/tags/com/sb/input/campo/nacao.xhtml</source>
+        <source>resources/tagLib/tags/com/sb/input/endereco/nacao.xhtml</source>
     </tag>
 
 

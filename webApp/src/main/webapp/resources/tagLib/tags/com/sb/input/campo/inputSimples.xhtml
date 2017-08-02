@@ -10,24 +10,23 @@
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
 
+            <p:outputLabel value="#{registro.valor}" rendered="#{desabilitarEdicao}" />
+
             <p:inputText
                 class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
-
-                disabled="#{desabilitarEdicao}"
+                rendered="#{!desabilitarEdicao}"
                 required="false"
                 value="#{valor}"
                 validatorMessage="O valor informado no campo #{label} não é valido! "
                 requiredMessage="O campo #{label} não foi informado! "
                 maxlength="#{valorMaximo}"
-
-
                 >
 
+                <p:clientValidator/>
 
                 <c:if test="#{atualizarGrupoOnChange}" >
                     <p:ajax
                         rendered="#{atualizarGrupoOnChange}"
-
                         event="valueChange"
                         update="#{pgUtil.getNomeIdPainelDoComponente(component)}"/>
                 </c:if>

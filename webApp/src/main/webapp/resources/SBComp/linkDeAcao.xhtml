@@ -3,15 +3,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:cc="http://java.sun.com/jsf/composite"
       xmlns:sb="http://superbitsframework/ui"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      >
 
     <!-- INTERFACE -->
 
-    <cc:interface>
-
+    <cc:interface
+        shortDescription="Cria um botão, referenciando ao link da ação ex: http://www.portal.com.br/NomeDaAcaoDeGestao/ac-acaoSecundaria.html "
+        >
         <cc:attribute name="acao" type="com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoDoSistema"
                       shortDescription="A ação que será exibida " />
-
         <cc:attribute name="javaScriptOncomplete"  default="#{null}"
                       shortDescription="Javascript que deve ser executado após a execucao do botão"
                       />
@@ -35,15 +35,11 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
-
         <sb:botaoLink
             acao="#{cc.attrs.acao}"
             layout="#{cc.attrs.tipoVisualizacao}"
             label="#{cc.attrs.label}"
             />
-
-
-
 
     </cc:implementation>
 </html>

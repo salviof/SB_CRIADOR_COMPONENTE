@@ -20,7 +20,8 @@
     <cc:implementation>
 
         <c:if test="#{ cc.attrs.pickList.dualListPrime!=null}">
-            <p:pickList  value="#{cc.attrs.pickList.dualListPrime}" var="registro" effect="bounce" immediate="true"
+            <p:pickList  value="#{cc.attrs.pickList.dualListPrime}"
+                         var="registro" effect="bounce" immediate="true"
                          itemValue="#{registro}"  showSourceControls="true" showTargetControls="true" showCheckbox="true"
                          showSourceFilter="true" showTargetFilter="true" filterMatchMode="contains" converter="conversorGenerico">
 

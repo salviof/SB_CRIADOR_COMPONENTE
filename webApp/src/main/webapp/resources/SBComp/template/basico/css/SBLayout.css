@@ -12,11 +12,9 @@
     white-space:normal!important;
     text-align: left!important;
 }
-
 ajustesCard{
 
 }
-
 ajustesDivGeral{
 
 }
@@ -61,53 +59,6 @@ ajustesDivGeral{
     width: auto;
 
 }
-
-.colunaCampoFixo{
-
-}
-
-.Container20.Campanha{
-    margin-left: 2%;
-}
-
-.Container40.Campanha{
-    margin-left: 5%;
-}
-
-.Container50.Responsive100{
-    margin-left: 5%;
-
-}
-
-.Container40.Responsive100.D{
-    margin-left: 3%;
-
-}
-
-.Container40.Responsive100.E{
-    margin-left: 3%;
-
-}
-
-.Container100.Responsive100{
-    line-height: 30%;
-}
-
-.Container33.Responsive100.E{
-    margin-left: 2%;
-
-}
-
-.Container33.Responsive100.D{
-    margin-left: 2%;
-
-}
-
-.Container60.Responsive100.D{
-    margin-left: 4%;
-}
-
-
 
 
 .tabelaFormulario{
@@ -231,9 +182,32 @@ ajustesDivGeral{
     width: 80%!important;
     float: left!important;
 }
+
 .ui-growl {
     position: fixed;
     top: 60px!important;
     right: 100px!important;
     width: 80%!important;
+}
+
+
+.listComOpcoesHeader{
+
+
+}
+
+.listaComOcoesOcultaFitro{
+    height: 5px!important;
+    display: none!important;
+}
+
+
+/*Tirar pading do grid */
+.ui-datatable .ui-datatable-header{
+    padding: 0 !important;
+}
+
+ui-datatable-header.ui-widget-header.ui-corner-top{
+    padding: 0 !important;
+
 }

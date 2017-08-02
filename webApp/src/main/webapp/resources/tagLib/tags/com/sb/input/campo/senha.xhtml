@@ -26,6 +26,8 @@
                          >
                 <f:passThroughAttribute name="autocomplete" value="off" />
 
+                <p:clientValidator/>
+
                 <c:if test="#{possuiMetodoOnChange}">
                     <p:ajax rendered="#{possuiMetodoOnChange}"
                             global="true"

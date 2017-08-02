@@ -7,16 +7,19 @@
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
+
+            <p:outputLabel rendered="#{desabilitarEdicao}" value="#{valor}" />
             <p:inputTextarea
                 class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
-
                 required="#{obrigatorio}"
                 value="#{valor}"
-                validatorMessage="O valor informado no campo #{label} não é valido! "
+
+                rendered="#{!desabilitarEdicao}"                validatorMessage="O valor informado no campo #{label} não é valido! "
                 requiredMessage="O campo #{label} não foi informado! "
                 disabled="#{desabilitarEdicao}" >
 
 
+                <p:clientValidator/>
 
                 <c:if test="#{possuiMetodoOnChange}">
                     <p:ajax rendered="#{possuiMetodoOnChange}"

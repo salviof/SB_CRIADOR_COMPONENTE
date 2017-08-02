@@ -27,29 +27,25 @@
 
             </h:form>
 
+            <p:separator/>
+
+            <div class="Container100">
+                <h:form>
+                    <SBComp:listaComOpcoesResponsiva
+                        campos="#{pgMapaComponentes.acaoListar.comoFormulario.campos}"
+                        titulo="Formidaveis componentes"
+                        itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
+                        itens="#{pgMapaComponentes.listaComponentes}"
+                        metodo="#{pgMapaComponentes.executarAcao(item)}"
+                        armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+                        opcoes="#{pgMapaComponentes.acaoEditar}"
+                        mensagemSemRegistro="Nenhum componente encontrado com este nome"
+                        />
+                </h:form>
+            </div>
 
 
-            <h:form>
 
-                <SBComp:listaMobile
-                    acaoDeListagem="#{pgMapaComponentes.acaoListar}"
-                    itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
-                    itens="#{pgMapaComponentes.listaComponentes}"
-                    metodo="#{pgMapaComponentes.executarAcao(item)}"
-                    opcoes="#{pgMapaComponentes.acaoEditar}"
-                    rendered="#{paginaAtual.sessao.tipoView.umMobile}"
-                    />
-
-                <SBComp:listaDesktop
-                    acaoDeListagem="#{pgMapaComponentes.acaoListar}"
-                    itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
-                    itens="#{pgMapaComponentes.listaComponentes}"
-                    metodo="#{pgMapaComponentes.executarAcao(item)}"
-                    opcoes="#{pgMapaComponentes.acaoEditar}"
-                    rendered="#{!paginaAtual.sessao.tipoView.umMobile}"
-                    />
-
-            </h:form>
             <ui:debug hotkey="v" />
         </ui:define>
 

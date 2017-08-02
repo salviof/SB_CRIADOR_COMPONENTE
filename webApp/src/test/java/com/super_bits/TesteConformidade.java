@@ -36,7 +36,7 @@ public class TesteConformidade extends RelatorioTesteWebPaginas {
     @Override
     protected void configAmbienteDesevolvimento() {
         SBCore.configurar(new ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE(), SBCore.ESTADO_APP.DESENVOLVIMENTO);
-        SBPersistencia.configuraJPA(new ConfigPersistenciaSB_CRIADOR_COMPONENTE());
+        //     SBPersistencia.configuraJPA(new ConfigPersistenciaSB_CRIADOR_COMPONENTE());
     }
 
 }

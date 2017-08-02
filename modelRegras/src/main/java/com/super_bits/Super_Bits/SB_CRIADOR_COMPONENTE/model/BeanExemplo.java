@@ -6,6 +6,7 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.FabAcaoLabComponentes;
+import com.super_bits.modulosSB.Persistencia.registro.persistidos.modulos.CEP.Localizacao;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.FabErro;
@@ -26,6 +27,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemUnidad
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.FabTipoBeanSBGenerico;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemContatoCorporativo;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemEndereco;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -93,8 +95,13 @@ public class BeanExemplo
             beanFilho = new BeanExemplo(false);
             listasExemplo.add(exemplo1);
             listasExemplo.add(exemplo2);
+<<<<<<< HEAD
             localizacao = new ItemLocalizacao();
 
+=======
+            setLocalizacao(new ItemLocalizacao());
+            getLocalizacao().prepararNovoObjeto();
+>>>>>>> a1fc5ee5701c957f7c686bd7e44b3b9423ed6bed
             apelido = "testeeeeeeee";
 
         }
@@ -196,7 +203,7 @@ public class BeanExemplo
     @InfoCampo(tipo = FabTipoAtributoObjeto.AAA_NOME_LONGO, label = "Nome")
     private String nome = "Nome Completo do Bean Simples";
 
-    @InfoCampo(tipo = FabTipoAtributoObjeto.LCComplemeto, label = "Complemento")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LC_COMPLEMENTO, label = "Complemento")
     @NotNull
     private String complemento;
 
@@ -222,12 +229,11 @@ public class BeanExemplo
     @NotNull
     private BeanExemplo beanFilho;
 
-    @InfoCampo(tipo = FabTipoAtributoObjeto.LCBairro)
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LC_BAIRRO)
     private ItemBairro bairro;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, valoresAceitos = {
-        @ValorAceito(valor = "Teste")
-        ,
+        @ValorAceito(valor = "Teste"),
         @ValorAceito(valor = "Teste2")}
     )
     private BeanExemplo beanSelecionadoDaListaDescritiva;
@@ -239,7 +245,7 @@ public class BeanExemplo
     private BeanExemplo benSelecionadoListaPorCampo;
 
     private ItemUnidadeFederativa unidadeFederativa;
-
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LC_CIDADE)
     private ItemCidade cidade;
     @InfoCampo(tipo = FabTipoAtributoObjeto.LISTA_OBJETOS, fabricaDeOpcoes = FabListBeanExemplos.class)
     private List<BeanExemplo> listasExemplo;
