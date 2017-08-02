@@ -93,6 +93,7 @@ public class BeanExemplo
             beanFilho = new BeanExemplo(false);
             listasExemplo.add(exemplo1);
             listasExemplo.add(exemplo2);
+            localizacao = new ItemLocalizacao();
 
             apelido = "testeeeeeeee";
 
@@ -494,6 +495,7 @@ public class BeanExemplo
         this.arquivo = arquivo;
     }
 
+    @Override
     public ItemLocalizacao getLocalizacao() {
         return localizacao;
     }
