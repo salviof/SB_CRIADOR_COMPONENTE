@@ -6,49 +6,24 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp.TesteSB_CRIADOR_COMPONENTE;
-<<<<<<< HEAD
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoLocalizacaoInstanciado;
-=======
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.FabErro;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemLocalizacao;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfBairro;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfCidade;
->>>>>>> a1fc5ee5701c957f7c686bd7e44b3b9423ed6bed
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfUnidadeFederativa;
 import java.util.List;
 import org.junit.Test;
 
 /**
  *
-<<<<<<< HEAD
  * @author SalvioF
-=======
- * @author desenvolvedor
->>>>>>> a1fc5ee5701c957f7c686bd7e44b3b9423ed6bed
+ *
  */
 public class TesteFluxoEndereco extends TesteSB_CRIADOR_COMPONENTE {
 
     @Test
-<<<<<<< HEAD
-    public void testePreenchimentoEndereco() {
-        try {
-            BeanExemplo beanExemplo = new BeanExemplo();
-            beanExemplo.prepararNovoObjeto();
-
-            ItfCampoInstanciado estado = beanExemplo.getLocalizacao().getBairro().getCidade().getCampoInstanciadoByNomeOuAnotacao("unidadeFederativa");
-
-            ItfCampoLocalizacaoInstanciado campoLocalizacao = estado.getCampoLocalizacao();
-            List<ItfUnidadeFederativa> lista = campoLocalizacao.metodoAutoCompleteEstado("minas");
-            estado.getCampoLocalizacao().setUnidadeFederativa(lista.get(0));
-            ItfCampoInstanciado cidade = beanExemplo.getLocalizacao().getCampoInstanciadoByNomeOuAnotacao("cidade");
-
-        } catch (Throwable t) {
-            lancarErroJUnit(t);
-=======
     public void testeFluxo() {
         try {
 
@@ -72,9 +47,16 @@ public class TesteFluxoEndereco extends TesteSB_CRIADOR_COMPONENTE {
             System.out.println(campoInstanciadoCidade.getCampoInstanciadoRaiz());
             System.out.println("LabelPai=" + campoInstanciadoCidade.getCampoInstanciadoRaiz().getLabel());
 
+            ItfCampoInstanciado campoLoc = bean.getCampoInstanciadoByNomeOuAnotacao("localizacao");
+            System.out.println(campoLoc.getComoCampoLocalizacao().getCidade().getNome());
+            campoLoc.getComoCampoLocalizacao().setCep("30190030");
+            campoLoc.getComoCampoLocalizacao().atualizarEnderecoPorCep();
+            System.out.println(campoLoc.getComoCampoLocalizacao().getCidade().getNome());
+            System.out.println(campoLoc.getComoCampoLocalizacao().getLogradouroDescricao());
+
         } catch (Throwable t) {
             SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro obtendo campo instanciado de endereço", t);
->>>>>>> a1fc5ee5701c957f7c686bd7e44b3b9423ed6bed
+
         }
     }
 
