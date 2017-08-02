@@ -22,10 +22,11 @@
                                 <p:outputLabel value="XHTML apresentação:"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.getComponenteDiferenciado(pgMapaComponentes.componenteSelecionado).xhtmlJsfCaminhoRelativo}"/>
                                 <p:outputLabel value="XHTML Padrão"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.componenteVisualPadrao.xhtmlJSF}"/>
                                 <p:outputLabel value="Valor"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.valor}" />
-                                <p:outputLabel value="cidade"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.cidade}" />
-                                <p:outputLabel value="estado"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.unidadeFederativa}" />
+                                <p:outputLabel value="cidade"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.cidade}" />
+                                <p:outputLabel value="estado"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.unidadeFederativa}" />
                             </p:panelGrid>
-                            <p:commandButton value="Atualizar" update="#{pgUtil.makeCaminhoCompletoID('visualizacao')}"/>
+                            <p:commandButton value="Atualizar Visualizacao" update="#{pgUtil.makeCaminhoCompletoID('visualizacao')}"/>
+                            <p:commandButton value="Atualizar tabela" update="@form"/>
 
 
                         </h:form>
@@ -34,12 +35,57 @@
                     </p:tab>
 
                     <p:tab  title="Estado">
-                        <SBComp:input registro="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.local.bairro.cidade.getCampoByNomeOuAnotacao('unidadeFederativa')}"
-                                      layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                      />
+                        <h:form>
+                            <p:autoComplete converter="conversorGenerico"
+                                            completeMethod="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.metodoAutoCompleteEstado}"
+                                            var="estado"
+                                            value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.unidadeFederativa}"
+                                            forceSelection="false"
+                                            itemValue="#{estado}"
+                                            itemLabel="#{estado.sigla}"
+                                            placeholder="Localize o Estado"
+
+
+                                            styleClass="campoResponsivo"
+
+
+                                            >
+                                <p:ajax
+                                    event="blur"
+
+                                    update="#{pgUtil.getNomeIdPainelDoComponente(component)}"
+
+                                    />
+                            </p:autoComplete>
+                        </h:form>
                     </p:tab>
 
                     <p:tab  title="Cidade">
+
+                        <h:form>
+                            <p:autoComplete converter="conversorGenerico"
+                                            completeMethod="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.metodoAutoCompleteCidade}"
+                                            var="cidade"
+                                            value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.cidade}"
+                                            forceSelection="false"
+                                            itemValue="#{cidade}"
+                                            itemLabel="#{cidade.nome}"
+                                            placeholder="Localize a cidade"
+
+
+                                            styleClass="campoResponsivo"
+
+
+                                            >
+                                <p:ajax
+                                    event="blur"
+
+                                    update="#{pgUtil.getNomeIdPainelDoComponente(component)}"
+
+                                    />
+                            </p:autoComplete>
+                            #{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.cidade}
+                        </h:form>
 
                     </p:tab>
                     <p:tab  title="Bairro">
@@ -49,6 +95,7 @@
                 </p:tabView>
 
                 <h:form id="visualizacao">
+
                     <SBComp:input registro="#{pgMapaComponentes.campoInstanciado}"
                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
                                   />

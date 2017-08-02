@@ -10,10 +10,11 @@
         <ui:define name="input">
 
             <p:autoComplete converter="conversorGenerico"
-                            completeMethod="#{registro.campoLocalizacao.metodoAutoCompleteEstado}"
+                            completeMethod="#{registro.comoCampoLocalizacao.metodoAutoCompleteEstado}"
                             var="estado"
-                            value="#{registro.campoLocalizacao.unidadeFederativa}"
-                            forceSelection="true"
+
+                            value="#{registro.comoCampoLocalizacao.unidadeFederativa}"
+                            forceSelection="false"
                             itemValue="#{estado}"
                             itemLabel="#{estado.sigla}"
                             placeholder="Localize o Estado"

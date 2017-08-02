@@ -207,7 +207,10 @@ public class PgMapaComponentes extends MB_PaginaConversation {
             String caminhoCampo = BeanExemplo.class.getSimpleName() + "." + cp.getNomeDeclarado();
             beansDisponiveis.add(caminhoCampo);
             labelByCaminho.put(caminhoCampo, cp.getLabel());
+
         }
+        beansDisponiveis.add("BeanExemplo.localizacao.bairro");
+        labelByCaminho.put("BeanExemplo.localizacao.bairro", "BeanExemplo.localizacao.bairro");
         listaComponentesEspeciaisDisponiveis = MapaComponentes.getComponentesFamilia(getCampoInstanciado().getComponenteVisualPadrao().getFamilia().getRegistro());
         listasformularioExemplo = new ArrayList<>();
         listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_FORM.getRegistro().getComoFormulario());
@@ -241,7 +244,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
             } else {
                 tipoEstruturaSelecionada = ESTRUTURA_DE_CAMPO_DESCRICAO;
                 String nomeObjeto = pCaminhoBeanSelecionado.split("\\.")[0];
-                String nomeCampo = pCaminhoBeanSelecionado.split("\\.")[1];
+                String nomeCampo = UtilSBCoreReflexaoCaminhoCampo.getCampoSemNomeClasse(pCaminhoBeanSelecionado);
                 System.out.println("NomeObjeto[" + nomeObjeto + "]");
                 estruturaObjetoSelecionado = MapaObjetosProjetoAtual.getEstruturaObjeto(nomeObjeto);
                 estruturaCampoSelecionado = estruturaObjetoSelecionado.getCampoByNomeDeclarado(nomeCampo);

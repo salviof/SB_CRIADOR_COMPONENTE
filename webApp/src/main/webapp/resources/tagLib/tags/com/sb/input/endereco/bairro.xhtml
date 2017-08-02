@@ -10,7 +10,30 @@
         <ui:define name="input">
 
 
-            <p:inputText value="[Input em Desenvolvimento]" />
+            <p:outputLabel value="Selecione uma Cidade, para Selecionar um Bairro" rendered="#{!pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.podeColetarBairro}"/>
+
+            <p:autoComplete converter="conversorGenerico"
+                            completeMethod="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.metodoAutoCompleteBairro}"
+                            var="bairro"
+                            value="#{registro.comoCampoLocalizacao.bairro}"
+                            forceSelection="true"
+                            itemValue="#{bairro}"
+                            itemLabel="#{bairro.nome}"
+                            placeholder="Localize um Bairro"
+
+                            rendered="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.podeColetarBairro}"
+                            styleClass="campoResponsivo"
+
+                            id="cpBairroInd"
+                            >
+                <p:ajax
+                    event="itemSelect"
+                    partialSubmit="true"
+                    partialSubmitFilter="cpBairroInd"
+                    update="#{pgUtil.getNomeIdPainelDoComponente(component)}"
+
+                    />
+            </p:autoComplete>
 
 
 

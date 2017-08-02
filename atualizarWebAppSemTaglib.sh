@@ -1,4 +1,4 @@
-#!/bin/bash
+	  #!/bin/bash
 #Garante que o interpretador utilizado será BashScript (nescessário em alguns casos)
 # Este script depende do módulo Super-Bits DevOps encontrado em: https://github.com/salviof/superBitsDevOps
 

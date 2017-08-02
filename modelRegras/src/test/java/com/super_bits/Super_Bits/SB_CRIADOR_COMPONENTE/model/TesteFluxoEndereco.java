@@ -41,14 +41,14 @@ public class TesteFluxoEndereco extends TesteSB_CRIADOR_COMPONENTE {
             System.out.println("Raiz=" + campoInstanciadoCidade.getNomeCompostoIdentificador());
             List<ItfCidade> cidadesDisponiveis = campoInstanciadoCidade.getComoCampoLocalizacao().metodoAutoCompleteCidade("Belo Hor");
             System.out.println(cidadesDisponiveis);
-
+            campoInstanciadoCidade.getComoCampoLocalizacao().setCidade(cidadesDisponiveis.get(0));
             System.out.println("LabelPai=" + campoInstanciadoUF.getCampoInstanciadoRaiz().getLabel());
             //ItfCampoInstanciado campoInstanciadoCidade = bean.getCampoInstanciadoByNomeOuAnotacao("localizacao.bairro.cidade");
             System.out.println(campoInstanciadoCidade.getCampoInstanciadoRaiz());
             System.out.println("LabelPai=" + campoInstanciadoCidade.getCampoInstanciadoRaiz().getLabel());
 
             ItfCampoInstanciado campoLoc = bean.getCampoInstanciadoByNomeOuAnotacao("localizacao");
-            System.out.println(campoLoc.getComoCampoLocalizacao().getCidade().getNome());
+            System.out.println("Cidade Antes do CEP" + campoLoc.getComoCampoLocalizacao().getCidade().getNome());
             campoLoc.getComoCampoLocalizacao().setCep("30190030");
             campoLoc.getComoCampoLocalizacao().atualizarEnderecoPorCep();
             System.out.println(campoLoc.getComoCampoLocalizacao().getCidade().getNome());

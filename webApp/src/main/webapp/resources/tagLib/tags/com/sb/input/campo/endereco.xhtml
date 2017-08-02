@@ -2,13 +2,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:pe="http://primefaces.org/ui/extensions"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
             <h:panelGroup id="coletorEndereco"  rendered="#{registro.umCampoCampoLocalizacao}">
@@ -17,13 +14,13 @@
                 <h:panelGrid columns="4"   >
 
 
-                    <h:panelGroup rendered="#{!registro.campoLocalizacao.estadoNulo}">
-                        #{registro.campoLocalizacao.cep}
+                    <h:panelGroup rendered="#{!registro.comoCampoLocalizacao.estadoNulo}">
+                        #{registro.comoCampoLocalizacao.cep}
                         <p:commandLink
 
-                            actionListener="#{pgMapaComponentes.campoInstanciado.campoLocalizacao.limparCep()}"
+                            actionListener="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.limparCep()}"
                             update="coletorEndereco"
-                            rendered="#{!registro.campoLocalizacao.estadoNulo and !desabilitarEdicao}"
+                            rendered="#{!registro.comoCampoLocalizacao.estadoNulo and !desabilitarEdicao}"
 
                             >
 
@@ -33,13 +30,13 @@
 
                     </h:panelGroup>
 
-                    <h:panelGroup rendered="#{!registro.campoLocalizacao.estadoNulo}">
-                        #{registro.campoLocalizacao.unidadeFederativa.nome}
+                    <h:panelGroup rendered="#{!registro.comoCampoLocalizacao.estadoNulo}">
+                        #{registro.comoCampoLocalizacao.unidadeFederativa.nome}
                         <p:commandLink
 
-                            actionListener="#{registro.campoLocalizacao.limparEstado()}"
+                            actionListener="#{registro.comoCampoLocalizacao.limparEstado()}"
                             update="coletorEndereco"
-                            rendered="#{!registro.campoLocalizacao.estadoNulo  and !desabilitarEdicao}"
+                            rendered="#{!registro.comoCampoLocalizacao.estadoNulo  and !desabilitarEdicao}"
 
                             >
 
@@ -49,12 +46,12 @@
 
                     </h:panelGroup>
 
-                    <h:panelGroup rendered="#{!registro.campoLocalizacao.cidadeNula}" style="width: 200px;">
+                    <h:panelGroup rendered="#{!registro.comoCampoLocalizacao.cidadeNula}" style="width: 200px;">
 
-                        #{registro.campoLocalizacao.cidade.nome}<p:commandLink
-                            actionListener="#{registro.campoLocalizacao.limparCidade()}"
+                        #{registro.comoCampoLocalizacao.cidade.nome}<p:commandLink
+                            actionListener="#{registro.comoCampoLocalizacao.limparCidade()}"
                             update="coletorEndereco"
-                            rendered="#{!registro.campoLocalizacao.cidadeNula and !desabilitarEdicao }"
+                            rendered="#{!registro.comoCampoLocalizacao.cidadeNula and !desabilitarEdicao }"
                             >
 
                             <i class="fa fa-remove"></i>
@@ -64,13 +61,13 @@
                     </h:panelGroup>
 
 
-                    <h:panelGroup rendered="#{!registro.campoLocalizacao.bairroNulo}">
-                        #{registro.campoLocalizacao.bairro.nome}
+                    <h:panelGroup rendered="#{!registro.comoCampoLocalizacao.bairroNulo}">
+                        #{registro.comoCampoLocalizacao.bairro.nome}
                         <p:commandLink
 
-                            actionListener="#{registro.campoLocalizacao.limparBairro()}"
+                            actionListener="#{registro.comoCampoLocalizacao.limparBairro()}"
                             update="coletorEndereco"
-                            rendered="#{!registro.campoLocalizacao.bairroNulo and !desabilitarEdicao}"
+                            rendered="#{!registro.comoCampoLocalizacao.bairroNulo and !desabilitarEdicao}"
                             >
 
                             <i class="fa fa-remove"></i>
@@ -84,13 +81,13 @@
 
 
                 <h:panelGrid columns="2" columnClasses="campoResponsivo,tamanho20px"
-                             rendered="#{registro.campoLocalizacao.coletarEstadoAgora}"
+                             rendered="#{registro.comoCampoLocalizacao.coletarEstadoAgora}"
                              id="estado"
                              >
                     <p:autoComplete converter="conversorGenerico"
-                                    completeMethod="#{registro.campoLocalizacao.metodoAutoCompleteEstado}"
+                                    completeMethod="#{registro.comoCampoLocalizacao.metodoAutoCompleteEstado}"
                                     var="estado"
-                                    value="#{registro.campoLocalizacao.unidadeFederativa}"
+                                    value="#{registro.comoCampoLocalizacao.unidadeFederativa}"
                                     forceSelection="true"
                                     itemValue="#{estado}"
                                     itemLabel="#{estado.sigla}"
@@ -112,13 +109,13 @@
                 </h:panelGrid>
 
                 <h:panelGrid columns="2" columnClasses="campoResponsivo,tamanho20px"
-                             rendered="#{registro.campoLocalizacao.coletarCidadeAgora}"
+                             rendered="#{registro.comoCampoLocalizacao.coletarCidadeAgora}"
                              id="cidade"
                              >
                     <p:autoComplete converter="conversorGenerico"
-                                    completeMethod="#{registro.campoLocalizacao.metodoAutoCompleteCidade}"
+                                    completeMethod="#{registro.comoCampoLocalizacao.metodoAutoCompleteCidade}"
                                     var="cidade"
-                                    value="#{registro.campoLocalizacao.cidade}"
+                                    value="#{registro.comoCampoLocalizacao.cidade}"
                                     forceSelection="true"
                                     itemValue="#{cidade}"
                                     itemLabel="#{cidade.nome}"
@@ -140,13 +137,13 @@
 
 
                 <h:panelGrid columns="2" columnClasses="campoResponsivo,tamanho20px"
-                             rendered="#{registro.campoLocalizacao.coletarBairroAgora}"
+                             rendered="#{registro.comoCampoLocalizacao.coletarBairroAgora}"
                              id="bairro"
                              >
                     <p:autoComplete converter="conversorGenerico"
-                                    completeMethod="#{registro.campoLocalizacao.metodoAutoCompleteBairro}"
+                                    completeMethod="#{registro.comoCampoLocalizacao.metodoAutoCompleteBairro}"
                                     var="bairro"
-                                    value="#{registro.campoLocalizacao.bairro}"
+                                    value="#{registro.comoCampoLocalizacao.bairro}"
                                     forceSelection="true"
                                     itemValue="#{bairro}"
                                     itemLabel="#{bairro.nome}"
@@ -167,13 +164,13 @@
 
 
                 <h:panelGrid columns="2" columnClasses="campoResponsivo,tamanho20px"
-                             rendered="#{registro.campoLocalizacao.coletarCepAgora}"
+                             rendered="#{registro.comoCampoLocalizacao.coletarCepAgora}"
                              id="cep"
                              >
 
                     <p:inputMask
                         mask="99999-999"
-                        value="#{registro.campoLocalizacao.cep}"
+                        value="#{registro.comoCampoLocalizacao.cep}"
                         id="cpCep"
                         placeholder="Digite O CEP"
                         >
@@ -189,11 +186,11 @@
                 </h:panelGrid>
 
                 <h:panelGrid columns="3" columnClasses="campoResponsivo,Wid33,tamanho20px"
-                             rendered="#{registro.campoLocalizacao.coletarLogradouroAgora}"
+                             rendered="#{registro.comoCampoLocalizacao.coletarLogradouroAgora}"
                              id="logradouro"
                              >
                     <p:inputText
-                        value="#{registro.campoLocalizacao.logradouroDescricao}"
+                        value="#{registro.comoCampoLocalizacao.logradouroDescricao}"
                         id="cpLogradouro"
                         styleClass="campoResponsivo"
                         placeholder="Logradouro"
@@ -201,7 +198,7 @@
 
                     </p:inputText>
                     <p:inputText
-                        value="#{registro.campoLocalizacao.local.comoLocalPostavel.complemento}"
+                        value="#{registro.comoCampoLocalizacao.local.comoLocalPostavel.complemento}"
                         id="cpComplemento"
                         placeholder="Complemento"
                         >

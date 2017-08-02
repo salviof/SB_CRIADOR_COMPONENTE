@@ -10,14 +10,14 @@
         <ui:define name="input">
 
 
-            <p:outputLabel value="(Escolha um Estado)" rendered="#{registro.campoLocalizacao.estadoNulo}"  />
+            <p:outputLabel value="(Escolha um Estado)" rendered="#{registro.comoCampoLocalizacao.estadoNulo}"  />
 
 
             <p:autoComplete converter="conversorGenerico"
-                            rendered="#{!registro.campoLocalizacao.estadoNulo}"
-                            completeMethod="#{registro.campoLocalizacao.metodoAutoCompleteCidade}"
+                            rendered="#{!registro.comoCampoLocalizacao.estadoNulo}"
+                            completeMethod="#{registro.comoCampoLocalizacao.metodoAutoCompleteCidade}"
                             var="cidade"
-                            value="#{registro.campoLocalizacao.cidade}"
+                            value="#{registro.comoCampoLocalizacao.cidade}"
                             forceSelection="true"
                             itemValue="#{cidade}"
                             itemLabel="#{cidade.nome}"
