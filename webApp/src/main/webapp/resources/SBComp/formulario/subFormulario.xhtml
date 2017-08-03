@@ -39,7 +39,7 @@
 
             <p:commandButton
                 id="botaoRemoverSubform"
-                action="#{cc.attrs.registro.campoSeltorItens.campoSeletorItens.removerItemSelecionadoPeloIndice()}"
+                action="#{pgMapaComponentes.campoInstanciado.comoSeltorItens.removerItemSelecionadoPeloIndice()}"
                 update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
                 styleClass="invisivel"
                 />
@@ -60,10 +60,10 @@
                 <h:form>
                     <p:commandButton
 
-                        actionListener="#{cc.attrs.registro.campoSeltorItens.adicionarItem()}"
+                        actionListener="#{cc.attrs.registro.comoSeltorItens.adicionarItem()}"
                         update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
 
-                        value="#{cc.attrs.registro.campoSeltorItens.acaoAdicionarItem.nomeAcao}"
+                        value="#{cc.attrs.registro.comoSeltorItens.acaoAdicionarItem.nomeAcao}"
                         />
                 </h:form>
 
@@ -79,7 +79,7 @@
 
                 <br/>
                 <h:form>
-                    <c:forEach items="#{cc.attrs.registro.campoSeltorItens.grupoCampoExibicao.campos}" var="cpItem">
+                    <c:forEach items="#{cc.attrs.registro.comoSeltorItens.grupoCampoExibicao.campos}" var="cpItem">
                         <div class="Container25 Responsive">
                             <SBComp:input registro="#{itemDaLista.getCampoByNomeOuAnotacao(cpItem.caminhoSemNomeClasse)}"  layout="#{layoutsComponenteSB.layoutCampo.superior}"
                                           idAtualizarOnChange="@this"
@@ -94,13 +94,9 @@
 
 
                         <p:commandLink
-
-                            onclick="modificarIntputEclicar('#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('botaoRemoverSubform')}', '#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('indiceSubformulario')}', '#{infoRec.index}')"
-
+                            onclick="modificarIntputEclicar('#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('botaoRemoverSubform')}',                                          '#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('indiceSubformulario')}', '#{infoRec.index}')"
                             >
-
                             <i class="fa fa-minus Fs30" aria-hidden="true"></i>
-
                         </p:commandLink>
 
                     </div>
