@@ -34,6 +34,7 @@ public class TesteConformidadeModel extends TesteSB_CRIADOR_COMPONENTE {
             BeanExemplo teste = new BeanExemplo(true);
             ItfCampoInstanciado campoinst = teste.getCampoInstanciadoByNomeOuAnotacao("listaParticular");
             SBCore.getCentralDeMensagens().enviarMsgAvisoAoDesenvolvedor(campoinst.getFabricaTipoAtributo().toString());
+            SBCore.getCentralDeMensagens().enviarMsgAvisoAoDesenvolvedor(campoinst.getComponenteVisualPadrao().toString());
 
         } catch (Throwable t) {
             lancarErroJUnit(t);
