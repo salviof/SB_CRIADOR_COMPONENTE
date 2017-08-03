@@ -58,7 +58,8 @@ public class BeanExemplo
         for (EstruturaCampo strutura : est.getCampos()) {
             try {
                 grupoCampoCompleto.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(strutura.getNomeDeclarado(), BeanExemplo.class)));
-            } catch (Throwable t) {
+            }
+            catch (Throwable t) {
                 SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro adicionando campo extra em ambiente teste", t);
             }
         }
@@ -68,7 +69,8 @@ public class BeanExemplo
             grupoCampoSimples.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("celular"))));
             grupoCampoSimples.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("beanSelecionadoDaListaFabrica"))));
 
-        } catch (Throwable t) {
+        }
+        catch (Throwable t) {
             SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro criando " + BeanExemplo.class.getSimpleName(), t);
         }
         acaoGrupoTeste = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_FORM.getRegistro().getComoFormulario();
@@ -83,7 +85,8 @@ public class BeanExemplo
 
         if (!pCriarLista) {
             listasExemplo = null;
-        } else {
+        }
+        else {
             BeanExemplo exemplo1 = new BeanExemplo(false);
             exemplo1.setNome("Bean Lista 1");
             exemplo1.setId(1);
@@ -202,7 +205,10 @@ public class BeanExemplo
     @InfoCampo(tipo = FabTipoAtributoObjeto.AAA_NOME_LONGO, label = "Nome")
     private String nome = "Nome Completo do Bean Simples";
 
-    @InfoCampo(tipo = FabTipoAtributoObjeto.LC_COMPLEMENTO, label = "Complemento")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LC_LOGRADOURO, label = "Logradouro", obrigatorio = true)
+    private String logradouro;
+
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LC_COMPLEMENTO, label = "Complemento", obrigatorio = true)
     @NotNull
     private String complemento;
 
@@ -243,7 +249,9 @@ public class BeanExemplo
     @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, caminhoParaLista = "filiaisFornecedor")
     private BeanExemplo benSelecionadoListaPorCampo;
 
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LC_UNIDADE_FEDERATIVA)
     private ItemUnidadeFederativa unidadeFederativa;
+
     @InfoCampo(tipo = FabTipoAtributoObjeto.LC_CIDADE)
     private ItemCidade cidade;
     @InfoCampo(tipo = FabTipoAtributoObjeto.LISTA_OBJETOS, fabricaDeOpcoes = FabListBeanExemplos.class)
@@ -687,6 +695,14 @@ public class BeanExemplo
 
     public final String getRelatCampoVinculado3() {
         return "[" + qtdCampoVinculado3gets + " gets, e " + qtdCampoVinculado3sets + " sets foram realizados" + "]";
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
     }
 
 }
