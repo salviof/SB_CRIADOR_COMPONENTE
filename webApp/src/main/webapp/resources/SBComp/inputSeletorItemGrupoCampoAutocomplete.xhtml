@@ -44,7 +44,8 @@
                 value="#{cc.attrs.registro.valor}"
                 minQueryLength="4"
                 queryDelay="300"
-                completeMethod="#{cc.attrs.registro.campoSeltorItem.filtrarPorAutoComplet}"
+
+                completeMethod="#{cc.attrs.registro.comoCampoSeltorItem.filtrarPorAutoComplet}"
                 >
                 <p:ajax event="itemSelect" update="seletorPesquisa"/>
                 <c:forEach var="campo" items="#{cc.attrs.campos}" rendered="#{pgUtil.isAtributoPreenchidoComExpressao(cc, 'campos')}">

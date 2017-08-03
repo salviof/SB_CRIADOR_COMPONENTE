@@ -32,7 +32,7 @@
         </div>
 
         <h:form>
-            <p:inputText value="#{pgModalSBJSF.paginaVinculada.modalDados.campoSelecionado.campoSeltorItem.filtro}" style="font-size: 25px!important; width: 100%;"
+            <p:inputText value="#{pgModalSBJSF.paginaVinculada.modalDados.campoSelecionado.comoCampoSeltorItem.filtro}" style="font-size: 25px!important; width: 100%;"
                          placeholder="Pesquise por #{pgModalSBJSF.paginaVinculada.modalDados.campoSelecionado.nomeDoObjetoPlural} cadastrados "
                          styleClass="CampoResponsivo"
                          rendered="false"
@@ -49,7 +49,7 @@
 
 
                 <p:dataTable sortMode="multiple"
-                             value="#{pgModalSBJSF.paginaVinculada.modalDados.campoSelecionado.campoSeltorItem.seletor.origem}"
+                             value="#{pgModalSBJSF.paginaVinculada.modalDados.campoSelecionado.comoCampoSeltorItem.seletor.origem}"
                              var="item"
                              emptyMessage="Nenhum #{pgModalSBJSF.paginaVinculada.modalDados.campoSelecionado.nomeDoObjeto} Encontrado"
                              paginator="true"
@@ -62,7 +62,7 @@
                     </f:facet>
 
 
-                    <p:columns var="coluna" value="#{pgModalSBJSF.paginaVinculada.modalDados.campoSelecionado.campoSeltorItem.grupoCampoExibicao.campos}"
+                    <p:columns var="coluna" value="#{pgModalSBJSF.paginaVinculada.modalDados.campoSelecionado.comoCampoSeltorItem.grupoCampoExibicao.campos}"
                                sortBy="#{item[coluna.caminhoSemNomeClasse]}"
                                filterBy="#{item[coluna.caminhoSemNomeClasse]}"
                                filterMatchMode="contains"

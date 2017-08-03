@@ -25,7 +25,7 @@
         <ui:param name="mascara" value="#{registro.mascaraJqueryMode}" rendered="#{registro.temMascara}"/>
         <ui:param name="atualizarFormOnChange" value="#{atualizarFormOnChange}"/>
 
-
+        #{xhtmlINPUT}
         <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualInputs.texto_Com_FOrmatacao.xhtmlJsfCaminhoRelativo}">
             <sb:inputSBTextMascara />
         </ui:fragment>
