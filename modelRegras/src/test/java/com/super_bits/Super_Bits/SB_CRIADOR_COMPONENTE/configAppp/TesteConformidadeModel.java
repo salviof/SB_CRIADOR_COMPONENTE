@@ -10,7 +10,13 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_contr
 import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.UtilSBCoreReflexaoCaminhoCampo;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoReflexao;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.Campo;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.GrupoCampos;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.Test;
 
 /**
@@ -26,6 +32,22 @@ public class TesteConformidadeModel extends TesteSB_CRIADOR_COMPONENTE {
             System.out.println("Testes básico");
             ItfAcaoFormulario formularioListar = (ItfAcaoFormulario) UtilFabricaDeAcoesAcessosModel.getNovaAcao(FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_FRM_LISTAR, false);
             SBCore.getCentralDeMensagens().enviarMsgAvisoAoDesenvolvedor(formularioListar.getCampos().toString());
+
+            List<CaminhoCampoReflexao> caminhosTeste = new ArrayList();
+            caminhosTeste.add(new CaminhoCampoReflexao("listaParticular[].porcentagem", BeanExemplo.class));
+            caminhosTeste.add(new CaminhoCampoReflexao("listaParticular[].senha", BeanExemplo.class));
+            caminhosTeste.add(new CaminhoCampoReflexao("listaParticular[].listasExemplo", BeanExemplo.class));
+
+            for (CaminhoCampoReflexao cmTeste : caminhosTeste) {
+                System.out.println(cmTeste.getCampoFieldReflection().getType());
+            }
+            List<GrupoCampos> grupos = UtilSBCoreReflexaoCaminhoCampo.buildAgrupamentoCampos(caminhosTeste);
+            for (GrupoCampos gp : grupos) {
+
+                gp.getCampos();
+
+                System.out.println(gp.getNome());
+            }
 
             ItfAcaoFormulario subFormulario = (ItfAcaoFormulario) UtilFabricaDeAcoesAcessosModel.getNovaAcao(FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_FRM_SUB_LISTA_EXEMPLO, false);
             SBCore.getCentralDeMensagens().enviarMsgAvisoAoDesenvolvedor(subFormulario.getCampos().toString());
