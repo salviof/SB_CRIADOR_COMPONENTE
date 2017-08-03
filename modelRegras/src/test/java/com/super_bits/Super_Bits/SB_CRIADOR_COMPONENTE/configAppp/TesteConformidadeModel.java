@@ -11,8 +11,10 @@ import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcess
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.UtilSBCoreReflexaoCaminhoCampo;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoExibicaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoReflexao;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.Campo;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabGruposPadrao;
+
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.GrupoCampos;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import java.util.ArrayList;
@@ -29,24 +31,34 @@ public class TesteConformidadeModel extends TesteSB_CRIADOR_COMPONENTE {
     public void teste() {
 
         try {
+
+            BeanExemplo testeBeanGrupo = new BeanExemplo();
+            GrupoCampos grupoPadrao = FabGruposPadrao.GRUPO_PADRAO_ITEM_NORMAL.getGrupoCampoIgnorandoCamposNaoEncontrados(testeBeanGrupo.getClass());
+
             System.out.println("Testes básico");
             ItfAcaoFormulario formularioListar = (ItfAcaoFormulario) UtilFabricaDeAcoesAcessosModel.getNovaAcao(FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_FRM_LISTAR, false);
             SBCore.getCentralDeMensagens().enviarMsgAvisoAoDesenvolvedor(formularioListar.getCampos().toString());
 
             List<CaminhoCampoReflexao> caminhosTeste = new ArrayList();
+            caminhosTeste.add(new CaminhoCampoReflexao("listaParticular[]", BeanExemplo.class));
             caminhosTeste.add(new CaminhoCampoReflexao("listaParticular[].porcentagem", BeanExemplo.class));
             caminhosTeste.add(new CaminhoCampoReflexao("listaParticular[].senha", BeanExemplo.class));
             caminhosTeste.add(new CaminhoCampoReflexao("listaParticular[].listasExemplo", BeanExemplo.class));
 
+            String test = UtilSBCoreReflexaoCaminhoCampo.getStrCaminhoCampoSemUltimoCampo("BeanExemplo.listaParticular[]");
+
             for (CaminhoCampoReflexao cmTeste : caminhosTeste) {
                 System.out.println(cmTeste.getCampoFieldReflection().getType());
+                System.out.println(cmTeste.isUmCampoFilhoDeLista());
             }
             List<GrupoCampos> grupos = UtilSBCoreReflexaoCaminhoCampo.buildAgrupamentoCampos(caminhosTeste);
             for (GrupoCampos gp : grupos) {
 
                 gp.getCampos();
+                for (CaminhoCampoExibicaoFormulario cm : gp.getCampos()) {
+                    System.out.println(cm.getCaminhoComleto());
+                }
 
-                System.out.println(gp.getNome());
             }
 
             ItfAcaoFormulario subFormulario = (ItfAcaoFormulario) UtilFabricaDeAcoesAcessosModel.getNovaAcao(FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_FRM_SUB_LISTA_EXEMPLO, false);
