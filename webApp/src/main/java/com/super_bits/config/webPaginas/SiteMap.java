@@ -5,6 +5,7 @@
  */
 package com.super_bits.config.webPaginas;
 
+import com.super_bits.SB_CRIADOR_COMPONENTE.paginas.PgBeanExemplo;
 import com.super_bits.SB_CRIADOR_COMPONENTE.paginas.mapaComponentes.PgMapaComponentes;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.FabMenuExemplo;
 import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfFabricaMenu;
@@ -32,6 +33,8 @@ public class SiteMap extends MB_SiteMapa implements ItfSiteMapa {
 
     @Inject
     private PgHomeCriadorComponente home;
+    @Inject
+    private PgBeanExemplo beanExemploDemo;
 
     @Override
     public Class<? extends ItfFabricaMenu> getFabricaMenu() {

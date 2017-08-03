@@ -46,7 +46,7 @@ import javax.validation.constraints.NotNull;
  * @version 1.0
  *
  */
-@InfoObjetoSB(tags = {"Objeto Exemplo"}, plural = "Beans de Exmplo")
+@InfoObjetoSB(tags = {"Objeto Exemplo"}, plural = "Beans de Exmplo", icone = "fa fa-tag")
 public class BeanExemplo
         extends ItemContatoCorporativo {
 
@@ -58,8 +58,7 @@ public class BeanExemplo
         for (EstruturaCampo strutura : est.getCampos()) {
             try {
                 grupoCampoCompleto.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(strutura.getNomeDeclarado(), BeanExemplo.class)));
-            }
-            catch (Throwable t) {
+            } catch (Throwable t) {
                 SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro adicionando campo extra em ambiente teste", t);
             }
         }
@@ -69,8 +68,7 @@ public class BeanExemplo
             grupoCampoSimples.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("celular"))));
             grupoCampoSimples.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("beanSelecionadoDaListaFabrica"))));
 
-        }
-        catch (Throwable t) {
+        } catch (Throwable t) {
             SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro criando " + BeanExemplo.class.getSimpleName(), t);
         }
         acaoGrupoTeste = FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_FORM.getRegistro().getComoFormulario();
@@ -85,8 +83,7 @@ public class BeanExemplo
 
         if (!pCriarLista) {
             listasExemplo = null;
-        }
-        else {
+        } else {
             BeanExemplo exemplo1 = new BeanExemplo(false);
             exemplo1.setNome("Bean Lista 1");
             exemplo1.setId(1);

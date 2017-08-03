@@ -24,6 +24,11 @@ public class AcoesPaginas_do_Sistema_PAGINA_MB_ERRO_CRITICO {
 				.getAcaoDoSistemaByNomeUnico("FabAcaoPaginasDoSistema.PAGINA_MB_ACESSO_NEGADO");
 	}
 
+	public ItfAcaoFormularioEntidade getPagina_frm_acesso_negado_sub_form() {
+		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
+				.getAcaoDoSistemaByNomeUnico("FabAcaoPaginasDoSistema.PAGINA_FRM_ACESSO_NEGADO_SUB_FORM");
+	}
+
 	public ItfAcaoFormularioEntidade getPagina_mb_view_expirou() {
 		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoPaginasDoSistema.PAGINA_MB_VIEW_EXPIROU");

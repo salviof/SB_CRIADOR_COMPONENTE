@@ -1,3 +1,5 @@
 OS SEGUINTES ERROS DE CONFIGURAÇÃO FORAM ENCONTRADOS NO SISTEMA: 
  Você pode encontrar informações mais detalhadas do erro no SystemOut 
+->O xhtml da açãoFabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_FRM_SELECAO_DE_ACAO está definido como não implementado
+->O xhtml da açãoFabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_FRM_MODAL_TESTE está definido como não implementado
 

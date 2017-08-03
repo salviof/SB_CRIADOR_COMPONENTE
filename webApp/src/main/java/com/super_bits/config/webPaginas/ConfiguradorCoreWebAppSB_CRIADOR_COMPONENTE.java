@@ -8,6 +8,8 @@ package com.super_bits.config.webPaginas;
 import com.google.common.collect.Lists;
 import com.super_bits.FabAcoesHomeCriadorComponente;
 import com.super_bits.Super_Bits.SB_AdminTools.regras_de_negocio_e_controller.admin_developer.FabAcaoAdminDeveloper;
+import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.BeanExemplo;
+import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.FabAcaoBeanExemploDemonstrativo;
 import com.super_bits.configSBFW.acessos.UtilSB_CRIADOR_COMPONENTEGlobalVar;
 import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
 import com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB;
@@ -50,6 +52,7 @@ public class ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE extends ConfiguradorCor
         listaWebApp.add(FabAcaoProjetoSB.class);
         listaWebApp.add(FabAcaoAdminDeveloper.class);
         listaWebApp.add(FabAcaoPaginasDoSistema.class);
+        listaWebApp.add(FabAcaoBeanExemploDemonstrativo.class);
 
         pConfig.setFabricaDeAcoes(listaWebApp.toArray(new Class[listaWebApp.size()]));
     }

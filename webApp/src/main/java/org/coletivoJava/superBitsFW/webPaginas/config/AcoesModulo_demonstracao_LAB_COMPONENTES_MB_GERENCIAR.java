@@ -50,6 +50,16 @@ public class AcoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR {
 				.getAcaoDoSistemaByNomeUnico("FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_VER");
 	}
 
+	public ItfAcaoFormularioEntidade getLab_componentes_frm_lab_campo_endereco_visualizar() {
+		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
+				.getAcaoDoSistemaByNomeUnico("FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_CAMPO_ENDERECO_VISUALIZAR");
+	}
+
+	public ItfAcaoFormularioEntidade getLab_componentes_frm_lab_campo_endereco_bean_enderecavel_visualizar() {
+		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
+				.getAcaoDoSistemaByNomeUnico("FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_CAMPO_ENDERECO_BEAN_ENDERECAVEL_VISUALIZAR");
+	}
+
 	public ItfAcaoFormularioEntidade getLab_componentes_frm_lab_input_maskaras_personalizadas() {
 		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_INPUT_MASKARAS_PERSONALIZADAS");

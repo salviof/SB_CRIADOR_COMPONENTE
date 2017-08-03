@@ -1,0 +1,53 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste;
+
+import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.BeanExemplo;
+import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.FabModulosIProjetoTesteI;
+import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.InfoModuloSB_CRIADOR_COMPONENTE;
+import com.super_bits.modulos.SBAcessosModel.fabricas.ItfFabricaDeAcoesPersistencia;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoController;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormulario;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.icones.FabIconeFontAwesome;
+
+/**
+ *
+ * @author desenvolvedor
+ */
+@InfoModuloSB_CRIADOR_COMPONENTE(modulo = FabModulosIProjetoTesteI.DEMONSTRACAO_BASICA)
+public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersistencia {
+
+    @InfoTipoAcaoGestaoEntidade(icone = "fa fa-tag", entidade = BeanExemplo.class)
+    BEAN_EXEMPLO_MB,
+    @InfoTipoAcaoFormulario()
+    BEAN_EXEMPLO_FRM_LISTAR,
+    @InfoTipoAcaoFormulario()
+    BEAN_EXEMPLO_FRM_VISUALIZAR,
+    @InfoTipoAcaoFormulario()
+    BEAN_EXEMPLO_FRM_EDITAR,
+    @InfoTipoAcaoFormulario()
+    BEAN_EXEMPLO_FRM_NOVO,
+    @InfoTipoAcaoFormulario(iconeFonteAnsowame = FabIconeFontAwesome.REG_LISTAR)
+    BEAN_EXEMPLO_FRM_SUB_LISTA_EXEMPLO,
+    @InfoTipoAcaoController()
+    BEAN_EXEMPLO_CTR_SALVAR_MERGE,
+    @InfoTipoAcaoController()
+    BEAN_EXEMPLO_CTR_SALVAR_NOVO,
+    @InfoTipoAcaoController()
+    BEAN_EXEMPLO_CTR_SALVAR_EDICAO,
+    @InfoTipoAcaoController()
+    BEAN_EXEMPLO_CTR_ALTERAR_STATUS,
+    @InfoTipoAcaoController()
+    BEAN_EXEMPLO_CTR_ATIVAR,
+    @InfoTipoAcaoController()
+    BEAN_EXEMPLO_CTR_CAMPO_COM_JUSTIFICATIVA,
+    @InfoTipoAcaoFormulario(iconeFonteAnsowame = FabIconeFontAwesome.REG_PESQUISA_AVANCADA)
+    BEAN_EXEMPLO_FRM_MODAL_TESTE,
+    @InfoTipoAcaoFormulario()
+    BEAN_EXEMPLO_FRM_SELECAO_DE_ACAO;
+
+}

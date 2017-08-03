@@ -6,6 +6,7 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp.TesteSB_CRIADOR_COMPONENTE;
+import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.FabAcaoLabComponentes;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.Mensagens.FabMensagens;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoExibicaoFormulario;
@@ -40,6 +41,9 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
         try {
             System.out.println("getId");
             BeanExemplo beanExemplo = new BeanExemplo();
+
+            ItfCampoInstanciado campoinstanciadoDaLista = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("listasExemplo[1].cep");
+            System.out.println(campoinstanciadoDaLista.getLabel());
 
             ItfCampoInstanciado campoInstanciadoCep = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("cep");
             SBCore.getCentralDeMensagens().enviarMsgAlertaAoDesenvolvedor(campoInstanciadoCep.getComponenteVisualPadrao().getXhtmlJSF());

@@ -20,7 +20,7 @@ public class TesteConformidade extends RelatorioTesteWebPaginas {
     @Test
     public void testar() {
         try {
-            exibirRelatorioCompleto();
+            exibirRelatorioAcoes();
             //criarMapaDeAcoesEscopoAplicacao();
             FabAcaoPaginasDoSistema.PAGINA_MB_PESQUISA_AVANCADA.getRegistro();
             gerarMangedBeansAcessoAcoes();
