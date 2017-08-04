@@ -22,7 +22,7 @@
             itens="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadesListadas}"
             metodo="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(item)}"
             opcoes="#{paginaAtual.infoPagina.comoPaginaEntidade.acoesRegistros}"
-            rendered="#{!paginaAtual.sessao.tipoView.umMobile}"
+            rendered="#{paginaAtual.sessao.tipoView.umMobile}"
             titulo="Listagem de #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.nomeDominio}"
             />
 

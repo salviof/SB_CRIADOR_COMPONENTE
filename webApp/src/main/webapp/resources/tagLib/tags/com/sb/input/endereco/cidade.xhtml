@@ -14,8 +14,6 @@
                            rendered="#{registro.comoCampoLocalizacao.unidadeFederativaEstadoNulo}"
                            />
 
-            #{registro.cep}
-
             <p:autoComplete converter="conversorGenerico"
                             rendered="#{!registro.comoCampoLocalizacao.unidadeFederativaEstadoNulo}"
                             completeMethod="#{registro.comoCampoLocalizacao.metodoAutoCompleteCidade}"
@@ -30,8 +28,7 @@
                             >
                 <p:ajax
                     event="itemSelect"
-                    partialSubmit="true"
-                    partialSubmitFilter="cpCidadeAvancado"
+
                     update="#{pgUtil.getNomeIdPainelDoComponente(component)}"
                     />
             </p:autoComplete>
