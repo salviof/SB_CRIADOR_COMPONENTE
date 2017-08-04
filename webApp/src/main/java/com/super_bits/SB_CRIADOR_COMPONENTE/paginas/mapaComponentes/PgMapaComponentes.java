@@ -146,7 +146,8 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
             setComponenteSelecionado((ComponenteVisualSB) SBCore.getObjetoEstatico(caminhoComponente));
             this.caminhoComponente = caminhoComponente;
-        } catch (Throwable t) {
+        }
+        catch (Throwable t) {
             SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Caminho do componente não foi encontrado :" + caminhoComponente, t);
         }
     }
@@ -184,7 +185,8 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         if (!isParametrosDeUrlPreenchido()) {
             acaoSelecionada = acaoListar;
             xhtmlAcaoAtual = acaoListar.getComoFormularioEntidade().getXhtml();
-        } else {
+        }
+        else {
 
             setCaminhoBeanSelecionado(prCaminhoBeanSelecionado.getValor().toString());
         }
@@ -209,8 +211,25 @@ public class PgMapaComponentes extends MB_PaginaConversation {
             labelByCaminho.put(caminhoCampo, cp.getLabel());
 
         }
+
+        beansDisponiveis.add("BeanExemplo.localizacao.bairro.cidade.unidadeFederativa");
+        labelByCaminho.put("BeanExemplo.localizacao.bairro.cidade.unidadeFederativa", "BeanExemplo.localizacao.bairro.cidade.unidadeFederativa");
+
+        beansDisponiveis.add("BeanExemplo.localizacao.bairro.cidade");
+        labelByCaminho.put("BeanExemplo.localizacao.bairro.cidade", "BeanExemplo.localizacao.bairro.cidade");
+
         beansDisponiveis.add("BeanExemplo.localizacao.bairro");
         labelByCaminho.put("BeanExemplo.localizacao.bairro", "BeanExemplo.localizacao.bairro");
+
+        beansDisponiveis.add("BeanExemplo.localizacao.logradouro");
+        labelByCaminho.put("BeanExemplo.localizacao.logradouro", "BeanExemplo.localizacao.logradouro");
+
+        beansDisponiveis.add("BeanExemplo.localizacao.complemento");
+        labelByCaminho.put("BeanExemplo.localizacao.complemento", "BeanExemplo.localizacao.complemento");
+
+        beansDisponiveis.add("BeanExemplo.localizacao");
+        labelByCaminho.put("BeanExemplo.localizacao", "BeanExemplo.localizacao");
+
         listaComponentesEspeciaisDisponiveis = MapaComponentes.getComponentesFamilia(getCampoInstanciado().getComponenteVisualPadrao().getFamilia().getRegistro());
         listasformularioExemplo = new ArrayList<>();
         listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_FORM.getRegistro().getComoFormulario());
@@ -241,7 +260,8 @@ public class PgMapaComponentes extends MB_PaginaConversation {
                 estruturaCampoSelecionado = null;
                 estruturaObjetoSelecionado = MapaObjetosProjetoAtual.getEstruturaObjeto(pCaminhoBeanSelecionado);
 
-            } else {
+            }
+            else {
                 tipoEstruturaSelecionada = ESTRUTURA_DE_CAMPO_DESCRICAO;
                 String nomeObjeto = pCaminhoBeanSelecionado.split("\\.")[0];
                 String nomeCampo = UtilSBCoreReflexaoCaminhoCampo.getCampoSemNomeClasse(pCaminhoBeanSelecionado);
@@ -252,7 +272,8 @@ public class PgMapaComponentes extends MB_PaginaConversation {
                 umTipoEstruturaDeObjeto = false;
             }
             this.caminhoBeanSelecionado = pCaminhoBeanSelecionado;
-        } catch (Throwable t) {
+        }
+        catch (Throwable t) {
             SBCore.enviarMensagemUsuario("Campo não Encontrado", FabMensagens.ERRO);
         }
 
@@ -301,7 +322,8 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
                 listaComponentes = MapaComponentes.getComponentesFamilia(familiaSelecionada);
 
-            } else {
+            }
+            else {
                 SBCore.enviarMensagemUsuario("A Familia dos Componentes a serem visualizados está nula e por isso não é possivel buscar por Componentes!", FabMensagens.ALERTA);
             }
 
@@ -561,7 +583,8 @@ public class PgMapaComponentes extends MB_PaginaConversation {
                 }
 
             }
-        } catch (Throwable t) {
+        }
+        catch (Throwable t) {
             SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro otendo ações específicas de laboratorio do componente", t);
         }
         return acoesLaboratorio;

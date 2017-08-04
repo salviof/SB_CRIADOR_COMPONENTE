@@ -24,6 +24,8 @@
                                 <p:outputLabel value="Valor"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.valor}" />
                                 <p:outputLabel value="cidade"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.cidade}" />
                                 <p:outputLabel value="estado"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.unidadeFederativa}" />
+                                <p:outputLabel value="bairro"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.bairro}" />
+
                             </p:panelGrid>
                             <p:commandButton value="Atualizar Visualizacao" update="#{pgUtil.makeCaminhoCompletoID('visualizacao')}"/>
                             <p:commandButton value="Atualizar tabela" update="@form"/>
@@ -44,8 +46,6 @@
                                             itemValue="#{estado}"
                                             itemLabel="#{estado.sigla}"
                                             placeholder="Localize o Estado"
-
-
                                             styleClass="campoResponsivo"
 
 
@@ -101,6 +101,7 @@
                                   />
 
                 </h:form>
+
             </p:fieldset>
         </ui:define>
     </ui:composition>

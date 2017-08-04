@@ -11,12 +11,13 @@
 
 
             <p:outputLabel value="(Escolha um Estado)"
-                           rendered="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.unidadeFederativaEstadoNulo}"
+                           rendered="#{registro.comoCampoLocalizacao.unidadeFederativaEstadoNulo}"
                            />
 
-            #{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.cep}
+            #{registro.cep}
+
             <p:autoComplete converter="conversorGenerico"
-                            rendered="#{!pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.unidadeFederativaEstadoNulo}"
+                            rendered="#{!registro.comoCampoLocalizacao.unidadeFederativaEstadoNulo}"
                             completeMethod="#{registro.comoCampoLocalizacao.metodoAutoCompleteCidade}"
                             var="cidade"
                             value="#{registro.comoCampoLocalizacao.cidade}"
