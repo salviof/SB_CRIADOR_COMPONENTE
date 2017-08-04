@@ -13,7 +13,7 @@
             <p:outputLabel value="Selecione uma Cidade, para Selecionar um Bairro" rendered="#{!registrocomoCampoLocalizacao.podeColetarBairro}"/>
 
             <p:autoComplete converter="conversorGenerico"
-                            completeMethod="#{registrocomoCampoLocalizacao.metodoAutoCompleteBairro}"
+                            completeMethod="#{registro.comoCampoLocalizacao.metodoAutoCompleteBairro}"
                             var="bairro"
                             value="#{registro.comoCampoLocalizacao.bairro}"
                             forceSelection="false"
@@ -21,7 +21,7 @@
                             itemLabel="#{bairro.nome}"
                             placeholder="Localize um Bairro"
 
-                            rendered="#{registrocomoCampoLocalizacao.podeColetarBairro}"
+                            rendered="#{registro.comoCampoLocalizacao.podeColetarBairro}"
                             styleClass="campoResponsivo"
 
                             id="cpBairroInd"
