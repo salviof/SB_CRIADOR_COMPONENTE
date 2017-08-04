@@ -16,7 +16,7 @@
             <p:panel class="Container100 Responsive100">
 
                 <p:pickList
-                    value="#{registro.campoSeltorItens.campoSeletorItens.dualListPrime}"
+                    value="#{registro.comoSeltorItens.campoSeletorItens.dualListPrime}"
                     var="item"
                     itemValue="#{item}"
                     itemLabel="#{item.nome}"
@@ -24,8 +24,8 @@
                     converter="conversorGenerico"
                     style="margin-left: 0.5%"
                     >
-                    <p:ajax event="transfer" listener="#{registro.campoSeltorItens.atualizarListaCompleta()}" update="@form" />
-                    <f:facet name="sourceCaption">#{registro.campoSeltorItens.campoSeletorItens.nomeOrigem}</f:facet>
+                    <p:ajax event="transfer" listener="#{registro.comoSeltorItens.campoSeletorItens.atualizarListaCompleta()}" update="@form" />
+                    <f:facet name="sourceCaption">#{registro.comoSeltorItens.campoSeletorItens.nomeOrigem}</f:facet>
                     <f:facet name="targetCaption">#{registro.label}</f:facet>
                 </p:pickList>
                 <div class="EmptyBox10"/>

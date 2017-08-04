@@ -58,7 +58,7 @@ public class TesteConformidadeModel extends TesteSB_CRIADOR_COMPONENTE {
                 for (ItfCampoExibicaoFormulario cm : gp.getCampos()) {
                     System.out.println(cm.getCaminhoComleto());
 
-                    if (cm.isUmCampoVinculado()) {
+                    if (cm.isUmCampoComLista()) {
                         System.out.println("Campo Vinculado");
                         System.out.println(cm.getComoCampoListagem().getCamposDoSubFormulario());
                     }

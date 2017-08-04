@@ -5,11 +5,8 @@
     <welcome-file-list>
         <welcome-file>/site/home.xhtml</welcome-file>
     </welcome-file-list>
-    
-    <context-param>
-        <param-name>facelets.LIBRARIES</param-name>
-        <param-value>/sb.taglibLab.xml</param-value>
-    </context-param>
+
+
     <context-param>
         <param-name>com.sun.faces.numberOfViewsInSession</param-name>
         <param-value>5</param-value>
@@ -48,6 +45,13 @@
         <param-name>primefaces.PUBLIC_CAPTCHA_KEY</param-name>
         <param-value>6Lf2XQkTAAAAANcvOwYqPxWL4iZDksFqHpS39GDA</param-value>
     </context-param>
+
+
+    <context-param>
+        <param-name>facelets.LIBRARIES</param-name>
+        <param-value>/sb.taglibLab.xml</param-value>
+    </context-param>
+
 
 
     <context-param>

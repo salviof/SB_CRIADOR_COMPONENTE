@@ -5,6 +5,7 @@
  */
 package com.super_bits.configSBFW.acessos;
 
+import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.FabListBeanExemplos;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.FabAcaoLabComponentes;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.FabAcaoBeanExemploDemonstrativo;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
@@ -37,6 +38,7 @@ public abstract class UtilSB_CRIADOR_COMPONENTEGlobalVar {
         SBCore.adicionarFabricaObjetoEstatico(FabCompVisualMenu.class);
         SBCore.adicionarFabricaObjetoEstatico(FabCompVisualBotaoAcao.class);
         SBCore.adicionarFabricaObjetoEstatico(FabCompVisualEndereco.class);
+        SBCore.adicionarFabricaObjetoEstatico(FabListBeanExemplos.class);
 
     }
 

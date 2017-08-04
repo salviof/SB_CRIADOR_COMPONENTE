@@ -32,8 +32,8 @@ public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersiste
     @InfoTipoAcaoFormulario()
     BEAN_EXEMPLO_FRM_NOVO,
     @InfoTipoAcaoFormulario(nomeAcao = "Testes SubLista",
-            campos = {"[separador:subLista]", "listaParticular", //"listaParticular.porcentagem", "listaParticular.senha", "listaParticular.listasExemplo"
-        },
+            campos = {"[separador:subLista]", "listaParticular[]", "listaParticular[].porcentagem", "listaParticular[].senha", "listaParticular[].listasExemplo"
+            },
             iconeFonteAnsowame = FabIconeFontAwesome.REG_LISTAR)
     BEAN_EXEMPLO_FRM_SUB_LISTA_EXEMPLO,
     @InfoTipoAcaoController()

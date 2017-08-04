@@ -3,14 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:cc="http://java.sun.com/jsf/composite"
 
-      xmlns:SBFormulario="http://xmlns.jcp.org/jsf/composite/SBComp/formulario"
-      xmlns:sb="http://superbitsframework/ui"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
 
     <!-- INTERFACE -->
     <cc:interface>
@@ -22,6 +18,8 @@
                       default="#{pgUtil.campoNaoImplementado}"
                       shortDescription="Exibe um atributo de um Objeto para insersão de dados do usuário (Ou Visualização)"
                       />
+
+
         <cc:attribute name="somenteLeitura" default="#{false}" />
         <cc:attribute shortDescription="O layoyt indica os formatos possíveis de exibição do campo,
                       para visualizar todas as opções acesse: #layoutsComponenteSB.layoutCampo.  "
@@ -30,24 +28,26 @@
                       default="#{layoutsComponenteSB.layoutCampo.superior}"
                       />
         <cc:attribute name="Ação Salvar Alteracoes" />
+        <cc:attribute name="grupoCampos" required="true" type="com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfGrupoCampos" />
+
+
+
     </cc:interface>
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
-
-        <h:form>
-
-            <p:commandButton
-                id="botaoRemoverSubform"
-                action="#{pgMapaComponentes.campoInstanciado.comoSeltorItens.removerItemSelecionadoPeloIndice()}"
-                update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
-                styleClass="invisivel"
-                />
+        <p:commandButton
+            id="botaoRemoverSubform"
+            action="#{cc.attrs.registro.comoSubItens.subItens.removerItemSelecionadoPeloIndice() }"
+            update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
+            styleClass="invisivel"
+            process="@this"
+            />
 
 
-            <p:inputText  id="indiceSubformulario"  styleClass="invisivel"  />
+        <p:inputText  id="indiceSubformulario"  styleClass="invisivel"  />
 
-        </h:form>
+
 
         <h:panelGroup id="subForm" styleClass="Container100 Responsive">
 
@@ -57,15 +57,15 @@
 
 
 
-                <h:form>
-                    <p:commandButton
 
-                        actionListener="#{cc.attrs.registro.comoSeltorItens.adicionarItem()}"
-                        update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
+                <p:commandButton
 
-                        value="#{cc.attrs.registro.comoSeltorItens.acaoAdicionarItem.nomeAcao}"
-                        />
-                </h:form>
+                    actionListener="#{cc.attrs.registro.comoSubItens.subItens.adicionarItem()}"
+                    update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
+                    process="@this"
+                    value="#{cc.attrs.registro.comoSubItens.subItens.acaoAdicionarItem.nomeAcao}"
+                    />
+
 
 
 
@@ -79,9 +79,10 @@
 
                 <br/>
                 <h:form>
-                    <c:forEach items="#{cc.attrs.registro.comoSeltorItens.grupoCampoExibicao.campos}" var="cpItem">
-                        <div class="Container25 Responsive">
-                            <SBComp:input registro="#{itemDaLista.getCampoByNomeOuAnotacao(cpItem.caminhoSemNomeClasse)}"  layout="#{layoutsComponenteSB.layoutCampo.superior}"
+                    <c:forEach items="#{cc.attrs.grupoCampos.campos}" var="cpItem">
+                        <div class="Container20 Responsive100">
+
+                            <SBComp:input registro="#{itemDaLista.getCampoByNomeOuAnotacao(cpItem.caminhoParcialSemListaPai)}"  layout="#{layoutsComponenteSB.layoutCampo.superior}"
                                           idAtualizarOnChange="@this"
 
                                           />
@@ -89,16 +90,20 @@
 
                     </c:forEach>
 
-                    <div class="Container10 Responsive">
+                    <div class="Container20 Responsive100">
 
 
 
                         <p:commandLink
-                            onclick="modificarIntputEclicar('#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('botaoRemoverSubform')}',                                          '#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('indiceSubformulario')}', '#{infoRec.index}')"
+                            onclick="modificarIntputEclicar('#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('botaoRemoverSubform')}', '#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('indiceSubformulario')}', '#{infoRec.index}')"
                             >
                             <i class="fa fa-minus Fs30" aria-hidden="true"></i>
                         </p:commandLink>
 
+                    </div>
+                    <div class="EmptyBox20" >
+
+                        <p:separator/>
                     </div>
                 </h:form>
                 <div class="EmptyBox100"/>

@@ -61,7 +61,7 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
             ItfCampoInstanciado campoSeletorItensTesteSubform = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("listasExemplo");
             System.out.println(campoSeletorItensTesteSubform.getValor());
             System.out.println("" + campoSeletorItensTesteSubform.isUmValorMultiploComLista());
-            campoSeletorItensTesteSubform.getComoSeltorItens().adicionarItem();
+            campoSeletorItensTesteSubform.getComoSubItens().getSubItens().adicionarItem();
             List<ItfBeanSimples> listaSubFormTeste = (List<ItfBeanSimples>) campoSeletorItensTesteSubform.getValor();
             System.out.println(campoSeletorItensTesteSubform.getGrupoSubCamposExibicao());
 

@@ -98,6 +98,9 @@ public class BeanExemplo
             listasExemplo.add(exemplo1);
             listasExemplo.add(exemplo2);
 
+            listaParticular.add(exemplo1);
+            listaParticular.add(exemplo2);
+
             setLocalizacao(new ItemLocalizacao());
             getLocalizacao().prepararNovoObjeto();
 

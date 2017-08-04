@@ -1021,4 +1021,15 @@
         <source>resources/tagLib/tags/com/sb/input/enumEstatico/enumAutoComplete.xhtml</source>
     </tag>
 
+
+    <tag>
+        <tag-name>inputSBSubFormSimples</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/enumEstatico/enumAutoComplete.xhtml</source>
+    </tag>
+
+    <tag>
+        <tag-name>inputSBSubFormSimples</tag-name>
+        <source>resources/tagLib/tags/com/sb/input/subItens/subForm.xhtml</source>
+    </tag>
+
 </facelet-taglib>
