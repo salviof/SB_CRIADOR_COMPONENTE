@@ -41,7 +41,7 @@
 
                 <p:ajax
                     event="valueChange"
-                    partialSubmit="cpEstado"
+
                     update="#{pgUtil.getNomeIdPainelDoComponente(component)}"
                     />
 
@@ -50,16 +50,7 @@
                     <f:validateLength minimum="#{registro.valorMinimo}" />
 
                 </c:if>
-                <c:if test="#{campoLocalizacaoCEP!=null}" >
 
-                    <p:ajax event="valueChange"
-                            partialSubmit="true"
-                            process="@this"
-                            listener="#{pgUtil.preencherEndereco(registro.valor)}"
-
-                            update="#{pgUtil.gerarCaminhoCompletoID(('endereco')) }" />
-
-                </c:if>
 
 
             </p:inputMask>
