@@ -41,7 +41,8 @@
 
                 <p:ajax
                     event="valueChange"
-
+                    process="@this"
+                    listener="#{pgUtil.preencherEndereco(registro.valor)}"
                     update="#{pgUtil.getNomeIdPainelDoComponente(component)}"
                     />
 
@@ -50,8 +51,6 @@
                     <f:validateLength minimum="#{registro.valorMinimo}" />
 
                 </c:if>
-
-
 
             </p:inputMask>
 
