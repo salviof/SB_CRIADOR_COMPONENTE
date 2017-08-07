@@ -52,9 +52,10 @@ public class TesteFluxoEndereco extends TesteSB_CRIADOR_COMPONENTE {
             campoLoc.getComoCampoLocalizacao().setCep("30190030");
             campoLoc.getComoCampoLocalizacao().atualizarEnderecoPorCep();
             System.out.println(campoLoc.getComoCampoLocalizacao().getCidade().getNome());
-            System.out.println(campoLoc.getComoCampoLocalizacao().getLogradouroDescricao());
+//            System.out.println(campoLoc.getComoCampoLocalizacao().getLogradouroDescricao());
 
-        } catch (Throwable t) {
+        }
+        catch (Throwable t) {
             SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro obtendo campo instanciado de endereço", t);
 
         }

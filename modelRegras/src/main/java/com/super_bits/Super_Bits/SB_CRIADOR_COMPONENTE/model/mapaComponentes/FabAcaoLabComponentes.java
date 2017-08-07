@@ -48,9 +48,9 @@ public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
             xhtmlDaAcao = "formVERInput.xhtml"
     )
     LAB_COMPONENTES_FRM_LAB_INPUT_VER,
-    @InfoTipoAcaoFormulario(nomeAcao = "Visualizar Ambiente Campos de Endereco", iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR)
+    @InfoTipoAcaoFormulario(nomeAcao = "Visualizar Ambiente Real", iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR)
     LAB_COMPONENTES_FRM_LAB_CAMPO_ENDERECO_VISUALIZAR,
-    @InfoTipoAcaoFormulario(nomeAcao = "Visualizar Ambiente Bean Enderecavel", iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR)
+    @InfoTipoAcaoFormulario(nomeAcao = "Visualizar Ambiente Laboratorio", iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR)
     LAB_COMPONENTES_FRM_LAB_CAMPO_ENDERECO_BEAN_ENDERECAVEL_VISUALIZAR,
     @InfoTipoAcaoFormulario(nomeAcao = "Editar Mascaras Personalizadas", descricao = "",
             precisaPermissao = false, iconeFonteAnsowame = FabIconeFontAwesome.REG_VISUALIZAR,
