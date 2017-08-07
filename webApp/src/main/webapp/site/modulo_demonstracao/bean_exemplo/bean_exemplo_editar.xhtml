@@ -3,7 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:SBFormulario="http://xmlns.jcp.org/jsf/composite/SBComp/formulario"
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:SBFormEntidade="http://xmlns.jcp.org/jsf/composite/SBComp/extras/paginaAtualDeEntidade"
+      >
     <!-- template conteúdo com formulario-->
     <ui:composition template="#{layoutsPaginas.formularioAcaoAtualDaEntidade.xhtmlVinculado}" >
         <ui:define name="conteudo">
@@ -14,10 +16,7 @@
                 />
         </ui:define>
         <ui:define name="botoesDeAcao">
-            <SBComp:botaoDeAcao_Pagina_Entidade
-                registro="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
-                acao="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoSalvarAlteracoes}"
-                />
+            <SBFormEntidade:botaoSalvarAlteracoes />
         </ui:define>
     </ui:composition>
 
