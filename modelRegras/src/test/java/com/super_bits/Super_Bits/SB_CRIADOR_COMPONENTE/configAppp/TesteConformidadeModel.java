@@ -11,11 +11,10 @@ import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcess
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.UtilSBCoreReflexaoCaminhoCampo;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoExibicaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoReflexao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabGruposPadrao;
-
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.GrupoCampos;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoExibicaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,23 +39,29 @@ public class TesteConformidadeModel extends TesteSB_CRIADOR_COMPONENTE {
             SBCore.getCentralDeMensagens().enviarMsgAvisoAoDesenvolvedor(formularioListar.getCampos().toString());
 
             List<CaminhoCampoReflexao> caminhosTeste = new ArrayList();
-            caminhosTeste.add(new CaminhoCampoReflexao("listaParticular[]", BeanExemplo.class));
+
+            caminhosTeste.add(new CaminhoCampoReflexao("listaParticular[].listasExemplo", BeanExemplo.class));
             caminhosTeste.add(new CaminhoCampoReflexao("listaParticular[].porcentagem", BeanExemplo.class));
             caminhosTeste.add(new CaminhoCampoReflexao("listaParticular[].senha", BeanExemplo.class));
-            caminhosTeste.add(new CaminhoCampoReflexao("listaParticular[].listasExemplo", BeanExemplo.class));
 
+            //caminhosTeste.add(new CaminhoCampoReflexao("listaParticular[]", BeanExemplo.class));
             String test = UtilSBCoreReflexaoCaminhoCampo.getStrCaminhoCampoSemUltimoCampo("BeanExemplo.listaParticular[]");
 
             for (CaminhoCampoReflexao cmTeste : caminhosTeste) {
                 System.out.println(cmTeste.getCampoFieldReflection().getType());
-                System.out.println(cmTeste.isUmCampoFilhoDeLista());
+
             }
             List<GrupoCampos> grupos = UtilSBCoreReflexaoCaminhoCampo.buildAgrupamentoCampos(caminhosTeste);
             for (GrupoCampos gp : grupos) {
 
                 gp.getCampos();
-                for (CaminhoCampoExibicaoFormulario cm : gp.getCampos()) {
+                for (ItfCampoExibicaoFormulario cm : gp.getCampos()) {
                     System.out.println(cm.getCaminhoComleto());
+
+                    if (cm.isUmCampoVinculado()) {
+                        System.out.println("Campo Vinculado");
+                        System.out.println(cm.getComoCampoListagem().getCamposDoSubFormulario());
+                    }
                 }
 
             }

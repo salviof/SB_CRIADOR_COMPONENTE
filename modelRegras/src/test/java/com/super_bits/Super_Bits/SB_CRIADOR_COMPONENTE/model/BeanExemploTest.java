@@ -6,11 +6,9 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp.TesteSB_CRIADOR_COMPONENTE;
-import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.FabAcaoLabComponentes;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.modulos.Mensagens.FabMensagens;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoExibicaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoExibicaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.CampoInstanciadoEnumFabricaObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstSeletorItens;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
@@ -68,7 +66,7 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
             System.out.println(campoSeletorItensTesteSubform.getGrupoSubCamposExibicao());
 
             for (ItfBeanSimples valorSublista : listaSubFormTeste) {
-                for (CaminhoCampoExibicaoFormulario caminho : campoSeletorItensTesteSubform.getGrupoSubCamposExibicao().getCampos()) {
+                for (ItfCampoExibicaoFormulario caminho : campoSeletorItensTesteSubform.getGrupoSubCamposExibicao().getCampos()) {
                     System.out.println(caminho.getCaminhoSemNomeClasse());
                     System.out.println(valorSublista.getCampoByNomeOuAnotacao(caminho.getCaminhoSemNomeClasse()).getLabel());
                 }
