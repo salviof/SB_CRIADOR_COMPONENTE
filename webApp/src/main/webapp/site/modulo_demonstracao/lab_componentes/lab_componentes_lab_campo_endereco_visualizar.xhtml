@@ -132,6 +132,47 @@
                 </h:form>
 
             </p:fieldset>
+
+            <p:fieldset legend="Simulador" >
+                <h:form>
+
+                    <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.cep')}"
+                                  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                  />
+
+                    <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade.unidadeFederativa')}"
+                                  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                  />
+
+
+                    <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade')}"
+                                  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                  />
+
+
+                    <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro')}"
+                                  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                  />
+
+
+                    <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.logradouro')}"
+                                  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                  />
+
+                    <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.complemento')}"
+                                  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                  />
+
+
+                    <p:commandButton actionListener="#{pgMapaComponentes.inspecionarBeanExemplo()}" value="Testar Submit"  update="@form"/>
+                </h:form>
+
+
+            </p:fieldset>
+
+
+
+
         </ui:define>
     </ui:composition>
 </html>

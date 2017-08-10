@@ -146,8 +146,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
             setComponenteSelecionado((ComponenteVisualSB) SBCore.getObjetoEstatico(caminhoComponente));
             this.caminhoComponente = caminhoComponente;
-        }
-        catch (Throwable t) {
+        } catch (Throwable t) {
             SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Caminho do componente não foi encontrado :" + caminhoComponente, t);
         }
     }
@@ -185,8 +184,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         if (!isParametrosDeUrlPreenchido()) {
             acaoSelecionada = acaoListar;
             xhtmlAcaoAtual = acaoListar.getComoFormularioEntidade().getXhtml();
-        }
-        else {
+        } else {
 
             setCaminhoBeanSelecionado(prCaminhoBeanSelecionado.getValor().toString());
         }
@@ -263,8 +261,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
                 estruturaCampoSelecionado = null;
                 estruturaObjetoSelecionado = MapaObjetosProjetoAtual.getEstruturaObjeto(pCaminhoBeanSelecionado);
 
-            }
-            else {
+            } else {
                 tipoEstruturaSelecionada = ESTRUTURA_DE_CAMPO_DESCRICAO;
                 String nomeObjeto = pCaminhoBeanSelecionado.split("\\.")[0];
                 String nomeCampo = UtilSBCoreReflexaoCaminhoCampo.getCampoSemNomeClasse(pCaminhoBeanSelecionado);
@@ -275,8 +272,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
                 umTipoEstruturaDeObjeto = false;
             }
             this.caminhoBeanSelecionado = pCaminhoBeanSelecionado;
-        }
-        catch (Throwable t) {
+        } catch (Throwable t) {
             SBCore.enviarMensagemUsuario("Campo não Encontrado", FabMensagens.ERRO);
         }
 
@@ -325,8 +321,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
                 listaComponentes = MapaComponentes.getComponentesFamilia(familiaSelecionada);
 
-            }
-            else {
+            } else {
                 SBCore.enviarMensagemUsuario("A Familia dos Componentes a serem visualizados está nula e por isso não é possivel buscar por Componentes!", FabMensagens.ALERTA);
             }
 
@@ -586,8 +581,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
                 }
 
             }
-        }
-        catch (Throwable t) {
+        } catch (Throwable t) {
             SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro otendo ações específicas de laboratorio do componente", t);
         }
         return acoesLaboratorio;
@@ -680,6 +674,11 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     @Override
     public void setAcaoSelecionada(ItfAcaoDoSistema acaoSelecionada) {
         super.setAcaoSelecionada(acaoSelecionada);
+    }
+
+    public void inspecionarBeanExemplo() {
+        System.out.println(beanExemplo.getLocalizacao().getBairro().getNome());
+        System.out.println(beanExemplo.getLocalizacao().getBairro().getCidade().getNome());
     }
 
 }

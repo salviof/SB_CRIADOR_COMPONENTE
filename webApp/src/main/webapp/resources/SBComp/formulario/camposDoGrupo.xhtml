@@ -33,15 +33,16 @@
                 <SBComp:input registro="#{cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse)}"
                               layout="#{cc.attrs.tipoVisualizacaoLabel}"
                               desabilitarEdicao="#{cc.attrs.somenteLeitura}"
-
                               />
             </h:panelGroup>
-            <h:panelGroup rendered="#{camp.umCampoComLista}" styleClass="Container100 Responsive" style="position: relative;" >
+            <c:if test="#{camp.umCampoComLista}">
+                <h:panelGroup rendered="#{camp.umCampoComLista}" styleClass="Container100 Responsive" style="position: relative;" >
 
-                <SBForm:subFormulario registro="#{cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse)}"
-                                      grupoCampos="#{camp.grupoSubcampos}"
-                                      />
-            </h:panelGroup>
+                    <SBForm:subFormulario registro="#{cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse)}"
+                                          grupoCampos="#{camp.grupoSubcampos}"
+                                          />
+                </h:panelGroup>
+            </c:if>
 
 
 

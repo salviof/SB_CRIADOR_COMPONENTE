@@ -304,4 +304,9 @@ public class ModeloFormularioGenerico implements ItfModeloFormularioSBFW {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public void copiaDados(Object pObjetoReferencia) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
