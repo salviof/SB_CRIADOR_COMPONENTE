@@ -10,6 +10,10 @@ function esconderTooltips() {
 }
 
 
+
+
+
+
 /**
  * Vai para o Topo
  */

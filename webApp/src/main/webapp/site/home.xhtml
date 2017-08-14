@@ -1,51 +1,70 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+    xmlns:p="http://primefaces.org/ui"
+    template="#{layoutsPaginas.modeloGeralAnonimo.xhtmlVinculado}"
+    >
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
+    <ui:define name="head"  >
+        <style>
+            .botaoBox {
+                margin-top: 3px;
+            }
+        </style>
+    </ui:define>
+    <ui:define name="divConteudo">
+        #{infoWebApp.urlPagina}#{resource['adamantium-layout:fonts/lato-bold-webfont.svg']} <br/>
 
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
-      xmlns:p="http://primefaces.org/ui">
-    <ui:composition template="#{layoutsPaginas.modeloGeralAnonimo.xhtmlVinculado}">
-        <ui:define name="head"  >
-            <style>
-                .botaoBox {
-                    margin-top: 3px;
-                }
-            </style>
-        </ui:define>
-        <ui:define name="divConteudo">
-
-            <SBComp:linkDeAcao acao="#{acoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR.lab_componentes_mb_gerenciar}"
-                               tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
-
-
-                               />
+        localhost:8080/SB_CRIADOR_COMPONENTE/javax.faces.resource/css/adamantium-font.css.xhtml?ln=adamantium-layout<br/>
+        <SBComp:linkDeAcao acao="#{acoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR.lab_componentes_mb_gerenciar}"
+                           tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
 
 
+                           />
 
-            <SBComp:linkDeAcao acao="#{acoesModulo_demonstracao_BEAN_EXEMPLO_MB.bean_exemplo_mb}"
-                               tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
-
-
-                               />
+        <SBComp:linkDeAcao acao="#{acoesModulo_demonstracao_BEAN_EXEMPLO_MB.bean_exemplo_mb}"
+                           tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
 
 
-            <h:panelGroup id="#{pg_paginaInicial.idAreaExbicaoAcaoSelecionada}" >
-                <ui:include src="#{pg_paginaInicial.xhtmlAcaoAtual}" />
-            </h:panelGroup>
+                           />
+
+        <a href="#{infoWebApp.urlPagina}/resources/SBComp/SBSystemPages/exemplosAdamantium/dashboard.xhtml">
+            DashBoard
+        </a>
+
+        <a href="#{infoWebApp.urlPagina}/resources/SBComp/SBSystemPages/exemplosAdamantium/forms.xhtml">
+            forms
+        </a>
+
+        <a href="#{infoWebApp.urlPagina}/resources/SBComp/SBSystemPages/exemplosAdamantium/empty-page.xhtml">
+            empty
+        </a>
+
+        <a href="#{infoWebApp.urlPagina}/resources/SBComp/SBSystemPages/exemplosAdamantium/datatable.xhtml">
+            datatable
+        </a>
+        <div class="Wid45 Fright OvHidden">
+            <p:button icon="fa fa-phone White" styleClass="Fright OrangeButton"/>
+            <span class="Fs12 FontAdamantiumBold">John Carpenter</span><br/>
+            <span class="Fs12 FontAdamantiumLight DispInherit">+90555 123 4 567</span>
+        </div>
+
+        <h:panelGroup id="#{pg_paginaInicial.idAreaExbicaoAcaoSelecionada}" >
+            <ui:include src="#{pg_paginaInicial.xhtmlAcaoAtual}" />
+        </h:panelGroup>
 
 
 
-            <h:form>
-                <SBComp:infoPagina />
+        <h:form>
+            <SBComp:infoPagina />
 
-            </h:form>
+        </h:form>
 
-        </ui:define>
-    </ui:composition>
-</html>
+    </ui:define>
+</ui:composition>
+
 
 
 

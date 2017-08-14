@@ -3,8 +3,8 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
 
-    <div class="Card">
-        <div class="CardTopic">
+    <div class="" style="">
+        <div class="CardTopic " style="margin-left: 10px;">
             #{paginaAtual.infoPagina.acaoSelecionada.nomeAcao}
             <i class="#{paginaAtual.infoPagina.acaoSelecionada.iconeAcao} Fs30 Fleft MarRight10"></i>
             <br/>
@@ -15,7 +15,7 @@
 
             </span>
 
-            <h:panelGroup styleClass="Fright">
+            <h:panelGroup styleClass="Fright" style="margin-bottom:  ">
                 <SBComp:botaoDeAcao_Pagina_Entidade acao="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoNovoRegistro}"
                                                     tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
 
@@ -24,14 +24,14 @@
 
         </div>
 
-        <div class="SeparatorFull"></div>
-
-        <div class="ContainerIndent">
-
-            <ui:insert name="conteudo" />
+        <div class="EmptyBox10"></div>
 
 
-        </div>
+
+        <ui:insert name="conteudo" />
+
+
+
     </div>
 
 </ui:composition>

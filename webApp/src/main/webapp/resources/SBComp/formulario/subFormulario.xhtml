@@ -95,8 +95,8 @@
 
 
                         <p:commandLink
-                            onclick="modificarIntputEclicar('#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('botaoRemoverSubform')}', '#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('indiceSubformulario')}', '#{infoRec.index}')"
-                            >
+                            process="@this"
+                            onclick="modificarIntputEclicar('#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('botaoRemoverSubform')}', '#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('indiceSubformulario')}', '#{infoRec.index}')">
                             <i class="fa fa-minus Fs30" aria-hidden="true"></i>
                         </p:commandLink>
 

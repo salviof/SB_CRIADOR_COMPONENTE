@@ -23,7 +23,7 @@ public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersiste
 
     @InfoTipoAcaoGestaoEntidade(icone = "fa fa-tag", entidade = BeanExemplo.class)
     BEAN_EXEMPLO_MB,
-    @InfoTipoAcaoFormulario()
+    @InfoTipoAcaoFormulario(campos = {"id", "apelido", "verdadeiroOuFalso", "beanFilho.apelido"})
     BEAN_EXEMPLO_FRM_LISTAR,
     @InfoTipoAcaoFormulario()
     BEAN_EXEMPLO_FRM_VISUALIZAR,
@@ -32,7 +32,9 @@ public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersiste
     @InfoTipoAcaoFormulario()
     BEAN_EXEMPLO_FRM_NOVO,
     @InfoTipoAcaoFormulario(nomeAcao = "Testes SubLista",
-            campos = {"[separador:subLista]", "listaParticular[].porcentagem", "listaParticular[].senha", "listaParticular[].listasExemplo"
+            campos = {"[separador:subLista]", "listaParticular[].porcentagem", "listaParticular[].senha",
+                "listaParticular[].listasExemplo", "beanFilho.apelido"
+
             },
             iconeFonteAnsowame = FabIconeFontAwesome.REG_LISTAR)
     BEAN_EXEMPLO_FRM_SUB_LISTA_EXEMPLO,

@@ -1,12 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:cc="http://java.sun.com/jsf/composite"
-      xmlns:c="http://java.sun.com/jsp/jstl/core"
-      xmlns:p="http://primefaces.org/ui"
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
 
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+
 
     <!-- INTERFACE -->
     <cc:interface>
@@ -37,10 +40,11 @@
                     <div class="EmptyBox30"></div>
 
                     <div class="EmptyBox30"></div>
-                    <p:commandButton value="Entrar" icon="fa fa-sign-in"  actionListener="#{controleDeSessaoWeb.efetuarLogIn()}" update="@form" />
+                    <p:commandButton value="Entrar" icon="fa fa-sign-in"  actionListener="#{controleDeSessaoWeb.efetuarLogIn()}"
+                                     update="@form" />
                     <div class="EmptyBox10 ShowOnMobile"></div>
                     <p:commandButton value="Enviar Senha" partialSubmit="true"
-                                     process="email @this"
+                                     process="#{pgUtil.gerarCaminhoCompletoID('email')} @this"
                                      icon="fa fa-exclamation"
                                      styleClass="RedButton"
                                      actionListener="#{controleDeSessaoWeb.esqueceuaSenha()}"
@@ -54,7 +58,7 @@
         </h:form>
 
     </cc:implementation>
-</html>
+</ui:composition>
 
 
 

@@ -1039,7 +1039,7 @@ label {
     border-radius: 1px !important;
 }
 .ui-datatable-tablewrapper {
-    margin: 10px;
+    /* margin: 10px; Margem em cima das listas (Retirado) */
 }
 .ui-editable-column.ui-state-error {
     background-color: #ce2246 !important;

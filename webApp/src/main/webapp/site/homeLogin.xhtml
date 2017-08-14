@@ -1,54 +1,51 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
-      xmlns:SBLogin="http://xmlns.jcp.org/jsf/composite/SBComp/login"
+<ui:composition
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+    xmlns:SBLogin="http://xmlns.jcp.org/jsf/composite/SBComp/login"
 
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-
-    <ui:composition >
-
-        <div class="container ">
-            <div class="ContainerIndent MarAuto Wid80 Hei20">
-                <div class="Card ">
-
-                    <div class="ContainerIndent">
+    >
 
 
-                        <div class="TexAlCenter Container100" style=" height: 30px;"  >
-                            <h:graphicImage name="logo.png" id="logo" library="img"  />
-                        </div>
+
+    <div class="container ">
+        <div class="ContainerIndent MarAuto Wid80 Hei20">
+            <div class="Card ">
+
+                <div class="ContainerIndent">
 
 
-                        <div class="EmptyBox100 "/>
-                        <div class="ContainerIndent " >
+                    <div class="TexAlCenter Container100" style=" height: 30px;"  >
+                        <h:graphicImage name="logo.png" id="logo" library="img"  />
+                    </div>
 
-                            <div class="ShowOnDesktop ">
-                                <div class="Container50 centralizaDIVContainer50">
-                                    <SBLogin:infoLogin ocultarFormulario="false" />
-                                </div>
+
+                    <div class="EmptyBox100 "/>
+                    <div class="ContainerIndent " >
+
+                        <div class="ShowOnDesktop ">
+                            <div class="Container50 centralizaDIVContainer50">
+                                <SBLogin:infoLogin ocultarFormulario="false" />
                             </div>
+                        </div>
 
-                            <div class="ShowOnMobile">
-                                <div class="Container100">
-                                    <SBLogin:infoLogin ocultarFormulario="false" />
-                                </div>
+                        <div class="ShowOnMobile">
+                            <div class="Container100">
+                                <SBLogin:infoLogin ocultarFormulario="false" />
                             </div>
-
                         </div>
 
+                    </div>
 
-                        <div class="EmptyBox10"/>
-                        <div class="Container100">
-                            <h:form>
-                                <SBComp:botaoDeAcao_Pagina acao="#{pgPaginaInicial.acaoFormularioChecarCadastro}"
-                                                           tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}" />
-                            </h:form>
-                        </div>
-                        <div class="Fright">
 
-                        </div>
+                    <div class="EmptyBox10"/>
+                    <div class="Container100">
+                        <h:form>
+                            <SBComp:botaoDeAcao_Pagina acao="#{pgPaginaInicial.acaoFormularioChecarCadastro}"
+                                                       tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}" />
+                        </h:form>
+                    </div>
+                    <div class="Fright">
 
                     </div>
 
@@ -56,11 +53,13 @@
 
             </div>
 
-
         </div>
 
-    </ui:composition>
-</html>
+
+    </div>
+
+</ui:composition>
+
 
 
 

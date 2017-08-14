@@ -95,6 +95,7 @@ public class BeanExemplo
             exemplo2.setEmail("teste2@teste.com");
             listasExemplo = new ArrayList<>();
             beanFilho = new BeanExemplo(false);
+            beanFilho.setApelido("Apelido bean Filho");
             listasExemplo.add(exemplo1);
             listasExemplo.add(exemplo2);
 

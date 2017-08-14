@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:cc="http://java.sun.com/jsf/composite"
 
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <!-- INTERFACE -->
     <cc:interface   shortDescription="Exibe uma lista de registro com opções de seleção a partir de uma acao de listagem"
                     >
@@ -51,27 +52,30 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
+        <c:if test="#{paginaAtual.sessao.tipoView.umMobile}">
+            <SBComp:listaComOpcoesMobile
+                campos="#{cc.attrs.campos}"
+                itemSelecionado="#{cc.attrs.itemSelecionado}"
+                itens="#{cc.attrs.itens}"
+                metodo="#{cc.attrs.metodo}"
+                opcoes="#{cc.attrs.opcoes}"
+                titulo="#{cc.attrs.titulo}"
+                rendered="#{paginaAtual.sessao.tipoView.umMobile}"
+                />
+        </c:if>
 
-        <SBComp:listaComOpcoesMobile
-            campos="#{cc.attrs.campos}"
-            itemSelecionado="#{cc.attrs.itemSelecionado}"
-            itens="#{cc.attrs.itens}"
-            metodo="#{cc.attrs.metodo}"
-            opcoes="#{cc.attrs.opcoes}"
-            titulo="#{cc.attrs.titulo}"
-            rendered="#{paginaAtual.sessao.tipoView.umMobile}"
-            />
-
-        <SBComp:listaComOpcoesDesktop
-            campos="#{cc.attrs.campos}"
-            itemSelecionado="#{cc.attrs.itemSelecionado}"
-            itens="#{cc.attrs.itens}"
-            metodo="#{cc.attrs.metodo}"
-            opcoes="#{cc.attrs.opcoes}"
-            armazenamentoAcaoSelecionada="#{cc.attrs.armazenamentoAcaoSelecionada}"
-            titulo="#{cc.attrs.titulo}"
-            rendered="#{!paginaAtual.sessao.tipoView.umMobile}"
-            />
+        <c:if test="#{!paginaAtual.sessao.tipoView.umMobile}">
+            <SBComp:listaComOpcoesDesktop
+                campos="#{cc.attrs.campos}"
+                itemSelecionado="#{cc.attrs.itemSelecionado}"
+                itens="#{cc.attrs.itens}"
+                metodo="#{cc.attrs.metodo}"
+                opcoes="#{cc.attrs.opcoes}"
+                armazenamentoAcaoSelecionada="#{cc.attrs.armazenamentoAcaoSelecionada}"
+                titulo="#{cc.attrs.titulo}"
+                rendered="#{!paginaAtual.sessao.tipoView.umMobile}"
+                />
+        </c:if>
 
 
 

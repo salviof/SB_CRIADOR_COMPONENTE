@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+
+    xmlns:p="http://primefaces.org/ui">
 
     <h:head>
         <f:facet name="first">
@@ -29,13 +32,14 @@
         <ui:include src="cabecalhoInicialDoBody.xhtml" />
         <ui:insert name="divConteudo" />
 
-        <p:ajaxStatus style="width:32px;height:32px;position:fixed;right:7px;bottom:7px">
+        <p:ajaxStatus style="width:32px;height:32px;position:fixed;right:7px;bottom:7px" >
             <f:facet name="start">
                 <p:graphicImage name="images/preloader.gif" library="adamantium-layout"/>
             </f:facet>
             <f:facet name="complete">
-                <h:outputText value="" />
+                <h:outputText value="OK" />
             </f:facet>
         </p:ajaxStatus>
     </h:body>
+
 </html>
