@@ -24,7 +24,7 @@
                     converter="conversorGenerico"
                     style="margin-left: 0.5%"
                     >
-                    <p:ajax event="transfer" listener="#{registro.comoSeltorItens.campoSeletorItens.atualizarListaCompleta()}" update="@form" />
+                    <p:ajax event="transfer" listener="#{registro.comoSeltorItens.atualizarListaCompleta()}" update="@form" />
                     <f:facet name="sourceCaption">#{registro.comoSeltorItens.campoSeletorItens.nomeOrigem}</f:facet>
                     <f:facet name="targetCaption">#{registro.label}</f:facet>
                 </p:pickList>
