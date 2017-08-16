@@ -32,7 +32,7 @@ public class LayoutTeste extends TesteSB_CRIADOR_COMPONENTE {
             List<CaminhoCampoExibicaoFormulario> lista = (List) acaoForm.getGruposDeCampos().get(0).getCampos();
             LayoutComponentesEmTelaComGrupoDeAcoes layout = UtilSBCoreLayoutComponenteEmTelas.gerarLayoutColunasComAcao(
                     objTeste, lista, (List) acaoForm.getAcaoPrincipal().getAcoesVinculadas(),
-                    FabCompVisualBotaoAcao.ICONE, FabTipoTamanhoTelas.DESKTOP_NORMAL.getRegistro(), false);
+                    FabCompVisualBotaoAcao.ICONE, FabTipoTamanhoTelas.DESKTOP_NORMAL.getRegistro(), "TESTE", false);
             layout.getUltimaColuna();
 
             for (ColunaTela pColuna : layout.getColunas()) {

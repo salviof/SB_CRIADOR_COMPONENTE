@@ -54,7 +54,7 @@
 
 
 
-        <c:if test="#{paginaAtual.sessao.tipoView.umMobile}">
+        <c:if test="#{paginaAtual.sessao.telaUsuario.umMobile}">
             <SBComp:listaComOpcoesMobile
                 campos="#{cc.attrs.campos}"
                 itemSelecionado="#{cc.attrs.itemSelecionado}"
@@ -62,11 +62,11 @@
                 metodo="#{cc.attrs.metodo}"
                 opcoes="#{cc.attrs.opcoes}"
                 titulo="#{cc.attrs.titulo}"
-                rendered="#{paginaAtual.sessao.tipoView.umMobile}"
+                rendered="#{paginaAtual.sessao.telaUsuario.umMobile}"
                 />
         </c:if>
 
-        <c:if test="#{!paginaAtual.sessao.tipoView.umMobile}">
+        <c:if test="#{!paginaAtual.sessao.telaUsuario.umMobile}">
             <SBComp:listaComOpcoesDesktop
                 campos="#{cc.attrs.campos}"
                 itemSelecionado="#{cc.attrs.itemSelecionado}"
@@ -75,7 +75,7 @@
                 opcoes="#{cc.attrs.opcoes}"
                 armazenamentoAcaoSelecionada="#{cc.attrs.armazenamentoAcaoSelecionada}"
                 titulo="#{cc.attrs.titulo}"
-                rendered="#{!paginaAtual.sessao.tipoView.umMobile}"
+                rendered="#{!paginaAtual.sessao.telaUsuario.umMobile}"
                 />
         </c:if>
 
