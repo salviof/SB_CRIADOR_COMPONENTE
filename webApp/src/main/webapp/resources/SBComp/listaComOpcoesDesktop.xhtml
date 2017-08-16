@@ -54,6 +54,8 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
+
+
         <h:panelGroup>
             <p:dataTable sortMode="multiple"
                          value="#{cc.attrs.itens}"
@@ -63,6 +65,7 @@
                          paginator="true"
                          rows="10"
                          widgetVar="#{pgUtil.gerarNomeSlug(cc.attrs.titulo)}"
+                         resizeMode="fit"
                          >
 
                 <f:facet name="header" >
@@ -97,6 +100,7 @@
                            filterMatchMode="contains"
                            filterStyleClass="listaComOcoesOcultaFitro"
 
+
                            >
 
                     <f:facet name="header">
@@ -117,7 +121,7 @@
                 </p:columns>
 
 
-                <p:column headerText="Ações" width="360">
+                <p:column headerText="Ações" styleClass="col-md-8">
 
                     <center>
 
