@@ -26,6 +26,12 @@ public class LayoutTeste extends TesteSB_CRIADOR_COMPONENTE {
     @Test
     public void teste() {
         try {
+
+            String teste = "http://localhost:8080/SB_CRIADOR_COMPONENTE/Demonstrativo_Bean_Exemplo//.wp;jsessionid=qo77vde2y74uq6onqevf9bmf";
+
+            String resultado = teste.replaceAll(".wp.*", "");
+            System.out.println(resultado);
+
             BeanExemplo objTeste = new BeanExemplo();
 
             ItfAcaoFormularioEntidade acaoForm = FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_FRM_LISTAR.getRegistro().getComoFormularioEntidade();

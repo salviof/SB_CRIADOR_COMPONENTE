@@ -15,7 +15,7 @@
 
 
         <SBComp:listaComOpcoesMobile
-            campos="#{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.campos}"
+            grupoCampos="#{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.gruposDeCampos[0]}"
             mensagemSemRegistro="Nenhum #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.nomeDominio} foi encontrado"
             armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
             itemSelecionado="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
@@ -23,7 +23,7 @@
             metodo="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(item)}"
             opcoes="#{paginaAtual.infoPagina.comoPaginaEntidade.acoesRegistros}"
             rendered="#{paginaAtual.sessao.telaUsuario.umMobile}"
-            titulo="Listagem de #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.nomeDominio}"
+            titulo="Listagem de  #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.comoFormularioEntidade.nomeTipoObjetoClasseRelacionadaPlural}"
             />
 
         <SBComp:listaComOpcoesDesktop
@@ -35,7 +35,7 @@
             metodo="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(item)}"
             opcoes="#{paginaAtual.infoPagina.comoPaginaEntidade.acoesRegistros}"
             rendered="#{!paginaAtual.sessao.telaUsuario.umMobile}"
-            titulo="Listagem de #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.nomeDominio}"
+            titulo="Listagem de  #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.comoFormularioEntidade.nomeTipoObjetoClasseRelacionadaPlural}"
             />
 
 

@@ -16,10 +16,11 @@
             name="itemSelecionado"
             required="true"
             />
-        <cc:attribute name="campos"
+
+        <cc:attribute name="grupoCampos"
+                      type="com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfGrupoCampos"
                       required="true"
-                      type="java.util.List"
-                      shortDescription="Listagem dos campos que serão exibidos: List->CaminhoCampoReflexao"
+                      shortDescription="Grupo de Campos a serem exibitos"
                       />
 
         <cc:attribute
@@ -32,9 +33,11 @@
             method-signature="void listener()"
             name="metodo"
             required="true"    />
-
         <cc:attribute name="armazenamentoAcaoSelecionada"
-                      default="#{paginaAtual.infoPagina.acaoSelecionada}" />
+                      required="true"
+                      type="com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoDoSistema"
+                      shortDescription="Bean onde a ação selecionada será armazenada"
+                      />
 
         <cc:attribute name="opcoes"
                       required="true"  />
@@ -43,8 +46,9 @@
 
         <cc:attribute name="titulo"
                       required="true"
-                      shortDescription="Titulo da Listagem"
+                      shortDescription="Título da Listagem"
                       />
+
 
     </cc:interface>
     <!-- IMPLEMENTATION -->
@@ -71,7 +75,7 @@
 
                 <p:panel>
 
-                    <ui:repeat value="#{cc.attrs.campos}"
+                    <ui:repeat value="#{cc.attrs.grupoCampos.campos}"
                                var="campo">
 
                         <SBComp:input
