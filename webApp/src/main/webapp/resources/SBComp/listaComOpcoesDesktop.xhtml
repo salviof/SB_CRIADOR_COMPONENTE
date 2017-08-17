@@ -17,10 +17,11 @@
             name="itemSelecionado"
             required="true"
             />
-        <cc:attribute name="campos"
+
+        <cc:attribute name="grupoCampos"
+                      type="com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfGrupoCampos"
                       required="true"
-                      type="java.util.List"
-                      shortDescription="Listagem dos campos que serão exibidos: List->CaminhoCampoReflexao"
+                      shortDescription="Grupo de Campos a serem exibitos"
                       />
 
         <cc:attribute
@@ -94,16 +95,18 @@
                 </f:facet>
 
 
-                <p:columns var="coluna" value="#{cc.attrs.campos}"
+                <p:columns var="coluna" value="#{cc.attrs.grupoCampos.campos}"
                            sortBy="#{item[coluna.primeiroCaminhoSemNomeClasse]}"
                            filterBy="#{item[coluna.primeiroCaminhoSemNomeClasse]}"
                            filterMatchMode="contains"
                            filterStyleClass="listaComOcoesOcultaFitro"
-
+                           width="#{pgUtilLayout.getColunaLayoutByNomeCampo(coluna.caminhoCompletoComGrupoCampo).porcentagemCalculada}%"
 
                            >
 
+
                     <f:facet name="header">
+
                         <h:outputText value= "#{coluna.label}"/>
                     </f:facet>
 
