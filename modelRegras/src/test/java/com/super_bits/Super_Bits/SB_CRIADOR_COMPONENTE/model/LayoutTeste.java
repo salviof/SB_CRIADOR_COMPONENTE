@@ -37,7 +37,7 @@ public class LayoutTeste extends TesteSB_CRIADOR_COMPONENTE {
 
             for (ColunaTela pColuna : layout.getColunas()) {
 
-                System.out.println(pColuna.getPorcentagemCalculada());
+                System.out.println("->" + pColuna.getPorcentagemCalculada());
 
             }
 
