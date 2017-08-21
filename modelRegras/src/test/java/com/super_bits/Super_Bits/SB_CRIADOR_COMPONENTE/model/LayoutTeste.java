@@ -30,14 +30,21 @@ public class LayoutTeste extends TesteSB_CRIADOR_COMPONENTE {
 
             ItfAcaoFormularioEntidade acaoForm = FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_FRM_LISTAR.getRegistro().getComoFormularioEntidade();
             List<CaminhoCampoExibicaoFormulario> lista = (List) acaoForm.getGruposDeCampos().get(0).getCampos();
+
+            System.out.println(objTeste.getCampoInstanciadoByNomeOuAnotacao("id").getComponenteVisualPadrao().getPesoLargura());
+            System.out.println(objTeste.getCampoInstanciadoByNomeOuAnotacao("id").getComponenteVisualPadrao().getNomeComponente());
+
+            System.out.println(objTeste.getCampoInstanciadoByNomeOuAnotacao("apelido").getComponenteVisualPadrao().getPesoLargura());
+            System.out.println(objTeste.getCampoInstanciadoByNomeOuAnotacao("apelido").getComponenteVisualPadrao().getNomeComponente());
+
             LayoutComponentesEmTelaComGrupoDeAcoes layout = UtilSBCoreLayoutComponenteEmTelas.gerarLayoutColunasComAcao(
                     objTeste, lista, (List) acaoForm.getAcaoPrincipal().getAcoesVinculadas(),
-                    FabCompVisualBotaoAcao.ICONE, FabTipoTamanhoTelas.DESKTOP_NORMAL.getRegistro(), "TESTE", false);
+                    FabCompVisualBotaoAcao.ICONE, FabTipoTamanhoTelas.DESKTOP_GRANDE.getRegistro(), "TESTE", false);
             layout.getUltimaColuna();
 
             for (ColunaTela pColuna : layout.getColunas()) {
 
-                System.out.println("->" + pColuna.getPorcentagemCalculada());
+                System.out.println(pColuna.getComponenteVinculado().getNomeComponente() + "-->" + pColuna.getPorcentagemCalculada());
 
             }
 

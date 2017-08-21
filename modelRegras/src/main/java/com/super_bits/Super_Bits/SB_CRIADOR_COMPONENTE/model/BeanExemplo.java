@@ -57,16 +57,16 @@ public class BeanExemplo
         EstruturaDeEntidade est = MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class);
         for (EstruturaCampo strutura : est.getCampos()) {
             try {
-                grupoCampoCompleto.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(strutura.getNomeDeclarado(), BeanExemplo.class)));
+                grupoCampoCompleto.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(strutura.getNomeDeclarado(), BeanExemplo.class), grupoCampoCompleto.getNomeIdentificadorSlug()));
             } catch (Throwable t) {
                 SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro adicionando campo extra em ambiente teste", t);
             }
         }
         grupoCampoSimples = new GrupoCampos("Grupo campo Simples");
         try {
-            grupoCampoSimples.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("nome"))));
-            grupoCampoSimples.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("celular"))));
-            grupoCampoSimples.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("beanSelecionadoDaListaFabrica"))));
+            grupoCampoSimples.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("nome")), grupoCampoCompleto.getNomeIdentificadorSlug()));
+            grupoCampoSimples.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("celular")), grupoCampoCompleto.getNomeIdentificadorSlug()));
+            grupoCampoSimples.adicionarCampo(new CaminhoCampoExibicaoFormulario(new CaminhoCampoReflexao(BeanExemplo.class.getDeclaredField("beanSelecionadoDaListaFabrica")), grupoCampoCompleto.getNomeIdentificadorSlug()));
 
         } catch (Throwable t) {
             SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro criando " + BeanExemplo.class.getSimpleName(), t);
@@ -239,7 +239,8 @@ public class BeanExemplo
     private ItemBairro bairro;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, valoresAceitos = {
-        @ValorAceito(valor = "Teste"),
+        @ValorAceito(valor = "Teste")
+        ,
         @ValorAceito(valor = "Teste2")}
     )
     private BeanExemplo beanSelecionadoDaListaDescritiva;
