@@ -13,6 +13,8 @@
                     for="#{pgUtil.getNomeIdComponenteInput(component)}"
                     value="Info: #{registro.descricao}"
                     />
+        <ui:include src="debugDoCampo.xhtml" rendered="#{infoWebApp.emModoDesenvolvimentoHomologacao}" />
+
     </h:panelGroup>
 </html>
 

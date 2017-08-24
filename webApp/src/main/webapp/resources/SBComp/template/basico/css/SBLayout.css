@@ -201,7 +201,7 @@ ajustesDivGeral{
     display: none!important;
 }
 
-
+/*  [AJUSTES EM TABELAS PRIMEFACES] */
 /*Tirar pading do grid */
 .ui-datatable .ui-datatable-header{
     padding: 0 !important;
@@ -211,3 +211,12 @@ ui-datatable-header.ui-widget-header.ui-corner-top{
     padding: 0 !important;
 
 }
+
+
+
+.ui-datatable table tbody tr td{
+    word-break: break-word;
+}
+
+
+

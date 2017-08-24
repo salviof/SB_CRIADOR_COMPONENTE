@@ -10,6 +10,7 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_contr
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreLayoutComponenteEmTelas;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormularioEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoExibicaoFormulario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoExibicaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualBotaoAcao;
 import com.super_bits.modulosSB.SBCore.modulos.view.telas.ColunaTela;
 import com.super_bits.modulosSB.SBCore.modulos.view.telas.FabTipoTamanhoTelas;
@@ -35,7 +36,7 @@ public class LayoutTeste extends TesteSB_CRIADOR_COMPONENTE {
             BeanExemplo objTeste = new BeanExemplo();
 
             ItfAcaoFormularioEntidade acaoForm = FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_FRM_LISTAR.getRegistro().getComoFormularioEntidade();
-            List<CaminhoCampoExibicaoFormulario> lista = (List) acaoForm.getGruposDeCampos().get(0).getCampos();
+            List<ItfCampoExibicaoFormulario> lista = (List) acaoForm.getGruposDeCampos().get(0).getCampos();
 
             System.out.println(objTeste.getCampoInstanciadoByNomeOuAnotacao("id").getComponenteVisualPadrao().getPesoLargura());
             System.out.println(objTeste.getCampoInstanciadoByNomeOuAnotacao("id").getComponenteVisualPadrao().getNomeComponente());
@@ -44,7 +45,7 @@ public class LayoutTeste extends TesteSB_CRIADOR_COMPONENTE {
             System.out.println(objTeste.getCampoInstanciadoByNomeOuAnotacao("apelido").getComponenteVisualPadrao().getNomeComponente());
 
             LayoutComponentesEmTelaComGrupoDeAcoes layout = UtilSBCoreLayoutComponenteEmTelas.gerarLayoutColunasComAcao(
-                    objTeste, lista, (List) acaoForm.getAcaoPrincipal().getAcoesVinculadas(),
+                    lista, (List) acaoForm.getAcaoPrincipal().getAcoesVinculadas(),
                     FabCompVisualBotaoAcao.ICONE, FabTipoTamanhoTelas.DESKTOP_GRANDE.getRegistro(), "TESTE", false);
             layout.getUltimaColuna();
 

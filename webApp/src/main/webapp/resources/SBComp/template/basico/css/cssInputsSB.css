@@ -25,6 +25,7 @@
 .inputCampo{
     width:   100%!important;
     border : none!important;
+    position: relative;
 
 }
 
