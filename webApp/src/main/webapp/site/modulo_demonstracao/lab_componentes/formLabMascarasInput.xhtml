@@ -2,9 +2,8 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-
+      xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
       xmlns:sb="http://superbitsframework/ui"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:p="http://primefaces.org/ui">
@@ -17,10 +16,10 @@
 
                     <h:form>
 
-                        <SBComp:botaoDeAcao_Pagina acao="#{pgMapaComponentes.acaoEditar}"
-                                                   tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
+                        <SBAcaoNav:botaoDeAcao_Pagina acao="#{pgMapaComponentes.acaoEditar}"
+                                                      tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
 
-                                                   />
+                                                      />
 
                     </h:form>
 

@@ -1,6 +1,7 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
                 xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
     <div class="">
         <div class="CardTopic">
@@ -15,11 +16,11 @@
             </span>
 
             <h:panelGroup styleClass="Fright">
-                <SBComp:botaoDeAcao_Pagina acao="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoListarRegistros}"
-                                           tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
-                                           label="Voltar"
+                <SBAcaoNav:botaoDeAcao_Pagina acao="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoListarRegistros}"
+                                              tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
+                                              label="Voltar"
 
-                                           />
+                                              />
             </h:panelGroup>
 
         </div>

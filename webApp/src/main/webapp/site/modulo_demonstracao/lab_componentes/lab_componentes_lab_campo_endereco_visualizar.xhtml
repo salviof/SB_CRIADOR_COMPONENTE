@@ -2,7 +2,8 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
+      xmlns:SBInput="http://xmlns.jcp.org/jsf/composite/SBComp/composite/input"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 
@@ -56,18 +57,18 @@
 
                         <p:tab  title="CEP">
 
-                            <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.cep')}"
-                                          layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                          />
+                            <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.cep')}"
+                                           layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                           />
 
                         </p:tab>
 
                         <p:tab  title="Estado">
 
 
-                            <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade.unidadeFederativa')}"
-                                          layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                          />
+                            <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade.unidadeFederativa')}"
+                                           layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                           />
 
 
                         </p:tab>
@@ -76,9 +77,9 @@
 
 
 
-                            <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade')}"
-                                          layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                          />
+                            <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade')}"
+                                           layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                           />
 
 
 
@@ -87,9 +88,9 @@
 
 
 
-                            <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro')}"
-                                          layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                          />
+                            <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro')}"
+                                           layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                           />
 
 
 
@@ -99,9 +100,9 @@
 
 
 
-                            <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.logradouro')}"
-                                          layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                          />
+                            <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.logradouro')}"
+                                           layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                           />
 
 
 
@@ -111,9 +112,9 @@
 
 
 
-                            <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.complemento')}"
-                                          layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                          />
+                            <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.complemento')}"
+                                           layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                           />
 
 
 
@@ -125,9 +126,9 @@
                 </h:form>
                 <h:form id="visualizacao">
 
-                    <SBComp:input registro="#{pgMapaComponentes.campoInstanciado}"
-                                  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                  />
+                    <SBInput:input registro="#{pgMapaComponentes.campoInstanciado}"
+                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                   />
 
                 </h:form>
 
@@ -136,32 +137,32 @@
             <p:fieldset legend="Simulador" >
                 <h:form>
 
-                    <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.cep')}"
-                                  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                  />
+                    <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.cep')}"
+                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                   />
 
-                    <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade.unidadeFederativa')}"
-                                  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                  />
-
-
-                    <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade')}"
-                                  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                  />
+                    <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade.unidadeFederativa')}"
+                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                   />
 
 
-                    <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro')}"
-                                  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                  />
+                    <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade')}"
+                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                   />
 
 
-                    <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.logradouro')}"
-                                  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                  />
+                    <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro')}"
+                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                   />
 
-                    <SBComp:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.complemento')}"
-                                  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                  />
+
+                    <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.logradouro')}"
+                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                   />
+
+                    <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.complemento')}"
+                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                   />
 
 
                     <p:commandButton actionListener="#{pgMapaComponentes.inspecionarBeanExemplo()}" value="Testar Submit"  update="@form"/>

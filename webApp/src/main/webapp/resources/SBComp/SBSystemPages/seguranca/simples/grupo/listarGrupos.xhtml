@@ -3,6 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
 
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
@@ -25,7 +26,7 @@
         </ui:define>
         <ui:define name="conteudoDireita">
             <div class="ContainerIndent">
-                <SBComp:botaoDeAcao acao="#{pgPermissoes.acaoNovoGrupo}" metodo="#{pgPermissoes.executarAcaoListaGrupo(pgPermissoes.grupoSelecionado)}" armazenamentoAcaoExecutada="#{pgPermissoes.acaoselecionada}" />
+                <SBAcaoNav:botaoDeAcao acao="#{pgPermissoes.acaoNovoGrupo}" metodo="#{pgPermissoes.executarAcaoListaGrupo(pgPermissoes.grupoSelecionado)}" armazenamentoAcaoExecutada="#{pgPermissoes.acaoselecionada}" />
             </div>
 
         </ui:define>
@@ -47,7 +48,7 @@
                         </h:form>
                     </p:column>
                     <p:column headerText="Açoes">
-                        <SBComp:seletorDeAcoes  metodo="#{pgPermissoes.executarAcaoListaGrupo(grp)}" opcaoSelecionada="#{pgPermissoes.acaoselecionada}" opcoes="#{pgPermissoes.acoesListarGrupos}" />
+                        <SBAcaoNav:seletorDeAcoes  metodo="#{pgPermissoes.executarAcaoListaGrupo(grp)}" opcaoSelecionada="#{pgPermissoes.acaoselecionada}" opcoes="#{pgPermissoes.acoesListarGrupos}" />
                     </p:column>
 
                 </p:dataTable>

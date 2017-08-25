@@ -3,9 +3,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:SBInput="http://xmlns.jcp.org/jsf/composite/SBComp/composite/input"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
+      xmlns:SBListagem="http://xmlns.jcp.org/jsf/composite/SBComp/composite/listagens"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <ui:composition template="#{layoutsPaginas.formularioAcaoAtual.xhtmlVinculado}" >
@@ -19,7 +20,7 @@
 
             <h:form class="Fright">
 
-                <SBComp:seletorItem
+                <SBInput:seletorItem
                     lista="#{pgMapaComponentes.listaFamiliasComponentes}"
                     itemSelecionado="#{pgMapaComponentes.familiaSelecionada}"
                     idOnChange="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}"
@@ -31,8 +32,11 @@
 
             <div class="Container100">
                 <h:form>
-                    <SBComp:listaComOpcoesResponsiva
-                        campos="#{pgMapaComponentes.acaoListar.comoFormulario.campos}"
+                    <SBListagem:listaComOpcoesResponsiva
+                        armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+                        grupoCampos="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoListarRegistros.gruposDeCampos[0]}"
+
+
                         titulo="Formidaveis componentes"
                         itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
                         itens="#{pgMapaComponentes.listaComponentes}"

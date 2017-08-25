@@ -2,8 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+      xmlns:SBInput="http://xmlns.jcp.org/jsf/composite/SBComp/composite/input"
       xmlns:p="http://primefaces.org/ui"
+
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       >
 
@@ -32,7 +33,7 @@
                     <h:form>
                         <p:inputText value="#{pgAcessos.grupoUsuariosCrud.registro.nome}"/>
                         <p:inputText value="#{pgAcessos.grupoUsuariosCrud.registro.descricao}"/>
-                        <SBComp:seletorItens  pickList="#{pgAcessos.pickListUsuarioEmGrupo}" NomeItensSelecionados="Usuários do grupo: #{pgAcessos.grupoUsuariosCrud.registro}" NomeOrigemItens="Usuários fora do grupo"/>
+                        <SBInput:seletorItens  pickList="#{pgAcessos.pickListUsuarioEmGrupo}" NomeItensSelecionados="Usuários do grupo: #{pgAcessos.grupoUsuariosCrud.registro}" NomeOrigemItens="Usuários fora do grupo"/>
 
 
 
@@ -53,7 +54,7 @@
                             <p:outputLabel value="Nome"/> <p:inputText value="#{pgAcessos.usuariosCrud.registro.nome}"/>
                             <p:outputLabel value="Senha"/>    <p:password redisplay="true" value="#{pgAcessos.usuariosCrud.registro.senha}" />
                             <p:outputLabel value="Email"/>   <p:inputText value="#{pgAcessos.usuariosCrud.registro.email}"/>
-                            <p:outputLabel value="Grupo Principal"/> <SBComp:seletorItem lista="#{pgAcessos.grupoUsuariosCrud.registros}" itemSelecionado="#{pgAcessos.usuariosCrud.registro.grupo}"/>
+                            <p:outputLabel value="Grupo Principal"/> <SBInput:seletorItem lista="#{pgAcessos.grupoUsuariosCrud.registros}" itemSelecionado="#{pgAcessos.usuariosCrud.registro.grupo}"/>
 
 
 
@@ -79,7 +80,7 @@
                         <p:tab title="Acesso a recursos" >
                             <p:fieldset legend="ACESSO A SER CONFIGURADO">
                                 <h:form>
-                                    <SBComp:seletorItem
+                                    <SBInput:seletorItem
                                         idOnChange="id-panelGroup-acessos"
                                         itemSelecionado="#{pgAcessos.acessoSelecionado}"
                                         lista="#{pgAcessos.acessos}" />
@@ -226,9 +227,9 @@
                                     <h:outputText value="#{pgAcessos.crudPaginasAcesso.registro.nomePagina}" />
                                 </h1>
                              <!--   <SBComp:CRUDNavegador crud="#{pgAcessos.crudPaginasAcesso}" metodoMudaRegistro="#{pgAcessos.mudaRegistroPaginas()}" /> -->
-                                <SBComp:seletorItens pickList="#{pgAcessos.pickListUsuarioPagina}" NomeItensSelecionados="Usuarios Permitidos" NomeOrigemItens="Usuários Disponiveis" />
+                                <SBInput:seletorItens pickList="#{pgAcessos.pickListUsuarioPagina}" NomeItensSelecionados="Usuarios Permitidos" NomeOrigemItens="Usuários Disponiveis" />
 
-                                <SBComp:seletorItens pickList="#{pgAcessos.pickListGrupoUsuarioPagina}" NomeItensSelecionados="Grupos Permitidos" NomeOrigemItens="Grupos Disponíveis" />
+                                <SBInput:seletorItens pickList="#{pgAcessos.pickListGrupoUsuarioPagina}" NomeItensSelecionados="Grupos Permitidos" NomeOrigemItens="Grupos Disponíveis" />
 
                             </h:form>
 

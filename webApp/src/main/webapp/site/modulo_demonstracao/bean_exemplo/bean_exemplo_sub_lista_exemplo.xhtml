@@ -2,8 +2,8 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:SBForm="http://xmlns.jcp.org/jsf/composite/SBComp/formulario"
-      xmlns:FormEntidade="http://xmlns.jcp.org/jsf/composite/SBComp/extras/paginaAtualDeEntidade"
+      xmlns:SBForm="http://xmlns.jcp.org/jsf/composite/SBComp/composite/formulario"
+      xmlns:SBFormAtualEnt="http://xmlns.jcp.org/jsf/composite/SBComp/composite/paginaAtualDeEntidade"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
     <ui:composition template="#{layoutsPaginas.formularioAcaoAtualDaEntidade.xhtmlVinculado}" >
@@ -24,7 +24,7 @@
                     grupoCampos="#{paginaAtual.infoPagina.acaoSelecionada.comoFormulario.gruposDeCampos[0].campos[0].grupoSubcampos}"
                     />
 
-                <FormEntidade:detalhesPaginaAtual/>
+                <SBFormAtualEnt:detalhesPaginaAtual/>
 
 
             </h:form>

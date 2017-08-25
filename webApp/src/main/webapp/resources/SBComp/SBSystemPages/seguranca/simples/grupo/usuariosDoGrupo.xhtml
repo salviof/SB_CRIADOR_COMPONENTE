@@ -3,11 +3,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
 
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
 
 
     <ui:composition  >
@@ -92,11 +91,11 @@
                         <SBComp:botaoDeAcao acao="#{pgPermissoes.acaoAdicionarUsuarioNoGrupo}" metodo="#{pgPermissoes.selecionarUsuarioParaInclusaoNoGrupo()}"
                                             armazenamentoAcaoExecutada="#{pgPermissoes.acaoselecionada}"/>
                         -->
-                        <SBComp:botaoDeAcao  acao="#{pgPermissoes.acaoListarGrupos}"
-                                             armazenamentoAcaoExecutada="#{pgPermissoes.acaoselecionada}"
-                                             metodo="#{pgPermissoes.executarAcaoListaGrupo(pgPermissoes.grupoSelecionado)}"
+                        <SBAcaoNav:botaoDeAcao  acao="#{pgPermissoes.acaoListarGrupos}"
+                                                armazenamentoAcaoExecutada="#{pgPermissoes.acaoselecionada}"
+                                                metodo="#{pgPermissoes.executarAcaoListaGrupo(pgPermissoes.grupoSelecionado)}"
 
-                                             />
+                                                />
 
                     </h:form>
                 </div>
@@ -155,8 +154,8 @@
 
         <div class="ContainerIndent">
 
-            <SBComp:botaoDeAcao acao="#{pgPermissoes.acaoAdicionarUsuarioNoGrupo}" metodo="#{pgPermissoes.selecionarUsuarioParaInclusaoNoGrupo()}"
-                           armazenamentoAcaoExecutada="#{pgPermissoes.acaoselecionada}"/>
+            <SBAcaoNav:botaoDeAcao acao="#{pgPermissoes.acaoAdicionarUsuarioNoGrupo}" metodo="#{pgPermissoes.selecionarUsuarioParaInclusaoNoGrupo()}"
+                                   armazenamentoAcaoExecutada="#{pgPermissoes.acaoselecionada}"/>
         </div>
 
         <p:dataTable  value="#{pgPermissoes.grupoSelecionado.usuarios}" var="usr" emptyMessage="Nenhum usuário foi Encontrado no grupo" >
@@ -181,10 +180,10 @@
 
 
 
-                <SBComp:botaoDeAcao metodo="#{pgPermissoes.listarGrupoUsuario(usr)}" rendered="${fn:length(usr.gruposAdicionais)>1}" acao="#{pgPermissoes.acaoListarGruposDoUsuario}" armazenamentoAcaoExecutada="#{pgPermissoes.acaoselecionada}" />
+                <SBAcaoNav:botaoDeAcao metodo="#{pgPermissoes.listarGrupoUsuario(usr)}" rendered="${fn:length(usr.gruposAdicionais)>1}" acao="#{pgPermissoes.acaoListarGruposDoUsuario}" armazenamentoAcaoExecutada="#{pgPermissoes.acaoselecionada}" />
 
 
-                <SBComp:botaoDeAcao metodo="#{pgPermissoes.removerUsuario(usr)}"  acao="#{pgPermissoes.acaoRemoverUsuarioDoGrupo}" armazenamentoAcaoExecutada="#{pgPermissoes.acaoselecionada}" />
+                <SBAcaoNav:botaoDeAcao metodo="#{pgPermissoes.removerUsuario(usr)}"  acao="#{pgPermissoes.acaoRemoverUsuarioDoGrupo}" armazenamentoAcaoExecutada="#{pgPermissoes.acaoselecionada}" />
 
 
 
