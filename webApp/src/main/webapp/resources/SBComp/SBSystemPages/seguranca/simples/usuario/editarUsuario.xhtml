@@ -3,10 +3,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-
+      xmlns:SBInput="http://xmlns.jcp.org/jsf/composite/SBComp/composite/input"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
@@ -47,10 +47,10 @@
 
 
 
-                        <SBComp:input  registro="#{pgCadastroUsuarios.usuarioSelecionado.getCampoByNomeOuAnotacao(tipos.tipoCampo.NOME_CURTO)}"  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"  desabilitarEdicao="#{!pgCadastroUsuarios.podeEditar}"  />
-                        <SBComp:input  registro="#{pgCadastroUsuarios.usuarioSelecionado.getCampoByNomeOuAnotacao(tipos.tipoCampo.EMAIL)}"   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"   desabilitarEdicao="#{!pgCadastroUsuarios.podeEditar}"   />
-                        <SBComp:input  registro="#{pgCadastroUsuarios.usuarioSelecionado.getCampoByNomeOuAnotacao(tipos.tipoCampo.senha)}"  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"  desabilitarEdicao="#{!pgCadastroUsuarios.podeEditar}"  />
-                        <SBComp:input  registro="#{pgCadastroUsuarios.usuarioSelecionado.getCampoByNomeOuAnotacao('grupo')}"   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"   desabilitarEdicao="#{!pgCadastroUsuarios.podeEditar}"  />
+                        <SBInput:input  registro="#{pgCadastroUsuarios.usuarioSelecionado.getCampoByNomeOuAnotacao(tipos.tipoCampo.NOME_CURTO)}"  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"  desabilitarEdicao="#{!pgCadastroUsuarios.podeEditar}"  />
+                        <SBInput:input  registro="#{pgCadastroUsuarios.usuarioSelecionado.getCampoByNomeOuAnotacao(tipos.tipoCampo.EMAIL)}"   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"   desabilitarEdicao="#{!pgCadastroUsuarios.podeEditar}"   />
+                        <SBInput:input  registro="#{pgCadastroUsuarios.usuarioSelecionado.getCampoByNomeOuAnotacao(tipos.tipoCampo.senha)}"  layout="#{layoutsComponenteSB.layoutCampo.esquerda}"  desabilitarEdicao="#{!pgCadastroUsuarios.podeEditar}"  />
+                        <SBInput:input  registro="#{pgCadastroUsuarios.usuarioSelecionado.getCampoByNomeOuAnotacao('grupo')}"   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"   desabilitarEdicao="#{!pgCadastroUsuarios.podeEditar}"  />
 
 
 

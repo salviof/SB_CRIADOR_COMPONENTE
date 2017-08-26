@@ -3,11 +3,9 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
-      xmlns:SO="http://xmlns.jcp.org/jsf/composite/SBComp/OLD"
-      xmlns:SBFormulario="http://xmlns.jcp.org/jsf/composite/SBComp/formulario">
+
+      xmlns:SBForm="http://xmlns.jcp.org/jsf/composite/SBComp/composite/formulario">
 
     <h:head>
         <f:facet name="first">
@@ -24,7 +22,7 @@
 
 
         <h:form>
-            <SBComp:formulario acao="#{pgDemoComponente.acaoFormularioTeste}" tipoVisualizacao="#{tipos.tipoVisualFormulario.gruposCampos}" registro="#{pgDemoComponente.beanExemplo}"/>
+
         </h:form>
 
 
@@ -35,7 +33,7 @@
         <!-- -->
 
         <h:form>
-            <SBComp:formulario acao="#{pgDemoComponente.acaoFormularioTeste}" tipoVisualizacao="#{tipos.tipoVisualFormulario.assistente}" registro="#{pgDemoComponente.beanExemplo}" somenteLeitura="#{true}" tipoVisualizacaoLabel="#{tipos.tipoVisualCampo.labelEsquerda}"/>
+
         </h:form>
 
 

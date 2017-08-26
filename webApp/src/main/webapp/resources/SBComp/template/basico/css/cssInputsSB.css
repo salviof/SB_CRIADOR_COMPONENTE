@@ -2,91 +2,9 @@
 @charset "utf-8";
 /* CSS Document */
 
-.botao{
-    margin-top: 2px;
-    width: 100%!important;
-}
-.btnIcone{
 
-}
-.btnIconeENome{
-
-}
-.btnIconeGrande{
-    font-size:80px !important;
-    align-items: center;
-    color: #ffffff !important;
-    background-color: #0099ff !important;
-}
-
-.btnIconeGrande:hover {
-    background-color: #00aeff !important;
-}
-.inputCampo{
-    width:   100%!important;
-    border : none!important;
-
-}
-
-.panelGridEsquerda{
-    border: none;
-}
-
-.panelGridSuperior{
-    border: none;
-}
-
-
-.colunaLabel{
-    width: 120px;
-}
-.colunaResponsiva{
-    width: auto;
-}
-
-.campoMascara{
-
-
-}
 .campoSimples{
 
-
-}
-.campoGrande{}
-.campoMultiplasLinhas{}
-.camoMinimoEMaximo{}
-.campoSenha{}
-.campoCEP{}
-.campoCor{}
-.campoHTML{}
-.campoQuantidade{
-    width: 10% !important;
-}
-.campoMoeda{
-    width: 10%  !important;
-}
-.campoEmail{}
-.campoData{
-    width: 15%  !important;
-}
-.campoDataHora{}
-.campoLigadoDesligado{}
-.campoEntidadeSimples{}
-
-
-/* CSS OLD APENAS PARA COMPATIBILIDADE MOMENTANEA, SERÁ EXCLUIDO  */
-.colunaLabel{
-    width: 120px;
-}
-.colunaResponsiva{
-    width: auto;
-
-}
-.colunaCampoFixo{
-
-}
-.campoResponsivo{
-    width:   98%!important;
 
 }
 

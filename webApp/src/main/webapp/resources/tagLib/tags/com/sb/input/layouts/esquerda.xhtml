@@ -12,16 +12,15 @@
                      columnClasses="colunaLabel,colunaResponsiva">
             <p:outputLabel  value="#{label}"
                             for="#{pgUtil.getNomeIdComponenteInput(component)}"  />
-
-
             <ui:insert name="input" />
             <p:tooltip  rendered="#{registro.temDescricao}"
                         for="#{pgUtil.getNomeIdComponenteInput(component)}"
                         value="Info: #{registro.descricao}"
                         />
             <p:message  for="#{pgUtil.getNomeIdComponenteInput(component)}"/>
-
+            <ui:include src="debugDoCampo.xhtml" rendered="#{infoWebApp.emModoDesenvolvimentoHomologacao}" />
         </h:panelGrid>
+
     </h:panelGroup>
 </ui:composition>
 

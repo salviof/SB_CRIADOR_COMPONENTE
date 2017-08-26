@@ -23,7 +23,7 @@ public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersiste
 
     @InfoTipoAcaoGestaoEntidade(icone = "fa fa-tag", entidade = BeanExemplo.class)
     BEAN_EXEMPLO_MB,
-    @InfoTipoAcaoFormulario(campos = {"id", "apelido", "verdadeiroOuFalso", "beanFilho.apelido"})
+    @InfoTipoAcaoFormulario(campos = {"id", "apelido", "verdadeiroOuFalso", "beanFilho.apelido", "seletorOpcao"})
     BEAN_EXEMPLO_FRM_LISTAR,
     @InfoTipoAcaoFormulario()
     BEAN_EXEMPLO_FRM_VISUALIZAR,

@@ -2,16 +2,21 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:SBListagem="http://xmlns.jcp.org/jsf/composite/SBComp/composite/listagens"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
 
     <ui:composition template="#{layoutsPaginas.conteudoEmBranco.xhtmlVinculado}" >
         <ui:define name="conteudo">
             <h:form>
 
 
-                <SBComp:listaMobile
-                    acaoDeListagem="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoListarRegistros}"
+                <SBListagem:listaComOpcoesMobile
+                    armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+                    grupoCampos="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoListarRegistros.gruposDeCampos[0]}"
+                    titulo="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoListarRegistros.gruposDeCampos[0].nome}"
+
+
                     itemSelecionado="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
                     itens="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadesListadas}"
                     metodo="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(item)}"
@@ -19,8 +24,11 @@
                     rendered="#{paginaAtual.sessao.tipoView.umMobile}"
                     />
 
-                <SBComp:listaDesktop
-                    acaoDeListagem="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoListarRegistros}"
+                <SBListagem:listaComOpcoesDesktop
+                    armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+                    grupoCampos="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoListarRegistros.gruposDeCampos[0]}"
+                    titulo="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoListarRegistros.gruposDeCampos[0].nome}"
+
                     itemSelecionado="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
                     itens="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadesListadas}"
                     metodo="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(item)}"

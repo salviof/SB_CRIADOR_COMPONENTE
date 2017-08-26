@@ -2,9 +2,9 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:SBFormulario="http://xmlns.jcp.org/jsf/composite/SBComp/formulario"
+      xmlns:SBFormulario="http://xmlns.jcp.org/jsf/composite/SBComp/composite/formulario"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
-      xmlns:SBFormEntidade="http://xmlns.jcp.org/jsf/composite/SBComp/extras/paginaAtualDeEntidade"
+      xmlns:SBFormAtualEnt="http://xmlns.jcp.org/jsf/composite/SBComp/composite/paginaAtualDeEntidade"
       >
     <!-- template conteúdo com formulario-->
     <ui:composition template="#{layoutsPaginas.formularioAcaoAtualDaEntidade.xhtmlVinculado}" >
@@ -16,7 +16,7 @@
                 />
         </ui:define>
         <ui:define name="botoesDeAcao">
-            <SBFormEntidade:botaoSalvarAlteracoes />
+            <SBFormAtualEnt:botaoSalvarAlteracoes />
         </ui:define>
     </ui:composition>
 
