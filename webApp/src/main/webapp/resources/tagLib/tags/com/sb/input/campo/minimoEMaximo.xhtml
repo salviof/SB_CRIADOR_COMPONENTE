@@ -13,17 +13,29 @@
             <h:outputText
 
                 class="campoResponsivo  TexAlCenter #{componente.classeCSS}"
-                id="outputPorcentagem"
+
                 value="#{valor}"
 
-                />
+                >
+                <p:slider
+
+                    disabled="#{desabilitarEdicao}"
+                    maxValue="#{registro.valorMaximo}"
+                    minValue="#{registro.valorMinimo}"
+
+                    for="@parent" display="outputPorcentagem"
+                    style="width: 200px" displayTemplate=" {value} %">
 
 
 
 
-            <p:inputText id="cpvalorHiden"
-                         value="#{registro.valor}"
-                         style=" visibility: hidden;" >
+                </p:slider>
+            </h:outputText>
+
+
+            <p:inputText 
+                value="#{registro.valor}"
+                style=" visibility: hidden;" >
                 <p:ajax rendered="#{possuiMetodoOnChange}"
                         global="true"
                         event="valueChange"
@@ -34,21 +46,14 @@
                     global="true"
                     event="valueChange"
                     listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
+
+
+
+
+
             </p:inputText>
 
-            <p:slider
 
-                disabled="#{desabilitarEdicao}"
-                maxValue="#{registro.valorMaximo}"
-                minValue="#{registro.valorMinimo}"
-
-                for="cpvalorHiden" display="outputPorcentagem"
-                style="width: 200px" displayTemplate=" {value} %">
-
-
-
-
-            </p:slider>
 
 
         </ui:define>

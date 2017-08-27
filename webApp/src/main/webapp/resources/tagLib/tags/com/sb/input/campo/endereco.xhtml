@@ -10,7 +10,7 @@
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
-            <h:panelGroup id="coletorEndereco"  rendered="#{registro.umCampoCampoLocalizacao}">
+            <h:panelGroup   rendered="#{registro.umCampoCampoLocalizacao}">
 
 
                 <h:panelGrid columns="4"   >
@@ -21,7 +21,7 @@
                         <p:commandLink
 
                             actionListener="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.limparCep()}"
-                            update="coletorEndereco"
+                            update="@parent:@parent:@parent"
                             rendered="#{!registro.comoCampoLocalizacao.estadoNulo and !desabilitarEdicao}"
 
                             >
@@ -37,7 +37,7 @@
                         <p:commandLink
 
                             actionListener="#{registro.comoCampoLocalizacao.limparEstado()}"
-                            update="coletorEndereco"
+                            update="@parent:@parent:@parent"
                             rendered="#{!registro.comoCampoLocalizacao.estadoNulo  and !desabilitarEdicao}"
 
                             >
@@ -52,7 +52,7 @@
 
                         #{registro.comoCampoLocalizacao.cidade.nome}<p:commandLink
                             actionListener="#{registro.comoCampoLocalizacao.limparCidade()}"
-                            update="coletorEndereco"
+                            update="@parent:@parent:@parent"
                             rendered="#{!registro.comoCampoLocalizacao.cidadeNula and !desabilitarEdicao }"
                             >
 
@@ -68,7 +68,7 @@
                         <p:commandLink
 
                             actionListener="#{registro.comoCampoLocalizacao.limparBairro()}"
-                            update="coletorEndereco"
+                            update="@parent:@parent:@parent"
                             rendered="#{!registro.comoCampoLocalizacao.bairroNulo and !desabilitarEdicao}"
                             >
 
@@ -84,7 +84,7 @@
 
                 <h:panelGrid columns="2" columnClasses="campoResponsivo,tamanho20px"
                              rendered="#{registro.comoCampoLocalizacao.coletarEstadoAgora}"
-                             id="estado"
+
                              >
                     <p:autoComplete converter="conversorGenerico"
                                     completeMethod="#{registro.comoCampoLocalizacao.metodoAutoCompleteEstado}"
@@ -98,12 +98,12 @@
 
                                     styleClass="campoResponsivo"
 
-                                    id="cpEstado"
+
                                     >
                         <p:ajax
                             event="itemSelect"
-                            partialSubmit="cpEstado"
-                            update="coletorEndereco"
+                            partialSubmit="@ṕaremt"
+                            update="@parent:@parent:@parent"
                             />
                     </p:autoComplete>
                     <p:focus for="cpEstado" />
@@ -112,7 +112,7 @@
 
                 <h:panelGrid columns="2" columnClasses="campoResponsivo,tamanho20px"
                              rendered="#{registro.comoCampoLocalizacao.coletarCidadeAgora}"
-                             id="cidade"
+
                              >
                     <p:autoComplete converter="conversorGenerico"
                                     completeMethod="#{registro.comoCampoLocalizacao.metodoAutoCompleteCidade}"
@@ -126,11 +126,11 @@
 
                                     styleClass="campoResponsivo"
 
-                                    id="cpCidade"
+
                                     >
                         <p:ajax
                             event="itemSelect"
-                            update="coletorEndereco"
+                            update="@parent:@parent:@parent"
                             />
                     </p:autoComplete>
                     <p:focus for="cpCidade" />
@@ -141,7 +141,7 @@
 
                 <h:panelGrid columns="2" columnClasses="campoResponsivo,tamanho20px"
                              rendered="#{registro.comoCampoLocalizacao.coletarBairroAgora}"
-                             id="bairro"
+
                              >
                     <p:autoComplete converter="conversorGenerico"
                                     completeMethod="#{registro.comoCampoLocalizacao.metodoAutoCompleteBairro}"
@@ -152,12 +152,12 @@
                                     itemLabel="#{bairro.nome}"
                                     placeholder="Localize o Bairro"
                                     styleClass="campoResponsivo"
-                                    id="cpBairro"
+
                                     >
                         <p:ajax
                             event="itemSelect"
 
-                            update="coletorEndereco"
+                            update="@parent:@parent:@parent"
                             />
                     </p:autoComplete>
                     <p:focus for="cpBairro" />
@@ -168,19 +168,19 @@
 
                 <h:panelGrid columns="2" columnClasses="campoResponsivo,tamanho20px"
                              rendered="#{registro.comoCampoLocalizacao.coletarCepAgora}"
-                             id="cep"
+
                              >
 
                     <p:inputMask
                         mask="99999-999"
                         value="#{registro.comoCampoLocalizacao.cep}"
-                        id="cpCep"
+
                         placeholder="Digite O CEP"
                         >
                         <p:ajax
                             event="valueChange"
                             partialSubmit="cpEstado"
-                            update="coletorEndereco"
+                            update="@parent:@parent:@parent"
                             />
 
                     </p:inputMask>
@@ -190,11 +190,11 @@
 
                 <h:panelGrid columns="3" columnClasses="campoResponsivo,Wid33,tamanho20px"
                              rendered="#{registro.comoCampoLocalizacao.coletarLogradouroAgora}"
-                             id="logradouro"
+
                              >
                     <p:inputText
                         value="#{registro.comoCampoLocalizacao.logradouroDescricao}"
-                        id="cpLogradouro"
+
                         styleClass="campoResponsivo"
                         placeholder="Logradouro"
                         >
@@ -202,13 +202,13 @@
                     </p:inputText>
                     <p:inputText
                         value="#{registro.comoCampoLocalizacao.local.comoLocalPostavel.complemento}"
-                        id="cpComplemento"
+
                         placeholder="Complemento"
                         >
-
+                        <p:focus for="@parent" />
                     </p:inputText>
 
-                    <p:focus for="cpComplemento" />
+
                     <SBInput:opcoesDeEndereco campo="#{registro}" />
                 </h:panelGrid>
 

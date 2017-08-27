@@ -14,7 +14,7 @@
 
             <p:inputText  style=" visibility: hidden;"/>
 
-            <h:panelGroup id="inputArquivoEntidade" >
+            <h:panelGroup  >
 
                 <h:panelGroup  rendered="#{registro.vazio}"  >
 
@@ -23,7 +23,7 @@
                                      partialSubmit="true"
                                      process="@this"
                                      >
-                        <p:ajax event="dialogReturn"  update="inputArquivoEntidade"/>
+                        <p:ajax event="dialogReturn"  update="@parent:@parent"/>
 
                         <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}"
                                                      value="#{registro}" />

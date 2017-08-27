@@ -4,8 +4,10 @@
     xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:cc="http://java.sun.com/jsf/composite"
     xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+    xmlns:SBForm="http://xmlns.jcp.org/jsf/composite/SBComp/composite/formulario"
     xmlns:SBInput="http://xmlns.jcp.org/jsf/composite/SBComp/composite/input"
-    xmlns:h="http://xmlns.jcp.org/jsf/html">
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
 
     <!-- INTERFACE -->
     <cc:interface>
@@ -34,11 +36,13 @@
                                />
             </h:panelGroup>
             <c:if test="#{camp.umCampoComLista}">
-                <h:panelGroup rendered="#{camp.umCampoComLista}" styleClass="Container100 Responsive" style="position: relative;" >
 
-                    #{camp.caminhoSemNomeClasse} -> Comp desabilitado, utilizar chamada direta:SBForm:subFormulario (motivo: gestão de ID duplicados)
 
-                </h:panelGroup>
+                <SBForm:subFormulario
+                    registro="#{cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse)}"
+                    grupoCampos="#{camp.grupoSubcampos}"
+                    />
+
             </c:if>
 
 
