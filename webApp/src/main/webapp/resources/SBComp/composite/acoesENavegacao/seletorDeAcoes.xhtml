@@ -48,7 +48,7 @@
                 <c:when test="#{cc.attrs.visualizacaoBotao==layoutsComponenteSB.layoutBotoes.icone}">
 
                     <p:commandButton  onmousedown="esconderTooltips();"
-                                      id="btIcon#{cc.id}"
+
                                       icon="#{opc.iconeAcao}"
                                       action="#{cc.attrs.metodo}"
                                       update="#{pgUtil.gerarCaminhoCompletoID(cc.attrs.update)}"
@@ -61,9 +61,9 @@
                                 rendered="#{opc.acaoTemModal}"
                                 />
 
-
+                        <p:tooltip for="@parent" value="#{opc.nomeAcao}" trackMouse="true" />
                     </p:commandButton>
-                    <p:tooltip for="btIcon#{cc.id}" value="#{opc.nomeAcao}" trackMouse="true" />
+
                 </c:when>
 
 

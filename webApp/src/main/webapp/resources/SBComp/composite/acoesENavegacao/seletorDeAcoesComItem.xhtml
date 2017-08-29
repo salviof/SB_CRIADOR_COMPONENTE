@@ -59,22 +59,23 @@
                 <c:when test="#{cc.attrs.visualizacaoBotao==layoutsComponenteSB.layoutBotoes.icone}">
 
                     <p:commandButton  onmousedown="esconderTooltips();"
-                                      id="btIcon#{cc.id}"
+                                      id="#{cc.id}"
                                       icon="#{opc.iconeAcao}"
                                       action="#{cc.attrs.metodo}"
                                       update="#{pgUtil.gerarCaminhoCompletoID(cc.attrs.update)}"
                                       >
                         <f:setPropertyActionListener
                             target="#{cc.attrs.opcaoSelecionada}"
-                            value="#{opc}"/>
+                            value="#{opc}"
+                            >
 
-                        <p:ajax event="dialogReturn" listener="#{paginaAtual.infoPagina.metodoRespostaModal}"
-                                rendered="#{opc.acaoTemModal}"
-                                />
+                            <p:ajax event="dialogReturn" listener="#{paginaAtual.infoPagina.metodoRespostaModal}"
+                                    rendered="#{opc.acaoTemModal}"
+                                    />
 
-
+                            <p:tooltip for="@parent" value="#{opc.nomeAcao}" trackMouse="true" />
                     </p:commandButton>
-                    <p:tooltip for="btIcon#{cc.id}" value="#{opc.nomeAcao}" trackMouse="true" />
+
                 </c:when>
 
 

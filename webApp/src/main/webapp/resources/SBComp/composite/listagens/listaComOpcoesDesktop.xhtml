@@ -60,93 +60,95 @@
         <c:if test="#{!pgUtilLayout.verificaExisteLayout(cc.attrs.grupoCampos.nomeIdentificadorSlug)}">
             #{pgUtilLayout.gerarLayout(cc.attrs.grupoCampos, cc.attrs.opcoes) }
         </c:if>
+
         <h:panelGroup>
-            <p:dataTable sortMode="multiple"
-                         value="#{cc.attrs.itens}"
-                         var="item"
-                         paginatorPosition="bottom"
-                         emptyMessage="#{cc.attrs.mensagemSemRegistro}"
-                         paginator="true"
-                         rows="10"
-                         widgetVar="#{pgUtil.gerarNomeSlug(cc.attrs.titulo)}"
-                         resizeMode="fit"
-                         >
+            <h:form>
+                <p:dataTable sortMode="multiple"
+                             value="#{cc.attrs.itens}"
+                             var="item"
+                             paginatorPosition="bottom"
+                             emptyMessage="#{cc.attrs.mensagemSemRegistro}"
+                             paginator="true"
+                             rows="10"
+                             widgetVar="#{pgUtil.gerarNomeSlug(cc.attrs.titulo)}"
+                             resizeMode="fit"
+                             >
 
-                <f:facet name="header" >
+                    <f:facet name="header" >
 
-                    <div  class="container-fluid">
-                        <div class="row" >
-                            <div class="col-md-4 col-md-offset-4 " style="margin-top: 10px;margin-right: 0px " >
-                                #{cc.attrs.titulo}
-                            </div>
-                            <div class="col-md-4 " style="margin-top: 5px; margin-bottom: 5px; " >
-
-
-                                <p:inputText
-                                    id="globalFilter"
-                                    onkeyup="PF('#{pgUtil.gerarNomeSlug(cc.attrs.titulo)}').filter()"
-                                    style="width:100%; height: 35px;"
-                                    placeholder="Pesquise aqui:"/>
+                        <div  class="container-fluid">
+                            <div class="row" >
+                                <div class="col-md-4 col-md-offset-4 " style="margin-top: 10px;margin-right: 0px " >
+                                    #{cc.attrs.titulo}
+                                </div>
+                                <div class="col-md-4 " style="margin-top: 5px; margin-bottom: 5px; " >
 
 
+                                    <p:inputText
+                                        id="globalFilter"
+                                        onkeyup="PF('#{pgUtil.gerarNomeSlug(cc.attrs.titulo)}').filter()"
+                                        style="width:100%; height: 35px;"
+                                        placeholder="Pesquise aqui:"/>
 
+
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </f:facet>
-
-
-                <p:columns var="coluna" value="#{cc.attrs.grupoCampos.campos}"
-                           sortBy="#{item[coluna.primeiroCaminhoSemNomeClasse]}"
-                           filterBy="#{item[coluna.primeiroCaminhoSemNomeClasse]}"
-                           filterMatchMode="contains"
-                           filterStyleClass="listaComOcoesOcultaFitro"
-                           width="#{pgUtilLayout.getColunaLayoutByNomeCampoCompletoComGrupo(coluna.caminhoCompletoComGrupoCampo).porcentagemCalculada}%"
-
-                           >
-
-
-                    <f:facet name="header">
-                        #{pgUtilLayout.getColunaLayoutByNomeCampoCompletoComGrupo(coluna.caminhoCompletoComGrupoCampo).porcentagemCalculada}
-                        <h:outputText value= "#{coluna.label}"/>
                     </f:facet>
-                    <center>
-                        <sb:inputSB
-                            registro="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse)}"
-                            desabilitarEdicao="true"
-                            layoutCampo="#{layoutsComponenteSB.layoutCampo.semLabel}"
-                            possuiIDOnChange="false"
-                            possuiMetodoOnChange="false"
-                            label="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse).label}"
-                            atualizarFormOnChange="false"
-                            atualizarGrupoOnChange="false"
-                            obrigatorio="false"
-                            />
-                    </center>
-                </p:columns>
 
 
-                <p:column headerText="Ações #{pgUtilLayout.getUltimaColunaDoLayoyt(cc.attrs.grupoCampos.nomeIdentificadorSlug).porcentagemCalculada}%"
-                          width="#{pgUtilLayout.getUltimaColunaDoLayoyt(cc.attrs.grupoCampos.nomeIdentificadorSlug).porcentagemCalculada}%">
+                    <p:columns var="coluna" value="#{cc.attrs.grupoCampos.campos}"
+                               sortBy="#{item[coluna.primeiroCaminhoSemNomeClasse]}"
+                               filterBy="#{item[coluna.primeiroCaminhoSemNomeClasse]}"
+                               filterMatchMode="contains"
+                               filterStyleClass="listaComOcoesOcultaFitro"
+                               width="#{pgUtilLayout.getColunaLayoutByNomeCampoCompletoComGrupo(coluna.caminhoCompletoComGrupoCampo).porcentagemCalculada}%"
 
-                    <center>
-
-                        <SBAcaoNav:seletorDeAcoes
-                            metodo="#{cc.attrs.metodo}"
-                            opcoes="#{cc.attrs.opcoes}"
-                            visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.icone}"
-                            opcaoSelecionada="#{cc.attrs.armazenamentoAcaoSelecionada}"
-                            />
+                               >
 
 
-                    </center>
+                        <f:facet name="header">
+                            #{pgUtilLayout.getColunaLayoutByNomeCampoCompletoComGrupo(coluna.caminhoCompletoComGrupoCampo).porcentagemCalculada}
+                            <h:outputText value= "#{coluna.label}"/>
+                        </f:facet>
+                        <center>
+                            <sb:inputSB
+                                registro="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse)}"
+                                desabilitarEdicao="true"
+                                layoutCampo="#{layoutsComponenteSB.layoutCampo.semLabel}"
+                                possuiIDOnChange="false"
+                                possuiMetodoOnChange="false"
+                                label="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse).label}"
+                                atualizarFormOnChange="false"
+                                atualizarGrupoOnChange="false"
+                                obrigatorio="false"
+                                />
+                        </center>
+                    </p:columns>
 
-                </p:column>
+
+                    <p:column headerText="Ações #{pgUtilLayout.getUltimaColunaDoLayoyt(cc.attrs.grupoCampos.nomeIdentificadorSlug).porcentagemCalculada}%"
+                              width="#{pgUtilLayout.getUltimaColunaDoLayoyt(cc.attrs.grupoCampos.nomeIdentificadorSlug).porcentagemCalculada}%">
+
+                        <center>
+
+                            <SBAcaoNav:seletorDeAcoes
+                                metodo="#{cc.attrs.metodo}"
+                                opcoes="#{cc.attrs.opcoes}"
+                                visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.icone}"
+                                opcaoSelecionada="#{cc.attrs.armazenamentoAcaoSelecionada}"
+                                />
+
+
+                        </center>
+
+                    </p:column>
 
 
 
-            </p:dataTable>
-
+                </p:dataTable>
+            </h:form>
 
         </h:panelGroup>
 

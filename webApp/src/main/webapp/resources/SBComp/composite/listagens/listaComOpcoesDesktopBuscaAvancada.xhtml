@@ -51,76 +51,75 @@
     <cc:implementation>
 
         <h:panelGroup>
-
-
-            <p:dataTable sortMode="multiple"
-                         value="#{cc.attrs.itens}"
-                         var="item"
-                         emptyMessage="Nenhum #{cc.attrs.acaoDeListagem.nomeDominio} Encontrado"
-                         paginator="true"
-                         rows="10"
-                         >
-
-                <f:facet name="header">
-                    #{cc.attrs.titulo}
-                </f:facet>
-
-
-                <p:columns var="coluna" value="#{cc.attrs.acaoDeListagem.campos}"
-                           sortBy="#{item[coluna.caminhoSemNomeClasse]}"
-                           filterBy="#{item[coluna.caminhoSemNomeClasse]}"
-                           filterMatchMode="contains"
-
-                           >
+            <h:form>
+                <p:dataTable sortMode="multiple"
+                             value="#{cc.attrs.itens}"
+                             var="item"
+                             emptyMessage="Nenhum #{cc.attrs.acaoDeListagem.nomeDominio} Encontrado"
+                             paginator="true"
+                             rows="10"
+                             >
 
                     <f:facet name="header">
-                        <h:outputText value= "#{coluna.label}"/>
+                        #{cc.attrs.titulo}
                     </f:facet>
 
 
-                    <sb:inputSB
-                        registro="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse)}"
-                        desabilitarEdicao="true"
-                        layoutCampo="#{layoutsComponenteSB.layoutCampo.semLabel}"
-                        possuiIDOnChange="false"
-                        possuiMetodoOnChange="false"
+                    <p:columns var="coluna" value="#{cc.attrs.acaoDeListagem.campos}"
+                               sortBy="#{item[coluna.caminhoSemNomeClasse]}"
+                               filterBy="#{item[coluna.caminhoSemNomeClasse]}"
+                               filterMatchMode="contains"
 
-                        label="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse).label}"
+                               >
 
-                        atualizarFormOnChange="false"
-
-                        atualizarGrupoOnChange="false"
-                        obrigatorio="false"
-
-                        />
+                        <f:facet name="header">
+                            <h:outputText value= "#{coluna.label}"/>
+                        </f:facet>
 
 
+                        <sb:inputSB
+                            registro="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse)}"
+                            desabilitarEdicao="true"
+                            layoutCampo="#{layoutsComponenteSB.layoutCampo.semLabel}"
+                            possuiIDOnChange="false"
+                            possuiMetodoOnChange="false"
 
+                            label="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse).label}"
 
+                            atualizarFormOnChange="false"
 
+                            atualizarGrupoOnChange="false"
+                            obrigatorio="false"
 
-                </p:columns>
-
-
-                <p:column headerText="Ações" width="180">
-
-                    <center>
-
-                        <SBAcaoNav:seletorDeAcoes
-
-                            metodo="#{cc.attrs.metodo}"
-                            opcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
-                            opcoes="#{cc.attrs.opcoes}"
-                            visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.icone}"
-
-                            /> </center>
-
-                </p:column>
+                            />
 
 
 
-            </p:dataTable>
 
+
+
+                    </p:columns>
+
+
+                    <p:column headerText="Ações" width="180">
+
+                        <center>
+
+                            <SBAcaoNav:seletorDeAcoes
+
+                                metodo="#{cc.attrs.metodo}"
+                                opcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+                                opcoes="#{cc.attrs.opcoes}"
+                                visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.icone}"
+
+                                /> </center>
+
+                    </p:column>
+
+
+
+                </p:dataTable>
+            </h:form>
 
         </h:panelGroup>
 

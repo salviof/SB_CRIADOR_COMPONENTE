@@ -53,55 +53,55 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
         <h:panelGroup>
+            <h:form>
+                <p:dataGrid
 
-            <p:dataGrid
+                    var="item"
+                    value="#{cc.attrs.itens}"
+                    layout="grid"
+                    columns="3"
 
-                var="item"
-                value="#{cc.attrs.itens}"
-                layout="grid"
-                columns="3"
-
-                emptyMessage="Nenhum #{cc.attrs.acaoDeListagem.nomeDominio} encontrado"
-                paginatorTemplate=" {FirstPageLink} {PreviousPageLink}
-                {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                rowsPerPageTemplate="6,9,12,15"
-                >
-
-
-
-                <f:facet name="header">
-                    #{cc.attrs.titulo}
-                </f:facet>
-
-                <p:panel>
-
-                    <ui:repeat value="#{cc.attrs.acaoDeListagem.campos}"
-                               var="campo">
-
-                        <SBInput:input
-                            registro="#{item.getCampoByNomeOuAnotacao(campo.caminhoSemNomeClasse)}"
-                            desabilitarEdicao="true"
-                            layout="#{layoutsComponenteSB.layoutCampo.semLabel}"
+                    emptyMessage="Nenhum #{cc.attrs.acaoDeListagem.nomeDominio} encontrado"
+                    paginatorTemplate=" {FirstPageLink} {PreviousPageLink}
+                    {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                    rowsPerPageTemplate="6,9,12,15"
+                    >
 
 
-                            />
 
-                    </ui:repeat>
+                    <f:facet name="header">
+                        #{cc.attrs.titulo}
+                    </f:facet>
 
-                    <center>
-                        <SBAcaoNav:seletorDeAcoes
-                            metodo="#{cc.attrs.metodo}"
-                            opcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
-                            opcoes="#{cc.attrs.opcoes}"
-                            visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.icone}"
-                            />
-                    </center>
+                    <p:panel>
+
+                        <ui:repeat value="#{cc.attrs.acaoDeListagem.campos}"
+                                   var="campo">
+
+                            <SBInput:input
+                                registro="#{item.getCampoByNomeOuAnotacao(campo.caminhoSemNomeClasse)}"
+                                desabilitarEdicao="true"
+                                layout="#{layoutsComponenteSB.layoutCampo.semLabel}"
 
 
-                </p:panel>
+                                />
 
-            </p:dataGrid>
+                        </ui:repeat>
 
+                        <center>
+                            <SBAcaoNav:seletorDeAcoes
+                                metodo="#{cc.attrs.metodo}"
+                                opcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+                                opcoes="#{cc.attrs.opcoes}"
+                                visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.icone}"
+                                />
+                        </center>
+
+
+                    </p:panel>
+
+                </p:dataGrid>
+            </h:form>
         </h:panelGroup>
 
     </cc:implementation>

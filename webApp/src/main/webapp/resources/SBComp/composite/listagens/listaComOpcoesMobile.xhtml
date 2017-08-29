@@ -54,54 +54,61 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
         <h:panelGroup>
+            <h:form>
+                <p:dataGrid
 
-            <p:dataGrid
-
-                var="item"
-                value="#{cc.attrs.itens}"
-                layout="grid"
-                columns="3"
-
-                emptyMessage="#{cc.attrs.mensagemSemRegistro}"
-                paginatorTemplate=" {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                rowsPerPageTemplate="6,9,12,15"
-                >
-
-
-
-                <f:facet name="header">
-                    #{cc.attrs.titulo}
-                </f:facet>
-
-                <p:panel>
-
-                    <ui:repeat value="#{cc.attrs.grupoCampos.campos}"
-                               var="campo">
-
-                        <SBInput:input
-                            registro="#{item.getCampoByNomeOuAnotacao(campo.caminhoSemNomeClasse)}"
-                            desabilitarEdicao="true"
-                            layout="#{layoutsComponenteSB.layoutCampo.semLabel}"
+                    var="item"
+                    value="#{cc.attrs.itens}"
+                    layout="grid"
+                    columns="3"
+                    widgetVar="#{pgUtil.gerarNomeSlug(cc.attrs.titulo)}"
+                    emptyMessage="#{cc.attrs.mensagemSemRegistro}"
+                    paginatorTemplate=" {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                    rowsPerPageTemplate="6,9,12,15"
+                    >
 
 
-                            />
 
-                    </ui:repeat>
+                    <f:facet name="header">
+                        #{cc.attrs.titulo}
 
-                    <center>
-                        <SBAcaoNav:seletorDeAcoes
-                            metodo="#{cc.attrs.metodo}"
-                            opcaoSelecionada="#{cc.attrs.armazenamentoAcaoSelecionada}"
-                            opcoes="#{cc.attrs.opcoes}"
-                            visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.icone}"
-                            />
-                    </center>
+                        <p:inputText
+                            id="globalFilter"
+                            onkeyup="PF('#{pgUtil.gerarNomeSlug(cc.attrs.titulo)}').filter()"
+                            style="width:100%; height: 35px;"
+                            placeholder="Pesquise aqui:"/>
+
+                    </f:facet>
+
+                    <p:panel>
+
+                        <ui:repeat value="#{cc.attrs.grupoCampos.campos}"
+                                   var="campo">
+
+                            <SBInput:input
+                                registro="#{item.getCampoByNomeOuAnotacao(campo.caminhoSemNomeClasse)}"
+                                desabilitarEdicao="true"
+                                layout="#{layoutsComponenteSB.layoutCampo.semLabel}"
 
 
-                </p:panel>
+                                />
 
-            </p:dataGrid>
+                        </ui:repeat>
 
+                        <center>
+                            <SBAcaoNav:seletorDeAcoes
+                                metodo="#{cc.attrs.metodo}"
+                                opcaoSelecionada="#{cc.attrs.armazenamentoAcaoSelecionada}"
+                                opcoes="#{cc.attrs.opcoes}"
+                                visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.icone}"
+                                />
+                        </center>
+
+
+                    </p:panel>
+
+                </p:dataGrid>
+            </h:form>
         </h:panelGroup>
 
     </cc:implementation>
