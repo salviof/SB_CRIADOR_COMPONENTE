@@ -5,7 +5,7 @@
     <welcome-file-list>
         <welcome-file>/site/home.xhtml</welcome-file>
     </welcome-file-list>
-    
+
     <context-param>
         <param-name>facelets.LIBRARIES</param-name>
         <param-value>/sb.taglibLab.xml</param-value>
@@ -24,7 +24,7 @@
     </context-param>
     <context-param>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
-        <param-value>Production</param-value>
+        <param-value>Development</param-value>
     </context-param>
     <!-- Time in seconds that facelets should be checked for changes since last request. A value of -1 disables refresh checking. -->
     <context-param>
@@ -176,11 +176,6 @@
         <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
     </listener>
 
-
-
-
-
-
     <mime-mapping>
         <extension>ttf</extension>
         <mime-type>application/font-sfnt</mime-type>
@@ -206,25 +201,25 @@
         <mime-type>image/svg+xml</mime-type>
     </mime-mapping>
     <mime-mapping>
-        <extension>svg#latobold</extension>
+        <extension>svg#exosemibold</extension>
         <mime-type>image/svg+xml</mime-type>
     </mime-mapping>
     <mime-mapping>
-        <extension>svg#latoblack</extension>
+        <extension>svg#exobolditalic</extension>
         <mime-type>image/svg+xml</mime-type>
     </mime-mapping>
     <mime-mapping>
-        <extension>svg#latolight</extension>
+        <extension>svg#exomedium</extension>
         <mime-type>image/svg+xml</mime-type>
     </mime-mapping>
     <mime-mapping>
-        <extension>svg#latoregular</extension>
+        <extension>svg#exoregular</extension>
         <mime-type>image/svg+xml</mime-type>
     </mime-mapping>
-
     <mime-mapping>
         <extension>svg#fontawesomeregular</extension>
         <mime-type>image/svg+xml</mime-type>
     </mime-mapping>
+
 
 </web-app>

@@ -16,6 +16,9 @@ and open the template in the editor.
 .ui-datatable .ui-datatable-header{
     padding: 0 !important;
 }
+.ui-datatable-tablewrapper {
+    margin: 0px!important;
+}
 ui-datatable-header.ui-widget-header.ui-corner-top{
     padding: 0 !important;
 

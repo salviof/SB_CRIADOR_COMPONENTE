@@ -34,15 +34,15 @@
                 <h:form>
                     <SBListagem:listaComOpcoesResponsiva
                         armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
-                        grupoCampos="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoListarRegistros.gruposDeCampos[0]}"
+                        grupoCampos="#{pgMapaComponentes.acaoListar.comoFormulario.gruposDeCampos[0]}"
 
 
                         titulo="Formidaveis componentes"
                         itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
                         itens="#{pgMapaComponentes.listaComponentes}"
                         metodo="#{pgMapaComponentes.executarAcao(item)}"
-                        armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
-                        opcoes="#{pgMapaComponentes.acaoEditar}"
+
+                        opcoes="#{pgMapaComponentes.acoesListagem}"
                         mensagemSemRegistro="Nenhum componente encontrado com este nome"
                         />
                 </h:form>

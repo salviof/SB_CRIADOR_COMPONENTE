@@ -9,10 +9,6 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp.TesteSB_CRIADO
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.FabAcaoBeanExemploDemonstrativo;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreLayoutComponenteEmTelas;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormularioEntidade;
-<<<<<<< HEAD
-=======
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoExibicaoFormulario;
->>>>>>> 880b47d5e5600aef0bdf8208839b7d5133e73a9d
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoExibicaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualBotaoAcao;
 import com.super_bits.modulosSB.SBCore.modulos.view.telas.ColunaTela;

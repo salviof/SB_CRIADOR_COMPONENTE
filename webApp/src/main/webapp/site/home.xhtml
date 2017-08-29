@@ -5,7 +5,7 @@
     xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
     xmlns:SBDev="http://xmlns.jcp.org/jsf/composite/SBComp/composite/devel"
     xmlns:p="http://primefaces.org/ui"
-    template="#{layoutsPaginas.modeloGeralAnonimo.xhtmlVinculado}"
+    template="#{layoutsPaginas.modeloGeral.xhtmlVinculado}"
     xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
 
     <ui:define name="head"  >
@@ -17,16 +17,17 @@
     </ui:define>
     <ui:define name="#{layoutsPaginas.modeloGeral.areaPrincipal}">
 
+        <h:form>
+            <p:commandButton update="#{pgUtil.makeCaminhoCompletoID('mensagemUsuario')}" value="Atualizar mensagem"/>
+        </h:form>
         <SBAcaoNav:linkDeAcao acao="#{acoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR.lab_componentes_mb_gerenciar}"
                               tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"         />
 
         <SBAcaoNav:linkDeAcao acao="#{acoesModulo_demonstracao_BEAN_EXEMPLO_MB.bean_exemplo_mb}"
                               tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"    />
 
-        #{infoWebApp.urlPagina}#{resource['adamantium-layout:fonts/lato-bold-webfont.svg']} <br/>
-        --> []---
-        localhost:8080/SB_CRIADOR_COMPONENTE/javax.faces.resource/css/adamantium-font.css.xhtml?ln=adamantium-layout<br/>
-        <SBComp:catalogo/>
+
+
     </ui:define>
 </ui:composition>
 

@@ -14,10 +14,8 @@
         <ui:param name="obrigatorio" value="#{obrigatorio}"/>
         <ui:param name="nomeItem" value="#{registro.label}"/>
         <ui:param rendered="#{registro.umValorComLista}" name="lista" value="#{registro.listaDeOpcoes}"/>
-
         <ui:param name="atualizarFormOnChange" value="#{atualizarFormOnChange}"/>
         <ui:param name="lista" value="#{opcoes}"/>
-
         <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualSeletorItem.combo}"  >
 
             <sb:inputSBCombo />

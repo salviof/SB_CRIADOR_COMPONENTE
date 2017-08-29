@@ -432,6 +432,12 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         return acaoEditar;
     }
 
+    public List<AcaoDoSistema> getAcoesListagem() {
+        List<AcaoDoSistema> acoesListagem = new ArrayList<>();
+        acoesListagem.add(getAcaoEditar());
+        return acoesListagem;
+    }
+
     public void setFamiliaSelecionada(FamiliaComponente pFamilia) {
         familiaSelecionada = pFamilia;
         filtrarPorFamilia();

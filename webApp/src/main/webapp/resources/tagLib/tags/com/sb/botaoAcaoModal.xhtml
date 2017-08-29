@@ -7,8 +7,6 @@
 
     <c:if test="#{layout!=null}">
         <sb:parametroMetodo nome="prMetodo" valor="#{metodo}" />
-
-
         <ui:include
             src="botaoAcaoModal/#{layout.nomeArquivoXHTMLJSF}"
             >
@@ -17,5 +15,4 @@
     <c:if test="#{layout==null}">
         Layout do botoã não enviado!
     </c:if>
-
 </ui:composition>
