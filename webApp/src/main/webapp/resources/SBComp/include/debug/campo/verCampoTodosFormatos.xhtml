@@ -1,67 +1,61 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
-
-    >
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:cc="http://java.sun.com/jsf/composite"
+                xmlns:sb="http://superbitsframework/ui"
 
 
+                xmlns:SBForm="http://xmlns.jcp.org/jsf/composite/SBComp/composite/formulario"
+                xmlns:SBInput="http://xmlns.jcp.org/jsf/composite/SBComp/composite/input"
+                xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
+                xmlns:SBListagem="http://xmlns.jcp.org/jsf/composite/SBComp/composite/listagens"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-    <ui:composition >
+    <p:panelGrid columns="3" >
 
-        <p:panelGrid columns="3" >
+        <p:panel header="Marca daqua"  >
 
-            <p:panel header="Marca daqua"  >
+            <h:form>
 
-                <h:form>
+                <SBInput:input registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgTestesCampo.campoSelecionado.caminhoSemNomeClasse)}"
+                               layout="#{layoutsComponenteSB.layoutCampo.resumido}"
+                               />
+                <p:commandButton update="@form" value="Validar"/>
+            </h:form>
 
-                    <SBComp:input registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgTestesCampo.campoSelecionado.caminhoSemNomeClasse)}"
+        </p:panel>
 
-                                  layoyt="#{layoutsComponenteSB.layoutCampo.resumido}"
-                                  />
-                    <p:commandButton update="@form" value="Validar"/>
-                </h:form>
+        <p:panel header="Esquerda" >
 
-            </p:panel>
+            <h:form>
 
-            <p:panel header="Esquerda" >
+                <SBInput:input registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgTestesCampo.campoSelecionado.caminhoSemNomeClasse)}"
 
-                <h:form>
+                               layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                               />
+                <p:commandButton update="@form" value="Validar"/>
 
-                    <SBComp:input registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgTestesCampo.campoSelecionado.caminhoSemNomeClasse)}"
+            </h:form>
 
-                                  layoyt="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                  />
-                    <p:commandButton update="@form" value="Validar"/>
+        </p:panel>
 
-                </h:form>
+        <p:panel header="superior"  >
 
-            </p:panel>
+            <h:form>
 
-            <p:panel header="superior"  >
+                <SBInput:input  id="superior"
+                                registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgTestesCampo.campoSelecionado.caminhoSemNomeClasse)}"
+                                layout="#{layoutsComponenteSB.layoutCampo.superior}"
+                                />
+                <p:commandButton update="@form" value="Validar"/>
 
-                <h:form>
+            </h:form>
 
-                    <SBComp:input  id="superior"
-                                   registro="#{pgEditarComponente.beanExemplo.getCampoByNomeOuAnotacao(pgTestesCampo.campoSelecionado.caminhoSemNomeClasse)}"
-                                   layoyt="#{layoutsComponenteSB.layoutCampo.superior}"
-                                   />
-                    <p:commandButton update="@form" value="Validar"/>
+        </p:panel>
 
-                </h:form>
+    </p:panelGrid>
 
-            </p:panel>
-
-        </p:panelGrid>
-
-    </ui:composition>
+</ui:composition>
 
 </html>

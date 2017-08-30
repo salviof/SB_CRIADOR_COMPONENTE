@@ -1,9 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html  xmlns="http://www.w3.org/1999/xhtml"
-       xmlns:SBAcoesNavegacao="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
-       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-       xmlns:cc="http://xmlns.jcp.org/jsf/composite">
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:SBAcaoNavegacao="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
+
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:cc="http://xmlns.jcp.org/jsf/composite">
 
 
     <!-- INTERFACE -->
@@ -33,14 +33,14 @@
 
 
 
-        <SBAcoesNavegacao:SBmenuPadraoBasico transient="#{true}"
-                                             rendered="#{cc.attrs.menuBasico!=null}"
+        <SBAcaoNavegacao:SBmenuPadraoBasico transient="#{true}"
+                                            rendered="#{cc.attrs.menuBasico!=null}"
 
-                                             menu="#{cc.attrs.menuBasico}"/>
+                                            menu="#{cc.attrs.menuBasico}"/>
 
 
 
-        <SBAcoesNavegacao:SBmenuPadraoExtendido  menu="#{cc.attrs.menuExtendido}"/>
+        <SBAcaoNavegacao:SBmenuPadraoExtendido  menu="#{cc.attrs.menuExtendido}"/>
 
 
 
@@ -48,4 +48,4 @@
     </cc:implementation>
 
 
-</html>
+</ui:composition>

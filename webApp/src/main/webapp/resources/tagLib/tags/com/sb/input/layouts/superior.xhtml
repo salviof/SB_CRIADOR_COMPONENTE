@@ -1,20 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 
-    <h:panelGroup  class="inputCampo"  >
-        <ui:include src="debugDoCampo.xhtml" rendered="#{infoWebApp.emModoDesenvolvimentoHomologacao}" />
-        <p:outputLabel  value="#{label}"
-                        for="#{pgUtil.getNomeIdComponenteInput(component)}"  />
-        <ui:insert name="input" />
-        <p:message for="#{pgUtil.getNomeIdComponenteInput(component)}"   />
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
+    <h:body>
+
+        <h:panelGroup  class="inputCampo"  >
+            <ui:include src="debugDoCampo.xhtml" rendered="#{infoWebApp.emModoDesenvolvimentoHomologacao}" />
+            <p:outputLabel  value="#{label}"
+                            for="#{pgUtil.getNomeIdComponenteInput(component)}"  />
+            <ui:insert name="input" />
+            <p:message for="#{pgUtil.getNomeIdComponenteInput(component)}"   />
 
 
 
-    </h:panelGroup>
-
-</html>
+        </h:panelGroup>
+    </h:body>
+</ui:composition>
 

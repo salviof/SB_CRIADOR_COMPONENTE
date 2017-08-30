@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:SBInput="http://xmlns.jcp.org/jsf/composite/SBComp/composite/input"
+      xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
 
 
@@ -27,11 +27,11 @@
         </h:form>
 
         <h:form>
-            <SBComp:seletorDeAcoes metodo="#{paginaAtual.infoPagina.executarAcaoSelecionada()}"
-                                   opcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
-                                   opcoes="#{pgLabProjetoAtual.tiposLabObjeto}"
-                                   update="#{pgLabProjetoAtual.idAreaExbicaoAcaoSelecionada}"
-                                   />
+            <SBAcaoNav:seletorDeAcoes metodo="#{paginaAtual.infoPagina.executarAcaoSelecionada()}"
+                                      opcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+                                      opcoes="#{pgLabProjetoAtual.tiposLabObjeto}"
+                                      update="#{pgLabProjetoAtual.idAreaExbicaoAcaoSelecionada}"
+                                      />
         </h:form>
 
     </h:body>

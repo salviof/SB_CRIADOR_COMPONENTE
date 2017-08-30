@@ -1,9 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <p:commandButton onmousedown="esconderTooltips();"
 
@@ -17,5 +16,5 @@
                                      value="#{acao}"  />
         <p:ajax event="dialogReturn" listener="#{paginaAtual.infoPagina.metodoRespostaModal}" update="#{pgUtil.makeCaminhoCompletoID(idUpdate)}" />
     </p:commandButton>
-</html>
+</ui:composition>
 

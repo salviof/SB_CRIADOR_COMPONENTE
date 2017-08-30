@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
+      xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 
     <h:head>
@@ -17,7 +15,7 @@
         <h:form>
 
             <ui:repeat value="#{pgModalSBJSF.comunicacaoDoModal.repostas}" var="resp" >
-                <SBComp:botaoRespostaModal
+                <SBAcaoNav:botaoRespostaModal
                     resposta="#{resp}"
 
                     />
