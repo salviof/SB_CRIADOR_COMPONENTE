@@ -202,6 +202,9 @@ public class BeanExemplo
     @InfoCampo(tipo = FabTipoAtributoObjeto.AAA_NOME, label = "Apelido")
     private String apelido = "Bean Simples";
 
+    @InfoCampo(tipo = FabTipoAtributoObjeto.HTML_TEMPLATE)
+    private String templateHtml;
+
     @NotNull
     @InfoCampo(tipo = FabTipoAtributoObjeto.AAA_NOME_LONGO, label = "Nome")
     private String nome = "Nome Completo do Bean Simples";
@@ -239,7 +242,8 @@ public class BeanExemplo
     private ItemBairro bairro;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, valoresAceitos = {
-        @ValorAceito(valor = "Teste"),
+        @ValorAceito(valor = "Teste")
+        ,
         @ValorAceito(valor = "Teste2")}
     )
     private BeanExemplo beanSelecionadoDaListaDescritiva;
@@ -707,6 +711,14 @@ public class BeanExemplo
 
     public void setLogradouro(String logradouro) {
         this.logradouro = logradouro;
+    }
+
+    public String getTemplateHtml() {
+        return templateHtml;
+    }
+
+    public void setTemplateHtml(String templateHtml) {
+        this.templateHtml = templateHtml;
     }
 
 }

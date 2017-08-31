@@ -1,25 +1,75 @@
 <ui:composition
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-    xmlns:pe="http://primefaces.org/ui/extensions">
+
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
 
+            <p:inputText/>
 
-            <pe:ckEditor
-                class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
-                width="100%"
-                required="#{obrigatorio}"
-                value="#{valor}"
-                validatorMessage="O valor informado no campo #{label} não é valido! "
-                requiredMessage="O campo #{label} não foi informado! "
-
-                >
+            <h:outputScript  name = "recursos/editorTemplate/ckeditor/ckeditor.js"
+                             library="SBComp"
+                             target="head"
+                             />
 
 
+            <h:outputScript  name = "recursos/editorTemplate/ckeditor/teste.js"
+                             library="SBComp"
+                             target="head"
+                             />
 
 
-            </pe:ckEditor>
+
+
+            <h:inputTextarea id="editorTextArea" value="#{registro.valor}">
+
+
+
+                <script type="text/javascript">
+
+                    var CKEDITOR_BASEPATH = "CKEDITOR.getUrl(#{resource['SBComp:/recursos/editorTemplate/ckeditor']})";
+
+
+
+                    /* <![CDATA[ */
+                    function destroyEditor() {
+                        // removing old instances
+                        for (var i in CKEDITOR.instances) {
+                            CKEDITOR.instances[i].destroy();
+                        }
+                        alert("fim destruicao");
+                    }
+
+                    jQuery(document).ready(function () {
+
+                        CKEDITOR.config.height = '469px'
+                        CKEDITOR.config.widght = '469px'
+                        // The important Line. To set the editor on the page.
+                        CKEDITOR.replace('#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('editorTextArea')}',
+                                {
+
+                                });
+                        CKEDITOR.on('instanceReady', function () {
+                            // do some own custom code if needed
+                        });
+                    });
+                    /*]]>  */
+
+
+
+
+                </script>
+                <h:outputScript  name = "recursos/editorTemplate/ckeditor/teste.js"
+                                 library="SBComp"
+
+                                 />
+            </h:inputTextarea>
+
+
         </ui:define>
+
     </ui:decorate>
 </ui:composition>
