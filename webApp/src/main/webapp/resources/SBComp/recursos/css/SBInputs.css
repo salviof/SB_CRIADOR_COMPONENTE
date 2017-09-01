@@ -77,3 +77,25 @@ and open the template in the editor.
 
 }
 
+.inputUploadGrande div span  span:nth-child(2)
+{
+
+    width: 100%!important;
+    height: 50%!important;
+    margin-top: 100%;
+    font-size: 16px;
+
+}
+.inputUploadGrande div span {
+    width: 100%!important;
+
+}
+
+.inputUploadGrande div span  span:nth-child(1)
+{
+
+    width: 20px!important;
+
+}
+
+

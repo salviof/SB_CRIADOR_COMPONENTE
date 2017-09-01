@@ -27,7 +27,11 @@ public class CentralPermissaoArquivoSBComponente implements ItfCentralPermissaoA
 
     @Override
     public boolean isUsuarioPodeAlterar(ItfUsuario pUsuario, ItfCampoInstArquivoEntidade pArquivo) {
-        return ((String) pArquivo.getCampoInstanciado().getValor()).contains(".txt");
+        try {
+            return ((String) pArquivo.getCampoInstanciado().getValor()).contains(".txt");
+        } catch (Throwable t) {
+            return true;
+        }
 
     }
 

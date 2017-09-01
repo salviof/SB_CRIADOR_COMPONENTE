@@ -34,3 +34,10 @@ alerta "Atualizando Repositorio SBComp"
 cd /home/superBits/recursos/SBComp/
 ./sincroniza.sh
 ./sincroniza.sh
+
+cd /home/superBits/projetos/Super_Bits/source/SuperBits_FrameWork/SB_FRAMEWORK/SBWebPaginas/
+mvn -DskipTests=true clean install
+
+
+
+

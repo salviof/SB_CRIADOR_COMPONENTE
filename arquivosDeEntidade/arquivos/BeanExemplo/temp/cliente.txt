@@ -1,0 +1,1 @@
+SERVIDOR_GIT_SOURCE=ssh://git@casanovadigital.com.br/home/git/gitServer/source
