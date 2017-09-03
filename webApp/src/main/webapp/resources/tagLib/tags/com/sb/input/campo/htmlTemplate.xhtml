@@ -10,63 +10,33 @@
 
             <p:inputText/>
 
-            <h:outputScript  name = "recursos/editorTemplate/ckeditor/ckeditor.js"
-                             library="SBComp"
-                             target="head"
-                             />
-
-
-            <h:outputScript  name = "recursos/editorTemplate/ckeditor/teste.js"
-                             library="SBComp"
-                             target="head"
-                             />
 
 
 
-
-            <h:inputTextarea id="editorTextArea" value="#{registro.valor}">
-
-
-
-                <script type="text/javascript">
-
-                    var CKEDITOR_BASEPATH = "CKEDITOR.getUrl(#{resource['SBComp:/recursos/editorTemplate/ckeditor']})";
+            <script src="#{infoWebApp.urlPagina}/libUrlPadrao/ckeditor-dev/ckeditor.js"></script>
+            <p:fieldset >
+                <h:inputTextarea id="editorTextArea" value=""
 
 
 
-                    /* <![CDATA[ */
-                    function destroyEditor() {
-                        // removing old instances
-                        for (var i in CKEDITOR.instances) {
-                            CKEDITOR.instances[i].destroy();
-                        }
-                        alert("fim destruicao");
-                    }
+                                 >
+                    <f:passThroughAttribute name="palavras_placeholder" value="[&quot;teste&quot;,&quot;teste2&quot;,&quot;teste3&quot;]" />
+                </h:inputTextarea>
 
-                    jQuery(document).ready(function () {
+            </p:fieldset>
+            #{infoWebApp.urlPagina}/libUrlPadrao/ckeditor-dev/ckeditor.js
 
-                        CKEDITOR.config.height = '469px'
-                        CKEDITOR.config.widght = '469px'
-                        // The important Line. To set the editor on the page.
-                        CKEDITOR.replace('#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('editorTextArea')}',
-                                {
-
-                                });
-                        CKEDITOR.on('instanceReady', function () {
-                            // do some own custom code if needed
-                        });
-                    });
-                    /*]]>  */
+            <script type="text/javascript">
+                CKEDITOR.replace('#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('editorTextArea')}', {
+                    extraPlugins: 'placeholderSeletor'
+                });
 
 
 
+            </script>
 
-                </script>
-                <h:outputScript  name = "recursos/editorTemplate/ckeditor/teste.js"
-                                 library="SBComp"
 
-                                 />
-            </h:inputTextarea>
+
 
 
         </ui:define>
