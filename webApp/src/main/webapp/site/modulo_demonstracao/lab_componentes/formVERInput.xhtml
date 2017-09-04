@@ -23,9 +23,9 @@
                                       tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
                                       />
 
-        <SBAcaoNav acao="#{pgMapaComponentes.acaoTesteModalComunicacao}"
-                   tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
-                   />
+        <SBAcaoNav:botaoDeAcao_Pagina acao="#{pgMapaComponentes.acaoTesteModalComunicacao}"
+                                      tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
+                                      />
 
     </h:form>
     <p:fieldset legend="Visualização" id="visualizacao">
@@ -76,7 +76,7 @@
                         />
 
 
-                    <p:commandButton value="Teste" update="@form" />
+                    <p:commandButton value="Teste update form" update="@form" />
                 </h:form>
 
 

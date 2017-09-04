@@ -4,39 +4,35 @@
 
     xmlns:f="http://xmlns.jcp.org/jsf/core"
     xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:p="http://primefaces.org/ui">
+    xmlns:p="http://primefaces.org/ui"
+    >
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
-
-            <p:inputText/>
-
-
-
-
             <script src="#{infoWebApp.urlPagina}/libUrlPadrao/ckeditor-dev/ckeditor.js"></script>
-            <p:fieldset >
-                <h:inputTextarea id="editorTextArea" value=""
-
-
-
-                                 >
-                    <f:passThroughAttribute name="palavras_placeholder" value="[&quot;teste&quot;,&quot;teste2&quot;,&quot;teste3&quot;]" />
+            <p:fieldset styleClass="Container100 Responsive" style="height: 300px; ">
+                <h:inputTextarea
+                    style="width: 0px; height: 0px;"
+                    title="teste"
+                    value="#{valor}"
+                    styleClass="invisivel"
+                    >
+                    <f:passThroughAttribute name="palavras_placeholder" value="[&quot;Cliente.nome&quot;,&quot;Cliente.telefone&quot;,&quot;Cliente.email&quot;]" />
                 </h:inputTextarea>
+                <p:inputTextarea value="#{valor}" style="width: 1px; height: 1px;"  styleClass="invisivel"/>
+                <script type="text/javascript">
+
+                    function recarregarCK#{component.id}() {
+                        CKEDITOR.replace('#{pgUtil.getIDComponenteFilhoPorCordenada(component,0)}', {
+                            extraPlugins: 'placeholderSeletor'
+                        });
+                        CKEDITOR.instances['#{pgUtil.getIDComponenteFilhoPorCordenada(component,0)}'].on('change', function () {
+                            copiarValoresCKEditor('#{pgUtil.getIDComponenteFilhoPorCordenada(component,0)}', '#{pgUtil.getIDComponenteFilhoPorCordenada(component,1)}');
+                        });
+                    }
+                    recarregarCK#{component.id}();
+                </script>
 
             </p:fieldset>
-            #{infoWebApp.urlPagina}/libUrlPadrao/ckeditor-dev/ckeditor.js
-
-            <script type="text/javascript">
-                CKEDITOR.replace('#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('editorTextArea')}', {
-                    extraPlugins: 'placeholderSeletor'
-                });
-
-
-
-            </script>
-
-
-
 
 
         </ui:define>
