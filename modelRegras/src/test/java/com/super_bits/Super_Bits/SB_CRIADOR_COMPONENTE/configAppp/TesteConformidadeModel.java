@@ -32,6 +32,12 @@ public class TesteConformidadeModel extends TesteSB_CRIADOR_COMPONENTE {
         try {
 
             BeanExemplo testeBeanGrupo = new BeanExemplo();
+
+            ItfCampoInstanciado campo = testeBeanGrupo.getCampoInstanciadoByNomeOuAnotacao("templateHtml");
+
+            System.out.println(campo.getComoTemplate().getOpcoesPalavraChave());
+            System.out.println(campo.getComoTemplate().getOpcoesPalavaChaveJson());
+
             GrupoCampos grupoPadrao = FabGruposPadrao.GRUPO_PADRAO_ITEM_NORMAL.getGrupoCampoIgnorandoCamposNaoEncontrados(testeBeanGrupo.getClass());
 
             System.out.println("Testes básico");
@@ -73,7 +79,7 @@ public class TesteConformidadeModel extends TesteSB_CRIADOR_COMPONENTE {
             BeanExemplo teste = new BeanExemplo(true);
 
             ItfCampoInstanciado cpbairro = teste.getCampoInstanciadoByNomeOuAnotacao("localizacao.bairro");
-            SBCore.getCentralDeMensagens().enviarMsgAvisoAoDesenvolvedor(cpbairro.getCampoReflection().getClasseDeclaradaOuTipoEmCasoDeLista().getSimpleName());
+            SBCore.getCentralDeMensagens().enviarMsgAvisoAoDesenvolvedor(cpbairro.getPropriedadesReflexaoAtributo().getClasseDeclaracaoAtributo().getSimpleName());
 
             ItfCampoInstanciado campoinst = teste.getCampoInstanciadoByNomeOuAnotacao("listaParticular");
             SBCore.getCentralDeMensagens().enviarMsgAvisoAoDesenvolvedor(campoinst.getFabricaTipoAtributo().toString());

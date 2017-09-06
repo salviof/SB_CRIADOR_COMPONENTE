@@ -8,7 +8,8 @@
     >
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
-            <script src="#{infoWebApp.urlPagina}/libUrlPadrao/ckeditor-dev/ckeditor.js"></script>
+            <script src="#{infoWebApp.urlPagina}/libUrlPadrao/ckeditor/ckeditor.js"></script>
+
             <p:fieldset styleClass="Container100 Responsive" style="height: 300px; ">
                 <h:inputTextarea
                     style="width: 0px; height: 0px;"
@@ -16,7 +17,7 @@
                     value="#{valor}"
                     styleClass="invisivel"
                     >
-                    <f:passThroughAttribute name="palavras_placeholder" value="[&quot;Cliente.nome&quot;,&quot;Cliente.telefone&quot;,&quot;Cliente.email&quot;]" />
+                    <f:passThroughAttribute name="palavras_placeholder" value="#{registro.comoTemplate.opcoesPalavaChaveJson}" />
                 </h:inputTextarea>
                 <p:inputTextarea value="#{valor}" style="width: 1px; height: 1px;"  styleClass="invisivel"/>
                 <script type="text/javascript">

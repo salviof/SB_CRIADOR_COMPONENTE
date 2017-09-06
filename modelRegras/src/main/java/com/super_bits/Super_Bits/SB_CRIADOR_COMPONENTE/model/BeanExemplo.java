@@ -204,7 +204,7 @@ public class BeanExemplo
     private String apelido = "Bean Simples";
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.HTML_TEMPLATE)
-    @InfoCampoModeloDocumento()
+    @InfoCampoModeloDocumento(classeModeloVinculado = BeanExemplo.class)
     private String templateHtml = "Conteúdo padrao Teste";
 
     @NotNull
