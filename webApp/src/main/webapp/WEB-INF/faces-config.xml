@@ -20,7 +20,7 @@
         </locale-config>
     </application>
 
- 
+
 
     <application>
         <action-listener>
@@ -59,7 +59,7 @@
 
     <component>
         <component-type>org.primefaces.component.AdamantiumMenu</component-type>
-        <component-class>org.primefaces.adamantium.component.menu.AdamantiumMenu</component-class>
+        <component-class>com.super_bits.modulosSB.webPaginas.visualizacao.componentRender.adamantium.AdamantiumMenu</component-class>
     </component>
 
 
@@ -69,7 +69,7 @@
         <renderer>
             <component-family>org.primefaces.component</component-family>
             <renderer-type>org.primefaces.component.AdamantiumMenuRenderer</renderer-type>
-            <renderer-class>org.primefaces.adamantium.component.menu.AdamantiumMenuRenderer</renderer-class>
+            <renderer-class>com.super_bits.modulosSB.webPaginas.visualizacao.componentRender.adamantium.AdamantiumMenuRenderer</renderer-class>
         </renderer>
     </render-kit>
 
