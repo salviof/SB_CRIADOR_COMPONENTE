@@ -42,7 +42,7 @@
     </application>
     <factory>
         <exception-handler-factory>
-            org.primefaces.application.exceptionhandler.PrimeExceptionHandlerFactory
+            com.super_bits.modulosSB.webPaginas.TratamentoDeErros.FabricaManipuladorErrosJsf
         </exception-handler-factory>
     </factory>
 
