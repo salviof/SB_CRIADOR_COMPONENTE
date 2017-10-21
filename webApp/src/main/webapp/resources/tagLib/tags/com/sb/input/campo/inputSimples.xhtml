@@ -3,12 +3,13 @@
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 
     xmlns:p="http://primefaces.org/ui"
-    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
 
             <p:outputLabel value="#{registro.valor}" rendered="#{desabilitarEdicao}" />
-
+            Desobilitar:#{desabilitarEdicao}
             <p:inputText
                 class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
                 rendered="#{!desabilitarEdicao}"
@@ -17,10 +18,12 @@
                 validatorMessage="O valor informado no campo #{label} não é valido! "
                 requiredMessage="O campo #{label} não foi informado! "
                 maxlength="#{valorMaximo}"
+
                 >
 
                 <p:clientValidator/>
 
+                <f:validator  validatorId="org.super_bits.view.validadores.generico"/>
                 <c:if test="#{atualizarGrupoOnChange}" >
                     <p:ajax
                         rendered="#{atualizarGrupoOnChange}"

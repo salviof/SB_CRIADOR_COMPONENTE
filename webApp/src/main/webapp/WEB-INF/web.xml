@@ -128,12 +128,21 @@
     <servlet>
         <servlet-name>slvGestorDeArquivosDeSessao</servlet-name>
         <servlet-class>com.super_bits.modulosSB.webPaginas.controller.servletes.servletArquivoDeSessao.ServletArquivoDeSessao</servlet-class>
-
     </servlet>
     <servlet-mapping>
         <servlet-name>slvGestorDeArquivosDeSessao</servlet-name>
         <url-pattern>/arquivosDeSessao/*</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>slvArquivoEstaticoUrlPadrao</servlet-name>
+        <servlet-class>com.super_bits.modulosSB.webPaginas.controller.servletes.servletEstaticoUrlPadrao.ServletArquivoEstaticoUrlPadrao</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>slvArquivoEstaticoUrlPadrao</servlet-name>
+        <url-pattern>/libUrlPadrao/*</url-pattern>
+    </servlet-mapping>
+
 
 
 

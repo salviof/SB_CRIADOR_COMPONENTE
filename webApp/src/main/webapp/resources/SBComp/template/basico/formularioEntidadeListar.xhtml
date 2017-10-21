@@ -15,10 +15,13 @@
                 #{paginaAtual.infoPagina.acaoSelecionada.descricao}
             </span>
             <h:panelGroup styleClass="Fright" style="margin-bottom:  ">
-                <SBAcaoNav:botaoDeAcao_Pagina_Entidade acao="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoNovoRegistro}"
-                                                       tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
+                <h:form>
+                    <SBAcaoNav:botaoDeAcao_Pagina_Entidade acao="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoNovoRegistro}"
+                                                           tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
 
-                                                       />
+
+                                                           />
+                </h:form>
             </h:panelGroup>
 
         </div>

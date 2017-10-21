@@ -1,25 +1,16 @@
 <ui:composition
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-    xmlns:pe="http://primefaces.org/ui/extensions">
+
+    xmlns:p="http://primefaces.org/ui">
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
 
-
-            <pe:ckEditor
-                class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
-                width="100%"
-                required="#{obrigatorio}"
-                value="#{valor}"
-                validatorMessage="O valor informado no campo #{label} não é valido! "
-                requiredMessage="O campo #{label} não foi informado! "
-
-                >
+            <p:inputText value="Utilize o pe CK editor, este componente está desabilitado temporariamente" />
 
 
 
 
-            </pe:ckEditor>
         </ui:define>
     </ui:decorate>
 </ui:composition>

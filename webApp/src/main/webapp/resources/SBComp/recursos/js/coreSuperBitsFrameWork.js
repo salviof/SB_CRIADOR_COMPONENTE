@@ -74,3 +74,7 @@ function modificarIntputEclicar(idBotao, idInputEnvio, valor) {
 
 }
 
+function copiarValoresCKEditor(idOrigem, idDestino) {
+    var conteudo = CKEDITOR.instances[idOrigem].getData();
+    document.getElementById(idDestino).value = conteudo;
+}

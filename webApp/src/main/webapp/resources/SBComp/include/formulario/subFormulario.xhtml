@@ -27,25 +27,13 @@
 
             <div class=" Container25 Responsive Fright" style="float:right!important;">
 
-
-
-
-
                 <p:commandButton
                     actionListener="#{registro.comoSubItens.subItens.adicionarItem()}"
                     update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
                     process="@this"
                     value="#{registro.comoSubItens.subItens.acaoAdicionarItem.nomeAcao}"
                     />
-
-
-
-
-
             </div>
-
-
-
 
             <c:forEach items="#{registro.valor}" var="itemDaLista" varStatus="infoRec" >
 
