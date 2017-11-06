@@ -58,7 +58,7 @@
 
 
         <c:if test="#{!pgUtilLayout.verificaExisteLayout(cc.attrs.grupoCampos.nomeIdentificadorSlug)}">
-            #{pgUtilLayout.gerarLayout(cc.attrs.grupoCampos, cc.attrs.opcoes) }
+            #{pgUtilLayout.gerarLayout(cc.attrs.grupoCampos, cc.attrs.opcoes)}
         </c:if>
 
         <h:panelGroup>
@@ -109,7 +109,7 @@
 
 
                         <f:facet name="header">
-                            #{coluna.caminhoCompletoComGrupoCampo}
+                         
                             <h:outputText value= "#{coluna.label}"/>
                         </f:facet>
                         <center>
@@ -128,7 +128,7 @@
                     </p:columns>
 
 
-                    <p:column headerText="Ações #{cc.attrs.grupoCampos.nomeIdentificadorSlug} "
+                    <p:column headerText="Ações  "
                               width="#{pgUtilLayout.getUltimaColunaDoLayoyt(cc.attrs.grupoCampos.nomeIdentificadorSlug).porcentagemCalculada}%">
 
                         <center>

@@ -7,6 +7,8 @@ package com.super_bits.config.webPaginas;
 
 import com.super_bits.configSBFW.acessos.UtilSB_CRIADOR_COMPONENTEGlobalVar;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioAnonimo;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioSistemaRoot;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.TipoAtributoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.ConfiguradorCoreDeProjetoWebWarAbstrato;
@@ -29,6 +31,8 @@ public class InicioFimContextoWebPagina implements ItfInicioFimAppWP {
         UtilSB_CRIADOR_COMPONENTEGlobalVar.adicionarObjetosEstaticosProjeto();
         SBCore.getCentralDeArquivos().setCentralDePermissao(new CentralPermissaoArquivoSBComponente());
         MapaObjetosProjetoAtual.adcionarObjeto(TipoAtributoObjetoSB.class);
+        MapaObjetosProjetoAtual.adcionarObjeto(UsuarioAnonimo.class);
+        MapaObjetosProjetoAtual.adcionarObjeto(UsuarioSistemaRoot.class);
         new SiteMap();
 
     }
