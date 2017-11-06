@@ -1,5 +1,6 @@
 OS SEGUINTES ERROS DE CONFIGURAÇÃO FORAM ENCONTRADOS NO SISTEMA: 
  Você pode encontrar informações mais detalhadas do erro no SystemOut 
-->O xhtml da açãoFabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_FRM_SELECAO_DE_ACAO está definido como não implementado
 ->O xhtml da açãoFabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_FRM_MODAL_TESTE está definido como não implementado
+->O ícone  da ação FabAcaoAdminDeveloper.FERRAMENTAS_OBJETO_CONTAINER_FRM_VISUALIZACAO_ITENS_DESKTOP com nome [fa-object-group fa fa-desktop] não foi encontrado no arquivo css do FontAswome e
+->O xhtml da açãoFabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_FRM_SELECAO_DE_ACAO está definido como não implementado
 

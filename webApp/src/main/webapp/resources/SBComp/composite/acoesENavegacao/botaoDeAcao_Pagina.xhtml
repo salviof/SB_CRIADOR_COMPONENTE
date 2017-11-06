@@ -2,9 +2,8 @@
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:cc="http://java.sun.com/jsf/composite"
-    xmlns:sb="http://superbitsframework/ui">
+    xmlns:sb="http://superbitsframework/ui" >
     <!-- INTERFACE -->
-
     <cc:interface>
 
         <cc:attribute name="acao" type="com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoDoSistema"
@@ -34,7 +33,6 @@
     </cc:interface>
     <!-- IMPLEMENTATION -->
     <cc:implementation>
-
         <sb:botaoAcaoPaginaAtual
             acao="#{cc.attrs.acao}"
             layout="#{cc.attrs.tipoVisualizacao}"

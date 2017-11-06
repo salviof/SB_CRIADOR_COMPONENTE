@@ -2,6 +2,7 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
+                xmlns:SBpaginaAtual="http://xmlns.jcp.org/jsf/composite/SBComp/composite/paginaAtualDeEntidade"
                 >
 
     <div class="" style="">
@@ -15,10 +16,8 @@
                 #{paginaAtual.infoPagina.acaoSelecionada.descricao}
             </span>
             <h:panelGroup styleClass="Fright" style="margin-bottom:  ">
-                <h:form>
-                    <SBAcaoNav:botaoDeAcao_Pagina_Entidade acao="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoNovoRegistro}"
-                                                           tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
-
+                <h:form rendered="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoNovoRegistro!=null}">
+                    <SBpaginaAtual:botaoAcaoPersonalizada  acao="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoNovoRegistro}"
 
                                                            />
                 </h:form>

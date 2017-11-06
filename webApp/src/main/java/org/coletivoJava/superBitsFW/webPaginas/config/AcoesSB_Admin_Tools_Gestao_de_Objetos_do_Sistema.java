@@ -2,12 +2,15 @@ package org.coletivoJava.superBitsFW.webPaginas.config;
 
 import javax.inject.Named;
 import javax.enterprise.context.ApplicationScoped;
+import java.io.Serializable;
 import com.super_bits.modulosSB.SBCore.UtilGeral.MapaAcoesSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormularioEntidade;
 
 @Named
 @ApplicationScoped
-public class AcoesSB_Admin_Tools_Gestao_de_Objetos_do_Sistema {
+public class AcoesSB_Admin_Tools_Gestao_de_Objetos_do_Sistema
+		implements
+			Serializable {
 
 	public ItfAcaoFormularioEntidade getDev_obj_projeto_mb_lab() {
 		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
@@ -52,11 +55,6 @@ public class AcoesSB_Admin_Tools_Gestao_de_Objetos_do_Sistema {
 	public ItfAcaoFormularioEntidade getDev_obj_projeto_frm_ver_campos_da_acao_formulario() {
 		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoAdminDeveloper.DEV_OBJ_PROJETO_FRM_VER_CAMPOS_DA_ACAO_FORMULARIO");
-	}
-
-	public ItfAcaoFormularioEntidade getDev_obj_projeto_frm_ver_campos_do_grupo_formulario() {
-		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
-				.getAcaoDoSistemaByNomeUnico("FabAcaoAdminDeveloper.DEV_OBJ_PROJETO_FRM_VER_CAMPOS_DO_GRUPO_FORMULARIO");
 	}
 
 	public ItfAcaoFormularioEntidade getDev_obj_projeto_frm_inspecionar() {

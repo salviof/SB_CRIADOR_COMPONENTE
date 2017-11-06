@@ -2,13 +2,16 @@ package org.coletivoJava.superBitsFW.webPaginas.config;
 
 import javax.inject.Named;
 import javax.enterprise.context.ApplicationScoped;
+import java.io.Serializable;
 import com.super_bits.modulosSB.SBCore.UtilGeral.MapaAcoesSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormularioEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoControllerEntidade;
 
 @Named
 @ApplicationScoped
-public class AcoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR {
+public class AcoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR
+		implements
+			Serializable {
 
 	public ItfAcaoFormularioEntidade getLab_componentes_mb_gerenciar() {
 		return (ItfAcaoFormularioEntidade) MapaAcoesSistema

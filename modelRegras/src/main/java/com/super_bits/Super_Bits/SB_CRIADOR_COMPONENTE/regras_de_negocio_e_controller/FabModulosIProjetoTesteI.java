@@ -52,6 +52,6 @@ public enum FabModulosIProjetoTesteI implements ItfFabricaModulo {
 
     @Override
     public ItfFabricaMenu getMenuPadrao() {
-        return FabMenuExemplo.MENU_INICIAL;
+        return FabMenuCriadorComponente.MENU_INICIAL;
     }
 }

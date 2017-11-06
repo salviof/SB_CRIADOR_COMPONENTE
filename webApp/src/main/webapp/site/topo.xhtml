@@ -3,16 +3,23 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-
+      xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
+      xmlns:SBDevel="http://xmlns.jcp.org/jsf/composite/SBComp/composite/devel"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <ui:composition>
 
-        TOPO PAGINA
+        <SBAcaoNav:menuPadrao
+            rendered="#{sessaoAtualSBWP.identificado}"
+            menuBasico="#{sessaoAtualSBWP.menusDaSessao.menuPrincipal}" 
+            menu="#{sessaoAtualSBWP.menusDaSessao.menuAvancado}" />
 
 
-
+        
+        
+        <SBDevel:infoPagina/>
     </ui:composition>
 </html>
 

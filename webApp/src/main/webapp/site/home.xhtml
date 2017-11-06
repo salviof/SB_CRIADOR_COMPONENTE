@@ -1,162 +1,75 @@
-<ui:composition
-    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+<html
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:pm="http://primefaces.org/adamantium"
-    xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
-    xmlns:SBDev="http://xmlns.jcp.org/jsf/composite/SBComp/composite/devel"
     xmlns:p="http://primefaces.org/ui"
-    template="#{layoutsPaginas.modeloGeral.xhtmlVinculado}"
-    xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
-
-    <ui:define name="head"  >
-        <style>
-            .botaoBox {
-                margin-top: 3px;
-            }
-        </style>
-    </ui:define>
-    <ui:define name="#{layoutsPaginas.modeloGeral.areaPrincipal}">
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:Teste="http://xmlns.jcp.org/jsf/composite/"
+    xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
+    xmlns:SBLogin="http://xmlns.jcp.org/jsf/composite/SBComp/composite/login"
+    >
 
 
+    <ui:composition
 
-        <div id="layout-topbar">
+        template="#{layoutsPaginas.modeloGeral.xhtmlVinculado}"
 
-            <p:messages autoUpdate="true" />
+        >
 
-
-            <a href="#{infoWebApp.urlPagina}">
-                <h:graphicImage url="#{infoWebApp.urlPagina}" name="logoHorizontal.png" id="logo" style="height: 70px;" library="img" />
-            </a>
-
-            <a id="topmenu-button" class="Animated1">
-                <i class="icon-list2"></i>
-            </a>
-
-            <ul id="top-menu">
-
+        <ui:define name="head"  >
+            <style>
+                .botaoBox {
+                    margin-top: 3px;
+                }
+            </style>
+        </ui:define>
+        <ui:define name="#{layoutsPaginas.modeloGeral.areaPrincipal}">
 
 
-                <li>
-                    <a class="menulink Animated05"><i class="#{sessao.iconeAcao}"></i>teste</a>
-                    <ul style="margin-left:-155px;">
-
-
-                        <li><a href="www.google.com.br"><i class="#{acaoSessao.iconeAcao} Fs18 Fleft Blue MarRight10"></i> <span class="FontAdamantiumBold"> teste</span></a></li>
-
-
-                    </ul>
-
-                </li>
-
-
-
-
-
-                <li>
-                    <a class="menulink Animated05"><i class="fa fa-address-card" ></i>  Minha Conta </a>
-                    <ul style="margin-left:-145px;">
-
-                        <li>
-
-                            <a class="menulink Animated05"><i></i>  Olá: #{paginaAtual.controleDeSessao.sessaoAtual.usuario.nome} <br/> Grupo: #{paginaAtual.controleDeSessao.sessaoAtual.usuario.grupo} </a>
-
-                        </li>
-                        <li><a href="#"><i class="fa fa-envelope Fs18 Fleft MarRight10"></i> <span class="FontAdamantiumBold"> Enviar Mensagem </span></a></li>
-                        <li><a href="#"><i class="icon-attachment Fs18 Fleft MarRight10"></i> <span class="FontAdamantiumBold">  Perfil e senha </span></a></li>
-
-
-
-                        <li>  <span class="FontAdamantiumBold">
-                                <h:form>
-                                    <p:commandLink actionListener="#{controleDeSessaoWeb.efetuarLogOut}"  oncomplete="javascript:window.location='#{infoWebApp.urlPagina}';">
-                                        <li><i class="icon-lock-stroke Fs18 Fleft MarRight10"></i> <span class="FontAdamantiumBold"> Sair </span></li>
-                                    </p:commandLink>
-                                </h:form>
-                            </span></li>
-
-
-
-                    </ul>
-
-                </li>
-
-
-            </ul>
-
-        </div>
+            
+            
+            
+            
+            <SBLogin:formLogin />
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <p:fieldset legend="Menu">
+                #{sessaoAtualSBWP.menusDaSessao.menuAvancado}
+                #{sessaoAtualSBWP.menusDaSessao.menuAvancado}
+            </p:fieldset>
 
 
 
 
-        <div class="layout-menu-cover-top  Animated05 ManterNoTopo" id="layout-menu-cover">
             <h:form>
-                <pm:menu>
-
-
-
-                    <p:submenu label="#{sessao.nomeAcao}" icon="#{sessao.iconeAcao}">
-                        <p:submenu label="#{acao.nomeAcao}"   icon="#{acao.iconeAcao}">
-
-                            <p:menuitem
-                                value="teste"
-                                icon="fa fa-user"
-                                url="#www,google.com.br" />
-                        </p:submenu>
-                        <p:menuitem  value="teste" icon="fa fa-users" url="www.google.com.br"
-
-                                     />
-
-
-
-
-
-
-                    </p:submenu>
-
-
-                </pm:menu>
+                <p:commandButton update="#{pgUtil.makeCaminhoCompletoID('mensagemUsuario')}" value="Atualizar mensagem"/>
             </h:form>
 
 
-
-        </div>
-
-
+            <SBAcaoNa  acao="#{acoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR.lab_componentes_mb_gerenciar}"
+                       tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"         />
 
 
-
-
+            <SBAcaoNav:linkDeAcao acao="#{acoesModulo_demonstracao_BEAN_EXEMPLO_MB.bean_exemplo_mb}"
+                                  tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"    />
 
 
 
 
-
-
-
-
-
-        <h:form>
-            <p:commandButton update="#{pgUtil.makeCaminhoCompletoID('mensagemUsuario')}" value="Atualizar mensagem"/>
-        </h:form>
-        <SBAcaoNav:linkDeAcao acao="#{acoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR.lab_componentes_mb_gerenciar}"
-                              tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"         />
-
-        <SBAcaoNav:linkDeAcao acao="#{acoesModulo_demonstracao_BEAN_EXEMPLO_MB.bean_exemplo_mb}"
-                              tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"    />
-
-
-
-    </ui:define>
-</ui:composition>
+        </ui:define>
+    </ui:composition>
 
 
 
 
 
 
-
-
-
-
+</html>
 

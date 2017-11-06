@@ -2,6 +2,7 @@ package com.super_bits;
 
 import com.super_bits.config.webPaginas.ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import com.super_bits.modulosSB.SBCore.modulos.view.menu.MenusDaSessao;
 import com.super_bits.modulosSB.webPaginas.TratamentoDeErros.RelatorioTesteWebPaginas;
 import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.FabAcaoPaginasDoSistema;
 import org.junit.Test;
@@ -20,11 +21,13 @@ public class TesteConformidade extends RelatorioTesteWebPaginas {
     @Test
     public void testar() {
         try {
-            exibirRelatorioAcoes();
+            SBCore.getControleDeSessao().logarEmailESenha("root@superBits.com","senh@Screta");
+            MenusDaSessao menu= SBCore.getControleDeSessao().getSessaoAtual().getMenusDaSessao();
+            
             //criarMapaDeAcoesEscopoAplicacao();
-            FabAcaoPaginasDoSistema.PAGINA_MB_PESQUISA_AVANCADA.getRegistro();
+            FabAcaoPaginasDoSistema.PAGINA_PESQUISA_AVANCADA_MB_PADRAO.getRegistro();
             gerarMangedBeansAcessoAcoes();
-
+            
             System.out.println(SBCore.isIgnorarPermissoes());
         } catch (Throwable t) {
             lancarErroJUnit(t);

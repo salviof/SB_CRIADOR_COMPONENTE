@@ -79,7 +79,7 @@ public class TesteConformidadeModel extends TesteSB_CRIADOR_COMPONENTE {
             BeanExemplo teste = new BeanExemplo(true);
 
             ItfCampoInstanciado cpbairro = teste.getCampoInstanciadoByNomeOuAnotacao("localizacao.bairro");
-            SBCore.getCentralDeMensagens().enviarMsgAvisoAoDesenvolvedor(cpbairro.getPropriedadesReflexaoAtributo().getClasseDeclaracaoAtributo().getSimpleName());
+            //SBCore.getCentralDeMensagens().enviarMsgAvisoAoDesenvolvedor(cpbairro.getPropriedadesReflexaoAtributo().getClasseDeclaracaoAtributo().getSimpleName());
 
             ItfCampoInstanciado campoinst = teste.getCampoInstanciadoByNomeOuAnotacao("listaParticular");
             SBCore.getCentralDeMensagens().enviarMsgAvisoAoDesenvolvedor(campoinst.getFabricaTipoAtributo().toString());

@@ -8,7 +8,6 @@ package com.super_bits.config.webPaginas;
 import com.google.common.collect.Lists;
 import com.super_bits.FabAcoesHomeCriadorComponente;
 import com.super_bits.Super_Bits.SB_AdminTools.regras_de_negocio_e_controller.admin_developer.FabAcaoAdminDeveloper;
-import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.BeanExemplo;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.FabAcaoBeanExemploDemonstrativo;
 import com.super_bits.configSBFW.acessos.UtilSB_CRIADOR_COMPONENTEGlobalVar;
 import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
@@ -31,18 +30,18 @@ public class ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE extends ConfiguradorCor
     public ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE(ServletContext contexto) {
 
         super(contexto);
-        setIgnorarConfiguracaoPermissoes(true);
+        //setIgnorarConfiguracaoPermissoes(true);
     }
 
     public ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE() {
         super(true);
-        setIgnorarConfiguracaoPermissoes(true);
+       // setIgnorarConfiguracaoPermissoes(true);
     }
 
     @Override
     public void defineFabricasDeACao(ItfConfiguracaoCoreCustomizavel pConfig) {
 
-        setIgnorarConfiguracaoPermissoes(true);
+        //setIgnorarConfiguracaoPermissoes(true);
         pConfig.setCentralDeLocalizacao(CentralDeLocalizacaoSemPersistencia.class);
         pConfig.setCentralAtributoDados(CentralAtributosWebappSemPersistencia.class);
         List<Class<? extends ItfFabricaAcoes>> listaWebApp = Lists.newArrayList(UtilSB_CRIADOR_COMPONENTEGlobalVar.pAcoesDoSistema());

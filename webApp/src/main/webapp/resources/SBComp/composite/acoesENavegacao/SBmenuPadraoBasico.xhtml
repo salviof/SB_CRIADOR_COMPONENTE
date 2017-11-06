@@ -1,11 +1,14 @@
-<ui:composition
-    xmlns="http://www.w3.org/1999/xhtml"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html  xmlns="http://www.w3.org/1999/xhtml"
 
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
     xmlns:p="http://primefaces.org/ui"
     xmlns:cc="http://xmlns.jcp.org/jsf/composite"
     xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core" >
+
+<ui:composition   >
 
 
     <!-- INTERFACE -->
@@ -57,35 +60,9 @@
 
 
                 </c:forEach>
+                <ui:include src="/site/menu/menuPerfil.xhtml"/>
 
-
-                <li>
-                    <a class="menulink Animated05"><i class="fa fa-address-card" ></i>  Minha Conta </a>
-                    <ul style="margin-left:-145px;">
-
-                        <li>
-
-                            <a class="menulink Animated05"><i></i>  Olá: #{paginaAtual.controleDeSessao.sessaoAtual.usuario.nome} <br/> Grupo: #{paginaAtual.controleDeSessao.sessaoAtual.usuario.grupo} </a>
-
-                        </li>
-                        <li><a href="#"><i class="fa fa-envelope Fs18 Fleft MarRight10"></i> <span class="FontAdamantiumBold"> Enviar Mensagem </span></a></li>
-                        <li><a href="#"><i class="icon-attachment Fs18 Fleft MarRight10"></i> <span class="FontAdamantiumBold">  Perfil e senha </span></a></li>
-
-
-
-                        <li>  <span class="FontAdamantiumBold">
-                                <h:form>
-                                    <p:commandLink actionListener="#{controleDeSessaoWeb.efetuarLogOut}"  oncomplete="javascript:window.location='#{infoWebApp.urlPagina}';">
-                                        <li><i class="icon-lock-stroke Fs18 Fleft MarRight10"></i> <span class="FontAdamantiumBold"> Sair </span></li>
-                                    </p:commandLink>
-                                </h:form>
-                            </span></li>
-
-
-
-                    </ul>
-
-                </li>
+               
 
 
             </ul>
@@ -99,3 +76,4 @@
 
 
 
+ </html>
