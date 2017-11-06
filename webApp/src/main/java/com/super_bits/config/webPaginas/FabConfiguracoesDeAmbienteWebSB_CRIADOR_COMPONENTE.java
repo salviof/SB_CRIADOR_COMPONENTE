@@ -25,8 +25,8 @@ import com.super_bits.modulosSB.webPaginas.util.CentralDeMensagensJSFAPP;
  * de produção
  *
  * O sistema perimite alterar:  <br>
- * A classe responsável por envio de mensagens ao desenvolvedor, ao usuário, e
- * logs de sistema <br>
+ * A classe responsável por envio de mensagens ao envolvedor, ao usuário, e logs
+ * de sistema <br>
  * A Classe responsável por tratamento de erros A Classe responsável pela
  * configuração de acessos do sistema  <br>
  * A classe responsável por armazenamento de logs <br>
@@ -49,6 +49,7 @@ public enum FabConfiguracoesDeAmbienteWebSB_CRIADOR_COMPONENTE {
         cfg.setCentralMEnsagens(CentralDeMensagensJSFAPP.class);
         cfg.setClasseErro(ErroSBCoreDeveloperSopMessagem.class);
         cfg.setControleDeSessao(ControleDeSessaoPadrao.class);
+
         cfg.setFabricaDeAcoes(new Class[]{
             FabAcaoProjetoSB.class
         });

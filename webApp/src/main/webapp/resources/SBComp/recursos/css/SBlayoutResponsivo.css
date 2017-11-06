@@ -52,7 +52,6 @@ h1, h2, h3, h4, h5, h6{ margin:0px !important;
 .EmptyBox130{ display:block; width:100%; height:100px; overflow:hidden;}
 .EmptyBox140{ display:block; width:100%; height:100px; overflow:hidden;}
 .EmptyBox150{ display: block; width: 100%; height:150px; overflow:hidden;}
-
 .ClearBoth{clear:both;}
 .CursPointer{ cursor:pointer;}
 
