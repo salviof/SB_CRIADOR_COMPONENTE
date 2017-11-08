@@ -29,8 +29,8 @@
             </c:forEach>
             <p:separator/>
 
-
-            <p:socket channel="/mensagens/teste"  onMessage="handleMessage" >
+            /mensagens/#{paginaAtual.infoPagina.acaoVinculada.nomeUnico}/#{sessaoAtualSBWP.usuario.grupo.nomeUnico}/#{sessaoAtualSBWP.usuario.email}
+            <p:socket channel="/mensagens/#{paginaAtual.infoPagina.acaoVinculada.nomeUnico}/teste/#{sessaoAtualSBWP.usuario.email}"  onMessage="handleMessage" >
 
             </p:socket>
 
