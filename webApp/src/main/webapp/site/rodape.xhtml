@@ -6,30 +6,48 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
 
-xmlns:SBObjeto="http://xmlns.jcp.org/jsf/composite/SBComp/composite/objetos"
+      xmlns:SBObjeto="http://xmlns.jcp.org/jsf/composite/SBComp/composite/objetos"
       xmlns:SBDevel="http://xmlns.jcp.org/jsf/composite/SBComp/composite/devel"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <h:body>
         <ui:composition>
-       TESTESSS
-        <c:forEach items="#{sessaoAtualSBWP.menusDaSessao.menuAvancado.sessoes}" var="sessao1" >
-            #{sessao1.nome}
-            
-            <c:forEach items="#{sessao1.acoes}" var="acao" >
-            #{acao.nomeAcao}
-        </c:forEach>
-        </c:forEach>
-       <c:forEach items="#{sessaoAtualSBWP.menusDaSessao.menuPrincipal.sessoes}" var="sessao2" >
-            #{sessao2.nome}
-            
-               <c:forEach items="#{sessao2.acoes}" var="acao2" >
-            #{acao2.nomeAcao}
-        </c:forEach>
-        </c:forEach>
+            TESTESSS
+            <c:forEach items="#{sessaoAtualSBWP.menusDaSessao.menuAvancado.sessoes}" var="sessao1" >
+                #{sessao1.nome}
+
+                <c:forEach items="#{sessao1.acoes}" var="acao" >
+                    #{acao.nomeAcao}
+                </c:forEach>
+            </c:forEach>
+            <c:forEach items="#{sessaoAtualSBWP.menusDaSessao.menuPrincipal.sessoes}" var="sessao2" >
+                #{sessao2.nome}
+
+                <c:forEach items="#{sessao2.acoes}" var="acao2" >
+                    #{acao2.nomeAcao}
+                </c:forEach>
+            </c:forEach>
             <p:separator/>
 
-       
+
+            <p:socket channel="/mensagens/teste"  onMessage="handleMessage" >
+
+            </p:socket>
+
+
+
+            <script type="text/javascript" >
+                function handleMessage(facesmessages) {
+                    alert(facesmessages);
+                    console.log(facesmessages);
+
+                    PF("mensagemUsuario").renderMessage(facesmessages);
+
+                }
+            </script>
+            <h:form>
+                <p:commandButton actionListener="#{pgUtil.testePush()}" value="Teste Push" />
+            </h:form>
         </ui:composition>
     </h:body>
 </html>

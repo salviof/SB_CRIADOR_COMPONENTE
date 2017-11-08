@@ -9,10 +9,10 @@
 
     <li>
         <a class="menulink Animated05"><i class="fa fa-comment-o animated swing "></i> <span>Notificações</span></a>
-        <c:forEach var="comunicacao" items="#{sessaoAtualSBWP.comunicacaoAguardandoRespostaUsuarioSesso()}" >
+        <c:forEach var="comunicacao" items="#{null}" >
             <li>   #{comunicacao.mensagem} #{comunicacao.tipoComunicacao.icone}  <div class="Fright">
                     <c:forEach items="#{comunicacao.repostas}" var="respPossivel" >
-                        <SBAcaoNav:botaoDeAcao metodo="#{pgUtilComunicacao.}" armazenamentoAcaoExecutada="" acao="#{respPossivel}" />
+
                     </c:forEach>
                 </div> </li>
 
