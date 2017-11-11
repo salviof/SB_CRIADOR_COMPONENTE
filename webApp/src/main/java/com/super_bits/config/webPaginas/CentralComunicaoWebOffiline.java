@@ -8,7 +8,7 @@ package com.super_bits.config.webPaginas;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreFabrica;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.CentralComunicacaoDesktop;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ComunicacaoAcaoSistema;
-import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ComunicacaoNaoPersistida;
+import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ComunicacaoTransient;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoRespostaComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoTransporteComunicacao;
@@ -37,8 +37,7 @@ public class CentralComunicaoWebOffiline extends CentralComunicacaoDesktop imple
         for (FabTipoTransporteComunicacao transporte : pTiposTransporte) {
             transportes.add(transporte.getRegistro());
         }
-        comunicacoesAtivas.add(
-                new ComunicacaoNaoPersistida(pRemetente, pRemetente, pTipocomunicacao.getRegistro(), transportes));
+        comunicacoesAtivas.add(new ComunicacaoTransient(pRemetente, pRemetente, pTipocomunicacao.getRegistro(), transportes));
     }
 
 }

@@ -30,23 +30,45 @@
             <p:separator/>
 
             /mensagens/#{paginaAtual.infoPagina.acaoVinculada.nomeUnico}/#{sessaoAtualSBWP.usuario.grupo.nomeUnico}/#{sessaoAtualSBWP.usuario.email}
-            <p:socket channel="/mensagens/#{paginaAtual.infoPagina.acaoVinculada.nomeUnico}/teste/#{sessaoAtualSBWP.usuario.email}"  onMessage="handleMessage" >
+            <p:socket channel="/mensagens/#{paginaAtual.infoPagina.acaoVinculada.nomeUnico}/#{sessaoAtualSBWP.usuario.grupo.email}/#{sessaoAtualSBWP.usuario.email}"  onMessage="handleMessage" >
 
             </p:socket>
+            <h:form id="formularioComunicacao" >
+                <p:remoteCommand actionListener="#{pgUtilComunicacao.exibirModalComunicacaoCodigo()}"
+                                 name="responderConversa"
+                                 >
+                    <h:inputHidden  id="codigoComunicacao" value="#{pgUtilComunicacao.codigoComunicacao}" class="codigoComunicado" />
 
 
+
+                </p:remoteCommand>
+            </h:form>
 
             <script type="text/javascript" >
-                function handleMessage(facesmessages) {
-                    alert(facesmessages);
-                    console.log(facesmessages);
+                function handleMessage(notificacao) {
+                    alert(notificacao);
+                    console.log(notificacao);
+                    if (notificacao.temMensagem) {
+                        PF("mensagemUsuario").renderMessage(JSON.parse(notificacao.mensagemJson));
+                        alert("Mensagem recebida");
+                    }
+                    if (notificacao.temCodigoConversa) {
+                        alert('Abre Conversa');
+                        alert(notificacao.codigoConversa);
+                        (document.getElementById('formularioComunicacao:codigoComunicacao')).value = notificacao.codigoConversa;
 
-                    PF("mensagemUsuario").renderMessage(facesmessages);
+                        responderConversa();
+                    }
+
 
                 }
             </script>
             <h:form>
                 <p:commandButton actionListener="#{pgUtil.testePush()}" value="Teste Push" />
+            </h:form>
+
+            <h:form>
+                <p:commandButton actionListener="#{pgUtil.testePushConversa()}" value="Teste Push" />
             </h:form>
         </ui:composition>
     </h:body>
