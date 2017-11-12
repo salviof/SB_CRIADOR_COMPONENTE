@@ -7,12 +7,13 @@
 
 
     <h:head>
-        <title> #{pgModalREspostaComunicacao.comunicacao.mensagem} </title>
-
+        <title> #{pgModalREspostaComunicacao.comunicacao.assunto} </title>
+        <ui:include src="../folhasDeEstiloModal.xhtml" />
     </h:head>
 
     <h:body>
         <h:form>
+            <h1>#{pgModalREspostaComunicacao.comunicacao.mensagem}</h1>
 
             <ui:repeat value="#{pgModalREspostaComunicacao.comunicacao.repostasPossiveis}" var="resp" >
                 <SBAcaoNav:botaoRespostaModal

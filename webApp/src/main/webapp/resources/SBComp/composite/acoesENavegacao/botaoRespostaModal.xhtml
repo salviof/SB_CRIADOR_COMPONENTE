@@ -51,19 +51,18 @@
     <cc:implementation>
 
 
-        <p:commandButton onmousedown="esconderTooltips();"
-                         styleClass="btnIconeENome botao"
-                         icon="#{cc.attrs.resposta.tipoResposta.icone}"
-                         action="#{cc.attrs.metodo}"
-
-                         value="#{cc.attrs.resposta.tipoResposta.nome}"
-                         update="@form"
-                         oncomplete="#{javaScriptOncomplete}"
-
-                         >
+        <p:commandButton
+            onmousedown="esconderTooltips();"
+            styleClass="btnIconeENome botao"
+            icon="#{cc.attrs.resposta.tipoResposta.icone}"
+            action="#{cc.attrs.metodo}"
+            value="#{cc.attrs.resposta.tipoResposta.nome}"
+            update="@form"
+            oncomplete="#{javaScriptOncomplete}"
+            >
 
             <f:setPropertyActionListener target="#{cc.attrs.armazenamentoAcaoExecutada}"
-                                         value="#{cc.attrs.resposta.tipoResposta}"  />
+                                         value="#{cc.attrs.resposta}"  />
         </p:commandButton>
 
 

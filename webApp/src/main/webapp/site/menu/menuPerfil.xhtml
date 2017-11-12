@@ -9,14 +9,45 @@
 
     <li>
         <a class="menulink Animated05"><i class="fa fa-comment-o animated swing "></i> <span>Notificações</span></a>
-        <c:forEach var="comunicacao" items="#{null}" >
-            <li>   #{comunicacao.mensagem} #{comunicacao.tipoComunicacao.icone}  <div class="Fright">
-                    <c:forEach items="#{comunicacao.repostas}" var="respPossivel" >
 
-                    </c:forEach>
-                </div> </li>
 
-        </c:forEach>
+        <ul style="margin-left:-155px;">
+
+            <c:forEach var="comunicacao" items="#{sessaoAtualSBWP.comunicacaoAguardandoRespostaUsuarioSesso}" >
+                <span>
+                    <h:form>
+                        <li>
+                            <p:commandLink  onclick="responderConversa(#{comunicacao.codigoSelo})">
+                                <p:ajax event="dialogReturn" listener="#{pgUtilComunicacao.metodoRespostaModal}"
+
+                                        />
+
+
+
+
+                                <i class="#{comunicacao.tipoComunicacao.icone} Fs20 Blue Fleft" style="margin: 5px;"> </i>
+                                <c:forEach items="#{comunicacao.repostasPossiveis}" var="resp" >
+
+
+
+                                    <i class="  #{resp.tipoResposta.icone} Fs20 Blue Fright" style="margin: 5px;" >  </i>
+
+
+
+
+                                </c:forEach>
+
+                                <span class="FontAdamantiumBold Blue">#{comunicacao.assunto}</span><br />
+                                <span class="Fs12">#{comunicacao.mensagem}</span>
+
+                            </p:commandLink>
+
+                        </li>
+                    </h:form>
+                </span>
+            </c:forEach>
+        </ul>
+
     </li>
 
     <li>
