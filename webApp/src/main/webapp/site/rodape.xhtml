@@ -44,49 +44,9 @@
 
 
 
-            <c:forEach var="comunicacao" items="#{sessaoAtualSBWP.comunicacaoAguardandoRespostaUsuarioSesso}" >
-                <c:forEach items="#{comunicacao.repostasPossiveis}" var="resp" >
-                    #{resp.tipoResposta.icone}
-                </c:forEach>
-
-            </c:forEach>
 
 
-            <script type="text/javascript" >
-                function handleMessage(notificacao) {
-                    console.log(notificacao);
-                    if (notificacao.temMensagem) {
-                        PF("mensagemUsuario").renderMessage(JSON.parse(notificacao.mensagemJson));
-                    }
-                    if (notificacao.temCodigoConversa) {
 
-                        responderConversa(notificacao.codigoConversa);
-                    }
-                }
-                function responderConversa(codigoSelo) {
-                    (document.getElementById('formularioComunicacao:codigoComunicacao')).value = codigoSelo;
-                    PF('botaoAbrirModalConversa').jq.click();
-
-                }
-            </script>
-            <p:socket channel="/mensagens/#{paginaAtual.infoPagina.acaoVinculada.nomeUnico}/#{sessaoAtualSBWP.usuario.grupo.email}/#{sessaoAtualSBWP.usuario.email}"  onMessage="handleMessage" >
-            </p:socket>
-            <h:form id="formularioComunicacao" >
-
-                <h:inputHidden  id="codigoComunicacao" value="#{pgUtilComunicacao.codigoComunicacao}" class="codigoComunicado" />
-                <p:commandButton   widgetVar="botaoAbrirModalConversa" update="@form"
-                                   style="display:none"  actionListener="#{pgUtilComunicacao.exibirModalComunicacaoCodigo()}">
-
-                    <p:ajax event="dialogReturn"
-
-                            update="#{pgUtil.gerarCaminhoCompletoID('topoSBForm')}"
-                            />
-
-                </p:commandButton>
-            </h:form>
-
-
-            <SBDevel:infoPagina/>
         </ui:composition>
 
 

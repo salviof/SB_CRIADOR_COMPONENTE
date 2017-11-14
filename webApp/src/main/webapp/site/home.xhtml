@@ -26,29 +26,29 @@
         <ui:define name="#{layoutsPaginas.modeloGeral.areaPrincipal}">
 
 
-            
-            
-            
-            
+
+
+
+
             <SBLogin:formLogin />
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
             <p:fieldset legend="Menu">
                 #{sessaoAtualSBWP.menusDaSessao.menuAvancado}
                 #{sessaoAtualSBWP.menusDaSessao.menuAvancado}
-            </p:fieldset>   
+            </p:fieldset>
 
 
 
 
             <h:form>
-                <p:commandButton update="#{pgUtil.makeCaminhoCompletoID('mensagemUsuario')}" value="Atualizar mensagem"/>
+                <p:commandButton update="#{pgUtil.makeCaminhoCompletoID(layoutIdsAreasConhecidas.AREA_MENSAGEM_INTERFACE)}" value="Atualizar mensagem"/>
             </h:form>
 
 
