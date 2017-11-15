@@ -7,8 +7,6 @@ package com.super_bits.config.webPaginas;
 
 import com.super_bits.configSBFW.acessos.UtilSB_CRIADOR_COMPONENTEGlobalVar;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
-import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoTransporteComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioAnonimo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioSistemaRoot;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.TipoAtributoObjetoSB;
@@ -35,9 +33,9 @@ public class InicioFimContextoWebPagina implements ItfInicioFimAppWP {
         MapaObjetosProjetoAtual.adcionarObjeto(TipoAtributoObjetoSB.class);
         MapaObjetosProjetoAtual.adcionarObjeto(UsuarioAnonimo.class);
         MapaObjetosProjetoAtual.adcionarObjeto(UsuarioSistemaRoot.class);
+
         //  SBCore.getCentralDeComunicacao().gerarComunicacaoSistema_Usuairo(FabTipoComunicacao.NOTIFICAR,
         //         new UsuarioSistemaRoot(), "Olá Root", FabTipoTransporteComunicacao.INTRANET_MENU);
-
         new SiteMap();
 
     }

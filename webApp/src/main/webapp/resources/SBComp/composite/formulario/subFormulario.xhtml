@@ -79,7 +79,7 @@
                         <c:forEach items="#{cc.attrs.grupoCampos.campos}" var="cpItem">
                             <div class="Container20 Responsive100">
 
-                                <SBInput:input registro="#{itemDaLista.getCampoByNomeOuAnotacao(cpItem.caminhoParcialSemListaPai)}"  layout="#{layoutsComponenteSB.layoutCampo.superior}"
+                                <SBInput:input registro="#{itemDaLista.getCampoByNomeOuAnotacao(cpItem.ultimoNome)}"  layout="#{layoutsComponenteSB.layoutCampo.superior}"
                                                idAtualizarOnChange="@this"
 
                                                />

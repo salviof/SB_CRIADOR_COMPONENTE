@@ -10,12 +10,13 @@
 
 
         <ui:define name="input">
+
             <h:panelGrid columns="2" style="width: 100%" columnClasses="colunaResponsiva,tamanhoIconePequeno" rendered="#{!desabilitarEdicao}" >
                 <p:selectOneMenu rendered="#{!desabilitarEdicao}"
                                  class=" seletorResponsivo colunaResponsiva  TexAlCenter #{componenteVisual.classeCSS}"
                                  disabled="#{desabilitarEdicao}"
                                  required="#{obrigatorio}"
-                                 value="#{valor}"
+                                 value="#{registro.valor}"
                                  validatorMessage="O valor informado no campo #{label} não é valido!"
                                  requiredMessage="O campo #{label} não foi informado!"
                                  autoWidth="true"
@@ -52,19 +53,21 @@
 
                 </p:selectOneMenu>
 
-                <p:commandButton rendered="#{!desabilitarEdicao and lista.size()>5}" icon="#{acoesPaginas_do_Sistema_PAGINA_MB_PESQUISA_AVANCADA.pagina_mb_pesquisa_avancada.icone}"
+                <p:commandButton rendered="#{!desabilitarEdicao and lista.size()>5 and mostrarOpcoesAcancadas}" icon="#{acoesPaginas_do_Sistema_PAGINA_PESQUISA_AVANCADA_MB_PADRAO.pagina_pesquisa_avancada_mb_padrao.icone}"
 
                                  actionListener="#{pgUtil.exibirModalImportacaoPesquisaAvancada()}"
                                  partialSubmit="true"
                                  process="@this"
                                  >
-                    <p:ajax event="dialogReturn"  update="#{pgUtil.getNomeIdComponenteInput(component)}"/>
+
+                    <p:ajax event="dialogReturn"  update="@form" listener="#{pgUtil.atualizaTelaPorID(pgUtil.getIdDoComponenteAtual(component))}" />
                     <c:if test="#{possuiIDOnChange}" >
                         <p:ajax
                             rendered="#{possuiIDOnChange}"
                             global="true"
                             event="dialogReturn"
-                            listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
+                            listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}"
+                            />
                     </c:if>
                     <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}"
                                                  value="#{registro}" />
