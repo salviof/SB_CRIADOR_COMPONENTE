@@ -20,7 +20,7 @@
                     <p:commandButton value="Selecionar  #{label}"
                                      actionListener="#{pgUtil.exibirModalEnvioArquivo()}"
                                      partialSubmit="true"
-                                     process="@this"
+                                     process="#{pgUtil.getNomeIdPainelDoComponente(component)}"
                                      >
                         <p:ajax event="dialogReturn"  update="#{pgUtil.getNomeIdPainelDoComponente(component)}"/>
 
@@ -72,9 +72,9 @@
                                     <h:column rendered="#{registro.comoArquivoDeEntidade.usuarioLogadoTemAlterarArquivo and !desabilitarEdicao}" >
                                         <td>
                                             <p:commandButton value="Atualizar"
-                                                             action="#{pgUtil.exibirModalEnvioArquivo()}"
+                                                             actionListener="#{pgUtil.exibirModalEnvioArquivo()}"
                                                              partialSubmit="true"
-                                                             process="@this"
+                                                             process="#{pgUtil.getNomeIdPainelDoComponente(component)}"
                                                              icon="#{iconeIconeFontAwesome.REG_ATUALIZAR.tagHtml}"
                                                              >
                                                 <p:ajax event="dialogReturn"  update="@namingcontainer" />
