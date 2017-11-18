@@ -278,6 +278,9 @@ public class BeanExemplo
     @InfoCampo(label = "Campo Vinculado 1", tipo = FabTipoAtributoObjeto.TEXTO_SIMPLES)
     private String campoVinculado1;
 
+    @InfoCampo(tipo = FabTipoAtributoObjeto.TEXTO_SIMPLES)
+    private String textoLabelPadraoTeste;
+
     @InfoCampo()
     @Enumerated(EnumType.STRING)
     private FabTipoAtributoObjeto objetoFabrica = FabTipoAtributoObjeto.CPF;

@@ -43,6 +43,11 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
             System.out.println("getId");
             BeanExemplo beanExemplo = new BeanExemplo();
 
+            ItfCampoInstanciado cp = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("textoLabelPadraoTeste");
+
+            System.out.println(cp.getLabel());
+            System.out.println(cp.getLabelPadrao());
+
             ItfCampoInstanciado campoinstanciadoListaParticular = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("listaParticular");
             System.out.println(campoinstanciadoListaParticular.getTipoCampoSTR());
             GrupoCampos grupo = campoinstanciadoListaParticular.getGrupoSubCamposExibicao();
