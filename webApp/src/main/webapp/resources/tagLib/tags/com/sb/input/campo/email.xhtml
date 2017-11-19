@@ -10,11 +10,14 @@
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
             <c:set var="exibicaoPadrao" value="#{false}"  />
+
+            <p:outputLabel value="#{valor}" rendered="#{desabilitarEdicao}" />
+
             <p:inputText   class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
                            validatorMessage="E-mail Inválido"
                            required="#{obrigatorio}"
                            disabled="#{desabilitarEdicao}"
-
+                           rendered="#{!desabilitarEdicao}"
                            value="#{valor}"
                            autocomplete="false"
                            >
