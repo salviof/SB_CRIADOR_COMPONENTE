@@ -1,8 +1,11 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:cc="http://java.sun.com/jsf/composite"
-                xmlns:sb="http://superbitsframework/ui"
 
-                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
     <cc:interface>
 
@@ -35,19 +38,46 @@
 
 
 
-        <sb:seletorItem
-            layoutCampo="#{cc.attrs.layoutCampo}"
-            itemSelecionado="#{cc.attrs.itemSelecionado}"
-            opcoes="#{cc.attrs.lista}"
-            possuiMetodoOnChange="#{pgUtil.isAtributoPreenchidoComExpressao(cc, 'metodoOnChange')}"
-            idAtualizarOnChange="#{cc.attrs.idOnChange}"
-            metodoOnChange="#{cc.attrs.metodoOnChange}"
-            possuiIDOnChange="#{pgUtil.isAtributoPreenchidoComExpressao(cc, 'idOnChange')}"
-            layoutComponente="#{cc.attrs.tipoVisualizacao}"
-            mostrarOpcoesAcancadas="false"
-            label="#{cc.attrs.label}"
-            atualizarFormOnChange="#{cc.attrs.atualizarFormOnChange}"
-            />
+        <p:selectOneMenu rendered="#{!cc.attrs.desabilitarEdicao}"
+                         class=" seletorResponsivo colunaResponsiva  TexAlCenter #{componenteVisual.classeCSS}"
+
+                         required="#{cc.attrs.obrigatorio}"
+                         value="#{cc.attrs.itemSelecionado}"
+                         validatorMessage="O valor informado no campo #{cc.attrs.label} não é valido!"
+                         requiredMessage="O campo  #{cc.attrs.label}  não foi informado!"
+                         autoWidth="true"
+                         styleClass="seletorResponsivo "
+                         converter="conversorGenerico"
+                         var="it"
+                         converterMessage="Erro ao converter objeto" >
+
+            <f:selectItem
+                itemLabel=" não Selecionado"  />
+
+            <f:selectItems
+                value="#{cc.attrs.lista}"
+                var="item"
+                itemLabel="#{item.nome}"
+                itemValue="#{item}" />
+            <c:if test="#{pgUtil.isAtributoPreenchidoComExpressao(cc,'metodoOnChange')}">
+                <p:ajax rendered="#{pgUtil.isAtributoPreenchidoComExpressao(cc,'metodoOnChange')}"
+                        global="true"
+                        event="valueChange"
+                        listener="#{cc.attrs.metodoOnChange}"/>
+            </c:if>
+
+            <c:if test="#{pgUtil.isAtributoPreenchidoComExpressao(cc,'idOnChange')}" >
+                <p:ajax
+                    rendered="#{pgUtil.isAtributoPreenchidoComExpressao(cc,'idOnChange')}"
+                    global="true"
+                    event="valueChange"
+                    listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
+            </c:if>
+            <p:column>
+                #{it.nome}
+            </p:column>
+
+        </p:selectOneMenu>
 
     </cc:implementation>
 

@@ -15,11 +15,20 @@
         <projetoSB.grupoProjeto>SB_CRIADOR_COMPONENTE</projetoSB.grupoProjeto>
     </properties>
 
+
+
+
     <dependencies>
         <dependency>
             <groupId>com.super_bits.Super_Bits.criadorComponente</groupId>
             <artifactId>modelRegras</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client</artifactId>
+            <version>1.23.0</version>
         </dependency>
 
         <dependency>
@@ -33,7 +42,7 @@
             <artifactId>SBWebPaginasSemTagLib</artifactId>
             <version>0.9-SNAPSHOT</version>
         </dependency>
-       
+
 
         <dependency>
             <groupId>junit</groupId>
