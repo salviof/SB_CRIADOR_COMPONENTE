@@ -36,7 +36,7 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
-
+        <sb:parametroMetodo nome="metodo" valor="#{cc.attrs.metodoOnChange}" />
 
         <p:selectOneMenu rendered="#{!cc.attrs.desabilitarEdicao}"
                          class=" seletorResponsivo colunaResponsiva  TexAlCenter #{componenteVisual.classeCSS}"
@@ -62,7 +62,7 @@
             <c:if test="#{pgUtil.isAtributoPreenchidoComExpressao(cc,'metodoOnChange')}">
                 <p:ajax rendered="#{pgUtil.isAtributoPreenchidoComExpressao(cc,'metodoOnChange')}"
                         global="true"
-                        event="valueChange"
+                        event="#{metodo}"
                         listener="#{cc.attrs.metodoOnChange}"/>
             </c:if>
 
