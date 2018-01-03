@@ -26,11 +26,12 @@
                                  converterMessage="Erro ao converter objeto" >
 
                     <f:selectItem
-                        itemLabel=" não Selecionado"  />
+                        itemLabel=" não Selecionado" noSelectionOption="true" value="#{null}" />
 
                     <f:selectItems
                         value="#{lista}"
                         var="item"
+
                         itemLabel="#{item.nome}"
                         itemValue="#{item}" />
                     <c:if test="#{possuiMetodoOnChange}">

@@ -13,6 +13,11 @@
                      >
         <f:setPropertyActionListener target="#{destino}"
                                      value="#{origem}"  />
+        <p:tooltip
+            for="@parent"
+            value="#{acao.nomeAcao}"
+            trackMouse="true"
+            />
     </p:commandButton>
 </ui:composition>
 

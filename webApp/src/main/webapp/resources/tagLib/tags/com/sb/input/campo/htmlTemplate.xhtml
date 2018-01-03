@@ -8,7 +8,7 @@
     >
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
-            <script src="#{infoWebApp.urlPagina}/libUrlPadrao/ckeditor/ckeditor.js"></script>
+
 
             <p:fieldset styleClass="Container100 Responsive" style="height: 300px; ">
                 <h:inputTextarea
@@ -20,6 +20,7 @@
                     <f:passThroughAttribute name="palavras_placeholder" value="#{registro.comoTemplate.opcoesPalavaChaveJson}" />
                 </h:inputTextarea>
                 <p:inputTextarea value="#{valor}" style="width: 1px; height: 1px;"  styleClass="invisivel"/>
+                <script src="#{infoWebApp.urlPagina}/libUrlPadrao/ckeditor/ckeditor.js"></script>
                 <script type="text/javascript">
 
                     function recarregarCK#{component.id}() {
