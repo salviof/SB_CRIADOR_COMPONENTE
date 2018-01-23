@@ -5,12 +5,9 @@
  */
 package com.super_bits.config.webPaginas;
 
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreFabrica;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.CentralComunicacaoDesktop;
-import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ComunicacaoAcaoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ComunicacaoNaoPersistida;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
-import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoRespostaComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoTransporteComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ItfCentralComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ItfComunicacao;
@@ -20,7 +17,6 @@ import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ItfTipoTransporteComu
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
 import java.util.ArrayList;
 import java.util.List;
-import jersey.repackaged.com.google.common.collect.Lists;
 
 /**
  *
