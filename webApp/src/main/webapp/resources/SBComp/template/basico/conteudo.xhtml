@@ -8,6 +8,10 @@
     <ui:insert name="parametros" />
     <div class="Card">
         <div class="CardTopic">
+
+            <h:panelGroup styleClass="Fright Container60">
+                <ui:insert name="conteudoDireita" />
+            </h:panelGroup>
             <ui:insert name="titulo" />
             <i class="#{iconeConteudo} Fs30 Fleft MarRight10"></i>
             <br/>
@@ -15,9 +19,7 @@
             <span class="CardSubTopic">
                 <ui:insert name="subtitulo" />
             </span>
-            <h:panelGroup styleClass="Fright">
-                <ui:insert name="conteudoDireita" />
-            </h:panelGroup>
+
         </div>
         <div class="SeparatorFull"></div>
         <div class="ContainerIndent">
