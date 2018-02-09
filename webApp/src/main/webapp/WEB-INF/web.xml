@@ -11,6 +11,20 @@
         <param-value>/sb.taglibLab.xml</param-value>
     </context-param>
 
+    <servlet>
+        <servlet-name>Push Servlet</servlet-name>
+        <servlet-class>org.primefaces.push.PushServlet</servlet-class>
+        <async-supported>true</async-supported>
+
+        <init-param>
+            <param-name>org.atmosphere.cpr.packages</param-name>
+            <param-value>com.super_bits.modulosSB.webPaginas.controller.push</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Push Servlet</servlet-name>
+        <url-pattern>/primepush/*</url-pattern>
+    </servlet-mapping>
 
 
 
@@ -37,7 +51,7 @@
     </context-param>
     <context-param>
         <param-name>facelets.REFRESH_PERIOD</param-name>
-        <param-value>1</param-value>
+        <param-value>3</param-value>
     </context-param>
 
     <context-param>
@@ -53,7 +67,6 @@
         <param-name>primefaces.PUBLIC_CAPTCHA_KEY</param-name>
         <param-value>6Lf2XQkTAAAAANcvOwYqPxWL4iZDksFqHpS39GDA</param-value>
     </context-param>
-
 
 
 

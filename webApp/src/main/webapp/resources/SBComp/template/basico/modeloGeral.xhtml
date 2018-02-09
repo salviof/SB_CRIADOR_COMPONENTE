@@ -4,8 +4,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:p="http://primefaces.org/ui">
 
     <h:head>
         <f:facet name="first">
@@ -24,37 +23,42 @@
 
 
 
-        <h:panelGroup rendered="#{sessaoAtualSBWP.identificado}">
+        <h:panelGroup rendered="#{sessaoAtualSBWP.identificado}"  id="#{layoutIdsAreasConhecidas.AREA_TOPO_ITERNFACES}">
             <div class="ManterNoTopo">
+                <h:outputScript name="js/layout.js" library="primefaces-adamantium" />
                 <ui:include src="/site/topo.xhtml"/>
+
             </div>
         </h:panelGroup>
 
-        <div >
-            <h:panelGroup id="mensagemUsuario">
-                <p:growl class="mensagemGrowl" />
 
+        <h:panelGroup id="#{layoutIdsAreasConhecidas.AREA_MENSAGEM_INTERFACE}">
+            <p:growl class="mensagemGrowl"  widgetVar="#{layoutIdsAreasConhecidas.AREA_MENSAGEM_INTERFACE}"/>
+        </h:panelGroup>
 
+        <div style="margin-top: 80px">
+            <h:panelGroup id="#{layoutIdsAreasConhecidas.AREA_CONTEUDO}"  >
+                <ui:insert name="divConteudo" />
+                <ui:insert name="conteudo" />
+                <ui:insert name="content"/>
             </h:panelGroup>
-            <ui:insert name="content">
-
-                <div  style="margin-top: 80px ">
-                    <ui:insert name="divConteudo" />
-                    <ui:insert name="conteudo" />
-                </div>
-
-            </ui:insert>
-            <ui:include src="/site/rodape.xhtml"/>
         </div>
+
+        <h:panelGroup id="#{layoutIdsAreasConhecidas.AREA_RODAPE}">
+            <ui:include src="/site/rodape.xhtml"/>
+        </h:panelGroup>
+
         <p:ajaxStatus style="width:32px;height:32px;position:fixed;right:7px;bottom:7px">
             <f:facet name="start">
-                <p:graphicImage name="images/preloader.gif" library="adamantium-layout"/>
+                <p:graphicImage name="images/preloader.gif" library="primefaces-adamantium"/>
             </f:facet>
 
             <f:facet name="complete">
-                <h:outputText value="" />
+                <h:outputText />
             </f:facet>
         </p:ajaxStatus>
+        <ui:include src="scriptFinal.xhtml" />
+
     </h:body>
 
 </html>

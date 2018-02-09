@@ -39,9 +39,9 @@ ui-datatable-header.ui-widget-header.ui-corner-top{
 
 
 .ui-growl {
-    z-index: 20000!important;
+    z-index: 999!important;
     position: fixed;
-    top: 60px!important;
+    top: 120px!important;
     right: 100px!important;
     width: 80%!important;
 }

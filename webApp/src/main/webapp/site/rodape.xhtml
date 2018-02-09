@@ -6,30 +6,55 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
 
-xmlns:SBObjeto="http://xmlns.jcp.org/jsf/composite/SBComp/composite/objetos"
+      xmlns:SBObjeto="http://xmlns.jcp.org/jsf/composite/SBComp/composite/objetos"
       xmlns:SBDevel="http://xmlns.jcp.org/jsf/composite/SBComp/composite/devel"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:body>
         <ui:composition>
-       TESTESSS
-        <c:forEach items="#{sessaoAtualSBWP.menusDaSessao.menuAvancado.sessoes}" var="sessao1" >
-            #{sessao1.nome}
-            
-            <c:forEach items="#{sessao1.acoes}" var="acao" >
-            #{acao.nomeAcao}
-        </c:forEach>
-        </c:forEach>
-       <c:forEach items="#{sessaoAtualSBWP.menusDaSessao.menuPrincipal.sessoes}" var="sessao2" >
-            #{sessao2.nome}
-            
-               <c:forEach items="#{sessao2.acoes}" var="acao2" >
-            #{acao2.nomeAcao}
-        </c:forEach>
-        </c:forEach>
+            TESTESSS
+            <c:forEach items="#{sessaoAtualSBWP.menusDaSessao.menuAvancado.sessoes}" var="sessao1" >
+                #{sessao1.nome}
+
+                <c:forEach items="#{sessao1.acoes}" var="acao" >
+                    #{acao.nomeAcao}
+                </c:forEach>
+            </c:forEach>
+            <c:forEach items="#{sessaoAtualSBWP.menusDaSessao.menuPrincipal.sessoes}" var="sessao2" >
+                #{sessao2.nome}
+
+                <c:forEach items="#{sessao2.acoes}" var="acao2" >
+                    #{acao2.nomeAcao}
+                </c:forEach>
+            </c:forEach>
             <p:separator/>
 
-       
+            /mensagens/#{paginaAtual.infoPagina.acaoVinculada.nomeUnico}/#{sessaoAtualSBWP.usuario.grupo.nomeUnico}/#{sessaoAtualSBWP.usuario.email}
+
+            <h:form>
+                <p:commandButton actionListener="#{pgUtil.testePush()}" value="Teste Push" />
+            </h:form>
+
+            <h:form>
+                <p:commandButton actionListener="#{pgUtil.testePushConversa()}" value="Teste Push Comunicação" >
+                </p:commandButton>
+            </h:form>
+
+            <SBDevel:infoPagina />
+
+
+
+
+
         </ui:composition>
+
+
+
+
+
+
+
+
     </h:body>
 </html>

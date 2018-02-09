@@ -11,6 +11,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basic
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.MB_PaginaConversation;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.reflexao.anotacoes.InfoPagina;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 /**
@@ -18,7 +19,7 @@ import javax.inject.Named;
  * @author desenvolvedor
  */
 @InfoAcaoHomeCriacaoComponente(acao = FabAcoesHomeCriadorComponente.PAGINA_HOME_MB)
-@SessionScoped
+@ViewScoped
 @Named
 @InfoPagina(nomeCurto = "HM", tags = {"home"})
 public class PgHomeCriadorComponente extends MB_PaginaConversation {

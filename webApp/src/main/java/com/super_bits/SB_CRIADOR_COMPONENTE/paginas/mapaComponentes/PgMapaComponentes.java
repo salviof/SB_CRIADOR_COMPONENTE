@@ -96,10 +96,11 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private Map<String, String> labelByCaminho;
 
     private List<AcaoDoSistema> acoesLaboratorio;
-    @InfoParametroURL(nome = "componente", tipoParametro = TIPO_PARTE_URL.TEXTO)
-    private ParametroURL prCaminhoComponente;
+
     @InfoParametroURL(nome = "conteudo", tipoParametro = TIPO_PARTE_URL.TEXTO)
     private ParametroURL prCaminhoBeanSelecionado;
+    @InfoParametroURL(nome = "componente", tipoParametro = TIPO_PARTE_URL.TEXTO)
+    private ParametroURL prCaminhoComponente;
 
     private EstruturaCampo estruturaCampoSelecionado;
     private EstruturaDeEntidade estruturaObjetoSelecionado;
@@ -185,7 +186,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
             acaoSelecionada = acaoListar;
             xhtmlAcaoAtual = acaoListar.getComoFormularioEntidade().getXhtml();
         } else {
-
+            String caminhoBean = prCaminhoBeanSelecionado.getValor().toString();
             setCaminhoBeanSelecionado(prCaminhoBeanSelecionado.getValor().toString());
         }
 

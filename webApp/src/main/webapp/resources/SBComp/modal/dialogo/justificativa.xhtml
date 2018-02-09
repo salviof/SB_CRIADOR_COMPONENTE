@@ -10,20 +10,20 @@
 
 
     <h:head>
-        <title>#{pgModalSBJSF.comunicacaoDoModal.mensagem}</title>
+        <title>#{pgModalJustificativa.comunicacao.mensagem}</title>
     </h:head>
 
     <h:body>
         <h:form id="formulario">
             <div class="ContainerIndent" >
                 <div class="Container10" >
-                    <SBInput:input registro="#{pgModalSBJSF.campoJustificativa}"
+                    <SBInput:input registro="#{pgModalJustificativa.campoJustificativa}"
                                    layout="#{layoutsComponenteSB.layoutCampo.superior}"
                                    />
                 </div>
 
                 <div class="Container10" >
-                    <p:inputTextarea value="#{pgModalSBJSF.justificativa}"
+                    <p:inputTextarea value="#{pgModalJustificativa.justificativa}"
                                      style="width: 600px!important; "
                                      placeholder="Justifique esta alteração"
                                      required="true"
@@ -41,13 +41,11 @@
 
             <br/>
             <center>
-                <ui:repeat value="#{pgModalSBJSF.comunicacaoDoModal.repostas}" var="resp" >
+                <ui:repeat value="#{pgModalJustificativa.comunicacao.repostasPossiveis}" var="resp" >
                     <SBAcaoNav:botaoRespostaModal
                         resposta="#{resp}"
-
+                        armazenamentoAcaoExecutada="#{pgModalJustificativa.respostaSelecionada}"
                         />
-
-
                 </ui:repeat>
             </center>
 

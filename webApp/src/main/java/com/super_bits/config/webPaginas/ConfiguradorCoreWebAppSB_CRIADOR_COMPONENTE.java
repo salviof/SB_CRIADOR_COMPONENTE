@@ -35,7 +35,7 @@ public class ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE extends ConfiguradorCor
 
     public ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE() {
         super(true);
-       // setIgnorarConfiguracaoPermissoes(true);
+        // setIgnorarConfiguracaoPermissoes(true);
     }
 
     @Override

@@ -4,7 +4,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:sb="http://superbitsframework/ui" 
+      xmlns:sb="http://superbitsframework/ui"
 
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/resources/SBComp"
@@ -26,7 +26,7 @@
 
     <h:body>
         <div class="Fright">
-            <h:form >
+            <h:form rendered="false" >
                 <p:commandButton icon="fa fa-close" actionListener="#{pgModalSBJSF.fecharModal()}" />
             </h:form>
         </div>
@@ -46,7 +46,6 @@
 
         <h:form id="formularioItens">
             <div class="Container100">
-
 
                 <p:dataTable sortMode="multiple"
                              value="#{pgModalSBJSF.paginaVinculada.modalDados.campoSelecionado.comoCampoSeltorItem.seletor.origem}"
@@ -87,7 +86,6 @@
                             />
 
                     </p:columns>
-
 
 
 

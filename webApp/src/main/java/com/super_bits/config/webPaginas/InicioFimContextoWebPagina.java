@@ -7,7 +7,6 @@ package com.super_bits.config.webPaginas;
 
 import com.super_bits.configSBFW.acessos.UtilSB_CRIADOR_COMPONENTEGlobalVar;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioAnonimo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioSistemaRoot;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.TipoAtributoObjetoSB;
@@ -26,7 +25,7 @@ public class InicioFimContextoWebPagina implements ItfInicioFimAppWP {
     public void inicio() {
         SBCore.configurar(new ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE(
                 ConfiguradorCoreDeProjetoWebWarAbstrato.contextoDoServlet),
-                SBCore.ESTADO_APP.HOMOLOGACAO);
+                SBCore.ESTADO_APP.PRODUCAO);
         //SBPersistencia.configuraJPA(FabConfiguracoesDeAmbienteWebSB_CRIADOR_COMPONENTE.HOMOLOGACAO.getConfiguracaoPersistencia());
         SBWebPaginas.configurar(FabConfiguracoesDeAmbienteWebSB_CRIADOR_COMPONENTE.HOMOLOGACAO.getConfiguracaoWebPaginas());
         UtilSB_CRIADOR_COMPONENTEGlobalVar.adicionarObjetosEstaticosProjeto();
@@ -34,11 +33,16 @@ public class InicioFimContextoWebPagina implements ItfInicioFimAppWP {
         MapaObjetosProjetoAtual.adcionarObjeto(TipoAtributoObjetoSB.class);
         MapaObjetosProjetoAtual.adcionarObjeto(UsuarioAnonimo.class);
         MapaObjetosProjetoAtual.adcionarObjeto(UsuarioSistemaRoot.class);
+<<<<<<< HEAD
         //  SBCore.getCentralDeComunicacao().gerarComunicacaoEntre_Usuairos(FabTipoComunicacao.NOTIFICAR,
         //         pRemetente, pDestinatario, mensagem, tiposTransporte);
 
         new SiteMap();
+=======
+>>>>>>> 037992f3b11bbee188df73c30d81506b7258856d
 
+        //  SBCore.getCentralDeComunicacao().gerarComunicacaoSistema_Usuairo(FabTipoComunicacao.NOTIFICAR,
+        //         new UsuarioSistemaRoot(), "Olá Root", FabTipoTransporteComunicacao.INTRANET_MENU);
     }
 
     @Override

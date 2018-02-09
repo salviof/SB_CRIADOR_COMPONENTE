@@ -3,46 +3,42 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 
     <h:head>
-
+        <title>
+            #{pgModalRequisito.paginaVinculada.acaoVinculada.nomeUnico}
+        </title>
 
     </h:head>
 
     <h:body>
-        <h:form>
-
-            #{pgModalRequisito.paginaVinculada.acaoVinculada.nomeUnico} <br/>
-            <p:link href="https://vipsol.atlassian.net/wiki/display/SKEDR/#{pgModalSBJSF.paginaVinculada.acaoVinculada.idDescritivoJira}"
-                    value="#{pgModalSBJSF.paginaVinculada.acaoVinculada.idDescritivoJira}"
-                    target="requisitoJira:"
-                    >
-                Ver requisito, que originou a tarefa
-            </p:link>
-
-            <div class="Container25" >
-                <p:inputText value="#{pgModalRequisito.nomeUnicoAcao}" />
-            </div>
-            <div class="Container25" >
-
-            </div>
-            <div class="Container25" >
-
-            </div>
-
-
-        </h:form>
 
         <h:form>
 
-            <p:commandButton value="Atualizar"
-                             actionListener="#{pgModalRequisito.atualizarRequisito}"
-                             update="@form"
-                             />
+            <div class="Container100" >
 
-            <p:fieldset legend="#{pgModalRequisito.requisitoVinculadoAcao.nome}" rendered="#{pgModalRequisito.requisitoVinculadoAcao!=null}">
+                <h:inputHidden   value="#{pgModalRequisito.nomeUnicoAcao}" />
+
+                <div class="Container30">
+                    <p:commandButton value="Conectar com requisito Jira"
+                                     actionListener="#{pgModalRequisito.atualizarRequisito()}"
+                                     update="@form"
+                                     />
+                    <p:link href="#{pgModalRequisito.urlJira}/browse/#{pgModalSBJSF.paginaVinculada.acaoVinculada.idDescritivoJira}"
+                            value="#{pgModalSBJSF.paginaVinculada.acaoVinculada.idDescritivoJira}"
+                            target="requisitoJira:"
+                            >
+                        Ver requisito, que originou a tarefa
+                    </p:link>
+                </div>
+            </div>
+
+            <p:fieldset legend="#{pgModalRequisito.requisitoVinculadoAcao.nome}"
+                        id="detalhesRequisito"
+                        rendered="#{pgModalRequisito.requisitoVinculadoAcao!=null}">
                 <a href="#{pgModalRequisito.requisitoVinculadoAcao.urlRequisito}"
                    target="sbReqDoMomento"
                    >
@@ -50,11 +46,30 @@
 
                 </a> <br/>
 
+
+
                 <br/>
                 <br/>
+
+
+                <h:panelGrid columns="2" >
+                    <p:inputText value="#{pgModalRequisito.comentario}" />
+                    <p:commandButton value="Adicionar Comentário"
+                                     actionListener="#{pgModalRequisito.adicionarComentario()}"
+                                     update="@form"
+                                     />
+                </h:panelGrid>
+
+
                 <p:textEditor
 
-                    value="#{pgModalRequisito.requisitoVinculadoAcao.descricao}" readonly="true" />
+
+
+                    placeholder="A descrição desta atividade não foi cadastrada."
+                    value="#{pgModalRequisito.requisitoVinculadoAcao.descricao}" readonly="true" >
+                    <f:facet name="toolbar">
+                    </f:facet>
+                </p:textEditor>
 
                 <br/>
                 <p:fieldset legend="Comentários:" >
