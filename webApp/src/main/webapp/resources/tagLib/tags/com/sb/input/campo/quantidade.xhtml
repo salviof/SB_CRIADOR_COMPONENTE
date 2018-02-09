@@ -12,7 +12,8 @@
                            rendered="#{desabilitarEdicao}"
                            />
             <p:inputNumber
-                disabled="#{!desabilitarEdicao}"
+                disabled="#{desabilitarEdicao}"
+                rendered="#{!desabilitarEdicao}"
                 class="campoResponsivo #{componente.classeCSS} TexAlCenter"
                 required="#{obrigatorio}"
                 value="#{valor}"
