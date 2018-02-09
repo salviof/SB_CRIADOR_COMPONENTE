@@ -6,7 +6,7 @@
 package com.super_bits.config.webPaginas;
 
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.CentralComunicacaoDesktop;
-import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ComunicacaoNaoPersistida;
+
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoTransporteComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ItfCentralComunicacao;
@@ -33,8 +33,8 @@ public class CentralComunicaoWebOffiline extends CentralComunicacaoDesktop imple
         for (FabTipoTransporteComunicacao transporte : pTiposTransporte) {
             transportes.add(transporte.getRegistro());
         }
-        comunicacoesAtivas.add(
-                new ComunicacaoNaoPersistida(pRemetente, pRemetente, pTipocomunicacao.getRegistro(), transportes));
+        //  comunicacoesAtivas.add(
+        //        new ComunicacaoNaoPersistida(pRemetente, pRemetente, pTipocomunicacao.getRegistro(), transportes));
     }
 
 }
