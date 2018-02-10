@@ -68,7 +68,7 @@
                     rendered="#{pgUtil.isAtributoPreenchidoComExpressao(cc,'idOnChange')}"
                     global="true"
                     event="valueChange"
-                    listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
+                    listener="#{pgUtil.atualizaTelaPorID(cc.attrs.idOnChange)}" />
             </c:if>
             <p:column>
                 #{it.nome}
