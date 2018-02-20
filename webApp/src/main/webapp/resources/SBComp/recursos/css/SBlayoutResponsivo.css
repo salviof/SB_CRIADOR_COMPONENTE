@@ -235,13 +235,13 @@ h1, h2, h3, h4, h5, h6{ margin:0px !important;
     .Container80{ width:100%; float:left;  margin-left:0px !important; margin-right:0px !important; margin-top: 3px!important;}
     .Container75{ width:100%; float:left;  margin-left:0px !important; margin-right:0px !important; margin-top: 3px!important;}
     .Container70{ width:100%; float:left;  margin-left:0px !important; margin-right:0px !important; margin-top: 3px!important;}
-    .Container60{ width:50%; float:left;}
-    .Container50{ width:50%; float:left;}
+    .Container60{ width:100%; float:left;}
+    .Container50{ width:100%; float:left;}
     .Container40{ width:50%; float:left;}
     .Container33{ width:50%; float:left;}
     .Container30{ width:50%; float:left;}
-    .Container25{ width:30%; float:left;}
-    .Container20{ width:30%; float:left;}
+    .Container25{ width:50%; float:left;}
+    .Container20{ width:50%; float:left;}
     .Container10{ width:30%; float:left;}
     .Container5{ width:25%; float:left;}
 }

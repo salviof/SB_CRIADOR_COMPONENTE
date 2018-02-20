@@ -22,7 +22,7 @@
                       para visualizar todas as opções acesse: #layoutsComponenteSB.layoutCampo.  "
                       name="tipoVisualizacaoLabel"
                       type="com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfComponenteVisualSB"
-                      default="#{layoutsComponenteSB.layoutCampo.superior}"
+                      default="#{layoutsComponenteSB.layoutCampo.resumido}"
                       />
         <cc:attribute name="Ação Salvar Alteracoes" />
         <cc:attribute name="grupoCampos" required="true" type="com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfGrupoCampos" />
@@ -74,8 +74,9 @@
                                 <tr scope="row">
                                     <c:forEach items="#{cc.attrs.grupoCampos.campos}" var="cpItem" >
                                         <td class="col-md-2">
-                                            <SBInput:input registro="#{itemDaLista.getCampoByNomeOuAnotacao(cpItem.ultimoNome)}"  layout="#{layoutsComponenteSB.layoutCampo.resumido}"
+                                            <SBInput:input registro="#{itemDaLista.getCampoByNomeOuAnotacao(cpItem.ultimoNome)}"  layout="#{cc.attrs.tipoVisualizacaoLabel}"
                                                            idAtualizarOnChange="@this"
+
                                                            />
                                         </td>
 
