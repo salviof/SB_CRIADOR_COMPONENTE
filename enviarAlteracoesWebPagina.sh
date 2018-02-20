@@ -29,7 +29,7 @@ cp $CAMINHO_WP_WEBAPP_LAB/sb.taglibLab.xml $CAMINHO_META_INF/sb.taglib.xml -rf
 
 alerta "Sobrescrevendo SBComp"
 cp $CAMINHO_WP_RESOURCES_LAB/tagLib $CAMINHO_META_INF/resources/ -rf
-cp $CAMINHO_WP_RESOURCES_LAB/SBComp/* $CAMINHO_META_INF/resources/ -rf
+cp $CAMINHO_WP_RESOURCES_LAB/SBComp $CAMINHO_META_INF/resources/ -rf
 cp $CAMINHO_WP_RESOURCES_LAB/SBComp/* /home/superBits/recursos/SBComp/ -rf
 alerta "Atualizando Repositorio SBComp"
 cd /home/superBits/recursos/SBComp/
