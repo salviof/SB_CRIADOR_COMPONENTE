@@ -33,8 +33,9 @@ public class InicioFimContextoWebPagina implements ItfInicioFimAppWP {
         MapaObjetosProjetoAtual.adcionarObjeto(TipoAtributoObjetoSB.class);
         MapaObjetosProjetoAtual.adcionarObjeto(UsuarioAnonimo.class);
         MapaObjetosProjetoAtual.adcionarObjeto(UsuarioSistemaRoot.class);
+        //  SBCore.getCentralDeComunicacao().gerarComunicacaoEntre_Usuairos(FabTipoComunicacao.NOTIFICAR,
+        //         pRemetente, pDestinatario, mensagem, tiposTransporte);
 
-        //  SBCore.getCentralDeComunicacao().gerarComunicacaoSistema_Usuairo(FabTipoComunicacao.NOTIFICAR,
         //         new UsuarioSistemaRoot(), "Olá Root", FabTipoTransporteComunicacao.INTRANET_MENU);
     }
 
