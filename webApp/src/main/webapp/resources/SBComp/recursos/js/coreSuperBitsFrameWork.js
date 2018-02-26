@@ -16,6 +16,9 @@ function esconderTooltips() {
 function irParaTopo() {
     $("html, body").animate({scrollTop: 0}, "slow");
 }
+function irParTopo() {
+    irParaTopo();
+}
 
 function acoesPosAjax() {
     esconderTooltips();

@@ -45,3 +45,21 @@ and open the template in the editor.
     font-family: 'latobold', sans-serif;
 
 }
+
+.botaoCardSimples{
+
+    height: auto!important;
+    margin: 5px;
+    max-width: 150px;
+
+    white-space:normal!important;
+    word-wrap: break-word!important;
+    background-color: #e5ffee!important;
+    color: #000000!important;
+    font-family: 'latobold', sans-serif;
+
+}
+
+.botaoCardSimples div{
+    color: #000000!important;
+}

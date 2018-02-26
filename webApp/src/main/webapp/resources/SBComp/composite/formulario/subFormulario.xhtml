@@ -33,18 +33,20 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
         <h:panelGroup >
-            <p:commandButton
-                id="botaoRemoverSubform"
-                action="#{cc.attrs.registro.comoSubItens.subItens.removerItemSelecionadoPeloIndice() }"
-                update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
-                styleClass="invisivel"
-                process="@this"
-                />
+            <h:form>
+
+                <p:commandButton
+                    id="botaoRemoverSubform"
+                    action="#{cc.attrs.registro.comoSubItens.subItens.removerItemSelecionadoPeloIndice() }"
+                    update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
+                    styleClass="invisivel"
+
+                    />
 
 
-            <p:inputText  id="indiceSubformulario"  styleClass="invisivel"  />
+                <p:inputText  id="indiceSubformulario"  styleClass="invisivel"  />
 
-
+            </h:form>
 
             <h:panelGroup id="subForm" styleClass="Container100 Responsive" >
 
@@ -53,7 +55,7 @@
 
                         actionListener="#{cc.attrs.registro.comoSubItens.subItens.adicionarItem()}"
                         update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
-                        process="@this"
+
                         value="#{cc.attrs.registro.comoSubItens.subItens.acaoAdicionarItem.nomeAcao}"
                         />
                 </h:panelGroup>
@@ -104,7 +106,6 @@
         </h:panelGroup>
     </cc:implementation>
 </ui:composition>
-
 
 
 
