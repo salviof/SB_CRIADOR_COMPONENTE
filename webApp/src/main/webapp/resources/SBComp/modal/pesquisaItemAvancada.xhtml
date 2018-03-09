@@ -25,6 +25,11 @@
     </h:head>
 
     <h:body>
+
+        <c:if test="#{!pgUtilLayout.verificaExisteLayout(pgModalSBJSF.paginaVinculada.modalDados.campoSelecionado.comoCampoSeltorItem.grupoCampoExibicao.nomeIdentificadorSlug)}">
+            #{pgUtilLayout.gerarLayout(pgModalSBJSF.paginaVinculada.modalDados.campoSelecionado.comoCampoSeltorItem.grupoCampoExibicao, pgUtilAcoes.listaAcaoSelecaoRegistro)}
+        </c:if>
+
         <div class="Fright">
             <h:form rendered="false" >
                 <p:commandButton icon="fa fa-close" actionListener="#{pgModalSBJSF.fecharModal()}" />
@@ -53,39 +58,64 @@
                              emptyMessage="Nenhum #{pgModalSBJSF.paginaVinculada.modalDados.campoSelecionado.nomeDoObjeto} Encontrado"
                              paginator="true"
                              rows="10"
+                             widgetVar="pesquisaAvancada"
                              >
-                    <f:facet name="header">
+                    <f:facet name="header" >
+
+                        <div  class="container-fluid">
+                            <div class="row" >
+                                <div class="col-md-4 col-md-offset-4 " style="margin-top: 10px;margin-right: 0px " >
+                                    #{pgModalSBJSF.paginaVinculada.modalDados.campoSelecionado.label}
+                                </div>
+                                <div class="col-md-4 " style="margin-top: 5px; margin-bottom: 5px; " >
+
+
+                                    <p:inputText
+                                        id="globalFilter"
+                                        onkeyup="PF('pesquisaAvancada').filter()"
+                                        style="width:100%; height: 35px;"
+                                        placeholder="Pesquise aqui:"/>
 
 
 
+                                </div>
+                            </div>
+                        </div>
                     </f:facet>
 
 
                     <p:columns var="coluna" value="#{pgModalSBJSF.paginaVinculada.modalDados.campoSelecionado.comoCampoSeltorItem.grupoCampoExibicao.campos}"
-                               sortBy="#{item[coluna.caminhoSemNomeClasse]}"
-                               filterBy="#{item[coluna.caminhoSemNomeClasse]}"
+                               sortBy="#{item[coluna.primeiroCaminhoSemNomeClasse]}"
+                               filterBy="#{item[coluna.primeiroCaminhoSemNomeClasse]}"
                                filterMatchMode="contains"
+                               filterStyleClass="listaComOcoesOcultaFitro"
+                               width="#{pgUtilLayout.getColunaLayoutByNomeCampoCompletoComGrupo(coluna.caminhoCompletoComGrupoCampo).porcentagemCalculada}%"
 
                                >
 
+
                         <f:facet name="header">
+
                             <h:outputText value= "#{coluna.label}"/>
                         </f:facet>
-
-                        <sb:inputSB
-                            registro="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse)}"
-                            desabilitarEdicao="true"
-                            layoutCampo="#{layoutsComponenteSB.layoutCampo.semLabel}"
-                            possuiIDOnChange="false"
-                            possuiMetodoOnChange="false"
-                            atualizarFormOnChange="false"
-                            atualizarGrupoOnChange="false"
-                            obrigatorio="false"
-                            label="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse).label}"
-
-                            />
-
+                        <center>
+                            <sb:inputSB
+                                registro="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse)}"
+                                desabilitarEdicao="true"
+                                layoutCampo="#{layoutsComponenteSB.layoutCampo.semLabel}"
+                                possuiIDOnChange="false"
+                                possuiMetodoOnChange="false"
+                                label="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse).label}"
+                                atualizarFormOnChange="false"
+                                atualizarGrupoOnChange="false"
+                                obrigatorio="false"
+                                />
+                        </center>
                     </p:columns>
+
+
+
+
 
 
 
@@ -94,7 +124,7 @@
 
                     <p:column headerText="" width="50">
 
-                        <p:commandButton icon="fa fa-hand-pointer-o " actionListener="#{pgModalSBJSF.fecharModal()}" >
+                        <p:commandButton icon="fa fa-hand-pointer-o" actionListener="#{pgModalSBJSF.fecharModal()}" >
                             <f:setPropertyActionListener target="#{pgModalSBJSF.paginaVinculada.modalDados.campoSelecionado.valor}" value="#{item}" />
 
                         </p:commandButton>

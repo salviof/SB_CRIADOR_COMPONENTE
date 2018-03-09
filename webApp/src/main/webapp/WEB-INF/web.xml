@@ -10,7 +10,6 @@
         <param-name>facelets.LIBRARIES</param-name>
         <param-value>/sb.taglibLab.xml</param-value>
     </context-param>
-    
 
 
     <servlet>
