@@ -18,7 +18,18 @@ public enum FabListBeanExemplos implements ItfFabrica {
     EXEMPLO3,
     EXEMPLO4,
     EXEMPLO5,
-    EXEMPLO6;
+    EXEMPLO6,
+    EXEMPLO7,
+    EXEMPLO8,
+    EXEMPLO9,
+    EXEMPL10,
+    EXEMPL11,
+    EXEMPL12,
+    EXEMPL13,
+    EXEMPL14,
+    EXEMPL15,
+    EXEMPL16,
+    EXEMPL17,;
 
     @Override
     public Object getRegistro() {

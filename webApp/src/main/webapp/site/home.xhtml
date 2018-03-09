@@ -4,6 +4,7 @@
     xmlns:p="http://primefaces.org/ui"
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
     xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
+    xmlns:SBInput="http://xmlns.jcp.org/jsf/composite/SBComp/composite/input"
     xmlns:SBLogin="http://xmlns.jcp.org/jsf/composite/SBComp/composite/login"
     >
 
@@ -28,19 +29,25 @@
 
 
 
-            <SBLogin:formLogin />
+            <SBLogin:formLogin rendered="false" />
+
+
+            <h:panelGroup id="#{pgHomeCriadorComponente.idAreaExbicaoAcaoSelecionada}">
+                <SBInput:inputSeletorItemGrupoCampoGrndeSelecao
+                    campoInstanciado="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('beanSelecionadoDaListaFabrica')}"
+                    metodoAoSelecionar="#{pgUtil.atualizaTelaPorID(pgHomeCriadorComponente.idAreaExbicaoAcaoSelecionada)}"
+                    titulo="TEste"
+                    />
+            </h:panelGroup>
 
 
 
 
-
-
-
-
-            <p:fieldset legend="Menu">
-                #{sessaoAtualSBWP.menusDaSessao.menuAvancado}
-                #{sessaoAtualSBWP.menusDaSessao.menuAvancado}
-            </p:fieldset>
+            <h:form>
+                <p:commandButton
+                    update="#{pgUtil.makeCaminhoCompletoID(layoutIdsAreasConhecidas.AREA_MENSAGEM_INTERFACE)}"
+                    value="Atualizar AreaPrincipal"/>
+            </h:form>
 
 
 
@@ -50,8 +57,8 @@
             </h:form>
 
 
-            <SBAcaoNa  acao="#{acoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR.lab_componentes_mb_gerenciar}"
-                       tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"         />
+            <SBAcaoNav:linkDeAcao  acao="#{acoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR.lab_componentes_mb_gerenciar}"
+                                   tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"         />
 
 
             <SBAcaoNav:linkDeAcao acao="#{acoesModulo_demonstracao_BEAN_EXEMPLO_MB.bean_exemplo_mb}"

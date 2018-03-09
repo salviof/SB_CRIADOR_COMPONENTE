@@ -48,8 +48,14 @@ fi
 alerta "Removendo Taglib OFICIAL"
 rm   $CAMINHO_WP_SEM_TAGLIB/src/main/resources/META-INF/resources/tagLib -rf
 rm   $CAMINHO_WP_SEM_TAGLIB/src/main/resources/META-INF/sb.taglib.xml -f
+
 arqSairSePastaExistir $CAMINHO_WP_SEM_TAGLIB/src/main/resources/META-INF/resources/tagLib "O diretorio taglib não foi excluido"
 arqSairSeArquivoExistir $CAMINHO_WP_SEM_TAGLIB/src/main/resources/META-INF/sb.taglib.xml "O arquivo sb.taglib não foi excluido"
+alerta "Removendo SBCompOficial"
+rm   $CAMINHO_WP_SEM_TAGLIB/src/main/resources/META-INF/resources/SBComp -rf
+arqSairSePastaExistir $CAMINHO_WP_SEM_TAGLIB/src/main/resources/META-INF/resources/SBComp "O arquivo SBCOMP não foi excluido"
+
+
 
 
 alerta "Alterando nome do projeto POM"

@@ -3,10 +3,14 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:SBSeletor="http://xmlns.jcp.org/jsf/composite/SBComp/composite/seletores"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:sb="http://superbitsframework/ui"
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <cc:interface>
+    <cc:interface
+
+        shortDescription="obs: Não Usar entre forms"
+        >
         <cc:attribute name="itemSelecionado"
                       type="com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimplesSomenteLeitura"
                       shortDescription="Bean onde o item selecionado será armazenado ao postar, e referencia de exibição "
@@ -24,40 +28,87 @@
                       default="Pesquise por aqui"
                       shortDescription="Lista de opções disponíveis para seleção"
                       />
-        <cc:attribute name="mensagemSemRegistros" />
+        <cc:attribute name="mensagemSemRegistros" type="java.lang.String" />
         <cc:attribute name="atributoBeanFriltro"
                       shortDescription="Atributo para armazenamento do filtro de pesquisa"
                       />
         <cc:attribute name="metodoAoSelecionar" type="javax.el.MethodExpression" />
         <cc:attribute name="grupoCampos" type="com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfGrupoCampos"/>
-
+        <cc:attribute name="idAreaPrincipal" default="seletorGrande#{cc.attrs.grupoCampos.nomeIdentificadorSlug}" />
     </cc:interface>
 
     <!-- IMPLEMENTATION -->
     <cc:implementation>
-        <h:panelGroup >
-            <h:panelGroup  rendered="#{cc.attrs.itemSelecionado!=null}">
+        #{cc.attrs.idAreaPrincipal}
+        <h:panelGroup  id="#{cc.attrs.idAreaPrincipal}" >
+            <h:panelGroup  rendered="#{cc.attrs.itemSelecionado!=null}" >
 
-                #{cc.attrs.itemSelecionado.nome}
+                <h:form>
+                    <p:dataTable
+                        value="#{cc.attrs.itemSelecionado}"
+                        var="item"
+                        emptyMessage="#{cc.attrs.mensagemSemRegistros}"
+                        paginator="false"
+                        >
 
-                <p:commandLink  update="@parent" >
-                    <f:setPropertyActionListener target="#{cc.attrs.itemSelecionado}" value="null"/>
 
-                    SELECIONAR OUTRO
-                </p:commandLink>
+                        <p:columns var="coluna" value="#{cc.attrs.grupoCampos.campos}"
+                                   sortBy="#{item[coluna.primeiroCaminhoSemNomeClasse]}"
+                                   filterBy="#{item[coluna.primeiroCaminhoSemNomeClasse]}"
+                                   filterMatchMode="contains"
+                                   filterStyleClass="listaComOcoesOcultaFitro"
+                                   width="#{pgUtilLayout.getColunaLayoutByNomeCampoCompletoComGrupo(coluna.caminhoCompletoComGrupoCampo).porcentagemCalculada}%"
+                                   >
+
+                            <f:facet name="header">
+
+                                <h:outputText value= "#{coluna.label}"/>
+                            </f:facet>
+                            <center>
+                                <sb:inputSB
+                                    registro="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse)}"
+                                    desabilitarEdicao="true"
+                                    layoutCampo="#{layoutsComponenteSB.layoutCampo.semLabel}"
+                                    possuiIDOnChange="false"
+                                    possuiMetodoOnChange="false"
+                                    label="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse).label}"
+                                    atualizarFormOnChange="false"
+                                    atualizarGrupoOnChange="false"
+                                    obrigatorio="false"
+
+                                    />
+                            </center>
+                        </p:columns>
+                        <p:column >
+                            <p:commandLink  update="#{pgUtil.gerarCaminhoCompletoID(cc.attrs.idAreaPrincipal)}">
+                                SELECIONAR OUTRO
+                                <f:setPropertyActionListener target="#{cc.attrs.itemSelecionado}"
+                                                             value="#{null}"
+
+                                                             />
+                            </p:commandLink>
+                        </p:column>
+                    </p:dataTable>
+
+
+
+
+                </h:form>
+
 
             </h:panelGroup>
-
-            <SBSeletor:seletorItemGridGrandeColSelecionado  itemSelecionado="#{cc.attrs.itemSelecionado}"
-                                                            lista="#{cc.attrs.lista}"
-                                                            metodoAoSelecionar="#{cc.attrs.metodoAoSelecionar}"
-                                                            atributoBeanFriltro="#{cc.attrs.atributoBeanFriltro}"
-                                                            frasePesquisa="#{cc.attrs.frasePesquisa}"
-                                                            grupoCampos="#{cc.attrs.grupoCampos}"
-                                                            label="#{cc.attrs.label}"
-                                                            mensagemSemRegistros="#{cc.attrs.mensagemSemRegistros}"
-                                                            rendered="#{cc.attrs.itemSelecionado==null}"
-                                                            />
+            <h:panelGroup >
+                <SBSeletor:seletorItemGridGrandeComColuna  itemSelecionado="#{cc.attrs.itemSelecionado}"
+                                                           lista="#{cc.attrs.lista}"
+                                                           metodoAoSelecionar="#{cc.attrs.metodoAoSelecionar}"
+                                                           atributoBeanFriltro="#{cc.attrs.atributoBeanFriltro}"
+                                                           frasePesquisa="#{cc.attrs.frasePesquisa}"
+                                                           grupoCampos="#{cc.attrs.grupoCampos}"
+                                                           label="#{cc.attrs.label}"
+                                                           mensagemSemRegistros="#{cc.attrs.mensagemSemRegistros}"
+                                                           rendered="#{cc.attrs.itemSelecionado==null}"
+                                                           />
+            </h:panelGroup>
         </h:panelGroup>
     </cc:implementation>
 

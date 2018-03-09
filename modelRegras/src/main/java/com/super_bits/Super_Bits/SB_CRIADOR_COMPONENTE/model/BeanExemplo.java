@@ -250,7 +250,7 @@ public class BeanExemplo
     )
     private BeanExemplo beanSelecionadoDaListaDescritiva;
 
-    @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, fabricaDeOpcoes = FabTipoBeanSBGenerico.class)
+    @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, fabricaDeOpcoes = FabListBeanExemplos.class)
     private BeanExemplo beanSelecionadoDaListaFabrica;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, caminhoParaLista = "filiaisFornecedor")
