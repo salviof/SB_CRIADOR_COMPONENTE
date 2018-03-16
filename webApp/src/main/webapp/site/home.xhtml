@@ -32,12 +32,25 @@
             <SBLogin:formLogin rendered="false" />
 
 
-            <h:panelGroup id="#{pgHomeCriadorComponente.idAreaExbicaoAcaoSelecionada}">
+            <h:panelGroup rendered="false" id="#{pgHomeCriadorComponente.idAreaExbicaoAcaoSelecionada}">
                 <SBInput:inputSeletorItemGrupoCampoGrndeSelecao
                     campoInstanciado="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('beanSelecionadoDaListaFabrica')}"
                     metodoAoSelecionar="#{pgUtil.atualizaTelaPorID(pgHomeCriadorComponente.idAreaExbicaoAcaoSelecionada)}"
                     titulo="TEste"
                     />
+            </h:panelGroup>
+            <h:panelGroup >
+
+                <h:form>
+                    <SBInput:inputSeletorItemGrupoCampoAutocomplete
+                        opcoes="#{pgUtilAcoes.listaAcaoSelecaoRegistro}"
+                        registro="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('beanSelecionadoDaListaFabrica')}"
+                        metodo="#{pgUtil.atualizaTelaPorID(pgHomeCriadorComponente.idAreaExbicaoAcaoSelecionada)}"
+                        campos="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('beanSelecionadoDaListaFabrica').comoCampoSeltorItem.grupoCampoExibicao.campos}"
+                        titulo="Teste"
+
+                        />
+                </h:form>
             </h:panelGroup>
 
 
