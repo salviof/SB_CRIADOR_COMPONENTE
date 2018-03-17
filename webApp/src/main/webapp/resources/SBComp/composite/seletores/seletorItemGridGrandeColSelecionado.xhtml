@@ -81,7 +81,7 @@
                         </p:columns>
                         <p:column >
                             <p:commandLink  update="#{pgUtil.gerarCaminhoCompletoID(cc.attrs.idAreaPrincipal)}">
-                                SELECIONAR OUTRO
+                                <i class="fa fa-times Red" />
                                 <f:setPropertyActionListener target="#{cc.attrs.itemSelecionado}"
                                                              value="#{null}"
 
@@ -98,16 +98,16 @@
 
             </h:panelGroup>
             <h:panelGroup >
-                <SBSeletor:seletorItemGridGrandeComColuna  itemSelecionado="#{cc.attrs.itemSelecionado}"
-                                                           lista="#{cc.attrs.lista}"
-                                                           metodoAoSelecionar="#{cc.attrs.metodoAoSelecionar}"
-                                                           atributoBeanFriltro="#{cc.attrs.atributoBeanFriltro}"
-                                                           frasePesquisa="#{cc.attrs.frasePesquisa}"
-                                                           grupoCampos="#{cc.attrs.grupoCampos}"
-                                                           label="#{cc.attrs.label}"
-                                                           mensagemSemRegistros="#{cc.attrs.mensagemSemRegistros}"
-                                                           rendered="#{cc.attrs.itemSelecionado==null}"
-                                                           />
+                <SBSeletor:seletorItemGridGrandeCol  itemSelecionado="#{cc.attrs.itemSelecionado}"
+                                                     lista="#{cc.attrs.lista}"
+                                                     metodoAoSelecionar="#{cc.attrs.metodoAoSelecionar}"
+                                                     atributoBeanFriltro="#{cc.attrs.atributoBeanFriltro}"
+                                                     frasePesquisa="#{cc.attrs.frasePesquisa}"
+                                                     grupoCampos="#{cc.attrs.grupoCampos}"
+                                                     label="#{cc.attrs.label}"
+                                                     mensagemSemRegistros="#{cc.attrs.mensagemSemRegistros}"
+                                                     rendered="#{cc.attrs.itemSelecionado==null}"
+                                                     />
             </h:panelGroup>
         </h:panelGroup>
     </cc:implementation>
