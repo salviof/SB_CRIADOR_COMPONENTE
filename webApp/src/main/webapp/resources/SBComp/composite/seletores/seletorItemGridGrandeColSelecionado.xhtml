@@ -43,71 +43,23 @@
         <h:panelGroup  id="#{cc.attrs.idAreaPrincipal}" >
             <h:panelGroup  rendered="#{cc.attrs.itemSelecionado!=null}" >
 
-                <h:form>
-                    <p:dataTable
-                        value="#{cc.attrs.itemSelecionado}"
-                        var="item"
-                        emptyMessage="#{cc.attrs.mensagemSemRegistros}"
-                        paginator="false"
-                        >
-
-
-                        <p:columns var="coluna" value="#{cc.attrs.grupoCampos.campos}"
-                                   sortBy="#{item[coluna.primeiroCaminhoSemNomeClasse]}"
-                                   filterBy="#{item[coluna.primeiroCaminhoSemNomeClasse]}"
-                                   filterMatchMode="contains"
-                                   filterStyleClass="listaComOcoesOcultaFitro"
-                                   width="#{pgUtilLayout.getColunaLayoutByNomeCampoCompletoComGrupo(coluna.caminhoCompletoComGrupoCampo).porcentagemCalculada}%"
-                                   >
-
-                            <f:facet name="header">
-
-                                <h:outputText value= "#{coluna.label}"/>
-                            </f:facet>
-                            <center>
-                                <sb:inputSB
-                                    registro="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse)}"
-                                    desabilitarEdicao="true"
-                                    layoutCampo="#{layoutsComponenteSB.layoutCampo.semLabel}"
-                                    possuiIDOnChange="false"
-                                    possuiMetodoOnChange="false"
-                                    label="#{item.getCampoByNomeOuAnotacao(coluna.caminhoSemNomeClasse).label}"
-                                    atualizarFormOnChange="false"
-                                    atualizarGrupoOnChange="false"
-                                    obrigatorio="false"
-
-                                    />
-                            </center>
-                        </p:columns>
-                        <p:column >
-                            <p:commandLink  update="#{pgUtil.gerarCaminhoCompletoID(cc.attrs.idAreaPrincipal)}">
-                                SELECIONAR OUTRO
-                                <f:setPropertyActionListener target="#{cc.attrs.itemSelecionado}"
-                                                             value="#{null}"
-
-                                                             />
-                            </p:commandLink>
-                        </p:column>
-                    </p:dataTable>
-
-
-
-
-                </h:form>
-
+                <SBSeletor:visualizacaoItemSelecionado grupoCampos="#{cc.attrs.grupoCampos}"
+                                                       idAreaPrincipal="#{cc.attrs.idAreaPrincipal}"
+                                                       itemSelecionado="#{cc.attrs.itemSelecionado}"
+                                                       />
 
             </h:panelGroup>
             <h:panelGroup >
-                <SBSeletor:seletorItemGridGrandeComColuna  itemSelecionado="#{cc.attrs.itemSelecionado}"
-                                                           lista="#{cc.attrs.lista}"
-                                                           metodoAoSelecionar="#{cc.attrs.metodoAoSelecionar}"
-                                                           atributoBeanFriltro="#{cc.attrs.atributoBeanFriltro}"
-                                                           frasePesquisa="#{cc.attrs.frasePesquisa}"
-                                                           grupoCampos="#{cc.attrs.grupoCampos}"
-                                                           label="#{cc.attrs.label}"
-                                                           mensagemSemRegistros="#{cc.attrs.mensagemSemRegistros}"
-                                                           rendered="#{cc.attrs.itemSelecionado==null}"
-                                                           />
+                <SBSeletor:seletorItemGridGrandeCol  itemSelecionado="#{cc.attrs.itemSelecionado}"
+                                                     lista="#{cc.attrs.lista}"
+                                                     metodoAoSelecionar="#{cc.attrs.metodoAoSelecionar}"
+                                                     atributoBeanFriltro="#{cc.attrs.atributoBeanFriltro}"
+                                                     frasePesquisa="#{cc.attrs.frasePesquisa}"
+                                                     grupoCampos="#{cc.attrs.grupoCampos}"
+                                                     label="#{cc.attrs.label}"
+                                                     mensagemSemRegistros="#{cc.attrs.mensagemSemRegistros}"
+                                                     rendered="#{cc.attrs.itemSelecionado==null}"
+                                                     />
             </h:panelGroup>
         </h:panelGroup>
     </cc:implementation>

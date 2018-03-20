@@ -17,12 +17,14 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
         <h:panelGroup >
-            <SBSeletor:seletorItemGrCpAutocomplete grupoCamposExibicao="#{cc.attrs.registro.comoCampoSeltorItem.grupoCampoExibicao}"
-                                                   grupoCamposPesquisa="#{cc.attrs.registro.comoCampoSeltorItem.grupoCampoExibicao}"
-                                                   grupoCamposmodal="#{cc.attrs.registro.comoCampoSeltorItem.grupoCampoExibicao}"
-                                                   itemSelecionado="#{cc.attrs.registro.valor}"
-                                                   metodo="#{cc.attrs.registro.comoCampoSeltorItem.filtrarPorAutoComplet(pParametro)}"
-                                                   titulo="#{cc.attrs.label}"/>
+            <SBSeletor:seletorItemGrCpAutocompleteSelecionado
+                grupoCamposExibicao="#{cc.attrs.registro.comoCampoSeltorItem.grupoCampoExibicao}"
+                grupoCamposPesquisa="#{cc.attrs.registro.comoCampoSeltorItem.grupoCampoExibicao}"
+                grupoCamposmodal="#{cc.attrs.registro.comoCampoSeltorItem.grupoCampoExibicao}"
+                itemSelecionado="#{cc.attrs.registro.valor}"
+                metodo="#{cc.attrs.registro.comoCampoSeltorItem.filtrarPorAutoComplet(pParametro)}"
+                idAreaPrincipal="#{cc.attrs.idAreaPrincipal}"
+                titulo="#{cc.attrs.label}"/>
 
         </h:panelGroup>
     </cc:implementation>
