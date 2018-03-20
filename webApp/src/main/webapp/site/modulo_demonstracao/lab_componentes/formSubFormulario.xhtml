@@ -9,11 +9,21 @@
     <ui:composition  >
         <p:separator />
 
-        <h:form>
-            <SBFormulario:subFormulario registro="#{pgMapaComponentes.campoInstanciado}"
-                                        grupoCampos="#{pgMapaComponentes.campoInstanciado.grupoSubCamposExibicao}"/>
-        </h:form>
 
+        <SBFormulario:subFormulario registro="#{pgMapaComponentes.campoInstanciado}"
+                                    grupoCampos="#{pgMapaComponentes.campoInstanciado.grupoSubCamposExibicao}"
+
+                                    />
+        <h:form>
+            <p:commandButton
+
+                actionListener="#{pgUtil.mensagemErro('Teste')}"
+                action="#{pgMapaComponentes.init()}"
+                update="#{pgUtil.makeCaminhoCompletoID(pgMapaComponentes.idAreaExbicaoAcaoSelecionada)}"
+                value="Teste"
+
+                />
+        </h:form>
 
     </ui:composition>
 </html>

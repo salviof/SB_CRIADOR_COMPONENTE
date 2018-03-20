@@ -30,7 +30,7 @@
     </h:form>
     <p:fieldset legend="Visualização" id="visualizacao">
 
-        [[[   #{resource['adamantium-layout:images/ui-icons_72b42d_256x240.png']} ]]]
+
 
         <p:panel header="Informações">
             <h:form  >
@@ -40,10 +40,17 @@
                     <p:outputLabel value="XHTML Padrão"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.componenteVisualPadrao.xhtmlJsfCaminhoRelativo}"/>
                     <p:outputLabel value="Valor"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.valor}" />
                 </p:panelGrid>
-                <p:commandButton value="Atualizar" update="#{pgUtil.makeCaminhoCompletoID('visualizacao')}"/>
+                <p:commandButton value="Atualizar visuzalizacao" update="#{pgUtil.makeCaminhoCompletoID('visualizacao')}"/>
+
+                <p:commandButton value="Atualizar @Form" update="@form"/>
+
+                <p:commandButton
+                    value="Teste" update="#{pgUtil.gerarCaminhoCompletoID(pgMapaComponentes.idAreaExbicaoAcaoSelecionada)}"
+                    actionListener="#{pgUtil.enviaMensagem('teste')}" />
 
                 <SBInput:seletorItem itemSelecionado="#{pgMapaComponentes.componenteSelecionado}"
                                      lista="#{pgMapaComponentes.listaComponentesEspeciaisDisponiveis}"
+                                     idOnChange="@this"
                                      />
             </h:form>
         </p:panel>
