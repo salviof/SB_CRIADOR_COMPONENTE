@@ -3,9 +3,7 @@
     xmlns:SBAcaoNavegacao="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
 
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-    xmlns:cc="http://xmlns.jcp.org/jsf/composite"
-    xmlns:p="http://primefaces.org/ui"
-    xmlns:h="http://xmlns.jcp.org/jsf/html">
+    xmlns:cc="http://xmlns.jcp.org/jsf/composite">
 
 
     <!-- INTERFACE -->
@@ -21,7 +19,7 @@
                       />
         <cc:attribute name="menuExtendido"
 
-                      type="com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfComponenteVisualSB"
+                      type="com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfMenuSB"
 
                       default="#{sessaoAtualSBWP.menusDaSessao.menuAvancado}"
                       shortDescription="O menu extendido é utilizado quando é nessesário exibir muitas opções"
@@ -37,12 +35,12 @@
         <SBAcaoNavegacao:SBmenuPadraoBasico transient="#{true}"
 
                                             rendered="#{cc.attrs.menuBasico!=null}"
-
+                                            temMenuAvancado="#{cc.attrs.menuExtendido!=null}"
                                             menu="#{cc.attrs.menuBasico}"/>
 
 
 
-        <SBAcaoNavegacao:SBmenuPadraoExtendido  menu="#{cc.attrs.menuExtendido}"/>
+        <SBAcaoNavegacao:SBmenuPadraoExtendido  menu="#{cc.attrs.menuExtendido}"  rendered="#{cc.attrs.menuExtendido!=null}"/>
 
 
 
