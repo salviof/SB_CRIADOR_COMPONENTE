@@ -16,7 +16,10 @@
         <cc:attribute name="grupoCamposmodal" type="com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfGrupoCampos"/>
         <cc:attribute name="titulo" />
         <cc:attribute name="idAreaPrincipal" default="seletorAutoComplete#{cc.attrs.grupoCamposExibicao.nomeIdentificadorSlug}" />
+        <cc:attribute name="metodoOnChange" required="false"   type="javax.el.MethodExpression"
+                      shortDescription="Médodo que deve ser executado ao alterar um valor"
 
+                      />
 
     </cc:interface>
     <!-- IMPLEMENTATION -->
@@ -32,6 +35,7 @@
             </h:panelGroup>
             <h:panelGroup rendered="#{cc.attrs.itemSelecionado==null}">
                 <sb:parametroMetodo nome="metodo" valor="#{cc.attrs.metodo}" />
+                <sb:parametroMetodo nome="metodoOnChange" valor="#{cc.attrs.metodoOnChange}" />
                 <p:autoComplete
                     styleClass="inputTexto"
                     converter="conversorGenerico"
@@ -47,7 +51,9 @@
                     maxResults="6"
                     completeMethod="#{metodo}"
                     >
-                    <p:ajax event="itemSelect" update="#{pgUtil.makeCaminhoCompletoID(cc.attrs.idAreaPrincipal)}"/>
+                    <p:ajax event="itemSelect"
+                            listener="#{metodoOnChange}"
+                            update="#{pgUtil.makeCaminhoCompletoID(cc.attrs.idAreaPrincipal)}"/>
                     <c:forEach var="campo" items="#{cc.attrs.grupoCamposPesquisa.campos}" rendered="#{pgUtil.isAtributoPreenchidoComExpressao(cc, 'grupoCamposExibicao')}">
                         <p:column >
                             <sb:inputSB

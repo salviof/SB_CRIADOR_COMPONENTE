@@ -42,6 +42,9 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
+        #{cc.attrs.registro.label}
+        #{pgHomeCriadorComponente.beanExemplo.id}
+
         <h:panelGrid columns="3" >
             <h:panelGroup  >
                 <p:commandLink actionListener="#{cc.attrs.metodoReduzir}"

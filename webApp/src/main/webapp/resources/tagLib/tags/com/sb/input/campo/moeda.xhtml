@@ -7,9 +7,12 @@
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
 
         <ui:define name="input">
-
+            <p:outputLabel value="R$ #{valor}"
+                           rendered="#{desabilitarEdicao}"
+                           />
             <p:inputNumber
                 disabled="#{desabilitarEdicao}"
+                rendered="#{!desabilitarEdicao}"
                 symbol="R$"
                 decimalSeparator=","
                 thousandSeparator="."
