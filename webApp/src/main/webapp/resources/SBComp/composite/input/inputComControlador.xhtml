@@ -43,9 +43,10 @@
     <cc:implementation>
 
         <h:panelGrid columns="3" >
-            <h:panelGroup rendered="#{!cc.attrs.desabilitarEdicao}"  >
+            <h:panelGroup  >
                 <p:commandLink actionListener="#{cc.attrs.metodoReduzir}"
                                update="#{pgUtil.makeCaminhoCompletoID(cc.attrs.idAtualizarOnChange)}"
+                               rendered="#{!cc.attrs.desabilitarEdicao}"
                                >
                     <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
                         <span class="glyphicon glyphicon-minus"></span>
