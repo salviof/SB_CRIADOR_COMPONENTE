@@ -26,59 +26,16 @@
         <ui:define name="#{layoutsPaginas.modeloGeral.areaPrincipal}">
 
 
+            <h:form>
+                <SBInput:inputComControlador registro="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('quantidade')}"
+                                             metodoAdicionar="#{pgUtil.mensagemInfo('Mais')}"
+                                             metodoReduzir="#{pgUtil.mensagemInfo('Menos')}"
+                                             metodoExecutarAoAlterarValor="#{pgUtil.mensagemInfo('Atualizou')}"
+                                             />
+            </h:form>
 
+            <div class="EmptyBox150" />
 
-
-
-            <SBLogin:formLogin rendered="false" />
-
-
-            <h:panelGroup  id="#{pgHomeCriadorComponente.idAreaExbicaoAcaoSelecionada}" rendered="false">
-                <SBInput:inputSeletorItemGrupoCampoGrndeSelecao
-                    campoInstanciado="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('beanSelecionadoDaListaFabrica')}"
-                    metodoAoSelecionar="#{pgUtil.atualizaTelaPorID(pgHomeCriadorComponente.idAreaExbicaoAcaoSelecionada)}"
-                    titulo="TEste"
-                    />
-            </h:panelGroup>
-
-
-
-
-            <h:panelGroup >
-
-                <h:form>
-                    <SBInput:inputSeletorItemGrupoCampoAutocompleteSelecao
-
-                        registro="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('beanSelecionadoDaListaFabrica')}"
-
-
-                        />
-                </h:form>
-
-            </h:panelGroup>
-
-
-            <h:panelGroup  >
-
-                <h:form>
-                    <p:commandButton
-                        update="#{pgUtil.makeCaminhoCompletoID(layoutIdsAreasConhecidas.AREA_MENSAGEM_INTERFACE)}"
-                        value="Atualizar AreaPrincipal"/>
-                </h:form>
-                <h:form>
-                    <p:commandButton update="#{pgUtil.makeCaminhoCompletoID(layoutIdsAreasConhecidas.AREA_MENSAGEM_INTERFACE)}" value="Atualizar mensagem"/>
-                </h:form>
-
-
-                <SBAcaoNav:linkDeAcao  acao="#{acoesModulo_demonstracao_LAB_COMPONENTES_MB_GERENCIAR.lab_componentes_mb_gerenciar}"
-                                       tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"         />
-
-
-                <SBAcaoNav:linkDeAcao acao="#{acoesModulo_demonstracao_BEAN_EXEMPLO_MB.bean_exemplo_mb}"
-                                      tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"    />
-
-
-            </h:panelGroup>
             <div class="EmptyBox150"/>
         </ui:define>
     </ui:composition>

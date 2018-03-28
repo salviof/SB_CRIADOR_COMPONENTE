@@ -17,16 +17,16 @@
     </cc:interface>
     <!-- IMPLEMENTATION -->
     <cc:implementation>
-        <SBSeletor:seletorItemGridGrandeComColuna itemSelecionado="#{cc.attrs.campoInstanciado.valor}"
-                                                  atributoBeanFriltro="#{cc.attrs.campoInstanciado.comoCampoSeltorItem.filtro}"
-                                                  lista="#{cc.attrs.campoInstanciado.comoCampoSeltorItem.seletor.origem}"
-                                                  frasePesquisa="Pesquise por #{cc.attrs.campoInstanciado.nomeDoObjetoPlural} cadastrados"
+        <SBSeletor:seletorItemGridGrandeColSelecionado itemSelecionado="#{cc.attrs.campoInstanciado.valor}"
+                                                       atributoBeanFriltro="#{cc.attrs.campoInstanciado.comoCampoSeltorItem.filtro}"
+                                                       lista="#{cc.attrs.campoInstanciado.comoCampoSeltorItem.seletor.origem}"
+                                                       frasePesquisa="Pesquise por #{cc.attrs.campoInstanciado.nomeDoObjetoPlural} cadastrados"
 
-                                                  grupoCampos="#{cc.attrs.campoInstanciado.comoCampoSeltorItem.grupoCampoExibicao}"
-                                                  mensagemSemRegistros="Nenhum #{cc.attrs.campoInstanciado.nomeDoObjeto} Encontrado"
-                                                  label="#{cc.attrs.campoInstanciado.label}"
-                                                  metodoAoSelecionar="#{cc.attrs.metodoAoSelecionar}"
-                                                  />
+                                                       grupoCampos="#{cc.attrs.campoInstanciado.comoCampoSeltorItem.grupoCampoExibicao}"
+                                                       mensagemSemRegistros="Nenhum #{cc.attrs.campoInstanciado.nomeDoObjeto} Encontrado"
+                                                       label="#{cc.attrs.campoInstanciado.label}"
+                                                       metodoAoSelecionar="#{cc.attrs.metodoAoSelecionar}"
+                                                       />
 
     </cc:implementation>
 

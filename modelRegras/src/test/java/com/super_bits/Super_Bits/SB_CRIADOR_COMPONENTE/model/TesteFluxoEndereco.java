@@ -33,7 +33,7 @@ public class TesteFluxoEndereco extends TesteSB_CRIADOR_COMPONENTE {
             ItfCampoInstanciado campoInstanciadoUF = bean.getCampoInstanciadoByNomeOuAnotacao("localizacao.bairro.cidade.unidadeFederativa");
             System.out.println(campoInstanciadoUF.getCampoInstanciadoRaiz());
             System.out.println("LabelPai=" + campoInstanciadoUF.getCampoInstanciadoRaiz().getLabel());
-            campoInstanciadoUF.getCampoInstanciadoRaiz().setLabel("Colé");
+//            campoInstanciadoUF.getCampoInstanciadoRaiz().setLabel("Colé");
             System.out.println("TEste=" + campoInstanciadoUF.getCampoInstanciadoRaiz().getNomeCamponaClasse());
             List<ItfUnidadeFederativa> bairrosDisponiveis = (List) campoInstanciadoUF.getComoCampoLocalizacao().metodoAutoCompleteEstado("mg");
             campoInstanciadoUF.getComoCampoLocalizacao().setUnidadeFederativa((ItfUnidadeFederativa) bairrosDisponiveis.get(0));
@@ -54,8 +54,7 @@ public class TesteFluxoEndereco extends TesteSB_CRIADOR_COMPONENTE {
             System.out.println(campoLoc.getComoCampoLocalizacao().getCidade().getNome());
 //            System.out.println(campoLoc.getComoCampoLocalizacao().getLogradouroDescricao());
 
-        }
-        catch (Throwable t) {
+        } catch (Throwable t) {
             SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro obtendo campo instanciado de endereço", t);
 
         }
