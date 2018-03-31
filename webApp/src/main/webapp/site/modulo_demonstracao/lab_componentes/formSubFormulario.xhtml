@@ -10,11 +10,12 @@
         <p:separator />
 
 
-        <SBFormulario:subFormulario registro="#{pgMapaComponentes.campoInstanciado}"
-                                    grupoCampos="#{pgMapaComponentes.campoInstanciado.grupoSubCamposExibicao}"
-
-                                    />
         <h:form>
+            <SBFormulario:subFormulario registro="#{pgMapaComponentes.campoInstanciado}"
+                                        grupoCampos="#{pgMapaComponentes.campoInstanciado.grupoSubCamposExibicao}"
+
+                                        />
+
             <p:commandButton
 
                 actionListener="#{pgUtil.mensagemErro('Teste')}"
