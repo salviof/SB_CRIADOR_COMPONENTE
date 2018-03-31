@@ -8,6 +8,7 @@
 
 
         <ui:define name="input">
+
             <p:outputLabel value="#{registro.valor}"
                            rendered="#{desabilitarEdicao}"
                            />
@@ -17,7 +18,8 @@
                 class="campoResponsivo #{componente.classeCSS} TexAlCenter"
                 required="#{obrigatorio}"
                 value="#{valor}"
-                decimalPlaces="#{registo.numeroDeCasasDecimais}"
+                decimalPlaces="#{pgUtil.converterNuloEmZero(registo.numeroDeCasasDecimais)}"
+
                 thousandSeparator="."
                 decimalSeparator=","
                 validatorMessage="O valor informado no campo #{label} não é valido! "

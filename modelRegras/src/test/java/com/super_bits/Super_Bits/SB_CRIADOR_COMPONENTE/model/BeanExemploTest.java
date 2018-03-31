@@ -43,6 +43,8 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
             System.out.println("getId");
             BeanExemplo beanExemplo = new BeanExemplo();
 
+            ItfCampoInstanciado cpqtd = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("quantidade");
+            System.out.println(cpqtd.getNumeroDeCasasDecimais());
             ItfCampoInstanciado cp = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("textoLabelPadraoTeste");
 
             System.out.println(cp.getLabel());

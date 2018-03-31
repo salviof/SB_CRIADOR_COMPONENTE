@@ -36,79 +36,58 @@
                       method-signature="void action()"
                       />
 
-        <cc:attribute name="metodoAtualizacao"
-                      />
 
 
     </cc:interface>
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
-        <h:panelGroup class="Container100 Responsive100">
+        #{cc.attrs.registro.label}
+        #{pgHomeCriadorComponente.beanExemplo.id}
 
-            <p:panel class="Container20 Responsive100" style="border: none">
+        <h:panelGrid columns="3" >
+            <h:panelGroup  >
+                <p:commandLink actionListener="#{cc.attrs.metodoReduzir}"
+                               update="#{pgUtil.makeCaminhoCompletoID(cc.attrs.idAtualizarOnChange)}"
+                               rendered="#{!cc.attrs.desabilitarEdicao}"
+                               >
+                    <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                </p:commandLink>
+            </h:panelGroup>
+            <sb:inputSB
+                atualizarFormOnChange="false"
+                atualizarGrupoOnChange="false"
+                obrigatorio="#{cc.attrs.registro.obrigatorio}"
+                registro="#{cc.attrs.registro}"
+                desabilitarEdicao="#{cc.attrs.desabilitarEdicao}"
+                layoutCampo="#{layoutsComponenteSB.layoutCampo.semLabel}"
+                possuiIDOnChange="true"
+                possuiMetodoOnChange="#{pgUtil.isAtributoPreenchidoComExpressao(cc,'metodoExecutarAoAlterarValor')}"
+                layoutCampoEspecial="#{cc.attrs.visualizacaoEspecial}"
+                label="#{cc.attrs.label}:"
+                opcoes="#{cc.attrs.registro.listaDeOpcoes}"
+                idAtualizarOnChange="#{cc.attrs.idAtualizarOnChange}"
+                metodoOnChange="#{cc.attrs.metodoExecutarAoAlterarValor}"
 
+                />
+            <h:panelGroup rendered="#{!cc.attrs.desabilitarEdicao}" >
+                <p:commandLink actionListener="#{cc.attrs.metodoAdicionar}"
+                               update="#{pgUtil.makeCaminhoCompletoID(cc.attrs.idAtualizarOnChange)}"
+                               >
+                    <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </p:commandLink>
 
+            </h:panelGroup>
 
-                <p:commandButton
-
-                    icon="fa fa-minus"
-                    style="float: left"
-                    action="#{cc.attrs.metodoReduzir}"
-                    update="#{pgUtil.makeCaminhoCompletoID(cc.attrs.idAtualizarOnChange)}"
-                    rendered="#{!cc.attrs.desabilitarEdicao}"
-
-                    />
-
-
-
-            </p:panel>
-
-            <p:panel class="Container50 Responsive100">
-
-                <sb:inputSB
-                    atualizarFormOnChange="false"
-                    atualizarGrupoOnChange="false"
-                    obrigatorio="#{cc.attrs.registro.obrigatorio}"
-                    registro="#{cc.attrs.registro}"
-                    desabilitarEdicao="#{cc.attrs.desabilitarEdicao}"
-                    layoutCampo="#{cc.attrs.layout}"
-                    possuiIDOnChange="true"
-                    possuiMetodoOnChange="#{pgUtil.isAtributoPreenchidoComExpressao(cc,'metodoExecutarAoAlterarValor')}"
-                    layoutCampoEspecial="#{cc.attrs.visualizacaoEspecial}"
-                    label="#{cc.attrs.label}:"
-                    opcoes="#{cc.attrs.registro.listaDeOpcoes}"
-                    idAtualizarOnChange="#{cc.attrs.idAtualizarOnChange}"
-                    metodoOnChange="#{cc.attrs.metodoExecutarAoAlterarValor}"
-
-                    >
-
-
-                </sb:inputSB>
-
-            </p:panel>
-
-
-
-            <p:panel class="Container20 Responsive100" style="border: none">
+        </h:panelGrid>
 
 
 
-                <p:commandButton
 
-                    icon="fa fa-plus"
-                    style="float: right"
-                    action="#{cc.attrs.metodoAdicionar}"
-                    update="#{pgUtil.makeCaminhoCompletoID(cc.attrs.idAtualizarOnChange)}"
-                    rendered="#{!cc.attrs.desabilitarEdicao}"
-
-                    />
-
-
-
-            </p:panel>
-
-        </h:panelGroup>
 
 
     </cc:implementation>

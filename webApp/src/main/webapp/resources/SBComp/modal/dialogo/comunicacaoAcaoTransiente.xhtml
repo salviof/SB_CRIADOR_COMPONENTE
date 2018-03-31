@@ -17,6 +17,8 @@
             <ui:repeat value="#{pgModalRespostaAcaoTransient.comunicacao.repostasPossiveis}" var="resp" >
                 <SBAcaoNav:botaoRespostaModal
                     resposta="#{resp}"
+                    armazenamentoAcaoExecutada="#{pgModalRespostaAcaoTransient.respostaSelecionada}"
+                    metodo="#{pgModalRespostaAcaoTransient.enviarRespostaEExecutarAcao()}"
 
                     />
 

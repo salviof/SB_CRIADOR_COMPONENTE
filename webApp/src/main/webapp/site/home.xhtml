@@ -25,26 +25,34 @@
         </ui:define>
         <ui:define name="#{layoutsPaginas.modeloGeral.areaPrincipal}">
 
-
+            <h:form rendered="false">
+                <SBInput:inputComControlador registro="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('quantidade')}"
+                                             metodoAdicionar="#{pgUtil.mensagemInfo('Mais')}"
+                                             metodoReduzir="#{pgUtil.mensagemInfo('Menos')}"
+                                             metodoExecutarAoAlterarValor="#{pgUtil.mensagemInfo('Atualizou')}"
+                                             />
+            </h:form>
 
 
 
 
             <SBLogin:formLogin rendered="false" />
 
-
-            <h:panelGroup  id="#{pgHomeCriadorComponente.idAreaExbicaoAcaoSelecionada}" rendered="false">
-                <SBInput:inputSeletorItemGrupoCampoGrndeSelecao
-                    campoInstanciado="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('beanSelecionadoDaListaFabrica')}"
-                    metodoAoSelecionar="#{pgUtil.atualizaTelaPorID(pgHomeCriadorComponente.idAreaExbicaoAcaoSelecionada)}"
-                    titulo="TEste"
-                    />
-            </h:panelGroup>
-
+            <h:form >
+                <h:panelGroup  id="#{pgHomeCriadorComponente.idAreaExbicaoAcaoSelecionada}" rendered="false">
+                    <SBInput:inputSeletorItemGrupoCampoGrndeSelecao
+                        campoInstanciado="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('beanSelecionadoDaListaFabrica')}"
+                        metodoAoSelecionar="#{pgUtil.atualizaTelaPorID(pgHomeCriadorComponente.idAreaExbicaoAcaoSelecionada)}"
+                        titulo="TEste"
+                        />
+                </h:panelGroup>
+            </h:form>
 
 
 
             <h:panelGroup >
+
+
 
                 <h:form>
                     <SBInput:inputSeletorItemGrupoCampoAutocompleteSelecao

@@ -12,6 +12,7 @@ import com.super_bits.modulos.SBAcessosModel.fabricas.ItfFabricaDeAcoesPersisten
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoController;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
+import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.icones.FabIconeFontAwesome;
 
 /**
@@ -46,9 +47,9 @@ public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersiste
     BEAN_EXEMPLO_CTR_SALVAR_EDICAO,
     @InfoTipoAcaoController()
     BEAN_EXEMPLO_CTR_ALTERAR_STATUS,
-    @InfoTipoAcaoController()
+    @InfoTipoAcaoController(comunicacao = FabTipoComunicacao.PERGUNTAR_SIM_OU_NAO, fraseComunicação = "Confirma isto, mesmo sabendo que é um simples teste que não vai dar em nada?")
     BEAN_EXEMPLO_CTR_ATIVAR,
-    @InfoTipoAcaoController()
+    @InfoTipoAcaoController(campoJustificativa = "listasExemplo")
     BEAN_EXEMPLO_CTR_CAMPO_COM_JUSTIFICATIVA,
     @InfoTipoAcaoFormulario(iconeFonteAnsowame = FabIconeFontAwesome.REG_PESQUISA_AVANCADA)
     BEAN_EXEMPLO_FRM_MODAL_TESTE,

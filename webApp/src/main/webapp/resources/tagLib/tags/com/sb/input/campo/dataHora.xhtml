@@ -9,11 +9,17 @@
 
 
         <ui:define name="input">
-            <h:outputScript name="recursos/js/traducaoDatasPrime.js" library="SBComp"  target="body"  />
+            <h:outputScript name="recursos/js/traducaoDatasPrime.js" library="SBComp"  target="body"
+                            rendered="#{!desabilitarEdicao}"
+                            />
+            <p:outputLabel value="#{pgUtil.gerarDataHoraTexto(registro.valor)}"
+                           rendered="#{desabilitarEdicao}"
+                           />
+
             <p:calendar
 
                 class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
-
+                rendered="#{!desabilitarEdicao}"
                 required="#{obrigatorio}"
                 value="#{valor}"
                 validatorMessage="O valor informado no campo #{label} não é valido! "
