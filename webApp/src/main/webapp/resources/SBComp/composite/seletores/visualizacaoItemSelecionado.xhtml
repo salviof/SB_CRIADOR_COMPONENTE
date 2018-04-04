@@ -13,15 +13,16 @@
         shortDescription="obs: Não Usar entre forms"
         >
         <cc:attribute name="itemSelecionado"
-                      type="com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimplesSomenteLeitura"
+                      type="com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples"
                       shortDescription="Bean onde o item selecionado será armazenado ao postar, e referencia de exibição "
                       />
+
         <cc:attribute name="label" type="java.lang.String"
 
                       shortDescription="Titulo Campo armazenamento seleção"
                       />
         <cc:attribute name="grupoCampos" type="com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfGrupoCampos"/>
-        <cc:attribute name="idAreaPrincipal" default="seletorGrande#{cc.attrs.grupoCampos.nomeIdentificadorSlug}" />
+
     </cc:interface>
 
     <!-- IMPLEMENTATION -->
@@ -29,7 +30,7 @@
         <c:if test="#{!pgUtilLayout.verificaExisteLayout(cc.attrs.grupoCampos.nomeIdentificadorSlug)}">
             #{pgUtilLayout.gerarLayout(cc.attrs.grupoCampos, pgUtilAcoes.listaAcaoSelecaoRegistro)}
         </c:if>
-
+        <f:param name="nulo" value="#{null}" />
         <h:panelGroup  rendered="#{cc.attrs.itemSelecionado!=null}" >
 
             <p:dataTable
@@ -62,18 +63,21 @@
                             />
                     </center>
                 </p:columns>
+
                 <p:column headerText="Alterar"  width="70px;" >
-                    <p:commandLink  update="#{pgUtil.gerarCaminhoCompletoID(cc.attrs.idAreaPrincipal)}"
-                                    process="@this"
-                                    partialSubmit="true"
+                    <p:fragment>
 
-                                    >
-                        <i class="fa fa-times Red Fs30" />
-                        <f:setPropertyActionListener target="#{cc.attrs.itemSelecionado}"
-                                                     value="#{null}"
+                        <p:commandLink    update="#{pgUtil.getNomeIdPainelDoComponente(component)}"
 
-                                                     />
-                    </p:commandLink>
+
+                                          >
+                            <i class="fa fa-times Red Fs30" />
+                            <f:setPropertyActionListener target="#{cc.attrs.itemSelecionado}"
+                                                         value="#{null}"
+
+                                                         />
+                        </p:commandLink>
+                    </p:fragment>
                 </p:column>
             </p:dataTable>
 

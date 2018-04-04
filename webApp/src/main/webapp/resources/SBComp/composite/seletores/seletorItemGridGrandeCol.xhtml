@@ -45,7 +45,7 @@
 
         <sb:parametroMetodo nome="metodoEscolha" valor="#{cc.attrs.metodoAoSelecionar}"/>
 
-        <h:form>
+        <p:fragment>
             <p:inputText value="#{cc.attrs.atributoBeanFriltro}" style="font-size: 25px!important; width: 100%;"
                          placeholder="#{cc.attrs.frasePesquisa} "
                          styleClass="CampoResponsivo"
@@ -56,9 +56,9 @@
             </p:inputText>
 
             <p:focus />
-        </h:form>
+        </p:fragment>
+        <p:fragment >
 
-        <h:form id="formularioItens">
             <div class="Container100">
 
                 <p:dataTable sortMode="multiple"
@@ -119,8 +119,12 @@
                     </p:columns>
                     <p:column headerText="" width="50">
 
-                        <p:commandButton icon="fa fa-hand-pointer-o" actionListener="#{metodoEscolha}"  >
-                            <f:setPropertyActionListener target="#{cc.attrs.itemSelecionado}" value="#{item}" />
+                        <p:commandButton icon="fa fa-hand-pointer-o" actionListener="#{metodoEscolha}"
+                                         update="#{pgUtil.getNomeIdPainelDoComponente(component)}"
+                                         process="@this"
+                                         >
+                            <f:setPropertyActionListener target="#{cc.attrs.itemSelecionado}" value="#{item}"
+                                                         />
                         </p:commandButton>
 
                     </p:column>
@@ -128,9 +132,9 @@
                 </p:dataTable>
 
             </div>
+        </p:fragment>
 
 
-        </h:form>
 
     </cc:implementation>
 

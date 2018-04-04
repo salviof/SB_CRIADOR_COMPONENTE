@@ -23,6 +23,9 @@
                 }
             </style>
         </ui:define>
+
+
+
         <ui:define name="#{layoutsPaginas.modeloGeral.areaPrincipal}">
 
             <h:form rendered="false">
@@ -39,7 +42,7 @@
             <SBLogin:formLogin rendered="false" />
 
             <h:form >
-                <h:panelGroup  id="#{pgHomeCriadorComponente.idAreaExbicaoAcaoSelecionada}" rendered="false">
+                <h:panelGroup  id="#{pgHomeCriadorComponente.idAreaExbicaoAcaoSelecionada}" >
                     <SBInput:inputSeletorItemGrupoCampoGrndeSelecao
                         campoInstanciado="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('beanSelecionadoDaListaFabrica')}"
                         metodoAoSelecionar="#{pgUtil.atualizaTelaPorID(pgHomeCriadorComponente.idAreaExbicaoAcaoSelecionada)}"

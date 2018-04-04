@@ -3,7 +3,8 @@
 
                 xmlns:SBSeletor="http://xmlns.jcp.org/jsf/composite/SBComp/composite/seletores"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:p="http://primefaces.org/ui">
     <!-- INTERFACE -->
     <cc:interface>
         <cc:attribute name="campoInstanciado"
@@ -21,17 +22,22 @@
         <c:if test="#{!pgUtilLayout.verificaExisteLayout(cc.attrs.campoInstanciado.comoCampoSeltorItem.grupoCampoExibicao.nomeIdentificadorSlug)}">
             #{pgUtilLayout.gerarLayout(cc.attrs.campoInstanciado.comoCampoSeltorItem.grupoCampoExibicao, pgUtilAcoes.listaAcaoSelecaoRegistro)}
         </c:if>
-        <SBSeletor:seletorItemGridGrandeColSelecionado
-            itemSelecionado="#{cc.attrs.campoInstanciado.valor}"
-            atributoBeanFriltro="#{cc.attrs.campoInstanciado.comoCampoSeltorItem.filtro}"
-            lista="#{cc.attrs.campoInstanciado.comoCampoSeltorItem.seletor.origem}"
-            frasePesquisa="Pesquise por #{cc.attrs.campoInstanciado.nomeDoObjetoPlural} cadastrados"
 
-            grupoCampos="#{cc.attrs.campoInstanciado.comoCampoSeltorItem.grupoCampoExibicao}"
-            mensagemSemRegistros="Nenhum #{cc.attrs.campoInstanciado.nomeDoObjeto} Encontrado"
-            label="#{cc.attrs.campoInstanciado.label}"
-            metodoAoSelecionar="#{cc.attrs.metodoAoSelecionar}"
-            />
+
+
+        <p:fieldset >
+            <SBSeletor:seletorItemGridGrandeColSelecionado
+                itemSelecionado="#{cc.attrs.campoInstanciado.valor}"
+                atributoBeanFriltro="#{cc.attrs.campoInstanciado.comoCampoSeltorItem.filtro}"
+                lista="#{cc.attrs.campoInstanciado.comoCampoSeltorItem.seletor.origem}"
+                frasePesquisa="Pesquise por #{cc.attrs.campoInstanciado.nomeDoObjetoPlural} cadastrados"
+
+                grupoCampos="#{cc.attrs.campoInstanciado.comoCampoSeltorItem.grupoCampoExibicao}"
+                mensagemSemRegistros="Nenhum #{cc.attrs.campoInstanciado.nomeDoObjeto} Encontrado"
+                label="#{cc.attrs.titulo}"
+                metodoAoSelecionar="#{cc.attrs.metodoAoSelecionar}"
+                />
+        </p:fieldset>
 
     </cc:implementation>
 

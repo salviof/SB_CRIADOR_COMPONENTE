@@ -4,7 +4,7 @@
     xmlns:p="http://primefaces.org/ui"
     xmlns:cc="http://xmlns.jcp.org/jsf/composite"
     xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:sb="http://superbitsframework/ui" 
+    xmlns:sb="http://superbitsframework/ui"
     xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <!-- INTERFACE -->
     <cc:interface>
@@ -35,7 +35,7 @@
     </cc:interface>
     <!-- IMPLEMENTATION -->
     <cc:implementation>
-
+        <h:outputStylesheet name="steps.css" library="css" />
         <h:panelGroup rendered="#{!paginaAtual.sessao.telaUsuario.umMobile}">
 
             <div class="stepwizard">

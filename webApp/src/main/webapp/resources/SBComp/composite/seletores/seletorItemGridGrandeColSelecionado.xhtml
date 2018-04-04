@@ -34,22 +34,23 @@
                       />
         <cc:attribute name="metodoAoSelecionar" type="javax.el.MethodExpression" />
         <cc:attribute name="grupoCampos" type="com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfGrupoCampos"/>
-        <cc:attribute name="idAreaPrincipal" default="seletorGrande#{cc.attrs.grupoCampos.nomeIdentificadorSlug}" />
+
     </cc:interface>
 
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
-        <h:panelGroup  id="#{cc.attrs.idAreaPrincipal}" >
+        <h:panelGroup  class="AreaSeletorGrande" >
             <h:panelGroup  rendered="#{cc.attrs.itemSelecionado!=null}" >
 
                 <SBSeletor:visualizacaoItemSelecionado grupoCampos="#{cc.attrs.grupoCampos}"
-                                                       idAreaPrincipal="#{cc.attrs.idAreaPrincipal}"
+
                                                        itemSelecionado="#{cc.attrs.itemSelecionado}"
                                                        />
 
             </h:panelGroup>
             <h:panelGroup >
+
                 <SBSeletor:seletorItemGridGrandeCol  itemSelecionado="#{cc.attrs.itemSelecionado}"
                                                      lista="#{cc.attrs.lista}"
                                                      metodoAoSelecionar="#{cc.attrs.metodoAoSelecionar}"
@@ -60,6 +61,7 @@
                                                      mensagemSemRegistros="#{cc.attrs.mensagemSemRegistros}"
                                                      rendered="#{cc.attrs.itemSelecionado==null}"
                                                      />
+
             </h:panelGroup>
         </h:panelGroup>
     </cc:implementation>

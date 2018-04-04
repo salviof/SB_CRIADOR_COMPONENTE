@@ -6,34 +6,21 @@
     xmlns:p="http://primefaces.org/ui">
     <h:body>
 
-        <h:panelGroup  class="inputCampo"  >
-            <span>
-                <p:fragment  rendered="#{registro.temDescricao}" >
-                    <i class="fa fa-info-circle" style="">
-                        <p:outputLabel  value="#{label}" />
-                    </i>
-                    <p:tooltip
-                        for="@parent"
 
-                        trackMouse="true"
-                        showEffect="clip"
-                        hideEffect="explode"
-                        >
-                        #{registro.descricao}
-                    </p:tooltip>
-
-                </p:fragment>
-
-                <p:outputLabel  value="#{label}" for="#{pgUtil.getNomeIdComponenteInput(component)}"  rendered="#{!registro.temDescricao}" />
-
-            </span>
+        <h:panelGrid columns="1"  class="inputCampo"
+                     columnClasses="colunaLabel,colunaResponsiva">
+            <p:outputLabel  value="#{label}"
+                            for="#{pgUtil.getNomeIdComponenteInput(component)}"  />
             <ui:insert name="input" />
+            <p:tooltip  rendered="#{registro.temDescricao}"
+                        for="#{pgUtil.getNomeIdComponenteInput(component)}"
+                        value="Info: #{registro.descricao}"
+                        />
+            <p:message  for="#{pgUtil.getNomeIdComponenteInput(component)}"/>
 
-            <p:message for="#{pgUtil.getNomeIdComponenteInput(component)}"   />
+        </h:panelGrid>
 
 
-
-        </h:panelGroup>
     </h:body>
 </ui:composition>
 

@@ -64,6 +64,7 @@
 
                 <p:separator/>
                 <h:form id="formularioVisualizacaoInput">
+
                     <p:inputText value="teste" required="true" />
 
                     <sb:inputSB
@@ -76,10 +77,10 @@
                         layoutCampoEspecial="#{pgMapaComponentes.componenteSelecionado}"
                         label="#{pgMapaComponentes.campoInstanciado.label}"
                         opcoes="#{pgMapaComponentes.campoInstanciado.listaDeOpcoes}"
-                        atualizarFormOnChange="false"
+                        atualizarFormOnChange="true"
                         obrigatorio="#{pgMapaComponentes.campoInstanciado.obrigatorio}"
                         atualizarGrupoOnChange="false"
-                        mostrarOpcoesAcancadas="true"
+
                         />
 
 

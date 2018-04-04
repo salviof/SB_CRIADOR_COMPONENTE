@@ -9,7 +9,9 @@
                  columnClasses="colunaLabel,colunaResponsiva">
         <p:outputLabel  value="#{label}"
                         for="#{pgUtil.getNomeIdComponenteInput(component)}"  />
-        <ui:insert name="input" />
+        <h:panelGroup >
+            <ui:insert name="input" />
+        </h:panelGroup>
         <p:tooltip  rendered="#{registro.temDescricao}"
                     for="#{pgUtil.getNomeIdComponenteInput(component)}"
                     value="Info: #{registro.descricao}"

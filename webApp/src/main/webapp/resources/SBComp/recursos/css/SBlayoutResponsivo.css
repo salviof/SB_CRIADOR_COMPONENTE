@@ -83,6 +83,7 @@ h1, h2, h3, h4, h5, h6{ margin:0px !important;
     .Container20{ width:20%; float:left;}
     .Container10{ width:10%; float:left;}
     .Container5{ width:5%; float:left;}
+    .Margem30HorizontalOnDesktop{margin-left:30px;margin-right: 30px; }
 
 
 
@@ -319,4 +320,12 @@ h1, h2, h3, h4, h5, h6{ margin:0px !important;
 
 .Container:after {
     clear: both;
+}
+.OrganizadorContainer{
+
+    display: flex;  justify-content: space-around;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    display: flex;
+    flex-wrap: wrap;
 }

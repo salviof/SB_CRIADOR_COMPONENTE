@@ -9,11 +9,17 @@
 
 
         <ui:define name="input">
+            <h:panelGroup rendered="#{desabilitarEdicao}" >
+
+                <p:dataList value="#{registro.valor}" var="item"  type="ordered">
+
+                    #{item.nome}
+                </p:dataList>
 
 
+            </h:panelGroup>
 
-
-            <p:panel class="Container100 Responsive100">
+            <p:panel class="Container100 Responsive100" rendered="#{!desabilitarEdicao}">
 
                 <p:pickList
                     value="#{registro.comoSeltorItens.campoSeletorItens.dualListPrime}"

@@ -51,3 +51,15 @@ ui-datatable-header.ui-widget-header.ui-corner-top{
     width: 80%!important;
     float: left!important;
 }
+
+
+.ui-datatable table thead tr th, .ui-datatable table tfoot tr td, .ui-datatable table thead tr th{
+    font-size: 12px!important;
+
+}
+/* desabilitando o icone  shortColuna das tabelas*/
+.ui-sortable-column-icon.ui-icon.ui-icon-carat-2-n-s{
+    display: none;
+}
+
+

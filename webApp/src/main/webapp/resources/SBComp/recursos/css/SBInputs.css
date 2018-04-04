@@ -76,7 +76,9 @@ and open the template in the editor.
     width:   98%!important;
 
 }
-
+.ui-selectonemenu, .ui-selectcheckboxmenu {
+    padding:  0px 11px 0px 0px !important;
+}
 .inputUploadGrande div span  span:nth-child(2)
 {
 
@@ -134,4 +136,9 @@ and open the template in the editor.
 }
 .IconePequeno{
     width: 10px;
+}
+
+.col-md-1.ColunaPequenaBotstrap span span input{
+    width: 120px!important;
+
 }
