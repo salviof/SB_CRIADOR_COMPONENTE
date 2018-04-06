@@ -9,15 +9,13 @@
 
 
         <ui:define name="input">
-            <h:outputScript name="recursos/js/traducaoDatasPrime.js" library="SBComp"  target="body"
-                            rendered="#{!desabilitarEdicao}"
-                            />
+
             <p:outputLabel value="#{pgUtil.gerarDataHoraTexto(registro.valor)}"
                            rendered="#{desabilitarEdicao}"
                            />
 
             <p:calendar
-
+                locale="pt_BR"
                 class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
                 rendered="#{!desabilitarEdicao}"
                 required="#{obrigatorio}"
@@ -48,6 +46,9 @@
                 </c:if>
 
             </p:calendar>
+            <h:outputScript name="recursos/js/traducaoDatasPrime.js" library="SBComp"  target="body"
+
+                            />
 
         </ui:define>
     </ui:decorate>
