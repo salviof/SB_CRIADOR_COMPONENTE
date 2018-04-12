@@ -12,7 +12,7 @@
                       shortDescription="Exibe um atributo de um Objeto para insersão de dados do usuário (Ou Visualização)"
                       />
         <cc:attribute name="label"  default="Selecione um  #{cc.attrs.registro.label}"/>
-        <cc:attribute name="idAreaPrincipal" default="seletorGrande#{cc.attrs.registro.comoCampoSeltorItem.grupoCampoExibicao.nomeIdentificadorSlug}" />
+
         <cc:attribute name="metodoOnChange" required="false"   type="javax.el.MethodExpression"
                       shortDescription="Médodo que deve ser executado ao alterar um valor"
 
@@ -27,7 +27,7 @@
                 grupoCamposmodal="#{cc.attrs.registro.comoCampoSeltorItem.grupoCampoExibicao}"
                 itemSelecionado="#{cc.attrs.registro.valor}"
                 metodo="#{cc.attrs.registro.comoCampoSeltorItem.filtrarPorAutoComplet(pParametro)}"
-                idAreaPrincipal="#{cc.attrs.idAreaPrincipal}"
+
                 metodoOnChange="#{cc.attrs.metodoOnChange}"
                 titulo="#{cc.attrs.label}"/>
 
