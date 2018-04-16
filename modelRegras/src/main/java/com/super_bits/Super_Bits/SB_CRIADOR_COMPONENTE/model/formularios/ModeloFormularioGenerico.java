@@ -5,14 +5,17 @@
  */
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.formularios;
 
+import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Mensagens.ItfMensagem;
+import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.FabErro;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoReflexao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.LocalizacaoInputAssistente;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.TipoOrganizacaoDadosEndereco;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ErroPreparandoObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.validacaoRegistro.CampoInvalido;
 import com.super_bits.modulosSB.SBCore.modulos.view.modeloFormulario.ItfModeloFormularioSBFW;
@@ -271,7 +274,11 @@ public class ModeloFormularioGenerico implements ItfModeloFormularioSBFW {
 
     @Override
     public void prepararNovoObjeto(Object... parametros) {
-        modelo.prepararNovoObjeto(parametros);
+        try {
+            modelo.prepararNovoObjeto(parametros);
+        } catch (ErroPreparandoObjeto p) {
+            SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro preparando modelo de formulário genérioco", p);
+        }
     }
 
     @Override
