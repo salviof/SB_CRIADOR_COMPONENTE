@@ -7,11 +7,9 @@
     xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
-
             <p:outputLabel value="#{registro.valor}" rendered="#{desabilitarEdicao}" />
-
             <p:inputText
-                class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
+                class="campoResponsivo  TexAlCenter #{componente.classeCSS}"
                 rendered="#{!desabilitarEdicao}"
                 required="false"
                 value="#{valor}"
@@ -19,9 +17,7 @@
                 requiredMessage="O campo #{label} não foi informado! "
                 maxlength="#{valorMaximo}"
                 >
-
-                <p:clientValidator/>
-
+                <p:clientValidator rendered="false"/>
                 <f:validator  validatorId="org.super_bits.view.validadores.generico"/>
                 <c:if test="#{atualizarGrupoOnChange}" >
                     <p:ajax
@@ -29,29 +25,24 @@
                         event="valueChange"
                         update="#{pgUtil.getNomeIdPainelDoComponente(component)}"/>
                 </c:if>
-
                 <c:if test="#{atualizarFormOnChange}" >
                     <p:ajax
                         rendered="#{atualizarFormOnChange}"
                         event="valueChange"
                         update="@form"/>
                 </c:if>
-
                 <c:if test="#{possuiMetodoOnChange}" >
                     <p:ajax rendered="#{possuiMetodoOnChange}"
                             global="true"
                             event="valueChange"
                             listener="#{prMetodo}"/>
                 </c:if>
-
-
                 <c:if test="#{possuiIDOnChange}" >
                     <p:ajax
                         rendered="#{possuiIDOnChange}"
                         global="true"
                         event="valueChange"
                         listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
-
                 </c:if>
             </p:inputText>
         </ui:define>
