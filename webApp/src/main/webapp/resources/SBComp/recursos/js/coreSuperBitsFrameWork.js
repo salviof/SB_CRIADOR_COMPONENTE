@@ -6,7 +6,25 @@
 function esconderTooltips() {
     $(".ui-tooltip").hide();
 
+}
 
+
+
+function scrollEmCampoNaoValidado() {
+
+
+    var elementoErro = $('.ui-state-error');
+    if (elementoErro !== null) {
+
+
+        $('html, body').animate({
+            scrollTop: elementoErro.offset().top - 200
+        }, 800);
+
+
+        return true;
+    }
+    return false;
 }
 
 
@@ -22,7 +40,10 @@ function irParTopo() {
 
 function acoesPosAjax() {
     esconderTooltips();
-    irParTopo();
+
+    if (!scrollEmCampoNaoValidado()) {
+        irParTopo();
+    }
 }
 
 /**
