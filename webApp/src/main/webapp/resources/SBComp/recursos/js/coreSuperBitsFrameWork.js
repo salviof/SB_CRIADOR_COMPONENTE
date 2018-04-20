@@ -12,17 +12,18 @@ function esconderTooltips() {
 
 function scrollEmCampoNaoValidado() {
 
+    try {
+        var elementoErro = $("input.ui-state-error:first");
+        if (elementoErro.length > 0) {
 
-    var elementoErro = $('.ui-state-error');
-    if (elementoErro !== null) {
-
-
-        $('html, body').animate({
-            scrollTop: elementoErro.offset().top - 200
-        }, 800);
-
+            $('html, body').animate({
+                scrollTop: elementoErro.offset().top - 200
+            });
+        }
 
         return true;
+    } catch (err) {
+
     }
     return false;
 }
@@ -39,12 +40,14 @@ function irParTopo() {
 }
 
 function acoesPosAjax() {
-    esconderTooltips();
-    setTimeout(function () {
+    try {
+        esconderTooltips();
         if (!scrollEmCampoNaoValidado()) {
             irParTopo();
         }
-    }, 1000);
+    } catch (err) {
+
+    }
 
 }
 

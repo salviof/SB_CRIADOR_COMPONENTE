@@ -89,17 +89,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="#{cc.attrs.registro.valor}" var="itemDaLista" varStatus="infoRec" >
-                            <tr scope="row" id="#{cc.attrs.grupoCampos.idNomeGrupoCampo}#{infoRec.index}">
-                                <c:forEach items="#{cc.attrs.grupoCampos.campos}" var="cpItem" >
-                                    <td class="col-md-2">
-                                        <SBInput:input registro="#{itemDaLista.getCampoByNomeOuAnotacao(cpItem.caminhoSemNomeClasse)}"  layout="#{cc.attrs.tipoVisualizacaoLabel}"
-                                                       idAtualizarOnChange="@this"
 
-                                                       />
+                        <ui:repeat value="#{cc.attrs.registro.valor}" var="itemDaLista" varStatus="infoRec" >
+                            <tr scope="row" id="#{cc.attrs.grupoCampos.idNomeGrupoCampo}#{infoRec.index}">
+                                <ui:repeat value="#{cc.attrs.grupoCampos.campos}" var="cpItem" varStatus="infoRecCol" >
+
+                                    <td class="col-md-2">
+
+                                        <p:fragment>
+                                            <SBInput:input registro="#{itemDaLista.getCampoByNomeOuAnotacao(cpItem.caminhoSemNomeClasse)}"  layout="#{cc.attrs.tipoVisualizacaoLabel}"
+                                                           idAtualizarOnChange="@this"
+
+                                                           />
+                                        </p:fragment>
+
+
                                     </td>
 
-                                </c:forEach>
+
+                                </ui:repeat>
                                 <td class="col-md-1" >
                                     <p:commandLink
                                         rendered="#{!cc.attrs.somenteLeitura}"
@@ -109,7 +117,7 @@
                                 </td>
                             </tr>
 
-                        </c:forEach>
+                        </ui:repeat>
                     </tbody>
 
                 </table>

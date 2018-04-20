@@ -12,7 +12,8 @@
 
                          class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
                          autocomplete="false"
-                         redisplay="true"
+                         redisplay="#{!paginaAtual.umaPaginaEdicaoOuNovoRegistro}"
+
                          feedback="true"
                          disabled="#{desabilitarEdicao}"
                          validatorMessage="O valor informado no campo #{label} não é valido! A senha precisa conter 6 caractéres"
