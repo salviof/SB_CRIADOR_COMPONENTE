@@ -1,19 +1,17 @@
 <ui:composition
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-    xmlns:SBInput="http://xmlns.jcp.org/jsf/composite/SBComp/composite/input"
-    xmlns:p="http://primefaces.org/ui"
-    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-    xmlns:h="http://xmlns.jcp.org/jsf/html">
+    xmlns:p="http://primefaces.org/ui">
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
 
             <p:outputLabel value="(Escolha um Estado)"
                            rendered="#{registro.comoCampoLocalizacao.unidadeFederativaEstadoNulo}"
                            />
+            <p:outputLabel value="#{valor.nome}" rendered="#{desabilitarEdicao}"  />
 
             <p:autoComplete converter="conversorGenerico"
-                            rendered="#{!registro.comoCampoLocalizacao.unidadeFederativaEstadoNulo}"
+                            rendered="#{pgUtil.isTudoVerdadeiro(!registro.comoCampoLocalizacao.unidadeFederativaEstadoNulo,!desabilitarEdicao)}"
                             completeMethod="#{registro.comoCampoLocalizacao.metodoAutoCompleteCidade}"
                             var="cidade"
                             value="#{registro.comoCampoLocalizacao.cidade}"
