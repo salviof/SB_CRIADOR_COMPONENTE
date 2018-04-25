@@ -14,16 +14,15 @@
     <h:body>
         <h:form>
             <h1>#{pgModalREspostaComunicacao.comunicacao.mensagem}</h1>
-
-            <ui:repeat value="#{pgModalREspostaComunicacao.comunicacao.repostasPossiveis}" var="resp" >
-                <SBAcaoNav:botaoRespostaModal
-                    resposta="#{resp}"
-                    armazenamentoAcaoExecutada="#{pgModalREspostaComunicacao.respostaSelecionada}"
-                    metodo="#{pgModalREspostaComunicacao.enviarRespostaEExecutarAcao()}"
-                    />
-
-
-            </ui:repeat>
+            <div class=" OrganizadorContainer" style="width: 100%">
+                <ui:repeat value="#{pgModalREspostaComunicacao.comunicacao.repostasPossiveis}" var="resp" >
+                    <SBAcaoNav:botaoRespostaModal
+                        resposta="#{resp}"
+                        armazenamentoAcaoExecutada="#{pgModalREspostaComunicacao.respostaSelecionada}"
+                        metodo="#{pgModalREspostaComunicacao.enviarRespostaEExecutarAcao()}"
+                        />
+                </ui:repeat>
+            </div>
 
         </h:form>
 

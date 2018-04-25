@@ -13,18 +13,18 @@
 
     <h:body>
         <h:form>
+            <div class=" OrganizadorContainer" style="width: 100%">
+                <ui:repeat value="#{pgModalRespostaAcaoTransient.comunicacao.repostasPossiveis}" var="resp" >
+                    <SBAcaoNav:botaoRespostaModal
+                        resposta="#{resp}"
+                        armazenamentoAcaoExecutada="#{pgModalRespostaAcaoTransient.respostaSelecionada}"
+                        metodo="#{pgModalRespostaAcaoTransient.enviarRespostaEExecutarAcao()}"
 
-            <ui:repeat value="#{pgModalRespostaAcaoTransient.comunicacao.repostasPossiveis}" var="resp" >
-                <SBAcaoNav:botaoRespostaModal
-                    resposta="#{resp}"
-                    armazenamentoAcaoExecutada="#{pgModalRespostaAcaoTransient.respostaSelecionada}"
-                    metodo="#{pgModalRespostaAcaoTransient.enviarRespostaEExecutarAcao()}"
-
-                    />
+                        />
 
 
-            </ui:repeat>
-
+                </ui:repeat>
+            </div>
         </h:form>
 
 

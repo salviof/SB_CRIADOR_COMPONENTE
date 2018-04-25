@@ -45,14 +45,10 @@
 
         <h:panelGroup styleClass="SbBotoesDeEscolha" style="position: relative;" layout="span"  >
             <f:passThroughAttribute name="marcador" value="inputFormulario" />
-
-
-
             <p:blockUI
-
-                block="#{pgUtil.getNomeIdPainelGroupInputSB(component)}"
-                trigger="#{paginaAtual.infoPagina.idAreaExbicaoAcaoSelecionada}"
-                widgetVar="#{pgUtil.getNomeIdPainelGroupInputSB(component)}"
+                rendered="#{pgUtil.getNomeIdPFieldSetPai(component)!=null}"
+                block="#{pgUtil.getNomeIdPFieldSetPai(component)}"
+                widgetVar="#{pgUtil.getNomeIdPainelGroupInputSB(component)}#{pgUtil.getNomeIdPFieldSetPai(component)}"
                 >
                 <div style="
                      z-index: 10000;
@@ -69,14 +65,14 @@
                 </div>
 
             </p:blockUI>
-            <h:panelGroup id="#{pgUtil.getNomeIdPainelGroupInputSB(component)}divBotoesDeAcao">
+            <h:panelGroup layout="block" >
                 <ui:repeat value="#{cc.attrs.opcoes}" var="opc" varStatus="rec">
                     <c:choose >
 
                         <c:when test="#{cc.attrs.visualizacaoBotao==layoutsComponenteSB.layoutBotoes.icone}">
 
                             <p:commandButton
-                                onstart="PF('#{pgUtil.getNomeIdPainelGroupInputSB(component)}').show();"
+                                onstart="PF('#{pgUtil.getNomeIdPainelGroupInputSB(component)}#{pgUtil.getNomeIdPFieldSetPai(component)}').show();"
                                 oncomplete="acoesPosAjax()"
                                 icon="#{opc.iconeAcao}"
                                 action="#{cc.attrs.metodo}"
@@ -88,6 +84,7 @@
 
                                 <p:ajax event="dialogReturn" listener="#{paginaAtual.infoPagina.metodoRespostaModal}"
                                         rendered="#{opc.acaoTemModal}"
+                                        oncomplete="liberarBloqueios();"
                                         />
 
                                 <p:tooltip for="@parent" value="#{opc.nomeAcao}" trackMouse="true" />
@@ -142,13 +139,15 @@
                                 <f:setPropertyActionListener
                                     target="#{cc.attrs.opcaoSelecionada}"
                                     value="#{opc}"/>
-                                <p:ajax event="dialogReturn" listener="#{paginaAtual.infoPagina.metodoRespostaModal}"
+                                <p:ajax event="dialogReturn"
+                                        listener="#{paginaAtual.infoPagina.metodoRespostaModal}"
+                                        oncomplete="liberarBloqueios();"
                                         rendered="#{opc.acaoTemModal}"
                                         />
 
                             </p:commandButton>
                             <p:commandButton style="margin-bottom: 5px; "
-
+                                             onstart="PF('#{pgUtil.getNomeIdPainelGroupInputSB(component)}#{pgUtil.getNomeIdPFieldSetPai(component)}').show();"
                                              value="#{opc.nomeAcao}"
                                              icon="#{opc.iconeAcao}"
                                              action="#{cc.attrs.metodo}"
@@ -161,6 +160,7 @@
                                     value="#{opc}"/>
                                 <p:ajax event="dialogReturn" listener="#{paginaAtual.infoPagina.metodoRespostaModal}"
                                         rendered="#{opc.acaoTemModal}"
+                                        oncomplete="liberarBloqueios();"
                                         />
 
 

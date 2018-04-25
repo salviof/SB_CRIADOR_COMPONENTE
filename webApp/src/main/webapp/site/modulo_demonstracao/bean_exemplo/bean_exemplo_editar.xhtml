@@ -12,7 +12,8 @@
             <SBFormulario:camposDaAcao
                 registro="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
                 acao="#{paginaAtual.infoPagina.acaoSelecionada}"
-                tipoVisualizacaoLabel="#{layoutsComponenteSB.layoutCampo.superior}"
+                tipoVisualizacaoLabel="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                somenteLeitura="#{!pgBeanExemplo.podeEditar}"
                 />
         </ui:define>
         <ui:define name="botoesDeAcao">

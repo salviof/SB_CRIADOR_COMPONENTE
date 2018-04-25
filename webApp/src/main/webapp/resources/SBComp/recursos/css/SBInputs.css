@@ -17,6 +17,57 @@ and open the template in the editor.
     width: auto;
 
 }
+
+.InputColunaSuperiorConteudoLeitura{
+    background-color: #f7f5f3!important;
+    display: inline-block;
+    vertical-align: top;
+    min-height: 30px;
+    width: 99%;
+}
+
+.InputColunaSuperiorConteudo{
+
+
+}
+.InputColunaSuperiorLabel{
+
+}
+.InputColunaSuperiorMensagem{
+}
+
+.InputSBSuperior{
+    width: 100%;
+}
+
+.InputSBEsquerda{
+
+
+}
+.InputSBEsquerdaConteudoSomenteLeitura{
+    background-color: #f7f5f3!important;
+    display: inline-block;
+    vertical-align: top;
+    min-height: 30px;
+    width: 99%;
+}
+.InputSBEsquerdaConteudo{
+    width: 99%;
+}
+.InputSBEsquerdaLabel{
+    text-align: center;
+    width: 120px;
+
+}
+
+.InputSBEsquerdaLabel label{
+    width: 120px;
+}
+.InputSBEsquerdaMensagem{
+
+}
+
+
 .listaComOcoesOcultaFitro{
     height: 5px!important;
     display: none!important;

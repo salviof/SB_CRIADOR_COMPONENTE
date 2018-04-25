@@ -1,14 +1,12 @@
 <ui:composition
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-
     xmlns:h="http://xmlns.jcp.org/jsf/html"
     xmlns:p="http://primefaces.org/ui">
     <h:body>
-
-
-        <h:panelGrid columns="1"  class="inputCampo"
-                     columnClasses="colunaLabel,colunaResponsiva">
+        <h:panelGrid columns="1"  class="InputSBSuperior"
+                     rowClasses="#{layoutsComponenteSB.layoutCampo.superior.getEstiloLinha(desabilitarEdicao)}"
+                     >
             <p:outputLabel  value="#{label}"
                             for="#{pgUtil.getNomeIdComponenteInput(component)}"  />
             <ui:insert name="input" />
@@ -17,10 +15,6 @@
                         value="Info: #{registro.descricao}"
                         />
             <p:message  for="#{pgUtil.getNomeIdComponenteInput(component)}"/>
-
         </h:panelGrid>
-
-
     </h:body>
 </ui:composition>
-

@@ -8,7 +8,13 @@ function esconderTooltips() {
 
 }
 
-
+function liberarBloqueios() {
+    for (i in PrimeFaces.widgets) {
+        if (PrimeFaces.widgets[i].show && PrimeFaces.widgets[i].blocker) {
+            PrimeFaces.widgets[i].hide();
+        }
+    }
+}
 
 function scrollEmCampoNaoValidado() {
 

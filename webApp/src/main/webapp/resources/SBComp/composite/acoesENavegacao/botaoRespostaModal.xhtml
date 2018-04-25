@@ -52,13 +52,30 @@
 
 
         <p:commandButton
-            onmousedown="esconderTooltips();"
+            rendered="#{cc.attrs.resposta.tipoResposta.respostasPosiva}"
+
             styleClass="btnIconeENome botao"
             icon="#{cc.attrs.resposta.tipoResposta.icone}"
             action="#{cc.attrs.metodo}"
             value="#{cc.attrs.resposta.tipoResposta.nome}"
             update="@form"
-            oncomplete="#{javaScriptOncomplete}"
+            oncomplete="#{cc.attrs.javaScriptOncomplete}"
+            >
+
+            <f:setPropertyActionListener target="#{cc.attrs.armazenamentoAcaoExecutada}"
+                                         value="#{cc.attrs.resposta}"  />
+        </p:commandButton>
+
+        <p:commandButton
+            rendered="#{!cc.attrs.resposta.tipoResposta.respostasPosiva}"
+
+            styleClass="btnIconeENome botao"
+            icon="#{cc.attrs.resposta.tipoResposta.icone}"
+            action="#{cc.attrs.metodo}"
+            value="#{cc.attrs.resposta.tipoResposta.nome}"
+            update="@form"
+            process="@this"
+            oncomplete="#{cc.attrs.javaScriptOncomplete}"
             >
 
             <f:setPropertyActionListener target="#{cc.attrs.armazenamentoAcaoExecutada}"

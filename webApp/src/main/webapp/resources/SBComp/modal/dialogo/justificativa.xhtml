@@ -11,20 +11,21 @@
 
     <h:head>
         <title>#{pgModalJustificativa.comunicacao.mensagem}</title>
+        <ui:include src="../folhasDeEstiloModal.xhtml" />
     </h:head>
 
     <h:body>
         <h:form id="formulario">
             <div class="ContainerIndent" >
-                <div class="Container10" >
+                <div class="Container100" >
                     <SBInput:input registro="#{pgModalJustificativa.campoJustificativa}"
                                    layout="#{layoutsComponenteSB.layoutCampo.superior}"
                                    />
                 </div>
 
-                <div class="Container10" >
+                <div class="Container100" style="margin: 10px;" >
                     <p:inputTextarea value="#{pgModalJustificativa.justificativa}"
-                                     style="width: 600px!important; "
+                                     style="width: 100%!important; "
                                      placeholder="Justifique esta alteração"
                                      required="true"
                                      id="justificativa"
@@ -41,15 +42,22 @@
 
 
             <br/>
-            <center>
+
+
+            <div class=" OrganizadorContainer" style="width: 100%">
                 <ui:repeat value="#{pgModalJustificativa.comunicacao.repostasPossiveis}" var="resp" >
-                    <SBAcaoNav:botaoRespostaModal
-                        resposta="#{resp}"
-                        armazenamentoAcaoExecutada="#{pgModalJustificativa.respostaSelecionada}"
-                        metodo="#{pgModalJustificativa.enviarRespostaEExecutarAcao()}"
-                        />
+                    <div class="Container20">
+                        <SBAcaoNav:botaoRespostaModal
+                            resposta="#{resp}"
+                            armazenamentoAcaoExecutada="#{pgModalJustificativa.respostaSelecionada}"
+                            metodo="#{pgModalJustificativa.enviarRespostaEExecutarAcao()}"
+                            />
+                    </div>
+
                 </ui:repeat>
-            </center>
+            </div>
+
+
 
         </h:form>
 
