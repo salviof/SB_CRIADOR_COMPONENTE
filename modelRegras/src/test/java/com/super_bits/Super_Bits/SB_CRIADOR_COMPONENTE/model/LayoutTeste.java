@@ -44,7 +44,7 @@ public class LayoutTeste extends TesteSB_CRIADOR_COMPONENTE {
             System.out.println(objTeste.getCampoInstanciadoByNomeOuAnotacao("apelido").getComponenteVisualPadrao().getNomeComponente());
 
             LayoutComponentesEmTelaComGrupoDeAcoes layout = UtilSBCoreLayoutComponenteEmTelas.gerarLayoutColunasComAcao(
-                    lista, (List) acaoForm.getAcaoPrincipal().getAcoesVinculadas(),
+                    lista, (List) acaoForm.getComoGestaoEntidade().getAcoesVinculadas(),
                     FabCompVisualBotaoAcao.ICONE, FabTipoTamanhoTelas.DESKTOP_GRANDE.getRegistro(), "TESTE", false);
             layout.getUltimaColuna();
 

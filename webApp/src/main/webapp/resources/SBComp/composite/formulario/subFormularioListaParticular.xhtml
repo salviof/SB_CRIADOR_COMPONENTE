@@ -33,8 +33,9 @@
     </cc:interface>
     <!-- IMPLEMENTATION -->
     <cc:implementation>
-        <h:panelGroup rendered="#{cc.attrs.somenteLeitura}">
+        <h:panelGroup rendered="#{cc.attrs.somenteLeitura}" >
             <SBFormulario:listaSomenteLeitura grupoCampos="#{cc.attrs.grupoCampos}"
+                                              rendered="#{cc.attrs.somenteLeitura}"
                                               registro="#{cc.attrs.registro}"
                                               tipoVisualizacaoLabel="#{cc.attrs.tipoVisualizacaoLabel}"
                                               />
@@ -90,9 +91,9 @@
                     </thead>
                     <tbody>
 
-                        <ui:repeat value="#{cc.attrs.registro.valor}" var="itemDaLista" varStatus="infoRec" >
+                        <ui:repeat value="#{cc.attrs.registro.valor}" var="itemDaLista" varStatus="infoRec" transient="true" >
                             <tr scope="row" id="#{cc.attrs.grupoCampos.idNomeGrupoCampo}#{infoRec.index}">
-                                <ui:repeat value="#{cc.attrs.grupoCampos.campos}" var="cpItem" varStatus="infoRecCol" >
+                                <ui:repeat value="#{cc.attrs.grupoCampos.campos}" var="cpItem" varStatus="infoRecCol" transient="true" >
 
                                     <td class="col-md-2">
 

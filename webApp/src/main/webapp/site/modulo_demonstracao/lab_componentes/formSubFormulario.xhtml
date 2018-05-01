@@ -12,35 +12,6 @@
         <p:separator />
 
 
-<<<<<<< HEAD
-=======
-        <SBFormulario:subFormularioPersonalizado
-
-            registro="#{pgMapaComponentes.campoInstanciado}"
-            grupoCampos="#{pgMapaComponentes.campoInstanciado.grupoSubCamposExibicao}"
-
-            >
-            <f:facet name="conteudoLinha">
-                <c:forEach items="#{pgMapaComponentes.campoInstanciado.grupoSubCamposExibicao.campos}" var="cpItem" >
-                    <td class="col-md-2">
-                        TESTE #{itemDaLista}
-                        #{itemDaLista.getCampoByNomeOuAnotacao(cpItem.ultimoNome).label}
-
-                    </td>
-
-                </c:forEach>
-            </f:facet>
-        </SBFormulario:subFormularioPersonalizado>
-
-
-
-        <SBFormulario:subFormulario
-            rendered="false"
-            registro="#{pgMapaComponentes.campoInstanciado}"
-            grupoCampos="#{pgMapaComponentes.campoInstanciado.grupoSubCamposExibicao}"
-
-            />
->>>>>>> 26b7a6fcf499f4b56b3c858f4a74bfe9bf656a9d
         <h:form>
             <SBFormulario:subFormulario registro="#{pgMapaComponentes.campoInstanciado}"
                                         grupoCampos="#{pgMapaComponentes.campoInstanciado.grupoSubCamposExibicao}"
