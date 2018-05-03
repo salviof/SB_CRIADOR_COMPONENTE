@@ -38,9 +38,12 @@
             </h:panelGroup>
             <c:if test="#{camp.umCampoComLista}">
 
-                <h:outputText value="O sistema não suporta subformulários em grupo de campos, você precisa chamar o componente subformulário de maneira independente" />
+                <h:outputText
+                    value="O sistema não suporta subformulários em grupo de campos, você precisa chamar o componente subformulário de maneira independente"
+                    rendered="false"
+                    />
                 <SBForm:subFormulario
-                    rendered="#{cc.attrs.somenteLeitura}"
+
                     registro="#{cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse)}"
                     grupoCampos="#{camp.grupoSubcampos}"
                     somenteLeitura="#{cc.attrs.somenteLeitura}"

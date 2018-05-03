@@ -23,10 +23,11 @@
                                  styleClass="seletorResponsivo #{componente.classeCSS}"
                                  converter="conversorGenerico"
                                  var="it"
+                                 placeholder="TESTE"
                                  converterMessage="Erro ao converter objeto" >
 
                     <f:selectItem
-                        itemLabel=" não Selecionado" noSelectionOption="true" value="#{null}" />
+                        itemLabel="Nenhum Registro selecionado" noSelectionOption="true" value="#{null}" />
 
                     <f:selectItems
                         value="#{lista}"
@@ -46,7 +47,8 @@
                             rendered="#{possuiIDOnChange}"
                             global="true"
                             event="valueChange"
-                            listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
+                            update="#{pgUtil.gerarCaminhoCompletoID(idAtualizarOnChange)}"
+                            process="@this" />
                     </c:if>
                     <p:column>
                         #{it.nome}

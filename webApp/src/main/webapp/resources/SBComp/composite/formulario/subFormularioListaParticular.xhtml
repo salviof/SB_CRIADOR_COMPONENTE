@@ -83,7 +83,7 @@
                         <tr>
                             <c:forEach items="#{cc.attrs.grupoCampos.campos}" var="campo" >
 
-                                <th></th>
+                                <th>#{campo.labelAlternativo}</th>
 
                             </c:forEach>
                             <th>-</th>
@@ -91,16 +91,16 @@
                     </thead>
                     <tbody>
 
-                        <ui:repeat value="#{cc.attrs.registro.valor}" var="itemDaLista" varStatus="infoRec" transient="true" >
+                        <ui:repeat value="#{cc.attrs.registro.valor}" var="itemDaLista" varStatus="infoRec"  >
                             <tr scope="row" id="#{cc.attrs.grupoCampos.idNomeGrupoCampo}#{infoRec.index}">
-                                <ui:repeat value="#{cc.attrs.grupoCampos.campos}" var="cpItem" varStatus="infoRecCol" transient="true" >
+                                <ui:repeat value="#{cc.attrs.grupoCampos.campos}" var="cpItem" varStatus="infoRecCol"  >
 
                                     <td class="col-md-2">
 
                                         <p:fragment>
                                             <SBInput:input registro="#{itemDaLista.getCampoByNomeOuAnotacao(cpItem.caminhoSemNomeClasse)}"  layout="#{cc.attrs.tipoVisualizacaoLabel}"
                                                            idAtualizarOnChange="@this"
-
+                                                           transient="false"
                                                            />
                                         </p:fragment>
 
