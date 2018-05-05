@@ -9,15 +9,16 @@
         <ui:define name="input">
             <p:outputLabel value="#{registro.valor}" rendered="#{desabilitarEdicao}" />
             <p:inputText
-                class="campoResponsivo  TexAlCenter #{componente.classeCSS}"
+
                 rendered="#{!desabilitarEdicao}"
+                styleClass="campoResponsivo  TexAlCenter #{componente.classeCSS}"
                 required="false"
                 value="#{valor}"
                 validatorMessage="O valor informado no campo #{label} não é valido! "
                 requiredMessage="O campo #{label} não foi informado! "
                 maxlength="#{valorMaximo}"
                 >
-                <p:clientValidator rendered="false"/>
+                <p:clientValidator />
                 <f:validator  validatorId="org.super_bits.view.validadores.generico"/>
                 <c:if test="#{atualizarGrupoOnChange}" >
                     <p:ajax

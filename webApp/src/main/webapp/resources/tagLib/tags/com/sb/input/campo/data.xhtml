@@ -17,10 +17,11 @@
                            />
             <p:calendar
                 rendered="#{!desabilitarEdicao}"
-                class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
+
                 locale="pt_BR"
                 required="#{obrigatorio}"
                 value="#{valor}"
+                styleClass="campoResponsivo  TexAlCenter #{componente.classeCSS}"
                 validatorMessage="O valor informado no campo #{label} não é valido! "
                 requiredMessage="O campo #{label} não foi informado! "
                 disabled="#{desabilitarEdicao}"

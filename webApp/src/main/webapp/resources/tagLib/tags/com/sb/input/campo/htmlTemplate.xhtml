@@ -9,8 +9,14 @@
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
 
-
-            <p:fieldset styleClass="Container100 Responsive" style="height: 300px; ">
+            <p:editor height="300" style="width: 100%"
+                      rendered="#{desabilitarEdicao}"
+                      value="#{valor}"
+                      disabled="true"
+                      />
+            <p:fieldset styleClass="Container100 Responsive" style="height: 300px; "
+                        rendered="#{!desabilitarEdicao}"
+                        >
                 <h:inputTextarea
                     style="width: 0px; height: 0px;"
                     title="teste"

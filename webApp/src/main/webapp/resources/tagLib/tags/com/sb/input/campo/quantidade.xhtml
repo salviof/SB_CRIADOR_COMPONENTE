@@ -15,7 +15,8 @@
             <p:inputNumber
                 disabled="#{desabilitarEdicao}"
                 rendered="#{!desabilitarEdicao}"
-                class="campoResponsivo #{componente.classeCSS} TexAlCenter"
+                styleClass="campoResponsivo #{componente.classeCSS} TexAlCenter"
+
                 required="#{obrigatorio}"
                 value="#{valor}"
                 decimalPlaces="#{pgUtil.converterNuloEmZero(registo.numeroDeCasasDecimais)}"

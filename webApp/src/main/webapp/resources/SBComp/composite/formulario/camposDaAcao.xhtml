@@ -20,7 +20,10 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
         <c:forEach  var="grupo" items="#{cc.attrs.acao.gruposDeCampos}">
-            <p:fieldset style="margin: 2%" legend="#{grupo.nomeGrupo}">
+
+
+            <p:fieldset style="margin: 2%" styleClass="" legend="#{grupo.nomeGrupo}">
+
                 <SBForm:camposDoGrupo registro="#{cc.attrs.registro}"
                                       grupoCampos="#{grupo}"
                                       somenteLeitura="#{cc.attrs.somenteLeitura}"

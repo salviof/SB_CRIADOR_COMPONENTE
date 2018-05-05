@@ -127,6 +127,11 @@ and open the template in the editor.
     width:   98%!important;
 
 }
+
+.campoResponsivo input{
+    width:   98%!important;
+
+}
 .ui-selectonemenu, .ui-selectcheckboxmenu {
     padding:  0px 11px 0px 0px !important;
 }

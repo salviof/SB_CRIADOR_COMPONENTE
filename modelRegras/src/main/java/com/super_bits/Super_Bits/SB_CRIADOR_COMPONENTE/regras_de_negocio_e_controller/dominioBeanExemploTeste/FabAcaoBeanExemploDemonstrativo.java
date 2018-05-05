@@ -28,7 +28,7 @@ public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersiste
     BEAN_EXEMPLO_FRM_LISTAR,
     @InfoTipoAcaoFormulario()
     BEAN_EXEMPLO_FRM_VISUALIZAR,
-    @InfoTipoAcaoFormulario()
+    @InfoTipoAcaoFormulario(campos = {"apelido", "verdadeiroOuFalso", "telefone", "data", "cor", "cnpj", "cpf", "html", "quantidade", "senha"})
     BEAN_EXEMPLO_FRM_EDITAR,
     @InfoTipoAcaoFormulario()
     BEAN_EXEMPLO_FRM_NOVO,

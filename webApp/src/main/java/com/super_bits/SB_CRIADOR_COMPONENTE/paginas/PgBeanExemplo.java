@@ -42,10 +42,8 @@ public class PgBeanExemplo extends MB_paginaCadastroEntidades<BeanExemplo> {
             representaEntidadePrincipalMB = true)
     private ParametroURL prbeanSelecionado;
 
-    @Override
     @PostConstruct
-    public void inicioAberturaDePagina() {
-        super.inicioAberturaDePagina(); //To change body of generated methods, choose Tools | Templates.
+    public void inicio() {
         listarDados();
         if (getParametroInstanciado(prbeanSelecionado).isValorDoParametroFoiConfigurado()) {
             setEntidadeSelecionada((BeanExemplo) getParametroInstanciado(prbeanSelecionado).getValor());

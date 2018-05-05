@@ -24,37 +24,39 @@
 
     <cc:implementation>
 
+        <h:panelGroup layout="block" styleClass="OrganizadorContainer">
+            <c:forEach items="#{cc.attrs.grupoCampos.campos}" var="camp"  varStatus="recnum" >
+                <h:panelGroup rendered="#{!camp.umCampoComLista}"
+                              styleClass="#{cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).componenteVisualPadrao.classeLarguraPorPeso} Responsive"
+                              style="position: relative;" layout="block" >
+                    <SBInput:input registro="#{cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse)}"
+                                   layout="#{cc.attrs.tipoVisualizacaoLabel}"
+                                   desabilitarEdicao="#{cc.attrs.somenteLeitura}"
+                                   atualizarFormOnChange="#{camp.atualizarFormAoAlterar}"
+                                   idAtualizarOnChange="#{camp.idAtualizacao}"
+                                   atualizarGrupoOnChange="#{camp.atualizarGrupoAoAlterar}"
+                                   label="#{camp.labelAlternativo}"
+                                   />
+                </h:panelGroup>
+                <c:if test="#{camp.umCampoComLista}">
 
-        <c:forEach items="#{cc.attrs.grupoCampos.campos}" var="camp"  varStatus="recnum" >
-            <h:panelGroup rendered="#{!camp.umCampoComLista}" styleClass="Container33 Responsive" style="position: relative;" layout="block" >
-                <SBInput:input registro="#{cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse)}"
-                               layout="#{cc.attrs.tipoVisualizacaoLabel}"
-                               desabilitarEdicao="#{cc.attrs.somenteLeitura}"
-                               atualizarFormOnChange="#{camp.atualizarFormAoAlterar}"
-                               idAtualizarOnChange="#{camp.idAtualizacao}"
-                               atualizarGrupoOnChange="#{camp.atualizarGrupoAoAlterar}"
-                               label="#{camp.labelAlternativo}"
-                               />
-            </h:panelGroup>
-            <c:if test="#{camp.umCampoComLista}">
+                    <h:outputText
+                        value="O sistema não suporta subformulários em grupo de campos, você precisa chamar o componente subformulário de maneira independente"
+                        rendered="false"
+                        />
+                    <SBForm:subFormulario
 
-                <h:outputText
-                    value="O sistema não suporta subformulários em grupo de campos, você precisa chamar o componente subformulário de maneira independente"
-                    rendered="false"
-                    />
-                <SBForm:subFormulario
+                        registro="#{cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse)}"
+                        grupoCampos="#{camp.grupoSubcampos}"
+                        somenteLeitura="#{cc.attrs.somenteLeitura}"
+                        />
 
-                    registro="#{cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse)}"
-                    grupoCampos="#{camp.grupoSubcampos}"
-                    somenteLeitura="#{cc.attrs.somenteLeitura}"
-                    />
-
-            </c:if>
+                </c:if>
 
 
 
-        </c:forEach>
-
+            </c:forEach>
+        </h:panelGroup>
     </cc:implementation>
 </ui:composition>
 
