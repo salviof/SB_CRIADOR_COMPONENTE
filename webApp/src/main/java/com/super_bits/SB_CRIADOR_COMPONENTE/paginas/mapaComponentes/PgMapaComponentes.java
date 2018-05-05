@@ -129,11 +129,11 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         setCaminhoComponente(atributoEnviado);
         paginaUtil.atualizaTelaPorID("areaMais");
         paginaUtil.atualizaTelaPorID("areaDropComponente");
-        if (prCaminhoBeanSelecionado.getValor() != null) {
-            setCaminhoBeanSelecionado((String) prCaminhoBeanSelecionado.getValor());
+        if (getParametroInstanciado(prCaminhoBeanSelecionado).getValor() != null) {
+            setCaminhoBeanSelecionado((String) getParametroInstanciado(prCaminhoBeanSelecionado).getValor());
         }
-        if (prCaminhoComponente.getValor() != null) {
-            setCaminhoComponente((String) prCaminhoComponente.getValor());
+        if (getParametroInstanciado(prCaminhoComponente).getValor() != null) {
+            setCaminhoComponente((String) getParametroInstanciado(prCaminhoComponente).getValor());
         }
 
     }
@@ -153,8 +153,8 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     }
 
     public void irParaPaginaComponenteSelecionado() {
-        prCaminhoBeanSelecionado.setValor(caminhoBeanSelecionado);
-        prCaminhoComponente.setValor(componenteSelecionado.getCaminhoFabrica());
+        getParametroInstanciado(prCaminhoBeanSelecionado).setValor(caminhoBeanSelecionado);
+        getParametroInstanciado(prCaminhoComponente).setValor(componenteSelecionado.getCaminhoFabrica());
 
         paginaUtil.irParaURL(getUrlAtual());
 
@@ -186,8 +186,8 @@ public class PgMapaComponentes extends MB_PaginaConversation {
             acaoSelecionada = acaoListar;
             xhtmlAcaoAtual = acaoListar.getComoFormularioEntidade().getXhtml();
         } else {
-            String caminhoBean = prCaminhoBeanSelecionado.getValor().toString();
-            setCaminhoBeanSelecionado(prCaminhoBeanSelecionado.getValor().toString());
+            String caminhoBean = getParametroInstanciado(prCaminhoBeanSelecionado).getValor().toString();
+            setCaminhoBeanSelecionado(getParametroInstanciado(prCaminhoBeanSelecionado).getValor().toString());
         }
 
         listaComponentes = MapaComponentes.getTodosComponentes();

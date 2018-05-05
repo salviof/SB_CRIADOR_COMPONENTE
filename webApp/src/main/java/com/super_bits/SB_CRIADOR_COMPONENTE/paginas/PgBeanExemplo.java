@@ -35,14 +35,20 @@ public class PgBeanExemplo extends MB_paginaCadastroEntidades<BeanExemplo> {
     private final Map<Integer, BeanExemplo> beansPersistidos = new HashMap();
 
     private List<BeanExemplo> listaBeans;
-    @InfoParametroURL(nome = "Exemplo Selecionado", tipoEntidade = BeanExemplo.class, tipoParametro = TIPO_PARTE_URL.OBJETO_COM_CONSTRUCTOR)
+    @InfoParametroURL(nome = "Exemplo Selecionado",
+            obrigatorio = false,
+            fabricaObjetosRelacionada = FabListBeanExemplos.class,
+            tipoEntidade = BeanExemplo.class, tipoParametro = TIPO_PARTE_URL.OBJETO_COM_CONSTRUCTOR,
+            representaEntidadePrincipalMB = true)
     private ParametroURL prbeanSelecionado;
 
+    @Override
     @PostConstruct
-    public void inicio() {
+    public void inicioAberturaDePagina() {
+        super.inicioAberturaDePagina(); //To change body of generated methods, choose Tools | Templates.
         listarDados();
-        if (prbeanSelecionado.isValorDoParametroFoiConfigurado()) {
-            setEntidadeSelecionada((BeanExemplo) prbeanSelecionado.getValor());
+        if (getParametroInstanciado(prbeanSelecionado).isValorDoParametroFoiConfigurado()) {
+            setEntidadeSelecionada((BeanExemplo) getParametroInstanciado(prbeanSelecionado).getValor());
 
         }
     }
