@@ -31,7 +31,7 @@
                               style="position: relative;" layout="block" >
                     <SBInput:input registro="#{cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse)}"
                                    layout="#{cc.attrs.tipoVisualizacaoLabel}"
-                                   desabilitarEdicao="#{cc.attrs.somenteLeitura}"
+                                   desabilitarEdicao="#{(cc.attrs.somenteLeitura) or (cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).somenteLeitura)}"
                                    atualizarFormOnChange="#{camp.atualizarFormAoAlterar}"
                                    idAtualizarOnChange="#{camp.idAtualizacao}"
                                    atualizarGrupoOnChange="#{camp.atualizarGrupoAoAlterar}"
