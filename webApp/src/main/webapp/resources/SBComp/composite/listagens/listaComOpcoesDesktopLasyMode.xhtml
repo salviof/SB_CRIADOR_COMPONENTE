@@ -26,7 +26,7 @@
                       />
 
         <cc:attribute
-            type="java.util.List"
+            type="com.super_bits.modulosSB.webPaginas.JSFBeans.PrimeFacesBeanModel.dataListLasy.BP_DataModelLasy"
             name="itens"
             required="true"
             />
@@ -72,6 +72,7 @@
                              rows="10"
                              widgetVar="#{pgUtil.gerarNomeSlug(cc.attrs.titulo)}"
                              resizeMode="fit"
+                             lazy="true"
                              >
 
                     <f:facet name="header" >

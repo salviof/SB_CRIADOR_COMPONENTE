@@ -42,6 +42,13 @@
                                 listener="#{prMetodo}"/>
                     </c:if>
 
+                    <c:if test="#{atualizarFormOnChange}" >
+                        <p:ajax
+                            rendered="#{atualizarFormOnChange}"
+                            event="valueChange"
+                            update="@form"/>
+                    </c:if>
+
                     <c:if test="#{possuiIDOnChange}" >
                         <p:ajax
                             rendered="#{possuiIDOnChange}"

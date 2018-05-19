@@ -7,7 +7,7 @@
     <p:commandButton onmousedown="esconderTooltips();"
                      styleClass="btnIconeENome botao"
                      icon="#{acao.iconeAcao}"
-                     action="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(registro)}"
+                     action="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada)}"
                      update="#{pgUtil.makeCaminhoCompletoID(idUpdate)}"
                      value="#{label}"
                      oncomplete="#{javaScriptOncomplete}"

@@ -1,30 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:SBFormAtualEnt="http://xmlns.jcp.org/jsf/composite/SBComp/composite/paginaAtualDeEntidade"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
-    <ui:composition template="#{layoutsPaginas.formularioListarGenerico.xhtmlVinculado}" >
-        <ui:define name="conteudo" >
-            <h:form>
-                <p:fieldset>
-                    <SBFormAtualEnt:pgAtualListaPadraoComOpcoesResponsiva/>
-                </p:fieldset>
-            </h:form>
-        </ui:define>
+<ui:composition
+
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:SBFormAtualEnt="http://xmlns.jcp.org/jsf/composite/SBComp/composite/paginaAtualDeEntidade"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:SBListagem="http://xmlns.jcp.org/jsf/composite/SBComp/composite/listagens"
+    xmlns:p="http://primefaces.org/ui"
 
 
-    </ui:composition>
-</html>
+    template="#{layoutsPaginas.formularioListarGenerico.xhtmlVinculado}" >
+    <ui:define name="conteudo" >
+        <h:form>
+            <p:fieldset>
+
+                #{pgBeanExemplo.entidadesListadas}
+                <SBListagem:listaComOpcoesDesktopLasyMode
+                    grupoCampos="#{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.gruposDeCampos[0]}"
+                    mensagemSemRegistro="Nenhum #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.nomeDominio} foi encontrado"
+                    armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
+                    itemSelecionado="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
+                    itens="#{pgBeanExemplo.listaRegistrosLasy}"
+                    metodo="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(item)}"
+                    opcoes="#{paginaAtual.infoPagina.comoPaginaEntidade.acoesRegistros}"
+                    rendered="#{!paginaAtual.sessao.telaUsuario.umMobile}"
+                    titulo="Listagem de  #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.comoFormularioEntidade.nomeTipoObjetoClasseRelacionadaPlural}"
+                    />
 
 
+                <SBFormAtualEnt:pgAtualListaPadraoComOpcoesResponsiva rendered="false" />
+            </p:fieldset>
+        </h:form>
+    </ui:define>
 
 
-
-
-
-
-
-
+</ui:composition>
