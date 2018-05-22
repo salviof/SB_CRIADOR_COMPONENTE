@@ -16,6 +16,14 @@ and open the template in the editor.
 .ui-datatable .ui-datatable-header{
     padding: 0 !important;
 }
+
+/*
+- Retirando Padding do conteudo da tabela
+*/
+.ui-datatable-tablewrapper table tbody tr td{
+    padding: 3px!important;
+}
+
 .ui-datatable-tablewrapper {
     margin: 0px!important;
 }

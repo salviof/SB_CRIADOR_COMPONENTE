@@ -63,3 +63,13 @@ and open the template in the editor.
 .botaoCardSimples div{
     color: #000000!important;
 }
+
+.SbBotoesDeEscolha:parent:parent {
+    margin: 0px;
+    padding: 3px;
+}
+
+.SbBotoesDeEscolha button{
+    font-size:13px !important;
+
+}

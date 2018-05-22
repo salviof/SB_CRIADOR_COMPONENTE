@@ -16,6 +16,7 @@
 
 
                 <SBListagem:listaComOpcoesDesktopLasyMode
+                    rendered="true"
                     grupoCampos="#{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.gruposDeCampos[0]}"
                     mensagemSemRegistro="Nenhum #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.nomeDominio} foi encontrado"
                     armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
@@ -23,7 +24,7 @@
                     itens="#{pgBeanExemplo.listaRegistrosLasy}"
                     metodo="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(item)}"
                     opcoes="#{paginaAtual.infoPagina.comoPaginaEntidade.acoesRegistros}"
-                    rendered="#{!paginaAtual.sessao.telaUsuario.umMobile}"
+
                     titulo="Listagem de  #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.comoFormularioEntidade.nomeTipoObjetoClasseRelacionadaPlural}"
                     />
 
