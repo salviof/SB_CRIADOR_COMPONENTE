@@ -21,6 +21,7 @@ import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
+import org.primefaces.event.SelectEvent;
 
 /**
  *
@@ -59,6 +60,11 @@ public class PgBeanExemplo extends MB_paginaCadastroEntidades<BeanExemplo> {
     @Override
     public void listarDados() {
         setEntidadesListadas(UtilSBCoreReflexaoFabrica.getListaTodosRegistrosDaFabrica(FabListBeanExemplos.class));
+    }
+
+    @Override
+    public void metodoRespostaModal(SelectEvent event) {
+        super.metodoRespostaModal(event); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
