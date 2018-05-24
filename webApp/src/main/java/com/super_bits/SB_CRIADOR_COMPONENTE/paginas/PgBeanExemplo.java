@@ -63,8 +63,8 @@ public class PgBeanExemplo extends MB_paginaCadastroEntidades<BeanExemplo> {
     }
 
     @Override
-    public void metodoRespostaModal(SelectEvent event) {
-        super.metodoRespostaModal(event); //To change body of generated methods, choose Tools | Templates.
+    public void metodoRespostaModalPrimefaces(SelectEvent event) {
+        super.metodoRespostaModalPrimefaces(event); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
