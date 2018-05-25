@@ -14,7 +14,7 @@
                       shortDescription="IDs que devem ser atualizados após clicar na alção"
                       default="@form"
                       />
-        <cc:attribute name="javaScriptOncomplete"  default="#{null}"
+        <cc:attribute name="javaScriptOncomplete"  default="acoesPosAjax();"
                       shortDescription="Javascript que deve ser executado após a execucao do botão"
                       />
         <cc:attribute name="tipoVisualizacao"
@@ -36,7 +36,7 @@
 
     </cc:interface>
     <cc:implementation>
-        
+
         <sb:botaoAcaoEntidadePaginaAtual
             acao="#{cc.attrs.acao}"
             layout="#{cc.attrs.tipoVisualizacao}"

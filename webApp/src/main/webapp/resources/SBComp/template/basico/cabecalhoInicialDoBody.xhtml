@@ -4,30 +4,23 @@
                 xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/resources/SBComp"
                 xmlns:p="http://primefaces.org/ui">
 
+    <div style="position: absolute;top: 0;">
 
-    <h:form>
-        <p:remoteCommand actionListener="#{paginaAtual.infoPagina.fecharPaginaMatandoViewScoped()}"
-                         name="matarViewNoServidor"
-                         autoRun="false"
-                         />
-    </h:form>
 
-    <!-- CODIGO QUE ENVIA INFORMACOES SOBRE A TELA DA SESSÃO DO USUÁRIO -->
-    <h:panelGroup rendered="#{!sessaoAtualSBWP.tipoViewDefinido}" style="visibility: hidden;" >
-        <h:form id="contactfrm"  >
-            <p:remoteCommand name="enviarInfoTela"  actionListener="#{sessaoAtualSBWP.defineInfoTela}"  />
-            <p:inputText  id="clientinfo" />
-        </h:form>
+        <!-- CODIGO QUE ENVIA INFORMACOES SOBRE A TELA DA SESSÃO DO USUÁRIO -->
+        <h:panelGroup rendered="#{!sessaoAtualSBWP.tipoViewDefinido}" style="visibility: hidden; " >
+            <h:form id="contactfrm"  >
+                <p:remoteCommand name="enviarInfoTela"  actionListener="#{sessaoAtualSBWP.defineInfoTela}"  />
+                <p:inputText  id="clientinfo" />
+            </h:form>
 
-        <script >
-            atualizarResolucaoDaTela();
-        </script>
+            <script >
+                atualizarResolucaoDaTela();
+            </script>
 
-    </h:panelGroup>
-    <!--FIM DO CODIGO QUE ENVIA INFORMACOES SOBRE A TELA DA SESSÃO DO USUÁRIO
-    #{sessaoAtualSBWP.tipoView.x}
-    #{sessaoAtualSBWP.tipoView.y}
-    -->
+        </h:panelGroup>
+    </div>
+
 </ui:composition>
 
 

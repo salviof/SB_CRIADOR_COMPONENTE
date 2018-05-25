@@ -24,7 +24,7 @@
                                      >
                         <p:ajax event="dialogReturn"  update="#{pgUtil.getNomeIdPainelDoComponente(component)}"/>
 
-                        <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}"
+                        <f:setPropertyActionListener target="#{paginaAtual.infoPagina.comoPaginaDeGestao.modalAtual.campoSelecionado}"
                                                      value="#{registro}" />
                     </p:commandButton>
 
@@ -78,7 +78,7 @@
                                                              icon="#{iconeIconeFontAwesome.REG_ATUALIZAR.tagHtml}"
                                                              >
                                                 <p:ajax event="dialogReturn"  update="@namingcontainer" />
-                                                <f:setPropertyActionListener target="#{paginaAtual.infoPagina.modalDados.campoSelecionado}"
+                                                <f:setPropertyActionListener target="#{paginaAtual.infoPagina.comoPaginaDeGestao.modalAtual.comoModalDados.campoSelecionado}"
                                                                              value="#{registro}" />
 
                                             </p:commandButton>
