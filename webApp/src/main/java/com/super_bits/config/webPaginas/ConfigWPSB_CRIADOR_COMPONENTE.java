@@ -5,6 +5,7 @@
  */
 package com.super_bits.config.webPaginas;
 
+import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.paginasIniciais.FabAcoesHomeCriadorComponente;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.ItfConfigWebPagina;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.siteMap.parametrosURL.ParametroURL;
@@ -59,7 +60,7 @@ public class ConfigWPSB_CRIADOR_COMPONENTE implements ItfConfigWebPagina {
 
     @Override
     public ItfAcaoFormulario getAcaoPaginaInicial() {
-        return null;
+        return FabAcoesHomeCriadorComponente.PAGINA_HOME_MB.getRegistro().getComoFormulario();
     }
 
 }

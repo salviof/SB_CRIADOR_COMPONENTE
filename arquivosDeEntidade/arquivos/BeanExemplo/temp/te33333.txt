@@ -1,0 +1,23 @@
+[31mTexto vermelho![0m
+<a href="http://www.google.com.br">Link q é bom nada!</a>
+
+Teste
+[Cliente.site]
+[Cliente.razaoSocial]
+[Cliente.nomeResponsavel]
+[Cliente.longitude]
+[Cliente.descritivo]
+[Cliente.cnpj]
+[Cliente.usuarioInsercao]
+[Cliente.localizacao]
+[Cliente.dataAlteracao]
+[Cliente.dataInsercao]
+[Cliente.telefone]
+[Cliente.ativo]
+[Cliente.usuariosCliente]
+[Cliente.usuarioAlteracao]
+[Cliente.latitude]
+[[nomeArquivo]]
+[Cliente.id]
+[Cliente.documentosParticulares]
+[Cliente.solicitacao]

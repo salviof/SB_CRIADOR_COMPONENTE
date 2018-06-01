@@ -2,7 +2,7 @@
  *  Super-Bits.com CODE CNPJ 20.019.971/0001-90
 
  */
-package com.super_bits;
+package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.paginasIniciais;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;

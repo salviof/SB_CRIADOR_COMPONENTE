@@ -24,7 +24,7 @@
                                      >
                         <p:ajax event="dialogReturn"  update="#{pgUtil.getNomeIdPainelDoComponente(component)}"/>
 
-                        <f:setPropertyActionListener target="#{paginaAtual.infoPagina.comoPaginaDeGestao.modalAtual.campoSelecionado}"
+                        <f:setPropertyActionListener target="#{paginaAtual.infoPagina.comoPaginaDeGestao.campoInstSelecionado}"
                                                      value="#{registro}" />
                     </p:commandButton>
 
@@ -49,9 +49,7 @@
 
 
                                     <h:column rendered="#{registro.comoArquivoDeEntidade.usuarioLogadoTemPermissaoBaixarArquivo}"
-                                              headerClass=".col-md-1"
-
-                                              >
+                                              headerClass=".col-md-1">
                                         <td>
                                             <p:commandButton value="Baixar"
                                                              partialSubmit="true"
@@ -65,6 +63,7 @@
                                                              onclick="javaScript:window.open('#{registro.comoArquivoDeEntidade.linkAbrirArquivo}', '_blank');"
                                                              icon="#{iconeIconeFontAwesome.REG_VISUALIZAR.tagHtml}"
                                                              />
+
                                         </td>
                                     </h:column>
 
@@ -78,13 +77,12 @@
                                                              icon="#{iconeIconeFontAwesome.REG_ATUALIZAR.tagHtml}"
                                                              >
                                                 <p:ajax event="dialogReturn"  update="@namingcontainer" />
-                                                <f:setPropertyActionListener target="#{paginaAtual.infoPagina.comoPaginaDeGestao.modalAtual.comoModalDados.campoSelecionado}"
+                                                <f:setPropertyActionListener target="#{paginaAtual.infoPagina.comoPaginaDeGestao.campoInstSelecionado}"
                                                                              value="#{registro}" />
 
                                             </p:commandButton>
                                         </td>
                                     </h:column>
-
 
 
                                     <h:column rendered="#{registro.comoArquivoDeEntidade.usuarioLogadoTemAlterarArquivo and !desabilitarEdicao}" >

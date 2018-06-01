@@ -8,6 +8,7 @@
         <f:passThroughAttribute name="marcador" value="inputFormulario" />
         <sb:parametroMetodo nome="prMetodo" valor="#{metodoOnChange}" rendered="#{possuiMetodoOnChange}" />
         <ui:param name="xhtmlINPUT" value="#{registro.getComponenteDiferenciado(layoutCampoEspecial).xhtmlJsfCaminhoRelativo}" />
+
         <ui:param name="layout" value="#{layoutCampo}"/>
         <ui:param name="registro" value="#{registro}" />
         <ui:param name="componente" value="#{registro.getComponenteDiferenciado(layoutCampoEspecial)}"  />
@@ -25,7 +26,11 @@
         <ui:param name="atualizarFormOnChange" value="#{atualizarFormOnChange}"/>
         <ui:param name="idAtualizarOnChange" value="#{idAtualizarOnChange}" />
 
+
+
         <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualInputs.texto_Com_FOrmatacao.xhtmlJsfCaminhoRelativo}">
+
+
             <sb:inputSBTextMascara />
         </ui:fragment>
         <ui:fragment

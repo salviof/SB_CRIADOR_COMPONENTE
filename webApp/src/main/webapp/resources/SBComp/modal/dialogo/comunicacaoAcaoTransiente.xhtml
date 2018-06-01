@@ -8,22 +8,26 @@
 
     <h:head>
         <title> #{pgModalRespostaAcaoTransient.comunicacao.mensagem} </title>
-
+        <ui:include src="../folhasDeEstiloModal.xhtml" />
     </h:head>
 
     <h:body>
         <h:form>
-            <div class=" OrganizadorContainer" style="width: 100%">
-                <ui:repeat value="#{pgModalRespostaAcaoTransient.comunicacao.repostasPossiveis}" var="resp" >
-                    <SBAcaoNav:botaoRespostaModal
-                        resposta="#{resp}"
-                        armazenamentoAcaoExecutada="#{pgModalRespostaAcaoTransient.respostaSelecionada}"
-                        metodo="#{pgModalRespostaAcaoTransient.enviarRespostaEExecutarAcao()}"
+            <div class="Container100">
+                <div class=" OrganizadorContainer" style="width: 100%">
+                    <ui:repeat value="#{pgModalRespostaAcaoTransient.comunicacao.repostasPossiveis}" var="resp" >
+                        <div class="Container20">
+                            <SBAcaoNav:botaoRespostaModal
+                                resposta="#{resp}"
+                                armazenamentoAcaoExecutada="#{pgModalRespostaAcaoTransient.respostaSelecionada}"
+                                metodo="#{pgModalRespostaAcaoTransient.enviarRespostaEExecutarAcao()}"
 
-                        />
+                                />
+                        </div>
 
 
-                </ui:repeat>
+                    </ui:repeat>
+                </div>
             </div>
         </h:form>
 

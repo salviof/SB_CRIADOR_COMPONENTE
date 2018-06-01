@@ -21,7 +21,7 @@
 
     <h:body>
         <h:form rendered="false">
-            <p:remoteCommand actionListener="#{pgModalSBJSF.fecharPaginaMatandoViewScoped()}"
+            <p:remoteCommand actionListener="#{pgModalArquivoDeEntidade.fecharPaginaMatandoViewScoped()}"
                              name="fecharModal"
                              autoRun="false"
                              />
@@ -30,20 +30,19 @@
 
 
         <h:form>
-            <h:panelGroup styleClass="Container10" >.</h:panelGroup>
-            <h:panelGroup styleClass="Container30" >
+            <div class="OrganizadorContainer" style="" >
 
-                <p:fileUpload
+                <div class="Container50" style=" position: absolute;top: 40%;  height: 30%;" >
+                    <p:fileUpload
+                        mode="advanced"
+                        label="Escolher #{pgModalArquivoDeEntidade.paginaVinculada.modalAtual.comoModalDados.campoSelecionado.label}"
+                        fileUploadListener="#{pgModalArquivoDeEntidade.paginaVinculada.modalAtual.comoModalDados.enviarArquivoDoCampoUpload}"
+                        auto="true"
+                        />
+                </div>
+            </div>
 
-                    mode="advanced"
 
-                    styleClass="inputUploadGrande"
-                    label="Escolher #{pgModalSBJSF.paginaVinculada.modalAtual.comoModalDados.campoSelecionado.label}"
-                    fileUploadListener="#{pgModalSBJSF.paginaVinculada.modalAtual.comoModalDados.enviarArquivoDoCampoUpload}"
-                    auto="true"
-                    />
-
-            </h:panelGroup>
 
         </h:form>
 
