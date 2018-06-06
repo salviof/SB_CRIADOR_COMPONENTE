@@ -16,11 +16,14 @@
             </span>
 
             <h:panelGroup styleClass="Fright">
-                <SBAcaoNav:botaoDeAcao_Pagina acao="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoListarRegistros}"
-                                              tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
-                                              label="Voltar"
+                <h:form>
+                    <SBAcaoNav:botaoDeAcao_Pagina acao="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoListarRegistros}"
+                                                  tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
+                                                  label="Voltar"
 
-                                              />
+
+                                                  />
+                </h:form>
             </h:panelGroup>
 
         </div>
