@@ -48,6 +48,7 @@ function irParTopo() {
 function acoesPosAjax() {
     try {
         esconderTooltips();
+        liberarBloqueios();
         if (!scrollEmCampoNaoValidado()) {
             irParTopo();
         }
