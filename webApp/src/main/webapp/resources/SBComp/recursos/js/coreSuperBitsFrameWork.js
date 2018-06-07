@@ -115,13 +115,65 @@ function copiarValoresCKEditor(idOrigem, idDestino) {
     document.getElementById(idDestino).value = conteudo;
 }
 
+function adicionarChamadaComDelay(idElemento, metodo) {
+
+}
+
+function mesclarOnChangeComDelay(idElementoDigitacao) {
+    elemento = document.getElementById(idElementoDigitacao);
+    var timeout = null;
+
+    if (elemento.va)
+        if (elemento.onchange) {
+            elemento.metodoOnchangeComDelay = elemento.onchange;
+            //elemento.onchange = null;
+        }
+    if (elemento.metodoOnchangeComDelay) {
+
+        elemento.onkeyup = function (e) {
+
+
+            // Clear the timeout if it has already been set.
+            // This will prevent the previous task from executing
+            // if it has been less than <MILLISECONDS>
+            clearTimeout(timeout);
+            // Make a new timeout set to go off in 800ms
+
+            timeout = setTimeout(function () {
+                var valor = document.value;
+                if (valor.length > 3) {
+                    return false; // keep form from submitting
+                    if (!elemento.pesquisaEmExecucao) {
+                        if (elemento.metodoOnchangeComDelay) {
+                            elemento.pesquisaEmExecucao = true;
+                            elemento.metodoOnchangeComDelay();
+                            elemento.pesquisaEmExecucao = false;
+                        }
+                    }
+                }
+
+
+            }, 800);
+        };
+
+    }
+    // Listen for keystroke events
+
+
+}
+
+
 function pesquisaDataSetComDelay(idElementoDigitacao, idDataSetPrime) {
     //Contribuição : https://schier.co/blog/2014/12/08/wait-for-user-to-stop-typing-using-javascript.html
-    var textInput = document.getElementById(idElementoDigitacao);
+    elemento = document.getElementById(idElementoDigitacao);
     // Init a timeout variable to be used below
     var timeout = null;
+
+
     // Listen for keystroke events
-    textInput.onkeyup = function (e) {
+    elemento.onkeyup = function (e) {
+
+
 
         // Clear the timeout if it has already been set.
         // This will prevent the previous task from executing

@@ -9,7 +9,7 @@
         <ui:define name="input">
             <p:outputLabel value="#{registro.valor}" rendered="#{desabilitarEdicao}" />
             <p:inputText
-
+                onfocus="mesclarOnChangeComDelay(this.id)"
                 rendered="#{!desabilitarEdicao}"
                 styleClass="campoResponsivo  TexAlCenter #{componente.classeCSS}"
                 required="false"

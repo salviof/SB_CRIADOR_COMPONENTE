@@ -12,6 +12,8 @@
             <p:outputLabel value="#{valor}" rendered="#{desabilitarEdicao}"/>
 
             <p:inputMask
+                onfocus="mesclarOnChangeComDelay(this.id)"
+
                 mask="#{mascara}"
                 class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
                 disabled="#{desabilitarEdicao}"
