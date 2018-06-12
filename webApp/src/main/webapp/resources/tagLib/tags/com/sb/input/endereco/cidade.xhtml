@@ -16,7 +16,7 @@
                             var="cidade"
                             value="#{registro.comoCampoLocalizacao.cidade}"
                             forceSelection="true"
-                            disabled="#{desabilitarEdicao}"
+                            disabled="#{desabilitarEdicao or registro.comoCampoLocalizacao.cidadeSomenteLeitura}"
                             itemValue="#{cidade}"
                             itemLabel="#{cidade.nome}"
                             placeholder="Localize a Cidade"

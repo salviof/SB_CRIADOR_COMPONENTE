@@ -215,7 +215,7 @@ public class BeanExemplo
     @InfoCampo(tipo = FabTipoAtributoObjeto.LC_LOGRADOURO, label = "Logradouro", obrigatorio = true)
     private String logradouro;
 
-    @InfoCampo(tipo = FabTipoAtributoObjeto.LC_COMPLEMENTO, label = "Complemento", obrigatorio = true)
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LC_COMPLEMENTO_E_NUMERO, label = "Complemento", obrigatorio = true)
     @NotNull
     private String complemento;
 

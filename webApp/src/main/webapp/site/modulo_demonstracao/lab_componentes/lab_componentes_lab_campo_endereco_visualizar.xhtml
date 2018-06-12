@@ -7,174 +7,174 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 
-    <ui:composition template="#{layoutsPaginas.conteudoEmBranco.xhtmlVinculado}" >
-        <ui:define name="conteudo">
+    <ui:composition  >
 
 
 
 
 
-            <p:fieldset tabindex="0" legend="Visualizacao de #{pgMapaComponentes.campoInstanciado.label}"  >
-                <h:form>
-                    <p:tabView dynamic="true" cache="true">
-                        <p:tab title="Informações">
 
-                            <p:panelGrid columns="2" >
+        <p:fieldset tabindex="0" legend="Visualizacao de #{pgMapaComponentes.campoInstanciado.label}"  >
+            <h:form>
+                <p:tabView dynamic="true" cache="true">
+                    <p:tab title="Informações">
 
-                                <p:outputLabel value="CEP"/><p:outputLabel value="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.cep').valor}" />
-                                <p:outputLabel value="estado"/><p:outputLabel value="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade.unidadeFederativa').valor}" />
-                                <p:outputLabel value="cidade"/><p:outputLabel value="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade').valor}" />
-                                <p:outputLabel value="bairro"/><p:outputLabel value="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro').valor}" />
-                                <p:outputLabel value="logradouro"/><p:outputLabel value="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.logradouro').valor}" />
-                                <p:outputLabel value="complemento"/><p:outputLabel value="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.complemento').valor}" />
+                        <p:panelGrid columns="2" >
 
+                            <p:outputLabel value="CEP"/><p:outputLabel value="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.cep').valor}" />
+                            <p:outputLabel value="estado"/><p:outputLabel value="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade.unidadeFederativa').valor}" />
+                            <p:outputLabel value="cidade"/><p:outputLabel value="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade').valor}" />
+                            <p:outputLabel value="bairro"/><p:outputLabel value="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro').valor}" />
+                            <p:outputLabel value="logradouro"/><p:outputLabel value="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.logradouro').valor}" />
+                            <p:outputLabel value="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.complemento').label}"/><p:outputLabel value="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.complemento').valor}" />
 
-                            </p:panelGrid>
 
-                            <p:panelGrid columns="2" >
-                                <p:outputLabel value="TipoCampo"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.tipoCampoSTR}"/>
-                                <p:outputLabel value="XHTML apresentação:"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.getComponenteDiferenciado(pgMapaComponentes.componenteSelecionado).xhtmlJsfCaminhoRelativo}"/>
-                                <p:outputLabel value="XHTML Padrão"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.componenteVisualPadrao.xhtmlJSF}"/>
-                                <p:outputLabel value="Valor"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.valor}" />
-                                <p:outputLabel value="CEP"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.cep}" />
-                                <p:outputLabel value="estado"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.unidadeFederativa}" />
-                                <p:outputLabel value="cidade"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.cidade}" />
-                                <p:outputLabel value="bairro"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.bairro}" />
-                                <p:outputLabel value="logradouro"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.logradouro}" />
-                                <p:outputLabel value="complemento"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.complemento}" />
+                        </p:panelGrid>
 
-                            </p:panelGrid>
-                            <p:commandButton value="Atualizar Visualizacao" update="#{pgUtil.makeCaminhoCompletoID('visualizacao')}"/>
-                            <p:commandButton value="Atualizar tabela" update="@form"/>
+                        <p:panelGrid columns="2" >
+                            <p:outputLabel value="TipoCampo"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.tipoCampoSTR}"/>
+                            <p:outputLabel value="XHTML apresentação:"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.getComponenteDiferenciado(pgMapaComponentes.componenteSelecionado).xhtmlJsfCaminhoRelativo}"/>
+                            <p:outputLabel value="XHTML Padrão"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.componenteVisualPadrao.xhtmlJSF}"/>
+                            <p:outputLabel value="Valor"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.valor}" />
+                            <p:outputLabel value="CEP"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.cep}" />
+                            <p:outputLabel value="estado"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.unidadeFederativa}" />
+                            <p:outputLabel value="cidade"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.cidade}" />
+                            <p:outputLabel value="bairro"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.bairro}" />
+                            <p:outputLabel value="logradouro"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.logradouro}" />
+                            <p:outputLabel value="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.complemento').label}"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.complemento}" />
 
+                        </p:panelGrid>
+                        <p:commandButton value="Atualizar Visualizacao" update="#{pgUtil.makeCaminhoCompletoID('visualizacao')}"/>
+                        <p:commandButton value="Atualizar tabela" update="@form"/>
 
 
 
 
-                        </p:tab>
 
+                    </p:tab>
 
 
-                        <p:tab  title="CEP">
 
-                            <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.cep')}"
-                                           layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                           />
+                    <p:tab  title="CEP">
 
-                        </p:tab>
+                        <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.cep')}"
+                                       layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                       />
 
-                        <p:tab  title="Estado">
+                    </p:tab>
 
+                    <p:tab  title="Estado">
 
-                            <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade.unidadeFederativa')}"
-                                           layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                           />
 
+                        <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade.unidadeFederativa')}"
+                                       layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                       />
 
-                        </p:tab>
 
-                        <p:tab  title="Cidade">
+                    </p:tab>
 
+                    <p:tab  title="Cidade">
 
 
-                            <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade')}"
-                                           layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                           />
 
+                        <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade')}"
+                                       layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                       />
 
 
-                        </p:tab>
-                        <p:tab  title="Bairro">
 
+                    </p:tab>
+                    <p:tab  title="Bairro">
 
 
-                            <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro')}"
-                                           layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                           />
 
+                        <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro')}"
+                                       layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                       />
 
 
-                        </p:tab>
 
-                        <p:tab  title="Logradouro">
+                    </p:tab>
 
+                    <p:tab  title="Logradouro">
 
 
-                            <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.logradouro')}"
-                                           layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                           />
 
+                        <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.logradouro')}"
+                                       layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                       />
 
 
-                        </p:tab>
 
-                        <p:tab  title="Complemento">
+                    </p:tab>
 
+                    <p:tab  title="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.complemento').label}">
 
 
-                            <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.complemento')}"
-                                           layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                           />
 
+                        <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.complemento')}"
+                                       layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                       />
 
 
-                        </p:tab>
 
+                    </p:tab>
 
 
-                    </p:tabView>
-                </h:form>
-                <h:form id="visualizacao">
 
-                    <SBInput:input registro="#{pgMapaComponentes.campoInstanciado}"
-                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                   />
+                </p:tabView>
+            </h:form>
+            <h:form id="visualizacao">
 
-                </h:form>
+                <SBInput:input registro="#{pgMapaComponentes.campoInstanciado}"
+                               layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                               />
 
-            </p:fieldset>
+            </h:form>
 
-            <p:fieldset legend="Simulador" >
-                <h:form>
+        </p:fieldset>
 
-                    <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.cep')}"
-                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                   />
+        <p:fieldset legend="Simulador" >
+            <h:form>
 
-                    <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade.unidadeFederativa')}"
-                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                   />
+                <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.cep')}"
+                               layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                               />
 
+                <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade.unidadeFederativa')}"
+                               layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                               />
 
-                    <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade')}"
-                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                   />
 
+                <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro.cidade')}"
+                               layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                               />
 
-                    <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro')}"
-                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                   />
 
+                <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.bairro')}"
+                               layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                               />
 
-                    <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.logradouro')}"
-                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                   />
 
-                    <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.complemento')}"
-                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                   />
+                <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.logradouro')}"
+                               layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                               />
 
+                <SBInput:input registro="#{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.complemento')}"
+                               layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                               />
 
-                    <p:commandButton actionListener="#{pgMapaComponentes.inspecionarBeanExemplo()}" value="Testar Submit"  update="@form"/>
-                </h:form>
 
+                <p:commandButton actionListener="#{pgMapaComponentes.inspecionarBeanExemplo()}" value="Testar Submit"  update="@form"/>
+            </h:form>
 
-            </p:fieldset>
 
+        </p:fieldset>
+        #{pgMapaComponentes.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('localizacao.complemento').label}
 
 
 
-        </ui:define>
+
     </ui:composition>
 </html>
 

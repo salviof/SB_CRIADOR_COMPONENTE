@@ -13,13 +13,13 @@
                 <h:panelGrid columns="4"   >
 
 
-                    <h:panelGroup rendered="#{!registro.comoCampoLocalizacao.estadoNulo}">
+                    <h:panelGroup rendered="#{!registro.comoCampoLocalizacao.unidadeFederativaEstadoNulo}">
                         #{registro.comoCampoLocalizacao.cep}
                         <p:commandLink
 
                             actionListener="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.limparCep()}"
                             update="@parent:@parent:@parent"
-                            rendered="#{!registro.comoCampoLocalizacao.estadoNulo and !desabilitarEdicao}"
+                            rendered="#{!registro.comoCampoLocalizacao.unidadeFederativaEstadoNulo and !desabilitarEdicao}"
 
                             >
 
@@ -29,13 +29,13 @@
 
                     </h:panelGroup>
 
-                    <h:panelGroup rendered="#{!registro.comoCampoLocalizacao.estadoNulo}">
+                    <h:panelGroup rendered="#{!registro.comoCampoLocalizacao.unidadeFederativaEstadoNulo}">
                         #{registro.comoCampoLocalizacao.unidadeFederativa.nome}
                         <p:commandLink
 
                             actionListener="#{registro.comoCampoLocalizacao.limparEstado()}"
                             update="@parent:@parent:@parent"
-                            rendered="#{!registro.comoCampoLocalizacao.estadoNulo  and !desabilitarEdicao}"
+                            rendered="#{!registro.comoCampoLocalizacao.unidadeFederativaEstadoNulo  and !desabilitarEdicao}"
 
                             >
 

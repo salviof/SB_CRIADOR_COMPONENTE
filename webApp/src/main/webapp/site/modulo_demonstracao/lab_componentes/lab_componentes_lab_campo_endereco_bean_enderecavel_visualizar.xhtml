@@ -7,104 +7,104 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 
-    <ui:composition template="#{layoutsPaginas.conteudoEmBranco.xhtmlVinculado}" >
-        <ui:define name="conteudo">
+    <ui:composition  >
 
 
 
 
 
-            <p:fieldset legend="Visualizacao de #{pgMapaComponentes.campoInstanciado.label}"  >
-                <p:tabView dynamic="true" cache="true">
-                    <p:tab title="Informações">
-                        <h:form  >
-                            <p:panelGrid columns="2" >
-                                <p:outputLabel value="TipoCampo"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.tipoCampoSTR}"/>
-                                <p:outputLabel value="XHTML apresentação:"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.getComponenteDiferenciado(pgMapaComponentes.componenteSelecionado).xhtmlJsfCaminhoRelativo}"/>
-                                <p:outputLabel value="XHTML Padrão"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.componenteVisualPadrao.xhtmlJSF}"/>
-                                <p:outputLabel value="Valor"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.valor}" />
-                                <p:outputLabel value="cidade"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.cidade}" />
-                                <p:outputLabel value="estado"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.unidadeFederativa}" />
-                                <p:outputLabel value="bairro"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.bairro}" />
 
-                            </p:panelGrid>
-                            <p:commandButton value="Atualizar Visualizacao" update="#{pgUtil.makeCaminhoCompletoID('visualizacao')}"/>
-                            <p:commandButton value="Atualizar tabela" update="@form"/>
+        <p:fieldset legend="Visualizacao de #{pgMapaComponentes.campoInstanciado.label}"  >
+            <p:tabView dynamic="true" cache="true">
+                <p:tab title="Informações">
+                    <h:form  >
+                        <p:panelGrid columns="2" >
+                            <p:outputLabel value="TipoCampo"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.tipoCampoSTR}"/>
+                            <p:outputLabel value="XHTML apresentação:"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.getComponenteDiferenciado(pgMapaComponentes.componenteSelecionado).xhtmlJsfCaminhoRelativo}"/>
+                            <p:outputLabel value="XHTML Padrão"/> <p:outputLabel  value="#{pgMapaComponentes.campoInstanciado.componenteVisualPadrao.xhtmlJSF}"/>
+                            <p:outputLabel value="Valor"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.valor}" />
+                            <p:outputLabel value="cidade"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.cidade}" />
+                            <p:outputLabel value="estado"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.unidadeFederativa}" />
+                            <p:outputLabel value="bairro"/><p:outputLabel value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.bairro}" />
 
-
-                        </h:form>
+                        </p:panelGrid>
+                        <p:commandButton value="Atualizar Visualizacao" update="#{pgUtil.makeCaminhoCompletoID('visualizacao')}"/>
+                        <p:commandButton value="Atualizar tabela" update="@form"/>
 
 
-                    </p:tab>
-
-                    <p:tab  title="Estado">
-                        <h:form>
-                            <p:autoComplete converter="conversorGenerico"
-                                            completeMethod="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.metodoAutoCompleteEstado}"
-                                            var="estado"
-                                            value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.unidadeFederativa}"
-                                            forceSelection="false"
-                                            itemValue="#{estado}"
-                                            itemLabel="#{estado.sigla}"
-                                            placeholder="Localize o Estado"
-                                            styleClass="campoResponsivo"
+                    </h:form>
 
 
-                                            >
-                                <p:ajax
-                                    event="itemSelect"
+                </p:tab>
 
-                                    update="#{pgUtil.getNomeIdPainelDoComponente(component)}"
-
-                                    />
-                            </p:autoComplete>
-                        </h:form>
-                    </p:tab>
-
-                    <p:tab  title="Cidade">
-
-                        <h:form>
-                            <p:autoComplete converter="conversorGenerico"
-                                            completeMethod="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.metodoAutoCompleteCidade}"
-                                            var="cidade"
-                                            value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.cidade}"
-                                            forceSelection="false"
-                                            itemValue="#{cidade}"
-                                            itemLabel="#{cidade.nome}"
-                                            placeholder="Localize a cidade"
+                <p:tab  title="Estado">
+                    <h:form>
+                        <p:autoComplete converter="conversorGenerico"
+                                        completeMethod="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.metodoAutoCompleteEstado}"
+                                        var="estado"
+                                        value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.unidadeFederativa}"
+                                        forceSelection="false"
+                                        itemValue="#{estado}"
+                                        itemLabel="#{estado.sigla}"
+                                        placeholder="Localize o Estado"
+                                        styleClass="campoResponsivo"
 
 
-                                            styleClass="campoResponsivo"
+                                        >
+                            <p:ajax
+                                event="itemSelect"
+
+                                update="#{pgUtil.getNomeIdPainelDoComponente(component)}"
+
+                                />
+                        </p:autoComplete>
+                    </h:form>
+                </p:tab>
+
+                <p:tab  title="Cidade">
+
+                    <h:form>
+                        <p:autoComplete converter="conversorGenerico"
+                                        completeMethod="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.metodoAutoCompleteCidade}"
+                                        var="cidade"
+                                        value="#{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.cidade}"
+                                        forceSelection="false"
+                                        itemValue="#{cidade}"
+                                        itemLabel="#{cidade.nome}"
+                                        placeholder="Localize a cidade"
 
 
-                                            >
-                                <p:ajax
-                                    event="itemSelect"
+                                        styleClass="campoResponsivo"
 
-                                    update="#{pgUtil.getNomeIdPainelDoComponente(component)}"
 
-                                    />
-                            </p:autoComplete>
-                            #{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.cidade}
-                        </h:form>
+                                        >
+                            <p:ajax
+                                event="itemSelect"
 
-                    </p:tab>
-                    <p:tab  title="Bairro">
+                                update="#{pgUtil.getNomeIdPainelDoComponente(component)}"
 
-                    </p:tab>
+                                />
+                        </p:autoComplete>
+                        #{pgMapaComponentes.campoInstanciado.comoCampoLocalizacao.cidade}
+                    </h:form>
 
-                </p:tabView>
+                </p:tab>
+                <p:tab  title="Bairro">
 
-                <h:form id="visualizacao">
+                </p:tab>
 
-                    <SBInput:input registro="#{pgMapaComponentes.campoInstanciado}"
-                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                   />
+            </p:tabView>
 
-                </h:form>
+            <h:form id="visualizacao">
 
-            </p:fieldset>
-        </ui:define>
+                <SBInput:input registro="#{pgMapaComponentes.campoInstanciado}"
+                               layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                               />
+
+            </h:form>
+
+        </p:fieldset>
+
     </ui:composition>
 </html>
 

@@ -123,40 +123,33 @@ function mesclarOnChangeComDelay(idElementoDigitacao) {
     elemento = document.getElementById(idElementoDigitacao);
     var timeout = null;
 
-    if (elemento.va)
-        if (elemento.onchange) {
-            elemento.metodoOnchangeComDelay = elemento.onchange;
-            //elemento.onchange = null;
-        }
-    if (elemento.metodoOnchangeComDelay) {
+
+    if (elemento.onchange) {
+        elemento.metodoOnchangeComDelay = elemento.onchange;
+        //elemento.onchange = null;
 
         elemento.onkeyup = function (e) {
 
+            try {
+                // Clear the timeout if it has already been set.
+                // This will prevent the previous task from executing
+                // if it has been less than <MILLISECONDS>
+                clearTimeout(timeout);
+                // Make a new timeout set to go off in 800ms
 
-            // Clear the timeout if it has already been set.
-            // This will prevent the previous task from executing
-            // if it has been less than <MILLISECONDS>
-            clearTimeout(timeout);
-            // Make a new timeout set to go off in 800ms
+                timeout = setTimeout(function () {
+                    elemento.metodoOnchangeComDelay();
+                }, 800);
+            } catch (t) {
 
-            timeout = setTimeout(function () {
-                var valor = document.value;
-                if (valor.length > 3) {
-                    return false; // keep form from submitting
-                    if (!elemento.pesquisaEmExecucao) {
-                        if (elemento.metodoOnchangeComDelay) {
-                            elemento.pesquisaEmExecucao = true;
-                            elemento.metodoOnchangeComDelay();
-                            elemento.pesquisaEmExecucao = false;
-                        }
-                    }
-                }
-
-
-            }, 800);
+            }
         };
-
     }
+
+
+
+
+
     // Listen for keystroke events
 
 

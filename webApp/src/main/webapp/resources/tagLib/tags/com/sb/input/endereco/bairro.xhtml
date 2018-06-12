@@ -16,7 +16,7 @@
                             itemValue="#{bairro}"
                             itemLabel="#{bairro.nome}"
                             placeholder="Localize um Bairro"
-                            disabled="#{desabilitarEdicao}"
+                            disabled="#{desabilitarEdicao or registro.comoCampoLocalizacao.bairroSomenteLeitura}"
                             rendered="#{registro.comoCampoLocalizacao.podeColetarBairro}"
                             styleClass="campoResponsivo"
 
