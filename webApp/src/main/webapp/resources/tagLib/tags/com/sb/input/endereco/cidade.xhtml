@@ -21,7 +21,9 @@
                             itemLabel="#{cidade.nome}"
                             placeholder="Localize a Cidade"
                             styleClass="campoResponsivo"
-
+                            minQueryLength="3"
+                            dynamic="true"
+                            queryDelay="800"
                             >
                 <p:ajax
                     event="itemSelect"
