@@ -25,6 +25,9 @@
     <cc:implementation>
 
         <h:panelGroup layout="block" styleClass="OrganizadorContainer">
+
+
+
             <c:forEach items="#{cc.attrs.grupoCampos.campos}" var="camp"  varStatus="recnum" >
                 <h:panelGroup rendered="#{!camp.umCampoComLista}"
                               styleClass="#{cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).componenteVisualPadrao.classeLarguraPorPeso} Responsive"

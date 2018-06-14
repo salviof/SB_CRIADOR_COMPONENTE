@@ -269,7 +269,7 @@ public class BeanExemplo
     @InfoGrupoCampo(camposDeclarados = {"id", "nome", "beanSelecionadoDaListaFabrica"})
     private List<BeanExemplo> listaParticular;
 
-    @InfoCampo(tipo = FabTipoAtributoObjeto.VERDADEIRO_FALSO)
+    @InfoCampo(label = "Com certeza?", tipo = FabTipoAtributoObjeto.VERDADEIRO_FALSO)
     private boolean verdadeiroOuFalso;
     @InfoCampo(tipo = FabTipoAtributoObjeto.GRUPO_CAMPO)
     private GrupoCampos grupoCampoCompleto;

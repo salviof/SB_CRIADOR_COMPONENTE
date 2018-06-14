@@ -58,7 +58,7 @@
 
 
         <c:if test="#{!pgUtilLayout.verificaExisteLayout(cc.attrs.grupoCampos.nomeIdentificadorSlug)}">
-            #{pgUtilLayout.gerarLayout(cc.attrs.grupoCampos, cc.attrs.opcoes)}
+            #{pgUtilLayout.gerarLayout(cc.attrs.grupoCampos, cc.attrs.opcoes)} 
         </c:if>
 
         <h:panelGroup>
@@ -130,7 +130,7 @@
 
 
                     <p:column headerText="Ações Teste "
-                              width="#{pgUtilLayout.pixelPorNumeroDeAcoes}"
+                              width="#{pgUtilLayout.getLayoutCamposComAcao(cc.attrs.grupoCampos,cc.attrs.opcoes).pixelPorNumeroDeAcoes}"
 
                               >
 
