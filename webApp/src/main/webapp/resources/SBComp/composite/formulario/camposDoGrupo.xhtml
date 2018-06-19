@@ -24,42 +24,55 @@
 
     <cc:implementation>
 
-        <h:panelGroup layout="block" styleClass="OrganizadorContainer">
+
+        <c:set value="#{paginaAtual.infoPagina.comoFormularioWeb.infoLayout.gerarLayoutGrid(cc.attrs.grupoCampos)}"
+               var="layoutForm" />
+
+        <c:forEach var="linha" items="#{layoutForm.linhas}" varStatus="numLinha" >
+            <h:panelGroup layout="block" styleClass="#{linha.classeOrganizacao}">
+
+                <c:forEach items="#{linha.colunas}" var="coluna" varStatus="numCol"  >
+
+                    <h:panelGroup
+                        rendered="#{coluna.componenteVinculado.umComponenteAtributoDeObjeto and !coluna.componenteVinculado.caminhoCampo.umCampoComLista}"
+                        styleClass="#{coluna.componenteVinculado.classeLarguraPorPeso}"
+                        style="position: relative;" layout="block"
+
+                        >
+                        <SBInput:input registro="#{cc.attrs.registro.getCampoByNomeOuAnotacao(coluna.componenteVinculado.caminhoCampo.caminhoSemNomeClasse)}"
+                                       layout="#{cc.attrs.tipoVisualizacaoLabel}"
+                                       desabilitarEdicao="#{(cc.attrs.somenteLeitura) or (cc.attrs.registro.getCampoByNomeOuAnotacao(coluna.componenteVinculado.caminhoCampo.caminhoSemNomeClasse).somenteLeitura)}"
+                                       atualizarFormOnChange="#{camp.atualizarFormAoAlterar}"
+                                       idAtualizarOnChange="#{camp.idAtualizacao}"
+                                       atualizarGrupoOnChange="#{camp.atualizarGrupoAoAlterar}"
+                                       label="#{camp.labelAlternativo}"
+                                       />
+
+                    </h:panelGroup>
+
+                    <c:if test="#{coluna.componenteVinculado.umComponenteAtributoDeObjeto and coluna.componenteVinculado.caminhoCampo.umCampoComLista}">
 
 
 
-            <c:forEach items="#{cc.attrs.grupoCampos.campos}" var="camp"  varStatus="recnum" >
-                <h:panelGroup rendered="#{!camp.umCampoComLista}"
-                              styleClass="#{cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).componenteVisualPadrao.classeLarguraPorPeso} Responsive"
-                              style="position: relative;" layout="block" >
-                    <SBInput:input registro="#{cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse)}"
-                                   layout="#{cc.attrs.tipoVisualizacaoLabel}"
-                                   desabilitarEdicao="#{(cc.attrs.somenteLeitura) or (cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse).somenteLeitura)}"
-                                   atualizarFormOnChange="#{camp.atualizarFormAoAlterar}"
-                                   idAtualizarOnChange="#{camp.idAtualizacao}"
-                                   atualizarGrupoOnChange="#{camp.atualizarGrupoAoAlterar}"
-                                   label="#{camp.labelAlternativo}"
-                                   />
-                </h:panelGroup>
-                <c:if test="#{camp.umCampoComLista}">
+                        <h:outputText
+                            value="O sistema não suporta subformulários em grupo de campos, você precisa chamar o componente subformulário de maneira independente"
+                            rendered="false"
+                            />
 
-                    <h:outputText
-                        value="O sistema não suporta subformulários em grupo de campos, você precisa chamar o componente subformulário de maneira independente"
-                        rendered="false"
-                        />
-                    <SBForm:subFormulario
+                        <SBForm:subFormulario
 
-                        registro="#{cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse)}"
-                        grupoCampos="#{camp.grupoSubcampos}"
-                        somenteLeitura="#{cc.attrs.somenteLeitura}"
-                        />
+                            registro="#{cc.attrs.registro.getCampoByNomeOuAnotacao(coluna.componenteVinculado.caminhoCampo.caminhoSemNomeClasse)}"
+                            grupoCampos="#{coluna.componenteVinculado.caminhoCampo.grupoSubcampos}"
+                            somenteLeitura="#{cc.attrs.somenteLeitura}"
+                            />
 
-                </c:if>
+                    </c:if>
+
+                </c:forEach>
+            </h:panelGroup>
+        </c:forEach>
 
 
-
-            </c:forEach>
-        </h:panelGroup>
     </cc:implementation>
 </ui:composition>
 

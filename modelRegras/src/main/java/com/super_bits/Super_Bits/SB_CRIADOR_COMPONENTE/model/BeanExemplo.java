@@ -262,10 +262,11 @@ public class BeanExemplo
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.LC_CIDADE)
     private ItemCidade cidade;
-    @InfoCampo(tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS, fabricaDeOpcoes = FabListBeanExemplos.class)
+    @InfoCampo(label = "Lista Pub do Bean", tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS, fabricaDeOpcoes = FabListBeanExemplos.class)
     private List<BeanExemplo> listasExemplo;
 
-    @InfoCampo(tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PARTICULARES, fabricaDeOpcoes = FabListBeanExemplos.class)
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PARTICULARES, fabricaDeOpcoes = FabListBeanExemplos.class,
+            label = "Lista Part. do Bean")
     @InfoGrupoCampo(camposDeclarados = {"id", "nome", "beanSelecionadoDaListaFabrica"})
     private List<BeanExemplo> listaParticular;
 

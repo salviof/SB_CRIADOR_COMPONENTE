@@ -34,12 +34,12 @@
             <p:outputLabel value=""/>
             <p:outputLabel value=""/>
 
-            <p:outputLabel value="Url para pagina" rendered="#{paginaAtual.infoPagina.paginaGestaoEntidade}"/>
+            <p:outputLabel value="Url para pagina" rendered="#{paginaAtual.infoPagina.umaPaginaGestaoEntidade}"/>
 
 
             <p:outputLabel
                 value="#{pgUtilAcoes.getUrlAcao(paginaAtual.infoPagina.acaoSelecionada,paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada)}"
-                rendered="#{paginaAtual.infoPagina.paginaGestaoEntidade}"/>
+                rendered="#{paginaAtual.infoPagina.umaPaginaGestaoEntidade}"/>
 
             <p:outputLabel value="URL para esta Pagina"/>
             <SBAcao:linkDeAcao acao="#{paginaAtual.infoPagina.acaoSelecionada}"

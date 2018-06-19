@@ -56,10 +56,8 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
+        <c:set var="layoutListagem" value="#{pgUtilLayout.gerarLayout(cc.attrs.grupoCampos, cc.attrs.opcoes)}" />
 
-        <c:if test="#{!pgUtilLayout.verificaExisteLayout(cc.attrs.grupoCampos.nomeIdentificadorSlug)}">
-            #{pgUtilLayout.gerarLayout(cc.attrs.grupoCampos, cc.attrs.opcoes)} 
-        </c:if>
 
         <h:panelGroup>
             <h:form>
@@ -104,7 +102,7 @@
                                filterBy="#{item[coluna.primeiroCaminhoSemNomeClasse]}"
                                filterMatchMode="contains"
                                filterStyleClass="listaComOcoesOcultaFitro"
-                               width="#{pgUtilLayout.getColunaLayoutByNomeCampoCompletoComGrupo(coluna.caminhoCompletoComGrupoCampo).porcentagemCalculada}%"
+                               width="#{layoutListagem.getColunaByNomeCompleto(coluna.caminhoCompletoComGrupoCampo).porcentagemCalculada}%"
 
                                >
 
@@ -130,7 +128,7 @@
 
 
                     <p:column headerText="Ações Teste "
-                              width="#{pgUtilLayout.getLayoutCamposComAcao(cc.attrs.grupoCampos,cc.attrs.opcoes).pixelPorNumeroDeAcoes}"
+                              width="#{layoutListagem.pixelPorNumeroDeAcoes}"
 
                               >
 

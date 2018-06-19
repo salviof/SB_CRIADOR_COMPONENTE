@@ -6,21 +6,16 @@
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 
 
-    <h:head>
-
+    <h:head >
+        <title>Documentação Técnica da Página </title>
 
     </h:head>
 
     <h:body>
         <h:form>
+            <p:accordionPanel >
 
-
-            Data Criação:   #{pgModalSBJSF.paginaVinculada.nomeCurto}
-
-            Arquivo XHTML #pgModalSBJSF.paginaVinculada.recursoXHTML}
-            <p:panel header="Documentação Técnica da Página"  >
-
-                <p:panelGrid columns="1">
+                <p:tab title="Informações do Formulário"   >
                     <p:panelGrid columns="2">
                         <p:outputLabel value="Bean de acesso:"/>
                         <p:outputLabel value="#{pgModalSBJSF.paginaVinculada.nomeMB}"/>
@@ -32,14 +27,53 @@
                         <p:outputLabel value="#{pgModalSBJSF.paginaVinculada.acaoVinculada}"/>
                         <p:outputLabel value="Ação selecionada"/>
                         <p:outputLabel value="#{pgModalSBJSF.paginaVinculada.acaoSelecionada}"/>
-                        <p:outputLabel value="Link para Requisito do Formulario " />
-                        <p:link href="https://vipsol.atlassian.net/wiki/display/SKEDR/#{pgModalSBJSF.paginaVinculada.acaoSelecionada.idDescritivoJira}"
-                                value="#{pgModalSBJSF.paginaVinculada.acaoSelecionada.idDescritivoJira}"
-                                target="requisitoJira:"
-                                >
-                            #{pgModalSBJSF.paginaVinculada.acaoSelecionada.idDescritivoJira}
-                        </p:link>
 
+                    </p:panelGrid>
+                </p:tab>
+                <p:tab title="Informações de auto-Layout:"   >
+                    <c:forEach items="#{pgModalSBJSF.paginaVinculada.infoLayout.layoutsGerados}"  var="layoutGerado">
+                        ->#{layoutGerado}
+                        <p:panelGrid columns="2">
+                            <c:forEach items="#{layoutGerado.colunas}" var="coluna"  >
+
+                                <p:outputLabel value="Identificação do componente"/>
+                                <p:outputLabel value="#{coluna.componenteVinculado.nomeIdentificador}"/>
+
+                                <p:outputLabel value="É Componente de atributo?"/>
+                                <p:outputLabel value="#{coluna.componenteVinculado.umComponenteAtributoDeObjeto}"/>
+                            </c:forEach>
+                        </p:panelGrid>
+                    </c:forEach>
+                </p:tab>
+                <p:tab title="Informações Sub Formulário"   >
+                    <p:fieldset legend="Grupos de campo do Sub-Formulário">
+
+                        <c:forEach var="grupo"
+                                   items="#{pgModalSBJSF.paginaVinculada.acaoSelecionada.comoFormulario.gruposDeCampos}"
+                                   >
+                            <p:panelGrid columns="2">
+                                <p:outputLabel value="Nome:"/>
+                                <p:outputLabel value="#{grupo.nomeGrupo}" />
+                                <p:outputLabel value="Identificador:"/>
+                                <p:outputLabel value="#{grupo.idNomeGrupoCampo}" />
+
+                            </p:panelGrid>
+                            <p:fieldset title="Campos do Grupo:">
+                                <p:panelGrid columns="2">
+                                    <c:forEach items="#{grupo.campos}" var="campo" >
+                                        <p:outputLabel value="Caminho Completo:"/>
+                                        <p:outputLabel value="#{campo.caminhoCompletoComGrupoCampo}" />
+                                    </c:forEach>
+                                </p:panelGrid>
+
+
+                            </p:fieldset>
+                        </c:forEach>
+
+                    </p:fieldset>
+                </p:tab>
+                <p:tab title="Requisitos"   >
+                    <p:panelGrid columns="2">
                         <p:outputLabel value="Link para Requisito De Gestão" />
                         <p:link href="https://vipsol.atlassian.net/wiki/display/SKEDR/#{pgModalSBJSF.paginaVinculada.acaoVinculada.idDescritivoJira}"
                                 value="#{pgModalSBJSF.paginaVinculada.acaoVinculada.idDescritivoJira}"
@@ -47,59 +81,29 @@
                                 >
                             #{pgModalSBJSF.paginaVinculada.acaoVinculada.idDescritivoJira}
                         </p:link>
-                        <p:outputLabel value="Ações declaradas:"/>
-                        <p:outputLabel value="#{pgModalSBJSF.paginaVinculada.acoesDaPagina}" />
-                        <p:outputLabel value="Ações " />
+                        <p:outputLabel value="Link para Requisito do Formulario " />
+                        <p:link href="https://vipsol.atlassian.net/wiki/display/SKEDR/#{pgModalSBJSF.paginaVinculada.acaoSelecionada.idDescritivoJira}"
+                                value="#{pgModalSBJSF.paginaVinculada.acaoSelecionada.idDescritivoJira}"
+                                target="requisitoJira:"
+                                >
 
-
+                            #{pgModalSBJSF.paginaVinculada.acaoSelecionada.idDescritivoJira}
+                        </p:link>
                     </p:panelGrid>
-                    <p:commandButton update="@form" value="Atualizar" />
-                    <p:panel header="IDS NESCESSÁRIOS">
-                        <p:panelGrid columns="2">
-                            <c:forEach items="#{pgModalSBJSF.paginaVinculada.infoIds}" var="info">
+                </p:tab>
 
-                                <p:outputLabel value="#{info.key}"/>
-                                <p:outputLabel value="#{info.value}"/>
+
+                <p:tab title="Pagina Gestão de Entidade" rendered="#{pgModalSBJSF.paginaVinculada.umaPaginaGestaoEntidade}" >
+                    <p:panelGrid columns="2">
+                        <p:outputLabel value="Ações De Registros:" rendered="#{pgModalSBJSF.paginaVinculada.umaPaginaGestaoEntidade}"/>
+                        <h:panelGroup >
+                            <c:forEach var="acao" items="#{pgModalSBJSF.paginaVinculada.comoFormularioWeb.comoPaginaEntidade.acoesRegistros}" >
+                                <p:outputLabel value="#{acao.nomeUnico}" /> <br/>
                             </c:forEach>
-                        </p:panelGrid>
-
-                    </p:panel>
-
-                    <p:panel header="WidGets Nessessários" >
-                        Widget são utilizados para referencia do primefaces em vez do ID, um exemplo é o p:Dialog onde o show e hide são chamados pelo nome do widget
-                        <br/> Muitos components do Primefaces possuem eventos, e podem ser acessados lançando comandos Javascript utilizando a syntaxe: PF('nomeDowWidgetQueNesteCasoéUmPdialog').hide(); ou .show()
-                        <p:panelGrid columns="2">
-                            <c:forEach items="#{pgModalSBJSF.paginaVinculada.infoWidget}" var="info">
-
-                                <p:outputLabel value="#{info.key}"/>
-                                <p:outputLabel value="#{info.value}"/>
-                            </c:forEach>
-                        </p:panelGrid>
-
-                    </p:panel>
-
-                    <p:panel header="INFOBEAN"  >
-                        <p:panelGrid columns="5" >
-
-                            <p:outputLabel value="Tipo"/>
-                            <p:outputLabel value="acesso ([chamada])"/>
-                            <p:outputLabel value="Descricao"/>
-                            <p:outputLabel value="aplicacao"/>
-                            <p:outputLabel value="Visualizacao padrão"/>
-                            <c:forEach items="#{pgModalSBJSF.paginaVinculada.infoBeans}" var="bean" >
-                                <p:outputLabel value="#{bean.infoBean.classe}"/>
-                                <p:outputLabel value="#{bean.infoBean.chamada}"/>
-                                <p:outputLabel value="#{bean.infoBean.descricao}"/>
-                                <p:outputLabel value="#{bean.infoBean.exemplo}"/>
-                                <p:outputLabel value="#{bean.infoBean.visualizacaoItem}"/>
-
-                            </c:forEach>
-
-
-                        </p:panelGrid>
-
-
-                    </p:panel>
+                        </h:panelGroup>
+                    </p:panelGrid>
+                </p:tab>
+                <p:tab title="Ações Declaradas">
 
                     <p:panel header="Acoes:" >
 
@@ -114,8 +118,58 @@
                             </c:forEach>
                         </p:panelGrid>
                     </p:panel>
-                </p:panelGrid>
-            </p:panel>
+
+                </p:tab>
+                <p:tab title="Beans e Widgets" >
+                    <p:fieldset legend="Ids de areas conhecidadas:">
+                        <p:panelGrid columns="2">
+                            <c:forEach items="#{pgModalSBJSF.paginaVinculada.infoIds}" var="info">
+
+                                <p:outputLabel value="#{info.key}"/>
+                                <p:outputLabel value="#{info.value}"/>
+                            </c:forEach>
+                        </p:panelGrid>
+                    </p:fieldset>
+                    <p:fieldset legend="WidGets " >
+                        Widget são utilizados para referencia do primefaces em vez do ID, um exemplo é o p:Dialog onde o show e hide são chamados pelo nome do widget
+                        <br/> Muitos components do Primefaces possuem eventos, e podem ser acessados lançando comandos Javascript utilizando a syntaxe: PF('nomeDowWidgetQueNesteCasoéUmPdialog').hide(); ou .show()
+                        <p:panelGrid columns="2">
+                            <c:forEach items="#{pgModalSBJSF.paginaVinculada.infoWidget}" var="info">
+
+                                <p:outputLabel value="#{info.key}"/>
+                                <p:outputLabel value="#{info.value}"/>
+                            </c:forEach>
+                        </p:panelGrid>
+                        <p:panel header="INFOBEAN"  >
+                            <p:panelGrid columns="5" >
+
+                                <p:outputLabel value="Tipo"/>
+                                <p:outputLabel value="acesso ([chamada])"/>
+                                <p:outputLabel value="Descricao"/>
+                                <p:outputLabel value="aplicacao"/>
+                                <p:outputLabel value="Visualizacao padrão"/>
+                                <c:forEach items="#{pgModalSBJSF.paginaVinculada.infoBeans}" var="bean" >
+                                    <p:outputLabel value="#{bean.infoBean.classe}"/>
+                                    <p:outputLabel value="#{bean.infoBean.chamada}"/>
+                                    <p:outputLabel value="#{bean.infoBean.descricao}"/>
+                                    <p:outputLabel value="#{bean.infoBean.exemplo}"/>
+                                    <p:outputLabel value="#{bean.infoBean.visualizacaoItem}"/>
+
+                                </c:forEach>
+
+
+                            </p:panelGrid>
+
+
+                        </p:panel>
+
+                    </p:fieldset>
+
+                </p:tab>
+            </p:accordionPanel>
+
+
+
 
 
 

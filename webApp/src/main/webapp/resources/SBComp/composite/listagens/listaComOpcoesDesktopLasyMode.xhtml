@@ -52,14 +52,13 @@
                       />
 
 
+
     </cc:interface>
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
+        <c:set var="layoutListagem" value="#{pgUtilLayout.gerarLayout(cc.attrs.grupoCampos, cc.attrs.opcoes)}" />
 
-        <c:if test="#{!pgUtilLayout.verificaExisteLayout(cc.attrs.grupoCampos.nomeIdentificadorSlug)}">
-            #{pgUtilLayout.gerarLayout(cc.attrs.grupoCampos, cc.attrs.opcoes)}
-        </c:if>
 
         <h:panelGroup>
             <h:form>
