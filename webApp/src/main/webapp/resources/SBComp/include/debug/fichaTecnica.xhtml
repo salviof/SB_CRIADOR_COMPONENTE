@@ -1,36 +1,36 @@
 <ui:composition  xmlns="http://www.w3.org/1999/xhtml"
                  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                  xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-                 template="/resources/SBComp/template/basico/conteudoEmBranco.xhtml"
+
                  >
 
 
 
 
-    <ui:define name="conteudo">
-
-
-        <c:if test="#{!pgTestesCampo.campoValido}" >
-            Sem entidade para exibicao
-
-        </c:if>
-
-
-        <c:if test="#{pgTestesCampo.campoValido}" >
-
-
-            REFEXAO:#{pgTestesCampo.campoInstanciado.campoReflection.type}!!!!!!!!!!
-            Ficha tecnica de input campo para:
-            #{pgTestesCampo.strNomeCampo}
 
 
 
+    <c:if test="#{!pgTestesCampo.campoValido}" >
+        Sem entidade para exibicao
 
-        </c:if>
+    </c:if>
+
+
+    <c:if test="#{pgTestesCampo.campoValido}" >
+
+
+        REFEXAO:#{pgTestesCampo.campoInstanciado.campoReflection.type}!!!!!!!!!!
+        Ficha tecnica de input campo para:
+        #{pgTestesCampo.strNomeCampo}
 
 
 
-    </ui:define>
+
+    </c:if>
+
+
+
+
 
 
 </ui:composition>

@@ -5,7 +5,7 @@
                  xmlns:p="http://primefaces.org/ui"
                  xmlns:SBForm="http://xmlns.jcp.org/jsf/composite/SBComp/composite/formulario"
                  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                 template="/resources/SBComp/template/basico/conteudoEmBranco.xhtml"
+
                  >
 
 
@@ -13,16 +13,16 @@
 
 
 
-    <ui:define name="conteudo">
 
-        <p:fieldset style="margin: 2%" legend="#{pgTestesCampo.grupoSelecionado.nomeGrupo}">
-            <h:form>
-                <SBForm:camposDoGrupo registro="#{pgTestesCampo.entidadeCarregada}"
-                                      grupoCampos="#{pgTestesCampo.grupoSelecionado}" />
-            </h:form>
-        </p:fieldset>
 
-    </ui:define>
+    <p:fieldset style="margin: 2%" legend="#{pgTestesCampo.grupoSelecionado.nomeGrupo}">
+        <h:form>
+            <SBForm:camposDoGrupo registro="#{pgTestesCampo.entidadeCarregada}"
+                                  grupoCampos="#{pgTestesCampo.grupoSelecionado}" />
+        </h:form>
+    </p:fieldset>
+
+
 
 
 </ui:composition>

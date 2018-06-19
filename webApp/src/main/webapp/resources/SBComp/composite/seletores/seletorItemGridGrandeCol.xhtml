@@ -37,11 +37,9 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
-        <c:if test="#{!pgUtilLayout.verificaExisteLayout(cc.attrs.grupoCampos.nomeIdentificadorSlug)}">
-            #{pgUtilLayout.gerarLayout(cc.attrs.grupoCampos, pgUtilAcoes.listaAcaoSelecaoRegistro)}
-        </c:if>
 
 
+        <c:set var="layoutListagem" value="#{pgUtilLayout.gerarLayoutGrupoCampoSeletorItem(cc.attrs.grupoCampos)}" />
 
         <sb:parametroMetodo nome="metodoEscolha" valor="#{cc.attrs.metodoAoSelecionar}"/>
 
@@ -96,7 +94,7 @@
                                filterBy="#{item[coluna.primeiroCaminhoSemNomeClasse]}"
                                filterMatchMode="contains"
                                filterStyleClass="listaComOcoesOcultaFitro"
-                               width="#{pgUtilLayout.getColunaLayoutByNomeCampoCompletoComGrupo(coluna.caminhoCompletoComGrupoCampo).porcentagemCalculada}%"
+                               width="#{layoutListagem.getColunaByNomeCompleto(coluna.caminhoCompletoComGrupoCampo).porcentagemCalculada}%"
                                >
 
                         <f:facet name="header">

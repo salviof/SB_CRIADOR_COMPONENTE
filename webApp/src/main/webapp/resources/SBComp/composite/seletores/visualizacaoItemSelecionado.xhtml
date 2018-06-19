@@ -27,9 +27,7 @@
 
     <!-- IMPLEMENTATION -->
     <cc:implementation>
-        <c:if test="#{!pgUtilLayout.verificaExisteLayout(cc.attrs.grupoCampos.nomeIdentificadorSlug)}">
-            #{pgUtilLayout.gerarLayout(cc.attrs.grupoCampos, pgUtilAcoes.listaAcaoSelecaoRegistro)}
-        </c:if>
+        <c:set var="layoutListagem" value="#{pgUtilLayout.gerarLayoutGrupoCampoSeletorItem(cc.attrs.grupoCampos)}" />
         <f:param name="nulo" value="#{null}" />
         <h:panelGroup  rendered="#{cc.attrs.itemSelecionado!=null}" >
 
@@ -43,7 +41,7 @@
 
                            filterMatchMode="contains"
                            filterStyleClass="listaComOcoesOcultaFitro"
-                           width="#{pgUtilLayout.getColunaLayoutByNomeCampoCompletoComGrupo(coluna.caminhoCompletoComGrupoCampo).porcentagemCalculada}%"
+                           width="#{layoutListagem.getColunaByNomeCompleto(coluna.caminhoCompletoComGrupoCampo).porcentagemCalculada}%"
                            >
                     <f:facet name="header">
                         <h:outputText value= "#{coluna.label}"/>

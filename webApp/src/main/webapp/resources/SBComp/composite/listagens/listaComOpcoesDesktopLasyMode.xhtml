@@ -104,7 +104,7 @@
                                filterBy="#{item[coluna.primeiroCaminhoSemNomeClasse]}"
                                filterMatchMode="contains"
                                filterStyleClass="listaComOcoesOcultaFitro"
-                               width="#{pgUtilLayout.getColunaLayoutByNomeCampoCompletoComGrupo(coluna.caminhoCompletoComGrupoCampo).porcentagemCalculada}%"
+                               width="#{layoutListagem.getColunaByNomeCompleto(coluna.caminhoCompletoComGrupoCampo).porcentagemCalculada}%"
 
                                >
 
@@ -130,7 +130,7 @@
 
 
                     <p:column headerText="Ações  "
-                              width="#{pgUtilLayout.pixelPorNumeroDeAcoes}">
+                              width="#{layoutListagem.pixelPorNumeroDeAcoes}">
 
                         <center>
 

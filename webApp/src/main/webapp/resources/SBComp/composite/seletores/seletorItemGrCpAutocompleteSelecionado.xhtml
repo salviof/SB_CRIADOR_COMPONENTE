@@ -9,7 +9,9 @@
     <!-- INTERFACE -->
     <cc:interface>
 
-        <cc:attribute name="metodo" shortDescription="Método de filtragem, deve conter um parametro de String e tornar uma lista com os objetos"/>
+        <cc:attribute name="metodo"
+                      method-signature="java.util.List complete(java.lang.String)"
+                      shortDescription="Método de filtragem, deve conter um parametro de String e tornar uma lista com os objetos"/>
         <cc:attribute name="itemSelecionado" type="com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples" />
         <cc:attribute name="grupoCamposExibicao" type="com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfGrupoCampos"/>
         <cc:attribute name="grupoCamposPesquisa" type="com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfGrupoCampos"/>
@@ -34,7 +36,7 @@
                     grupoCampos="#{cc.attrs.grupoCamposExibicao}" />
             </h:panelGroup>
             <h:panelGroup rendered="#{cc.attrs.itemSelecionado==null}">
-                <sb:parametroMetodo nome="metodo" valor="#{cc.attrs.metodo}" />
+
                 <sb:parametroMetodo nome="metodoOnChange" valor="#{cc.attrs.metodoOnChange}" />
                 <p:autoComplete
                     styleClass="inputTexto"
@@ -49,7 +51,7 @@
                     minQueryLength="4"
                     queryDelay="1000"
                     maxResults="6"
-                    completeMethod="#{metodo}"
+                    completeMethod="#{cc.attrs.metodo}"
                     >
                     <p:ajax event="itemSelect"
                             listener="#{metodoOnChange}"

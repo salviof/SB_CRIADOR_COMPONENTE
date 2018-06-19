@@ -34,9 +34,8 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
         <h:panelGroup >
-            <c:if test="#{!pgUtilLayout.verificaExisteLayout(cc.attrs.grupoCampos.nomeIdentificadorSlug)}">
-                #{pgUtilLayout.gerarLayout(cc.attrs.grupoCampos)}
-            </c:if>
+
+            <c:set var="layoutListagem" value="#{pgUtilLayout.gerarLayoutGrupoCampo(cc.attrs.grupoCampos)}" />
             <p:fieldset >
                 <table class="table table-striped">
                     <thead>

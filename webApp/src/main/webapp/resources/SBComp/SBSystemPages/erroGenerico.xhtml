@@ -7,7 +7,8 @@
     xmlns:h="http://java.sun.com/jsf/html"
 
 
-    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+    xmlns:p="http://primefaces.org/ui">
 
     <head>
         <title>Erro ao criar a view</title>
@@ -24,13 +25,10 @@
         </h1>
 
         <br/>
-
-
-        <br/>
-
-
-        <br/>
-
+        <p:fieldset rendered="#{infoWebApp.emModoDesenvolvimentoHomologacao}">
+            #{viewScope} <br/>
+            #{headerValues}
+        </p:fieldset>
 
 
 
