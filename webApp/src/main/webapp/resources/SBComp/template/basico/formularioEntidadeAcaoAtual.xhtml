@@ -10,11 +10,11 @@
             #{paginaAtual.infoPagina.acaoSelecionada.nomeAcao}
             <i class="#{paginaAtual.infoPagina.acaoSelecionada.iconeAcao} Fs30 Fleft MarRight10"></i>
             <br/>
-            <div class="EmptyBox10 ShowOnMobile"></div>
+            <div class="quebraBlocoComEspacoVertical10 somenteMobile"></div>
             <span class="CardSubTopic">
                 #{paginaAtual.infoPagina.acaoSelecionada.descricao}
             </span>
-            <h:panelGroup styleClass="Fright">
+            <h:panelGroup styleClass="Fright" layout="block">
                 <h:form>
                     <SBAcaoNav:botaoDeAcao_Pagina_Entidade
                         registro="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
@@ -24,16 +24,19 @@
                 </h:form>
             </h:panelGroup>
         </div>
+        <div class="quebraBlocoComEspacoVertical10" ></div>
 
-        <div class="SeparatorFull"></div>
+        <h:form styleClass="Container12" >
+            <p:fieldset >
 
-        <div class="ContainerIndent">
-            <h:form >
                 <ui:insert name="conteudo" />
-                <p:separator />
+
                 <ui:insert name="botoesDeAcao" />
-            </h:form>
-        </div>
+
+            </p:fieldset>
+        </h:form>
+
+
     </div>
 </ui:composition>
 

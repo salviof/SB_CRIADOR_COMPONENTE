@@ -22,10 +22,10 @@
 
 
 
-        <h:panelGroup id="subForm" styleClass="Container100 Responsive">
+        <h:panelGroup id="subForm" styleClass="Container12 Responsive">
 
 
-            <div class=" Container25 Responsive Fright" style="float:right!important;">
+            <div class=" Container2 Responsive Fright" style="float:right!important;">
 
                 <p:commandButton
                     actionListener="#{registro.comoSubItens.subItens.adicionarItem()}"
@@ -40,7 +40,7 @@
                 <br/>
                 <h:form>
                     <c:forEach items="#{grupoCampos.campos}" var="cpItem">
-                        <div class="Container20 Responsive100">
+                        <div class="Container2 ">
 
                             <SBInput:input registro="#{itemDaLista.getCampoByNomeOuAnotacao(cpItem.caminhoParcialSemListaPai)}"  layout="#{layoutsComponenteSB.layoutCampo.superior}"
                                            idAtualizarOnChange="@this"
@@ -50,7 +50,7 @@
 
                     </c:forEach>
 
-                    <div class="Container20 Responsive100">
+                    <div class="Container2 ">
 
 
 
@@ -61,12 +61,12 @@
                         </p:commandLink>
 
                     </div>
-                    <div class="EmptyBox20" >
+                    <div class="quebraBlocoComEspacoVertical3" >
 
                         <p:separator/>
                     </div>
                 </h:form>
-                <div class="EmptyBox100"/>
+                <div class="quebraBlocoComEspacoVertical100"/>
 
 
             </c:forEach>

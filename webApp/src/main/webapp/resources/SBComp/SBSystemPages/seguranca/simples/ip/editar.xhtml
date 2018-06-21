@@ -42,13 +42,13 @@
         <ui:define name="conteudoCard">
 
             <h:form>
-                <div class="Container30 Responsive">
+                <div class="Container3 Responsive">
                     <SBInput:input registro="#{pgIps.ipSelecionado.getCampoByNomeOuAnotacao('inicialFaixa')}" layout="#{layoutsComponenteSB.layoutCampo.esquerda}" desabilitarEdicao="#{!pgIps.podeEditar}"/>
 
                 </div>
 
 
-                <div class="Container30  Responsive">
+                <div class="Container3  Responsive">
 
                     <SBInput:input registro="#{pgIps.ipSelecionado.getCampoByNomeOuAnotacao('finalFaixa')}" layout="#{layoutsComponenteSB.layoutCampo.esquerda}" desabilitarEdicao="#{!pgIps.podeEditar}"/>
 
@@ -56,7 +56,7 @@
 
                 <c:if test="#{pgIps.podeEditar}">
 
-                    <div class="Container100 TexAlCenter">
+                    <div class="Container12 TexAlCenter">
                         <SBAcaoNav:botaoDeAcao
                             acao="#{pgIps.acaoSalvarAlteracoes}"
                             armazenamentoAcaoExecutada="#{pgIps.acaoSelecionada}"

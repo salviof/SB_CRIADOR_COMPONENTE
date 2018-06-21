@@ -39,7 +39,7 @@
         <ui:define name="conteudoCard">
 
             <h:form >
-                <div class="Container100 TexAlCenter">
+                <div class="Container12 TexAlCenter">
 
 
                     <p:panelGrid columns="2"  style="border:0px !important; background:none;" styleClass="FormContent">
@@ -66,9 +66,9 @@
 
 
                 </div>
-                <div class="SeparatorFull ShowOnDesktop">                         </div>
+                <div class="SeparatorFull somenteDesktop">                         </div>
                 <c:if test="#{pgCadastroUsuarios.podeEditar}">
-                    <div class="Container100 TexAlCenter">
+                    <div class="Container12 TexAlCenter">
                         <p:commandButton  value="#{pgCadastroUsuarios.acaoSalvarAlteracoes.nomeAcao}" action="#{pgCadastroUsuarios.salvarAlteracoes()}" update="@form" >
                             <f:setPropertyActionListener target="#{pgCadastroUsuarios.acaoSelecionada}" value="#{pgCadastroUsuarios.acaoNovoRegistro}"  />
                         </p:commandButton>

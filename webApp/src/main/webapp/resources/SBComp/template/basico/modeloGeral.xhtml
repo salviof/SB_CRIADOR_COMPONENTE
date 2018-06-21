@@ -12,6 +12,8 @@
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
             <meta name="apple-mobile-web-app-capable" content="yes" />
+
+
         </f:facet>
         <title>#{paginaAtual.infoPagina.titulo}</title>
 
@@ -37,7 +39,7 @@
         </h:panelGroup>
 
         <div style="margin-top: 85px">
-            <h:panelGroup id="#{layoutIdsAreasConhecidas.AREA_CONTEUDO}"  >
+            <h:panelGroup id="#{layoutIdsAreasConhecidas.AREA_CONTEUDO}" layout="block"  >
                 <ui:insert name="divConteudo" />
                 <ui:insert name="conteudo" />
                 <ui:insert name="content"/>

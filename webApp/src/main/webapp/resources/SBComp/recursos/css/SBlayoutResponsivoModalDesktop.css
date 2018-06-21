@@ -97,142 +97,10 @@ h1, h2, h3, h4, h5, h6{ margin:0px !important;
 .somenteDesktop{ display:inherit;}
 
 
-@media (min-width:0px)  and (max-width:500pxpx) {
-    .somenteMobile{display:inherit; opacity:1;}
-    .somenteDesktop{display:none!important; opacity:0;}
-    .ContainerIndent{padding:1px;}
-    .WidAutoOnMobile{width:auto !important;}
-    .HeiAutoOnMobile{height:auto !important; min-height:50px !important;}
-
-    .Container12{ width:100%; float:left;}
-    .Container11{ width:100%; float:left;}
-    .Container10{ width:100%; float:left;}
-    .Container9{ width:100%; float:left;}
-    .Container8{ width:100%; float:left;}
-    .Container7{ width:100%; float:left;}
-    .Container6{ width:100%; float:left;}
-    .Container5{ width:100%; float:left;}
-    .Container4{ width:100%; float:left;}
-    .Container3{ width:100%; float:left;}
-    .Container2{ width:100%; float:left;}
-    .Container1{ width:100%; float:left;}
-
-    .Fs14{font-size:13px !important;}
-    .Fs15{font-size:14px !important;}
-    .Fs16{font-size:15px !important;}
-    .Fs17{font-size:16px !important;}
-    .Fs18{font-size:16px !important;}
-    .Fs19{font-size:16px !important;}
-    .Fs20{font-size:18px !important;}
-    .Fs21{font-size:18px !important;}
-    .Fs22{font-size:20px !important;}
-    .Fs23{font-size:20px !important;}
-    .Fs24{font-size:22px !important;}
-    .Fs25{font-size:22px !important;}
-    .Fs26{font-size:24px !important;}
-    .Fs27{font-size:24px !important;}
-    .Fs28{font-size:26px !important;}
-    .Fs29{font-size:26px !important;}
-    .Fs30{font-size:28px !important;}
-    .Fs40{font-size:30px !important;}
-    .Fs50{font-size:35px !important;}
-    .Fs60{font-size:40px !important;}
-    .Fs100{font-size:60px !important;}
-    .Fs130{font-size:70px !important;}
-}
-
-
-/* MOBILE_HORIZONTAL_OU_TABLET_VERTICAL MAX 2 COLUNAS  */
-@media (min-width:501px)  and (max-width:767px) {
-    .somenteMobile{display:inherit; opacity:1;}
-    .somenteDesktop{display:none; opacity:0;}
-    .WidAutoOnMobile{width:auto !important;}
-    .HeiAutoOnMobile{height:auto !important; min-height:50px !important;}
-    .ContainerIndent{padding:1px;}
-    .Container12{ width:100%; float:left;}
-    .Container11{ width:100%; float:left;}
-    .Container10{ width:100%; float:left;}
-    .Container9{ width:100%; float:left;}
-    .Container8{ width:100%; float:left;}
-    .Container7{ width:100%; float:left;}
-    .Container6{ width:100%; float:left;}
-    .Container5{ width:100%; float:left;}
-    .Container4{ width:100%; float:left;}
-    .Container3{ width:100%; float:left;}
-    .Container2{ width:100%; float:left;}
-    .Container1{ width:50%; float:left;}
-
-    .Fs14{font-size:13px !important;}
-    .Fs15{font-size:14px !important;}
-    .Fs16{font-size:15px !important;}
-    .Fs17{font-size:16px !important;}
-    .Fs18{font-size:16px !important;}
-    .Fs19{font-size:16px !important;}
-    .Fs20{font-size:18px !important;}
-    .Fs21{font-size:18px !important;}
-    .Fs22{font-size:20px !important;}
-    .Fs23{font-size:20px !important;}
-    .Fs24{font-size:22px !important;}
-    .Fs25{font-size:22px !important;}
-    .Fs26{font-size:24px !important;}
-    .Fs27{font-size:24px !important;}
-    .Fs28{font-size:26px !important;}
-    .Fs29{font-size:26px !important;}
-    .Fs30{font-size:28px !important;}
-    .Fs40{font-size:30px !important;}
-    .Fs50{font-size:35px !important;}
-    .Fs60{font-size:40px !important;}
-    .Fs100{font-size:60px !important;}
-    .Fs130{font-size:70px !important;}
-
-}
-/* MOBILE_HORIZONTAL_OU_TABLET_VERTICAL MAX 3 COLUNAS*/
-@media (min-width:768px)  and (max-width:800px) {
-    .somenteMobile{display:inherit; opacity:1;}
-    .somenteDesktop{display:none; opacity:0;}
-    .ContainerIndent{padding:2px;}
-    .Container12{ width:100%; float:left;}
-    .Container11{ width:100%; float:left;}
-    .Container10{ width:100%; float:left;}
-    .Container9{ width:100%; float:left;}
-    .Container8{ width:100%; float:left;}
-    .Container7{ width:100%; float:left;}
-    .Container6{ width:100%; float:left;}
-    .Container5{ width:100%; float:left;}
-    .Container4{ width:100%; float:left;}
-    .Container3{ width:100%; float:left;}/*de 90 arredonda pra 100*/
-    .Container2{ width:60%; float:left;}
-    .Container1{ width:30%; float:left;}
-
-    .Fs14{font-size:13px !important;}
-    .Fs15{font-size:14px !important;}
-    .Fs16{font-size:15px !important;}
-    .Fs17{font-size:16px !important;}
-    .Fs18{font-size:16px !important;}
-    .Fs19{font-size:16px !important;}
-    .Fs20{font-size:18px !important;}
-    .Fs21{font-size:18px !important;}
-    .Fs22{font-size:20px !important;}
-    .Fs23{font-size:20px !important;}
-    .Fs24{font-size:22px !important;}
-    .Fs25{font-size:22px !important;}
-    .Fs26{font-size:24px !important;}
-    .Fs27{font-size:24px !important;}
-    .Fs28{font-size:26px !important;}
-    .Fs29{font-size:26px !important;}
-    .Fs30{font-size:28px !important;}
-    .Fs40{font-size:30px !important;}
-    .Fs50{font-size:35px !important;}
-    .Fs60{font-size:40px !important;}
-    .Fs100{font-size:60px !important;}
-    .Fs130{font-size:70px !important;}
-
-}
-
 
 
 /*TABLET_GRANDE_HORIZONTE_DESKTOP_REDUZIDO MAX 6 COLUNAS*/
-@media (min-width:801px)  and (max-width:1000px) {
+@media (min-width:0px)  and (max-width:1500px) {
 
     .ContainerIndent{padding:3px;}
     .Container12{ width:100%; float:left;}
@@ -242,11 +110,11 @@ h1, h2, h3, h4, h5, h6{ margin:0px !important;
     .Container8{ width:100%; float:left;}
     .Container7{ width:100%; float:left;}
     .Container6{ width:100%; float:left;}
-    .Container5{ width:100%; float:left;}
-    .Container4{ width:80%; float:left;}
-    .Container3{ width:60%; float:left;}
-    .Container2{ width:40%; float:left;}
-    .Container1{ width:20%; float:left;}
+    .Container5{ width:75%; float:left;}
+    .Container4{ width:60%; float:left;}
+    .Container3{ width:45%; float:left;}
+    .Container2{ width:30%; float:left;}
+    .Container1{ width:15%; float:left;}
 
     .Fs14{font-size:14px !important;}
     .Fs15{font-size:15px !important;}
@@ -272,71 +140,8 @@ h1, h2, h3, h4, h5, h6{ margin:0px !important;
     .Fs130{font-size:70px !important;}
 
 }
-/*TABLET_HORIZONTAL_DESKTOP_PEQUENO MAX 9 COLUNAS*/
-@media   (min-width:1001px)  and (max-width:1199px) {
-    .somenteMobile{ display:none;}
-    .somenteDesktop{ display:inherit;}
-    .ContainerIndent{padding:3px;}
-    .Container12{ width:100%; float:left;}
-    .Container11{ width:100%; float:left;}
-    .Container10{ width:100%; float:left;}
-    .Container9{ width:100%; float:left;}
-    .Container8{ width:100%; float:left;}
-    .Container7{ width:100%; float:left;}
-    .Container6{ width:100%; float:left;}
-    .Container5{ width:100%; float:left;}
-    .Container4{ width:90%; float:left;}
-    .Container3{ width:30%!important; float:left!important; }
-
-    .Container2{ width:25%; float:left;}/*DE 22 PARA 25*/
-    .Container1{ width:10%; float:left;}
-
-}
-
-/*DESKTOP_NORMAL*/
-@media (min-width:1200)  and (max-width:1800) {
-    .somenteMobile{ display:none;}
-    .somenteDesktop{ display:inherit;}
-    .ContainerIndent{padding:5px;}
-    .Container12{ width:100%; float:left;}
-    .Container11{ width:90%; float:left;}
-    .Container10{ width:80%; float:left;}
-    .Container9{ width:75%; float:left;}
-    .Container8{ width:60%; float:left;}
-    .Container7{ width:50%; float:left;}
-    .Container6{ width:50%; float:left;}
-    .Container5{ width:40%; float:left;}
-    .Container4{ width:33%; float:left;}
-    .Container3{ width:25%; float:left;}
-    .Container2{ width:15%; float:left;}
-    .Container1{ width:8%; float:left;}
-    .Fs14{font-size:13px !important;}
-    .Fs15{font-size:15px !important;}
-    .Fs16{font-size:16px !important;}
-    .Fs17{font-size:16px !important;}
-    .Fs18{font-size:18px !important;}
-    .Fs19{font-size:18px !important;}
-    .Fs20{font-size:20px !important;}
-    .Fs21{font-size:21px !important;}
-    .Fs22{font-size:22px !important;}
-    .Fs23{font-size:23px !important;}
-    .Fs24{font-size:24px !important;}
-    .Fs25{font-size:25px !important;}
-    .Fs26{font-size:26px !important;}
-    .Fs27{font-size:27px !important;}
-    .Fs28{font-size:28px !important;}
-    .Fs29{font-size:26px !important;}
-    .Fs30{font-size:28px !important;}
-    .Fs40{font-size:30px !important;}
-    .Fs50{font-size:40px !important;}
-    .Fs60{font-size:50px !important;}
-    .Fs100{font-size:90px !important;}
-    .Fs130{font-size:120px !important;}
-
-}
-
 /*DESKTOP_GRANDE*/
-@media (min-width:1801)  {
+@media (min-width:1500)  {
     .somenteMobile{ display:none;}
     .somenteDesktop{ display:inherit;}
     .ContainerIndent{padding:6px;}
@@ -388,10 +193,10 @@ h1, h2, h3, h4, h5, h6{ margin:0px !important;
 }
 .OrganizadorContainer{
 
-    display: flex;  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
     display: -webkit-flex; /* Safari */
     -webkit-flex-wrap: wrap; /* Safari 6.1+ */
-    display: flex;
     flex-wrap: wrap;
 }
 
@@ -401,16 +206,16 @@ h1, h2, h3, h4, h5, h6{ margin:0px !important;
     justify-content: space-between;
     display: -webkit-flex; /* Safari */
     -webkit-flex-wrap: wrap; /* Safari 6.1+ */
-    display: flex;
     flex-wrap: wrap;
 }
 
 
 .OrganizadorContainerEsquerda{
 
-    display: flex;  justify-content: flex-start;
+    display: flex;
+    justify-content: flex-start;
     display: -webkit-flex; /* Safari */
     -webkit-flex-wrap: wrap; /* Safari 6.1+ */
-    display: flex;
+
     flex-wrap: wrap;
 }

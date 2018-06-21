@@ -18,7 +18,7 @@
 
             <c:forEach  items="#{pgMapaComponentes.beansDisponiveis}" var="informacao" >
 
-                <p:outputPanel styleClass="Container10"   >
+                <p:outputPanel styleClass="Container1"   >
                     <p:panel >
                         <f:passThroughAttribute name="valordropado" value="#{informacao}" />
                         <p:draggable for="@parent" revert="true" scope="campos"  />
@@ -37,7 +37,7 @@
 
 
             <p:outputPanel id="areaDropComponente"
-                           styleClass="Container40 areaArrastavel"
+                           styleClass="Container5 areaArrastavel"
                            style="height: 400px;
                            padding-left: 10px;
                            padding-right: 10px;"
@@ -70,7 +70,7 @@
             </p:outputPanel>
 
 
-            <p:outputPanel id="areaMais" styleClass="Container10" style="position: relative; ">
+            <p:outputPanel id="areaMais" styleClass="Container1" style="position: relative; ">
 
 
                 <p:graphicImage  name="img/mais.svg.png"  width="100%" library="SBComp" />
@@ -94,7 +94,7 @@
 
 
 
-            <p:outputPanel styleClass="Container40 areaArrastavel" id="areaDropCampo"
+            <p:outputPanel styleClass="Container5 areaArrastavel" id="areaDropCampo"
                            style="height: 400px;
                            padding-left: 10px;
                            padding-right: 10px;
@@ -129,7 +129,7 @@
 
             <c:forEach  items="#{pgMapaComponentes.listaComponentes}" var="comp" >
 
-                <p:outputPanel styleClass="Container10"   >
+                <p:outputPanel styleClass="Container1"   >
                     <p:panel >
                         <f:passThroughAttribute name="valordropado" value="#{comp.caminhoFabrica}" />
                         <p:draggable for="@parent" revert="true" scope="componentesSCP"  />

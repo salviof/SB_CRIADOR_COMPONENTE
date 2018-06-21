@@ -12,22 +12,31 @@
     </h:head>
 
     <h:body>
-        <h:form>
-            <div class="Container100">
-                <div class=" OrganizadorContainer" style="width: 100%">
-                    <ui:repeat value="#{pgModalRespostaAcaoTransient.comunicacao.repostasPossiveis}" var="resp" >
-                        <div class="Container20">
-                            <SBAcaoNav:botaoRespostaModal
-                                resposta="#{resp}"
-                                armazenamentoAcaoExecutada="#{pgModalRespostaAcaoTransient.respostaSelecionada}"
-                                metodo="#{pgModalRespostaAcaoTransient.enviarRespostaEExecutarAcao()}"
+        <h:form style="top:-10px">
+            <div class="Container12  "
+                 style="height: 100%; list-style: none;
+                 display: flex;
 
-                                />
-                        </div>
+                 align-items: center;
+                 justify-content: center;">
+
+                <ui:repeat value="#{pgModalRespostaAcaoTransient.comunicacao.repostasPossiveis}" var="resp" >
+                    <div class="Container3" style="padding: 3px;">
+
+                        <SBAcaoNav:botaoRespostaModal
+                            resposta="#{resp}"
+                            armazenamentoAcaoExecutada="#{pgModalRespostaAcaoTransient.respostaSelecionada}"
+                            metodo="#{pgModalRespostaAcaoTransient.enviarRespostaEExecutarAcao()}"
+
+                            />
+
+                    </div>
 
 
-                    </ui:repeat>
-                </div>
+                </ui:repeat>
+
+
+
             </div>
         </h:form>
 

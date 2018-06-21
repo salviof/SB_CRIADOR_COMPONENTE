@@ -29,7 +29,7 @@
 
         <h:panelGroup style="display: flex;  justify-content: space-around;"  >
             <c:forEach items="#{cc.attrs.grupoCampos.campos}" var="camp"  varStatus="recnum" >
-                <h:panelGroup rendered="#{!camp.umCampoComLista}" styleClass="Container30 Responsive" style="position: relative;" >
+                <h:panelGroup rendered="#{!camp.umCampoComLista}" styleClass="Container3 Responsive" style="position: relative;" >
                     <SBInput:input registro="#{cc.attrs.registro.getCampoByNomeOuAnotacao(camp.caminhoSemNomeClasse)}"
                                    layout="#{cc.attrs.tipoVisualizacaoLabel}"
                                    desabilitarEdicao="#{cc.attrs.somenteLeitura}"

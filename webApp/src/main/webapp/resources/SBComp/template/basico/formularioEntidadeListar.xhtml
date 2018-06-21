@@ -5,17 +5,17 @@
                 xmlns:SBpaginaAtual="http://xmlns.jcp.org/jsf/composite/SBComp/composite/paginaAtualDeEntidade"
                 >
 
-    <div class="" style="">
+    <div class="" style="position: relative">
         <div class="CardTopic " style="margin-left: 10px;">
-            #{paginaAtual.infoPagina.acaoSelecionada.nomeAcao}
-            <i class="#{paginaAtual.infoPagina.acaoSelecionada.iconeAcao} Fs30 Fleft MarRight10"></i>
+            #{paginaAtual.infoPagina.comoFormularioWeb.acaoSelecionada.nomeAcao}
+            <i class="#{paginaAtual.infoPagina.comoFormularioWeb.acaoVinculada.iconeAcao} Fs30 Fleft MarRight10"></i>
             <br/>
-            <div class="EmptyBox10 ShowOnMobile"></div>
+            <div class="quebraBlocoComEspacoVertical10 somenteMobile"></div>
 
             <span class="CardSubTopic">
-                #{paginaAtual.infoPagina.acaoSelecionada.descricao}
+                #{paginaAtual.infoPagina.comoFormularioWeb.acaoSelecionada.descricao}sasd
             </span>
-            <h:panelGroup styleClass="Fright" style="margin-bottom:  ">
+            <h:panelGroup styleClass="Fright" style="position: relative  " layout="block">
                 <h:form rendered="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoNovoRegistro!=null}">
                     <SBpaginaAtual:botaoAcaoPersonalizada  acao="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoNovoRegistro}"
 
@@ -25,12 +25,12 @@
 
         </div>
 
-        <div class="EmptyBox10"></div>
+        <div class="quebraBlocoComEspacoVertical10"></div>
 
 
-
-        <ui:insert name="conteudo" />
-
+        <div class="Container12" >
+            <ui:insert name="conteudo" />
+        </div>
 
 
     </div>

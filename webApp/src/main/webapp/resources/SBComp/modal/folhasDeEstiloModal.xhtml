@@ -3,11 +3,13 @@
 
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-    <h:outputStylesheet  name="recursos/css/SBlayoutResponsivo.css" library="SBComp"  />
-
+    <h:outputStylesheet  name="recursos/css/SBlayoutResponsivo.css" rendered="#{sessaoAtualSBWP.telaUsuario.umMobile}" library="SBComp"  />
+    <h:outputStylesheet  name="recursos/css/SBlayoutResponsivoModalDesktop.css" rendered="#{!sessaoAtualSBWP.telaUsuario.umMobile}" library="SBComp"  />
+    <h:outputStylesheet  name="recursos/css/SBAcaoNavegacao.css" library="SBComp"  />
     <h:outputStylesheet  name="recursos/css/primeAjustes.css" library="SBComp"  />
     <h:outputScript      name="recursos/js/coreSuperBitsFrameWork.js" library="SBComp" />
     <h:outputScript      name="recursos/js/enterTabulacao.js" library="SBComp"  target="body"  />
+
 
 
     <h:outputStylesheet  name="recursos/css/SBInputs.css" library="SBComp" />

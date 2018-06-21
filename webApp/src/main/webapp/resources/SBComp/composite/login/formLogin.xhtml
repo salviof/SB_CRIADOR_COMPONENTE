@@ -28,21 +28,21 @@
 
 
 
-                <div class="EmptyBox20"></div>
+                <div class="quebraBlocoComEspacoVertical3"></div>
                 <div class="Card SoftGrayBack">
                     <p:inputText id="email" label="E-Mail"  requiredMessage="O E-Mail é obrigatório" validatorMessage="O e-mail não parece ser válido" placeholder="E-mail" required="true" value="#{controleDeSessaoWeb.usuarioLogar}"  styleClass="Wid90 TexAlCenter">
                         <f:validateLength minimum="4" />
                     </p:inputText>
                     <p:message for="email" />
-                    <div class="EmptyBox10"></div>
+                    <div class="quebraBlocoComEspacoVertical10"></div>
                     <p:inputText type="password" id="senha" placeholder="Senha" requiredMessage="A Senha é Obrigatória" required="true" value="#{controleDeSessaoWeb.senhaLogar}" styleClass="Wid90 TexAlCenter"/>
                     <p:message for="senha" />
-                    <div class="EmptyBox30"></div>
+                    <div class="quebraBlocoComEspacoVertical4"></div>
 
-                    <div class="EmptyBox30"></div>
+                    <div class="quebraBlocoComEspacoVertical4"></div>
                     <p:commandButton value="Entrar" icon="fa fa-sign-in"  actionListener="#{controleDeSessaoWeb.efetuarLogIn()}"
                                      update="@form" />
-                    <div class="EmptyBox10 ShowOnMobile"></div>
+                    <div class="quebraBlocoComEspacoVertical10 somenteMobile"></div>
                     <p:commandButton value="Enviar Senha" partialSubmit="true"
                                      process="#{pgUtil.gerarCaminhoCompletoID('email')} @this"
                                      icon="fa fa-exclamation"
