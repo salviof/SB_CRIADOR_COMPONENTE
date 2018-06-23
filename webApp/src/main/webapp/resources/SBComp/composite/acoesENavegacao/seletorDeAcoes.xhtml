@@ -86,7 +86,13 @@
                                         rendered="#{opc.acaoTemModal}"
                                         update="#{pgUtil.gerarCaminhoCompletoID(paginaAtual.infoPagina.idAreaExbicaoAcaoSelecionada)}"
                                         oncomplete="acoesPosAjax()"
+
                                         />
+                                <p:ajax event="dialogReturn"
+                                        listener="#{paginaAtual.infoPagina.comoFormularioWeb.selAcaoDeCtrParaUltimoFrm()}"
+                                        />
+
+
 
                                 <p:tooltip for="@parent" value="#{opc.nomeAcao}" trackMouse="true" />
                             </p:commandButton>
@@ -159,7 +165,7 @@
                                 <f:setPropertyActionListener
                                     target="#{cc.attrs.opcaoSelecionada}"
                                     value="#{opc}"/>
-                                <p:ajax event="dialogReturn" 
+                                <p:ajax event="dialogReturn"
                                         rendered="#{opc.acaoTemModal}"
                                         oncomplete="liberarBloqueios();"
                                         />

@@ -280,15 +280,15 @@ h1, h2, h3, h4, h5, h6{ margin:0px !important;
     .Container12{ width:100%; float:left;}
     .Container11{ width:100%; float:left;}
     .Container10{ width:100%; float:left;}
-    .Container9{ width:100%; float:left;}
-    .Container8{ width:100%; float:left;}
-    .Container7{ width:100%; float:left;}
-    .Container6{ width:100%; float:left;}
-    .Container5{ width:100%; float:left;}
-    .Container4{ width:90%; float:left;}
+    .Container9{ width:90%; float:left;}
+    .Container8{ width:80%; float:left;}
+    .Container7{ width:70%; float:left;}
+    .Container6{ width:60%; float:left;}
+    .Container5{ width:50%; float:left;}
+    .Container4{ width:40%; float:left;}
     .Container3{ width:30%!important; float:left!important; }
 
-    .Container2{ width:25%; float:left;}/*DE 22 PARA 25*/
+    .Container2{ width:20%; float:left;}/*DE 22 PARA 25*/
     .Container1{ width:10%; float:left;}
 
 }

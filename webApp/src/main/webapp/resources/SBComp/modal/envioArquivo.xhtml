@@ -1,10 +1,11 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<ui:composition
+    template="modalModeloPadrao.xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
+    <ui:define name="titulo">Encontre um #{pgModalArquivoDeEntidade.paginaVinculada.modalAtual.comoModalDados.campoSelecionado.label}  em seu computador </ui:define>
 
-
-    <h:head>
+    <ui:define name="conteudo" >
 
         <script>
             function enviarArquivo(slugEntidade, idNomeArquivo) {
@@ -12,14 +13,6 @@
                 PF('enviarArquivo').show();
             }
         </script>
-        <ui:include src="folhasDeEstiloModal.xhtml" />
-    </h:head>
-
-
-
-
-
-    <h:body>
         <h:form rendered="false">
             <p:remoteCommand actionListener="#{pgModalArquivoDeEntidade.fecharPaginaMatandoViewScoped()}"
                              name="fecharModal"
@@ -28,24 +21,35 @@
             <p:commandButton value="Teste Fechar" update="@form" oncomplete="fecharModal();" />
         </h:form>
 
-
         <h:form>
-            <div class="OrganizadorContainer" style="" >
+            <div class="Container12  "
+                 style="padding: 0;
+                 margin: 0;
+                 display: flex;
+                 height: 100px;
+                 align-items: center;
+                 flex-wrap: wrap;
+                 justify-content: center;"
 
-                <div class="Container6" style=" position: absolute;top: 40%;  height: 30%;" >
+                 >
+
+
+                <div class="" >
                     <p:fileUpload
                         mode="advanced"
                         label="Escolher #{pgModalArquivoDeEntidade.paginaVinculada.modalAtual.comoModalDados.campoSelecionado.label}"
                         fileUploadListener="#{pgModalArquivoDeEntidade.paginaVinculada.modalAtual.comoModalDados.enviarArquivoDoCampoUpload}"
                         auto="true"
+                        styleClass="estiloBotoaoEnviarArquivo"
                         />
                 </div>
             </div>
 
 
-
         </h:form>
 
-    </h:body>
+    </ui:define>
 
-</html>
+
+
+</ui:composition>

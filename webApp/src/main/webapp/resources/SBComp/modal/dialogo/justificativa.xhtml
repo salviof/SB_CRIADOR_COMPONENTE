@@ -1,69 +1,56 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
+    xmlns:SBInput="http://xmlns.jcp.org/jsf/composite/SBComp/composite/input"
+    xmlns:p="http://primefaces.org/ui"
+    template="../modalModeloComunicacao.xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:define name="titulo" >#{pgModalJustificativa.comunicacao.mensagem}  </ui:define>
+    <ui:define name="opcoes" >
+        <div class="ContainerIndent" >
+            <div class="Container12" >
+                <SBInput:input registro="#{pgModalJustificativa.campoJustificativa}"
+                               layout="#{layoutsComponenteSB.layoutCampo.superior}"
+                               />
+            </div>
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:SBInput="http://xmlns.jcp.org/jsf/composite/SBComp/composite/input"
-      xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-
-
-    <h:head>
-        <title>#{pgModalJustificativa.comunicacao.mensagem}</title>
-        <ui:include src="../folhasDeEstiloModal.xhtml" />
-    </h:head>
-
-    <h:body>
-        <h:form id="formulario">
-            <div class="ContainerIndent" >
-                <div class="Container12" >
-                    <SBInput:input registro="#{pgModalJustificativa.campoJustificativa}"
-                                   layout="#{layoutsComponenteSB.layoutCampo.superior}"
-                                   />
-                </div>
-
-                <div class="Container12" style="margin: 10px;" >
-                    <p:inputTextarea value="#{pgModalJustificativa.justificativa}"
-                                     style="width: 100%!important; "
-                                     placeholder="Justifique esta alteração"
-                                     required="true"
-                                     id="justificativa"
-                                     validatorMessage="Escreva mais sobre esssa justificativa"
-                                     requiredMessage="Você precisa justificar esta alteração."
-                                     >
-                        <f:validateLength minimum="10" />
-                    </p:inputTextarea>
-                    <p:message for="justificativa"/>
-                </div>
-
-
+            <div class="Container12" style="margin: 10px;" >
+                <p:inputTextarea value="#{pgModalJustificativa.justificativa}"
+                                 style="width: 100%!important; "
+                                 placeholder="Justifique esta alteração"
+                                 required="true"
+                                 id="justificativa"
+                                 validatorMessage="Escreva mais sobre esssa justificativa"
+                                 requiredMessage="Você precisa justificar esta alteração."
+                                 >
+                    <f:validateLength minimum="10" />
+                </p:inputTextarea>
+                <p:message for="justificativa"/>
             </div>
 
 
-            <br/>
+        </div>
 
 
-            <div class=" OrganizadorContainer" style="width: 100%">
-                <ui:repeat value="#{pgModalJustificativa.comunicacao.repostasPossiveis}" var="resp" >
-                    <div class="Container2">
-                        <SBAcaoNav:botaoRespostaModal
-                            resposta="#{resp}"
-                            armazenamentoAcaoExecutada="#{pgModalJustificativa.respostaSelecionada}"
-                            metodo="#{pgModalJustificativa.enviarRespostaEExecutarAcao()}"
-                            />
-                    </div>
-
-                </ui:repeat>
-            </div>
+        <br/>
 
 
+        <div class=" OrganizadorContainer" style="width: 100%">
+            <ui:repeat value="#{pgModalJustificativa.comunicacao.repostasPossiveis}" var="resp" >
+                <div class="Container2">
+                    <SBAcaoNav:botaoRespostaModal
+                        resposta="#{resp}"
+                        armazenamentoAcaoExecutada="#{pgModalJustificativa.respostaSelecionada}"
+                        metodo="#{pgModalJustificativa.enviarRespostaEExecutarAcao()}"
+                        />
+                </div>
 
-        </h:form>
+            </ui:repeat>
+        </div>
+
+    </ui:define>
+</ui:composition>
 
 
-
-
-    </h:body>
-
-</html>
