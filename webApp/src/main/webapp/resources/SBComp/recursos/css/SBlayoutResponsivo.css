@@ -77,7 +77,10 @@ h1, h2, h3, h4, h5, h6{ margin:0px !important;
 .quebraBlocoComEspacoVertical5{ display:block; width:100%; height:5px; overflow:hidden;}
 .quebraBlocoComEspacoVertical10{ display:block; width:100%; height:10px; overflow:hidden;}
 .quebraBlocoComEspacoVertical2{ display:block; width:100%; height:20px; overflow:hidden;}
+.quebraBlocoComEspacoVertical20{ display:block; width:100%; height:20px; overflow:hidden;}
 .quebraBlocoComEspacoVertical3{ display:block; width:100%; height:30px; overflow:hidden;}
+.quebraBlocoComEspacoVertical30{ display:block; width:100%; height:30px; overflow:hidden;}
+.quebraBlocoComEspacoVertical4{ display:block; width:100%; height:30px; overflow:hidden;}
 .quebraBlocoComEspacoVertical40{ display:block; width:100%; height:40px; overflow:hidden;}
 .quebraBlocoComEspacoVertical6{ display:block; width:100%; height:50px; overflow:hidden;}
 .quebraBlocoComEspacoVertical60{ display:block; width:100%; height:60px; overflow:hidden;}
@@ -294,7 +297,7 @@ h1, h2, h3, h4, h5, h6{ margin:0px !important;
 }
 
 /*DESKTOP_NORMAL*/
-@media (min-width:1200)  and (max-width:1800) {
+@media (min-width:1200px)  and (max-width:1800px) {
     .somenteMobile{ display:none;}
     .somenteDesktop{ display:inherit;}
     .ContainerIndent{padding:5px;}
@@ -336,7 +339,7 @@ h1, h2, h3, h4, h5, h6{ margin:0px !important;
 }
 
 /*DESKTOP_GRANDE*/
-@media (min-width:1801)  {
+@media (min-width:1801px)  {
     .somenteMobile{ display:none;}
     .somenteDesktop{ display:inherit;}
     .ContainerIndent{padding:6px;}

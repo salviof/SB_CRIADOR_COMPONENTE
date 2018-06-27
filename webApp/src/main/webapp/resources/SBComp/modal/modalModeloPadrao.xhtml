@@ -65,6 +65,9 @@
     </h:head>
 
     <h:body>
+        <h:panelGroup id="#{layoutIdsAreasConhecidas.AREA_MENSAGEM_INTERFACE}">
+            <p:growl class="mensagemGrowl"  widgetVar="#{layoutIdsAreasConhecidas.AREA_MENSAGEM_INTERFACE}"/>
+        </h:panelGroup>
         <h:form >
             <p:remoteCommand autoRun="false"
                              name="fechar"

@@ -6,21 +6,18 @@
     xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
 
-
         <ui:define name="input">
 
-            <p:outputLabel value="#{registro.valor}"
+            <p:outputLabel value="#{valor}"
                            rendered="#{desabilitarEdicao}"
                            />
             <p:inputNumber
-                disabled="#{desabilitarEdicao}"
                 rendered="#{!desabilitarEdicao}"
+                disabled="#{desabilitarEdicao}"
                 styleClass="campoResponsivo #{componente.classeCSS} TexAlCenter"
-
                 required="#{obrigatorio}"
                 value="#{valor}"
-                decimalPlaces="#{pgUtil.converterNuloEmZero(registo.numeroDeCasasDecimais)}"
-
+                decimalPlaces="#{pgUtil.converterNuloEmZero(numCasaDecimal)}"
                 thousandSeparator="."
                 decimalSeparator=","
                 validatorMessage="O valor informado no campo #{label} não é valido! "

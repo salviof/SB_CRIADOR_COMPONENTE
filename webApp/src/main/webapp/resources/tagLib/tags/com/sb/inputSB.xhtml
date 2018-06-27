@@ -3,8 +3,7 @@
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:sb="http://superbitsframework/ui"
     xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:f="http://xmlns.jcp.org/jsf/core"
-    xmlns:cc="http://xmlns.jcp.org/jsf/composite">
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:panelGroup  layout="block"   >
         <f:passThroughAttribute name="marcador" value="inputFormulario" />
         <sb:parametroMetodo nome="prMetodo" valor="#{metodoOnChange}" rendered="#{possuiMetodoOnChange}" />
@@ -14,7 +13,7 @@
         <ui:param name="registro" value="#{registro}" />
         <ui:param name="componente" value="#{registro.getComponenteDiferenciado(layoutCampoEspecial)}"  />
         <ui:param name="prefixoID" value="#{registro.prefixoUnicoParaIDHtml}"  />
-
+        <ui:param name="numCasaDecimal"  value="#{registro.numeroDeCasasDecimais}"/>
 
         <ui:param name="valor" value="#{registro.valor}"/>
         <ui:param name="obrigatorio" value="#{registro.obrigatorio}"/>
