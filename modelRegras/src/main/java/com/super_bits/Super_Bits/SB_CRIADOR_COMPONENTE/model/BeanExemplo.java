@@ -262,8 +262,21 @@ public class BeanExemplo
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.LC_CIDADE)
     private ItemCidade cidade;
+
     @InfoCampo(label = "Lista Pub do Bean", tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS, fabricaDeOpcoes = FabListBeanExemplos.class)
     private List<BeanExemplo> listasExemplo;
+
+    @InfoCampo(label = "Lista Pub 2", tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS, fabricaDeOpcoes = FabListBeanExemplos.class)
+    private List<BeanExemplo> listaDuasOpcoes;
+
+    @InfoCampo(label = "Lista Pub 1", tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS, fabricaDeOpcoes = FabListBeanExemplos.class)
+    private List<BeanExemplo> listaUmaOpcao;
+
+    @InfoCampo(label = "Lista Pub 8", tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS, fabricaDeOpcoes = FabListBeanExemplos.class)
+    private List<BeanExemplo> listaOitoOpcoes;
+
+    @InfoCampo(label = "Lista Pub 10", tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS, fabricaDeOpcoes = FabListBeanExemplos.class)
+    private List<BeanExemplo> listaDezOpcoes;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PARTICULARES, fabricaDeOpcoes = FabListBeanExemplos.class,
             label = "Lista Part. do Bean")
@@ -727,6 +740,46 @@ public class BeanExemplo
 
     public void setTemplateHtml(String templateHtml) {
         this.templateHtml = templateHtml;
+    }
+
+    public List<BeanExemplo> getListaDuasOpcoes() {
+        return listaDuasOpcoes;
+    }
+
+    public void setListaDuasOpcoes(List<BeanExemplo> listaDuasOpcoes) {
+        this.listaDuasOpcoes = listaDuasOpcoes;
+    }
+
+    public List<BeanExemplo> getListaUmaOpcao() {
+        return listaUmaOpcao;
+    }
+
+    public void setListaUmaOpcao(List<BeanExemplo> listaUmaOpcao) {
+        this.listaUmaOpcao = listaUmaOpcao;
+    }
+
+    public List<BeanExemplo> getListaOitoOpcoes() {
+        return listaOitoOpcoes;
+    }
+
+    public void setListaOitoOpcoes(List<BeanExemplo> listaOitoOpcoes) {
+        this.listaOitoOpcoes = listaOitoOpcoes;
+    }
+
+    public List<BeanExemplo> getListaDezOpcoes() {
+        return listaDezOpcoes;
+    }
+
+    public void setListaDezOpcoes(List<BeanExemplo> listaDezOpcoes) {
+        this.listaDezOpcoes = listaDezOpcoes;
+    }
+
+    public List<BeanExemplo> getListaParticular() {
+        return listaParticular;
+    }
+
+    public void setListaParticular(List<BeanExemplo> listaParticular) {
+        this.listaParticular = listaParticular;
     }
 
 }
