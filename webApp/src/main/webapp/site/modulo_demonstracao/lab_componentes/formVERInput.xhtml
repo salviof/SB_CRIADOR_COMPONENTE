@@ -65,17 +65,30 @@
                 <p:separator/>
                 <h:form id="formularioVisualizacaoInput">
 
-                    <p:inputText value="teste" required="true" />
+
+
+
+
+
+                    <p:commandButton value="Teste update form" update="@form" />
+                </h:form>
+
+
+
+
+                <h:form >
+
+
 
                     <sb:inputSB
 
                         registro="#{pgMapaComponentes.campoInstanciado}"
                         desabilitarEdicao="false"
-                        layoutCampo="#{layoutsComponenteSB.layoutCampo.superior}"
-                        possuiIDOnChange="true"
-                        idAtualizarOnChange="#{pgUtil.getNomeIdPainelGroupInputSB(component)}"
-                        possuiMetodoOnChange="false"
-                        layoutCampoEspecial="#{pgMapaComponentes.componenteSelecionado}"
+                        layoutCampo="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                        possuiIDOnChange="false"
+                        metodoOnChange="#{pgUtil.enviaMensagem(pgMapaComponentes.campoInstanciado.valor)}"
+                        possuiMetodoOnChange="true"
+
                         label="#{pgMapaComponentes.campoInstanciado.label}"
                         opcoes="#{pgMapaComponentes.campoInstanciado.listaDeOpcoes}"
                         atualizarFormOnChange="false"
@@ -87,9 +100,6 @@
 
                     <p:commandButton value="Teste update form" update="@form" />
                 </h:form>
-
-
-
 
             </c:catch>
             <c:if test = "${catchException != null}">

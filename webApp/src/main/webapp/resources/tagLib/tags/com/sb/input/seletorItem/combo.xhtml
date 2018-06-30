@@ -17,6 +17,7 @@
                                  disabled="#{desabilitarEdicao}"
                                  required="#{obrigatorio}"
                                  value="#{valor}"
+                                 immediate="true"
                                  validatorMessage="O valor informado no campo #{label} não é valido!"
                                  requiredMessage="O campo #{label} não foi informado!"
                                  autoWidth="true"
@@ -38,14 +39,14 @@
                     <c:if test="#{possuiMetodoOnChange}">
                         <p:ajax rendered="#{possuiMetodoOnChange}"
                                 global="true"
-                                event="valueChange"
+                                event="itemSelect"
                                 listener="#{prMetodo}"/>
                     </c:if>
 
                     <c:if test="#{atualizarFormOnChange}" >
                         <p:ajax
                             rendered="#{atualizarFormOnChange}"
-                            event="valueChange"
+                            event="itemSelect"
                             update="@form"/>
                     </c:if>
 
@@ -53,7 +54,7 @@
                         <p:ajax
                             rendered="#{possuiIDOnChange}"
                             global="true"
-                            event="valueChange"
+                            event="itemSelect"
                             update="#{pgUtil.gerarCaminhoCompletoID(idAtualizarOnChange)}"
                             process="@this" />
                     </c:if>

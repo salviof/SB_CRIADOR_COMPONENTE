@@ -26,7 +26,6 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemCidade
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemLocalizacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemUnidadeFederativa;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.FabTipoBeanSBGenerico;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemContatoCorporativo;
 import java.util.ArrayList;
 import java.util.Date;
@@ -95,6 +94,17 @@ public class BeanExemplo
             exemplo2.setNome("Bean Lista 2");
             exemplo2.setId(2);
             exemplo2.setEmail("teste2@teste.com");
+
+            List<BeanExemplo> lista10Itens = new ArrayList<>();
+            for (int i = 0; i < 10; i++) {
+                BeanExemplo itemBExemplo = new BeanExemplo(false);
+                itemBExemplo.setNome("Exemplo" + i);
+                itemBExemplo.setId(i);
+                itemBExemplo.setEmail(FabTipoAtributoObjeto.EMAIL.getValorAleatorioEmConformidade().toString());
+                lista10Itens.add(itemBExemplo);
+
+            }
+
             listasExemplo = new ArrayList<>();
             beanFilho = new BeanExemplo(false);
             beanFilho.setApelido("Apelido bean Filho");
@@ -263,20 +273,25 @@ public class BeanExemplo
     @InfoCampo(tipo = FabTipoAtributoObjeto.LC_CIDADE)
     private ItemCidade cidade;
 
-    @InfoCampo(label = "Lista Pub do Bean", tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS, fabricaDeOpcoes = FabListBeanExemplos.class)
+    @InfoCampo(label = "Lista Pub do Bean", tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS,
+            fabricaDeOpcoes = FabListBeanExemplos.class)
     private List<BeanExemplo> listasExemplo;
 
-    @InfoCampo(label = "Lista Pub 2", tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS, fabricaDeOpcoes = FabListBeanExemplos.class)
-    private List<BeanExemplo> listaDuasOpcoes;
+    @InfoCampo(label = "Lista Pub 2", tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA,
+            fabricaDeOpcoes = FabListBeanExemplosDuasOpcoes.class)
+    private BeanExemplo listaDuasOpcoes;
 
-    @InfoCampo(label = "Lista Pub 1", tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS, fabricaDeOpcoes = FabListBeanExemplos.class)
-    private List<BeanExemplo> listaUmaOpcao;
+    @InfoCampo(label = "Lista Pub 1", tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA,
+            fabricaDeOpcoes = FabListBeanExemplosUmaOpcao.class)
+    private BeanExemplo listaUmaOpcao;
 
-    @InfoCampo(label = "Lista Pub 8", tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS, fabricaDeOpcoes = FabListBeanExemplos.class)
-    private List<BeanExemplo> listaOitoOpcoes;
+    @InfoCampo(label = "Lista Pub 8", tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS,
+            fabricaDeOpcoes = FabListBeanOitoOpcoes.class)
+    private BeanExemplo listaOitoOpcoes;
 
-    @InfoCampo(label = "Lista Pub 10", tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS, fabricaDeOpcoes = FabListBeanExemplos.class)
-    private List<BeanExemplo> listaDezOpcoes;
+    @InfoCampo(label = "Lista Pub 10", tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA,
+            fabricaDeOpcoes = FabListBeanDez.class)
+    private BeanExemplo listaDezOpcoes;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PARTICULARES, fabricaDeOpcoes = FabListBeanExemplos.class,
             label = "Lista Part. do Bean")
@@ -742,44 +757,45 @@ public class BeanExemplo
         this.templateHtml = templateHtml;
     }
 
-    public List<BeanExemplo> getListaDuasOpcoes() {
-        return listaDuasOpcoes;
-    }
-
-    public void setListaDuasOpcoes(List<BeanExemplo> listaDuasOpcoes) {
-        this.listaDuasOpcoes = listaDuasOpcoes;
-    }
-
-    public List<BeanExemplo> getListaUmaOpcao() {
-        return listaUmaOpcao;
-    }
-
-    public void setListaUmaOpcao(List<BeanExemplo> listaUmaOpcao) {
-        this.listaUmaOpcao = listaUmaOpcao;
-    }
-
-    public List<BeanExemplo> getListaOitoOpcoes() {
-        return listaOitoOpcoes;
-    }
-
-    public void setListaOitoOpcoes(List<BeanExemplo> listaOitoOpcoes) {
-        this.listaOitoOpcoes = listaOitoOpcoes;
-    }
-
-    public List<BeanExemplo> getListaDezOpcoes() {
-        return listaDezOpcoes;
-    }
-
-    public void setListaDezOpcoes(List<BeanExemplo> listaDezOpcoes) {
-        this.listaDezOpcoes = listaDezOpcoes;
-    }
-
     public List<BeanExemplo> getListaParticular() {
         return listaParticular;
     }
 
     public void setListaParticular(List<BeanExemplo> listaParticular) {
         this.listaParticular = listaParticular;
+    }
+
+    public BeanExemplo getListaDuasOpcoes() {
+        return listaDuasOpcoes;
+    }
+
+    public void setListaDuasOpcoes(BeanExemplo listaDuasOpcoes) {
+        this.listaDuasOpcoes = listaDuasOpcoes;
+    }
+
+    public BeanExemplo getListaUmaOpcao() {
+        return listaUmaOpcao;
+    }
+
+    public void setListaUmaOpcao(BeanExemplo listaUmaOpcao) {
+        this.listaUmaOpcao = listaUmaOpcao;
+    }
+
+    public BeanExemplo getListaOitoOpcoes() {
+        return listaOitoOpcoes;
+    }
+
+    public void setListaOitoOpcoes(BeanExemplo listaOitoOpcoes) {
+        this.listaOitoOpcoes = listaOitoOpcoes;
+    }
+
+    public BeanExemplo getListaDezOpcoes() {
+        return listaDezOpcoes;
+    }
+
+    public void setListaDezOpcoes(BeanExemplo listaDezOpcoes) {
+        this.listaDezOpcoes = listaDezOpcoes;
+
     }
 
 }
