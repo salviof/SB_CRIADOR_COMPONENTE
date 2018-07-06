@@ -2,6 +2,8 @@ package com.super_bits;
 
 import com.super_bits.config.webPaginas.ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStringSlugs;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStringsCammelCase;
 import com.super_bits.modulosSB.SBCore.modulos.view.menu.MenusDaSessao;
 import com.super_bits.modulosSB.webPaginas.TratamentoDeErros.RelatorioTesteWebPaginas;
 import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.FabAcaoPaginasDoSistema;
@@ -23,7 +25,9 @@ public class TesteConformidade extends RelatorioTesteWebPaginas {
     public void testar() {
         try {
 
-            System.out.println(FabAcaoPaginasDoSistema.PAGINA_PESQUISA_AVANCADA_MB_PADRAO.getRegistro().getNomeUnico());
+            System.out.println(UtilSBCoreStringsCammelCase.getCamelByTextoPrimeiraLetraMaiuscula(FabAcaoPaginasDoSistema.PAGINA_PESQUISA_AVANCADA_MB_PADRAO.toString()));;
+            System.out.println(UtilSBCoreStringsCammelCase.getCamelByTextoPrimeiraLetraMaiusculaSemCaracterEspecial(FabAcaoPaginasDoSistema.PAGINA_PESQUISA_AVANCADA_MB_PADRAO.toString()));;
+
             gerarMangedBeansAcessoAcoes();
 
             SBCore.getControleDeSessao().logarEmailESenha("root@superBits.com", "senh@Screta");

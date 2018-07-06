@@ -204,5 +204,11 @@ and open the template in the editor.
 
 }
 
+.autoCompleteResponsivo {
+    width: 100%!important;
+}
 
+.autoCompleteResponsivo input{
+    width: 100%!important;
+}
 

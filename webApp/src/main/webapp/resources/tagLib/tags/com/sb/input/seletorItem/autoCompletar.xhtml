@@ -14,82 +14,87 @@
 
             <p:outputLabel value="#{valor.nome}" rendered="#{desabilitarEdicao}" />
 
+            <h:panelGrid columns="3" style="width: 100%;" columnClasses="colunaResponsiva,tamanhoIconePequeno,tamanhoIconePequeno" rendered="#{!desabilitarEdicao}" >
+                <h:panelGroup >
+                    <p:autoComplete
 
-            <h:panelGroup layout="span"  transient="#{registro.umItemDeUmaLista}"
-                          rendered="#{registro.umItemDeUmaLista and !desabilitarEdicao}"  >
+                        styleClass="autoCompleteResponsivo"
+                        rendered="#{registro.umItemDeUmaLista}"
+                        converter="conversorGenerico"
+                        itemLabel="#{item.nome}"
 
-                <p:autoComplete
-                    styleClass="inputTexto"
-                    rendered="#{registro.umItemDeUmaLista}"
-                    converter="conversorGenerico"
-                    itemLabel="#{item.nome}"
-                    itemValue="#{item}"
-                    forceSelection="true"
-                    emptyMessage="Nada Selecionado"
-                    placeholder="Pesquise por um #{label}"
-                    var="item"
-                    value="#{registro.valor}"
-                    minQueryLength="4"
-                    queryDelay="300"
-                    completeMethod="#{registro.comoCampoSeltorItem.filtrarPorAutoComplet}"
-                    >
-                    <c:if test="#{possuiMetodoOnChange}">
-                        <p:ajax rendered="#{possuiMetodoOnChange}"
+                        itemValue="#{item}"
+                        forceSelection="true"
+                        emptyMessage="Nada Selecionado"
+                        placeholder="Pesquise por um #{label}"
+                        var="item"
+                        value="#{registro.valor}"
+                        minQueryLength="4"
+                        queryDelay="300"
+                        completeMethod="#{registro.comoCampoSeltorItem.filtrarPorAutoComplet}"
+                        >
+                        <c:if test="#{possuiMetodoOnChange}">
+                            <p:ajax rendered="#{possuiMetodoOnChange}"
+                                    global="true"
+                                    event="itemSelect"
+                                    listener="#{prMetodo}"/>
+                        </c:if>
+                        <c:if test="#{possuiIDOnChange}">
+                            <p:ajax
+                                rendered="#{possuiIDOnChange}"
                                 global="true"
                                 event="itemSelect"
-                                listener="#{prMetodo}"/>
-                    </c:if>
-                    <c:if test="#{possuiIDOnChange}">
-                        <p:ajax
-                            rendered="#{possuiIDOnChange}"
-                            global="true"
-                            event="itemSelect"
-                            listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}"
-                            />
-                    </c:if>
+                                listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}"
+                                />
+                        </c:if>
 
-                    <c:forEach var="campo" rendered="#{registro.umItemDeUmaLista}" items="#{registro.comoCampoSeltorItem.grupoCampoExibicao.campos}">
-                        <p:column>
-                            #{item.getCampoByNomeOuAnotacao(campo.caminhoSemNomeClasse).valorTextoFormatado}
-                        </p:column>
+                        <c:forEach var="campo" rendered="#{registro.umItemDeUmaLista}" items="#{registro.comoCampoSeltorItem.grupoCampoExibicao.campos}">
+                            <p:column>
+                                #{item.getCampoByNomeOuAnotacao(campo.caminhoSemNomeClasse).valorTextoFormatado}
+                            </p:column>
 
-                    </c:forEach>
+                        </c:forEach>
 
 
-                </p:autoComplete>
-                <p:commandButton  icon="#{acoesPaginas_do_Sistema_PAGINA_PESQUISA_AVANCADA_MB_PADRAO.pagina_pesquisa_avancada_mb_padrao.icone}"
-                                  rendered="#{!desabilitarEdicao}"
-                                  actionListener="#{pgUtil.exibirModalImportacaoPesquisaAvancada()}"
-                                  partialSubmit="true"
-                                  style="position: absolute; right: 0px;"
+                    </p:autoComplete>
+                </h:panelGroup>
+                <h:panelGroup >
 
-                                  process="@this"
-                                  >
+                    <p:commandButton
+                        icon="#{acoesPaginasDoSistema_PaginaPesquisaAvancadaMbPadrao.paginaPesquisaAvancadaMbPadrao.icone}"
+                        rendered="#{!desabilitarEdicao}"
+                        actionListener="#{pgUtil.exibirModalImportacaoPesquisaAvancada()}"
+                        partialSubmit="true"
+                        process="@this"
+                        >
 
 
-                    <p:ajax event="dialogReturn"
-                            update="@form"
-                            listener="#{pgUtil.atualizaTelaPorID(pgUtil.getIdDoComponenteAtual(component))}" />
+                        <p:ajax event="dialogReturn"
+                                update="@form"
+                                listener="#{pgUtil.atualizaTelaPorID(pgUtil.getIdDoComponenteAtual(component))}" />
 
-                    <c:if test="#{possuiIDOnChange}" >
-                        <p:ajax
-                            rendered="#{possuiIDOnChange}"
-                            global="true"
-                            event="dialogReturn"
-                            listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}"
-                            />
-                    </c:if>
-                    <c:if test="#{possuiMetodoOnChange}">
-                        <p:ajax rendered="#{possuiMetodoOnChange}"
+                        <c:if test="#{possuiIDOnChange}" >
+                            <p:ajax
+                                rendered="#{possuiIDOnChange}"
                                 global="true"
                                 event="dialogReturn"
-                                listener="#{prMetodo}"/>
-                    </c:if>
-                    <f:setPropertyActionListener target="#{paginaAtual.infoPagina.comoFormularioWeb.campoInstSelecionado}"
-                                                 value="#{registro}" />
+                                listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}"
+                                />
+                        </c:if>
+                        <c:if test="#{possuiMetodoOnChange}">
+                            <p:ajax rendered="#{possuiMetodoOnChange}"
+                                    global="true"
+                                    event="dialogReturn"
+                                    listener="#{prMetodo}"/>
+                        </c:if>
+                        <f:setPropertyActionListener target="#{paginaAtual.infoPagina.comoFormularioWeb.campoInstSelecionado}"
+                                                     value="#{registro}" />
 
-                </p:commandButton>
-            </h:panelGroup>
+                    </p:commandButton>
+                </h:panelGroup>
+
+            </h:panelGrid>
+
 
 
         </ui:define>
