@@ -59,8 +59,10 @@
                 <h:outputText />
             </f:facet>
         </p:ajaxStatus>
-        <ui:include src="scriptFinal.xhtml" />
+        <h:panelGroup rendered="false" >
 
+            <ui:include src="scriptFinal.xhtml" rendered="false" />
+        </h:panelGroup>
     </h:body>
 
 </html>

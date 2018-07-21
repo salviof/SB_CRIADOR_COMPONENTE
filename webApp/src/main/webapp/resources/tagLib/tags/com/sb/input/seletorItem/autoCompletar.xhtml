@@ -48,12 +48,12 @@
                                 />
                         </c:if>
 
-                        <c:forEach var="campo" rendered="#{registro.umItemDeUmaLista}" items="#{registro.comoCampoSeltorItem.grupoCampoExibicao.campos}">
+                        <ui:repeat var="campo" rendered="#{registro.umItemDeUmaLista}" value="#{registro.comoCampoSeltorItem.grupoCampoExibicao.campos}">
                             <p:column>
                                 #{item.getCampoByNomeOuAnotacao(campo.caminhoSemNomeClasse).valorTextoFormatado}
                             </p:column>
 
-                        </c:forEach>
+                        </ui:repeat>>
 
 
                     </p:autoComplete>

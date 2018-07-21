@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 
     <h:head >
@@ -97,9 +98,9 @@
                     <p:panelGrid columns="2">
                         <p:outputLabel value="Ações De Registros:" rendered="#{pgModalSBJSF.paginaVinculada.umaPaginaGestaoEntidade}"/>
                         <h:panelGroup >
-                            <c:forEach var="acao" items="#{pgModalSBJSF.paginaVinculada.comoFormularioWeb.comoPaginaEntidade.acoesRegistros}" >
-                                <p:outputLabel value="#{acao.nomeUnico}" /> <br/>
-                            </c:forEach>
+                            <ui:repeat var="subAcaoGestao" value="#{pgModalSBJSF.paginaVinculada.comoFormularioWeb.comoPaginaEntidade.acoesRegistros}" >
+                                <p:outputLabel value="#{subAcaoGestao.nomeUnico}" /> <br/>
+                            </ui:repeat>
                         </h:panelGroup>
                     </p:panelGrid>
                 </p:tab>

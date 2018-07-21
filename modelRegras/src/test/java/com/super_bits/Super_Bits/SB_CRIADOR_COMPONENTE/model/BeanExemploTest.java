@@ -43,8 +43,11 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
             System.out.println("getId");
             BeanExemplo beanExemplo = new BeanExemplo();
 
-            ItfCampoInstanciado cpComplemento = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("localizacao.complemento");
+            ItfCampoInstanciado cpComplemento = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("localizacao.bairro");
             System.out.println(cpComplemento.getLabel());
+            cpComplemento.getComoEnumFabricaObjeto();
+            System.out.println(cpComplemento.getComponenteVisualPadrao().getXhtmlJSF());
+            System.out.println(cpComplemento.getComponenteDiferenciado(null).getXhtmlJSF());
 
             ItfCampoInstanciado cpqtd = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("quantidade");
             System.out.println(cpqtd.getNomeClasseOrigemAtributo());

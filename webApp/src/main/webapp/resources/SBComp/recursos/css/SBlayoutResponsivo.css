@@ -96,11 +96,9 @@ h1, h2, h3, h4, h5, h6{ margin:0px !important;
 /* MOBILE_GERACAO1 - MAX UMA COLUNA*/
 /*Visibilidade por plataforma*/
 
-.somenteMobile{ display:none;}
-.somenteDesktop{ display:inherit;}
 
 
-@media (min-width:0px)  and (max-width:500pxpx) {
+@media (min-width:0px)  and (max-width:500px) {
     .somenteMobile{display:inherit; opacity:1;}
     .somenteDesktop{display:none!important; opacity:0;}
     .ContainerIndent{padding:1px;}
@@ -399,7 +397,6 @@ h1, h2, h3, h4, h5, h6{ margin:0px !important;
 }
 
 .OrganizadorContainerExpandido{
-
     display: flex;
     justify-content: space-between;
     display: -webkit-flex; /* Safari */

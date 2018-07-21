@@ -1,0 +1,7 @@
+#Prorpiedades do módulo Class armazanada em
+#Thu Jul 12 09:35:32 BRT 2018
+SenhaUsuarioComentarioPadrao=senhaUsuarioPadrao
+UsuarioComentarioPadrao=usuarioComentario@jira
+UrlJira=http\://meuJiraexemplo.com.br
+UrlWebservice=http\://meuwebServiceComunicaJira.com.br
+PortaWebservice=666
