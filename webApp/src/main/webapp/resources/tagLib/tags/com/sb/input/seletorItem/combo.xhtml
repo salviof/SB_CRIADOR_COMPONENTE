@@ -51,6 +51,13 @@
                             update="@form"/>
                     </c:if>
 
+                    <c:if test="#{atualizarGrupoOnChange}" >
+                        <p:ajax
+                            rendered="#{atualizarGrupoOnChange}"
+                            event="itemSelect"
+                            update="#{pgUtil.getNomeIdPainelDoComponente(component)}"/>
+                    </c:if>
+
                     <c:if test="#{possuiIDOnChange}" >
                         <p:ajax
                             rendered="#{possuiIDOnChange}"

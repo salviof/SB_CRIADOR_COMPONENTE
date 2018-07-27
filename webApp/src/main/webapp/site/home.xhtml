@@ -4,6 +4,7 @@
     xmlns:p="http://primefaces.org/ui"
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
     xmlns:SBAcaoNav="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
+    xmlns:SBObjeto="http://xmlns.jcp.org/jsf/composite/SBComp/composite/objetos"
     xmlns:SBInput="http://xmlns.jcp.org/jsf/composite/SBComp/composite/input"
     xmlns:SBLogin="http://xmlns.jcp.org/jsf/composite/SBComp/composite/login"
     xmlns:SBSeletor="http://xmlns.jcp.org/jsf/composite/SBComp/composite/seletores"
@@ -22,7 +23,7 @@
         </ui:define>
 
         <ui:define name="#{layoutsPaginas.modeloGeral.areaPrincipal}">
-
+            <SBObjeto:imagemPequena item="#{sessaoAtualSBWP.usuario}"  somenteLeitura="false"/>
             <h:form rendered="false">
                 <SBInput:inputComControlador registro="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('quantidade')}"
                                              metodoAdicionar="#{pgUtil.mensagemInfo('Mais')}"
