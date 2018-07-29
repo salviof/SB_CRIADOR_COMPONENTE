@@ -25,9 +25,10 @@ function scrollEmCampoNaoValidado() {
             $('html, body').animate({
                 scrollTop: elementoErro.offset().top - 200
             });
+            return true;
         }
 
-        return true;
+        return false;
     } catch (err) {
 
     }
