@@ -7,7 +7,9 @@
 
 
     <h:panelGrid columns="2"  class="inputCampo"
-                 columnClasses="#{layoutsComponenteSB.layoutCampo.superior.getEstiloColuna(desabilitarEdicao)}">
+                 columnClasses="#{layoutsComponenteSB.layoutCampo.superior.getEstiloColuna(desabilitarEdicao)}"
+
+                 >
         <p:outputLabel  value="#{label}"
                         for="#{pgUtil.getNomeIdComponenteInput(component)}"  />
         <h:panelGroup >
