@@ -10,11 +10,13 @@
     <ui:define name="titulo" >#{pgModalJustificativa.comunicacao.mensagem}  </ui:define>
     <ui:define name="opcoes" >
         <div class="ContainerIndent" >
-            <div class="Container12" >
-                <SBInput:input registro="#{pgModalJustificativa.campoJustificativa}"
-                               layout="#{layoutsComponenteSB.layoutCampo.superior}"
-                               />
-            </div>
+            <h:panelGroup rendered="#{pgModalJustificativa.campoJustificativa != null}">
+                <div class="Container12" >
+                    <SBInput:input registro="#{pgModalJustificativa.campoJustificativa}"
+                                   layout="#{layoutsComponenteSB.layoutCampo.superior}"
+                                   />
+                </div>
+            </h:panelGroup>
 
             <div class="Container12" style="margin: 10px;" >
                 <p:inputTextarea value="#{pgModalJustificativa.justificativa}"
