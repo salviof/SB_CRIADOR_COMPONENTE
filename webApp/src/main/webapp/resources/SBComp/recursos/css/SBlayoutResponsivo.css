@@ -414,3 +414,12 @@ h1, h2, h3, h4, h5, h6{ margin:0px !important;
     display: flex;
     flex-wrap: wrap;
 }
+
+.TextoEmLinhasForcar {
+
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    word-wrap: break-word;      /* IE */
+}

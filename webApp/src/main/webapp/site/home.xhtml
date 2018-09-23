@@ -64,6 +64,15 @@
                 </h:form>
 
             </h:panelGroup>
+            <h:form>
+                <SBAcaoNav:seletorDeAcoes opcaoSelecionada="#{pgHomeCriadorComponente.acaoSelecionada}"
+
+                                          metodo="#{pgHomeCriadorComponente.executarAcaoSelecionada()}"
+                                          opcoes="#{acoesAdminTools_BeanExemploMb.beanExemploMb.comoGestaoEntidade.acoesFormulario}"
+                                          visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.gigante}"
+
+                                          />
+            </h:form>
 
 
             <h:panelGroup  >
@@ -78,11 +87,13 @@
                 </h:form>
 
 
-                <SBAcaoNav:linkDeAcao  acao="#{acoesmoduloDemonstracao_labComponentesMbGerenciar.lab_componentes_mb_gerenciar}"
-                                       tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"         />
+                <SBAcaoNav:linkDeAcao  acao="#{acoesAdminTools_LabComponentesMbGerenciar.labComponentesMbGerenciar}"
+                                       tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
+
+                                       />
 
 
-                <SBAcaoNav:linkDeAcao acao="#{acoesmoduloDemonstracao_beanExemploMb.bean_exemplo_mb}"
+                <SBAcaoNav:linkDeAcao acao="#{acoesAdminTools_BeanExemploMb.beanExemploMb}"
                                       tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"    />
 
             </h:panelGroup>
