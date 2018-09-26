@@ -44,28 +44,27 @@
 
 
         <h:panelGroup  rendered="#{!cc.attrs.somenteLeitura}">
-            <h:panelGroup rendered="#{!cc.attrs.somenteLeitura}" >
-                <p:fragment>
+
+
+            <h:panelGroup id="subForm" styleClass="Container12 Responsive" >
+                <h:panelGroup  styleClass="invisivel" layout="block" >
+
                     <p:commandButton
                         id="botaoRemoverSubform"
+                        process="@parent"
                         action="#{cc.attrs.registro.comoSubItens.subItens.removerItemSelecionadoPeloIndice() }"
                         update="#{pgUtil.makeCaminhoCompletoID('subForm')}"
                         styleClass="invisivel"
-
-
-
-
                         />
-                    <p:inputText  id="indiceSubformulario"  styleClass="invisivel"  />
-                </p:fragment>
+                    <h:inputText  id="indiceSubformulario"  styleClass="invisivel"  />
 
 
-            </h:panelGroup>
+                    invisivel
+                </h:panelGroup>
 
-            <h:panelGroup id="subForm" styleClass="Container12 Responsive" >
-
-                <h:panelGroup styleClass="Fright" >
-
+                AQUI
+                <h:panelGroup styleClass="Fright" layout="block" >
+                    teste
                     <p:commandButton
 
                         actionListener="#{cc.attrs.registro.comoSubItens.subItens.adicionarItem()}"
@@ -112,6 +111,7 @@
                                 </ui:repeat>
                                 <td class="col-md-1" >
                                     <p:commandLink
+                                        process="@this"
                                         rendered="#{!cc.attrs.somenteLeitura}"
                                         onclick="modificarIntputEclicar('#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('botaoRemoverSubform')}', '#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('indiceSubformulario')}', '#{infoRec.index}')">
                                         <i class="fa fa-times Fs30" aria-hidden="true"></i>

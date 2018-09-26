@@ -106,9 +106,25 @@ function baixarArquivo(fileURL, fileName) {
 }
 
 function modificarIntputEclicar(idBotao, idInputEnvio, valor) {
-    document.getElementById(idInputEnvio).value = valor;
-    document.getElementById(idBotao).click();
+    try {
+        elementos = idInputEnvio.split(" ");
 
+        elementoCodigo = document.getElementById(elementos[0]);
+        if (elementoCodigo === null) {
+            elementoCodigo = document.getElementById(elementos[1]);
+        }
+
+
+        elementoCodigo.value = valor;
+        botoes = idBotao.split(" ");
+        botao = document.getElementById(botoes[0]);
+        if (botao === null) {
+            botao = document.getElementById(botoes[1]);
+        }
+        botao.click();
+    } catch (t) {
+        console.log(t);
+    }
 }
 
 function copiarValoresCKEditor(idOrigem, idDestino) {
