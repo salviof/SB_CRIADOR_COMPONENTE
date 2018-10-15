@@ -12,7 +12,7 @@
                 onfocus="mesclarOnChangeComDelay(this.id)"
                 rendered="#{!desabilitarEdicao}"
                 styleClass="campoResponsivo  TexAlCenter #{componente.classeCSS}"
-                required="false"
+                required="#{obrigatorio}"
                 value="#{valor}"
                 validatorMessage="O valor informado no campo #{label} não é valido! "
                 requiredMessage="O campo #{label} não foi informado! "
