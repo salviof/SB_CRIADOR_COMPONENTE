@@ -36,7 +36,7 @@
         <h:panelGroup >
 
             <c:set var="layoutListagem" value="#{pgUtilLayout.gerarLayoutGrupoCampo(cc.attrs.grupoCampos)}" />
-            <p:fieldset >
+            <p:fieldset rendered="#{cc.attrs.registro.valor !=null and cc.attrs.registro.umValorComLista}" >
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -50,28 +50,32 @@
                     <tbody>
 
 
-                        <c:forEach items="#{cc.attrs.registro.valor}" var="item" varStatus="infoRec"  >
+                        <ui:repeat value="#{cc.attrs.registro.valor}" var="item" rendered="#{cc.attrs.registro.umValorComLista}" varStatus="infoRec"  >
                             <tr scope="row">
-                                <c:forEach items="#{cc.attrs.grupoCampos.campos}" var="campoColonaLeitura"  >
-                                    <th>#{campoColonaLeitura.label}</th>
+                                <ui:repeat value="#{cc.attrs.grupoCampos.campos}"  var="campoColonaLeitura"  >
+
 
                                     <td class="col-md-1 ColunaPequenaBotstrap">
 
                                         <sb:inputSB
-                                            registro="#{cc.attrs.registro}"
+                                            registro="#{item.getCampoInstanciadoByNomeOuAnotacao(campoColonaLeitura.caminhoCampo.caminhoRelativoItemSublista)}"
                                             desabilitarEdicao="true"
-                                            layoutCampo="#{layoutsComponenteSB.layoutCampo.semLabel}"
+                                            layoutCampo="#{layoutsComponenteSB.layoutCampo.resumido}"
                                             possuiIDOnChange="false"
                                             possuiMetodoOnChange="false"
                                             label=""
+                                            atualizarFormOnChange="false"
+                                            atualizarGrupoOnChange="false"
+                                            obrigatorio="false"
+
                                             opcoes="#{cc.attrs.registro.listaDeOpcoes}"
                                             />
                                     </td>
 
-                                </c:forEach>
+                                </ui:repeat>
 
                             </tr>
-                        </c:forEach>
+                        </ui:repeat>
                     </tbody>
 
                 </table>

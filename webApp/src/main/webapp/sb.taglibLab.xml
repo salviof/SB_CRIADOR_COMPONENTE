@@ -838,6 +838,7 @@
     <tag>
         <tag-name>inputSBQuantidade</tag-name>
         <source>resources/tagLib/tags/com/sb/input/campo/quantidade.xhtml</source>
+       
     </tag>
 
 

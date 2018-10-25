@@ -18,6 +18,9 @@
                 requiredMessage="O campo #{label} não foi informado! "
                 maxlength="#{valorMaximo}"
                 >
+                <f:passThroughAttribute name="caminhoCampo" value="#{registro.nomeCompostoIdentificador}" />
+                <f:passThroughAttribute name="dominio" value="#{registro.nomeClasseOrigemAtributo}" />
+                <f:passThroughAttribute name="campoInstanciado" value="#{registro}" />
                 <p:clientValidator />
                 <f:validator  validatorId="org.super_bits.view.validadores.generico"/>
                 <c:if test="#{atualizarGrupoOnChange}" >
