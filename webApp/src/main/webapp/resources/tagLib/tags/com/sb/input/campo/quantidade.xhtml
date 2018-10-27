@@ -28,7 +28,9 @@
                 <f:passThroughAttribute name="dominio" value="#{registro.nomeClasseOrigemAtributo}" />
                 <f:passThroughAttribute name="campoInstanciado" value="#{registro}" />
                 <p:clientValidator/>
-                <f:validator  validatorId="org.super_bits.view.validadores.generico"/>
+                <f:validator  validatorId="org.super_bits.view.validadores.generico"
+                              for="@parent"
+                              />
 
                 <c:if test="#{possuiMetodoOnChange}">
                     <p:ajax rendered="#{possuiMetodoOnChange}"
@@ -49,6 +51,7 @@
                 </c:if>
 
             </p:inputNumber>
+
 
 
         </ui:define>

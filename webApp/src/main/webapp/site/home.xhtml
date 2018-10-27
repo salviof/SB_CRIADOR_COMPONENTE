@@ -32,8 +32,11 @@
                                              metodoExecutarAoAlterarValor="#{pgUtil.mensagemInfo('Atualizou')}"
                                              />
             </h:form>
-
-
+            <h:form>
+                <SBInput:input registro="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('quantidade')}"
+                               idAtualizarOnChange="@this"
+                               />
+            </h:form>
 
 
             <SBLogin:formLogin rendered="true" />

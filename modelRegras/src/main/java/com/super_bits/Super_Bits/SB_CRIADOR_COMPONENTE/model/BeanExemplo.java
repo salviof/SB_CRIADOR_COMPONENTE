@@ -33,6 +33,7 @@ import java.util.List;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -196,11 +197,13 @@ public class BeanExemplo
     private String senha;
 
     @NotNull
-    @InfoCampo(tipo = FabTipoAtributoObjeto.QUANTIDADE, label = "Quantidade")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.QUANTIDADE, label = "Quantidade", valorMinimo = 3)
+    @Min(3)
     private int quantidade;
 
     @NotNull
     @InfoCampo(tipo = FabTipoAtributoObjeto.PERCENTUAL, label = "Percentual")
+    @Min(3)
     private int porcentagem;
 
     @NotNull
