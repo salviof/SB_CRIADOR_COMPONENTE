@@ -5,9 +5,9 @@
  */
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp;
 
-
 import com.super_bits.configSBFW.acessos.UtilSB_CRIADOR_COMPONENTEGlobalVar;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.ConfiguradorCoreDeProjetoJarAbstrato;
+import com.super_bits.modulosSB.SBCore.ConfigGeral.ConfiguradorCoreModelSemPersistencia;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.ItfConfiguracaoCoreCustomizavel;
 
 /**
@@ -24,7 +24,7 @@ import com.super_bits.modulosSB.SBCore.ConfigGeral.ItfConfiguracaoCoreCustomizav
  *
  * @author salvioF
  */
-public class ConfiguradorCoreSB_CRIADOR_COMPONENTE extends ConfiguradorCoreDeProjetoJarAbstrato {
+public class ConfiguradorCoreSB_CRIADOR_COMPONENTE extends ConfiguradorCoreModelSemPersistencia {
 
     /**
      *
@@ -46,8 +46,7 @@ public class ConfiguradorCoreSB_CRIADOR_COMPONENTE extends ConfiguradorCoreDePro
      */
     @Override
     public void defineFabricasDeACao(ItfConfiguracaoCoreCustomizavel pConfig) {
-
-        
+        super.defineClassesBasicas(pConfig);
         pConfig.setFabricaDeAcoes(UtilSB_CRIADOR_COMPONENTEGlobalVar.pAcoesDoSistema());
     }
 

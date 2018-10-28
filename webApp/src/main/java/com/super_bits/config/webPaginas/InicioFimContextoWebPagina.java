@@ -30,12 +30,9 @@ public class InicioFimContextoWebPagina implements ItfInicioFimAppWP {
         SBWebPaginas.configurar(new ConfigWPSB_CRIADOR_COMPONENTE());
         UtilSB_CRIADOR_COMPONENTEGlobalVar.adicionarObjetosEstaticosProjeto();
         SBCore.getCentralDeArquivos().setCentralDePermissao(new CentralPermissaoArquivoSBComponente());
-        MapaObjetosProjetoAtual.adcionarObjeto(TipoAtributoObjetoSB.class);
-        MapaObjetosProjetoAtual.adcionarObjeto(UsuarioAnonimo.class);
-        MapaObjetosProjetoAtual.adcionarObjeto(UsuarioSistemaRoot.class);
+
         //  SBCore.getCentralDeComunicacao().gerarComunicacaoEntre_Usuairos(FabTipoComunicacao.NOTIFICAR,
         //         pRemetente, pDestinatario, mensagem, tiposTransporte);
-
         //         new UsuarioSistemaRoot(), "Olá Root", FabTipoTransporteComunicacao.INTRANET_MENU);
     }
 

@@ -26,7 +26,10 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemCidade
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemLocalizacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemUnidadeFederativa;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.calculos.InfoCampoValorLogico;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.listas.InfoCampoListaDinamica;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemContatoCorporativo;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.validador.InfoCampoValidadorLogico;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -195,6 +198,17 @@ public class BeanExemplo
     @InfoCampo(tipo = FabTipoAtributoObjeto.SENHA, label = "Senha")
     @NotNull
     private String senha;
+
+    @InfoCampoValidadorLogico(descricao = "Valida como Par, caso não seja contorna o valor anterior")
+    private int validacaoLogicaApenasPar;
+    @InfoCampoValidadorLogico(descricao = "")
+    private String validacaoLogicaApenasGauleses;
+
+    @InfoCampoValorLogico(nomeCalculo = "teste")
+    private BeanExemplo beanAleatorio;
+
+    @InfoCampoListaDinamica
+    private List<BeanExemplo> listaAleatoria;
 
     @NotNull
     @InfoCampo(tipo = FabTipoAtributoObjeto.QUANTIDADE, label = "Quantidade", valorMinimo = 3)
