@@ -19,6 +19,7 @@ public class TesteGeradorAnotacoesItfModelTest extends TesteSB_CRIADOR_COMPONENT
     @Test
     public void testeValidaCampo() {
         gerarCodigoModelProjeto();
+
         BeanExemplo entidadeTeste = new BeanExemplo();
         try {
             ItfCampoInstanciado campo = entidadeTeste.getCampoInstanciadoByNomeOuAnotacao("validacaoLogicaApenasPar");

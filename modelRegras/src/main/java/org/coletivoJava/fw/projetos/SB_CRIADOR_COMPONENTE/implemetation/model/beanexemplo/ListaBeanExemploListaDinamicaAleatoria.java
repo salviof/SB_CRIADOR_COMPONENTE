@@ -1,4 +1,4 @@
-package org.coletivoJava.fw.projetos.SB_CRIADOR_COMPONENTE.implemetation.model.org.coletivojava.fw.projetos.sb_criador_componente.implemetation.model.beanexemplo;
+package org.coletivoJava.fw.projetos.SB_CRIADOR_COMPONENTE.implemetation.model.beanexemplo;
 
 import com.super_bits.modulosSB.SBCore.modulos.objetos.listas.ListaDinamicaGenerica;
 import org.coletivoJava.fw.projetos.SB_CRIADOR_COMPONENTE.api.model.beanexemplo.ListaBeanExemplo;
