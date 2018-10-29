@@ -5,12 +5,12 @@ import org.coletivoJava.fw.projetos.SB_CRIADOR_COMPONENTE.api.model.beanexemplo.
 import org.coletivoJava.fw.projetos.SB_CRIADOR_COMPONENTE.api.model.beanexemplo.ValoresLogicosBeanExemplo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 
-@ValorLogicoBeanExemplo(calculo = ValoresLogicosBeanExemplo.BEANALEATORIO)
-public class ValorLogicoBeanExemploBeanAleatorio
+@ValorLogicoBeanExemplo(calculo = ValoresLogicosBeanExemplo.VALORLOGICOBEANALEATORIO)
+public class ValorLogicoBeanExemploValorLogicoBeanAleatorio
 		extends
 			ValorLogicoCalculoGenerico {
 
-	ValorLogicoBeanExemploBeanAleatorio(ItfCampoInstanciado pCampo) {
+	ValorLogicoBeanExemploValorLogicoBeanAleatorio(ItfCampoInstanciado pCampo) {
 		super(pCampo);
 	}
 }

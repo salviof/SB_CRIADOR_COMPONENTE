@@ -4,5 +4,5 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.validador.LogicaDeEntidad
 
 @LogicaDeEntidade(entidade = "BeanExemplo")
 public enum ListasBeanExemplo {
-	LISTAALEATORIA
+	LISTADINAMICAALEATORIA
 }

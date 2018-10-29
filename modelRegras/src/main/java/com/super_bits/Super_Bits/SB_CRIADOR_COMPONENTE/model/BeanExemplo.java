@@ -205,10 +205,10 @@ public class BeanExemplo
     private String validacaoLogicaApenasGauleses;
 
     @InfoCampoValorLogico(nomeCalculo = "teste")
-    private BeanExemplo beanAleatorio;
+    private BeanExemplo valorLogicoBeanAleatorio;
 
     @InfoCampoListaDinamica
-    private List<BeanExemplo> listaAleatoria;
+    private List<BeanExemplo> listaDinamicaAleatoria;
 
     @NotNull
     @InfoCampo(tipo = FabTipoAtributoObjeto.QUANTIDADE, label = "Quantidade", valorMinimo = 3)
@@ -813,6 +813,14 @@ public class BeanExemplo
     public void setListaDezOpcoes(BeanExemplo listaDezOpcoes) {
         this.listaDezOpcoes = listaDezOpcoes;
 
+    }
+
+    public List<BeanExemplo> getListaDinamicaAleatoria() {
+        return new ArrayList<>();
+    }
+
+    public BeanExemplo getValorLogicoBeanAleatorio() {
+        return new BeanExemplo();
     }
 
 }

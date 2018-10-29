@@ -11,12 +11,13 @@ public class ValidacaoBeanExemploValidacaoLogicaApenasGauleses
 		extends
 			ValidacaoGenerica {
 
-	ValidacaoBeanExemploValidacaoLogicaApenasGauleses(ItfCampoInstanciado pCampo) {
+	public ValidacaoBeanExemploValidacaoLogicaApenasGauleses(
+			ItfCampoInstanciado pCampo) {
 		super(pCampo);
 	}
 
 	@Override
-	public Object getValidacao(java.lang.Object o) {
+	public Object validar(java.lang.Object o) {
 		SBCore.getCentralDeMensagens()
 				.enviarMsgErroAoUsuario(
 						"A Validação do campo  Validacao Logica Apenas Gauleses não foi implementada");

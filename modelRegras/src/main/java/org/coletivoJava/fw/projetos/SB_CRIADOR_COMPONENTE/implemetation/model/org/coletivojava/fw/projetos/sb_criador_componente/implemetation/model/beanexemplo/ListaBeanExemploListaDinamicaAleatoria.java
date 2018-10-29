@@ -6,10 +6,12 @@ import org.coletivoJava.fw.projetos.SB_CRIADOR_COMPONENTE.api.model.beanexemplo.
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 
-@ListaBeanExemplo(lista = ListasBeanExemplo.LISTAALEATORIA)
-public class ListaBeanExemploListaAleatoria extends ListaDinamicaGenerica {
+@ListaBeanExemplo(lista = ListasBeanExemplo.LISTADINAMICAALEATORIA)
+public class ListaBeanExemploListaDinamicaAleatoria
+		extends
+			ListaDinamicaGenerica {
 
-	ListaBeanExemploListaAleatoria(ItfCampoInstanciado pCampo) {
+	ListaBeanExemploListaDinamicaAleatoria(ItfCampoInstanciado pCampo) {
 		super(pCampo);
 	}
 }

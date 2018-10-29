@@ -6,10 +6,8 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp.TesteSB_CRIADOR_COMPONENTE;
-import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaDeEntidade;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
-import com.super_bits.modulosSB.SBCore.testesFW.geradorDeCodigo.util.UtilSBDevelGeradorCodigoModel;
-import java.util.List;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.validador.ErroValidacao;
 import org.junit.Test;
 
 /**
@@ -19,42 +17,21 @@ import org.junit.Test;
 public class TesteGeradorAnotacoesItfModelTest extends TesteSB_CRIADOR_COMPONENTE {
 
     @Test
-    public void gerarAnotacoesEInterfaces() {
-        List<EstruturaDeEntidade> objetos = MapaObjetosProjetoAtual.getListaTodosEstruturaObjeto();
-        objetos.forEach(est -> {
+    public void testeValidaCampo() {
+        gerarCodigoModelProjeto();
+        BeanExemplo entidadeTeste = new BeanExemplo();
+        try {
+            ItfCampoInstanciado campo = entidadeTeste.getCampoInstanciadoByNomeOuAnotacao("validacaoLogicaApenasPar");
+            campo.getValidacaoLogica().validar("2");
 
-            try {
-                if (est.isTemCampoValidadoresLogicos()) {
-                    criarAnotacaoValidacao(est);
-                }
-                if (est.isTemCampoValorLogico()) {
-                    criarAnotacaoCalculo(est);
-                }
-                if (est.isTemCampoListaDinamica()) {
-                    criarAnotacaoLista(est);
-                }
+            campo.getValidacaoLogica().validar("2");
 
-            } catch (Throwable t) {
+            BeanExemplo entidadeTeste2 = new BeanExemplo();
+            campo = entidadeTeste2.getCampoInstanciadoByNomeOuAnotacao("validacaoLogicaApenasPar");
 
-            }
-
-        });
-
-    }
-
-    public void criarAnotacaoValidacao(EstruturaDeEntidade estEstrutura) {
-        UtilSBDevelGeradorCodigoModel.gerarCodigoCampoValidadoresApi(estEstrutura);
-        estEstrutura.getCamposComValidadorLogico().forEach(UtilSBDevelGeradorCodigoModel::homologarClassesDeValidacao);
-
-    }
-
-    public void criarAnotacaoCalculo(EstruturaDeEntidade calculo) {
-        UtilSBDevelGeradorCodigoModel.gerarCodigoCampoValorLogicaApi(calculo);
-        calculo.getCamposComValorLogico().forEach(UtilSBDevelGeradorCodigoModel::homologarClassesDeValor);
-    }
-
-    public void criarAnotacaoLista(EstruturaDeEntidade lista) {
-        UtilSBDevelGeradorCodigoModel.gerarCodigoCampoListasApi(lista);
-        lista.getCamposComListaDinamica().forEach(UtilSBDevelGeradorCodigoModel::gerarCodigoCampoListaDinamica);
+            campo.getValidacaoLogica().validar("4");
+        } catch (ErroValidacao t) {
+            System.out.println(t.getMensagemAoUsuario());
+        }
     }
 }
