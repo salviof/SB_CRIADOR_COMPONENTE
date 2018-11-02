@@ -7,9 +7,9 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.validador.InfoReferenciaE
 public enum CPComponenteVisualInputLayoutSB {
 	_ESTILOTABELA, _ESTILOLINHAS, _ESTILOCOLUNAS, _ESTILOLINHASLEITURA, _ESTILOCOLUNASLEITURA;
 
-	static final String estilotabela = "estiloTabela";
-	static final String estilolinhas = "estiloLinhas";
-	static final String estilocolunas = "estiloColunas";
-	static final String estilolinhasleitura = "estiloLinhasLeitura";
-	static final String estilocolunasleitura = "estiloColunasLeitura";
+	public static final String estilotabela = "estiloTabela";
+	public static final String estilolinhas = "estiloLinhas";
+	public static final String estilocolunas = "estiloColunas";
+	public static final String estilolinhasleitura = "estiloLinhasLeitura";
+	public static final String estilocolunasleitura = "estiloColunasLeitura";
 }

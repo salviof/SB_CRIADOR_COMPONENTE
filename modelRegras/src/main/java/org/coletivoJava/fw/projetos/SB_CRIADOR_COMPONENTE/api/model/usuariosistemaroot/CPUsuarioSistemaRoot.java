@@ -7,10 +7,10 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.validador.InfoReferenciaE
 public enum CPUsuarioSistemaRoot {
 	_ID, _NOME, _DATAHORAALTERACAO, _DATAHORAINSERSAO, _USUARIOINSERCAO, _USUARIOALTERACAO;
 
-	static final String id = "id";
-	static final String nome = "nome";
-	static final String datahoraalteracao = "dataHoraAlteracao";
-	static final String datahorainsersao = "dataHoraInsersao";
-	static final String usuarioinsercao = "usuarioInsercao";
-	static final String usuarioalteracao = "usuarioAlteracao";
+	public static final String id = "id";
+	public static final String nome = "nome";
+	public static final String datahoraalteracao = "dataHoraAlteracao";
+	public static final String datahorainsersao = "dataHoraInsersao";
+	public static final String usuarioinsercao = "usuarioInsercao";
+	public static final String usuarioalteracao = "usuarioAlteracao";
 }

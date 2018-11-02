@@ -1,8 +1,9 @@
 package org.coletivoJava.fw.projetos.SB_CRIADOR_COMPONENTE.api.model.beanexemplo;
 
+import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.BeanExemplo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.validador.InfoReferenciaEntidade;
 
-@InfoReferenciaEntidade(entidade = "BeanExemplo")
+@InfoReferenciaEntidade(tipoObjeto = BeanExemplo.class)
 public enum ListasBeanExemplo {
 	LISTADINAMICAALEATORIA
 }

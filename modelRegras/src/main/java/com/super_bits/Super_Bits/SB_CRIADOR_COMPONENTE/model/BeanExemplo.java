@@ -201,7 +201,7 @@ public class BeanExemplo
 
     @InfoCampoValidadorLogico(descricao = "Valida como Par, caso não seja contorna o valor anterior")
     private int validacaoLogicaApenasPar;
-    @InfoCampoValidadorLogico(descricao = "")
+    @InfoCampoValidadorLogico(descricao = "A ideia é que na descrição seja cadastrada a documentação.. ")
     private String validacaoLogicaApenasGauleses;
 
     @InfoCampoValorLogico(nomeCalculo = "teste")
