@@ -143,20 +143,27 @@ function mesclarOnChangeComDelay(idElementoDigitacao) {
 
     if (elemento.onchange) {
         elemento.metodoOnchangeComDelay = elemento.onchange;
+        elemento.ultimapesquisa = elemento.value;
         //elemento.onchange = null;
 
         elemento.onkeyup = function (e) {
 
             try {
-                // Clear the timeout if it has already been set.
-                // This will prevent the previous task from executing
-                // if it has been less than <MILLISECONDS>
-                clearTimeout(timeout);
-                // Make a new timeout set to go off in 800ms
+                if (elemento.value === elemento.ultimapesquisa) {
 
-                timeout = setTimeout(function () {
-                    elemento.metodoOnchangeComDelay();
-                }, 800);
+                } else {
+                    // Clear the timeout if it has already been set.
+                    // This will prevent the previous task from executing
+                    // if it has been less than <MILLISECONDS>
+                    clearTimeout(timeout);
+                    // Make a new timeout set to go off in 800ms
+                    elemento.ultimapesquisa = elemento.value;
+                    timeout = setTimeout(function () {
+
+
+                        elemento.metodoOnchangeComDelay();
+                    }, 800);
+                }
             } catch (t) {
 
             }

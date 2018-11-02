@@ -12,30 +12,23 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.validador.ErroValidacao;
 @InfoReferenciaEntidade(tipoObjeto = BeanExemplo.class)
 @ValidadorBeanExemplo(validador = ValidadoresBeanExemplo.VALIDACAOLOGICAAPENASGAULESES)
 public class ValidacaoBeanExemploValidacaoLogicaApenasGauleses
-        extends
-        ValidacaoGenerica<BeanExemplo> {
+		extends
+			ValidacaoGenerica<BeanExemplo> {
 
-    public ValidacaoBeanExemploValidacaoLogicaApenasGauleses(
-            ItfCampoInstanciado pCampo) {
-        super(pCampo);
-    }
+	public ValidacaoBeanExemploValidacaoLogicaApenasGauleses(
+			ItfCampoInstanciado pCampo) {
+		super(pCampo);
+	}
 
-    @Override
-    public Object validar(java.lang.Object o) throws ErroValidacao {
-        SBCore.getCentralDeMensagens()
-                .enviarMsgErroAoUsuario(
-                        "Apenas um teste parecido com a campanha");
-        if (!o.toString().endsWith("ix")) {
-            throw new ErroValidacao("Não é Gaules");
-        } else {
-            SBCore.enviarAvisoAoUsuario("Agora sim");
-            getObjetoDoAtributo().setApelido("Um gaules Legitimo");
-        }
+	@Override
+	public Object validar(java.lang.Object o) throws ErroValidacao {
+		SBCore.getCentralDeMensagens()
+				.enviarMsgErroAoUsuario(
+						"A Validação do campo  Validacao Logica Apenas Gauleses não foi implementada");
+		return o;
+	}
 
-        return o;
-    }
-
-    public BeanExemplo getBeanExemplo() {
-        return getObjetoDoAtributo();
-    }
+	public BeanExemplo getBeanExemplo() {
+		return getObjetoDoAtributo();
+	}
 }

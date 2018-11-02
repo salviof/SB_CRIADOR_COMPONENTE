@@ -30,8 +30,7 @@ public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersiste
     BEAN_EXEMPLO_FRM_LISTAR,
     @InfoTipoAcaoFormulario()
     BEAN_EXEMPLO_FRM_VISUALIZAR,
-    @InfoTipoAcaoFormulario(campos = {"apelido", CPBeanExemplo.validacaologicaapenaspar,
-        CPBeanExemplo.validacaologicaapenasgauleses, "verdadeiroOuFalso", "telefone", "data", "cor", "cnpj", "cpf", "html", "quantidade", "senha"})
+    @InfoTipoAcaoFormulario(campos = {"apelido", "validacaoLogicaApenasPar", CPBeanExemplo.validacaologicaapenasgauleses, "verdadeiroOuFalso", "telefone", "data", "cor", "cnpj", "cpf", "html", "quantidade", "senha"})
     @InfoTipoAcaoFormCamposAtualizaGrupoDoCampo(campos = {"validacaoLogicaApenasPar"})
     BEAN_EXEMPLO_FRM_EDITAR,
     @InfoTipoAcaoFormulario()
