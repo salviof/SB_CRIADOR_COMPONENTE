@@ -6,6 +6,9 @@ import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStringsCammelCase;
 import com.super_bits.modulosSB.SBCore.modulos.view.menu.MenusDaSessao;
 import com.super_bits.modulosSB.webPaginas.TratamentoDeErros.RelatorioTesteWebPaginas;
 import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.FabAcaoPaginasDoSistema;
+import javax.enterprise.inject.spi.BeanManager;
+import javax.enterprise.inject.spi.CDI;
+import javax.naming.InitialContext;
 
 import org.junit.Test;
 
@@ -23,7 +26,10 @@ public class TesteConformidade extends RelatorioTesteWebPaginas {
     @Test
     public void testar() {
         try {
+            //       BeanManager bmm = InitialContext.doLookup("java:comp/BeanManager");
 
+            // BeanManager bm = CDI.current().getBeanManager();
+            //     bmm.getBeans("#{PgUtil}");
             System.out.println(UtilSBCoreStringsCammelCase.getCamelByTextoPrimeiraLetraMaiuscula(FabAcaoPaginasDoSistema.PAGINA_PESQUISA_AVANCADA_MB_PADRAO.toString()));;
             System.out.println(UtilSBCoreStringsCammelCase.getCamelByTextoPrimeiraLetraMaiusculaSemCaracterEspecial(FabAcaoPaginasDoSistema.PAGINA_PESQUISA_AVANCADA_MB_PADRAO.toString()));;
 
@@ -31,7 +37,7 @@ public class TesteConformidade extends RelatorioTesteWebPaginas {
 
             SBCore.getControleDeSessao().logarEmailESenha("root@superBits.com", "senh@Screta");
             MenusDaSessao menu = SBCore.getControleDeSessao().getSessaoAtual().getMenusDaSessao();
-
+            executarTestesAcoes();
             //criarMapaDeAcoesEscopoAplicacao();
             FabAcaoPaginasDoSistema.PAGINA_PESQUISA_AVANCADA_MB_PADRAO.getRegistro();
 

@@ -13,6 +13,8 @@ import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcao
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormCamposAtualizaGrupoDoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
+import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ComunicacaoTransient;
+import com.super_bits.modulosSB.SBCore.modulos.comunicacao.EnvelopeComunicacaoSimples;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.icones.FabIconeFontAwesome;
 import org.coletivoJava.fw.projetos.SB_CRIADOR_COMPONENTE.api.model.beanexemplo.CPBeanExemplo;
@@ -57,6 +59,10 @@ public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersiste
     @InfoTipoAcaoFormulario(iconeFonteAnsowame = FabIconeFontAwesome.REG_PESQUISA_AVANCADA)
     BEAN_EXEMPLO_FRM_MODAL_TESTE,
     @InfoTipoAcaoFormulario()
-    BEAN_EXEMPLO_FRM_SELECAO_DE_ACAO;
+    BEAN_EXEMPLO_FRM_SELECAO_DE_ACAO,
+    @InfoTipoAcaoGestaoEntidade(entidade = EnvelopeComunicacaoSimples.class)
+    COMUNICACAO_MB,
+    @InfoTipoAcaoFormulario(iconeFonteAnsowame = FabIconeFontAwesome.COMUNICACAO_AVIAO_DE_PAPEL)
+    COMUNICACAO_FRM_ENVIAR_MENSAGEM;
 
 }

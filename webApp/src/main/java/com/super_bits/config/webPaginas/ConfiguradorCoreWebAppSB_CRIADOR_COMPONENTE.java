@@ -17,7 +17,6 @@ import com.super_bits.modulosSB.SBCore.modulos.admin.CentralAdministrativaPadrao
 import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabricaAcoes;
 import com.super_bits.modulosSB.SBCore.modulos.localizacao.CentralDeLocalizacaoSemPersistencia;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.ConfiguradorCoreDeProjetoWebWarAbstrato;
-import com.super_bits.modulosSB.webPaginas.ConfigGeral.SBWebPaginas;
 import com.super_bits.modulosSB.webPaginas.centralAtributo.CentralAtributosWebappSemPersistencia;
 import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.FabAcaoPaginasDoSistema;
 import java.util.List;
@@ -42,7 +41,7 @@ public class ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE extends ConfiguradorCor
 
     @Override
     public void defineFabricasDeACao(ItfConfiguracaoCoreCustomizavel pConfig) {
-        pConfig.setCentralAdmin(new CentralAdministrativaPadrao(FabAcoesHomeCriadorComponente.PAGINA_HOME_MB, FabAcaoAdminDeveloper.DEV_OBJ_PROJETO_FRM_FERRAMENTAS));
+
         //setIgnorarConfiguracaoPermissoes(true);
         pConfig.setCentralDeLocalizacao(CentralDeLocalizacaoSemPersistencia.class);
         pConfig.setCentralAtributoDados(CentralAtributosWebappSemPersistencia.class);
@@ -56,6 +55,7 @@ public class ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE extends ConfiguradorCor
         listaWebApp.add(FabAcaoBeanExemploDemonstrativo.class);
 
         pConfig.setFabricaDeAcoes(listaWebApp.toArray(new Class[listaWebApp.size()]));
+        pConfig.setCentralAdmin(new CentralAdministrativaPadrao(FabAcoesHomeCriadorComponente.PAGINA_HOME_MB, FabAcaoAdminDeveloper.DEV_PROJETO_ADMIN_MB));
     }
 
 }
