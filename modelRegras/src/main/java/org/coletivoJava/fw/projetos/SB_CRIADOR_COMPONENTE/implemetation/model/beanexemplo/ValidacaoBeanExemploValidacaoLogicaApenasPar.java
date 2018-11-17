@@ -2,33 +2,31 @@ package org.coletivoJava.fw.projetos.SB_CRIADOR_COMPONENTE.implemetation.model.b
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.BeanExemplo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.validador.ValidacaoGenerica;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.validador.InfoReferenciaEntidade;
 import org.coletivoJava.fw.projetos.SB_CRIADOR_COMPONENTE.api.model.beanexemplo.ValidadorBeanExemplo;
 import org.coletivoJava.fw.projetos.SB_CRIADOR_COMPONENTE.api.model.beanexemplo.ValidadoresBeanExemplo;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoReferenciaEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.validador.ErroValidacao;
 
 @InfoReferenciaEntidade(tipoObjeto = BeanExemplo.class)
 @ValidadorBeanExemplo(validador = ValidadoresBeanExemplo.VALIDACAOLOGICAAPENASPAR)
 public class ValidacaoBeanExemploValidacaoLogicaApenasPar
-		extends
-			ValidacaoGenerica<BeanExemplo> {
+        extends
+        ValidacaoGenerica<BeanExemplo> {
 
-	public ValidacaoBeanExemploValidacaoLogicaApenasPar(
-			ItfCampoInstanciado pCampo) {
-		super(pCampo);
-	}
+    public ValidacaoBeanExemploValidacaoLogicaApenasPar(
+            ItfCampoInstanciado pCampo) {
+        super(pCampo);
 
-	@Override
-	public Object validar(java.lang.Object o) throws ErroValidacao {
-		SBCore.getCentralDeMensagens()
-				.enviarMsgErroAoUsuario(
-						"A Validação do campo  Validacao Logica Apenas Par não foi implementada");
-		return o;
-	}
+    }
 
-	public BeanExemplo getBeanExemplo() {
-		return getObjetoDoAtributo();
-	}
+    @Override
+    public BeanExemplo validar(Object pValor) throws ErroValidacao {
+        SBCore.getCentralDeMensagens()
+                .enviarMsgErroAoUsuario(
+                        "A Validação do campo  Validacao Logica Apenas Par não foi implementada");
+        return super.validar(pValor); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

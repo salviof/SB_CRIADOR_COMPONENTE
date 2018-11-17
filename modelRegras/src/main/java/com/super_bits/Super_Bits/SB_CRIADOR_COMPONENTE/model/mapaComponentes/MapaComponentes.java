@@ -6,8 +6,7 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes;
 
 import com.google.common.collect.Lists;
-import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComponenteVisualSB;
-import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FamiliaComponente;
+import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfComponenteVisualSB;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfFabTipoComponenteVisual;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVIsualInputsLayout;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualBotaoAcao;
@@ -27,6 +26,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.coletivojava.fw.api.objetoNativo.view.componente.ComponenteVisualSB;
+import org.coletivojava.fw.api.objetoNativo.view.componente.FamiliaComponente;
 
 /**
  *
@@ -34,7 +35,7 @@ import java.util.Map;
  */
 public abstract class MapaComponentes {
 
-    private static Map<FamiliaComponente, List<ComponenteVisualSB>> mapaComponentes = new HashMap<>();
+    private static Map<FamiliaComponente, List<ItfComponenteVisualSB>> mapaComponentes = new HashMap<>();
 
     public static void mapaComponentesCriarMapa() {
 
@@ -61,25 +62,25 @@ public abstract class MapaComponentes {
 
             if (i == 0) {
 
-                mapaComponentes.put(comp.getEnumConstants()[i].getComponente().getFamilia().getRegistro(), new ArrayList<ComponenteVisualSB>());
+                mapaComponentes.put(comp.getEnumConstants()[i].getRegistro().getFamilia().getRegistro(), new ArrayList<ItfComponenteVisualSB>());
 
             }
 
-            mapaComponentes.get(comp.getEnumConstants()[i].getComponente().getFamilia().getRegistro()).add(comp.getEnumConstants()[i].getComponente());
+            mapaComponentes.get(comp.getEnumConstants()[i].getRegistro().getFamilia().getRegistro()).add(comp.getEnumConstants()[i].getRegistro());
 
         }
 
     }
 
-    public static List<ComponenteVisualSB> getComponentesFamilia(FamiliaComponente familia) {
+    public static List<ItfComponenteVisualSB> getComponentesFamilia(FamiliaComponente familia) {
 
         return mapaComponentes.get(familia);
 
     }
 
-    public static List<ComponenteVisualSB> getTodosComponentes() {
+    public static List<ItfComponenteVisualSB> getTodosComponentes() {
 
-        List<ComponenteVisualSB> listaComponentes = new ArrayList<>();
+        List<ItfComponenteVisualSB> listaComponentes = new ArrayList<>();
 
         for (FamiliaComponente familiaAtual : mapaComponentes.keySet()) {
 
@@ -91,7 +92,7 @@ public abstract class MapaComponentes {
 
     }
 
-    public static Map<FamiliaComponente, List<ComponenteVisualSB>> getMapaComponentes() {
+    public static Map<FamiliaComponente, List<ItfComponenteVisualSB>> getMapaComponentes() {
         return mapaComponentes;
     }
 

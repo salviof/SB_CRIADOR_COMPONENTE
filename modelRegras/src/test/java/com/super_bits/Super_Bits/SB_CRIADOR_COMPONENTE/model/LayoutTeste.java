@@ -7,13 +7,14 @@ package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp.TesteSB_CRIADOR_COMPONENTE;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.FabAcaoBeanExemploDemonstrativo;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreLayoutComponenteEmTelas;
+import com.super_bits.modulosSB.SBCore.UtilGeral.view.UtilSBCoreLayoutComponenteEmTelas;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormularioEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoExibicaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualBotaoAcao;
 import com.super_bits.modulosSB.SBCore.modulos.view.telas.ColunaTela;
 import com.super_bits.modulosSB.SBCore.modulos.view.telas.FabTipoTamanhoTelas;
 import com.super_bits.modulosSB.SBCore.modulos.view.telas.LayoutComponentesEmTelaComGrupoDeAcoes;
+import com.super_bits.modulosSB.SBCore.modulos.view.telas.layout.ItfColunaTela;
 import java.util.List;
 import org.junit.Test;
 
@@ -48,7 +49,7 @@ public class LayoutTeste extends TesteSB_CRIADOR_COMPONENTE {
                     FabCompVisualBotaoAcao.ICONE, FabTipoTamanhoTelas.DESKTOP_GRANDE.getRegistro(), "TESTE", false);
             layout.getUltimaColuna();
 
-            for (ColunaTela pColuna : layout.getColunas()) {
+            for (ItfColunaTela pColuna : layout.getColunas()) {
 
                 System.out.println(pColuna.getComponenteVinculado().getNomeComponente() + "-->" + pColuna.getPorcentagemCalculada());
 

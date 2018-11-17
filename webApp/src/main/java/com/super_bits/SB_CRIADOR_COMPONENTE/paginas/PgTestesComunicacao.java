@@ -47,6 +47,7 @@ public class PgTestesComunicacao extends MB_PaginaConversation {
         usuarios.add(new UsuarioAnonimo());
         usuarios.add(new UsuarioSistemaRoot());
         usuarios.add(new UsuarioOSistema());
+        executaAcaoSelecionadaPorEnum(FabAcaoBeanExemploDemonstrativo.COMUNICACAO_FRM_ENVIAR_MENSAGEM);
     }
 
     @Override

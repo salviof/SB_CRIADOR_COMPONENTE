@@ -8,12 +8,14 @@ package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp.TesteSB_CRIADOR_COMPONENTE;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.GrupoCampos;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoExibicaoFormulario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfGrupoCampos;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.CampoInstanciadoEnumFabricaObjeto;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfAssistenteDeLocalizacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstSeletorItens;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoLocalizacaoInstanciado;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciadoEnumFabricaObjeto;
+
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimplesSomenteLeitura;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfBairro;
@@ -59,7 +61,7 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
 
             ItfCampoInstanciado campoinstanciadoListaParticular = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("listaParticular");
             System.out.println(campoinstanciadoListaParticular.getTipoCampoSTR());
-            GrupoCampos grupo = campoinstanciadoListaParticular.getGrupoSubCamposExibicao();
+            ItfGrupoCampos grupo = campoinstanciadoListaParticular.getGrupoSubCamposExibicao();
 
             for (ItfCampoExibicaoFormulario campo : grupo.getCampos()) {
                 System.out.println(campo.getCaminhoCampo());
@@ -71,7 +73,7 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
             }
             ItfCampoInstanciado campoinstanciadoSeletorItem = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("seletorOpcao");
 
-            GrupoCampos grupo2 = campoinstanciadoSeletorItem.getComoCampoSeltorItem().getGrupoCampoExibicao();
+            ItfGrupoCampos grupo2 = campoinstanciadoSeletorItem.getComoCampoSeltorItem().getGrupoCampoExibicao();
             for (ItfCampoExibicaoFormulario campo : grupo2.getCampos()) {
                 System.out.println(campo.getCaminhoCampo());
             }
@@ -89,7 +91,7 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
             System.out.println(beanExemplo.getObjetoFabrica().name());
             System.out.println(beanExemplo.getObjetoFabrica().toString());
             System.out.println(campoInstanciadoObjetoFabrica.getValor());
-            CampoInstanciadoEnumFabricaObjeto campoEnum = campoInstanciadoObjetoFabrica.getComoEnumFabricaObjeto();
+            ItfCampoInstanciadoEnumFabricaObjeto campoEnum = campoInstanciadoObjetoFabrica.getComoEnumFabricaObjeto();
             campoEnum.setStringSelecionada(FabTipoAtributoObjeto.COR.toString());
 
             System.out.println(campoEnum.getListaOpcoesString());
@@ -149,7 +151,7 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
             ItfCampoInstanciado campoInstanciado = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("localizacao");
             campoInstanciado.getComoSeltorItens();
 
-            ItfCampoLocalizacaoInstanciado cpLocalizacao = campoInstanciado.getComoCampoLocalizacao();
+            ItfAssistenteDeLocalizacao cpLocalizacao = campoInstanciado.getComoCampoLocalizacao();
 
             List<ItfUnidadeFederativa> lista = cpLocalizacao.metodoAutoCompleteEstado("minas");
             for (ItfUnidadeFederativa estado : lista) {

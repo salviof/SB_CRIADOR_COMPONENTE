@@ -8,20 +8,23 @@ package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.formularios;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Mensagens.ItfMensagem;
-import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.FabErro;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoReflexao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCaminhoCampo;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCaminhoCampoInvalido;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfAssistenteDeLocalizacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.LocalizacaoInputAssistente;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.TipoOrganizacaoDadosEndereco;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ErroPreparandoObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.TipoOrganizacaoDadosEndereco;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.validacaoRegistro.CampoInvalido;
 import com.super_bits.modulosSB.SBCore.modulos.view.modeloFormulario.ItfModeloFormularioSBFW;
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.util.List;
+import org.coletivojava.fw.api.tratamentoErros.ErroPreparandoObjeto;
+import org.coletivojava.fw.api.tratamentoErros.FabErro;
 
 /**
  *
@@ -218,17 +221,17 @@ public class ModeloFormularioGenerico implements ItfModeloFormularioSBFW {
     }
 
     @Override
-    public ItfCampoInstanciado getCampoByCaminhoCampo(CaminhoCampoReflexao pNome) {
+    public ItfCampoInstanciado getCampoByCaminhoCampo(ItfCaminhoCampo pNome) {
         return modelo.getCampoByCaminhoCampo(pNome);
     }
 
     @Override
-    public Object getValorCampoByCaminhoCampo(CaminhoCampoReflexao pNome) {
+    public Object getValorCampoByCaminhoCampo(ItfCaminhoCampo pNome) {
         return modelo.getValorCampoByCaminhoCampo(pNome);
     }
 
     @Override
-    public List<CaminhoCampoReflexao> getEntidadesVinculadas() {
+    public List<ItfCaminhoCampo> getEntidadesVinculadas() {
         return modelo.getEntidadesVinculadas();
     }
 
@@ -238,18 +241,13 @@ public class ModeloFormularioGenerico implements ItfModeloFormularioSBFW {
     }
 
     @Override
-    public ItfBeanSimples getItemPorCaminhoCampo(CaminhoCampoReflexao pCaminho) {
+    public ItfBeanSimples getItemPorCaminhoCampo(ItfCaminhoCampo pCaminho) {
         return modelo.getItemPorCaminhoCampo(pCaminho);
     }
 
     @Override
-    public List<ItfBeanSimples> getListaPorCaminhoCampo(CaminhoCampoReflexao pCaminho) {
+    public List<ItfBeanSimples> getListaPorCaminhoCampo(ItfCaminhoCampo pCaminho) {
         return modelo.getListaPorCaminhoCampo(pCaminho);
-    }
-
-    @Override
-    public List<CampoInvalido> getCamposInvalidos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -302,7 +300,7 @@ public class ModeloFormularioGenerico implements ItfModeloFormularioSBFW {
     }
 
     @Override
-    public void adicionarAssitenteLocalizacao(LocalizacaoInputAssistente pLocalizacao) {
+    public void adicionarAssitenteLocalizacao(ItfAssistenteDeLocalizacao pLocalizacao) {
         modelo.adicionarAssitenteLocalizacao(pLocalizacao);
     }
 
@@ -319,6 +317,26 @@ public class ModeloFormularioGenerico implements ItfModeloFormularioSBFW {
     @Override
     public ItfCampoInstanciado getCampoInstanciadoByAnotacao(FabTipoAtributoObjeto pTipocampo) {
         return modelo.getCampoInstanciadoByAnotacao(pTipocampo);
+    }
+
+    @Override
+    public boolean isTemImagemPequenaAdicionada() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getXhtmlVisaoMobile() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getXhtmlVisao(int numeroColunas) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<ItfCaminhoCampoInvalido> getCamposInvalidos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -17,8 +17,8 @@ fi
 source /home/superBits/superBitsDevOps/core/coreSBBash.sh
 #
 
-CAMINHO_WP_REFERENCIA="/home/superBits/projetos/Super_Bits/source/SuperBits_FrameWork/SB_FRAMEWORK/SBWebPaginas"
-CAMINHO_WP_SEM_TAGLIB="/home/superBits/projetos/Super_Bits/source/SuperBits_FrameWork/SB_FRAMEWORK/SBWebPaginasSemTagLib"
+CAMINHO_WP_REFERENCIA="/home/superBits/projetos/coletivoJava/source/fw/SBWebPaginas/"
+CAMINHO_WP_SEM_TAGLIB="/home/superBits/projetos/coletivoJava/source/fw/SBWebPaginasSemTagLib"
 
 alerta "Verificando existencia de pasta referencia"
 arqSairSePastaNaoExistir $CAMINHO_WP_REFERENCIA "Diretorio Referencia não encontrado"
