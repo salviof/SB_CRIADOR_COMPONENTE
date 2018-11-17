@@ -5,11 +5,12 @@
  */
 package com.super_bits.config.webPaginas;
 
+import br.org.coletivojava.erp.comunicacao.transporte.ERPTransporteComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.CentralComunicacaoDesktop;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ComunicacaoTransient;
 
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
-import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoTransporteComunicacao;
+
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ItfCentralComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ItfComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ItfDestinatario;
@@ -28,10 +29,10 @@ public class CentralComunicaoWebOffiline extends CentralComunicacaoDesktop imple
     private final List<ItfComunicacao> comunicacoesAtivas = new ArrayList<>();
     private final List<ItfComunicacao> comunicacoesHistorico = new ArrayList<>();
 
-    private void adicionarComunicacao(FabTipoComunicacao pTipocomunicacao, ItfUsuario pRemetente, ItfDestinatario pDestinatario, ItfModeloMensagem mensagem, FabTipoTransporteComunicacao... pTiposTransporte) {
+    private void adicionarComunicacao(FabTipoComunicacao pTipocomunicacao, ItfUsuario pRemetente, ItfDestinatario pDestinatario, ItfModeloMensagem mensagem, ERPTransporteComunicacao... pTiposTransporte) {
 
         List<ItfTipoTransporteComunicacao> transportes = new ArrayList<>();
-        for (FabTipoTransporteComunicacao transporte : pTiposTransporte) {
+        for (ERPTransporteComunicacao transporte : pTiposTransporte) {
             transportes.add(transporte.getRegistro());
         }
 

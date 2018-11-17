@@ -3,12 +3,11 @@ package com.super_bits;
 import com.super_bits.config.webPaginas.ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStringsCammelCase;
+import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfMenuSB;
+import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfMenusDeSessao;
 import com.super_bits.modulosSB.SBCore.modulos.view.menu.MenusDaSessao;
 import com.super_bits.modulosSB.webPaginas.TratamentoDeErros.RelatorioTesteWebPaginas;
 import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.FabAcaoPaginasDoSistema;
-import javax.enterprise.inject.spi.BeanManager;
-import javax.enterprise.inject.spi.CDI;
-import javax.naming.InitialContext;
 
 import org.junit.Test;
 
@@ -36,7 +35,7 @@ public class TesteConformidade extends RelatorioTesteWebPaginas {
             gerarMangedBeansAcessoAcoes();
 
             SBCore.getControleDeSessao().logarEmailESenha("root@superBits.com", "senh@Screta");
-            MenusDaSessao menu = SBCore.getControleDeSessao().getSessaoAtual().getMenusDaSessao();
+            ItfMenusDeSessao menu = SBCore.getControleDeSessao().getSessaoAtual().getMenusDaSessao();
             executarTestesAcoes();
             //criarMapaDeAcoesEscopoAplicacao();
             FabAcaoPaginasDoSistema.PAGINA_PESQUISA_AVANCADA_MB_PADRAO.getRegistro();

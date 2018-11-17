@@ -11,10 +11,11 @@ import com.super_bits.config.webPaginas.SiteMap;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.AtributoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
-import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComponenteVisualSB;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual;
+import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfComponenteVisualSB;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualEndereco;
 import java.util.List;
+import org.coletivojava.fw.api.objetoNativo.view.componente.ComponenteVisualSB;
 import org.junit.Test;
 
 /**
@@ -94,7 +95,7 @@ public class PgMapaComponentesTest extends TestesWP_CRIADOR_COMPONENTES {
 
             // RELATORIO DA AÇÃO
             //
-            exibirRelatorioListaDeComponentes(mapaComponentesTeste, mapaComponentesTeste.getListaComponentes());
+            exibirRelatorioListaDeComponentes(mapaComponentesTeste, (List) mapaComponentesTeste.getListaComponentes());
 
             // DEFINE O PARAMETRO NOME DO COMPONENTE A SER PESQUISADO
             //
@@ -106,7 +107,7 @@ public class PgMapaComponentesTest extends TestesWP_CRIADOR_COMPONENTES {
 
             // RELATORIO DA AÇÃO
             //
-            exibirRelatorioListaDeComponentes(mapaComponentesTeste, mapaComponentesTeste.getListaComponentes());
+            exibirRelatorioListaDeComponentes(mapaComponentesTeste, (List) mapaComponentesTeste.getListaComponentes());
 
             // SELECIONA UMA FAMILIA COMO PARAMENTRO DE PESQUISA DE COMPONENTES
             //
@@ -118,11 +119,11 @@ public class PgMapaComponentesTest extends TestesWP_CRIADOR_COMPONENTES {
 
             // RELATORIO DA AÇÃO
             //
-            exibirRelatorioListaDeComponentes(mapaComponentesTeste, mapaComponentesTeste.getListaComponentes());
+            exibirRelatorioListaDeComponentes(mapaComponentesTeste, (List) mapaComponentesTeste.getListaComponentes());
 
             // SELECIONA UM COMPONENTE
             //
-            mapaComponentesTeste.setComponenteSelecionado(FabCompVisualEndereco.CEP.getComponente());
+            mapaComponentesTeste.setComponenteSelecionado(FabCompVisualEndereco.CEP.getRegistro());
 //            mapaComponentesTeste.getc // SELECIONA UMA CAMPO A SER EDITADO
             //
             //         mapaComponentesTeste.setCampoSelecionado(FabCampos.LCCEP.getRegistro());
@@ -148,9 +149,9 @@ public class PgMapaComponentesTest extends TestesWP_CRIADOR_COMPONENTES {
         System.out.println("\n" + "Lista de Componentes criada com Sucesso! " + "\n"
                 + pTotalComponentes + " Componentes na Lista" + "\n");
 
-        for (ComponenteVisualSB componenteAtual : pPaginaARelatar.getListaComponentes()) {
+        for (ItfComponenteVisualSB componenteAtual : pPaginaARelatar.getListaComponentes()) {
 
-            System.out.println("\n" + "Componente: " + componenteAtual.getNome() + "|" + " Familia: " + componenteAtual.getFamilia().getNomeFAmilia() + "\n");
+            System.out.println("\n" + "Componente: " + componenteAtual.getNomeComponente() + "|" + " Familia: " + componenteAtual.getFamilia().getNomeFAmilia() + "\n");
 
         }
 
