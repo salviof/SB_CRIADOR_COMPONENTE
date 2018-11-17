@@ -1,7 +1,7 @@
 package org.coletivoJava.fw.projetos.SB_CRIADOR_COMPONENTE.api.model.componentevisualinputlayoutsb;
 
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoReferenciaEntidade;
-import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.input.ComponenteVisualInputLayoutSB;
+import org.coletivojava.fw.api.objetoNativo.view.componente.ComponenteVisualInputLayoutSB;
 
 @InfoReferenciaEntidade(tipoObjeto = ComponenteVisualInputLayoutSB.class)
 public enum CPComponenteVisualInputLayoutSB {
