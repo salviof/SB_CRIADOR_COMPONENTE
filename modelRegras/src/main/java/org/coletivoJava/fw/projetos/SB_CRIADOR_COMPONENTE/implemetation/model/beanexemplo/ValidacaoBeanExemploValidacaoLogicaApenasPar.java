@@ -22,7 +22,7 @@ public class ValidacaoBeanExemploValidacaoLogicaApenasPar
     }
 
     @Override
-    public BeanExemplo validar(Object pValor) throws ErroValidacao {
+    public Object validar(Object pValor) throws ErroValidacao {
         SBCore.getCentralDeMensagens()
                 .enviarMsgErroAoUsuario(
                         "A Validação do campo  Validacao Logica Apenas Par não foi implementada");
