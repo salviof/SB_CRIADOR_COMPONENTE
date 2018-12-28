@@ -6,6 +6,8 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes;
 
 import com.google.common.collect.Lists;
+import com.super_bits.modulosSB.SBCore.modulos.view.componenteAtributo.ComponenteVisualSBBean;
+import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfComponenteVisualSB;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfFabTipoComponenteVisual;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVIsualInputsLayout;
@@ -26,7 +28,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.coletivojava.fw.api.objetoNativo.view.componente.ComponenteVisualSB;
+import org.coletivojava.fw.api.objetoNativo.view.componente.ComponenteVisualBase;
+
 import org.coletivojava.fw.api.objetoNativo.view.componente.FamiliaComponente;
 
 /**
@@ -59,14 +62,14 @@ public abstract class MapaComponentes {
     private static void adicionarComponentes(Class<? extends ItfFabTipoComponenteVisual> comp) {
 
         for (int i = 0; i < comp.getEnumConstants().length; i++) {
-
+            FamiliaComponente familia = comp.getEnumConstants()[i].getRegistro().getFamilia().getRegistro();
             if (i == 0) {
 
-                mapaComponentes.put(comp.getEnumConstants()[i].getRegistro().getFamilia().getRegistro(), new ArrayList<ItfComponenteVisualSB>());
+                mapaComponentes.put(familia, new ArrayList<ItfComponenteVisualSB>());
 
             }
 
-            mapaComponentes.get(comp.getEnumConstants()[i].getRegistro().getFamilia().getRegistro()).add(comp.getEnumConstants()[i].getRegistro());
+            mapaComponentes.get(familia).add(comp.getEnumConstants()[i].getRegistro());
 
         }
 

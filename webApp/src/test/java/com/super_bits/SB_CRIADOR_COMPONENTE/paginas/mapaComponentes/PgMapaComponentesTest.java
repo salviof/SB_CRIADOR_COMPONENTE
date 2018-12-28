@@ -15,7 +15,7 @@ import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamili
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfComponenteVisualSB;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualEndereco;
 import java.util.List;
-import org.coletivojava.fw.api.objetoNativo.view.componente.ComponenteVisualSB;
+import org.coletivojava.fw.api.objetoNativo.view.componente.ComponenteVisualBase;
 import org.junit.Test;
 
 /**
@@ -142,7 +142,7 @@ public class PgMapaComponentesTest extends TestesWP_CRIADOR_COMPONENTES {
         }
     }
 
-    public void exibirRelatorioListaDeComponentes(PgMapaComponentes pPaginaARelatar, List<ComponenteVisualSB> pListaComponentes) {
+    public void exibirRelatorioListaDeComponentes(PgMapaComponentes pPaginaARelatar, List<ComponenteVisualBase> pListaComponentes) {
 
         int pTotalComponentes = pListaComponentes.size();
 

@@ -50,7 +50,7 @@ public enum FabMenuCriadorComponente implements ItfFabricaMenu {
         SessaoMenuSB sessaoFerramentas = new SessaoMenuSB(FabAcaoProjetoSB.PROJETO_FRM_VISAO_GERAL.getRegistro());
         sessaoFerramentas.addAcao(FabAcaoLabComponentes.LAB_COMPONENTES_MB_GERENCIAR.getRegistro());
         sessaoFerramentas.addAcao(FabAcaoAdminDeveloper.DEV_OBJ_PROJETO_MB_LAB.getRegistro());
-        sessaoFerramentas.addAcao(FabAcaoAdminDeveloper.DEV_PROJETO_ADMIN_MB.getRegistro());
+        sessaoFerramentas.addAcao(FabAcaoAdminDeveloper.DEV_PROJETO_ADMIN_MB_ADMIN_PROJ.getRegistro());
         //   sessaoFerramentas.addAcao(FabAcaoAdminDeveloper.FERRAMENTAS_ACAO_MB_CRIAR.getRegistro());
         sessaoFerramentas.addAcao(FabAcaoAdminDeveloper.FERRAMENTAS_BANCO_MB.getRegistro());
         //  sessaoFerramentas.addAcao(FabAcaoAdminDeveloper.FERRAMENTAS_LOGS_MB.getRegistro());

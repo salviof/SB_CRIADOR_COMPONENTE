@@ -55,7 +55,7 @@ public class ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE extends ConfiguradorCor
         listaWebApp.add(FabAcaoBeanExemploDemonstrativo.class);
 
         pConfig.setFabricaDeAcoes(listaWebApp.toArray(new Class[listaWebApp.size()]));
-        pConfig.setCentralAdmin(new CentralAdministrativaPadrao(FabAcoesHomeCriadorComponente.PAGINA_HOME_MB, FabAcaoAdminDeveloper.DEV_PROJETO_ADMIN_MB));
+        pConfig.setCentralAdmin(new CentralAdministrativaPadrao(FabAcoesHomeCriadorComponente.PAGINA_HOME_MB_INICIO, FabAcaoAdminDeveloper.DEV_PROJETO_ADMIN_MB_ADMIN_PROJ));
     }
 
 }

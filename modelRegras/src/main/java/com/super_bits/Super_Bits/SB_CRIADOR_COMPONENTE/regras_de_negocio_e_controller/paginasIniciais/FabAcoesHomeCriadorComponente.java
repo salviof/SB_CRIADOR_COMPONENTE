@@ -22,7 +22,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.icone
 @InfoModulosSistemaSB(modulo = FabModulosSistemaSB.PAGINAS_DO_SISTEMA)
 public enum FabAcoesHomeCriadorComponente implements ItfFabricaAcoes {
     @InfoTipoAcaoGestaoEntidade(xhtmlDaAcao = "/site/home.xhtml", iconeFonteAnsowame = FabIconeFontAwesome.COMERCIO_PRESENTE)
-    PAGINA_HOME_MB,
+    PAGINA_HOME_MB_INICIO,
     @InfoTipoAcaoFormulario(iconeFonteAnsowame = FabIconeFontAwesome.REG_AGRUPAR_REGISTROS, xhtmlDaAcao = "/site/ferramentasCriacao.xhtml")
     PAGINA_HOME_FRM_DASHBOARD,
     @InfoTipoAcaoFormulario(iconeFonteAnsowame = FabIconeFontAwesome.SISTEMA_USUARIO, xhtmlDaAcao = "/site/homeLogin.xhtml")

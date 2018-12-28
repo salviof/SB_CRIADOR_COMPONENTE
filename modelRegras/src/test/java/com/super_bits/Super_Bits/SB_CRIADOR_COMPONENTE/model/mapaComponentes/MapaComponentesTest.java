@@ -12,7 +12,7 @@ import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfCompon
 
 import java.util.ArrayList;
 import java.util.List;
-import org.coletivojava.fw.api.objetoNativo.view.componente.ComponenteVisualSB;
+
 import org.coletivojava.fw.api.objetoNativo.view.componente.FamiliaComponente;
 import org.junit.Test;
 
