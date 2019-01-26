@@ -12,7 +12,7 @@ import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.DestinatarioTransiente;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
 
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioOSistema;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioAplicacaoEmExecucao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioSistemaRoot;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.ConfiguradorCoreDeProjetoWebWarAbstrato;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.ItfInicioFimAppWP;
@@ -36,7 +36,7 @@ public class InicioFimContextoWebPagina implements ItfInicioFimAppWP {
         String xhtml = FabAcaoAdminDeveloper.DEV_OBJ_PROJETO_FRM_FERRAMENTAS.getRegistro().getComoFormulario().getXhtml();
         System.out.println(xhtml);
         SBCore.getCentralDeComunicacao().gerarComunicacaoEntre_Usuairos(FabTipoComunicacao.NOTIFICAR,
-                new UsuarioOSistema(), new DestinatarioTransiente(new UsuarioSistemaRoot()), "Olá Root", ERPTransporteComunicacao.INTRANET_MENU);
+                new UsuarioAplicacaoEmExecucao(), new DestinatarioTransiente(new UsuarioSistemaRoot()), "Olá Root", ERPTransporteComunicacao.INTRANET_MENU);
     }
 
     @Override

@@ -8,7 +8,7 @@ package com.super_bits.SB_CRIADOR_COMPONENTE.paginas;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.FabAcaoBeanExemploDemonstrativo;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.InfoAcaoBeamExemploDemo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioAnonimo;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioOSistema;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioAplicacaoEmExecucao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioSistemaRoot;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
@@ -46,7 +46,7 @@ public class PgTestesComunicacao extends MB_PaginaConversation {
         usuarios = new ArrayList<>();
         usuarios.add(new UsuarioAnonimo());
         usuarios.add(new UsuarioSistemaRoot());
-        usuarios.add(new UsuarioOSistema());
+        usuarios.add(new UsuarioAplicacaoEmExecucao());
         executaAcaoSelecionadaPorEnum(FabAcaoBeanExemploDemonstrativo.COMUNICACAO_FRM_ENVIAR_MENSAGEM);
     }
 
