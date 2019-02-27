@@ -17,8 +17,8 @@ fi
 source /home/superBits/superBitsDevOps/core/coreSBBash.sh
 #
 
-CAMINHO_WP_REFERENCIA="/home/superBits/projetos/Super_Bits/source/SuperBits_FrameWork/SB_FRAMEWORK/SBWebPaginas"
-CAMINHO_WP_SEM_TAGLIB="/home/superBits/projetos/Super_Bits/source/SuperBits_FrameWork/SB_FRAMEWORK/SBWebPaginasSemTagLib"
+CAMINHO_WP_REFERENCIA="/home/superBits/projetos/coletivoJava/source/fw/SBWebPaginas"
+CAMINHO_WP_SEM_TAGLIB="/home/superBits/projetos/Super_Bits/source/temp/SB_FRAMEWORK/SBWebPaginasSemTagLib"
 
 alerta "Verificando existencia de pasta referencia"
 arqSairSePastaNaoExistir $CAMINHO_WP_REFERENCIA "Diretorio Referencia não encontrado"
@@ -28,7 +28,7 @@ alerta "Removendo pasta versão antiga"
 rm  $CAMINHO_WP_SEM_TAGLIB -rf
 
 arqSairSePastaExistir $CAMINHO_WP_SEM_TAGLIB "O diretorio antigo não foi excluido"
-mkdir $CAMINHO_WP_SEM_TAGLIB 
+mkdir $CAMINHO_WP_SEM_TAGLIB -p
 arqSairSePastaNaoExistir $CAMINHO_WP_SEM_TAGLIB "A pasta de destino não pode ser criada"
 cp $CAMINHO_WP_REFERENCIA/* $CAMINHO_WP_SEM_TAGLIB/ -rf
 arqSairSePastaNaoExistir $CAMINHO_WP_SEM_TAGLIB/src "Os arquivos não foram copiados para pasta de Destino"
