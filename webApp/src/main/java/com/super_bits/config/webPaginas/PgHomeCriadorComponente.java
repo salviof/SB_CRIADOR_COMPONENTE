@@ -19,7 +19,7 @@ import javax.inject.Named;
  *
  * @author desenvolvedor
  */
-@InfoAcaoHomeCriacaoComponente(acao = FabAcoesHomeCriadorComponente.PAGINA_HOME_MB)
+@InfoAcaoHomeCriacaoComponente(acao = FabAcoesHomeCriadorComponente.PAGINA_HOME_MB_INICIO)
 @ViewScoped
 @Named
 @InfoPagina(nomeCurto = "HM", tags = {"home"})

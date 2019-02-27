@@ -23,7 +23,7 @@ public enum FabGrupoUsuario implements ItfFabrica {
             case USUARIO_ANONIMO:
                 novoGrupo.setNome("Grupo Anonimo");
                 novoGrupo.setAtivo(true);
-                novoGrupo.setPaginaInicial(FabAcoesHomeCriadorComponente.PAGINA_HOME_MB);
+                novoGrupo.setPaginaInicial(FabAcoesHomeCriadorComponente.PAGINA_HOME_MB_INICIO);
                 break;
             case USUARIO_ADMINISTRADOR:
                 novoGrupo.setNome("Grupo Administrador");

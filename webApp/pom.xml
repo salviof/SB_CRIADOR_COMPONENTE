@@ -25,22 +25,25 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.google.api-client</groupId>
-            <artifactId>google-api-client</artifactId>
-            <version>1.23.0</version>
-        </dependency>
+   
 
         <dependency>
             <groupId>com.super_bits.modulos</groupId>
             <artifactId>modAdminTools</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        
+
         <dependency>
-            <groupId>com.super_bits</groupId>
+            <groupId>br.org.coletivoJava.fw</groupId>
             <artifactId>SBWebPaginasSemTagLib</artifactId>
-            <version>0.9-SNAPSHOT</version>
+            <version>1.0.0-RC-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>br.org.coletivoJava.fw</groupId>
+            <artifactId>SBTestes</artifactId>
+            <version>1.0.0-RC-SNAPSHOT</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.atmosphere</groupId>
@@ -72,12 +75,17 @@
 
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
 
+
+
+        </resources>
 
         <plugins>
-
-
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -93,10 +101,22 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.3.11.v20160721</version>
                 <configuration>
+
                     <webAppConfig>
                         <contextPath>/SB_CRIADOR_COMPONENTE</contextPath>
+                        <webInfIncludeJarPattern>.*/SBWebPaginas[^/]*\.jar$|.*/webApp.jar|.*/classes/.*</webInfIncludeJarPattern>
                     </webAppConfig>
                     <scanIntervalSeconds>5</scanIntervalSeconds>
+                    <filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
+
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>eot</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>svg</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>woff</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+
                 </configuration>
             </plugin>
         </plugins>
@@ -108,17 +128,9 @@
                 <version>1.0</version>
             </extension>
         </extensions>
-
-
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-
-            </resource>
-        </resources>
-
     </build>
+
+
 
 
 

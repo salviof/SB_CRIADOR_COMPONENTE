@@ -9,6 +9,50 @@
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <ui:define name="titulo" >#{pgModalJustificativa.comunicacao.mensagem}  </ui:define>
     <ui:define name="opcoes" >
+<<<<<<< HEAD
+=======
+        <h:panelGroup   class="ContainerIndent" >
+            <h:panelGroup rendered="#{pgModalJustificativa.campoJustificativa != null}">
+                <div class="Container12" >
+                    <SBInput:input registro="#{pgModalJustificativa.campoJustificativa}"
+
+                                   layout="#{layoutsComponenteSB.layoutCampo.superior}"
+                                   />
+                </div>
+            </h:panelGroup>
+            <h:panelGroup   layout="block"  styleClass="Container12" style="margin: 10px;" >
+
+                <p:inputTextarea value="#{pgModalJustificativa.justificativa}"
+                                 style="width: 100%!important; "
+                                 placeholder="Justifique esta alteração"
+                                 required="true"
+                                 id="justificativa"
+                                 validatorMessage="Escreva mais sobre esssa justificativa"
+                                 requiredMessage="Você precisa justificar esta alteração."
+                                 >
+                    <f:validateLength minimum="10" />
+                </p:inputTextarea>
+                <p:message for="justificativa"/>
+            </h:panelGroup>
+
+
+        </h:panelGroup>
+
+
+        <br/>
+
+        <h:panelGroup   layout="block"  styleClass="OrganizadorContainer" style="width: 100%">
+            <ui:repeat value="#{pgModalJustificativa.comunicacao.repostasPossiveis}" var="resp" >
+                <div class="Container2">
+                    <SBAcaoNav:botaoRespostaModal
+                        resposta="#{resp}"
+                        armazenamentoAcaoExecutada="#{pgModalJustificativa.respostaSelecionada}"
+                        metodo="#{pgModalJustificativa.enviarRespostaEExecutarAcao()}"
+                        />
+                </div>
+            </ui:repeat>
+        </h:panelGroup>
+>>>>>>> d0f079bda841c7347286c1a8801285ca47441be1
 
         <h:form>
             <h:panelGroup   class="ContainerIndent" >

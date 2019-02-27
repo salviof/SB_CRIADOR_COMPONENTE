@@ -2,8 +2,9 @@ package com.super_bits;
 
 import com.super_bits.config.webPaginas.ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStringSlugs;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStringsCammelCase;
+import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfMenuSB;
+import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfMenusDeSessao;
 import com.super_bits.modulosSB.SBCore.modulos.view.menu.MenusDaSessao;
 import com.super_bits.modulosSB.webPaginas.TratamentoDeErros.RelatorioTesteWebPaginas;
 import com.super_bits.modulosSB.webPaginas.controller.paginasDoSistema.FabAcaoPaginasDoSistema;
@@ -24,15 +25,18 @@ public class TesteConformidade extends RelatorioTesteWebPaginas {
     @Test
     public void testar() {
         try {
+            //       BeanManager bmm = InitialContext.doLookup("java:comp/BeanManager");
 
+            // BeanManager bm = CDI.current().getBeanManager();
+            //     bmm.getBeans("#{PgUtil}");
             System.out.println(UtilSBCoreStringsCammelCase.getCamelByTextoPrimeiraLetraMaiuscula(FabAcaoPaginasDoSistema.PAGINA_PESQUISA_AVANCADA_MB_PADRAO.toString()));;
             System.out.println(UtilSBCoreStringsCammelCase.getCamelByTextoPrimeiraLetraMaiusculaSemCaracterEspecial(FabAcaoPaginasDoSistema.PAGINA_PESQUISA_AVANCADA_MB_PADRAO.toString()));;
 
             gerarMangedBeansAcessoAcoes();
 
             SBCore.getControleDeSessao().logarEmailESenha("root@superBits.com", "senh@Screta");
-            MenusDaSessao menu = SBCore.getControleDeSessao().getSessaoAtual().getMenusDaSessao();
-
+            ItfMenusDeSessao menu = SBCore.getControleDeSessao().getSessaoAtual().getMenusDaSessao();
+            executarTestesAcoes();
             //criarMapaDeAcoesEscopoAplicacao();
             FabAcaoPaginasDoSistema.PAGINA_PESQUISA_AVANCADA_MB_PADRAO.getRegistro();
 

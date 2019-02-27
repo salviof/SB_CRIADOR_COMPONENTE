@@ -28,19 +28,17 @@ public class ConfigPermissaoProjetoDemostrativo extends ConfigPermissaoSBCoreAbs
     public ConfigPermissaoProjetoDemostrativo() {
         super(null);
     }
-    
-    
 
     @Override
     public List<ItfPermissao> configuraPermissoes() {
-       return new ArrayList<>();
+        return new ArrayList<>();
     }
 
     @Override
     public List<ItfUsuario> configuraUsuarios() {
-        List<ItfUsuario> usuarios=new ArrayList<>();
+        List<ItfUsuario> usuarios = new ArrayList<>();
         usuarios.add(new UsuarioSistemaRoot());
-        UsuarioSB usuarioTEste=new UsuarioSB();
+        UsuarioSB usuarioTEste = new UsuarioSB();
         usuarioTEste.setNome("Usuário Teste");
         usuarioTEste.setSenha("123");
         usuarioTEste.setEmail("teste@teste.com.br");
@@ -49,13 +47,13 @@ public class ConfigPermissaoProjetoDemostrativo extends ConfigPermissaoSBCoreAbs
         usuarios.add(usuarioTEste);
         usuarios.add(new UsuarioAnonimo());
         return usuarios;
-        
+
     }
 
     @Override
     public MenusDaSessao definirMenu(ItfGrupoUsuario pGrupo) {
         return new MenusDaSessao(FabMenuCriadorComponente.MENU_INICIAL.getRegistro(), FabMenuCriadorComponente.MENU_RESTRITO.getRegistro());
-        
+
     }
 
     @Override
@@ -65,31 +63,29 @@ public class ConfigPermissaoProjetoDemostrativo extends ConfigPermissaoSBCoreAbs
 
     @Override
     public boolean isAcaoPermitidaUsuarioLogado(ItfAcaoDoSistema acao) {
-        if (SBCore.getUsuarioLogado().equals(new UsuarioAnonimo())){
+        if (SBCore.getUsuarioLogado().equals(new UsuarioAnonimo())) {
             return false;
-        }else{
-        return true;
+        } else {
+            return true;
         }
     }
 
     @Override
     public boolean isAcaoPermitidaUsuario(ItfUsuario pUsuario, ItfAcaoDoSistema acao) {
-         if (SBCore.getUsuarioLogado().equals(new UsuarioAnonimo())){
+        if (SBCore.getUsuarioLogado().equals(new UsuarioAnonimo())) {
             return false;
-        }else{
-        return true;
+        } else {
+            return true;
         }
     }
 
     @Override
     public boolean isPermitidoUsuario(ItfUsuario pUsuario, ItfPermissao pPermissao) {
-         if (SBCore.getUsuarioLogado().equals(new UsuarioAnonimo())){
+        if (SBCore.getUsuarioLogado().equals(new UsuarioAnonimo())) {
             return false;
-        }else{
-        return true;
+        } else {
+            return true;
         }
     }
-    
-    
-    
+
 }

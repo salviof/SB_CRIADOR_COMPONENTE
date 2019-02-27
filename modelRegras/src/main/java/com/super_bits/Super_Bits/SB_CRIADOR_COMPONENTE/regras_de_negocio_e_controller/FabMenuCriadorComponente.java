@@ -10,10 +10,11 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.Fab
 import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfFabricaMenu;
-import com.super_bits.modulosSB.SBCore.modulos.view.menu.MenuSBFW;
+import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfMenuSB;
 import com.super_bits.modulosSB.SBCore.modulos.view.menu.SessaoMenuSB;
 import java.util.ArrayList;
 import java.util.List;
+import org.coletivojava.fw.api.objetoNativo.view.menu.MenuSBFW;
 
 /**
  *
@@ -28,8 +29,8 @@ public enum FabMenuCriadorComponente implements ItfFabricaMenu {
     MENU_INICIAL, MENU_RESTRITO;
 
     @Override
-    public List<MenuSBFW> getTodosMenus() {
-        List<MenuSBFW> menus = new ArrayList<>();
+    public List<ItfMenuSB> getTodosMenus() {
+        List<ItfMenuSB> menus = new ArrayList<>();
         for (ItfFabricaMenu menu : this.getClass().getEnumConstants()) {
             menus.add((MenuSBFW) menu.getRegistro());
         }
@@ -49,7 +50,7 @@ public enum FabMenuCriadorComponente implements ItfFabricaMenu {
         SessaoMenuSB sessaoFerramentas = new SessaoMenuSB(FabAcaoProjetoSB.PROJETO_FRM_VISAO_GERAL.getRegistro());
         sessaoFerramentas.addAcao(FabAcaoLabComponentes.LAB_COMPONENTES_MB_GERENCIAR.getRegistro());
         sessaoFerramentas.addAcao(FabAcaoAdminDeveloper.DEV_OBJ_PROJETO_MB_LAB.getRegistro());
-        sessaoFerramentas.addAcao(FabAcaoAdminDeveloper.DEV_PROJETO_ADMIN_MB.getRegistro());
+        sessaoFerramentas.addAcao(FabAcaoAdminDeveloper.DEV_PROJETO_ADMIN_MB_ADMIN_PROJ.getRegistro());
         //   sessaoFerramentas.addAcao(FabAcaoAdminDeveloper.FERRAMENTAS_ACAO_MB_CRIAR.getRegistro());
         sessaoFerramentas.addAcao(FabAcaoAdminDeveloper.FERRAMENTAS_BANCO_MB.getRegistro());
         //  sessaoFerramentas.addAcao(FabAcaoAdminDeveloper.FERRAMENTAS_LOGS_MB.getRegistro());

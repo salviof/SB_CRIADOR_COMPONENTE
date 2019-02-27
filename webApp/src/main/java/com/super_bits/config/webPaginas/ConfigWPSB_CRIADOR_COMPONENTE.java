@@ -60,7 +60,7 @@ public class ConfigWPSB_CRIADOR_COMPONENTE implements ItfConfigWebPagina {
 
     @Override
     public ItfAcaoFormulario getAcaoPaginaInicial() {
-        return FabAcoesHomeCriadorComponente.PAGINA_HOME_MB.getRegistro().getComoFormulario();
+        return FabAcoesHomeCriadorComponente.PAGINA_HOME_MB_INICIO.getRegistro().getComoFormulario();
     }
 
 }

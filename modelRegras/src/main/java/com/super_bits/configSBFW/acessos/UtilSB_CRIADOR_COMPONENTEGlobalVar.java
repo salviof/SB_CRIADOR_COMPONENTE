@@ -9,7 +9,12 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.FabListBeanExemplos
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.FabAcaoLabComponentes;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.FabAcaoBeanExemploDemonstrativo;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import com.super_bits.modulosSB.SBCore.modulos.comunicacao.EnvelopeComunicacaoSimples;
 import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabricaAcoes;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioAnonimo;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioSistemaRoot;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.TipoAtributoObjetoSB;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVIsualInputsLayout;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualBotaoAcao;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualEndereco;
@@ -39,7 +44,10 @@ public abstract class UtilSB_CRIADOR_COMPONENTEGlobalVar {
         SBCore.adicionarFabricaObjetoEstatico(FabCompVisualBotaoAcao.class);
         SBCore.adicionarFabricaObjetoEstatico(FabCompVisualEndereco.class);
         SBCore.adicionarFabricaObjetoEstatico(FabListBeanExemplos.class);
-
+        MapaObjetosProjetoAtual.adcionarObjeto(TipoAtributoObjetoSB.class);
+        MapaObjetosProjetoAtual.adcionarObjeto(UsuarioAnonimo.class);
+        MapaObjetosProjetoAtual.adcionarObjeto(UsuarioSistemaRoot.class);
+        MapaObjetosProjetoAtual.adcionarObjeto(EnvelopeComunicacaoSimples.class);
     }
 
 }

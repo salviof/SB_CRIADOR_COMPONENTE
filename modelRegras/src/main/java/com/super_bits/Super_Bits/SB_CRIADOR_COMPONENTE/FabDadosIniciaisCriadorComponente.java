@@ -6,7 +6,9 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.informacao.ConteudoGenerico;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStrings;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStringGerador;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStringValidador;
+
 import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabrica;
 
 /**
@@ -27,7 +29,7 @@ public enum FabDadosIniciaisCriadorComponente implements ItfFabrica {
         ConteudoGenerico info = new ConteudoGenerico();
         info.setId(this.ordinal());
         info.setNome(this.toString());
-        info.setDescricao(UtilSBCoreStrings.GetLorenIpsilum(5, UtilSBCoreStrings.TIPO_LOREN.PALAVRAS));
+        info.setDescricao(UtilSBCoreStringGerador.GetLorenIpsilum(5, UtilSBCoreStringGerador.TIPO_LOREN.PALAVRAS));
         return info;
     }
 }

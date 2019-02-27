@@ -57,6 +57,7 @@
 
     <lifecycle>
         <phase-listener>org.primefaces.component.lifecycle.LifecyclePhaseListener</phase-listener>
+        
     </lifecycle>
 
     <name>primefaces-adamantium</name>

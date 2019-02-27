@@ -6,8 +6,8 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp;
 
 import com.super_bits.configSBFW.acessos.UtilSB_CRIADOR_COMPONENTEGlobalVar;
-import com.super_bits.modulosSB.Persistencia.ERROS.TesteJunitSBPersistencia;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import testesFW.TesteJunitSBPersistencia;
 
 /**
  *

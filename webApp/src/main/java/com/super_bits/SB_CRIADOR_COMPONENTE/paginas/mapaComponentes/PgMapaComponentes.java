@@ -17,7 +17,6 @@ import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.TIPO_PARTE_
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Mensagens.FabMensagens;
-import com.super_bits.modulosSB.SBCore.modulos.TratamentoDeErros.FabErro;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaCampo;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaDeEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.UtilSBCoreReflexaoCaminhoCampo;
@@ -25,9 +24,22 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstancia
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
-import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComponenteVisualSB;
+import com.super_bits.modulosSB.SBCore.modulos.view.componenteAtributo.ComponenteVisualSBBean;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual;
-import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FamiliaComponente;
+import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.BOTAO_DE_ACAO;
+import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.COMPONENTE_SISTEMA;
+import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.ENDERECO;
+import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.ENUM_SELETOR;
+import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.GRUPOS_DE_CAMPOS;
+import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.GRUPO_DE_CAMPOS;
+import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.INPUT;
+import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.ITEM_BEAN_SIMPLES;
+import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.ITENS_BEAN_SIMPLES;
+import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.LAYOUT_INPUT;
+import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.MENU;
+import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.SELETOR_ITEM;
+import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.SELETOR_ITENS;
+import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfComponenteVisualSB;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.MB_PaginaConversation;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.reflexao.anotacoes.InfoPagina;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.reflexao.anotacoes.beans.InfoMB_Bean;
@@ -43,9 +55,13 @@ import javax.annotation.PreDestroy;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
+import org.coletivojava.fw.api.objetoNativo.view.componente.ComponenteVisualBase;
+import org.coletivojava.fw.api.objetoNativo.view.componente.FamiliaComponente;
+import org.coletivojava.fw.api.tratamentoErros.FabErro;
 import org.primefaces.context.RequestContext;
 
 /**
+ *
  *
  * @author desenvolvedor
  */
@@ -58,8 +74,8 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private final static String ESTRUTURA_DE_ENTIDADE_DESCRICAO = "Estrutura de Objeto";
     private final static String ESTRUTURA_DE_CAMPO_DESCRICAO = "Estrutura de Campo";
 
-    private ComponenteVisualSB componenteSelecionado;
-    private List<ComponenteVisualSB> listaComponentes;
+    private ComponenteVisualSBBean componenteSelecionado;
+    private List<ItfComponenteVisualSB> listaComponentes;
     private FamiliaComponente familiaSelecionada;
     private List<FamiliaComponente> listaFamiliasComponentes;
     private final AcaoDoSistema acaoGerenciar = FabAcaoLabComponentes.LAB_COMPONENTES_MB_GERENCIAR.getRegistro();
@@ -106,7 +122,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private EstruturaDeEntidade estruturaObjetoSelecionado;
     private DialogoWeb dialogoDoMomento;
 
-    private List<ComponenteVisualSB> listaComponentesEspeciaisDisponiveis;
+    private List<ItfComponenteVisualSB> listaComponentesEspeciaisDisponiveis;
 
     private List<ItfAcaoFormulario> listasformularioExemplo;
 
@@ -145,7 +161,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     public void setCaminhoComponente(String caminhoComponente) {
         try {
 
-            setComponenteSelecionado((ComponenteVisualSB) SBCore.getObjetoEstatico(caminhoComponente));
+            setComponenteSelecionado((ComponenteVisualBase) SBCore.getObjetoEstatico(caminhoComponente));
             this.caminhoComponente = caminhoComponente;
         } catch (Throwable t) {
             SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Caminho do componente não foi encontrado :" + caminhoComponente, t);
@@ -178,67 +194,70 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
     @PostConstruct
     public void init() {
+        try {
+            MapaComponentes.mapaComponentesCriarMapa();
+            MapaObjetosProjetoAtual.adcionarObjeto(BeanExemplo.class);
 
-        MapaComponentes.mapaComponentesCriarMapa();
-        MapaObjetosProjetoAtual.adcionarObjeto(BeanExemplo.class);
+            if (!isParametrosDeUrlPreenchido()) {
+                acaoSelecionada = acaoListar;
+                xhtmlAcaoAtual = acaoListar.getComoFormularioEntidade().getXhtml();
+            } else {
+                String caminhoBean = getParametroInstanciado(prCaminhoBeanSelecionado).getValor().toString();
+                setCaminhoBeanSelecionado(getParametroInstanciado(prCaminhoBeanSelecionado).getValor().toString());
+            }
 
-        if (!isParametrosDeUrlPreenchido()) {
-            acaoSelecionada = acaoListar;
-            xhtmlAcaoAtual = acaoListar.getComoFormularioEntidade().getXhtml();
-        } else {
-            String caminhoBean = getParametroInstanciado(prCaminhoBeanSelecionado).getValor().toString();
-            setCaminhoBeanSelecionado(getParametroInstanciado(prCaminhoBeanSelecionado).getValor().toString());
+            listaComponentes = MapaComponentes.getTodosComponentes();
+
+            listaFamiliasComponentes = MapaComponentes.getTodasFamiliasComponentes();
+            parametroPesquisa = "";
+            beanExemplo = new BeanExemplo();
+
+            beansDisponiveis = new ArrayList<>();
+            beansDisponiveis.add(BeanExemplo.class.getSimpleName());
+            labelByCaminho = new HashMap<>();
+            labelByCaminho.put(BeanExemplo.class.getSimpleName(), UtilSBCoreReflexaoObjeto.getNomeObjeto(BeanExemplo.class));
+            estruturaObjetoSelecionado = MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class);
+            acoesLaboratorio = new ArrayList<>();
+            dialogoDoMomento = new DialogoWeb();
+
+            for (EstruturaCampo cp : MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class).getCampos()) {
+                String caminhoCampo = BeanExemplo.class.getSimpleName() + "." + cp.getNomeDeclarado();
+                beansDisponiveis.add(caminhoCampo);
+                labelByCaminho.put(caminhoCampo, cp.getLabel());
+
+            }
+
+            beansDisponiveis.add("BeanExemplo.localizacao.cep");
+            labelByCaminho.put("BeanExemplo.localizacao.cep", "CEP da localizacao");
+
+            beansDisponiveis.add("BeanExemplo.localizacao.bairro.cidade.unidadeFederativa");
+            labelByCaminho.put("BeanExemplo.localizacao.bairro.cidade.unidadeFederativa", "UF da localizacao");
+
+            beansDisponiveis.add("BeanExemplo.localizacao.bairro.cidade");
+            labelByCaminho.put("BeanExemplo.localizacao.bairro.cidade", "cidade Da Localizacao");
+
+            beansDisponiveis.add("BeanExemplo.localizacao.bairro");
+            labelByCaminho.put("BeanExemplo.localizacao.bairro", "bairro da localizacao");
+
+            beansDisponiveis.add("BeanExemplo.localizacao.logradouro");
+            labelByCaminho.put("BeanExemplo.localizacao.logradouro", "logradouro da localizacao");
+
+            beansDisponiveis.add("BeanExemplo.localizacao.complemento");
+            labelByCaminho.put("BeanExemplo.localizacao.complemento", "complemento da localizacao");
+
+            beansDisponiveis.add("BeanExemplo.localizacao");
+            labelByCaminho.put("BeanExemplo.localizacao", "BeanExemplo.localizacao");
+            FamiliaComponente familia = getCampoInstanciado().getComponenteVisualPadrao().getFamilia().getRegistro();
+            listaComponentesEspeciaisDisponiveis
+                    = MapaComponentes.getComponentesFamilia(familia);
+            listasformularioExemplo = new ArrayList<>();
+            listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_FORM.getRegistro().getComoFormulario());
+            listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_GRUPO_DO_CAMPO.getRegistro().getComoFormulario());
+            listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_ID.getRegistro().getComoFormulario());
+            listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_CAMPO.getRegistro().getComoFormulario());
+        } catch (Throwable t) {
+            SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Erro iniciando mapa de componentes", t);
         }
-
-        listaComponentes = MapaComponentes.getTodosComponentes();
-
-        listaFamiliasComponentes = MapaComponentes.getTodasFamiliasComponentes();
-        parametroPesquisa = "";
-        beanExemplo = new BeanExemplo();
-
-        beansDisponiveis = new ArrayList<>();
-        beansDisponiveis.add(BeanExemplo.class.getSimpleName());
-        labelByCaminho = new HashMap<>();
-        labelByCaminho.put(BeanExemplo.class.getSimpleName(), UtilSBCoreReflexaoObjeto.getNomeObjeto(BeanExemplo.class));
-        estruturaObjetoSelecionado = MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class);
-        acoesLaboratorio = new ArrayList<>();
-        dialogoDoMomento = new DialogoWeb();
-
-        for (EstruturaCampo cp : MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class).getCampos()) {
-            String caminhoCampo = BeanExemplo.class.getSimpleName() + "." + cp.getNomeDeclarado();
-            beansDisponiveis.add(caminhoCampo);
-            labelByCaminho.put(caminhoCampo, cp.getLabel());
-
-        }
-
-        beansDisponiveis.add("BeanExemplo.localizacao.cep");
-        labelByCaminho.put("BeanExemplo.localizacao.cep", "CEP da localizacao");
-
-        beansDisponiveis.add("BeanExemplo.localizacao.bairro.cidade.unidadeFederativa");
-        labelByCaminho.put("BeanExemplo.localizacao.bairro.cidade.unidadeFederativa", "UF da localizacao");
-
-        beansDisponiveis.add("BeanExemplo.localizacao.bairro.cidade");
-        labelByCaminho.put("BeanExemplo.localizacao.bairro.cidade", "cidade Da Localizacao");
-
-        beansDisponiveis.add("BeanExemplo.localizacao.bairro");
-        labelByCaminho.put("BeanExemplo.localizacao.bairro", "bairro da localizacao");
-
-        beansDisponiveis.add("BeanExemplo.localizacao.logradouro");
-        labelByCaminho.put("BeanExemplo.localizacao.logradouro", "logradouro da localizacao");
-
-        beansDisponiveis.add("BeanExemplo.localizacao.complemento");
-        labelByCaminho.put("BeanExemplo.localizacao.complemento", "complemento da localizacao");
-
-        beansDisponiveis.add("BeanExemplo.localizacao");
-        labelByCaminho.put("BeanExemplo.localizacao", "BeanExemplo.localizacao");
-
-        listaComponentesEspeciaisDisponiveis = MapaComponentes.getComponentesFamilia(getCampoInstanciado().getComponenteVisualPadrao().getFamilia().getRegistro());
-        listasformularioExemplo = new ArrayList<>();
-        listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_FORM.getRegistro().getComoFormulario());
-        listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_GRUPO_DO_CAMPO.getRegistro().getComoFormulario());
-        listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_ID.getRegistro().getComoFormulario());
-        listasformularioExemplo.add(FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_GRUPOS_FORMULARIO_GRUPO_EXEMPLO_ATUALIZACAO_CAMPO.getRegistro().getComoFormulario());
-
     }
 
     /**
@@ -290,7 +309,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         //acoesLaboratorio = FabAcaoAdminDeveloper.DEV_OBJ_PROJETO_MB_LAB;
     }
 
-    public void executarAcao(ComponenteVisualSB pComponente) {
+    public void executarAcao(ComponenteVisualBase pComponente) {
 
         if (pComponente != null) {
 
@@ -381,9 +400,9 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
         listaComponentes.clear();
 
-        for (ComponenteVisualSB componentePesquisado : MapaComponentes.getTodosComponentes()) {
+        for (ItfComponenteVisualSB componentePesquisado : MapaComponentes.getTodosComponentes()) {
 
-            if (componentePesquisado.getNome().toLowerCase().contains(parametroPesquisa.toLowerCase())) {
+            if (componentePesquisado.getNomeComponente().toLowerCase().contains(parametroPesquisa.toLowerCase())) {
 
                 listaComponentes.add(componentePesquisado);
 
@@ -393,11 +412,11 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
     }
 
-    public ComponenteVisualSB getComponenteSelecionado() {
+    public ComponenteVisualSBBean getComponenteSelecionado() {
         return componenteSelecionado;
     }
 
-    public List<ComponenteVisualSB> getListaComponentes() {
+    public List<ItfComponenteVisualSB> getListaComponentes() {
         return listaComponentes;
     }
 
@@ -448,8 +467,8 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         return parametroPesquisa;
     }
 
-    public void setComponenteSelecionado(ComponenteVisualSB componenteSelecionado) {
-        this.componenteSelecionado = componenteSelecionado;
+    public void setComponenteSelecionado(ItfComponenteVisualSB componenteSelecionado) {
+        this.componenteSelecionado = (ComponenteVisualSBBean) componenteSelecionado;
         if (this.caminhoBeanSelecionado == null) {
             String beanPadrao = getCampoPadraoComponente();
             if (beanPadrao != null) {
@@ -470,7 +489,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
                     if (campo
                             .getFabricaTipoAtributo().
                             getTipo_input_prime()
-                            .equals(componenteSelecionado.getFabricaDoComponente())) {
+                            .equals(componenteSelecionado.getEnumVinculado())) {
                         return cp;
 
                     }
@@ -663,7 +682,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         return acaoTesteModalJustificativa;
     }
 
-    public List<ComponenteVisualSB> getListaComponentesEspeciaisDisponiveis() {
+    public List<ItfComponenteVisualSB> getListaComponentesEspeciaisDisponiveis() {
         return listaComponentesEspeciaisDisponiveis;
     }
 

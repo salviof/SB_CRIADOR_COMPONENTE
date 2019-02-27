@@ -28,7 +28,7 @@ import javax.inject.Named;
  */
 @ViewScoped
 @Named
-@InfoAcaoHomeCriacaoComponente(acao = FabAcoesHomeCriadorComponente.PAGINA_HOME_MB)
+@InfoAcaoHomeCriacaoComponente(acao = FabAcoesHomeCriadorComponente.PAGINA_HOME_MB_INICIO)
 @InfoPagina(tags = {"Home"}, nomeCurto = "HM")
 public class Pg_paginaInicial extends MB_PaginaConversation {
 

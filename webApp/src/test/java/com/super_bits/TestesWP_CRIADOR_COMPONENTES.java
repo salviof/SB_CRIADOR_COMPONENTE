@@ -8,8 +8,8 @@ package com.super_bits;
 import com.super_bits.config.webPaginas.ConfigWPSB_CRIADOR_COMPONENTE;
 import com.super_bits.config.webPaginas.ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.testesFW.TesteJunit;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.SBWebPaginas;
+import testesFW.TesteJunit;
 
 /**
  *
