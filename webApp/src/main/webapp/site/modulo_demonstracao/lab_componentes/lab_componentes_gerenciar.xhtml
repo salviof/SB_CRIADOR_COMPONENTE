@@ -1,63 +1,41 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
-    <ui:composition template="#{layoutsPaginas.modeloGeral.xhtmlVinculado}">
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    template="#{layoutsPaginas.modeloGeral.xhtmlVinculado}">
 
-        <ui:define name="head" >
-            <script type="text/javascript">
-                function dropaCampo(event, ui) {
-                    var droppedCampo = ui.draggable;
-                    document.getElementById("#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('campoDropado')}").value = droppedCampo.context.getAttribute('valordropado');
-                    droppedCampo.fadeOut('slow');
-                    dropaCampoServerSide();
-                }
+    <ui:define name="head" >
 
-                function dropaComponente(event, ui) {
-                    var droppedComponente = ui.draggable;
-                    document.getElementById("#{pgUtil.gerarCaminhoCompletoIDParaJavaScript('componenteDropado')}").value = droppedComponente.context.getAttribute('valordropado');
-                    droppedComponente.fadeOut('slow');
-                    dropaComponenteServerSide();
-                }
+    </ui:define>
 
+    <ui:define name="conteudo">
+        <h:form>
+            <p:remoteCommand actionListener="#{pgMapaComponentes.dropaCampo()}" name="dropaCampoServerSide" />
+            <h:inputHidden class="campoDropado" id="campoDropado"  >
+                <f:passThroughAttribute value="campoDropado" name="class" />
+            </h:inputHidden>
+        </h:form>
 
-            </script>
-        </ui:define>
+        <h:form>
+            <p:remoteCommand actionListener="#{pgMapaComponentes.dropaComponente()}" name="dropaComponenteServerSide" />
+            <h:inputHidden id="componenteDropado"   class="componenteDropado"  >
+                <f:passThroughAttribute value="componenteDropado" name="class" />
+            </h:inputHidden>
 
-        <ui:define name="conteudo">
-            <h:form>
-                <p:remoteCommand actionListener="#{pgMapaComponentes.dropaCampo()}" name="dropaCampoServerSide" />
-                <h:inputHidden id="campoDropado"  />
-            </h:form>
+        </h:form>
 
-            <h:form>
-                <p:remoteCommand actionListener="#{pgMapaComponentes.dropaComponente()}" name="dropaComponenteServerSide" />
-                <h:inputHidden id="componenteDropado"  />
-            </h:form>
-
-            <h:form >
-                <p:commandButton value="Atualizar" update="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}" />
-            </h:form>
+        <h:form >
+            <p:commandButton value="Atualizar" update="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}" />
+        </h:form>
 
 
-            <h:panelGroup id="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}">
-                <ui:include src="#{pgMapaComponentes.xhtmlAcaoAtual}"/>
-            </h:panelGroup>
+        <h:panelGroup id="#{pgMapaComponentes.idAreaExbicaoAcaoSelecionada}">
+            <ui:include src="#{pgMapaComponentes.xhtmlAcaoAtual}"/>
+        </h:panelGroup>
 
 
-        </ui:define>
+    </ui:define>
 
-    </ui:composition>
-</html>
-
-
-
-
-
-
-
-
-
-
+</ui:composition>

@@ -23,12 +23,17 @@
         </ui:define>
 
         <ui:define name="#{layoutsPaginas.modeloGeral.areaPrincipal}">
-            <SBInput:input registro="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('dataHora')}"
 
-                           label=" Teste"
-                           metodoOnChange="#{pgUtil.mensagemInfo('Atualizou')}"
-                           />
             <SBObjeto:imagemPequena item="#{sessaoAtualSBWP.usuario}"  somenteLeitura="false"/>
+            <h:form>
+                <SBInput:input registro="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('dataHora')}"
+
+                               label=" Teste"
+                               metodoOnChange="#{pgUtil.mensagemInfo('Atualizou')}"
+                               />
+            </h:form>
+
+
             <h:form rendered="false">
                 <SBInput:inputComControlador registro="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('quantidade')}"
                                              metodoAdicionar="#{pgUtil.mensagemInfo('Mais')}"

@@ -140,7 +140,9 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     public void dropaComponente() {
         FacesContext context = FacesContext.getCurrentInstance();
         Map map = context.getExternalContext().getRequestParameterMap();
-        String atributoEnviado = (String) map.get(paginaUtil.gerarCaminhoCompletoIDParaJavaScript("componenteDropado"));
+
+        String idatributoEnviado = map.keySet().stream().filter(id -> id.toString().contains("componenteDropado")).findFirst().get().toString();
+        String atributoEnviado = map.get(idatributoEnviado).toString();
         paginaUtil.enviaMensagem("Dropou!!!" + atributoEnviado);
         setCaminhoComponente(atributoEnviado);
         paginaUtil.atualizaTelaPorID("areaMais");
@@ -161,10 +163,10 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     public void setCaminhoComponente(String caminhoComponente) {
         try {
 
-            setComponenteSelecionado((ComponenteVisualBase) SBCore.getObjetoEstatico(caminhoComponente));
+            setComponenteSelecionado((ComponenteVisualSBBean) SBCore.getObjetoEstatico(caminhoComponente));
             this.caminhoComponente = caminhoComponente;
         } catch (Throwable t) {
-            SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Caminho do componente não foi encontrado :" + caminhoComponente, t);
+            SBCore.RelatarErro(FabErro.SOLICITAR_REPARO, "Caminho do componente não foi encontrado: " + caminhoComponente, t);
         }
     }
 
@@ -309,7 +311,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         //acoesLaboratorio = FabAcaoAdminDeveloper.DEV_OBJ_PROJETO_MB_LAB;
     }
 
-    public void executarAcao(ComponenteVisualBase pComponente) {
+    public void executarAcao(ComponenteVisualSBBean pComponente) {
 
         if (pComponente != null) {
 
@@ -705,6 +707,10 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     public void inspecionarBeanExemplo() {
         System.out.println(beanExemplo.getLocalizacao().getBairro().getNome());
         System.out.println(beanExemplo.getLocalizacao().getBairro().getCidade().getNome());
+    }
+
+    public void setComponenteSelecionado(ComponenteVisualSBBean componenteSelecionado) {
+        this.componenteSelecionado = componenteSelecionado;
     }
 
 }

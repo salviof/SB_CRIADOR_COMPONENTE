@@ -88,7 +88,7 @@
                         possuiIDOnChange="false"
                         metodoOnChange="#{pgUtil.enviaMensagem(pgMapaComponentes.campoInstanciado.valor)}"
                         possuiMetodoOnChange="true"
-
+                        layoutCampoEspecial="#{pgMapaComponentes.campoInstanciado.getComponenteDiferenciado(pgMapaComponentes.componenteSelecionado)}"
                         label="#{pgMapaComponentes.campoInstanciado.label}"
                         opcoes="#{pgMapaComponentes.campoInstanciado.listaDeOpcoes}"
                         atualizarFormOnChange="false"
@@ -113,7 +113,7 @@
             </c:if>
         </h:panelGroup>
 
-        ______________________________________________________________
+
     </p:fieldset>
 
 

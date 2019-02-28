@@ -33,6 +33,7 @@ import javax.inject.Named;
 public class Pg_paginaInicial extends MB_PaginaConversation {
 
     private String beanExemplo;
+    private ItfBeanSimples beanSelecionado;
 
     @PostConstruct
     public void inicio() {
@@ -50,12 +51,12 @@ public class Pg_paginaInicial extends MB_PaginaConversation {
 
     @Override
     public ItfBeanSimples getBeanSelecionado() {
-        return null;
+        return beanSelecionado;
     }
 
     @Override
     public void setBeanSelecionado(ItfBeanSimples pBeanSimples) {
-
+        beanSelecionado = pBeanSimples;
     }
 
 }

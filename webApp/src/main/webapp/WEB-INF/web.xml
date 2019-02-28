@@ -9,8 +9,6 @@
         <param-name>facelets.LIBRARIES</param-name>
         <param-value>/sb.taglibLab.xml</param-value>
     </context-param>
-
-    
     <servlet>
         <servlet-name>Push Servlet</servlet-name>
         <servlet-class>org.primefaces.push.PushServlet</servlet-class>
@@ -258,6 +256,4 @@
         <extension>svg#fontawesomeregular</extension>
         <mime-type>image/svg+xml</mime-type>
     </mime-mapping>
-
-
 </web-app>

@@ -56,7 +56,7 @@
             </p:outputLabel>
 
             <h:panelGrid columns="3" >
-<<<<<<< HEAD
+
 
                 <h:panelGroup  >
 
@@ -64,14 +64,8 @@
                                    update="#{pgUtil.getNomeIdPFieldSetPai(component)}"
                                    rendered="#{!cc.attrs.desabilitarEdicao}"
                                    partialSubmit="true"
-                                   process="@this"
-=======
-                <h:panelGroup  >
-                    <p:commandLink actionListener="#{cc.attrs.metodoReduzir}"
-                                   update="#{pgUtil.getNomeIdPFieldSetPai(component)}"
-                                   rendered="#{!cc.attrs.desabilitarEdicao}"
->>>>>>> d0f079bda841c7347286c1a8801285ca47441be1
-                                   >
+                                   process="@this">
+
                         <f:passThroughAttribute name="tabindex" value="-1"/>
                         <button type="button" class="btn btn-danger btn-number"
                                 tabindex="-1" data-type="minus" data-field="quant[2]">
@@ -102,11 +96,10 @@
 
                     <p:commandLink actionListener="#{cc.attrs.metodoAdicionar}"
                                    update="#{pgUtil.getNomeIdPFieldSetPai(component)}"
-<<<<<<< HEAD
+
                                    partialSubmit="true"
                                    process="@this"
-=======
->>>>>>> d0f079bda841c7347286c1a8801285ca47441be1
+
                                    >
                         <f:passThroughAttribute name="tabindex" value="-1"/>
                         <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]"

@@ -32,7 +32,7 @@
             <sb:inputSBTextMascara />
         </ui:fragment>
         <ui:fragment
-            rendered="#{compSBCompVisualInputs.texto_multiplas_Linhas.isXhtmlJSFCaminhoRelativoIgualA(xhtmlINPUT)}">
+            rendered="#{xhtmlINPUT==compSBCompVisualInputs.texto_multiplas_Linhas.xhtmlJsfCaminhoRelativo}">
             <sb:inputSBTextDEscritivo />
         </ui:fragment>
 
@@ -42,7 +42,6 @@
 
         <ui:fragment rendered="#{xhtmlINPUT==compSBCompVisualInputs.texto_Sem_Formatacao.xhtmlJsfCaminhoRelativo}">
             <sb:inputSBSimples />
-
         </ui:fragment>
 
         <ui:fragment  rendered="#{xhtmlINPUT==compSBCompVisualInputs.HTML.xhtmlJsfCaminhoRelativo}"  >

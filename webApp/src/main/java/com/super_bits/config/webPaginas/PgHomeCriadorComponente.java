@@ -26,6 +26,7 @@ import javax.inject.Named;
 public class PgHomeCriadorComponente extends MB_PaginaConversation {
 
     private BeanExemplo beanExemplo;
+    private ItfBeanSimples beaSimples;
 
     @PostConstruct
     public void inicio() {
@@ -34,12 +35,12 @@ public class PgHomeCriadorComponente extends MB_PaginaConversation {
 
     @Override
     public ItfBeanSimples getBeanSelecionado() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return beaSimples;
     }
 
     @Override
     public void setBeanSelecionado(ItfBeanSimples pBeanSimples) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        beaSimples = pBeanSimples;
     }
 
     public BeanExemplo getBeanExemplo() {
