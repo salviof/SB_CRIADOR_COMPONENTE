@@ -17,7 +17,7 @@
 
             <p:calendar
                 locale="pt_BR"
-                class=" campoResponsivo  TexAlCenter #{componente.classeCSS}"
+
                 rendered="#{!desabilitarEdicao}"
                 required="#{obrigatorio}"
                 value="#{valor}"
@@ -26,23 +26,26 @@
                 showSecond="false"
                 showButtonPanel="true"
                 showOn="button"
-
+                validator="org.super_bits.view.validadores.genericoDatas"
                 requiredMessage="O campo #{label} não foi informado! "
                 disabled="#{desabilitarEdicao}"
                 showHour="true"
                 showMinute="true"
                 pattern="dd/MM/yyyy HH:mm:ss"
+                styleClass="estiloDataHora  #{componente.classeCSS}"
+
                 >
-                <f:validator  validatorId="org.super_bits.view.validadores.genericoDatas"
-                              for="@parent"
-                              />
+                <f:passThroughAttribute name="caminhoCampo" value="#{registro.nomeCompostoIdentificador}" />
+                <f:passThroughAttribute name="dominio" value="#{registro.nomeClasseOrigemAtributo}" />
+                <f:passThroughAttribute name="campoInstanciado" value="#{registro}" />
+
 
                 <p:clientValidator/>
 
                 <c:if test="#{possuiMetodoOnChange}">
                     <p:ajax rendered="#{possuiMetodoOnChange}"
                             global="true"
-                            event="dateSelect"
+                            event="change"
                             listener="#{prMetodo}"/>
                 </c:if>
 
@@ -50,7 +53,7 @@
                     <p:ajax
                         rendered="#{possuiIDOnChange}"
                         global="true"
-                        event="dateSelect"
+                        event="change"
                         listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}" />
                 </c:if>
 

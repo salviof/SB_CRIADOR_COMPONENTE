@@ -29,6 +29,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemCidade
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemLocalizacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.ItemUnidadeFederativa;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.icones.FabIconeFontAwesome;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.ItemContatoCorporativo;
 import java.util.ArrayList;
 import java.util.Date;
@@ -36,8 +37,10 @@ import java.util.List;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Transient;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import org.coletivojava.fw.api.objetoNativo.view.icone.IconeSistema;
 import org.coletivojava.fw.api.tratamentoErros.FabErro;
 
 /**
@@ -137,8 +140,8 @@ public class BeanExemplo
     @NotNull
     private String email = "emailteste@teste.com";
 
-    @InfoCampo(fabricaDeOpcoes = FabTipoAtributoObjeto.class, tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA)
-    private TipoAtributoObjetoSB seletorOpcao;
+    @InfoCampo(fabricaDeOpcoes = FabIconeFontAwesome.class, tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA)
+    private IconeSistema seletorOpcao;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.AAA_DESCRITIVO, label = "Descritivo memo")
     private String descritivo;
@@ -230,7 +233,7 @@ public class BeanExemplo
     @InfoCampo(tipo = FabTipoAtributoObjeto.REG_DATAALTERACAO, label = "Data Alteração")
     private Date dataAlteracao;
 
-    @InfoCampo(tipo = FabTipoAtributoObjeto.AAA_NOME, label = "Apelido")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.AAA_NOME, label = "Apelido", descricao = "Informação util teste")
     private String apelido = "Bean Simples";
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.HTML_TEMPLATE)
@@ -252,9 +255,10 @@ public class BeanExemplo
     @NotNull
     private String cep;
 
-    @InfoCampo(tipo = FabTipoAtributoObjeto.DATAHORA, label = "Data Hora")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.DATAHORA, label = "Data Hora", descricao = "Campo para formato data hora xx/xx/xx 00:00:00")
     @NotNull
-    private String dataHora;
+    @Future
+    private Date dataHora;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.ARQUIVO_DE_ENTIDADE, label = "Arquivo")
     @NotNull
@@ -280,8 +284,8 @@ public class BeanExemplo
     )
     private BeanExemplo beanSelecionadoDaListaDescritiva;
 
-    @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, fabricaDeOpcoes = FabListBeanExemplos.class)
-    private BeanExemplo beanSelecionadoDaListaFabrica;
+    @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, fabricaDeOpcoes = FabIconeFontAwesome.class)
+    private IconeSistema beanSelecionadoDaListaFabrica;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, caminhoParaLista = "filiaisFornecedor")
     private BeanExemplo benSelecionadoListaPorCampo;
@@ -555,11 +559,11 @@ public class BeanExemplo
         this.cep = cep;
     }
 
-    public String getDataHora() {
+    public Date getDataHora() {
         return dataHora;
     }
 
-    public void setDataHora(String dataHora) {
+    public void setDataHora(Date dataHora) {
         this.dataHora = dataHora;
     }
 
@@ -600,11 +604,12 @@ public class BeanExemplo
         this.beanSelecionadoDaListaDescritiva = beanSelecionadoDaListaDescritiva;
     }
 
-    public BeanExemplo getBeanSelecionadoDaListaFabrica() {
+    public IconeSistema getBeanSelecionadoDaListaFabrica() {
         return beanSelecionadoDaListaFabrica;
+
     }
 
-    public void setBeanSelecionadoDaListaFabrica(BeanExemplo beanSelecionadoDaListaFabrica) {
+    public void setBeanSelecionadoDaListaFabrica(IconeSistema beanSelecionadoDaListaFabrica) {
         this.beanSelecionadoDaListaFabrica = beanSelecionadoDaListaFabrica;
     }
 
@@ -620,11 +625,11 @@ public class BeanExemplo
         this.beanFilho = beanFilho;
     }
 
-    public TipoAtributoObjetoSB getSeletorOpcao() {
+    public IconeSistema getSeletorOpcao() {
         return seletorOpcao;
     }
 
-    public void setSeletorOpcao(TipoAtributoObjetoSB seletorOpcao) {
+    public void setSeletorOpcao(IconeSistema seletorOpcao) {
         this.seletorOpcao = seletorOpcao;
     }
 

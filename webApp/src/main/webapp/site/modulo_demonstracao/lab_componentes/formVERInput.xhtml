@@ -78,10 +78,23 @@
 
                 <h:form >
 
+                    <SBInput:input registro="#{pgMapaComponentes.campoInstanciado}"
+                                   metodoOnChange="#{pgUtil.enviaMensagem('Colé colé')}"
+                                   atualizarFormOnChange="true"
+                                   idAtualizarOnChange="@form"
+                                   layout="#{layoutsComponenteSB.layoutCampo.resumido}"
+                                   />
+                    <p:separator/>
 
-
+                    <SBInput:input registro="#{pgMapaComponentes.campoInstanciado}"
+                                   metodoOnChange="#{pgUtil.enviaMensagem('Colé colé')}"
+                                   atualizarFormOnChange="true"
+                                   idAtualizarOnChange="@form"
+                                   layout="#{layoutsComponenteSB.layoutCampo.superior}"
+                                   />
+                    <p:separator/>
                     <sb:inputSB
-
+                        render="false"
                         registro="#{pgMapaComponentes.campoInstanciado}"
                         desabilitarEdicao="false"
                         layoutCampo="#{layoutsComponenteSB.layoutCampo.esquerda}"
@@ -96,7 +109,7 @@
                         atualizarGrupoOnChange="false"
 
                         />
-
+                    <p:separator/>
 
                     <p:commandButton value="Teste update form" update="@form" />
                 </h:form>

@@ -5,8 +5,11 @@
  */
 package com.super_bits.SB_CRIADOR_COMPONENTE.paginas;
 
+import br.org.coletivojava.erp.comunicacao.transporte.ERPTransporteComunicacao;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.FabAcaoBeanExemploDemonstrativo;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.InfoAcaoBeamExemploDemo;
+import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioAnonimo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioAplicacaoEmExecucao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioSistemaRoot;
@@ -59,6 +62,11 @@ public class PgTestesComunicacao extends MB_PaginaConversation {
     @Override
     public void setBeanSelecionado(ItfBeanSimples pBeanSimples) {
 
+    }
+
+    public void enviarMensagemParaRoot() {
+        SBCore.getCentralDeComunicacao().gerarComunicacaoSistema_UsuairoLogado(FabTipoComunicacao.NOTIFICAR, "Olá <b></b>", "bla blá blá <b>colé colé <b>, blá blá blá",
+                ERPTransporteComunicacao.EMAIL);
     }
 
 }

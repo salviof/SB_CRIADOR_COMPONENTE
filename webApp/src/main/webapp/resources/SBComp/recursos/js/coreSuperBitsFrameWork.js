@@ -222,3 +222,28 @@ function pesquisaDataSetComDelay(idElementoDigitacao, idDataSetPrime) {
         }, 800);
     }
 }
+
+//Funções de comunicação
+function notificacoesPush(notificacao) {
+    console.log(notificacao);
+    if (notificacao.temMensagem) {
+        PF("#{layoutIdsAreasConhecidas.AREA_MENSAGEM_INTERFACE}").renderMessage(JSON.parse(notificacao.mensagemJson));
+    }
+    if (notificacao.temCodigoConversa) {
+
+        responderConversa(notificacao.codigoConversa);
+    }
+}
+function responderConversa(codigoSelo) {
+    (document.getElementById('formularioComunicacao:codigoComunicacao')).value = codigoSelo;
+    PF('botaoAbrirModalConversa').jq.click();
+
+}
+
+function responderConversaRespostaRapida(codigoSelo, codigoResposta) {
+    (document.getElementById('formularioComunicacaoRespostaRapida:codigoSeloCMRespostaRapida')).value = codigoSelo;
+    (document.getElementById('formularioComunicacaoRespostaRapida:codigoRespostaRapida')).value = codigoResposta;
+
+    PF('respostaRapidaAct').jq.click();
+
+}

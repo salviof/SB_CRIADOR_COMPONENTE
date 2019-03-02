@@ -8,6 +8,7 @@
     <ui:decorate template="#{layout.xhtmlJsfCaminhoRelativo}">
         <ui:define name="input">
             <p:outputLabel value="#{registro.valor}" rendered="#{desabilitarEdicao}" />
+
             <p:inputText
                 onfocus="mesclarOnChangeComDelay(this.id)"
                 rendered="#{!desabilitarEdicao}"

@@ -4,51 +4,11 @@
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
-
-
-    <li>
-        <a class="menulink Animated05"><i class="fa fa-comment-o animated swing "></i> <span>Notificações</span></a>
-
-
-        <ul style="margin-left:-155px;">
-
-            <c:forEach var="comunicacao" items="#{sessaoAtualSBWP.comunicacaoAguardandoRespostaUsuarioSesso}" >
-                <span>
-                    <h:form>
-                        <li>
-                            <p:commandLink  onclick="responderConversa(#{comunicacao.codigoSelo})">
-                                <p:ajax event="dialogReturn" listener="#{pgUtilComunicacao.metodoRespostaModal}"
-
-                                        />
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 
 
-
-                                <i class="#{comunicacao.tipoComunicacao.icone} Fs20 Blue Fleft" style="margin: 5px;"> </i>
-                                <c:forEach items="#{comunicacao.repostasPossiveis}" var="resp" >
-
-
-
-                                    <i class="  #{resp.tipoResposta.icone} Fs20 Blue Fright" style="margin: 5px;" >  </i>
-
-
-
-
-                                </c:forEach>
-
-                                <span class="FontAdamantiumBold Blue">#{comunicacao.assunto}</span><br />
-                                <span class="Fs12">#{comunicacao.mensagem}</span>
-
-                            </p:commandLink>
-
-                        </li>
-                    </h:form>
-                </span>
-            </c:forEach>
-        </ul>
-
-    </li>
 
     <li>
         <a class="menulink Animated05"><i class="fa fa-address-card" ></i>  Minha Conta </a>
@@ -77,9 +37,43 @@
                         </p:commandLink>
                     </h:form>
                 </span></li>
+        </ul>
+    </li>
+    <li>
+        <a class="menulink Animated05 ">
 
+            <i class="fa #{sessaoAtualSBWP.comunicacaoAguardandoRespostaUsuarioSesso.isEmpty() ? 'fa-bell-o' : 'fa-bell' } #{sessaoAtualSBWP.comunicacaoAguardandoRespostaUsuarioSesso.isEmpty() ? '' : 'animated swing' }  " style="" >
+                <h:panelGroup styleClass="#{sessaoAtualSBWP.comunicacaoAguardandoRespostaUsuarioSesso.size()>=10 ? 'sinoNotificacaoDezena' : 'sinoNotificacao' }"
+                              rendered="#{!sessaoAtualSBWP.comunicacaoAguardandoRespostaUsuarioSesso.isEmpty()}" >
+                    #{sessaoAtualSBWP.comunicacaoAguardandoRespostaUsuarioSesso.size()}
+                </h:panelGroup>
+            </i> <span></span>
+        </a>
+        <ul style="margin-left:-230px;">
+            <c:forEach var="comunicacao" items="#{sessaoAtualSBWP.comunicacaoAguardandoRespostaUsuarioSesso}" >
+                <span>
+                    <h:form>
+                        <li>
 
+                            <h:panelGroup layout="">
+                                <c:forEach items="#{comunicacao.repostasPossiveis}" var="resp" >
+                                    <h:panelGroup layout="block" >
+                                        <i  onclick="responderConversaRespostaRapida(#{comunicacao.codigoSelo}, #{resp.tipoResposta.id})" class="w3-btn   #{resp.tipoResposta.icone} Fs20 Blue Fright" style="margin: 10px; background-color: white; color: #0074c7" >
+                                        </i>
+                                    </h:panelGroup>
 
+                                </c:forEach>
+                                <p:commandLink  onclick="responderConversa(#{comunicacao.codigoSelo})">
+                                    <i class="#{comunicacao.tipoComunicacao.icone} Fs20 Blue Fleft" style="margin: 5px; position: absolute"> </i>
+                                    <span class="FontAdamantiumBold Blue"> <h:outputLabel escape="false" value="#{comunicacao.assunto}" /> </span><br />
+                                    <span class="Fs12"><h:outputLabel escape="false" value="#{comunicacao.mensagem}" /></span>
+                                    <p:ajax event="dialogReturn" listener="#{pgUtilComunicacao.metodoRespostaModal}"/>
+                                </p:commandLink>
+                            </h:panelGroup>
+                        </li>
+                    </h:form>
+                </span>
+            </c:forEach>
         </ul>
 
     </li>
