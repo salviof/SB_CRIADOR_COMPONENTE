@@ -18,6 +18,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basic
 import com.super_bits.modulosSB.SBCore.modulos.view.menu.MenusDaSessao;
 import java.util.ArrayList;
 import java.util.List;
+import org.coletivoJava.fw.projetos.SB_CRIADOR_COMPONENTE.servico.ModuloDemonstracaoExemplo;
 
 /**
  *
@@ -26,7 +27,7 @@ import java.util.List;
 public class ConfigPermissaoProjetoDemostrativo extends ConfigPermissaoSBCoreAbstrato {
 
     public ConfigPermissaoProjetoDemostrativo() {
-        super(null);
+        super(new Class[]{ModuloDemonstracaoExemplo.class});
     }
 
     @Override

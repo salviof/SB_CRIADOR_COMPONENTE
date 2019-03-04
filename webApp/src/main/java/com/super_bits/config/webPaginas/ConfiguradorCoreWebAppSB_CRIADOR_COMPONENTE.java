@@ -9,6 +9,7 @@ import com.google.common.collect.Lists;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.paginasIniciais.FabAcoesHomeCriadorComponente;
 import com.super_bits.Super_Bits.SB_AdminTools.regras_de_negocio_e_controller.admin_developer.FabAcaoAdminDeveloper;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.FabAcaoBeanExemploDemonstrativo;
+import com.super_bits.configSBFW.acessos.ConfigPermissaoProjetoDemostrativo;
 import com.super_bits.configSBFW.acessos.UtilSB_CRIADOR_COMPONENTEGlobalVar;
 import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
 import com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB;
@@ -45,6 +46,7 @@ public class ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE extends ConfiguradorCor
         //setIgnorarConfiguracaoPermissoes(true);
         pConfig.setCentralDeLocalizacao(CentralDeLocalizacaoSemPersistencia.class);
         pConfig.setCentralAtributoDados(CentralAtributosWebappSemPersistencia.class);
+        pConfig.setClasseConfigPermissao(ConfigPermissaoProjetoDemostrativo.class);
         List<Class<? extends ItfFabricaAcoes>> listaWebApp = Lists.newArrayList(UtilSB_CRIADOR_COMPONENTEGlobalVar.pAcoesDoSistema());
 
         listaWebApp.add(FabAcoesHomeCriadorComponente.class);

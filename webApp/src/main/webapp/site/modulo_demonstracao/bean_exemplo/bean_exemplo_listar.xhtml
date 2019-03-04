@@ -27,12 +27,14 @@
 
                     titulo="Listagem de  #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.comoFormularioEntidade.nomeTipoObjetoClasseRelacionadaPlural}"
                     />
-
+                #{applicationScope.values}
 
                 <SBFormAtualEnt:pgAtualListaPadraoComOpcoesResponsiva rendered="true" />
+                <p:commandButton actionListener="#{pgUtil.atualizaTelaPorID(layoutIdsAreasConhecidas.AREA_MENSAGEM_INTERFACE)}" />
             </p:fieldset>
         </h:form>
     </ui:define>
+
 
 
 </ui:composition>

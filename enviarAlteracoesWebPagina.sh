@@ -20,11 +20,9 @@ source /home/superBits/superBitsDevOps/core/coreSBBash.sh
 alerta "Definindo Variavies"
 CAMINHO_WP_RESOURCES_LAB="/home/superBits/projetos/Super_Bits/source/SB_CRIADOR_COMPONENTE/webApp/src/main/webapp/resources/"
 CAMINHO_WP_WEBAPP_LAB="/home/superBits/projetos/Super_Bits/source/SB_CRIADOR_COMPONENTE/webApp/src/main/webapp/"
-<<<<<<< HEAD
-CAMINHO_META_INF="/home/superBits/projetos/coletivoJava/source/fw/SBWebPaginas/src/main/resources/META-INF"
-=======
+
 CAMINHO_META_INF="/home/superBits/projetos/coletivoJava/source/fw/SBWebPaginas/src/main/resources/META-INF/"
->>>>>>> d0f079bda841c7347286c1a8801285ca47441be1
+
 
 alerta "Sobrescrevendo pasta TagLib"
 
@@ -40,11 +38,9 @@ cd /home/superBits/recursos/SBComp/
 ./sincroniza.sh
 ./sincroniza.sh
 
-<<<<<<< HEAD
+
 cd /home/superBits/projetos/coletivoJava/source/fw/SBWebPaginas
-=======
-cd /home/superBits/projetos/coletivoJava/source/fw/SBWebPaginas/
->>>>>>> d0f079bda841c7347286c1a8801285ca47441be1
+
 mvn -DskipTests=true clean install
 
 

@@ -9,6 +9,7 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.BeanExemplo;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.FabListBeanExemplos;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.FabAcaoBeanExemploDemonstrativo;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.InfoAcaoBeamExemploDemo;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.ItfRespostaAcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.TIPO_PARTE_URL;
 import com.super_bits.modulosSB.SBCore.modulos.fabrica.UtilSBCoreReflexaoFabrica;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.MB_paginaCadastroEntidades;
@@ -65,6 +66,11 @@ public class PgBeanExemplo extends MB_paginaCadastroEntidades<BeanExemplo> {
     @Override
     public void metodoRespostaModalPrimefaces(SelectEvent event) {
         super.metodoRespostaModalPrimefaces(event); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ItfRespostaAcaoDoSistema autoExecAcaoController(BeanExemplo pEntidade) {
+        return super.autoExecAcaoController(pEntidade); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
