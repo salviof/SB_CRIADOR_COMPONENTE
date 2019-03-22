@@ -43,8 +43,9 @@
     <!-- IMPLEMENTATION -->
     <cc:implementation>
 
-        <h:panelGrid columns="1"  class="InputSBSuperior"
+        <h:panelGrid columns="1"  class="InputSBSuperior InputControlador"
                      rowClasses=""
+
                      >
 
             <p:outputLabel  rendered="#{pgUtil.isNuloOuEmbranco(cc.attrs.label)}" value="#{cc.attrs.label}"
@@ -80,7 +81,7 @@
                         obrigatorio="#{cc.attrs.registro.obrigatorio}"
                         registro="#{cc.attrs.registro}"
                         desabilitarEdicao="#{cc.attrs.desabilitarEdicao}"
-                        layoutCampo="#{layoutsComponenteSB.layoutCampo.semLabel}"
+                        layoutCampo="#{layoutsComponenteSB.layoutCampo.resumido}"
                         possuiIDOnChange="true"
                         possuiMetodoOnChange="#{pgUtil.isAtributoPreenchidoComExpressao(cc,'metodoExecutarAoAlterarValor')}"
                         layoutCampoEspecial="#{cc.attrs.visualizacaoEspecial}"

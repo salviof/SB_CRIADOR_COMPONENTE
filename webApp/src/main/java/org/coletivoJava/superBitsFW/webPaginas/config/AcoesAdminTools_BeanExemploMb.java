@@ -42,6 +42,11 @@ public class AcoesAdminTools_BeanExemploMb implements Serializable {
 				.getAcaoDoSistemaByNomeUnico("FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_FRM_SUB_LISTA_EXEMPLO");
 	}
 
+	public ItfAcaoFormularioEntidade getBeanExemploFrmSubListaSomenteleitura() {
+		return (ItfAcaoFormularioEntidade) MapaAcoesSistema
+				.getAcaoDoSistemaByNomeUnico("FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_FRM_SUB_LISTA_SOMENTElEITURA");
+	}
+
 	public ItfAcaoControllerEntidade getBeanExemploCtrSalvarMerge() {
 		return (ItfAcaoControllerEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_CTR_SALVAR_MERGE");

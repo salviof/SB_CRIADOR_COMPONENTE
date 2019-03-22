@@ -17,6 +17,9 @@ and open the template in the editor.
     width: auto;
 
 }
+.InputControlador tbody tr td table{
+    min-width: 200px;
+}
 
 .InputColunaSuperiorConteudoLeitura{
     background-color: #f7f5f3!important;
@@ -25,8 +28,14 @@ and open the template in the editor.
     min-height: 30px;
     width: 99%;
 }
+.InputColunaSuperiorConteudoLeitura td {
+    display: initial;
+}
+
+
 
 .InputColunaSuperiorConteudo{
+
 
 
 }
@@ -71,6 +80,9 @@ and open the template in the editor.
 .listaComOcoesOcultaFitro{
     height: 5px!important;
     display: none!important;
+}
+.inputItensDataListSomenteLeituraResponsivo::parent{
+
 }
 
 .inputCampo{

@@ -11,6 +11,7 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_contr
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.InfoAcaoBeamExemploDemo;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.ItfRespostaAcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.TIPO_PARTE_URL;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.fabrica.UtilSBCoreReflexaoFabrica;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.MB_paginaCadastroEntidades;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.reflexao.anotacoes.InfoPagina;
@@ -47,10 +48,16 @@ public class PgBeanExemplo extends MB_paginaCadastroEntidades<BeanExemplo> {
     @PostConstruct
     public void inicio() {
         listarDados();
+        adicionarAcaoDeEntidade(FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_FRM_SUB_LISTA_SOMENTElEITURA);
         if (getParametroInstanciado(prbeanSelecionado).isValorDoParametroFoiConfigurado()) {
             setEntidadeSelecionada((BeanExemplo) getParametroInstanciado(prbeanSelecionado).getValor());
 
         }
+    }
+
+    @Override
+    public List<ItfAcaoDoSistema> getAcoesRegistros() {
+        return super.getAcoesRegistros(); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

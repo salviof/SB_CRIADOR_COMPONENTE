@@ -9,6 +9,7 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.BeanExemplo;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.FabModulosIProjetoTesteI;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.InfoModuloSB_CRIADOR_COMPONENTE;
 import com.super_bits.modulos.SBAcessosModel.fabricas.ItfFabricaDeAcoesPersistencia;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.estadoFormulario.FabEstadoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoController;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormCamposAtualizaGrupoDoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormulario;
@@ -43,6 +44,16 @@ public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersiste
             },
             iconeFonteAnsowame = FabIconeFontAwesome.REG_LISTAR)
     BEAN_EXEMPLO_FRM_SUB_LISTA_EXEMPLO,
+    @InfoTipoAcaoFormulario(nomeAcao = "Testes SubLista",
+            campos = {"[separador:subLista particular]", "listaParticular[].porcentagem", "listaParticular[].senha",
+                "listaParticular[].listasExemplo", "beanFilho.apelido",
+                "[separador:subLista publica]", "listasExemplo"
+
+            },
+            isUmaAcaoDeRegistroExistente = true,
+            estadoFormulario = FabEstadoFormulario.VISUALIZAR,
+            iconeFonteAnsowame = FabIconeFontAwesome.REG_LISTAR)
+    BEAN_EXEMPLO_FRM_SUB_LISTA_SOMENTElEITURA,
     @InfoTipoAcaoController()
     BEAN_EXEMPLO_CTR_SALVAR_MERGE,
     @InfoTipoAcaoController()

@@ -78,11 +78,14 @@
 
                 <h:form >
 
+                    <SBInput:inputComControlador registro="#{pgMapaComponentes.campoInstanciado}" rendered="false" />
+                    <p:separator/>
                     <SBInput:input registro="#{pgMapaComponentes.campoInstanciado}"
                                    metodoOnChange="#{pgUtil.enviaMensagem('Colé colé')}"
                                    atualizarFormOnChange="true"
                                    idAtualizarOnChange="@form"
-                                   layout="#{layoutsComponenteSB.layoutCampo.resumido}"
+                                   desabilitarEdicao="true"
+                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
                                    />
                     <p:separator/>
 
@@ -94,12 +97,12 @@
                                    />
                     <p:separator/>
                     <sb:inputSB
-                        render="false"
+
                         registro="#{pgMapaComponentes.campoInstanciado}"
                         desabilitarEdicao="false"
                         layoutCampo="#{layoutsComponenteSB.layoutCampo.esquerda}"
                         possuiIDOnChange="false"
-                        metodoOnChange="#{pgUtil.enviaMensagem(pgMapaComponentes.campoInstanciado.valor)}"
+                        metodoOnChange="#{pgUtil.enviaMensagem('Colé colé')}"
                         possuiMetodoOnChange="true"
                         layoutCampoEspecial="#{pgMapaComponentes.campoInstanciado.getComponenteDiferenciado(pgMapaComponentes.componenteSelecionado)}"
                         label="#{pgMapaComponentes.campoInstanciado.label}"
