@@ -11,6 +11,7 @@ import com.super_bits.config.webPaginas.SiteMap;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.AtributoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.estrutura.ItfEstruturaCampoEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfComponenteVisualSB;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualEndereco;
@@ -31,11 +32,11 @@ public class PgMapaComponentesTest extends TestesWP_CRIADOR_COMPONENTES {
 
             new SiteMap();
             MapaObjetosProjetoAtual.adcionarObjeto(BeanExemplo.class);
-            List<EstruturaCampo> campos = MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class).getCampos();
+            List<ItfEstruturaCampoEntidade> campos = MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class).getCampos();
 
             System.out.println(campos);
             System.out.println("Componente padrão=" + MapaObjetosProjetoAtual.getVisualizacaoDoObjeto(BeanExemplo.class));
-            for (EstruturaCampo cp : campos) {
+            for (ItfEstruturaCampoEntidade cp : campos) {
                 System.out.println(cp.getNomeDeclarado());
                 System.out.println(cp.getNomeDoObjeto());
             }

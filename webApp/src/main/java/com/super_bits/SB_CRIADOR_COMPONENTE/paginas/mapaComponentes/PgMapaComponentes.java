@@ -23,6 +23,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.UtilSBCoreRefl
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.CampoNaoImplementado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.estrutura.ItfEstruturaCampoEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
 import com.super_bits.modulosSB.SBCore.modulos.view.componenteAtributo.ComponenteVisualSBBean;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual;
@@ -55,7 +56,6 @@ import javax.annotation.PreDestroy;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
-import org.coletivojava.fw.api.objetoNativo.view.componente.ComponenteVisualBase;
 import org.coletivojava.fw.api.objetoNativo.view.componente.FamiliaComponente;
 import org.coletivojava.fw.api.tratamentoErros.FabErro;
 import org.primefaces.context.RequestContext;
@@ -222,7 +222,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
             acoesLaboratorio = new ArrayList<>();
             dialogoDoMomento = new DialogoWeb();
 
-            for (EstruturaCampo cp : MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class).getCampos()) {
+            for (ItfEstruturaCampoEntidade cp : MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class).getCampos()) {
                 String caminhoCampo = BeanExemplo.class.getSimpleName() + "." + cp.getNomeDeclarado();
                 beansDisponiveis.add(caminhoCampo);
                 labelByCaminho.put(caminhoCampo, cp.getLabel());
