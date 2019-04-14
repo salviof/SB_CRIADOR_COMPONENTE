@@ -22,7 +22,36 @@
             </style>
         </ui:define>
 
+
+
+
         <ui:define name="#{layoutsPaginas.modeloGeral.areaPrincipal}">
+            #{acoesAdminTools_BeanExemploMb.beanExemploMb.comoGestaoEntidade.acoesFormulario.size()}
+
+            <h:form>
+                <div class="Container2">
+                    <SBAcaoNav:seletorAcoesHorizontalResponsivo opcaoSelecionada="#{pgHomeCriadorComponente.acaoSelecionada}"
+
+                                                                metodo="#{pgHomeCriadorComponente.executarAcaoSelecionada()}"
+                                                                opcoes="#{acoesAdminTools_BeanExemploMb.beanExemploMb.comoGestaoEntidade.acoesFormulario}"
+                                                                visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.gigante}"
+
+                                                                />
+                </div>
+
+
+                <div class="Container8">
+                    <SBAcaoNav:seletorAcoesHorizontalResponsivo opcaoSelecionada="#{pgHomeCriadorComponente.acaoSelecionada}"
+
+                                                                metodo="#{pgHomeCriadorComponente.executarAcaoSelecionada()}"
+                                                                opcoes="#{acoesAdminTools_BeanExemploMb.beanExemploMb.comoGestaoEntidade.acoesFormulario}"
+                                                                visualizacaoBotao="#{layoutsComponenteSB.layoutBotoes.gigante}"
+
+                                                                />
+                </div>
+            </h:form>
+            <div class="quebraBlocoComEspacoVertical150"></div>
+
 
             <SBObjeto:imagemPequena item="#{sessaoAtualSBWP.usuario}"  somenteLeitura="false"/>
             <h:form>
@@ -89,6 +118,12 @@
 
                                           />
             </h:form>
+
+
+            <div class="Container12">
+            </div>
+
+            <p:separator/>
 
 
             <h:panelGroup  >

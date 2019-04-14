@@ -66,7 +66,7 @@ public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersiste
     BEAN_EXEMPLO_CTR_ATIVAR,
     @InfoTipoAcaoController(campoJustificativa = "listasExemplo")
     BEAN_EXEMPLO_CTR_CAMPO_COM_JUSTIFICATIVA,
-    @InfoTipoAcaoFormulario(iconeFonteAnsowame = FabIconeFontAwesome.REG_PESQUISA_AVANCADA)
+    @InfoTipoAcaoFormulario(iconeFonteAnsowame = FabIconeFontAwesome.REG_PESQUISA_AVANCADA, nomeAcao = "Modal Testes")
     BEAN_EXEMPLO_FRM_MODAL_TESTE,
     @InfoTipoAcaoFormulario()
     BEAN_EXEMPLO_FRM_SELECAO_DE_ACAO,
