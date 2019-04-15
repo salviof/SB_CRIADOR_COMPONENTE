@@ -86,14 +86,29 @@ div[class^="btnSeletor"]{
     text-align:center;
 
 }
-div[class^="btnSeletor"]:hover{
-    opacity: 0.7;
-}
+
+
 div[class^="btnSeletor"]:active{
     transform: scale(.98,.98);
 }
-.btnSeletor-big{width: 120px;}
-.btnSeletor-small{width: 95px;}
+.containerBtnSeletor{
+
+    outline: 3px solid #000f2d;
+
+}
+.containerBtnSeletor:hover{
+    border-radius: 10px;
+    background-color: #e1e3e8;
+    transition: .1s all ease-in-out;
+    transform: scale(1.1);
+}
+.btnSeletor-big{
+    width: 120px;
+    border:1px!important;
+}
+.btnSeletor-small{
+    width: 95px;
+}
 .btnSeletor-label{
     position: relative;
 
@@ -106,7 +121,16 @@ div[class^="btnSeletor"]:active{
     font: 500 12px sans-serif;
 
 }
-.btnSeletor-Bkg{ background: #e5ffee!important;}
+.btnSeletor{
+    background: #e5ffee!important;
+}
+.btnSeletorGigante div span{
+
+}
+
+.btnSeletorGigante div span{
+
+}
 
 .sinoNotificacao{
     right: -10px;
@@ -139,6 +163,7 @@ div[class^="btnSeletor"]:active{
     border: 0px solid black;
     overflow-x: hidden;
     overflow-y: hidden;
+
 
 }
 

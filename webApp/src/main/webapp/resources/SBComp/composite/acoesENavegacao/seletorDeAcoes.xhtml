@@ -108,10 +108,10 @@
                                 >
 
 
-                                <div class="btnSeletor-small btnSeletor-Bkg OrganizadorContainer" style="min-height: 120px;min-width: 120px;" >
-                                    <div class="OrganizadorContainer">
+                                <div class="btnSeletor-big containerBtnSeletor OrganizadorContainer" style="min-height: 120px;min-width: 120px;" >
+                                    <h:panelGroup  layout="block" styleClass="OrganizadorContainer">
 
-                                        <h:panelGroup style="height: 50px;align-self: center;">
+                                        <h:panelGroup style="height: 50px;align-self: center;" layout="span">
                                             <font color="##{opc.cor}" >
                                                 <div class="Container12" style=" color:##{opc.cor}!important;background-color:#{opc.cor}">
                                                     <i  class=" #{opc.iconeAcao} fa fa-2x" style=" background: #F5F5F5;   padding:15px;   border-radius: 100%;"  > </i><br/>
@@ -132,7 +132,7 @@
                                         <p:tooltip rendered="#{opc.descricao!=null}"
                                                    value="#{opc.descricao}"
                                                    />
-                                    </div>
+                                    </h:panelGroup>
                                 </div>
 
                                 <f:setPropertyActionListener
