@@ -44,14 +44,14 @@
 
         <h:panelGroup styleClass="menu-horizontal-responsivo-container" layout="block"  style="opacity: 1" >
             <h:panelGroup style="" styleClass="botao-lateral-esquerda-menu-horizontal-responsivo somenteDesktop hidden-botao-lateral" layout="block" >
-                <a href="javascript:void(0)"  onclick="acoesBotaoMenuHorizontal($('.menu-horizontal-responsivo-id-#{cc.attrs.id}'), false)" style="">
+                <a href="javascript:void(0)"  onclick="acoesBotaoMenuHorizontal($('.menu-horizontal-responsivo-id-#{cc.attrs.pid}'), false, true)" style="">
                     <div class=" "  >
-                        <h:outputText value="&#60;&#60;" escape="true"/>
+                        <h:outputText value="&#60;&#60;&#60;" escape="true"/>
                     </div>
                 </a>
             </h:panelGroup>
 
-            <ul class="menu-horizontal-responsivo menu-horizontal-responsivo-id-#{cc.attrs.id} " style="display: flex;  justify-content: space-around;display: -webkit-flex;">
+            <ul class="menu-horizontal-responsivo menu-horizontal-responsivo-id-#{cc.attrs.pid} " style="display: flex;  justify-content: space-around;display: -webkit-flex;">
                 <ui:repeat var="opc" value="#{cc.attrs.opcoes}" >
 
 
@@ -65,18 +65,16 @@
                                 target="#{servicosCRM.tipoAtividadeSelecionada}"
                                 value="#{opc}"  />
                             <script>
-                                function formatarCorbtIcon#{cc.id}#{rec.index}() {
+                                function formatarCorbtIcon#{cc.attrs.pid}#{rec.index}() {
                                     console.log('#{component.clientId}');
                                     document.getElementById("#{component.clientId}").style.backgroundColor = "##{opc.cor}";
                                 }
                             </script>
+                            <p:tooltip for="@parent" value=" #{opc.nomeAcao} - #{opc.descricao}"/>
                         </p:commandButton>
                         <script>
-                            formatarCorbtIcon#{cc.id}#{rec.index}();
+                            formatarCorbtIcon#{cc.attrs.pid}#{rec.index}();
                         </script>
-
-                        <p:tooltip for="btIcon#{cc.id}#{rec.index}" value=" #{opc.nomeAcao} - #{opc.descricao}"/>
-
                     </li>
 
                 </ui:repeat>
@@ -85,9 +83,9 @@
 
             </ul>
             <h:panelGroup style="" styleClass="somenteDesktop botao-lateral-direita-menu-horizontal-responsivo"  layout="block" >
-                <a href="javascript:void(0)"  onclick="acoesBotaoMenuHorizontal($('.menu-horizontal-responsivo-id-#{cc.attrs.id}'), true)" style="">
+                <a href="javascript:void(0)"  onclick="acoesBotaoMenuHorizontal($('.menu-horizontal-responsivo-id-#{cc.attrs.pid}'), true, false)" style="">
                     <div class=" "  >
-                        <h:outputText value="&#62;&#62;" escape="true"/>
+                        <h:outputText value="&#62;&#62;&#62;" escape="true"/>
                     </div>
                 </a>
             </h:panelGroup>
@@ -95,7 +93,7 @@
                 <div class="somenteMobile" style="font-weight: bolder;font-size: large">...</div>
             </h:panelGroup>
             <script>
-                initBotaoMenuHorizontal($('.menu-horizontal-responsivo-id-#{cc.attrs.id}'));
+                initBotaoMenuHorizontal($('.menu-horizontal-responsivo-id-#{cc.attrs.pid}'));
             </script>
 
         </h:panelGroup>
