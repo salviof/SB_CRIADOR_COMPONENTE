@@ -31,7 +31,8 @@ public class TesteConformidadeModel extends TesteSB_CRIADOR_COMPONENTE {
     public void teste() {
 
         try {
-            System.out.println(FabTipoAtributoObjeto.AAA_NOME.getRegistro().toString());
+            gerarCodigoModelProjeto();
+
             BeanExemplo testeBeanGrupo = new BeanExemplo();
 
             ItfCampoInstanciado campo = testeBeanGrupo.getCampoInstanciadoByNomeOuAnotacao("templateHtml");

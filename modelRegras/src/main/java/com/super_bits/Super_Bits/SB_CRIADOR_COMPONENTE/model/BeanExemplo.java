@@ -288,7 +288,7 @@ public class BeanExemplo
     @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, fabricaDeOpcoes = FabIconeFontAwesome.class)
     private IconeSistema beanSelecionadoDaListaFabrica;
 
-    @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, caminhoParaLista = "filiaisFornecedor")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, caminhoParaLista = "listasExemplo")
     private BeanExemplo benSelecionadoListaPorCampo;
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.LC_UNIDADE_FEDERATIVA)

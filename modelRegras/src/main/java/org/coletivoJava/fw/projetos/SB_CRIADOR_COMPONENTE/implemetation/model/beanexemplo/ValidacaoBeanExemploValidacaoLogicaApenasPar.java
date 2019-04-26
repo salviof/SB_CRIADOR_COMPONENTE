@@ -23,10 +23,19 @@ public class ValidacaoBeanExemploValidacaoLogicaApenasPar
 
     @Override
     public Object validar(Object pValor) throws ErroValidacao {
-        SBCore.getCentralDeMensagens()
-                .enviarMsgErroAoUsuario(
-                        "A Validação do campo  Validacao Logica Apenas Par não foi implementada");
-        return super.validar(pValor); //To change body of generated methods, choose Tools | Templates.
+        if (pValor == null) {
+            throw new ErroValidacao("O valor não pode ser nulo");
+        }
+
+        int valor = Integer.valueOf(pValor.toString());
+        if (valor % 2 != 0) {
+            //   SBCore.getCentralDeMensagens()
+            //           .enviarMsgErroAoUsuario(
+            //                   "Tem como mandar mnesagem aqui também na valdação!");
+            throw new ErroValidacao("Sá porra precisa ser par!");
+        }
+
+        return pValor;
     }
 
 }

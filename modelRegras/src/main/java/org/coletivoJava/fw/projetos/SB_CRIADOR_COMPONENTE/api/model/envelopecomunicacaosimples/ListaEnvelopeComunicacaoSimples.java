@@ -5,6 +5,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
+import org.coletivoJava.fw.projetos.SB_CRIADOR_COMPONENTE.api.model.envelopecomunicacaosimples.ListasEnvelopeComunicacaoSimples;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.EnvelopeComunicacaoSimples;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoReferenciaEntidade;
 
@@ -14,5 +15,5 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.Info
 @InfoReferenciaEntidade(tipoObjeto = EnvelopeComunicacaoSimples.class)
 public @interface ListaEnvelopeComunicacaoSimples {
 
-    ListasEnvelopeComunicacaoSimples lista();
+	ListasEnvelopeComunicacaoSimples lista();
 }

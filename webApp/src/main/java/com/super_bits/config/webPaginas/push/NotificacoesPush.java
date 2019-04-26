@@ -5,14 +5,12 @@
  */
 package com.super_bits.config.webPaginas.push;
 
-import com.super_bits.modulosSB.webPaginas.controller.push.NotificacoesPushAbstrato;
-import org.primefaces.push.annotation.PushEndpoint;
-
 /**
  *
  * @author SalvioF
  */
-@PushEndpoint("/mensagens/{pagina}/{grupo}/{usuarioID}")
-public class NotificacoesPush extends NotificacoesPushAbstrato {
+//@PushEndpoint("/mensagens/{pagina}/{grupo}/{usuarioID}")
+@Deprecated
+public class NotificacoesPush {//extends NotificacoesPushAbstrato {
 
 }

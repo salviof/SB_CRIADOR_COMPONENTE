@@ -19,7 +19,15 @@
                 />
 
 
+            <p:commandButton onmousedown="esconderTooltips();"
+                             styleClass="btnIconeENome botao"
+                             icon="fa fa-users"
+                             action="#{prMetodo}"
+                             update="#{pgUtil.makeCaminhoCompletoID(idUpdate)}"
+                             value="TEste"
 
+
+                             />
 
             <SBFormAtualEnt:detalhesPaginaAtual/>
 

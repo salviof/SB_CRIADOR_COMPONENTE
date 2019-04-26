@@ -5,5 +5,5 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.Info
 
 @InfoReferenciaEntidade(tipoObjeto = BeanExemplo.class)
 public enum ListasBeanExemplo {
-    LISTADINAMICAALEATORIA
+	LISTADINAMICAALEATORIA
 }

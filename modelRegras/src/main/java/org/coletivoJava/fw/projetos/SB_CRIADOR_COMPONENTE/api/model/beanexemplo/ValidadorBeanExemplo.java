@@ -7,6 +7,7 @@ import java.lang.annotation.Target;
 import java.lang.annotation.ElementType;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.BeanExemplo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoReferenciaEntidade;
+import org.coletivoJava.fw.projetos.SB_CRIADOR_COMPONENTE.api.model.beanexemplo.ValidadoresBeanExemplo;
 
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
@@ -14,5 +15,5 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.Info
 @InfoReferenciaEntidade(tipoObjeto = BeanExemplo.class)
 public @interface ValidadorBeanExemplo {
 
-    ValidadoresBeanExemplo validador();
+	ValidadoresBeanExemplo validador();
 }

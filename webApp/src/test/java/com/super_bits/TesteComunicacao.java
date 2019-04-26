@@ -12,6 +12,7 @@ import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoRespostaComunicacao;
 
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.ItfComunicacao;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.CampoInstanciadoEnumFabricaObjeto;
 import java.util.List;
 import org.junit.Test;
 

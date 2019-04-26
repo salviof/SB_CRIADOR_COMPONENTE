@@ -5,5 +5,5 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.Info
 
 @InfoReferenciaEntidade(tipoObjeto = EnvelopeComunicacaoSimples.class)
 public enum ListasEnvelopeComunicacaoSimples {
-    OPCOESDESTINO
+	OPCOESDESTINO
 }
