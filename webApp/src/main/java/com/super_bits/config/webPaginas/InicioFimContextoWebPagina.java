@@ -30,7 +30,7 @@ public class InicioFimContextoWebPagina implements ItfInicioFimAppWP {
     public void inicio() {
         SBCore.configurar(new ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE(
                 ConfiguradorCoreDeProjetoWebWarAbstrato.contextoDoServlet),
-                SBCore.ESTADO_APP.HOMOLOGACAO);
+                SBCore.ESTADO_APP.PRODUCAO);
         //SBPersistencia.configuraJPA(FabConfiguracoesDeAmbienteWebSB_CRIADOR_COMPONENTE.HOMOLOGACAO.getConfiguracaoPersistencia());
         SBWebPaginas.configurar(new ConfigWPSB_CRIADOR_COMPONENTE());
         UtilSB_CRIADOR_COMPONENTEGlobalVar.adicionarObjetosEstaticosProjeto();

@@ -75,9 +75,4 @@ public class PgBeanExemplo extends MB_paginaCadastroEntidades<BeanExemplo> {
         super.metodoRespostaModalPrimefaces(event); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public ItfRespostaAcaoDoSistema autoExecAcaoController(BeanExemplo pEntidade) {
-        return super.autoExecAcaoController(pEntidade); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }
