@@ -45,7 +45,7 @@
             <version>1.0.0-RC-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
-     
+
 
         <dependency>
             <groupId>junit</groupId>
@@ -97,7 +97,7 @@
                 <configuration>
 
                     <webAppConfig>
-                        <contextPath>/SB_CRIADOR_COMPONENTE</contextPath>
+                        <contextPath>/</contextPath>
                         <webInfIncludeJarPattern>.*/SBWebPaginas[^/]*\.jar$|.*/webApp.jar|.*/classes/.*</webInfIncludeJarPattern>
                     </webAppConfig>
                     <scanIntervalSeconds>5</scanIntervalSeconds>

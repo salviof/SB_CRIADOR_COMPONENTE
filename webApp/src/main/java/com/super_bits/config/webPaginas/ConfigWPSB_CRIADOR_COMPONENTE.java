@@ -30,7 +30,7 @@ public class ConfigWPSB_CRIADOR_COMPONENTE implements ItfConfigWebPagina {
 
     @Override
     public String nomePacoteProjeto() {
-        return "SB_CRIADOR_COMPONENTE";
+        return "";
     }
 
     @Override
@@ -40,7 +40,7 @@ public class ConfigWPSB_CRIADOR_COMPONENTE implements ItfConfigWebPagina {
 
     @Override
     public String URLBASE() {
-        return SITE_HOST() + "/" + nomePacoteProjeto();
+        return SITE_HOST();
     }
 
     @Override

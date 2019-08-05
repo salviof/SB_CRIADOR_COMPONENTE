@@ -80,38 +80,43 @@
 
                     <SBInput:inputComControlador registro="#{pgMapaComponentes.campoInstanciado}" rendered="false" />
                     <p:separator/>
-                    <SBInput:input registro="#{pgMapaComponentes.campoInstanciado}"
-                                   metodoOnChange="#{pgUtil.enviaMensagem('Colé colé')}"
-                                   atualizarFormOnChange="true"
-                                   idAtualizarOnChange="@form"
-                                   desabilitarEdicao="true"
-                                   layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                   />
+                    <h:panelGroup styleClass="Container3" >
+                        <SBInput:input registro="#{pgMapaComponentes.campoInstanciado}"
+                                       metodoOnChange="#{pgUtil.enviaMensagem('Colé colé')}"
+                                       atualizarFormOnChange="true"
+                                       idAtualizarOnChange="@form"
+                                       desabilitarEdicao="true"
+                                       layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                       />
+                    </h:panelGroup>
                     <p:separator/>
-
-                    <SBInput:input registro="#{pgMapaComponentes.campoInstanciado}"
-                                   metodoOnChange="#{pgUtil.enviaMensagem('Colé colé')}"
-                                   atualizarFormOnChange="true"
-                                   idAtualizarOnChange="@form"
-                                   layout="#{layoutsComponenteSB.layoutCampo.superior}"
-                                   />
+                    <h:panelGroup styleClass="Container3" >
+                        <SBInput:input registro="#{pgMapaComponentes.campoInstanciado}"
+                                       metodoOnChange="#{pgUtil.enviaMensagem('Colé colé')}"
+                                       atualizarFormOnChange="true"
+                                       idAtualizarOnChange="@form"
+                                       layout="#{layoutsComponenteSB.layoutCampo.superior}"
+                                       />
+                    </h:panelGroup>
                     <p:separator/>
-                    <sb:inputSB
+                    <h:panelGroup styleClass="Container3" >
+                        <sb:inputSB
 
-                        registro="#{pgMapaComponentes.campoInstanciado}"
-                        desabilitarEdicao="false"
-                        layoutCampo="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                        possuiIDOnChange="false"
-                        metodoOnChange="#{pgUtil.enviaMensagem('Colé colé')}"
-                        possuiMetodoOnChange="true"
-                        layoutCampoEspecial="#{pgMapaComponentes.campoInstanciado.getComponenteDiferenciado(pgMapaComponentes.componenteSelecionado)}"
-                        label="#{pgMapaComponentes.campoInstanciado.label}"
-                        opcoes="#{pgMapaComponentes.campoInstanciado.listaDeOpcoes}"
-                        atualizarFormOnChange="false"
-                        obrigatorio="#{pgMapaComponentes.campoInstanciado.obrigatorio}"
-                        atualizarGrupoOnChange="false"
+                            registro="#{pgMapaComponentes.campoInstanciado}"
+                            desabilitarEdicao="false"
+                            layoutCampo="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                            possuiIDOnChange="false"
+                            metodoOnChange="#{pgUtil.enviaMensagem('Colé colé')}"
+                            possuiMetodoOnChange="true"
+                            layoutCampoEspecial="#{pgMapaComponentes.campoInstanciado.getComponenteDiferenciado(pgMapaComponentes.componenteSelecionado)}"
+                            label="#{pgMapaComponentes.campoInstanciado.label}"
+                            opcoes="#{pgMapaComponentes.campoInstanciado.listaDeOpcoes}"
+                            atualizarFormOnChange="false"
+                            obrigatorio="#{pgMapaComponentes.campoInstanciado.obrigatorio}"
+                            atualizarGrupoOnChange="false"
 
-                        />
+                            />
+                    </h:panelGroup>
                     <p:separator/>
 
                     <p:commandButton value="Teste update form" update="@form" />

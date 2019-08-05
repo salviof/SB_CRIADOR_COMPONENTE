@@ -28,18 +28,19 @@ public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersiste
 
     @InfoTipoAcaoGestaoEntidade(icone = "fa fa-tag", entidade = BeanExemplo.class)
     BEAN_EXEMPLO_MB,
-    @InfoTipoAcaoFormulario(campos = {"id", "apelido", "verdadeiroOuFalso", "beanFilho.apelido", "seletorOpcao"})
+    @InfoTipoAcaoFormulario(campos = {"id", "apelido", "verdadeiroOuFalso", "beanFilho.apelido", "seletorOpcao", "imagemMedio"})
     BEAN_EXEMPLO_FRM_LISTAR,
     @InfoTipoAcaoFormulario()
     BEAN_EXEMPLO_FRM_VISUALIZAR,
-    @InfoTipoAcaoFormulario(campos = {"apelido", "validacaoLogicaApenasPar", CPBeanExemplo.validacaologicaapenasgauleses, "verdadeiroOuFalso", "telefone", "data", "cor", "cnpj", "cpf", "html", "quantidade", "senha"})
+    @InfoTipoAcaoFormulario(campos = {"apelido", "validacaoLogicaApenasPar", CPBeanExemplo.validacaologicaapenasgauleses,
+        "verdadeiroOuFalso", "telefone", "data", "cor", "cnpj", "cpf", "html", "quantidade", "senha"})
     @InfoTipoAcaoFormCamposAtualizaGrupoDoCampo(campos = {"validacaoLogicaApenasPar"})
     BEAN_EXEMPLO_FRM_EDITAR,
     @InfoTipoAcaoFormulario()
     BEAN_EXEMPLO_FRM_NOVO,
     @InfoTipoAcaoFormulario(nomeAcao = "Testes SubLista",
             campos = {"[separador:subLista]", "listaParticular[].porcentagem", "listaParticular[].senha",
-                "listaParticular[].listasExemplo", "beanFilho.apelido"
+                "listaParticular[].listasExemplo", "beanFilho.apelido", "imagemMedio"
 
             },
             iconeFonteAnsowame = FabIconeFontAwesome.REG_LISTAR)
@@ -47,7 +48,7 @@ public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersiste
     @InfoTipoAcaoFormulario(nomeAcao = "Testes SubLista",
             campos = {"[separador:subLista particular]", "listaParticular[].porcentagem", "listaParticular[].senha",
                 "listaParticular[].listasExemplo", "beanFilho.apelido",
-                "[separador:subLista publica]", "listasExemplo"
+                "[separador:subLista publica]", "listasExemplo", "[separador:imagem]", "imagemMedio"
 
             },
             isUmaAcaoDeRegistroExistente = true,

@@ -346,6 +346,13 @@ public class BeanExemplo
     @InfoCampo(label = "Campo Vinculado 3", tipo = FabTipoAtributoObjeto.TEXTO_SIMPLES)
     private String campoVinculado3;
 
+    @InfoCampo(tipo = FabTipoAtributoObjeto.IMG_MEDIA)
+    private String imagemMedio;
+    @InfoCampo(tipo = FabTipoAtributoObjeto.IMG_PEQUENA)
+    private String imagemPequeno;
+    @InfoCampo(tipo = FabTipoAtributoObjeto.IMG_GRANDE)
+    private String imagemGrande;
+
     @Transient
     private int qtdCampoVinculado1gets;
     @Transient
