@@ -142,7 +142,7 @@ public class BeanExemplo
     private String email = "emailteste@teste.com";
 
     @InfoCampo(fabricaDeOpcoes = FabIconeFontAwesome.class, tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA)
-    private IconeSistema seletorOpcao;
+    private IconeSistema seletorOpcao = (IconeSistema) FabIconeFontAwesome.COMERCIO_BITCOINS.getRegistro();
 
     @InfoCampo(tipo = FabTipoAtributoObjeto.AAA_DESCRITIVO, label = "Descritivo memo")
     private String descritivo;
