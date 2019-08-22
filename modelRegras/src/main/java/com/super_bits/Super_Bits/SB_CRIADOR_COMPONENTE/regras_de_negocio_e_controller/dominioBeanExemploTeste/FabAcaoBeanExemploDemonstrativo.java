@@ -36,7 +36,8 @@ public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersiste
         "verdadeiroOuFalso", "telefone", "data", "cor", "cnpj", "cpf", "html", "quantidade", "senha"})
     @InfoTipoAcaoFormCamposAtualizaGrupoDoCampo(campos = {"validacaoLogicaApenasPar"})
     BEAN_EXEMPLO_FRM_EDITAR,
-    @InfoTipoAcaoFormulario()
+    @InfoTipoAcaoFormulario(campos = {"[separador: Campo Simples]", "apelido", "validacaoLogicaApenasPar", CPBeanExemplo.validacaologicaapenasgauleses,
+        "verdadeiroOuFalso", "telefone", "data", "cor", "cnpj", "cpf", "html", "quantidade", "senha"})
     BEAN_EXEMPLO_FRM_NOVO,
     @InfoTipoAcaoFormulario(nomeAcao = "Testes SubLista",
             campos = {"[separador:subLista]", "listaParticular[].porcentagem", "listaParticular[].senha",

@@ -368,6 +368,12 @@ public class BeanExemplo
     @Transient
     private int qtdCampoVinculado3sets;
 
+    @InfoCampo(tipo = FabTipoAtributoObjeto.LATITUDE)
+    private String latitude;
+
+    @InfoCampo(tipo = FabTipoAtributoObjeto.Longitude)
+    private String longitude;
+
     @Override
     public int getId() {
         return id;

@@ -1,13 +1,15 @@
 <ui:composition
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:SBInput="http://xmlns.jcp.org/jsf/composite/SBComp/composite/input"
     xmlns:SBFormulario="http://xmlns.jcp.org/jsf/composite/SBComp/composite/formulario"
     xmlns:SBFormAtualEnt="http://xmlns.jcp.org/jsf/composite/SBComp/composite/paginaAtualDeEntidade"
     xmlns:SBbt="http://xmlns.jcp.org/jsf/composite/SBComp/composite/acoesENavegacao"
     template="#{layoutsPaginas.formularioAcaoAtualDaEntidade.xhtmlVinculado}"
     xmlns:p="http://primefaces.org/ui"
     xmlns:pe="http://primefaces.org/ui/extensions"
-    >
+
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <ui:define name="conteudo">
         <SBFormulario:camposDaAcao
             registro="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
@@ -17,6 +19,21 @@
 
             />
 
+        <c:forEach begin="1" end="4" >
+            <SBInput:inputComControlador registro="#{pgBeanExemplo.beanSelecionado.getCPinst('validacaoLogicaApenasPar')}"
+                                         layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                         idAtualizarOnChange="@form"
+                                         />
+        </c:forEach>
+        <SBInput:inputComControlador registro="#{pgBeanExemplo.beanSelecionado.getCPinst('validacaoLogicaApenasPar')}"
+                                     layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+                                     idAtualizarOnChange="@form"
+                                     />
+        <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('validacaoLogicaApenasPar')}"
+                       atualizarFormOnChange="@form"
+                       layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+
+                       />
 
 
 
