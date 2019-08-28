@@ -26,12 +26,6 @@
         <ui:define name="#{layoutsPaginas.modeloGeral.areaPrincipal}">
 
 
-
-
-
-
-
-
             <h:panelGroup layout="block" rendered="false" >
                 <h:form>
 
@@ -100,14 +94,24 @@
 
             <SBObjeto:imagemPequena item="#{sessaoAtualSBWP.usuario}"  rendered="false" somenteLeitura="false"/>
 
-
-
-            <h:form rendered="true">
+            <h:form>
                 <SBInput:input registro="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('dataHora')}"
                                layout="#{layoutsComponenteSB.layoutCampo.superior}"
-                               idAtualizarOnChange="@this"
+                               idAtualizarOnChange="@form"
 
                                />
+                <p:commandButton value="Atualizar" update="@form" />
+            </h:form>
+            <h:form rendered="true" id="apenasumformteste">
+
+                asdfasdfasdf
+                <SBInput:input registro="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('dataHora')}"
+                               layout="#{layoutsComponenteSB.layoutCampo.superior}"
+                               idAtualizarOnChange="@form"
+
+                               />
+
+                oi
                 <SBInput:inputComControlador registro="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('validacaoLogicaApenasPar')}"
                                              metodoAdicionar="#{pgUtil.mensagemInfo('Mais')}"
                                              metodoReduzir="#{pgUtil.mensagemInfo('Menos')}"
@@ -123,14 +127,15 @@
             </h:form>
             <div class="quebraBlocoComEspacoVertical150"></div>
             <h:form rendered="true">
-                <h:panelGroup styleClass="" style="width: 500px;">
+                <h:panelGroup styleClass="bloqueavel" style="width: 500px;">
 
                     <SBInput:inputComControlador registro="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('validacaoLogicaApenasPar')}"
                                                  metodoAdicionar="#{pgUtil.mensagemInfo('Mais')}"
                                                  metodoReduzir="#{pgUtil.mensagemInfo('Menos')}"
-                                                 label=" "
+                                                 label=" teste"
                                                  idAtualizarOnChange="@form"
-                                                 metodoExecutarAoAlterarValor="#{pgUtil.mensagemInfo('Atualizou')}"
+
+                                                 metodoExecutarAoAlterarValor="#{pgUtil.mensagemInfo('Atualizou mesmo')}"
                                                  />
 
                 </h:panelGroup>
