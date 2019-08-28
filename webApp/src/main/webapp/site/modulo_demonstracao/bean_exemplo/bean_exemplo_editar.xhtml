@@ -9,7 +9,8 @@
     xmlns:p="http://primefaces.org/ui"
     xmlns:pe="http://primefaces.org/ui/extensions"
 
-    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+    xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
     <ui:define name="conteudo">
         <SBFormulario:camposDaAcao
             registro="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
@@ -29,10 +30,20 @@
                                      layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
                                      idAtualizarOnChange="@form"
                                      />
+
+        <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('cpf')}" />
+
+        <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('html')}"  label="Com Metodo:"
+                       layout="#{layoutsComponenteSB.layoutCampo.superior}" metodoOnChange="#{pgUtil.enviaMensagem('oi')}"
+                       idAtualizarOnChange="@form"
+                       />
+
+        <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('telefone')}" metodoOnChange="#{pgUtil.enviaMensagem('oi')}"/>
+        <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('site')}" atualizarFormOnChange="@form" />
+        <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('celular')}" atualizarFormOnChange="@form"  />
         <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('validacaoLogicaApenasPar')}"
                        atualizarFormOnChange="@form"
                        layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-
                        />
 
 

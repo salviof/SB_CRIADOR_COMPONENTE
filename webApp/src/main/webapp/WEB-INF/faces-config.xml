@@ -53,12 +53,12 @@
 
         <resource-handler>com.super_bits.modulosSB.webPaginas.recursosJSF.RecursosJSF</resource-handler>
     </application>
-
-
     <lifecycle>
         <phase-listener>org.primefaces.component.lifecycle.LifecyclePhaseListener</phase-listener>
-        
+        <phase-listener>com.super_bits.modulosSB.webPaginas.cicloDeVidaJSF.CicloDeVidaPadraoJsf</phase-listener>
     </lifecycle>
+
+   
 
     <name>primefaces-adamantium</name>
 

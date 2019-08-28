@@ -122,15 +122,8 @@
 
 
             </h:panelGrid>
-            #{component.facetCount}
-            [#{component.parent.children.get(0).children.size()}]
-            [#{component.parent.children.get(0).clientId}]
-            [#{component.parent.children.get(0).children.get(0).clientId}]
-            [#{component.parent.children.get(0).children.get(0).children.size()}]
-            [#{component.parent.children.get(0).children.get(0).children.get(0).clientId}]
-            [[[#{component.parent.children.get(0).children.get(0).children.get(1).children.get(1).children.get(0).clientId}]]
-            <c:set var="componenteMensagem" value="#{component.parent.parent.children.get(0).children.get(0).children.get(1).children.get(1).children.get(0)}" />
-            <p:messages for="#{pgUtil.getNomeIdComponenteInputParaCompositeComp(componenteMensagem)}"
+
+            <p:messages for="#{pgUtil.getNomeIdComponenteInputParaCompositeComp(cc)}"
                         redisplay="false"
                         escape="false"
                         autoUpdate="true"
