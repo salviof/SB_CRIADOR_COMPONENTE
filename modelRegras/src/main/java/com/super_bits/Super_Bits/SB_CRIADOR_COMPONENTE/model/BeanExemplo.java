@@ -307,7 +307,7 @@ public class BeanExemplo
             fabricaDeOpcoes = FabListBeanExemplosUmaOpcao.class)
     private BeanExemplo listaUmaOpcao;
 
-    @InfoCampo(label = "Lista Pub 8", tipo = FabTipoAtributoObjeto.LISTA_OBJETOS_PUBLICOS,
+    @InfoCampo(label = "Lista Pub 8", tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA,
             fabricaDeOpcoes = FabListBeanOitoOpcoes.class)
     private BeanExemplo listaOitoOpcoes;
 

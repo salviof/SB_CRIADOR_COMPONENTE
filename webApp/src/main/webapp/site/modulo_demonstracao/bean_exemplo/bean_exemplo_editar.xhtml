@@ -10,43 +10,24 @@
     xmlns:pe="http://primefaces.org/ui/extensions"
 
     xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-    xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp">
+    xmlns:SBComp="http://xmlns.jcp.org/jsf/composite/SBComp"
+    xmlns:h="http://xmlns.jcp.org/jsf/html">
     <ui:define name="conteudo">
-        <SBFormulario:camposDaAcao
-            registro="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
-            acao="#{paginaAtual.infoPagina.comoPaginaEntidade.acaoSelecionada}"
-            tipoVisualizacaoLabel="#{layoutsComponenteSB.layoutCampo.superior}"
-            somenteLeitura="#{!pgBeanExemplo.podeEditar}"
 
-            />
-
-        <c:forEach begin="1" end="4" >
-            <SBInput:inputComControlador registro="#{pgBeanExemplo.beanSelecionado.getCPinst('validacaoLogicaApenasPar')}"
-                                         layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                         idAtualizarOnChange="@form"
-                                         />
-        </c:forEach>
-        <SBInput:inputComControlador registro="#{pgBeanExemplo.beanSelecionado.getCPinst('validacaoLogicaApenasPar')}"
-                                     layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
-                                     idAtualizarOnChange="@form"
-                                     />
-
-        <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('cpf')}" />
-
-        <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('html')}"  label="Com Metodo:"
-                       layout="#{layoutsComponenteSB.layoutCampo.superior}" metodoOnChange="#{pgUtil.enviaMensagem('oi')}"
-                       idAtualizarOnChange="@form"
+        <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('html')}"
+                       idAtualizarOnChange="apenasTeste"
                        />
 
-        <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('telefone')}" metodoOnChange="#{pgUtil.enviaMensagem('oi')}"/>
-        <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('site')}" atualizarFormOnChange="@form" />
-        <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('celular')}" atualizarFormOnChange="@form"  />
-        <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('validacaoLogicaApenasPar')}"
-                       atualizarFormOnChange="@form"
-                       layout="#{layoutsComponenteSB.layoutCampo.esquerda}"
+        <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('listaOitoOpcoes')}"
+                       idAtualizarOnChange="apenasTeste"
                        />
 
-
+        <p:separator/>
+        <h:panelGroup id="maisumteste">
+            <p:fieldset id="apenasTeste" >
+                #{pgBeanExemplo.beanSelecionado.listaOitoOpcoes}
+            </p:fieldset>
+        </h:panelGroup>
 
     </ui:define>
     <ui:define name="botoesDeAcao">
