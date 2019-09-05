@@ -18,6 +18,12 @@
                        idAtualizarOnChange="apenasTeste"
                        />
 
+        <SBInput:inputComControlador registro="#{pgBeanExemplo.beanSelecionado.getCPinst('quantidade')}"
+                                     idAtualizarOnChange="apenasTeste"
+                                     metodoAdicionar="#{pgUtil.enviaMensagem('somar')}"
+                                     metodoReduzir="#{pgUtil.enviaMensagem('redusir')}"
+                                     />
+
         <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('listaOitoOpcoes')}"
                        idAtualizarOnChange="apenasTeste"
                        />

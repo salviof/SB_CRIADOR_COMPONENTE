@@ -91,14 +91,18 @@
             <div class="quebraBlocoComEspacoVertical10" />
             <div class="quebraBlocoComEspacoVertical150"></div>
 
-
+            <p:fieldset  legend="Teste" id="areaTesteAtualizacao">
+                #{pgHomeCriadorComponente.beanExemplo.dataHora}
+            </p:fieldset>
             <SBObjeto:imagemPequena item="#{sessaoAtualSBWP.usuario}"  rendered="false" somenteLeitura="false"/>
 
+
+
             <h:form>
+                upup
                 <SBInput:input registro="#{pgHomeCriadorComponente.beanExemplo.getCampoInstanciadoByNomeOuAnotacao('dataHora')}"
                                layout="#{layoutsComponenteSB.layoutCampo.superior}"
-                               idAtualizarOnChange="@form"
-
+                               idAtualizarOnChange="@form areaTesteAtualizacao"
                                />
                 <p:commandButton value="Atualizar" update="@form" />
             </h:form>
