@@ -24,7 +24,16 @@
 
 
         <ui:define name="#{layoutsPaginas.modeloGeral.areaPrincipal}">
-
+            <button type="button" class="btn  btn-number" style="background-color: #32a852;color:#ffffff;"
+                    tabindex="-1" data-type="minus" data-field="quant[2]">
+                <span tabindex="-1" class="glyphicon glyphicon-minus"></span>
+            </button>
+            <SBAcaoNav:botaoDeAcao
+                metodo="#{paginaAtual.infoPagina.comoFormularioWeb.acaoSelecionada}"
+                acao="#{acoesAdminTools_BeanExemploMb.beanExemploMb}"
+                classeEstilo="botaoVerde"
+                tipoVisualizacao="#{layoutsComponenteSB.layoutBotoes.iconeENome}"
+                />
 
             <h:panelGroup layout="block" rendered="false" >
                 <h:form>
