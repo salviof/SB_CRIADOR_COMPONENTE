@@ -19,10 +19,9 @@
                           rendered="#{!desabilitarEdicao}"
 
                           >
-                
+
 
                 <p:inputText
-
                     class=" campoResponsivo  TexAlCenter #{componente.classeCSS} invisivel"
                     disabled="#{desabilitarEdicao}"
                     rendered="#{!desabilitarEdicao}"
@@ -30,9 +29,7 @@
                     value="#{valor}"
                     validatorMessage="O campo #{label} não é um valor válido"
                     requiredMessage="O campo #{label} não foi informado! "
-
                     validator="org.super_bits.view.validadores.generico"
-
                     converterMessage="Impossível converter o valor de #{label} em um tipo válido "
                     >
                     <f:passThroughAttribute name="caminhoCampo" value="#{registro.nomeCompostoIdentificador}" />
@@ -133,6 +130,11 @@
                                         CKEDITOR.instances['#{component.children.get(1).clientId}'].on('change', function () {
                                             copiarValoresCKEditor('#{component.children.get(1).clientId}', '#{component.children.get(0).clientId}');
                                         });
+                                        CKEDITOR.instances['#{component.children.get(1).clientId}'].on('blur', function () {
+                                            copiarValoresCKEditor('#{component.children.get(1).clientId}', '#{component.children.get(0).clientId}');
+                                            document.getElementById("#{component.children.get(0).clientId}").metodoOnchangeComDelay("");
+                                        });
+
                                     }
                                 }
 
