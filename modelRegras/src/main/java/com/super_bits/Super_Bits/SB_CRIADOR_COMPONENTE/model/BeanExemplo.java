@@ -199,7 +199,7 @@ public class BeanExemplo
     @InfoCampo(tipo = FabTipoAtributoObjeto.URL, label = "Url")
     private String url;
 
-    @InfoCampo(tipo = FabTipoAtributoObjeto.SENHA, label = "Senha")
+    @InfoCampo(tipo = FabTipoAtributoObjeto.SENHA, label = "Senha sec")
     @NotNull
     private String senha;
 

@@ -12,6 +12,7 @@ import com.super_bits.modulos.SBAcessosModel.fabricas.ItfFabricaDeAcoesPersisten
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.estadoFormulario.FabEstadoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoController;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormCamposAtualizaGrupoDoCampo;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormCamposLabelAlternativo;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.EnvelopeComunicacaoSimples;
@@ -45,6 +46,7 @@ public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersiste
 
             },
             iconeFonteAnsowame = FabIconeFontAwesome.REG_LISTAR)
+    @InfoTipoAcaoFormCamposLabelAlternativo(campos = {"listaParticular[].senha"}, labels = {"Palavra secreta"})
     BEAN_EXEMPLO_FRM_SUB_LISTA_EXEMPLO,
     @InfoTipoAcaoFormulario(nomeAcao = "Testes SubLista",
             campos = {"[separador:subLista particular]", "listaParticular[].porcentagem", "listaParticular[].senha",
@@ -55,6 +57,8 @@ public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersiste
             isUmaAcaoDeRegistroExistente = true,
             estadoFormulario = FabEstadoFormulario.VISUALIZAR,
             iconeFonteAnsowame = FabIconeFontAwesome.REG_LISTAR)
+    @InfoTipoAcaoFormCamposLabelAlternativo(campos = {"listaParticular[].senha", "senha"}, labels = {"Palavra secreta", "Palavra Secreta"})
+
     BEAN_EXEMPLO_FRM_SUB_LISTA_SOMENTElEITURA,
     @InfoTipoAcaoController()
     BEAN_EXEMPLO_CTR_SALVAR_MERGE,
