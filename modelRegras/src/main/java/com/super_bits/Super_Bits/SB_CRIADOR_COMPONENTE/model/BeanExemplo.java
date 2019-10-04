@@ -842,4 +842,116 @@ public class BeanExemplo
         return new BeanExemplo();
     }
 
+    public int getValidacaoLogicaApenasPar() {
+        return validacaoLogicaApenasPar;
+    }
+
+    public void setValidacaoLogicaApenasPar(int validacaoLogicaApenasPar) {
+        this.validacaoLogicaApenasPar = validacaoLogicaApenasPar;
+    }
+
+    public String getValidacaoLogicaApenasGauleses() {
+        return validacaoLogicaApenasGauleses;
+    }
+
+    public void setValidacaoLogicaApenasGauleses(String validacaoLogicaApenasGauleses) {
+        this.validacaoLogicaApenasGauleses = validacaoLogicaApenasGauleses;
+    }
+
+    public String getTextoLabelPadraoTeste() {
+        return textoLabelPadraoTeste;
+    }
+
+    public void setTextoLabelPadraoTeste(String textoLabelPadraoTeste) {
+        this.textoLabelPadraoTeste = textoLabelPadraoTeste;
+    }
+
+    public String getImagemMedio() {
+        return imagemMedio;
+    }
+
+    public void setImagemMedio(String imagemMedio) {
+        this.imagemMedio = imagemMedio;
+    }
+
+    public String getImagemPequeno() {
+        return imagemPequeno;
+    }
+
+    public void setImagemPequeno(String imagemPequeno) {
+        this.imagemPequeno = imagemPequeno;
+    }
+
+    public String getImagemGrande() {
+        return imagemGrande;
+    }
+
+    public void setImagemGrande(String imagemGrande) {
+        this.imagemGrande = imagemGrande;
+    }
+
+    public int getQtdCampoVinculado1gets() {
+        return qtdCampoVinculado1gets;
+    }
+
+    public void setQtdCampoVinculado1gets(int qtdCampoVinculado1gets) {
+        this.qtdCampoVinculado1gets = qtdCampoVinculado1gets;
+    }
+
+    public int getQtdCampoVinculado1sets() {
+        return qtdCampoVinculado1sets;
+    }
+
+    public void setQtdCampoVinculado1sets(int qtdCampoVinculado1sets) {
+        this.qtdCampoVinculado1sets = qtdCampoVinculado1sets;
+    }
+
+    public int getQtdCampoVinculado2gets() {
+        return qtdCampoVinculado2gets;
+    }
+
+    public void setQtdCampoVinculado2gets(int qtdCampoVinculado2gets) {
+        this.qtdCampoVinculado2gets = qtdCampoVinculado2gets;
+    }
+
+    public int getQtdCampoVinculado2sets() {
+        return qtdCampoVinculado2sets;
+    }
+
+    public void setQtdCampoVinculado2sets(int qtdCampoVinculado2sets) {
+        this.qtdCampoVinculado2sets = qtdCampoVinculado2sets;
+    }
+
+    public int getQtdCampoVinculado3gets() {
+        return qtdCampoVinculado3gets;
+    }
+
+    public void setQtdCampoVinculado3gets(int qtdCampoVinculado3gets) {
+        this.qtdCampoVinculado3gets = qtdCampoVinculado3gets;
+    }
+
+    public int getQtdCampoVinculado3sets() {
+        return qtdCampoVinculado3sets;
+    }
+
+    public void setQtdCampoVinculado3sets(int qtdCampoVinculado3sets) {
+        this.qtdCampoVinculado3sets = qtdCampoVinculado3sets;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
 }

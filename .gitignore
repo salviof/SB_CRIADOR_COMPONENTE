@@ -4,3 +4,5 @@
 /webApp/target/
 /modelRegras/nbproject/
 /webApp/nbproject/
+**/target
+*/target
