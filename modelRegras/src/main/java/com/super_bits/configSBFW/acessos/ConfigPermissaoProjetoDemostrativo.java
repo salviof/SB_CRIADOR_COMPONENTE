@@ -92,11 +92,9 @@ public class ConfigPermissaoProjetoDemostrativo extends ConfigPermissaoSBCoreAbs
 
     @Override
     public ItfTokenRecuperacaoEmail gerarTokenRecuperacaoDeSenha(ItfUsuario pUsuario, int pMinutosValidade) {
-<<<<<<< HEAD
-        throw new UnsupportedOperationException("O METODO AINDA não FOI IMPLEMENTADO.");
-=======
+
         throw new UnsupportedOperationException("O METODO AINDA N\u00c3O FOI IMPLEMENTADO.");
->>>>>>> 6935f791ce22c3ab93371476ef0547bf7068dd3b
+
     }
 
 }
