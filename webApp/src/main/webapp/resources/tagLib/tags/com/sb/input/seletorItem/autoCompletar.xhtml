@@ -73,6 +73,7 @@
                     <p:commandButton
                         icon="#{acoesPaginasDoSistema_PaginaPesquisaAvancadaMbPadrao.paginaPesquisaAvancadaMbPadrao.iconeAcao}"
                         rendered="#{!desabilitarEdicao}"
+                        update="#{pgUtil.getIdInputPai(component)}"
                         actionListener="#{pgUtil.exibirModalImportacaoPesquisaAvancada()}"
                         partialSubmit="true"
                         process="@this"
@@ -87,6 +88,7 @@
                             <p:ajax
                                 rendered="#{possuiIDOnChange}"
                                 global="true"
+                                update="#{pgUtil.getIdInputPai(component)}"
                                 event="dialogReturn"
                                 listener="#{pgUtil.atualizaTelaPorID(idAtualizarOnChange)}"
                                 />
