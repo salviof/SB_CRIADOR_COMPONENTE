@@ -59,7 +59,7 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import org.coletivojava.fw.api.objetoNativo.view.componente.FamiliaComponente;
 import org.coletivojava.fw.api.tratamentoErros.FabErro;
-import org.primefaces.context.RequestContext;
+import org.primefaces.PrimeFaces;
 
 /**
  *
@@ -643,8 +643,8 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         options.put("contentWidth", "100%");
         options.put("contentHeight", "100%");
         options.put("headerElement", "customheader");
+        PrimeFaces.current().dialog().openDynamic(arquivo, options, null);
 
-        RequestContext.getCurrentInstance().openDialog(arquivo, options, null);
     }
 
     public void testeDestruicao() {

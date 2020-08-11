@@ -28,17 +28,17 @@ public class TesteGeradorAnotacoesItfModelTest extends TesteSB_CRIADOR_COMPONENT
             ItfCampoInstanciado campo = entidadeTeste.getCampoInstanciadoByNomeOuAnotacao("validacaoLogicaApenasPar");
 
 //            entidadeTeste.getCampoInstanciadoByNomeOuAnotacao(CPBeanExemplo.validacaologicaapenaspar);
-            campo.getValidacaoLogica().validar("2");
+            campo.getValidacaoLogicaEstrategia().validar("2");
 
-            campo.getValidacaoLogica().validar("2");
+            campo.getValidacaoLogicaEstrategia().validar("2");
 
-            campo.getValidacaoLogica().validar("1");
+            campo.getValidacaoLogicaEstrategia().validar("1");
 
             BeanExemplo entidadeTeste2 = new BeanExemplo();
 
             campo = entidadeTeste2.getCampoInstanciadoByNomeOuAnotacao("validacaoLogicaApenasPar");
 
-            campo.getValidacaoLogica().validar("4");
+            campo.getValidacaoLogicaEstrategia().validar("4");
         } catch (ErroValidacao t) {
             System.out.println(t.getMensagemAoUsuario());
         }
