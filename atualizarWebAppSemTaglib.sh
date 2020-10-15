@@ -22,16 +22,16 @@ CAMINHO_WP_REFERENCIA="/home/superBits/projetos/coletivoJava/source/fw/SBWebPagi
 CAMINHO_WP_SEM_TAGLIB="/home/superBits/projetos/Super_Bits/source/temp/SB_FRAMEWORK/SBWebPaginasSemTagLib"
 
 
-alerta "Verificando existencia de pasta referencia"
+alerta "Verificando existencia de pasta referencia em $CAMINHO_WP_REFERENCIA"
 arqSairSePastaNaoExistir $CAMINHO_WP_REFERENCIA "Diretorio Referencia não encontrado"
 
 
 alerta "Removendo pasta versão antiga"
 rm  $CAMINHO_WP_SEM_TAGLIB -rf
-
 arqSairSePastaExistir $CAMINHO_WP_SEM_TAGLIB "O diretorio antigo não foi excluido"
 mkdir $CAMINHO_WP_SEM_TAGLIB -p
 arqSairSePastaNaoExistir $CAMINHO_WP_SEM_TAGLIB "A pasta de destino não pode ser criada"
+alerta "copiando de $CAMINHO_WP_REFERENCIA/* para $CAMINHO_WP_SEM_TAGLIB"
 cp $CAMINHO_WP_REFERENCIA/* $CAMINHO_WP_SEM_TAGLIB/ -rf
 arqSairSePastaNaoExistir $CAMINHO_WP_SEM_TAGLIB/src "Os arquivos não foram copiados para pasta de Destino"
 

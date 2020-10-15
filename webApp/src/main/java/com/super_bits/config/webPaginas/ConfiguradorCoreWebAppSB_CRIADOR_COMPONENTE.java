@@ -38,13 +38,15 @@ public class ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE extends ConfiguradorCor
 
     public ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE() {
         super(true);
-        // setIgnorarConfiguracaoPermissoes(true);
+        setIgnorarConfiguracaoPermissoes(true);
+
     }
 
     @Override
     public void defineFabricasDeACao(ItfConfiguracaoCoreCustomizavel pConfig) {
 
-        //setIgnorarConfiguracaoPermissoes(true);
+        setIgnorarConfiguracaoPermissoes(true);
+
         pConfig.setCentralDeLocalizacao(CentralDeLocalizacaoSemPersistencia.class);
         pConfig.setCentralAtributoDados(CentralAtributosWebappSemPersistencia.class);
         pConfig.setClasseConfigPermissao(ConfigPermissaoProjetoDemostrativo.class);
