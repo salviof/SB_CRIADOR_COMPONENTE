@@ -4,15 +4,24 @@
  * Limpa todos os Tooltips do Primefaces
  */
 function esconderTooltips() {
+    try{
     $(".ui-tooltip").hide();
+    }catch(erro){
+        
+    }
 }
 
 function liberarBloqueios() {
     var i;
+        try{
+
     for (i in PrimeFaces.widgets) {
         if (PrimeFaces.widgets[i].show && PrimeFaces.widgets[i].blocker) {
             PrimeFaces.widgets[i].hide();
         }
+    }
+       }catch(erro){
+        
     }
 }
 
@@ -241,6 +250,7 @@ function mesclarOnChangeComDelayCkEditor(idElementoDigitacao, idElementoPersiste
                                 // console.log('data');
 
                                 setTimeout(function () {
+
                                     window.elemento.metodoOnchangeComDelay();
 
                                 }, 1000);
@@ -299,13 +309,18 @@ function mesclarOnChangeComDelay(idElementoDigitacao) {
 
 
                             try {
+                                idelementoJquery = PrimeFaces.escapeClientId(elemento.id);
+                                $(idelementoJquery).disabled = true;
                                 bloquearArea(elemento.id);
+
                                 elemento.metodoOnchangeComDelay();
                                 desbloquearArea(elemento.id);
+                                $(idelementoJquery).disabled = false;
+
                             } catch (t) {
 
                             }
-                        }, 800);
+                        }, 1200);
                     }
                 } catch (t) {
 
