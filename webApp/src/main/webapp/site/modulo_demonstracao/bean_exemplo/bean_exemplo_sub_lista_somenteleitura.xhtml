@@ -7,24 +7,24 @@
     xmlns:p="http://primefaces.org/ui"
     template="#{layoutsPaginas.formularioAcaoAtualDaEntidade.xhtmlVinculado}" >
     <ui:define name="conteudo">
-        <h:form>
 
 
 
 
-            <SBForm:camposDaAcao
-                rendered="true"
-                somenteLeitura="false"
-                acao="#{paginaAtual.infoPagina.comoFormularioWeb.acaoSelecionada}"
-                registro="#{paginaAtual.infoPagina.comoFormularioWeb.beanSelecionado}"
-                />
+
+        <SBForm:camposDaAcao
+            rendered="true"
+            somenteLeitura="false"
+            acao="#{paginaAtual.infoPagina.comoFormularioWeb.acaoSelecionada}"
+            registro="#{paginaAtual.infoPagina.comoFormularioWeb.beanSelecionado}"
+            />
 
 
 
 
-            <SBFormAtualEnt:detalhesPaginaAtual/>
+        <SBFormAtualEnt:detalhesPaginaAtual/>
 
 
-        </h:form>
+
     </ui:define>
 </ui:composition>

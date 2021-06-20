@@ -11,28 +11,31 @@
 
     template="#{layoutsPaginas.formularioListarGenerico.xhtmlVinculado}" >
     <ui:define name="conteudo" >
-        <h:form >
-            <p:fieldset>
+
+        <p:fieldset>
 
 
-                <SBListagem:listaComOpcoesDesktopLasyMode
-                    rendered="false"
-                    grupoCampos="#{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.gruposDeCampos[0]}"
-                    mensagemSemRegistro="Nenhum #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.nomeDominio} foi encontrado"
-                    armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.acaoSelecionada}"
-                    itemSelecionado="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
-                    itens="#{pgBeanExemplo.listaRegistrosLasy}"
-                    metodo="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(item)}"
-                    opcoes="#{paginaAtual.infoPagina.comoPaginaEntidade.acoesRegistros}"
+            <SBListagem:listaComOpcoesDesktopLasyMode
+                rendered="false"
+                grupoCampos="#{paginaAtual.infoPagina.comoFormularioWeb.acaoVinculada.acaoFormularioListarPadrao.gruposDeCampos[0]}"
+                mensagemSemRegistro="Nenhum #{paginaAtu.al.infoPagina.comoFormularioWeb.acaoVinculada.acaoFormularioListarPadrao.nomeDominio} foi encontrado"
+                armazenamentoAcaoSelecionada="#{paginaAtual.infoPagina.comoFormularioWeb.acaoSelecionada}"
+                itemSelecionado="#{paginaAtual.infoPagina.comoPaginaEntidade.entidadeSelecionada}"
+                itens="#{pgBeanExemplo.listaRegistrosLasy}"
+                metodo="#{paginaAtual.infoPagina.comoPaginaEntidade.executarAcao(item)}"
+                opcoes="#{paginaAtual.infoPagina.comoPaginaEntidade.acoesRegistros}"
 
-                    titulo="Listagem de  #{paginaAtual.infoPagina.acaoVinculada.acaoFormularioListarPadrao.comoFormularioEntidade.nomeTipoObjetoClasseRelacionadaPlural}"
-                    />
-                #{applicationScope.values}
+                titulo="Listagem de  #{paginaAtual.infoPagina.comoFormularioWeb.acaoVinculada.acaoFormularioListarPadrao.comoFormularioEntidade.nomeTipoObjetoClasseRelacionadaPlural}"
+                />
+            #{applicationScope.values}
 
-                <SBFormAtualEnt:pgAtualListaPadraoComOpcoesResponsiva rendered="true" />
+            <SBFormAtualEnt:pgAtualListaPadraoComOpcoesResponsiva rendered="true" />
+
+            <h:form>
                 <p:commandButton actionListener="#{pgUtil.atualizaTelaPorID(layoutIdsAreasConhecidas.AREA_MENSAGEM_INTERFACE)}" />
-            </p:fieldset>
-        </h:form>
+            </h:form>
+        </p:fieldset>
+
     </ui:define>
 
 

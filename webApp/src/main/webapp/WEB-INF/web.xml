@@ -2,20 +2,36 @@
 <web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
     <welcome-file-list>
         <welcome-file>/site/home.xhtml</welcome-file>
     </welcome-file-list>
+
+
+
     <context-param>
         <param-name>facelets.LIBRARIES</param-name>
         <param-value>/sb.taglibLab.xml</param-value>
     </context-param>
-   
-
-
     <context-param>
         <param-name>com.sun.faces.numberOfViewsInSession</param-name>
         <param-value>5</param-value>
     </context-param>
+    <context-param>
+        <param-name>com.sun.faces.application.view.activeViewMapsSize</param-name>
+        <param-value>5</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>com.super_bits.modulosSB.webPaginas.controller.listenners.SessaoHttpListener</listener-class>
+    </listener>
+
+    <context-param>
+
+        <param-name>com.sun.faces.numberOfLogicalViews</param-name>
+        <param-value>3</param-value>
+    </context-param>
+
     <context-param>
         <param-name>com.sun.faces.serializeServerState</param-name>
         <param-value>false</param-value>
@@ -30,18 +46,11 @@
     </context-param>
     <!-- Time in seconds that facelets should be checked for changes since last request. A value of -1 disables refresh checking. -->
     <context-param>
-        <param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
-        <param-value>2</param-value>
-    </context-param>
-    <context-param>
         <param-name>facelets.REFRESH_PERIOD</param-name>
-        <param-value>3</param-value>
+
+        <param-value>5</param-value>
     </context-param>
 
-    <context-param>
-        <param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
-        <param-value>true</param-value>
-    </context-param>
     <context-param>
         <param-name>primefaces.PRIVATE_CAPTCHA_KEY</param-name>
         <param-value>6Lf2XQkTAAAAAHsc1-7Mt_kMlmcmGqlxoMDJlp2K</param-value>
@@ -52,6 +61,9 @@
         <param-value>6Lf2XQkTAAAAANcvOwYqPxWL4iZDksFqHpS39GDA</param-value>
     </context-param>
 
+    <session-config>
+        <session-timeout>6000</session-timeout>
+    </session-config>
 
 
 
@@ -94,10 +106,6 @@
         <url-pattern>*.css</url-pattern>
     </servlet-mapping>
 
-    <context-param>
-        <param-name>javax.faces.WEBAPP_RESOURCES_DIRECTORY</param-name>
-        <param-value></param-value>
-    </context-param>
 
 
     <servlet>
@@ -109,10 +117,23 @@
         <servlet-name>Super_BitsWebPaginas</servlet-name>
         <url-pattern>*.wp</url-pattern>
     </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>Super_BitsWebPaginas</servlet-name>
         <url-pattern>*.html</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>servletoath2</servlet-name>
+        <servlet-class>com.super_bits.modulosSB.webPaginas.controller.servletes.servletRecepcaoOauth.ServletRecepcaoOauth</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletoath2</servlet-name>
+        <url-pattern>/solicitacaoAuth2Recept/*</url-pattern>
+    </servlet-mapping>
+
 
     <servlet>
         <servlet-name>slvGestorDeArquivos</servlet-name>
@@ -168,7 +189,7 @@
 
     <error-page>
         <error-code>404</error-code>
-        <location>/site/home.xhtml</location>
+        <location>/site/404.xhtml</location>
     </error-page>
 
 
@@ -242,4 +263,6 @@
         <extension>svg#fontawesomeregular</extension>
         <mime-type>image/svg+xml</mime-type>
     </mime-mapping>
+
+
 </web-app>

@@ -28,10 +28,19 @@
                        idAtualizarOnChange="apenasTeste"
                        />
 
+        <SBInput:input registro="#{pgBeanExemplo.beanSelecionado.getCPinst('listaDezOpcoes')}"
+                       idAtualizarOnChange="@this"
+                       />
+
         <p:separator/>
         <h:panelGroup id="maisumteste">
             <p:fieldset id="apenasTeste" >
                 #{pgBeanExemplo.beanSelecionado.listaOitoOpcoes}
+            </p:fieldset>
+        </h:panelGroup>
+        <h:panelGroup id="maisumteste2">
+            <p:fieldset id="apenasTeste2" >
+                #{pgBeanExemplo.beanSelecionado.listaDezOpcoes}
             </p:fieldset>
         </h:panelGroup>
 
