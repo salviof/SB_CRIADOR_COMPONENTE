@@ -8,6 +8,9 @@ import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoReferenciaEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.validador.ErroValidacao;
+import com.super_bits.modulosSB.SBCore.modulos.view.widgetsFormulario.WidgetsFormulario;
+import java.util.ArrayList;
+import java.util.List;
 
 @InfoReferenciaEntidade(tipoObjeto = BeanExemplo.class)
 @ValidadorBeanExemplo(validador = ValidadoresBeanExemplo.VALIDACAOLOGICAAPENASPAR)
@@ -22,7 +25,7 @@ public class ValidacaoBeanExemploValidacaoLogicaApenasPar
     }
 
     @Override
-    public Object validar(Object pValor) throws ErroValidacao {
+    public List<WidgetsFormulario> validar(Object pValor) throws ErroValidacao {
         if (pValor == null) {
             throw new ErroValidacao("O valor não pode ser nulo");
         }
@@ -35,7 +38,8 @@ public class ValidacaoBeanExemploValidacaoLogicaApenasPar
             throw new ErroValidacao("Sá porra precisa ser par!");
         }
 
-        return pValor;
+        return new ArrayList<>();
+
     }
 
 }
