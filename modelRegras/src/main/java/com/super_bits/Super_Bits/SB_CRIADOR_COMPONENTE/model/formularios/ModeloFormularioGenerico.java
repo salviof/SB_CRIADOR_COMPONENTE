@@ -76,7 +76,7 @@ public class ModeloFormularioGenerico implements ItfModeloFormularioSBFW {
     }
 
     @Override
-    public int getId() {
+    public Long getId() {
         return modelo.getId();
     }
 
@@ -101,7 +101,7 @@ public class ModeloFormularioGenerico implements ItfModeloFormularioSBFW {
     }
 
     @Override
-    public void setId(int id) {
+    public void setId(Long id) {
         modelo.setId(id);
     }
 

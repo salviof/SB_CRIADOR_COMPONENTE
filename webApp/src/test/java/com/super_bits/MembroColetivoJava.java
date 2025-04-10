@@ -15,7 +15,7 @@ import javax.persistence.Id;
 public class MembroColetivoJava extends UsuarioSB {
 
     @Id
-    private int id;
+    private Long id;
     // @InfoCampo(tipo =)
     private String nome;
     private int patente;
