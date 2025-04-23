@@ -19,7 +19,7 @@ public enum FabListBeanExemplosUmaOpcao implements ItfFabrica {
     public Object getRegistro() {
         BeanExemplo exemplo = new BeanExemplo();
         exemplo.setNome(this.toString());
-        exemplo.setId(this.ordinal() + 1123456789);
+        exemplo.setId(this.ordinal() + 1123456789l);
         return exemplo;
     }
 

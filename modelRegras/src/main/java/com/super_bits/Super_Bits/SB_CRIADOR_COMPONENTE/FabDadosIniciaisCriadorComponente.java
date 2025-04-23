@@ -27,7 +27,7 @@ public enum FabDadosIniciaisCriadorComponente implements ItfFabrica {
     @Override
     public ConteudoGenerico getRegistro() {
         ConteudoGenerico info = new ConteudoGenerico();
-        info.setId(this.ordinal());
+        info.setId((long) this.ordinal());
         info.setNome(this.toString());
         info.setDescricao(UtilSBCoreStringGerador.GetLorenIpsilum(5, UtilSBCoreStringGerador.TIPO_LOREN.PALAVRAS));
         return info;

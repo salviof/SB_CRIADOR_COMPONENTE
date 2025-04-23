@@ -94,19 +94,19 @@ public class BeanExemplo
         } else {
             BeanExemplo exemplo1 = new BeanExemplo(false);
             exemplo1.setNome("Bean Lista 1");
-            exemplo1.setId(1);
+            exemplo1.setId(1l);
             exemplo1.setEmail("teste@teste.com");
 
             BeanExemplo exemplo2 = new BeanExemplo(false);
             exemplo2.setNome("Bean Lista 2");
-            exemplo2.setId(2);
+            exemplo2.setId(2l);
             exemplo2.setEmail("teste2@teste.com");
 
             List<BeanExemplo> lista10Itens = new ArrayList<>();
             for (int i = 0; i < 10; i++) {
                 BeanExemplo itemBExemplo = new BeanExemplo(false);
                 itemBExemplo.setNome("Exemplo" + i);
-                itemBExemplo.setId(i);
+                itemBExemplo.setId((long) i);
 
                 itemBExemplo.setEmail(new TipoAtributoMetodosBase(FabTipoAtributoObjeto.EMAIL).getValorAleatorioEmConformidade().toString());
                 lista10Itens.add(itemBExemplo);

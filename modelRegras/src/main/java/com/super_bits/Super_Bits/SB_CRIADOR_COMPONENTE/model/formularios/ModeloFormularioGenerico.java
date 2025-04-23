@@ -186,11 +186,6 @@ public class ModeloFormularioGenerico implements ItfModeloFormularioSBFW {
     }
 
     @Override
-    public int configIDPeloNome() {
-        return modelo.configIDPeloNome();
-    }
-
-    @Override
     public String getNomeDoObjeto() {
         return modelo.getNomeDoObjeto();
     }
@@ -337,6 +332,11 @@ public class ModeloFormularioGenerico implements ItfModeloFormularioSBFW {
     @Override
     public List<ItfCaminhoCampoInvalido> getCamposInvalidos() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Long configIDPeloNome() {
+        return modelo.configIDPeloNome();
     }
 
 }
