@@ -5,13 +5,13 @@
  */
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
-import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabrica;
+import com.super_bits.modulosSB.SBCore.modulos.fabrica.ComoFabrica;
 
 /**
  *
  * @author desenvolvedor
  */
-public enum FabListBeanExemplos implements ItfFabrica {
+public enum FabListBeanExemplos implements ComoFabrica {
 
     EXEMPLO1,
     EXEMPLO2,

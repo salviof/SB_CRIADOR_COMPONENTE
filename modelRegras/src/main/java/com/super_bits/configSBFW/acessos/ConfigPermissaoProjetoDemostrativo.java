@@ -9,16 +9,16 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_contr
 import com.super_bits.modulos.SBAcessosModel.model.UsuarioSB;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.ConfigPermissaoSBCoreAbstrato;
-import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoDoSistema;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ComoAcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfPermissao;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.token.ItfTokenAcessoDinamico;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.token.ItfTokenRecuperacaoEmail;
-import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabricaAcoes;
+import com.super_bits.modulosSB.SBCore.modulos.fabrica.ComoFabricaAcoes;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioAnonimo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioSistemaRoot;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimplesSomenteLeitura;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoEntidadeSimplesSomenteLeitura;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfGrupoUsuario;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 import com.super_bits.modulosSB.SBCore.modulos.view.menu.MenusDaSessao;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,8 +40,8 @@ public class ConfigPermissaoProjetoDemostrativo extends ConfigPermissaoSBCoreAbs
     }
 
     @Override
-    public List<ItfUsuario> configuraUsuarios() {
-        List<ItfUsuario> usuarios = new ArrayList<>();
+    public List<ComoUsuario> configuraUsuarios() {
+        List<ComoUsuario> usuarios = new ArrayList<>();
         usuarios.add(new UsuarioSistemaRoot());
         UsuarioSB usuarioTEste = new UsuarioSB();
         usuarioTEste.setNome("Usuário Teste");
@@ -67,7 +67,7 @@ public class ConfigPermissaoProjetoDemostrativo extends ConfigPermissaoSBCoreAbs
     }
 
     @Override
-    public boolean isAcaoPermitidaUsuarioLogado(ItfAcaoDoSistema acao) {
+    public boolean isAcaoPermitidaUsuarioLogado(ComoAcaoDoSistema acao) {
         if (SBCore.getUsuarioLogado().equals(new UsuarioAnonimo())) {
             return false;
         } else {
@@ -76,7 +76,7 @@ public class ConfigPermissaoProjetoDemostrativo extends ConfigPermissaoSBCoreAbs
     }
 
     @Override
-    public boolean isAcaoPermitidaUsuario(ItfUsuario pUsuario, ItfAcaoDoSistema acao) {
+    public boolean isAcaoPermitidaUsuario(ComoUsuario pUsuario, ComoAcaoDoSistema acao) {
         if (SBCore.getUsuarioLogado().equals(new UsuarioAnonimo())) {
             return false;
         } else {
@@ -85,7 +85,7 @@ public class ConfigPermissaoProjetoDemostrativo extends ConfigPermissaoSBCoreAbs
     }
 
     @Override
-    public boolean isPermitidoUsuario(ItfUsuario pUsuario, ItfPermissao pPermissao) {
+    public boolean isPermitidoUsuario(ComoUsuario pUsuario, ItfPermissao pPermissao) {
         if (SBCore.getUsuarioLogado().equals(new UsuarioAnonimo())) {
             return false;
         } else {
@@ -94,19 +94,19 @@ public class ConfigPermissaoProjetoDemostrativo extends ConfigPermissaoSBCoreAbs
     }
 
     @Override
-    public ItfTokenRecuperacaoEmail gerarTokenRecuperacaoDeSenha(ItfUsuario pUsuario, int pMinutosValidade) {
+    public ItfTokenRecuperacaoEmail gerarTokenRecuperacaoDeSenha(ComoUsuario pUsuario, int pMinutosValidade) {
 
         throw new UnsupportedOperationException("O METODO AINDA N\u00c3O FOI IMPLEMENTADO.");
 
     }
 
     @Override
-    public ItfTokenAcessoDinamico gerarTokenDinamico(ItfFabricaAcoes pAcao, ItfBeanSimplesSomenteLeitura pItem, String pEmail) {
+    public ItfTokenAcessoDinamico gerarTokenDinamico(ComoFabricaAcoes pAcao, ComoEntidadeSimplesSomenteLeitura pItem, String pEmail) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public boolean isTokenDinamicoExiste(ItfFabricaAcoes pAcao, ItfBeanSimplesSomenteLeitura pItem, String pEmail) {
+    public boolean isTokenDinamicoExiste(ComoFabricaAcoes pAcao, ComoEntidadeSimplesSomenteLeitura pItem, String pEmail) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

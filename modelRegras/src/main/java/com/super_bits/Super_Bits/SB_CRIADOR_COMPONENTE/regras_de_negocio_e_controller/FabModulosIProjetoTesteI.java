@@ -7,9 +7,9 @@ package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_cont
 
 import com.super_bits.modulos.SBAcessosModel.model.ModuloAcaoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.ItfModuloAcaoSistema;
-import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.modulo.ItfFabricaModulo;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.modulo.ComoFabricaModulo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoDaFabrica;
-import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfFabricaMenu;
+import com.super_bits.modulosSB.SBCore.modulos.view.menu.ComoFabricaMenu;
 
 /**
  *
@@ -21,7 +21,7 @@ import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfFabricaMenu;
  *
  * @author Salvio Furbino
  */
-public enum FabModulosIProjetoTesteI implements ItfFabricaModulo {
+public enum FabModulosIProjetoTesteI implements ComoFabricaModulo {
     @InfoObjetoDaFabrica(classeObjeto = ModuloAcaoSistema.class, nomeObjeto = "Módulo Demonstração", id = 1)
     DEMONSTRACAO_BASICA,
     @InfoObjetoDaFabrica(classeObjeto = ModuloAcaoSistema.class, nomeObjeto = "Módulo Acesso REstrito exemplo", id = 2)
@@ -49,7 +49,7 @@ public enum FabModulosIProjetoTesteI implements ItfFabricaModulo {
     }
 
     @Override
-    public ItfFabricaMenu getMenuPadrao() {
+    public ComoFabricaMenu getMenuPadrao() {
         return FabMenuCriadorComponente.MENU_INICIAL;
     }
 }

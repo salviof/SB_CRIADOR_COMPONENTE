@@ -20,7 +20,7 @@ import javax.persistence.Id;
  */
 @Entity
 @InfoObjetoSB(tags = {"Conteúdo"}, plural = "Informações genericas")
-public class ConteudoGenerico extends EntidadeSimples {
+public class ConteudoGenerico extends EntidadeSimplesORM {
 
     @Id
     private Long id;

@@ -2439,24 +2439,24 @@ Event: 3554,110 Thread 0x00007fa051678800 Exception <a 'sun/nio/fs/UnixException
 Event: 3556,170 Thread 0x00007fa051678800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ee83bfd8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
 Event: 3556,245 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000ee977408) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
 Event: 3556,277 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormularioEntidade> (0x00000000eea83fd0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk
-Event: 3556,302 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfUsuario> (0x00000000ee9ecd80) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/
+Event: 3556,302 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoUsuario> (0x00000000ee9ecd80) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/
 Event: 3556,321 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000eeaf8b48) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
 Event: 3556,329 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000eeb2a0f8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
 Event: 3556,338 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000eeb5b118) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
-Event: 3556,348 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema> (0x00000000eec38db0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
+Event: 3556,348 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema> (0x00000000eec38db0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
 Event: 3556,369 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000eeb96878) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
-Event: 3556,400 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfUsuario> (0x00000000eec6d3d0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/
+Event: 3556,400 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoUsuario> (0x00000000eec6d3d0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/
 Event: 3556,424 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000eed79788) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
 Event: 3556,441 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000eedaa868) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
-Event: 3556,442 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/fabrica/ItfFabricaAcoes> (0x00000000eece2460) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/classfile/sys
-Event: 3556,449 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoControllerEntidade> (0x00000000eed17778) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hots
-Event: 3556,456 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema> (0x00000000eedf5c00) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
+Event: 3556,442 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/fabrica/ComoFabricaAcoes> (0x00000000eece2460) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/classfile/sys
+Event: 3556,449 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoControllerEntidade> (0x00000000eed17778) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hots
+Event: 3556,456 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema> (0x00000000eedf5c00) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
 Event: 3556,463 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000eee26938) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
-Event: 3556,467 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema> (0x00000000eee83448) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
-Event: 3556,477 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema> (0x00000000eef39f20) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
+Event: 3556,467 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema> (0x00000000eee83448) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
+Event: 3556,477 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema> (0x00000000eef39f20) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
 Event: 3556,492 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000eeeb4c28) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
 Event: 3556,520 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000eefc18a0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
-Event: 3556,539 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema> (0x00000000eeeec6f8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
+Event: 3556,539 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema> (0x00000000eeeec6f8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
 Event: 3556,542 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormularioEntidade> (0x00000000eeff5a50) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk
 Event: 3556,555 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000ef027030) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
 Event: 3556,565 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000eef1d538) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
@@ -2471,18 +2471,18 @@ Event: 3556,628 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoun
 Event: 3556,668 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000ef19db80) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
 Event: 3556,698 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000ef384860) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
 Event: 3556,703 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000ef3b5f98) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
-Event: 3556,704 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema> (0x00000000ef324cd8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
+Event: 3556,704 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema> (0x00000000ef324cd8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
 Event: 3556,707 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000ef357fb0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
 Event: 3556,714 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000ef3e6ca0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
 Event: 3556,724 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/permissoes/ItfAcaoFormulario> (0x00000000ef464688) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot
 Event: 3556,727 Thread 0x00007fa051678800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ee875810) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
-Event: 3556,741 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfBeanSimples> (0x00000000ef4a0d70) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/
-Event: 3556,746 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema> (0x00000000ef5397b8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
+Event: 3556,741 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples> (0x00000000ef4a0d70) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/
+Event: 3556,746 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema> (0x00000000ef5397b8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
 Event: 3556,747 Thread 0x00007fa030cb4000 Exception <a 'java/lang/NoClassDefFoundError'> (0x00000000ef4a0d70) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1516]
-Event: 3556,762 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema> (0x00000000ef594010) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
-Event: 3556,782 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema> (0x00000000ef5e7740) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
-Event: 3556,791 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfBeanSimples> (0x00000000ef625d60) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/
-Event: 3556,800 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema> (0x00000000ef672aa0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
+Event: 3556,762 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema> (0x00000000ef594010) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
+Event: 3556,782 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema> (0x00000000ef5e7740) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
+Event: 3556,791 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples> (0x00000000ef625d60) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/
+Event: 3556,800 Thread 0x00007fa030cb3800 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema> (0x00000000ef672aa0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
 Event: 3556,841 Thread 0x00007fa030cb9800 Exception <a 'sun/nio/fs/UnixException'> (0x00000000ef6dffc8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jni.cpp, line 710]
 Event: 3556,844 Thread 0x00007fa030cb9800 Exception <a 'sun/nio/fs/UnixException'> (0x00000000ef6e0478) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jni.cpp, line 710]
 Event: 3556,847 Thread 0x00007fa030cb9800 Exception <a 'sun/nio/fs/UnixException'> (0x00000000ef6e07d0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jni.cpp, line 710]
@@ -2675,8 +2675,8 @@ Event: 3557,050 Thread 0x00007fa051678800 Exception <a 'sun/nio/fs/UnixException
 Events (250 events):
 Event: 3556,782 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa03488872c sp=0x00007fa02417b9f0
 Event: 3556,782 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417b750 mode 1
-Event: 3556,782 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema
-Event: 3556,782 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema done
+Event: 3556,782 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema
+Event: 3556,782 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema done
 Event: 3556,782 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa034d87b64 sp=0x00007fa02417b830
 Event: 3556,782 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417b4f0 mode 1
 Event: 3556,782 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa0341e25dc sp=0x00007fa02417b8f0
@@ -2705,22 +2705,22 @@ Event: 3556,789 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa036ce2b14 sp
 Event: 3556,789 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417bc70 mode 1
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa0352d409c sp=0x00007fa02417bfc0
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417bdb0 mode 1
-Event: 3556,790 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfBeanSimples
-Event: 3556,790 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfBeanSimples done
+Event: 3556,790 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
+Event: 3556,790 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa034d876b0 sp=0x00007fa02417bef0
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417bc60 mode 1
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa03488ba64 sp=0x00007fa02417bfb0
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417bcc0 mode 1
-Event: 3556,790 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfBeanSimples
-Event: 3556,790 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfBeanSimples done
+Event: 3556,790 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
+Event: 3556,790 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa034d876b0 sp=0x00007fa02417bd30
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417baa0 mode 1
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa03488ba64 sp=0x00007fa02417bdf0
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417baf0 mode 1
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa03530829c sp=0x00007fa02417bca0
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417ba08 mode 1
-Event: 3556,790 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfBeanSimples
-Event: 3556,790 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfBeanSimples done
+Event: 3556,790 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
+Event: 3556,790 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa034d876b0 sp=0x00007fa02417bb60
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417b8d0 mode 1
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa03488ba64 sp=0x00007fa02417bc20
@@ -2733,8 +2733,8 @@ Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa035307f8c sp
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417bbd8 mode 1
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa03488872c sp=0x00007fa02417be70
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417bbd0 mode 1
-Event: 3556,790 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfBeanSimples
-Event: 3556,790 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfBeanSimples done
+Event: 3556,790 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
+Event: 3556,790 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa034d87b64 sp=0x00007fa02417bcb0
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417b970 mode 1
 Event: 3556,790 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa0341e25dc sp=0x00007fa02417bd70
@@ -2763,22 +2763,22 @@ Event: 3556,799 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa036ce2b14 sp
 Event: 3556,799 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417b7f0 mode 1
 Event: 3556,799 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa0352d409c sp=0x00007fa02417bb40
 Event: 3556,799 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417b930 mode 1
-Event: 3556,799 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema
-Event: 3556,799 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema done
+Event: 3556,799 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema
+Event: 3556,799 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema done
 Event: 3556,799 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa034d876b0 sp=0x00007fa02417ba70
 Event: 3556,799 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417b7e0 mode 1
 Event: 3556,799 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa03488ba64 sp=0x00007fa02417bb30
 Event: 3556,799 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417b840 mode 1
-Event: 3556,800 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema
-Event: 3556,800 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema done
+Event: 3556,800 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema
+Event: 3556,800 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema done
 Event: 3556,800 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa034d876b0 sp=0x00007fa02417b8b0
 Event: 3556,800 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417b620 mode 1
 Event: 3556,800 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa03488ba64 sp=0x00007fa02417b970
 Event: 3556,800 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417b670 mode 1
 Event: 3556,800 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa03530829c sp=0x00007fa02417b820
 Event: 3556,800 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417b588 mode 1
-Event: 3556,800 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema
-Event: 3556,800 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema done
+Event: 3556,800 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema
+Event: 3556,800 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema done
 Event: 3556,800 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa034d876b0 sp=0x00007fa02417b6e0
 Event: 3556,800 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417b450 mode 1
 Event: 3556,800 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa03488ba64 sp=0x00007fa02417b7a0
@@ -2791,8 +2791,8 @@ Event: 3556,800 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa035307f8c sp
 Event: 3556,800 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417b758 mode 1
 Event: 3556,800 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa03488872c sp=0x00007fa02417b9f0
 Event: 3556,800 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417b750 mode 1
-Event: 3556,800 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema
-Event: 3556,800 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema done
+Event: 3556,800 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema
+Event: 3556,800 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema done
 Event: 3556,800 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa034d87b64 sp=0x00007fa02417b830
 Event: 3556,800 Thread 0x00007fa030cb3800 DEOPT UNPACKING pc=0x00007fa03409d0c4 sp=0x00007fa02417b4f0 mode 1
 Event: 3556,800 Thread 0x00007fa030cb3800 DEOPT PACKING pc=0x00007fa0341e25dc sp=0x00007fa02417b8f0

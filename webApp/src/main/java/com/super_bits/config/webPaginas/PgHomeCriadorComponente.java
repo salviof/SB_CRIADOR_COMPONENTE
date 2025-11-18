@@ -8,9 +8,9 @@ package com.super_bits.config.webPaginas;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.paginasIniciais.FabAcoesHomeCriadorComponente;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.paginasIniciais.InfoAcaoHomeCriacaoComponente;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.BeanExemplo;
-import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoDoSistema;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ComoAcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoEntidadeSimples;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.MB_PaginaConversation;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.reflexao.anotacoes.InfoPagina;
 import java.util.List;
@@ -30,7 +30,7 @@ import org.coletivoJava.superBitsFW.webPaginas.config.AcoesAdminTools_BeanExempl
 public class PgHomeCriadorComponente extends MB_PaginaConversation {
 
     private BeanExemplo beanExemplo;
-    private ItfBeanSimples beaSimples;
+    private ComoEntidadeSimples beaSimples;
 
     @PostConstruct
     public void inicio() {
@@ -38,12 +38,12 @@ public class PgHomeCriadorComponente extends MB_PaginaConversation {
     }
 
     @Override
-    public ItfBeanSimples getBeanSelecionado() {
+    public ComoEntidadeSimples getBeanSelecionado() {
         return beaSimples;
     }
 
     @Override
-    public void setBeanSelecionado(ItfBeanSimples pBeanSimples) {
+    public void setBeanSelecionado(ComoEntidadeSimples pBeanSimples) {
         beaSimples = pBeanSimples;
     }
 

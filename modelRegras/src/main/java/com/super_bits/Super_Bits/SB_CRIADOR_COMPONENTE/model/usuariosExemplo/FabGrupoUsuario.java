@@ -7,13 +7,13 @@ package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.usuariosExemplo;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.paginasIniciais.FabAcoesHomeCriadorComponente;
 import com.super_bits.modulos.SBAcessosModel.model.GrupoUsuarioSB;
-import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabrica;
+import com.super_bits.modulosSB.SBCore.modulos.fabrica.ComoFabrica;
 
 /**
  *
  * @author desenvolvedor
  */
-public enum FabGrupoUsuario implements ItfFabrica {
+public enum FabGrupoUsuario implements ComoFabrica {
     USUARIO_ANONIMO, USUARIO_ADMINISTRADOR;
 
     @Override

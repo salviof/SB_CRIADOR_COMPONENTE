@@ -8,7 +8,7 @@ package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp.TesteSB_CRIADOR_COMPONENTE;
 
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual;
-import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfComponenteVisualSB;
+import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComoComponenteVisualSB;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +27,7 @@ public class MapaComponentesTest extends TesteSB_CRIADOR_COMPONENTE {
 
         MapaComponentes.mapaComponentesCriarMapa();
 
-        for (ItfComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.BOTAO_DE_ACAO.getRegistro())) {
+        for (ComoComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.BOTAO_DE_ACAO.getRegistro())) {
 
             System.out.println("\n"
                     + "Listando os Componentes da Familia: " + FabFamiliaCompVisual.BOTAO_DE_ACAO.getNomeFAmilia() + "\n"
@@ -37,7 +37,7 @@ public class MapaComponentesTest extends TesteSB_CRIADOR_COMPONENTE {
 
         }
 
-        for (ItfComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.COMPONENTE_SISTEMA.getRegistro())) {
+        for (ComoComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.COMPONENTE_SISTEMA.getRegistro())) {
 
             System.out.println("\n"
                     + "Listando os Componentes da Familia: " + FabFamiliaCompVisual.COMPONENTE_SISTEMA.getNomeFAmilia() + "\n"
@@ -47,7 +47,7 @@ public class MapaComponentesTest extends TesteSB_CRIADOR_COMPONENTE {
 
         }
 
-        for (ItfComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.INPUT.getRegistro())) {
+        for (ComoComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.INPUT.getRegistro())) {
 
             System.out.println("\n"
                     + "Listando os Componentes da Familia: " + FabFamiliaCompVisual.INPUT.getNomeFAmilia() + "\n"
@@ -57,7 +57,7 @@ public class MapaComponentesTest extends TesteSB_CRIADOR_COMPONENTE {
 
         }
 
-        for (ItfComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.ITEM_BEAN_SIMPLES.getRegistro())) {
+        for (ComoComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.ITEM_BEAN_SIMPLES.getRegistro())) {
 
             System.out.println("\n"
                     + "Listando os Componentes da Familia: " + FabFamiliaCompVisual.ITEM_BEAN_SIMPLES.getNomeFAmilia() + "\n"
@@ -67,7 +67,7 @@ public class MapaComponentesTest extends TesteSB_CRIADOR_COMPONENTE {
 
         }
 
-        for (ItfComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.ITENS_BEAN_SIMPLES.getRegistro())) {
+        for (ComoComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.ITENS_BEAN_SIMPLES.getRegistro())) {
 
             System.out.println("\n"
                     + "Listando os Componentes da Familia: " + FabFamiliaCompVisual.ITENS_BEAN_SIMPLES.getNomeFAmilia() + "\n"
@@ -77,7 +77,7 @@ public class MapaComponentesTest extends TesteSB_CRIADOR_COMPONENTE {
 
         }
 
-        for (ItfComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.LAYOUT_INPUT.getRegistro())) {
+        for (ComoComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.LAYOUT_INPUT.getRegistro())) {
 
             System.out.println("\n"
                     + "Listando os Componentes da Familia: " + FabFamiliaCompVisual.LAYOUT_INPUT.getNomeFAmilia() + "\n"
@@ -87,7 +87,7 @@ public class MapaComponentesTest extends TesteSB_CRIADOR_COMPONENTE {
 
         }
 
-        for (ItfComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.MENU.getRegistro())) {
+        for (ComoComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.MENU.getRegistro())) {
 
             System.out.println("\n"
                     + "Listando os Componentes da Familia: " + FabFamiliaCompVisual.MENU.getNomeFAmilia() + "\n"
@@ -97,7 +97,7 @@ public class MapaComponentesTest extends TesteSB_CRIADOR_COMPONENTE {
 
         }
 
-        for (ItfComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.SELETOR_ITEM.getRegistro())) {
+        for (ComoComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.SELETOR_ITEM.getRegistro())) {
 
             System.out.println("\n"
                     + "Listando os Componentes da Familia: " + FabFamiliaCompVisual.SELETOR_ITEM.getNomeFAmilia() + "\n"
@@ -107,7 +107,7 @@ public class MapaComponentesTest extends TesteSB_CRIADOR_COMPONENTE {
 
         }
 
-        for (ItfComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.SELETOR_ITENS.getRegistro())) {
+        for (ComoComponenteVisualSB componente : MapaComponentes.getComponentesFamilia(FabFamiliaCompVisual.SELETOR_ITENS.getRegistro())) {
 
             System.out.println("\n"
                     + "Listando os Componentes da Familia: " + FabFamiliaCompVisual.SELETOR_ITENS.getNomeFAmilia() + "\n"
@@ -126,7 +126,7 @@ public class MapaComponentesTest extends TesteSB_CRIADOR_COMPONENTE {
 
             MapaComponentes.mapaComponentesCriarMapa();
 
-            List<ItfComponenteVisualSB> listaComponentes = new ArrayList<>();
+            List<ComoComponenteVisualSB> listaComponentes = new ArrayList<>();
 
             listaComponentes = (List) MapaComponentes.getTodosComponentes();
 

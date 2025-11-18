@@ -18,7 +18,7 @@ import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcao
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.FabTipoComunicacao;
-import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabricaAcoes;
+import com.super_bits.modulosSB.SBCore.modulos.fabrica.ComoFabricaAcoes;
 
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.icones.FabIconeFontAwesome;
 import com.super_bits.modulosSB.SBCore.modulos.view.componenteAtributo.ComponenteVisualSBBean;
@@ -28,7 +28,7 @@ import com.super_bits.modulosSB.SBCore.modulos.view.componenteAtributo.Component
  * @author desenvolvedor
  */
 @InfoModuloSB_CRIADOR_COMPONENTE(modulo = FabModulosIProjetoTesteI.DEMONSTRACAO_BASICA)
-public enum FabAcaoLabComponentes implements ItfFabricaAcoes {
+public enum FabAcaoLabComponentes implements ComoFabricaAcoes {
 
     @InfoTipoAcaoGestaoEntidade(precisaPermissao = false)
     LAB_COMPONENTES_MB_GERENCIAR,

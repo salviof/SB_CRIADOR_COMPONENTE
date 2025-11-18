@@ -14,7 +14,7 @@ import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreReflexaoObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.TIPO_PARTE_URL;
-import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoDoSistema;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ComoAcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Mensagens.FabMensagens;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaCampo;
@@ -24,7 +24,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstancia
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.estrutura.ItfEstruturaCampoEntidade;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoEntidadeSimples;
 import com.super_bits.modulosSB.SBCore.modulos.view.componenteAtributo.ComponenteVisualSBBean;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual;
 import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.BOTAO_DE_ACAO;
@@ -40,7 +40,7 @@ import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.Fa
 import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.MENU;
 import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.SELETOR_ITEM;
 import static com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual.SELETOR_ITENS;
-import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfComponenteVisualSB;
+import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComoComponenteVisualSB;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.MB_PaginaConversation;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.reflexao.anotacoes.InfoPagina;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.reflexao.anotacoes.beans.InfoMB_Bean;
@@ -76,7 +76,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private final static String ESTRUTURA_DE_CAMPO_DESCRICAO = "Estrutura de Campo";
 
     private ComponenteVisualSBBean componenteSelecionado;
-    private List<ItfComponenteVisualSB> listaComponentes;
+    private List<ComoComponenteVisualSB> listaComponentes;
     private FamiliaComponente familiaSelecionada;
     private List<FamiliaComponente> listaFamiliasComponentes;
     private final AcaoDoSistema acaoGerenciar = FabAcaoLabComponentes.LAB_COMPONENTES_MB_GERENCIAR.getRegistro();
@@ -123,7 +123,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     private EstruturaDeEntidade estruturaObjetoSelecionado;
     private DialogoWeb dialogoDoMomento;
 
-    private List<ItfComponenteVisualSB> listaComponentesEspeciaisDisponiveis;
+    private List<ComoComponenteVisualSB> listaComponentesEspeciaisDisponiveis;
 
     private List<ItfAcaoFormulario> listasformularioExemplo;
 
@@ -403,7 +403,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
 
         listaComponentes.clear();
 
-        for (ItfComponenteVisualSB componentePesquisado : MapaComponentes.getTodosComponentes()) {
+        for (ComoComponenteVisualSB componentePesquisado : MapaComponentes.getTodosComponentes()) {
 
             if (componentePesquisado.getNomeComponente().toLowerCase().contains(parametroPesquisa.toLowerCase())) {
 
@@ -419,7 +419,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         return componenteSelecionado;
     }
 
-    public List<ItfComponenteVisualSB> getListaComponentes() {
+    public List<ComoComponenteVisualSB> getListaComponentes() {
         return listaComponentes;
     }
 
@@ -470,7 +470,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         return parametroPesquisa;
     }
 
-    public void setComponenteSelecionado(ItfComponenteVisualSB componenteSelecionado) {
+    public void setComponenteSelecionado(ComoComponenteVisualSB componenteSelecionado) {
         this.componenteSelecionado = (ComponenteVisualSBBean) componenteSelecionado;
         if (this.caminhoBeanSelecionado == null) {
             String beanPadrao = getCampoPadraoComponente();
@@ -668,12 +668,12 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     }
 
     @Override
-    public ItfBeanSimples getBeanSelecionado() {
+    public ComoEntidadeSimples getBeanSelecionado() {
         return beanExemplo;
     }
 
     @Override
-    public void setBeanSelecionado(ItfBeanSimples pBeanSimples) {
+    public void setBeanSelecionado(ComoEntidadeSimples pBeanSimples) {
 
     }
 
@@ -685,7 +685,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
         return acaoTesteModalJustificativa;
     }
 
-    public List<ItfComponenteVisualSB> getListaComponentesEspeciaisDisponiveis() {
+    public List<ComoComponenteVisualSB> getListaComponentesEspeciaisDisponiveis() {
         return listaComponentesEspeciaisDisponiveis;
     }
 
@@ -701,7 +701,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     }
 
     @Override
-    public void setAcaoSelecionada(ItfAcaoDoSistema acaoSelecionada) {
+    public void setAcaoSelecionada(ComoAcaoDoSistema acaoSelecionada) {
         super.setAcaoSelecionada(acaoSelecionada);
     }
 

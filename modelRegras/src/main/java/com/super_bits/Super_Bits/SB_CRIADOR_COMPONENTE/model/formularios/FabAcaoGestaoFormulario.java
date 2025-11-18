@@ -5,16 +5,16 @@
  */
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.formularios;
 
-import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoDoSistema;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ComoAcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
-import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabricaAcoes;
+import com.super_bits.modulosSB.SBCore.modulos.fabrica.ComoFabricaAcoes;
 
 /**
  *
  * @author desenvolvedor
  */
-public enum FabAcaoGestaoFormulario implements ItfFabricaAcoes {
+public enum FabAcaoGestaoFormulario implements ComoFabricaAcoes {
     @InfoTipoAcaoGestaoEntidade(entidade = ModeloFormularioGenerico.class)
     FORMULARIOPADRAOSB_MB,
     @InfoTipoAcaoFormulario()
@@ -24,7 +24,7 @@ public enum FabAcaoGestaoFormulario implements ItfFabricaAcoes {
     FORMULARIOPADRAOSB_FRM_EDITAR;
 
     @Override
-    public ItfAcaoDoSistema getRegistro() {
+    public ComoAcaoDoSistema getRegistro() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

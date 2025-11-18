@@ -6,7 +6,7 @@ import java.io.Serializable;
 import com.super_bits.modulosSB.SBCore.UtilGeral.MapaAcoesSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormularioEntidade;
-import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoControllerEntidade;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ComoAcaoControllerEntidade;
 
 @Named
 @ApplicationScoped
@@ -47,33 +47,33 @@ public class AcoesAdminTools_BeanExemploMb implements Serializable {
 				.getAcaoDoSistemaByNomeUnico("FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_FRM_SUB_LISTA_SOMENTElEITURA");
 	}
 
-	public ItfAcaoControllerEntidade getBeanExemploCtrSalvarMerge() {
-		return (ItfAcaoControllerEntidade) MapaAcoesSistema
+	public ComoAcaoControllerEntidade getBeanExemploCtrSalvarMerge() {
+		return (ComoAcaoControllerEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_CTR_SALVAR_MERGE");
 	}
 
-	public ItfAcaoControllerEntidade getBeanExemploCtrSalvarNovo() {
-		return (ItfAcaoControllerEntidade) MapaAcoesSistema
+	public ComoAcaoControllerEntidade getBeanExemploCtrSalvarNovo() {
+		return (ComoAcaoControllerEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_CTR_SALVAR_NOVO");
 	}
 
-	public ItfAcaoControllerEntidade getBeanExemploCtrSalvarEdicao() {
-		return (ItfAcaoControllerEntidade) MapaAcoesSistema
+	public ComoAcaoControllerEntidade getBeanExemploCtrSalvarEdicao() {
+		return (ComoAcaoControllerEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_CTR_SALVAR_EDICAO");
 	}
 
-	public ItfAcaoControllerEntidade getBeanExemploCtrAlterarStatus() {
-		return (ItfAcaoControllerEntidade) MapaAcoesSistema
+	public ComoAcaoControllerEntidade getBeanExemploCtrAlterarStatus() {
+		return (ComoAcaoControllerEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_CTR_ALTERAR_STATUS");
 	}
 
-	public ItfAcaoControllerEntidade getBeanExemploCtrAtivar() {
-		return (ItfAcaoControllerEntidade) MapaAcoesSistema
+	public ComoAcaoControllerEntidade getBeanExemploCtrAtivar() {
+		return (ComoAcaoControllerEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_CTR_ATIVAR");
 	}
 
-	public ItfAcaoControllerEntidade getBeanExemploCtrCampoComJustificativa() {
-		return (ItfAcaoControllerEntidade) MapaAcoesSistema
+	public ComoAcaoControllerEntidade getBeanExemploCtrCampoComJustificativa() {
+		return (ComoAcaoControllerEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoBeanExemploDemonstrativo.BEAN_EXEMPLO_CTR_CAMPO_COM_JUSTIFICATIVA");
 	}
 

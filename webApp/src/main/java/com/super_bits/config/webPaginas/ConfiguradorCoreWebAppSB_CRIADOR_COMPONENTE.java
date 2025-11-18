@@ -16,7 +16,7 @@ import com.super_bits.modulos.SBAcessosModel.fabricas.FabAcaoProjetoSB;
 import com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.ItfConfiguracaoCoreCustomizavel;
 import com.super_bits.modulosSB.SBCore.modulos.admin.CentralAdministrativaPadrao;
-import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabricaAcoes;
+import com.super_bits.modulosSB.SBCore.modulos.fabrica.ComoFabricaAcoes;
 import com.super_bits.modulosSB.SBCore.modulos.localizacao.CentralDeLocalizacaoSemPersistencia;
 import com.super_bits.modulosSB.webPaginas.ConfigGeral.ConfiguradorCoreDeProjetoWebWarAbstrato;
 import com.super_bits.modulosSB.webPaginas.centralAtributo.CentralAtributosWebappSemPersistencia;
@@ -50,7 +50,7 @@ public class ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE extends ConfiguradorCor
         pConfig.setCentralDeLocalizacao(CentralDeLocalizacaoSemPersistencia.class);
         pConfig.setCentralAtributoDados(CentralAtributosWebappSemPersistencia.class);
         pConfig.setClasseConfigPermissao(ConfigPermissaoProjetoDemostrativo.class);
-        List<Class<? extends ItfFabricaAcoes>> listaWebApp = Lists.newArrayList(UtilSB_CRIADOR_COMPONENTEGlobalVar.pAcoesDoSistema());
+        List<Class<? extends ComoFabricaAcoes>> listaWebApp = Lists.newArrayList(UtilSB_CRIADOR_COMPONENTEGlobalVar.pAcoesDoSistema());
 
         listaWebApp.add(FabAcoesHomeCriadorComponente.class);
         listaWebApp.add(FabAcaoDemonstracaoSB.class);

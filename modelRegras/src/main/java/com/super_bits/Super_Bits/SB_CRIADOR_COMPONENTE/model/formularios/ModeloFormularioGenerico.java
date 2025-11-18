@@ -6,7 +6,7 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.formularios;
 
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoDoSistema;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ComoAcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Mensagens.ItfMensagem;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoObjetoSB;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoReflexao;
@@ -16,7 +16,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCamin
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfAssistenteDeLocalizacao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.cep.LocalizacaoInputAssistente;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoEntidadeSimples;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.TipoOrganizacaoDadosEndereco;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.validacaoRegistro.CampoInvalido;
 import com.super_bits.modulosSB.SBCore.modulos.view.modeloFormulario.ItfModeloFormularioSBFW;
@@ -231,17 +231,17 @@ public class ModeloFormularioGenerico implements ItfModeloFormularioSBFW {
     }
 
     @Override
-    public ItfBeanSimples getBeanSimplesPorNomeCampo(String pNomeCampo) {
+    public ComoEntidadeSimples getBeanSimplesPorNomeCampo(String pNomeCampo) {
         return modelo.getBeanSimplesPorNomeCampo(pNomeCampo);
     }
 
     @Override
-    public ItfBeanSimples getItemPorCaminhoCampo(ItfCaminhoCampo pCaminho) {
+    public ComoEntidadeSimples getItemPorCaminhoCampo(ItfCaminhoCampo pCaminho) {
         return modelo.getItemPorCaminhoCampo(pCaminho);
     }
 
     @Override
-    public List<ItfBeanSimples> getListaPorCaminhoCampo(ItfCaminhoCampo pCaminho) {
+    public List<ComoEntidadeSimples> getListaPorCaminhoCampo(ItfCaminhoCampo pCaminho) {
         return modelo.getListaPorCaminhoCampo(pCaminho);
     }
 
@@ -256,12 +256,12 @@ public class ModeloFormularioGenerico implements ItfModeloFormularioSBFW {
     }
 
     @Override
-    public void adicionarJustificativaExecucaoAcao(ItfAcaoDoSistema pAcao, String pJustificativa) {
+    public void adicionarJustificativaExecucaoAcao(ComoAcaoDoSistema pAcao, String pJustificativa) {
         modelo.adicionarJustificativaExecucaoAcao(pAcao, pJustificativa);
     }
 
     @Override
-    public String getJustificativa(ItfAcaoDoSistema pAcao) {
+    public String getJustificativa(ComoAcaoDoSistema pAcao) {
         return modelo.getJustificativa(pAcao);
     }
 

@@ -12,7 +12,7 @@ import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoGestaoEntidade;
-import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabricaAcoes;
+import com.super_bits.modulosSB.SBCore.modulos.fabrica.ComoFabricaAcoes;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.icones.FabIconeFontAwesome;
 
 /**
@@ -20,7 +20,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.icone
  * @author desenvolvedor
  */
 @InfoModulosSistemaSB(modulo = FabModulosSistemaSB.PAGINAS_DO_SISTEMA)
-public enum FabAcoesHomeCriadorComponente implements ItfFabricaAcoes {
+public enum FabAcoesHomeCriadorComponente implements ComoFabricaAcoes {
     @InfoTipoAcaoGestaoEntidade(xhtmlDaAcao = "/site/home.xhtml", iconeFonteAnsowame = FabIconeFontAwesome.COMERCIO_PRESENTE)
     PAGINA_HOME_MB_INICIO,
     @InfoTipoAcaoFormulario(iconeFonteAnsowame = FabIconeFontAwesome.REG_AGRUPAR_REGISTROS, xhtmlDaAcao = "/site/ferramentasCriacao.xhtml")

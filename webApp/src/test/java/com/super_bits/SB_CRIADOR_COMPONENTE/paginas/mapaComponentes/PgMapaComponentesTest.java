@@ -13,7 +13,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.Atributo
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.estrutura.ItfEstruturaCampoEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual;
-import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfComponenteVisualSB;
+import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComoComponenteVisualSB;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualEndereco;
 import java.util.List;
 import org.coletivojava.fw.api.objetoNativo.view.componente.ComponenteVisualBase;
@@ -150,7 +150,7 @@ public class PgMapaComponentesTest extends TestesWP_CRIADOR_COMPONENTES {
         System.out.println("\n" + "Lista de Componentes criada com Sucesso! " + "\n"
                 + pTotalComponentes + " Componentes na Lista" + "\n");
 
-        for (ItfComponenteVisualSB componenteAtual : pPaginaARelatar.getListaComponentes()) {
+        for (ComoComponenteVisualSB componenteAtual : pPaginaARelatar.getListaComponentes()) {
 
             System.out.println("\n" + "Componente: " + componenteAtual.getNomeComponente() + "|" + " Familia: " + componenteAtual.getFamilia().getNomeFAmilia() + "\n");
 

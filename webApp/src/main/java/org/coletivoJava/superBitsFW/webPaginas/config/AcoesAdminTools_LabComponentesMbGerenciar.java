@@ -6,7 +6,7 @@ import java.io.Serializable;
 import com.super_bits.modulosSB.SBCore.UtilGeral.MapaAcoesSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormularioEntidade;
-import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ItfAcaoControllerEntidade;
+import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ComoAcaoControllerEntidade;
 
 @Named
 @ApplicationScoped
@@ -142,13 +142,13 @@ public class AcoesAdminTools_LabComponentesMbGerenciar implements Serializable {
 				.getAcaoDoSistemaByNomeUnico("FabAcaoLabComponentes.LAB_COMPONENTES_FRM_LAB_FORMULARIO_VER");
 	}
 
-	public ItfAcaoControllerEntidade getLabComponentesCtrTesteJustificativa() {
-		return (ItfAcaoControllerEntidade) MapaAcoesSistema
+	public ComoAcaoControllerEntidade getLabComponentesCtrTesteJustificativa() {
+		return (ComoAcaoControllerEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoLabComponentes.LAB_COMPONENTES_CTR_TESTE_JUSTIFICATIVA");
 	}
 
-	public ItfAcaoControllerEntidade getLabComponentesCtrTesteComunicacao() {
-		return (ItfAcaoControllerEntidade) MapaAcoesSistema
+	public ComoAcaoControllerEntidade getLabComponentesCtrTesteComunicacao() {
+		return (ComoAcaoControllerEntidade) MapaAcoesSistema
 				.getAcaoDoSistemaByNomeUnico("FabAcaoLabComponentes.LAB_COMPONENTES_CTR_TESTE_COMUNICACAO");
 	}
 }

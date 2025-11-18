@@ -16,11 +16,11 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstancia
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciadoEnumFabricaObjeto;
 
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimplesSomenteLeitura;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfBairro;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfCidade;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ItfUnidadeFederativa;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoEntidadeSimples;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoEntidadeSimplesSomenteLeitura;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.ComoBairro;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.EntidadeCidade;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.cep.EntidadeUnidadeFederativa;
 import java.util.Iterator;
 import java.util.List;
 import org.junit.Test;
@@ -68,7 +68,7 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
             }
             List objetos = (List) campoinstanciadoListaParticular.getValor();
             for (Object obj : objetos) {
-                ItfBeanSimplesSomenteLeitura itemParticular = (ItfBeanSimplesSomenteLeitura) obj;
+                ComoEntidadeSimplesSomenteLeitura itemParticular = (ComoEntidadeSimplesSomenteLeitura) obj;
                 // itemParticular
             }
             ItfCampoInstanciado campoinstanciadoSeletorItem = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("seletorOpcao");
@@ -100,10 +100,10 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
             System.out.println(campoSeletorItensTesteSubform.getValor());
             System.out.println("" + campoSeletorItensTesteSubform.isUmValorMultiploComLista());
             campoSeletorItensTesteSubform.getComoSubItens().getSubItens().adicionarItem();
-            List<ItfBeanSimples> listaSubFormTeste = (List<ItfBeanSimples>) campoSeletorItensTesteSubform.getValor();
+            List<ComoEntidadeSimples> listaSubFormTeste = (List<ComoEntidadeSimples>) campoSeletorItensTesteSubform.getValor();
             System.out.println(campoSeletorItensTesteSubform.getGrupoSubCamposExibicao());
 
-            for (ItfBeanSimples valorSublista : listaSubFormTeste) {
+            for (ComoEntidadeSimples valorSublista : listaSubFormTeste) {
                 for (ItfCampoExibicaoFormulario caminho : campoSeletorItensTesteSubform.getGrupoSubCamposExibicao().getCampos()) {
                     System.out.println(caminho.getCaminhoSemNomeClasse());
                     System.out.println(valorSublista.getCampoByNomeOuAnotacao(caminho.getCaminhoSemNomeClasse()).getLabel());
@@ -119,7 +119,7 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
             ItfCampoInstanciado campoSeletor = beanExemplo.getCampoInstanciadoByNomeOuAnotacao("beanSelecionadoDaListaFabrica");
 
             System.out.println("Opções listadas=" + campoSeletor.getListaDeOpcoes().size());
-            for (ItfBeanSimples opcao : campoSeletor.getListaDeOpcoes()) {
+            for (ComoEntidadeSimples opcao : campoSeletor.getListaDeOpcoes()) {
                 System.out.println(opcao.getNome());
             }
             campoSeletor.setValor(FabListBeanExemplos.EXEMPLO1.getRegistro());
@@ -136,7 +136,7 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
             System.out.println("Retornou ->" + campoSeletorInstanciado.getSeletor().getOrigem().size() + " registros,:" + campoSeletorInstanciado.getSeletor().getOrigem());
 
             for (Iterator it = campoSeletorInstanciado.getSeletor().getOrigem().iterator(); it.hasNext();) {
-                ItfBeanSimplesSomenteLeitura simples = (ItfBeanSimplesSomenteLeitura) it.next();
+                ComoEntidadeSimplesSomenteLeitura simples = (ComoEntidadeSimplesSomenteLeitura) it.next();
                 System.out.println("->>>>>" + simples.getNome());
             }
             ItfCampoInstanciado campoSelecao = beanExemplo.getCampoByNomeOuAnotacao("beanSelecionadoDaListaFabrica");
@@ -153,16 +153,16 @@ public class BeanExemploTest extends TesteSB_CRIADOR_COMPONENTE {
 
             ItfAssistenteDeLocalizacao cpLocalizacao = campoInstanciado.getComoCampoLocalizacao();
 
-            List<ItfUnidadeFederativa> lista = cpLocalizacao.metodoAutoCompleteEstado("minas");
-            for (ItfUnidadeFederativa estado : lista) {
+            List<EntidadeUnidadeFederativa> lista = cpLocalizacao.metodoAutoCompleteEstado("minas");
+            for (EntidadeUnidadeFederativa estado : lista) {
                 System.out.println(estado.getNome());
             }
             cpLocalizacao.setUnidadeFederativa(lista.get(0));
-            List<ItfCidade> cidades = cpLocalizacao.metodoAutoCompleteCidade("Belo Horizonte");
+            List<EntidadeCidade> cidades = cpLocalizacao.metodoAutoCompleteCidade("Belo Horizonte");
 
             cpLocalizacao.setCidade(cidades.get(0));
 
-            List<ItfBairro> bairros = cpLocalizacao.metodoAutoCompleteBairro("Centro");
+            List<ComoBairro> bairros = cpLocalizacao.metodoAutoCompleteBairro("Centro");
             System.out.println(bairros.get(0).getNome());
             cpLocalizacao.setBairro(bairros.get(0));
             cpLocalizacao.setNomeLocal("asdasdasd");

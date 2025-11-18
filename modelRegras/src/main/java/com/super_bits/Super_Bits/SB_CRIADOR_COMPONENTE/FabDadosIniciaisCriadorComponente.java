@@ -9,13 +9,13 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.informacao.Conteudo
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStringGerador;
 import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStringValidador;
 
-import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabrica;
+import com.super_bits.modulosSB.SBCore.modulos.fabrica.ComoFabrica;
 
 /**
  *
  * @author desenvolvedor
  */
-public enum FabDadosIniciaisCriadorComponente implements ItfFabrica {
+public enum FabDadosIniciaisCriadorComponente implements ComoFabrica {
 
     INFO1,
     INFO2,

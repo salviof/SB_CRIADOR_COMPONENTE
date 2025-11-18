@@ -8,7 +8,7 @@ package com.super_bits.config.webPaginas;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.ManipulaArquivo.interfaces.ItfCentralPermissaoArquivo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstArquivoEntidade;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 
 /**
  *
@@ -26,7 +26,7 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basic
 public class CentralPermissaoArquivoSBComponente implements ItfCentralPermissaoArquivo {
 
     @Override
-    public boolean isUsuarioPodeAlterar(ItfUsuario pUsuario, ItfCampoInstArquivoEntidade pArquivo) {
+    public boolean isUsuarioPodeAlterar(ComoUsuario pUsuario, ItfCampoInstArquivoEntidade pArquivo) {
         try {
             return ((String) pArquivo.getCampoInstanciado().getValor()).contains(".txt");
         } catch (Throwable t) {
@@ -36,7 +36,7 @@ public class CentralPermissaoArquivoSBComponente implements ItfCentralPermissaoA
     }
 
     @Override
-    public boolean isUsuarioPodeBaixar(ItfUsuario pUsuario, ItfCampoInstArquivoEntidade pArquivo) {
+    public boolean isUsuarioPodeBaixar(ComoUsuario pUsuario, ItfCampoInstArquivoEntidade pArquivo) {
         if (((String) pArquivo.getCampoInstanciado().getValor()).contains(".pdf")) {
             return false;
         }
@@ -44,7 +44,7 @@ public class CentralPermissaoArquivoSBComponente implements ItfCentralPermissaoA
     }
 
     @Override
-    public boolean isUsuarioPodeCriar(ItfUsuario pUsuario, ItfCampoInstArquivoEntidade pArquivo) {
+    public boolean isUsuarioPodeCriar(ComoUsuario pUsuario, ItfCampoInstArquivoEntidade pArquivo) {
         return true;
     }
 

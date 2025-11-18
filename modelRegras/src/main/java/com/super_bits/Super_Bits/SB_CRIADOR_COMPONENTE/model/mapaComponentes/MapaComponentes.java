@@ -8,8 +8,8 @@ package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes;
 import com.google.common.collect.Lists;
 import com.super_bits.modulosSB.SBCore.modulos.view.componenteAtributo.ComponenteVisualSBBean;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.FabFamiliaCompVisual;
-import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfComponenteVisualSB;
-import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ItfFabTipoComponenteVisual;
+import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComoComponenteVisualSB;
+import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.ComoFabTipoComponenteVisual;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVIsualInputsLayout;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualBotaoAcao;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualEndereco;
@@ -38,7 +38,7 @@ import org.coletivojava.fw.api.objetoNativo.view.componente.FamiliaComponente;
  */
 public abstract class MapaComponentes {
 
-    private static Map<FamiliaComponente, List<ItfComponenteVisualSB>> mapaComponentes = new HashMap<>();
+    private static Map<FamiliaComponente, List<ComoComponenteVisualSB>> mapaComponentes = new HashMap<>();
 
     public static void mapaComponentesCriarMapa() {
 
@@ -59,13 +59,13 @@ public abstract class MapaComponentes {
 
     }
 
-    private static void adicionarComponentes(Class<? extends ItfFabTipoComponenteVisual> comp) {
+    private static void adicionarComponentes(Class<? extends ComoFabTipoComponenteVisual> comp) {
 
         for (int i = 0; i < comp.getEnumConstants().length; i++) {
             FamiliaComponente familia = comp.getEnumConstants()[i].getRegistro().getFamilia().getRegistro();
             if (i == 0) {
 
-                mapaComponentes.put(familia, new ArrayList<ItfComponenteVisualSB>());
+                mapaComponentes.put(familia, new ArrayList<ComoComponenteVisualSB>());
 
             }
 
@@ -75,15 +75,15 @@ public abstract class MapaComponentes {
 
     }
 
-    public static List<ItfComponenteVisualSB> getComponentesFamilia(FamiliaComponente familia) {
+    public static List<ComoComponenteVisualSB> getComponentesFamilia(FamiliaComponente familia) {
 
         return mapaComponentes.get(familia);
 
     }
 
-    public static List<ItfComponenteVisualSB> getTodosComponentes() {
+    public static List<ComoComponenteVisualSB> getTodosComponentes() {
 
-        List<ItfComponenteVisualSB> listaComponentes = new ArrayList<>();
+        List<ComoComponenteVisualSB> listaComponentes = new ArrayList<>();
 
         for (FamiliaComponente familiaAtual : mapaComponentes.keySet()) {
 
@@ -95,7 +95,7 @@ public abstract class MapaComponentes {
 
     }
 
-    public static Map<FamiliaComponente, List<ItfComponenteVisualSB>> getMapaComponentes() {
+    public static Map<FamiliaComponente, List<ComoComponenteVisualSB>> getMapaComponentes() {
         return mapaComponentes;
     }
 

@@ -137,9 +137,9 @@ V  [libjvm.so+0xa3b363]  SystemDictionary::resolve_or_fail(Symbol*, Handle, Hand
 V  [libjvm.so+0x4f31d8]  ConstantPool::klass_at_impl(constantPoolHandle, int, Thread*)+0x158
 V  [libjvm.so+0x6890cb]  InterpreterRuntime::ldc(JavaThread*, bool)+0x12b
 j  com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB.getEntidadeDominio()Ljava/lang/Class;+0
-j  com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel.getNovaAcao(Lcom/super_bits/modulosSB/SBCore/modulos/fabrica/ItfFabricaAcoes;)Lcom/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema;+164
-j  com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB.getRegistro()Lcom/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema;+1
-j  com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB.getAcaoDoSistema()Lcom/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema;+1
+j  com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel.getNovaAcao(Lcom/super_bits/modulosSB/SBCore/modulos/fabrica/ComoFabricaAcoes;)Lcom/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema;+164
+j  com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB.getRegistro()Lcom/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema;+1
+j  com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB.getAcaoDoSistema()Lcom/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema;+1
 j  com.super_bits.modulosSB.SBCore.UtilGeral.MapaDeAcoes.<init>([Ljava/lang/Class;)V+155
 j  com.super_bits.modulosSB.SBCore.UtilGeral.MapaAcoesSistema.makeMapaAcoesSistema()V+30
 j  com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore.validaConfiguracoes()Z+213
@@ -193,9 +193,9 @@ J 7588 C2 org.eclipse.jetty.webapp.WebAppClassLoader.loadClass(Ljava/lang/String
 J 6539 C2 org.eclipse.jetty.webapp.WebAppClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x00007fc6a5c68ad4 [0x00007fc6a5c68aa0+0x34]
 v  ~StubRoutines::call_stub
 j  com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB.getEntidadeDominio()Ljava/lang/Class;+0
-j  com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel.getNovaAcao(Lcom/super_bits/modulosSB/SBCore/modulos/fabrica/ItfFabricaAcoes;)Lcom/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema;+164
-j  com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB.getRegistro()Lcom/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema;+1
-j  com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB.getAcaoDoSistema()Lcom/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ItfAcaoDoSistema;+1
+j  com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel.getNovaAcao(Lcom/super_bits/modulosSB/SBCore/modulos/fabrica/ComoFabricaAcoes;)Lcom/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema;+164
+j  com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB.getRegistro()Lcom/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema;+1
+j  com.super_bits.modulos.SBAcessosModel.fabricas.acoesDemonstracao.FabAcaoDemonstracaoSB.getAcaoDoSistema()Lcom/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema;+1
 j  com.super_bits.modulosSB.SBCore.UtilGeral.MapaDeAcoes.<init>([Ljava/lang/Class;)V+155
 j  com.super_bits.modulosSB.SBCore.UtilGeral.MapaAcoesSistema.makeMapaAcoesSistema()V+30
 j  com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore.validaConfiguracoes()Z+213

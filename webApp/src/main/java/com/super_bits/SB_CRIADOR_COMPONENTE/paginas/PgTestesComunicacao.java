@@ -15,8 +15,8 @@ import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioSistemaRoot;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.anotacoes.InfoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabTipoAtributoObjeto;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfBeanSimples;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoEntidadeSimples;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.MB_PaginaConversation;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.reflexao.anotacoes.InfoPagina;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.reflexao.anotacoes.beans.InfoMB_Bean;
@@ -36,11 +36,11 @@ import javax.inject.Named;
 @ViewScoped
 public class PgTestesComunicacao extends MB_PaginaConversation {
 
-    private List<ItfUsuario> usuarios;
+    private List<ComoUsuario> usuarios;
     @InfoMB_Bean(descricao = "")
     @InfoCampo(tipo = FabTipoAtributoObjeto.OBJETO_DE_UMA_LISTA, caminhoParaLista = "usuarios")
-    private ItfUsuario usuarioDEstino;
-    private ItfUsuario usuarioOrigem;
+    private ComoUsuario usuarioDEstino;
+    private ComoUsuario usuarioOrigem;
 
     private String mesnsagem;
 
@@ -54,13 +54,13 @@ public class PgTestesComunicacao extends MB_PaginaConversation {
     }
 
     @Override
-    public ItfBeanSimples getBeanSelecionado() {
+    public ComoEntidadeSimples getBeanSelecionado() {
         //    SBCore.getCentralDeComunicacao().gerarComunicacaoEntre_Usuairos(FabTipoComunicacao.NOTIFICAR, usuarioDEstino, pDestinatario, mesnsagem, tiposTransporte)
         return null;
     }
 
     @Override
-    public void setBeanSelecionado(ItfBeanSimples pBeanSimples) {
+    public void setBeanSelecionado(ComoEntidadeSimples pBeanSimples) {
 
     }
 

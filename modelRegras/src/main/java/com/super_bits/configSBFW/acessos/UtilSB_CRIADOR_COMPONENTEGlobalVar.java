@@ -10,7 +10,7 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.Fab
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.FabAcaoBeanExemploDemonstrativo;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.comunicacao.EnvelopeComunicacaoSimples;
-import com.super_bits.modulosSB.SBCore.modulos.fabrica.ItfFabricaAcoes;
+import com.super_bits.modulosSB.SBCore.modulos.fabrica.ComoFabricaAcoes;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioAnonimo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.ItensGenericos.basico.UsuarioSistemaRoot;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.TipoAtributoObjetoSB;
@@ -29,7 +29,7 @@ import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.component
  */
 public abstract class UtilSB_CRIADOR_COMPONENTEGlobalVar {
 
-    public static Class<? extends ItfFabricaAcoes>[] pAcoesDoSistema() {
+    public static Class<? extends ComoFabricaAcoes>[] pAcoesDoSistema() {
         return new Class[]{FabAcaoLabComponentes.class, FabAcaoBeanExemploDemonstrativo.class};
     }
 

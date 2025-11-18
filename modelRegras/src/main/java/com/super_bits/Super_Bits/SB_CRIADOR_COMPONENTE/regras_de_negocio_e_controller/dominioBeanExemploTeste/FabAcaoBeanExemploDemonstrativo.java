@@ -8,7 +8,7 @@ package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_cont
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.BeanExemplo;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.FabModulosIProjetoTesteI;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.InfoModuloSB_CRIADOR_COMPONENTE;
-import com.super_bits.modulos.SBAcessosModel.fabricas.ItfFabricaDeAcoesPersistencia;
+import com.super_bits.modulos.SBAcessosModel.fabricas.ComoFabricaDeAcoesPersistencia;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.estadoFormulario.FabEstadoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoController;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.anotacoes.InfoTipoAcaoFormCamposAtualizaGrupoDoCampo;
@@ -25,7 +25,7 @@ import org.coletivoJava.fw.projetos.SB_CRIADOR_COMPONENTE.api.model.beanexemplo.
  * @author desenvolvedor
  */
 @InfoModuloSB_CRIADOR_COMPONENTE(modulo = FabModulosIProjetoTesteI.DEMONSTRACAO_BASICA)
-public enum FabAcaoBeanExemploDemonstrativo implements ItfFabricaDeAcoesPersistencia {
+public enum FabAcaoBeanExemploDemonstrativo implements ComoFabricaDeAcoesPersistencia {
 
     @InfoTipoAcaoGestaoEntidade(icone = "fa fa-tag", entidade = BeanExemplo.class)
     BEAN_EXEMPLO_MB,
