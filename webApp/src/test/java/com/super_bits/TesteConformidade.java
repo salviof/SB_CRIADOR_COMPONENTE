@@ -2,7 +2,7 @@ package com.super_bits;
 
 import com.super_bits.config.webPaginas.ConfiguradorCoreWebAppSB_CRIADOR_COMPONENTE;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStringsCammelCase;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCStringsCammelCase;
 import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfMenuSB;
 import com.super_bits.modulosSB.SBCore.modulos.view.menu.ItfMenusDeSessao;
 import com.super_bits.modulosSB.SBCore.modulos.view.menu.MenusDaSessao;
@@ -29,8 +29,8 @@ public class TesteConformidade extends RelatorioTesteWebPaginas {
 
             // BeanManager bm = CDI.current().getBeanManager();
             //     bmm.getBeans("#{PgUtil}");
-            System.out.println(UtilSBCoreStringsCammelCase.getCamelByTextoPrimeiraLetraMaiuscula(FabAcaoPaginasDoSistema.PAGINA_PESQUISA_AVANCADA_MB_PADRAO.toString()));;
-            System.out.println(UtilSBCoreStringsCammelCase.getCamelByTextoPrimeiraLetraMaiusculaSemCaracterEspecial(FabAcaoPaginasDoSistema.PAGINA_PESQUISA_AVANCADA_MB_PADRAO.toString()));;
+            System.out.println(UtilCRCStringsCammelCase.getCamelByTextoPrimeiraLetraMaiuscula(FabAcaoPaginasDoSistema.PAGINA_PESQUISA_AVANCADA_MB_PADRAO.toString()));;
+            System.out.println(UtilCRCStringsCammelCase.getCamelByTextoPrimeiraLetraMaiusculaSemCaracterEspecial(FabAcaoPaginasDoSistema.PAGINA_PESQUISA_AVANCADA_MB_PADRAO.toString()));;
 
             gerarMangedBeansAcessoAcoes();
 

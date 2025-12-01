@@ -11,7 +11,7 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_contr
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.InfoAcaoBeamExemploDemo;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.TIPO_PARTE_URL;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ComoAcaoDoSistema;
-import com.super_bits.modulosSB.SBCore.modulos.fabrica.UtilSBCoreReflexaoFabrica;
+import com.super_bits.modulosSB.SBCore.modulos.fabrica.UtilCRCReflexaoFabrica;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.MB_paginaCadastroEntidades;
 import com.super_bits.modulosSB.webPaginas.JSFManagedBeans.formularios.reflexao.anotacoes.InfoPagina;
 import com.super_bits.modulosSB.webPaginas.controller.servletes.urls.parametrosURL.InfoParametroURL;
@@ -67,7 +67,7 @@ public class PgBeanExemplo extends MB_paginaCadastroEntidades<BeanExemplo> {
 
     @Override
     public void listarDados() {
-        setEntidadesListadas(UtilSBCoreReflexaoFabrica.getListaTodosRegistrosDaFabrica(FabListBeanExemplos.class));
+        setEntidadesListadas(UtilCRCReflexaoFabrica.getListaTodosRegistrosDaFabrica(FabListBeanExemplos.class));
     }
 
     @Override

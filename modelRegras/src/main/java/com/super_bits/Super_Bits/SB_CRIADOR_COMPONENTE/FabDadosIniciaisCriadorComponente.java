@@ -6,8 +6,8 @@
 package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.informacao.ConteudoGenerico;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStringGerador;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreStringValidador;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCStringGerador;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCStringValidador;
 
 import com.super_bits.modulosSB.SBCore.modulos.fabrica.ComoFabrica;
 
@@ -29,7 +29,7 @@ public enum FabDadosIniciaisCriadorComponente implements ComoFabrica {
         ConteudoGenerico info = new ConteudoGenerico();
         info.setId((long) this.ordinal());
         info.setNome(this.toString());
-        info.setDescricao(UtilSBCoreStringGerador.GetLorenIpsilum(5, UtilSBCoreStringGerador.TIPO_LOREN.PALAVRAS));
+        info.setDescricao(UtilCRCStringGerador.GetLorenIpsilum(5, UtilCRCStringGerador.TIPO_LOREN.PALAVRAS));
         return info;
     }
 }

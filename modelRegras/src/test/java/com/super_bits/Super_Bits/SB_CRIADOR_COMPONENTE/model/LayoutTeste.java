@@ -7,7 +7,7 @@ package com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model;
 
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.configAppp.TesteSB_CRIADOR_COMPONENTE;
 import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_controller.dominioBeanExemploTeste.FabAcaoBeanExemploDemonstrativo;
-import com.super_bits.modulosSB.SBCore.UtilGeral.view.UtilSBCoreLayoutComponenteEmTelas;
+import com.super_bits.modulosSB.SBCore.UtilGeral.view.UtilCRCLayoutComponenteEmTelas;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormularioEntidade;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.ItfCampoExibicaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.view.fabricasCompVisual.componentes.FabCompVisualBotaoAcao;
@@ -44,7 +44,7 @@ public class LayoutTeste extends TesteSB_CRIADOR_COMPONENTE {
             System.out.println(objTeste.getCampoInstanciadoByNomeOuAnotacao("apelido").getComponenteVisualPadrao().getPesoLargura());
             System.out.println(objTeste.getCampoInstanciadoByNomeOuAnotacao("apelido").getComponenteVisualPadrao().getNomeComponente());
 
-            LayoutComponentesEmTelaComGrupoDeAcoes layout = UtilSBCoreLayoutComponenteEmTelas.gerarLayoutColunasComAcao(
+            LayoutComponentesEmTelaComGrupoDeAcoes layout = UtilCRCLayoutComponenteEmTelas.gerarLayoutColunasComAcao(
                     lista, (List) acaoForm.getComoGestaoEntidade().getAcoesVinculadas(),
                     FabCompVisualBotaoAcao.ICONE, FabTipoTamanhoTelas.DESKTOP_GRANDE.getRegistro(), "TESTE", false);
             layout.getUltimaColuna();

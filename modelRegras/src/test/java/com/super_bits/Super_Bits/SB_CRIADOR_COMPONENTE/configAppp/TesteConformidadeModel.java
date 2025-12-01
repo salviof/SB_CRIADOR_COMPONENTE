@@ -10,7 +10,7 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.regras_de_negocio_e_contr
 import com.super_bits.modulos.SBAcessosModel.model.acoes.UtilFabricaDeAcoesAcessosModel;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.UtilSBCoreReflexaoCaminhoCampo;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.UtilCRCReflexaoCaminhoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.CaminhoCampoReflexao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.FabGruposPadrao;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campo.GrupoCampos;
@@ -52,13 +52,13 @@ public class TesteConformidadeModel extends TesteSB_CRIADOR_COMPONENTE {
             caminhosTeste.add(new CaminhoCampoReflexao("listaParticular[].senha", BeanExemplo.class));
 
             //caminhosTeste.add(new CaminhoCampoReflexao("listaParticular[]", BeanExemplo.class));
-            String test = UtilSBCoreReflexaoCaminhoCampo.getStrCaminhoCampoSemUltimoCampo("BeanExemplo.listaParticular[]");
+            String test = UtilCRCReflexaoCaminhoCampo.getStrCaminhoCampoSemUltimoCampo("BeanExemplo.listaParticular[]");
 
             for (CaminhoCampoReflexao cmTeste : caminhosTeste) {
                 System.out.println(cmTeste.getCampoFieldReflection().getType());
 
             }
-            List<GrupoCampos> grupos = UtilSBCoreReflexaoCaminhoCampo.buildAgrupamentoCampos(caminhosTeste);
+            List<GrupoCampos> grupos = UtilCRCReflexaoCaminhoCampo.buildAgrupamentoCampos(caminhosTeste);
             for (GrupoCampos gp : grupos) {
 
                 gp.getCampos();

@@ -12,14 +12,14 @@ import com.super_bits.Super_Bits.SB_CRIADOR_COMPONENTE.model.mapaComponentes.Map
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDeEntidadeController;
 import com.super_bits.modulos.SBAcessosModel.model.acoes.AcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreReflexaoObjeto;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCReflexaoObjeto;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.TIPO_PARTE_URL;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.acoes.ComoAcaoDoSistema;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.permissoes.ItfAcaoFormulario;
 import com.super_bits.modulosSB.SBCore.modulos.Mensagens.FabMensagens;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaCampo;
 import com.super_bits.modulosSB.SBCore.modulos.geradorCodigo.model.EstruturaDeEntidade;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.UtilSBCoreReflexaoCaminhoCampo;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.UtilCRCReflexaoCaminhoCampo;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.CampoNaoImplementado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.InfoCampos.campoInstanciado.ItfCampoInstanciado;
 import com.super_bits.modulosSB.SBCore.modulos.objetos.MapaObjetosProjetoAtual;
@@ -218,7 +218,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
             beansDisponiveis = new ArrayList<>();
             beansDisponiveis.add(BeanExemplo.class.getSimpleName());
             labelByCaminho = new HashMap<>();
-            labelByCaminho.put(BeanExemplo.class.getSimpleName(), UtilSBCoreReflexaoObjeto.getNomeObjeto(BeanExemplo.class));
+            labelByCaminho.put(BeanExemplo.class.getSimpleName(), UtilCRCReflexaoObjeto.getNomeObjeto(BeanExemplo.class));
             estruturaObjetoSelecionado = MapaObjetosProjetoAtual.getEstruturaObjeto(BeanExemplo.class);
             acoesLaboratorio = new ArrayList<>();
             dialogoDoMomento = new DialogoWeb();
@@ -287,7 +287,7 @@ public class PgMapaComponentes extends MB_PaginaConversation {
             } else {
                 tipoEstruturaSelecionada = ESTRUTURA_DE_CAMPO_DESCRICAO;
                 String nomeObjeto = pCaminhoBeanSelecionado.split("\\.")[0];
-                String nomeCampo = UtilSBCoreReflexaoCaminhoCampo.getCampoSemNomeClasse(pCaminhoBeanSelecionado);
+                String nomeCampo = UtilCRCReflexaoCaminhoCampo.getCampoSemNomeClasse(pCaminhoBeanSelecionado);
                 System.out.println("NomeObjeto[" + nomeObjeto + "]");
                 estruturaObjetoSelecionado = MapaObjetosProjetoAtual.getEstruturaObjeto(nomeObjeto);
                 estruturaCampoSelecionado = estruturaObjetoSelecionado.getCampoByNomeDeclarado(nomeCampo);
@@ -627,9 +627,9 @@ public class PgMapaComponentes extends MB_PaginaConversation {
     public ItfCampoInstanciado getCampoInstanciado() {
 
         if (caminhoBeanSelecionado != null) {
-            String nomeCampo = UtilSBCoreReflexaoCaminhoCampo.getCampoSemNomeClasse(caminhoBeanSelecionado);
+            String nomeCampo = UtilCRCReflexaoCaminhoCampo.getCampoSemNomeClasse(caminhoBeanSelecionado);
             if (nomeCampo != null) {
-                return beanExemplo.getCampoByNomeOuAnotacao(UtilSBCoreReflexaoCaminhoCampo.getCampoSemNomeClasse(caminhoBeanSelecionado));
+                return beanExemplo.getCampoByNomeOuAnotacao(UtilCRCReflexaoCaminhoCampo.getCampoSemNomeClasse(caminhoBeanSelecionado));
             }
         }
         return new CampoNaoImplementado();
