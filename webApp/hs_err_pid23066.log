@@ -1477,7 +1477,7 @@ Event: 2386,379 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoun
 Event: 2386,379 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError'> (0x00000000e1d527a8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1516]
 Event: 2386,389 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema> (0x00000000e1dacad0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
 Event: 2386,399 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema> (0x00000000e1e82cf8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
-Event: 2386,407 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples> (0x00000000e1ebfb80) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/
+Event: 2386,407 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples> (0x00000000e1ebfb80) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/
 Event: 2386,411 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema> (0x00000000e1dfea80) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
 Event: 2386,419 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDoSistema> (0x00000000e1f0b130) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
 Event: 2386,421 Thread 0x00007f3f89c96000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000e1f0fdf0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
@@ -1491,13 +1491,13 @@ Event: 2386,469 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoun
 Event: 2386,469 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError'> (0x00000000e223f140) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1516]
 Event: 2386,484 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/ItfParametroRequisicaoInstanciado> (0x00000000e235e720) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/ho
 Event: 2386,484 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError'> (0x00000000e235e720) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1516]
-Event: 2386,491 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError': Lcom/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/icones/ComoIcone;> (0x00000000e23acb20) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/
+Event: 2386,491 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError': Lcom/super_bits/modulosSB/SBCore/modulos.objetos.entidade/icones/ComoIcone;> (0x00000000e23acb20) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/
 Event: 2386,499 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/UtilGeral/ClasseTipada> (0x00000000e2491470) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/classfile/systemDictio
 Event: 2386,499 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError'> (0x00000000e2491470) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1516]
-Event: 2386,538 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples> (0x00000000e256ae10) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/
+Event: 2386,538 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples> (0x00000000e256ae10) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/
 Event: 2386,538 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError'> (0x00000000e256ae10) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1516]
 Event: 2386,538 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError'> (0x00000000e256ae10) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1516]
-Event: 2386,542 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples> (0x00000000e2638be8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/
+Event: 2386,542 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples> (0x00000000e2638be8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/
 Event: 2386,542 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError'> (0x00000000e2638be8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1516]
 Event: 2386,542 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError'> (0x00000000e2638be8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1516]
 Event: 2386,548 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': Lcom/super_bits/modulosSB/SBCore/modulos/view/fabricasCompVisual/ComoComponenteVisualSB;> (0x00000000e267e158) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/sr
@@ -1510,20 +1510,20 @@ Event: 2386,573 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoun
 Event: 2386,579 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/comunicacao/ItfComunicacaoAcaoVinculada> (0x00000000e283aee8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/
 Event: 2386,581 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/comunicacao/ItfComunicacao> (0x00000000e27382c8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/classfile/
 Event: 2386,586 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError': Lorg/coletivojava/fw/api/objetoNativo/view/componente/FamiliaComponente;> (0x00000000e2774780) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/clas
-Event: 2386,604 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao> (0x00000000e28bf2b8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
+Event: 2386,604 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao> (0x00000000e28bf2b8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
 Event: 2386,605 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError'> (0x00000000e28bf2b8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1516]
-Event: 2386,635 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimplesSomenteLeitura> (0x00000000e29409a0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/op
+Event: 2386,635 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimplesSomenteLeitura> (0x00000000e29409a0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/op
 Event: 2386,647 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDeContexto> (0x00000000e2a42618) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/
 Event: 2386,647 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError'> (0x00000000e2a42618) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1516]
 Event: 2386,652 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/ConfigGeral/ItfConfiguradorCore> (0x00000000e2a6e2e8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/classfile/sys
 Event: 2386,652 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError'> (0x00000000e2a6e2e8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1516]
-Event: 2386,658 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao> (0x00000000e2aa0168) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
+Event: 2386,658 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao> (0x00000000e2aa0168) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/s
 Event: 2386,658 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError': testesFW/RelatorioTesteAbstrato> (0x00000000e2b5d548) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 199]
 Event: 2386,658 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError'> (0x00000000e2b5d548) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1516]
 Event: 2386,670 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/comunicacao/ItfComunicacaoAcaoVinculada> (0x00000000e2b17500) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/
-Event: 2386,676 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples> (0x00000000e2c44dd8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/
+Event: 2386,676 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples> (0x00000000e2c44dd8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/
 Event: 2386,676 Thread 0x00007f3f60aaa000 Exception <a 'java/lang/NoClassDefFoundError'> (0x00000000e2c44dd8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1516]
-Event: 2386,686 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples> (0x00000000e2d223b8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/
+Event: 2386,686 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError': com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples> (0x00000000e2d223b8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/
 Event: 2386,686 Thread 0x00007f3f60aab000 Exception <a 'java/lang/NoClassDefFoundError'> (0x00000000e2d223b8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1516]
 Event: 2386,722 Thread 0x00007f3f60ad1000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000e2db4178) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jni.cpp, line 710]
 Event: 2386,723 Thread 0x00007f3f60ad1000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000e2db4628) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.201.b09-2.fc29.x86_64/openjdk/hotspot/src/share/vm/prims/jni.cpp, line 710]
@@ -1619,22 +1619,22 @@ Event: 2386,513 loading class javax/faces/model/SelectItem
 Event: 2386,513 loading class javax/faces/model/SelectItem done
 Event: 2386,513 loading class javax/faces/model/SelectItem
 Event: 2386,513 loading class javax/faces/model/SelectItem done
-Event: 2386,537 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
-Event: 2386,537 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
-Event: 2386,538 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
-Event: 2386,538 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
-Event: 2386,538 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
-Event: 2386,538 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
-Event: 2386,538 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
-Event: 2386,538 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
-Event: 2386,542 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
-Event: 2386,542 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
-Event: 2386,542 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
-Event: 2386,542 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
-Event: 2386,542 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
-Event: 2386,542 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
-Event: 2386,542 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
-Event: 2386,542 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
+Event: 2386,537 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples
+Event: 2386,537 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples done
+Event: 2386,538 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples
+Event: 2386,538 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples done
+Event: 2386,538 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples
+Event: 2386,538 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples done
+Event: 2386,538 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples
+Event: 2386,538 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples done
+Event: 2386,542 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples
+Event: 2386,542 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples done
+Event: 2386,542 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples
+Event: 2386,542 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples done
+Event: 2386,542 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples
+Event: 2386,542 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples done
+Event: 2386,542 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples
+Event: 2386,542 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples done
 Event: 2386,546 loading class com/super_bits/modulosSB/SBCore/modulos/view/fabricasCompVisual/ComoComponenteVisualSB
 Event: 2386,546 loading class com/super_bits/modulosSB/SBCore/modulos/view/fabricasCompVisual/ComoComponenteVisualSB done
 Event: 2386,546 loading class com/super_bits/modulosSB/SBCore/modulos/view/fabricasCompVisual/ComoComponenteVisualSB
@@ -1699,30 +1699,30 @@ Event: 2386,586 loading class org/coletivojava/fw/api/objetoNativo/view/componen
 Event: 2386,586 loading class org/coletivojava/fw/api/objetoNativo/view/componente/FamiliaComponente done
 Event: 2386,586 loading class org/coletivojava/fw/api/objetoNativo/view/componente/FamiliaComponente
 Event: 2386,586 loading class org/coletivojava/fw/api/objetoNativo/view/componente/FamiliaComponente done
-Event: 2386,597 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao
-Event: 2386,597 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao done
-Event: 2386,597 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao
-Event: 2386,597 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao done
-Event: 2386,597 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao
-Event: 2386,597 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao done
-Event: 2386,597 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao
-Event: 2386,597 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao done
-Event: 2386,603 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao
-Event: 2386,603 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao done
-Event: 2386,603 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao
-Event: 2386,603 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao done
-Event: 2386,603 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao
-Event: 2386,603 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao done
-Event: 2386,603 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao
-Event: 2386,603 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao done
-Event: 2386,622 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimplesSomenteLeitura
-Event: 2386,622 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimplesSomenteLeitura done
-Event: 2386,623 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimplesSomenteLeitura
-Event: 2386,623 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimplesSomenteLeitura done
-Event: 2386,623 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimplesSomenteLeitura
-Event: 2386,623 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimplesSomenteLeitura done
-Event: 2386,635 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimplesSomenteLeitura
-Event: 2386,635 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimplesSomenteLeitura done
+Event: 2386,597 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao
+Event: 2386,597 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao done
+Event: 2386,597 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao
+Event: 2386,597 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao done
+Event: 2386,597 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao
+Event: 2386,597 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao done
+Event: 2386,597 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao
+Event: 2386,597 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao done
+Event: 2386,603 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao
+Event: 2386,603 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao done
+Event: 2386,603 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao
+Event: 2386,603 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao done
+Event: 2386,603 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao
+Event: 2386,603 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao done
+Event: 2386,603 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao
+Event: 2386,603 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao done
+Event: 2386,622 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimplesSomenteLeitura
+Event: 2386,622 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimplesSomenteLeitura done
+Event: 2386,623 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimplesSomenteLeitura
+Event: 2386,623 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimplesSomenteLeitura done
+Event: 2386,623 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimplesSomenteLeitura
+Event: 2386,623 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimplesSomenteLeitura done
+Event: 2386,635 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimplesSomenteLeitura
+Event: 2386,635 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimplesSomenteLeitura done
 Event: 2386,642 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDeContexto
 Event: 2386,642 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDeContexto done
 Event: 2386,642 loading class com/super_bits/modulosSB/SBCore/modulos/Controller/Interfaces/acoes/ComoAcaoDeContexto
@@ -1763,14 +1763,14 @@ Event: 2386,652 loading class testesFW/RelatorioTesteAbstrato
 Event: 2386,653 loading class testesFW/RelatorioTesteAbstrato done
 Event: 2386,653 loading class testesFW/RelatorioTesteAbstrato
 Event: 2386,653 loading class testesFW/RelatorioTesteAbstrato done
-Event: 2386,657 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao
-Event: 2386,657 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao done
-Event: 2386,657 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao
-Event: 2386,657 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao done
-Event: 2386,657 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao
-Event: 2386,657 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao done
-Event: 2386,658 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao
-Event: 2386,658 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ItfSessao done
+Event: 2386,657 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao
+Event: 2386,657 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao done
+Event: 2386,657 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao
+Event: 2386,657 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao done
+Event: 2386,657 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao
+Event: 2386,657 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao done
+Event: 2386,658 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao
+Event: 2386,658 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ItfSessao done
 Event: 2386,658 loading class testesFW/RelatorioTesteAbstrato
 Event: 2386,658 loading class testesFW/RelatorioTesteAbstrato done
 Event: 2386,658 loading class testesFW/RelatorioTesteAbstrato
@@ -1795,14 +1795,14 @@ Event: 2386,670 loading class com/super_bits/modulosSB/SBCore/modulos/comunicaca
 Event: 2386,670 loading class com/super_bits/modulosSB/SBCore/modulos/comunicacao/ItfComunicacaoAcaoVinculada done
 Event: 2386,670 loading class com/super_bits/modulosSB/SBCore/modulos/comunicacao/ItfComunicacaoAcaoVinculada
 Event: 2386,670 loading class com/super_bits/modulosSB/SBCore/modulos/comunicacao/ItfComunicacaoAcaoVinculada done
-Event: 2386,675 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
-Event: 2386,675 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
-Event: 2386,676 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
-Event: 2386,676 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
-Event: 2386,676 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
-Event: 2386,676 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
-Event: 2386,676 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
-Event: 2386,676 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
+Event: 2386,675 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples
+Event: 2386,675 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples done
+Event: 2386,676 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples
+Event: 2386,676 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples done
+Event: 2386,676 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples
+Event: 2386,676 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples done
+Event: 2386,676 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples
+Event: 2386,676 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples done
 Event: 2386,679 loading class javax/faces/event/PhaseEvent
 Event: 2386,679 loading class javax/faces/event/PhaseEvent done
 Event: 2386,679 loading class javax/faces/event/PhaseEvent
@@ -1819,14 +1819,14 @@ Event: 2386,681 loading class javax/faces/event/PhaseId
 Event: 2386,681 loading class javax/faces/event/PhaseId done
 Event: 2386,681 loading class javax/faces/event/PhaseId
 Event: 2386,681 loading class javax/faces/event/PhaseId done
-Event: 2386,685 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
-Event: 2386,685 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
-Event: 2386,685 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
-Event: 2386,685 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
-Event: 2386,685 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
-Event: 2386,685 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
-Event: 2386,685 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples
-Event: 2386,685 loading class com/super_bits/modulosSB/SBCore/modulos/objetos/registro/Interfaces/basico/ComoEntidadeSimples done
+Event: 2386,685 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples
+Event: 2386,685 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples done
+Event: 2386,685 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples
+Event: 2386,685 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples done
+Event: 2386,685 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples
+Event: 2386,685 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples done
+Event: 2386,685 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples
+Event: 2386,685 loading class com/super_bits/modulosSB/SBCore/modulos.objetos.entidade/basico/ComoEntidadeSimples done
 Event: 2386,686 Thread 0x00007f3f89c96000 Uncommon trap: trap_request=0xffffff65 fr.pc=0x00007f3f796a7b78
 Event: 2386,686 Thread 0x00007f3f89c96000 DEOPT PACKING pc=0x00007f3f796a7b78 sp=0x00007f3f2b0fcd60
 Event: 2386,686 Thread 0x00007f3f89c96000 DEOPT UNPACKING pc=0x00007f3f7904547a sp=0x00007f3f2b0fcd08 mode 2
